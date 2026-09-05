@@ -18,17 +18,29 @@ horizontally — protected by a self-integrity check that sums the first
 v1.1 — function graphs drawn to the ЭМ7052 plotter (one of the nine
 graphics-mode programs of the cross); the Newton nonlinear-system
 solver `NEWTON.FOR` («программист Домнич Александр»); and the
-GR/OUT17/OUTC printing utilities, whose docs end with his contact
+OUT17/OUTC printing utilities, whose docs end with his contact
 line, «Подробнее :: Домнич А.В., тел. в Каменке».
 > «Игру сделал Домнич Александр по заказу И.В.Ф. "МИКРОТЕХ". Воронеж 1994.»
+
+**Воронков В.В.** — Воронеж, 1993-1995.  The keeper of the collection
+and an author in it: the Pascal minesweeper `K.SAV` (1995) with its
+whole workshop preserved in the logical disk `PROGS.DSK`, the BASIC sea
+battle «МОРСКОЙ БОЙ» (`MORBOJ.BAS`, title screen `MORBOJ.SCR` signed
+«VORONKOV COMPUTER'S SECURITY Ltd.»), the joystick space shooter
+`LUNA.BAS` («PROGRAM BY VORONKOV SOFT 1993»), and the screen of a music editor
+— a piano keyboard with the note frequencies in hertz, «COMPOSED BY
+VORONKOV V.V. — VORONEZH 21-6-1993» (`MUZRED.SCR`).  The vvv104 disks
+are his, and so is what on them no one else signed and no other hand
+brought in a batch — the formula editor, the 3-D surface plotter, the
+whole PROGS.DSK workshop: `programs/vvv/` in the collection.
 
 **Родионов Сергей Алексеевич** — Воронеж, 1992-1993.  A whole private
 operating environment: the RT15SJ monitor build («©1992 Родионов
 С.А.»), the ROSA Commander v1.3 file manager (`ROSA3.SAV` — its status
 line reads «ROSA Commander v1.3 © 1993 Родионов Сергей Алексеевич /
 г.Воронеж /»: a two-panel DZ0:/DZ2: commander with a file-info box,
-«Защищён от удаления» flags and a ПМ help key), the R15 shell, the
-BLUE screen-and-date greeter — all wired into a boot that lands
+«Защищён от удаления» flags and a ПМ help key), his R15 edition of the
+K13 screen editor with every prompt in Russian, the BLUE screen-and-date greeter — all wired into a boot that lands
 straight in his own desktop.  His copy protection is two sectors on
 physical track 0 of the back side, and his programs say so plainly:
 > «Программа, переписанная без разрешения АВТОРА, не работает.» (ROSA3.SAV)
@@ -73,6 +85,13 @@ with the name hex-patched to «REDUMP B5.0e».
 **Пажитнов А.Л.** — yes, that one.  The Tetris build `TET.SAV`
 credits him on its title screen («ИГРА ПАЖИТНОВА А.Л.», KOI-7 in the
 binary) and carries the Whitesmiths C runtime (© 1978) underneath.
+
+**VLAD & ALEX** — «Sound Effect's Recorder version 2.0»: a home-made
+4-bit sampler (playback through the MS7007 port B, recording through an
+ADC on the printer port), its players `LD1.SAV` and `LOAD.SAV` («This is
+MUPPET SHOW!», «European Top Twenty») and the full source set — and
+three of their recordings survived (`A`, `9.PRG`, `TLF.PRG`), decodable
+to recognizable sound today.
 
 **Сторожевых С.В., 1988** — a driver author by name: the SL V08.00
 single-line editor handler signs itself «SL V08.00 [SW] Сторожевых
@@ -123,8 +142,7 @@ baked in — its banner opens their every boot.
 **И.В.Ф. «МИКРОТЕХ», Воронеж** — commissioned «ПИТОН» (1994).
 
 **ФМГ, Воронеж, 1994** — the «МУЗЫКАЛЬНЫЙ РЕДАКТОР» whose animated
-advertisement (`ZASTM.EXE`) is all that survives of it, plus its
-screen layout `MUZRED.SCR`.
+advertisement (`ZASTM.EXE`) is all that survives of it.
 
 **SB Soft Ware Ltd., 1992** — «AutoTeacher V3.10, Created by SB»
 (`AT.SAV`) with its student-testing data files (`STUD.PUP`).

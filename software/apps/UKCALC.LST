@@ -1,0 +1,516 @@
+                              
+                              
+                              
+                   krupnoformatnaq |lektronnaq tablica
+                 --------------------------------------
+                               UKCALC
+                              --------
+                              
+                              
+                         rukowodstwo operatora
+                        -----------------------
+                        
+                        
+                             moskwa 1990G
+                            -------------
+                             
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                              sodervanie
+                             ------------
+       1.wWEDENIE
+       
+       1.1 kRATKAQ HARAKTERISTIKA.
+       1.2 oSNOWNYE PONQTIQ.
+       1.3 uSLOWNYE OBOZNA^ENIQ W TEKSTE RUKOWODSTWA.
+       1.4 nAZNA^ENIE POLEJ I REVIMY RABOTY.
+       1.5 kOMANDY. pROGRAMMY.
+       
+       2. pERWYE [AGI
+       
+       2.1 wYZOW \LEKTRONNOJ TABLICY.
+       2.2 pEREME]ENIE KURSORA PO TABLICE.
+       2.2.1 kOMANDA wlewo.
+       2.2.2 kOMANDA wprawo.
+       2.2.3 kOMANDA wwerh.
+       2.2.4 kOMANDA wniz.
+       2.3 wWOD SODERVIMOGO Q^EJKI..
+       2.4 pONQTIE SIMWOLXNOJ KOMANDY.
+       2.5 wYHOD IZ REDAKTORA.
+       
+       3. rEDAKTIROWANIE Q^EJKI.
+       
+       3.1 rEDAKTIROWANIE STROKI.
+       3.2 zAWER[ITX WWOD (REDAKTIROWANIE) ZNA^ENIQ KLETKI.
+       3.3 pREKRATITX REDAKTIROWANIE.
+       3.4 rEDAKTIROWANIE UVE ZAPOLNENNOJ KLETKI.
+       3.5 zADANIE [IRINY KLETKI.
+       3.6 fORMATY TEKSTA.
+       3.6.1 zADANIE FORMATA.
+       3.7 pODSKAZKA.
+       3.8 pE^ATX TABLICY.
+       
+       4. aWTOWY^ISLENIE FORMUL.
+       
+       4.1 wKL@^EIE/WYKL@^ENIE AWTOWY^ISLENIJ.
+       
+       5. fORMULY.
+       
+       5.1 aRIFMETI^ESKIE OPERACII.
+       
+       6. rEDAKTIROWANIE TABLICY.
+       
+       6.1 sTIRANIE Q^EJKI.
+       6.2 wSTAWKA/UDALENIE STROKI.
+       6.3 wSTAWKA/UDALENIE STOLBCOW.
+       
+       7. kOMANDY, SOOB]ENIQ I DEJSTWIQ.
+ 
+       8. zAPUSK \LEKTRONNOJ TABLICY S POMO]X@ spo saturn NA rmu
+         
+        
+                            
+                            
+                          1.  wwedenie 
+                           -------------
+   1.1 kRATKAQ HARAKTERISTIKA 
+       UKCALC - PROGRAMMA, POZWOLQ@]AQ RABOTATX S \KRANNYMI TABLICAMI, PROIZ-
+   WODITX RAS^ETY, FORMIROWATX I OBS^ITYWATX OT^ETY I T.D. S NEPOSREDSTWENNOJ
+   WIZUALIZACIEJ REZULXTATOW RAS^ETA.
+   
+   1.2 oSNOWNYE PONQTIQ.
+       |KRAN DISPLEQ \TO "OKNO", ^EREZ KOTOROE MOVNO POSMOTRETX NA TABLICU,
+   HRANQ]U@SQ W PAMQTI MA[INY. oBY^NO \TO 20 STROK PO 80 SIMWOLOW KAVDAQ.
+   w KAVDOJ POZICII \KRANA MOVET BYTX 'NAPE^ATAN' SIMWOL. nABOR SIMWOLOW
+   ZAWISIT OT TIPA DISPLEQ - \TO OBY^NO BOLX[IE I MALENXKIE, RUSSKIE I LATIN-
+   SKIE BUKWY, CIFRY, ZNAKI PUNKTUACII, SPECIALXNYE SIMWOLY.
+       kAVDAQ KLETKA (ILI Q^EJKA) TABLICY IMEET "IMQ", SOSTROQ]EE IZ BUKWY I
+   ^ISLA, NAPRIMER a1 - KLETKA, NAHODQ]AQSQ W PERWOM STOLBCE (a) I PERWOJ STRO-
+   KE (1) \LEKTRONNOJ TABLICY. ~ASTO, WMESTO SLOW "IMQ KLETKI", MY BUDEM GOWO-
+   RITX PROSTO "KLETKA".
+       tABLICA, ZAPISANNAQ NA DISKE, IMEET UNIKALXNOE IMQ I NAZYWAETSQ "FAJLOM"
+   w FAJLE MOVET HRANITXSQ RAZNAQ INFORMACIQ: TEKST, \LEKTRONNAQ TABLICA I T.D.
+   wEZDE, GDE \TO NE OGOWORENO OSOBO, POD FAJLOM PONIMAETSQ "\LEKTRONNAQ TABLI-
+   CA". zAMETIM, ^TO TAKU@ TABLICU newozmovno NAPE^ATATX KOMANDOJ MONITORA 
+   "PRINT" ILI PROSMOTRETX TEKSTOWYM REDAKTOROM. dLQ PE^ATI SOZDANNOJ TABLICY
+   NUVNO PREDWARITELXNO SOZDATX "TEKSTOWYJ FAJL".
+       sREDI BOLX[OGO KOLI^ESTWA KLAWI[, RASPOLOVENNYH NA KLAWIATURE DISPLEQ,
+   MNOGIE IME@T TO VE ZNA^ENIE, ^TO I NA PI[U]EJ MA[INKE - \TO KLAWI[I S BUKWA-
+   MI, CIFRAMI I ZNAKAMI PUNKTUACII, A TAKVE KLAWI[I TABULQCII I WOZWRATA KARET-
+   KI.
+       kROME TOGO NA KLAWI[NOM PULXTE IMEETSQ OTDELXNAQ SEKCIQ CIFROWYH KLAWI[ 
+   eSLI wY NE IMEETE NAWYKA RABOTY S KLAWIATUROJ, LU^[E WWODITX ^ISLA NA \TOJ 
+   SEKCII.
+       sPRAWA NA PULXTE RASPOLOVENY 'UPRAWLQ@]IE KLAWI[I'.
+       
+      1.3 uSLOWNYE OBOZNA^ENIQ W TEKSTE RUKOWODSTWA.
+      
+      dLQ OBOZNA^ENIQ NAVIAEMYH KLAWI[ MY BUDEM UPOTREBLQTX IH NAZWANIQ BOLX-
+   [IMI BUKWAMI W UGLOWYH SKOBKAH, NAPRIMER <wlewo> - KLAWI[A, KOTORAQ PEREDWI-
+   GAET KURSOR (UKAZYWA@]IJ NA Q^EJKU TABLICY) NA ODNU KLETKU WLEWO. eSLI W UG-
+   LOWYH SKOBKAH DWA SLOWA UKAZANY ^EREZ KOSU@ ^ERTU, NAPRIMER <upr/c>, TO \TO
+   OZNA^AET, ^TO KLAWI[I DOLVNY BYTX NAVATY ODNOWREMENNO. pOSLEDOWATELXNOE NAVA-
+   TIE NESKOLXKIH KLAWI[ BUDEM OBOZNA^ATX ZAPISX@ <.....><.....><....>.
+      bOLX[IMI BUKWAMI W TEKKSTE MY BUDEM WYDELQTX MESTA, TREBU@]IE OT wAS OSO-
+   BOGO WNIMANIQ.
+      bUKWY I CIFRY, KOTORYE wam nado wwesti s klawiatury, W OTLI^IE OT SOOB]E-
+   NIJ PROGRAMMY, BUDEM POD^ERKIWATX. nAPRIMER:
+                   wWESTI KOORDINATY KLETKI: a1<wk>
+                                            -------
+      1.4 nAZNA^ENIE POLEJ I REVIMY RABOTY.
+      
+      pRI RABOTE UKCALC \KRAN RAZBIT NA POLQ - OBLASTI, KAVDAQ IZ KOTORYH IS-
+   POLXZUETSQ W OPREDELENNYH CELQH. pERWAQ SWERHU STROKA \KRANA I TRI LEWYH KO-
+   LONKI OBRAZU@T "RAMKU", KOTORAQ ISPOLXZUETSQ DLQ OBOZNA^ENIQ STROK I STOLB-
+   COW.
+      sTOLBCY UKAZYWA@TSQ ZAGLAWNYMI BUKWAMI LATINSKOGO ALFAWITA (A..Z), A STRO-
+   KI - ^ISLOM. pERWAQ STROKA IMEET NOMER 1, A NOMER POSLEDNEJ UKAZYWAETSQ PRI 
+   GENERACII PROGRAMMY.
+      22 -Q STROKA \KRANA ISPOLXZUETSQ SPECIALXNYM OBRAZOM:
+   - W NA^ALE STROKI SODERVITSQ INFORMACIQ O TOM, W KAKOJ POZICII NAHODITSQ KURSOR-
+   SOR, NAPRIMER w5 - KURSOR NAHODITSQ W KOLONKE "w" PQTOJ STROKI;
+   - SLEDU@]EE SLOWO POKAZYWAET TIP SODERVIMOGO KLETKI, W KOTOROJ SEJ^AS NAHO-
+   DITESX:
+   - "pUSTO" - Q^EJKA, W KOTOROJ wY NAHODITESX, PUSTA;
+   - "tEKST" - Q^EJKA, W KOTOROJ wY NAHODITESX, SODERVIT TEKSTOWU@ INFORMACI@;
+   - "fORMULA" - Q^EJKA SODERVIT FORMULU (SAMA FORMULA NAPISANA W POSLEDNEJ 
+   STROKE \KRANA, TOGDA KAK SAMA Q^EJKA OBY^NO SODERVIT TOLXKO WY^ISLENNOE ZNA-
+   ^ENIE);
+   - "~ISLO" - Q^EJKA SODERVIT ^ISLO, ^ISLO W NAU^NOJ NOTACII SO WSEMI ZNA^A]I-
+   MI CIFRAMI POQWLQETSQ POSLE SOOB[ENIQ;
+   - SLOWO "fORMULY" W \TOJ VE STROKE ZNA^IT, ^TO PROGRAMMA NAHODITSQ W REVIME OT
+   OTOBRAVENIQ FORMUL, A NE REZULXTATOW, RAS^ITANNYH PO \TIM FORMULAM;
+   - SLOWO "aWTOMAT" W POSLEDNEJ POZICII \TOJ STROKI OZNA^AET, ^TO PROGRAMMA
+   NAHODITSQ W REVIME AWTOMATI^ESKOGO PERES^ETA PO SU]ESTWU@]IM FORMULAM.
+      pREDPOSLEDNQQ STROKA \KRANA PREDNAZNA^ENA DLQ WYWODA SOOB]ENIJ PROGRAMMY ^ELOWEKU
+   ^ELOWEKU. nAPRIMER, PRI NA^ALXNOM ZAPUSKE PROGRAMMY W NEJ POQWLQETSQ SOOB]E-
+   NIE: "nAVATX / DLQ POLU^ENIQ SPISKA KOMAND".
+      pOSLEDNQQ STROKA PREDNAZNA^ENA DLQ WWODA INFORMACII.
+      
+      1.5 kOMANDY. pROGRAMMY.
+      
+      wSE DEJSTWIQ PO REDAKTIROWANI@ SODERVIMOGO KLETOK TABLICY I UPRAWLENIE RA-
+   BOTOJ PROGRAMMY WYPOLNQETSQ S POMO]X@ PROSTYH SIMWOLXNYH KOMAND, WYZYWAEMYH
+   NAVATIEM ODNOJ-DWUH KLAWI[. iNFORMACIONNYE SOOB]ENIQ MOGUT POQWLQTXSQ W 
+   PREDPOSLEDNEJ STROKE \KRANA, KAK REAKCIQ NA KOMANDU, ILI O[IBO^NYE DEJSTWIQ.
+      sPISOK KOMAND MOVNO POLU^ITX NA \KRANE, NAVAW KLAWI[U </> W OTMET NA PRI-
+   GLA[ENIE: "nAVATX / DLQ POLU^ENIQ SPISKA KOMAND".
+   
+                            2. perwye {agi
+                           ----------------
+       2.1 wYZOW \LEKTRONNOJ TABLICY.
+       zAGRUZITE OPERACIONNU@ SISTEMU. nA WA[EM DISKE DOLVEN NAHODITXSQ FAJL
+   UKCALC.SAV, SODERVA]IJ PROGRAMMU UPRAWLENIQ \LEKTRONNOJ TABLICEJ, W DALXNEJ-
+   [EM |t.
+       wYZOWITE |t KOMANDOJ:
+   RU UKCALC <wk> (ESLI PROGRAMMA NAHODITSQ NA RABO^EM DISKE)
+  -----------
+                       ILI
+   R UKCALC <wk> (ESLI PROGRAMMA NAHODITSQ NA SISTEMNOM DISKE)
+   nA \KRANE POQWITSQ IZOBRAVENIE PUSTOJ TABLICY:
+         A         B         C         D          E         F         G    
+   1
+   2
+   3
+   ...
+   19
+   20
+   A1 pUSTO                                                          aWTOM
+   nAVATX / DLQ POLU^ENIQ SPISKA KOMAND
+   
+      2.2  pEREME]ENIE KURSORA PO TABICE.
+      oDNIM IZ WAVNEJ[IH SWOJSTW |t QWLQETSQ WOZMOVNOSTX DOSTATO^NO BYSTRO SDE-
+  LATX L@BOE MESTO TABLICY (TO^NEE L@BU@ KLETKU) "TEKU]EJ".
+      pODWESTI KURSOR K VELAEMOJ KLETKE MOVNO S POMO]X@ KOMAND <wlewo>,<wprawo>,
+  <wwerh>,<wniz>.
+      zAMETIM, ^TO W LEWOM NIVNEM UGLU TABLICY POQWLQ@TSQ KOORDINATY KLETKI, T.E.
+  E. STOLBEC I STROKA, W KOTOROJ wY NAHODITESX.
+  
+      2.2.1  kOMANDA wlewo
+      kOMANDA (KLAWI[A) <wlewo> PEREME]AET KURSOR WLEWO NA ODNU KLETKU. eSLI 
+  KURSOR STOIT W PERWOJ KLETKE STROKI, TO ON NIKUDA NE PEREME]AETSQ.
+  
+      2.2.2  kOMANDA wprawo
+      kOMANDA (KLAWI[A) <wprawo> PERE ME]AET KURSOR NA ODNU LKETKU WPRAWO. eSLI
+  KURSOR UKAZYWAET NA POSLEDN@@ KLETKU W STROKE, TO ON PEREME]AETSQ W NA^ALO 
+  SLEDU@]EJ STROKI (ESLI TAKOWAQ ESTX).
+     
+      2.2.3  kOMANDA wwerh
+      kOMANDA (KLAWI[A) <wwerh> PEREME]AET KURSOR W TU VE KOLONKU PREDYDU]EJ 
+  STROKI.
+  
+      2.2.4 kOMANDA wniz
+      kOMANDA (KLAWI[A) <wniz> PEREME]AET KURSOR W TU VE KOLONKU SLEDU@]EJ 
+  STROKI (ESLI ONA ESTX).
+  
+      2.3 wWOD SODERVIMOGO Q^EJKI.
+      sLEDU@]IJ [AG - NAU^ITXSQ "WWODITX" SODERVIMOE KLETKI. w KAVDOJ KLETKE
+  \LEKTRONNOJ TABLICY MOVET BYTX INFORMACIQ TREH TIPOW:
+      - TEKST, \TO POQSNENIE K TOMU, ^TO NAHODITSQ W TABLICE: FAMILII, ZAGOLOW-
+  KI I T.D.;
+      - ^ISLA;
+      - FORMULY, OSNOWNOE PREIMU]ESTWO \LEKTRONNOJ TABLICY, PO SRAWNENI@ S 
+  OBYKNOWENNOJ TO ,^TO FORMULY WY^ISLQ@TSQ "AWTOMATI^ESKI" - PRI IZMENENII Q^EJ-
+  KI PEREWY^ISLQ@TSQ (I PEREPISYWA@TSQ NA \KRANE) WSE FORMULY, KOTORYE SSYLA@T-
+  SQ NA \TU Q^EJKU.
+      |t SAMAIRASPOZNAET ^TO wY WWELI. pOKA IDET WWOD SIMWOLOW W NIVNEJ STROKE
+  \KRANA, O[IBKI NABORA MOVNO ISPRAWITX, TAK VE, KAK wY DELAETE \TO W |KRANNOM
+  rEDAKTORE (PODROBNEE SMOTRI P. "rEDAKTIROWANIE STROKI."). zAMETIM, ^TO INFOR-
+  MACIQ WSEGDA NABIRAETSQ W NIVNEJ (RABO^EJ) STROKE \KRANA. fORMULY OBY^NO NE 
+  WYSWE^IWA@TSQ, W Q^EJKE - OTOBRAVAETSQ LI[X rezulxtat WY^ISLENIQ. dLQ OTOBRA-
+  VENIQ FORMUL W KLETKAH NADO |t PEREWESTI KOMANDOJ W SPECIALXNYJ REVIM. fORMU-
+  LA, PO UMOL^ANI@, WY^ISLQETSQ NEMEDLENNO, ESLI \TO NE OTMENENO SPECIALXNOJ 
+  KOMANDOJ, I ZAPOMINAET REZULXTAT W WIDE ~isla.
+      pOPROBUJTE ZAPOLNITX Q^EJKU. wWOD TEKSTA ILI FORMULY zakan~iwaetsq NAVATI-
+  EM KLAWI[I <wk>.
+  
+              2.4. pONQTIE SIMWOLXNOJ KOMANDY.
+              
+      mNOGIE OPERACII W |t WYPOLNQ@TSQ S POMO]X@ SIMWOLXNYH KOMAND, KOTORYE MOVNO-
+  NO NABIRATX POSLE NAVATIQ NA KLAWI[U </> W OTWET NA ZAPROS: "nAVATX / DLQ PO-
+  LU^ENIQ SPISKA KOMAND."
+  
+              2.5. wYHOD IZ REDAKTORA.
+              
+      dLQ WYHODA IZ |t NEOBHODIMO W OTWET NA SOOB]ENIE: "nAVATX / DLQ POLU^ENIQ
+  SPISKA KOMAND." NAVATX KLAWI[U </> I, DALEE, W SOOTWETSTWII SO SPIS4KOM KO-
+  MAND, POQWIW[EMSQ NA \KRANE: "tABL, fORMAT, uDAL, pEREJTI, kOLN, sTR, rED, 
+  dOPL, aWTO, wYHOD" NABRATX PERWU@ BUKWU REVIMA "wYHOD" <w>. nA \KRANE POQWIT-
+  SQ SOOB]ENIE: "sOHRANITX ZNA^ENIQ TEKU]EJ TABLICY?", OTWE^ATX NA KOTOROE NADO
+  NAVATIEM KLAWI[ <Y>, <N>.
+  
+              3. rEDAKTIROWANIE Q^EJKI.
+              
+              3.1. rEDAKTIROWANIE STROKI.
+              
+      |t PREDOSTAWLQET SREDSTWA, KOTORYE POZWOLQ@T REDAKTIROWATX KAK NABIRAEMU@
+  STROKU, TAK I UVE NABRANNU@ Q^EJKU. (dLQ REDAKTIROWANIQ UVE NABRANNOGO SODER-
+  VIMOGO KLETKI NADO WOSPOLXZOWATXSQ KOMANDOJ </> <r>.). pRI NABORE |t WEDET SEB-
+  BQ PO^TI TAK VE, KAK PROSTOJ TEKSTOWYJ REDAKTOR. nABIRAEMYE SIMWOLY "RAZDWIGA@T
+  @T" UVE NABRANNYJ TEKST. dLQ PEREME]ENIQ I REDAKTIROWANIQ TEKSTA MOVNO ISPOLX-
+  ZOWATX SLEDU@]IE KOMANDY:
+                <zb> - PRI NAVATII NA \TU KLAWI[U "ZABIWAETSQ", udalqetsq 
+                       predydu}ij simwol STROKI (ESLI ON ESTX).
+                <wlewo> - KURSOR PEREME]AETSQ NA predydu}ij simwol W STROKE
+                <wprawo> - KURSOR PEREME]AETSQ NA sledu`}ij simwol W STROKE
+                <udalitx> - udalqetsq SIMWOL nad kursorom
+                <wstawitx> - wstawlqetsq probel NAD KURSOROM, STROKA RAZDWIGAET-
+                             SQ.
+                             
+              3.2. zAWER[ITX WWOD (REDAKTIROWANIE) ZNA^ENIQ Q^EJKI.
+            
+      wSE WREMQ, POKA wY REDAKTIRUETE STROKU NELXZQ WYPOLNQTX FUNKCII RABOTY S
+  TABLICEJ, NAPRIMER, PEREMESTITXSQ W DRUGU@ KLETKU. dLQ TOGO, ^TOBY WERNUTXSQ
+  W REVIM TABLICY NEOBHODIMO NAVATX KLAWI[U <wk>.
+                     <wk> - zakan~iwaet redaktirowanie STROKI I PEREWODIT |t
+                            W REVIM RABOTY S TABLICEJ.
+      eSLI wY O[IBO^NO ISPORTILI SODERVIMOE NUVNOJ wAM KLETKI, NAPRIMER, NABRA-
+  LI ^ISLO POWERH O^ENX KRASIWOJ STROKI ZAGOLOWKA - NE OGOR^AJTESX, POKA wY NA-
+  HODITESX W REVIME WWODA MOVNO OTKAZATXSQ OT TEH IZMENENIJ, KOTORYE SDELANY 
+  TOLXKO ^TO, NAVAW 2 RAZA KLAWI[U <ar2>.
+     
+              3.3. pREKRATITX REDAKTIROWANIE.
+              
+              <ar2><ar2> - prekratitx REDAKTIROWANIE, I WERNUTXSQ K PEDYDU]EMU
+                           SODERVIMOMU Q^EJKI.
+                           
+              3.4. rEDAKTIROWANIE UVE ZAPOLNENNOJ KLETKI.
+              
+      o^ENX ^ASTO NEOBHODIMO OTREDAKTIROWATX UVE NABRANNU@ KLETKU, IZMENITX TE-
+  KST ILI FORMULU. dLQ \TOGO POSLE NAVATIQ </> WYBATX KOMANDU rED, NAVAW KLAWI-
+  [U <r>.
+          </><r> - PEREWODIT |t W REVIM REDAKTIROWANIQ TEKU]EJ Q^EJKI.
+      w NIVNEJ STROKE POQWITSQ SODERVIMOE KLETKI I wY MOVETE IZMENQTX STROKU 
+  TAK, KAK BUDTO ONA TOLXKO-^TO NABRANA.
+  
+              3.5. zADANIE [IRINY KLETKI.
+      tAKVE KAK I OBY^NU@ "BUMAVNU@" TABLICU, \LEKTRONNU@ TABLICU MOVNO RAZGRA-
+  FITX, ZADAW [IRINU KOLONKI. dLQ \TOGO NADO NABRATX:
+              -  </> - PEREJTI W REVIM KOMAND;
+              -  WYBRATX KOMANDU "kOLN" - REVIM RABOTY S KOLONKOJ (STOLBCOM)
+              -  IZ POQWIW[IHSQ KOMAND: "wSTAWITX, uDALITX, {IRINA", WYBRATX RE-
+                 VIM "{IRINA" I ZADATX [IRINU KOLONKI (STOLBCA).
+                 
+              3.6. formaty teksta.
+              3.6.1. zADANIE FORMATA.
+      
+      dLQ \TOGO NADO NABRATX:
+              -  </> - PEREJTI W REVIM KOMAND;
+              -  WYBRATX KOMANDU "fORMAT" - REVIM ZADANIQ FORMATA OTOBRAVENIQ
+                 STOLBCOM (^ASTI STOLBCA) ILI STROKI (^ASTI STROKI).
+              -  OTWETITX NA WOPROSY PROGRAMMY, SWQZANNYE S NASTROJKOJ FORMATA
+                 OTOBRAVENIQ, NAPRIMER:
+                    wWESTI KOORDINATY PERWOJ KLETKI DLQ FORMATIROWANIQ:
+                    a1
+                    wWESTI KOORDINATY POSLEDNEJ KLETKI DLQ FORMATIROWANIQ:
+                    a4
+                    wYRAWNIWANIE TEKSTA PO PRAWOMU KRA@ KLETKI?
+                    Y
+                    wYDELQTX POZICI@ TYSQ^ W ^ISLE ZAPQTOJ?
+                    N
+                    sKOLXKO CIFR UKAZYWATX POSLE ZAPQTOJ?
+                    5
+                    
+              3.7. pODSKAZKA.
+              
+       w L@BOJ MOMENT WREMENI MOVNO POLU^ITX KRATKU@ SPRAWO^NU@ INFORMACI@ O
+   KOMANDAH PO KOMANDE </>.
+    
+              3.8. pE^ATX TABLICY.
+              
+       rEZULXTATOM RABOTY |t QWLQETSQ PE^ATNYJ DOKUMENT. nAPE^ATATX TABLICU
+   (W FAJL ILI NA PE^ATA@]EM USTROJSTWE) MOVNO WOJDQ W REVIM KOMAND W "tABL",
+   A DALEE WYBRAW IZ O^EREDNOGO MEN@: "zAGRUZITX, sOHRANITX, pE^ATX, o^ISTITX"
+   REVIM "pE^ATX". a DALEE OTWETITX NA SLEDU@]IE WOPROSY:
+               wWESTI IMQ WYHODNOGO FAJLA ILI NAVATX <wk> DLQ PE^ATI NA BUMAGE.
+               {IRINA LISTA BUMAGI 132 SIMWOLA?
+               pE^ATATX \KRANNYJ BORD@R TABLICY?
+        tABLICA BUDET WYWEDENA W UKAZANNYJ FAJL. dLQ WYWODA NA PE^ATX NEOBHODI-
+   MO W KO^ESTWE IMENI FAJLA UKAZATX IMQ USTROJSTWA PE^ATI "LP:" I NAVATX <wk>.
+   
+              4. awtowy~islenie formul.
+              4.1. wKL@^ENIE/WYKL@^ENIE AWTOWY^ISLENIJ.
+              
+        kAVDYJ RAZ PRI IZMENENII SODERVIMOGO ^ISLOWOJ ILI FORMULXNOJ Q^EJKI, |t
+   PEREWY^ISLQET WSE FORMULY, KOTORYE POPADA@T NA \KRAN.
+        w \TOM SLU^AE, KOGDA FORMULY O^ENX SLOVNY WREMQ WY^ISLENIJ MOVET BYTX
+   BOLX[IM, ^TO ZATRUDNQET WWOD ^ISEL W "ESTESTWENNOM" TEMPE, W \TOM SLU^AE RE-
+   KOMENDUETSQ WYKL@^ITX REVIM AWTOWY^ISLENIJ KOMANDOJ </><a>.
+   
+              5. formuly.
+              5.1. aRIFMETI^ESKIE OPERACII.
+              
+         w |t FORMULY ZADA@TSQ W "ESTESTWENNOM" WIDE I ZADANIE PROSTYH FORMUL
+   OBY^NO NE SOSTAWLQET TRUDA. aRIFMETI^ESKIE OPERACII WKL@^A@T SLEDU@]IE DEJ-
+   STWIQ: * - UMNOVENIE
+          / - DELENIE
+          + - SLOVENIE
+          - - WY^ITANIE
+         sNA^ALA WYPOLNQ@TSQ OPERACII UMNOVENIQ, DELENIQ; POSLEDNIMI WYPOLNQ@T-
+   SQ OPERACII SLOVENIQ I WY^ITANIQ.
+         dLQ IZMENENIQ PORQDKA WY^ISLENIJ MOVNO ISPOLXZOWATX KRUGLYE SKOBKI "("
+   I ")".
+         nAPRIMER: 2+3*5  sNA^ALA WYPOLNITSQ UMNOVENIE 3 I 5, POTOM K REZULXTA-
+   TU PRIBAWITSQ 3 = 17
+                   2*(5+2)  REZULXTAT = 14
+                   
+              6. redaktirowanie tablicy.
+              6.1. sTIRANIE Q^EJKI.
+         
+         dLQ TOGO, ^TOBY STERETX Q^EJKU, DOSTATO^NO W TEKU]EJ Q^EJKE NAVATX KLAWI-
+   WI[Y </><u>.
+   
+              6.2. wSTAWKA/UDALENIE STROKI.
+             
+         dLQ WSTAWKI NOWOJ STROKI W \LEKTRONNU@ TABLICU NEOBHODIMO NAVATX KLAWI-
+   [U </>, WYBRATX KOMANDU "sTR", NAVAW KLAWI[U <s> I WYBRATX ODINIZ REVIMOW 
+   "wSTAWITX, uDALITX".
+   
+              6.3. wSTAWKA/UDALENIE STOLBCOW.
+         
+         dLQ WSTAWKI NOWOGO STOLBCA W \LEKTRONNU@ TABLICU NEOBHODIMO NAVATX KLAWI[U-
+  WI[U </>, WYBRATX KOMANDU "kOLN", NAVAW KLAWI[U <k> I WYBRATX ODIN IZ REVIMOW
+  "wSTAWITX, uDALITX, {IRINA".
+  
+              7. komandy, soob}eniq i dejstwiq.
+              
+         pOSLE PEREHODA W KOMANDNYJ REVIM (PRI NAVATII KLAWI[I </> NA \KRANE 
+  POQWLQETSQ STROKA S IMENAMI WOZMOVNYH KOMAND:
+    "tABL, fORMAT, uDAL, pEREJTI, kOLN, sTR, rED, dOPL, aWTO, wYHOD"
+         wOZMOVNYE WARIANTY RABOTY.
+           kOMANDA t (RABOTY S TABLICAMI):
+         zAGRUZITX, sOHRANITX, pE^ATX, o^ISTITX
+           kOMANDA  z (ZAGRUZITX TABLICU IZ FAJLA NA DISKE)
+         sOHRANITX ZNA^ENIQ TEKU]EJ TABLICY? (Y/N)
+         wWESTI IMQ FAJLA.
+           kOMANDA s (sOHRANITX SODERVIMOE TEKU]EJ TABLICY W FAJLE NA DISKE):
+         wWESTI IMQ FAJLA.
+           kOMANDA p (pE^ATX TEKU]EJ TABLICY, ILI SOHRANENIE EE W SIMWOLXNOM 
+         WIDE W FAJLE NA DISKE):
+         wWESTI IMQ WYHODNOGO FAJLA ILI NAVATX <wk> DLQ PE^ATI NA BUMAGE.
+         {IRINA LISTA BUMAGI 132 SIMWOLA?
+         pE^ATATX \KRANNYJ BORD@R TABLICY?
+           kOMANDA o (o^ISTITX TEKU]U@ TABLICU):
+         sOHRANITX ZNA^ENIQ TEKU]EJ TABLICY?
+           kOMANDA f (zADATX FORMAT OTOBRAVENIQ ZNA^ENIQ KLETOK):
+         wWESTI KOORDINATY PERWOJ KLETKI DLQ FORMATIROWANIQ:
+         wWESTI KOORDINATY POSLEDNEJ KLETKI DLQ FORMATIROWANIQ:
+         wYRAWNIWANIE TEKSTA PO PRAWOMU KRA@ KLETKI?
+         wYDELQTX POZICI@ TYSQ^ W ^ISLE ZAPQTOJ?
+         sKOLXKO CIFR UKAZYWATX POSLE ZAPQTOJ?
+           kOMANDA u (uDALITX ZNA^ENIE TEKU]EJ KLETKI)
+           kOMANDA p (pEREJTI K KAKOJ-TO KLETKE)
+         wWESTI KOORDINATY KLETKI
+           kOMANDA k - RABOTA S KOLONKAMI (STOLBCAMI TABLICY):
+         wSTAWITX uDALITX {IRINA
+                   w - WSTAWITX NOWU@ KOLONKU
+                   u - UDALITX KOLONKU
+                   { - ZADATX [IRINU STOLBCA
+                       WWESTI NOWU@ [IRINU STOLBCA
+           kOMANDA r rEDAKTIROWANIE STAROGO ZNA^ENIQ KLETKI (INA^E PROSTO WWOD)
+           kOMANDA d (dOPOLNITELXNYE WOZMOVNOSTI)
+         wY^ISLITX fORMUL OTOBRAVENIE
+           kOMANDA w (wYHOD)
+         sOHRANITX ZNA^ENIQ TEKU]EJ TABLICY?
+         
+          8. zapusk |lektronnoj tablicy s pomo}x` spo saturn na rmu
+          
+       pROGRAMMA RABOTY S \LEKTRONNYMI TABLICAMI CALC ISPOLXZUET STANDARTNYE                      
+   NAZNA^ENIQ FUNKCIONALXNYH KLAWI[ k1-k5, USTANAWLIWAEMYE PROGRAMMOJ KEY.
+   ~TOBY ZAPUSTITX PROGRAMMU CALC NA rmu S POMO]X@ spo saturn NEOBHODIMO DO
+   NA^ALA RABOTY PERENAZNA^ITX FUNKCIONALXNYE KLAWI[I. dLQ \TOGO NUVNO NA BAZE
+   SU]ESTWU@]EGO STORTOWOGO FAJLA STARTS.COM SOZDATX NOWYJ KOMANDNYJ FAJL, NA-
+   PRIMER, KEY.COM, KOTORYJ WYGLQDIT SLEDU@]IM OBRAZOM:
+                          ASS VC2:DK:
+                          RUN DK:KEY
+                          K1=<033><146>
+                          K2=<033><144>
+                          K3=<033><145>
+                          K4=<033><120>
+                          K5=<033><122>
+                          K6=<033><121>
+                          K7=<033><146><033><123>
+                          ^C
+      sOZDANNYJ KOMANDNYJ FAJL KEY.COM DOLVEN BYTX ZAPISAN NA TOT DISK, GDE RAZME]AET
+  ME]AETSQ ps "|LEKTRONNYE TABLICY".
+      ~TOBY ZAPUSTITX PROGRAMMU CALC NA rmu, NUVNO WYPOLNITX SLEDU@]U@ POSLEDO-
+  WATELXNOSTX DEJSTWIJ:
+      1. sOZDATX I ZAPISATX NA DISK S ps "|LEKTRONNYE TABLICY" KOMANDNYJ FAJL
+  KEY.COM.
+      2. uSTANOWITX DISK 1 S spo saturn W NAKOPITELX MZ0:, A DISK S ps "|LEK-
+  TRONNYE TABLICY" W NAKOPITELX MZ1:.
+      3. wYPOLNITX ZAGRUZKU os RT-11 NA rmu. pRI USPE[NOM ZAWER[ENII NA \KRANE
+  MONITORA rmu DOLVNA POQWITXSQ PODSKAZKA VC0>.
+      4. wWESTI KOMANDU ASS VC2: DK: DLQ NAZNA^ENIQ W KA^ESTWE RABO^EGO USTROJ-
+  STWA rmu VC2.
+      5. wWESTI KOMANDU @KEY DLQ WYZOWA S USTROJSTWA MZ1: I ZAPUSKA PROGRAMMY 
+  NAZNA^ENIQ KLAWI[ k1-k5.
+      6. wESTI NA rmu KOMANDU RUN CALC DLQ ZAPUSKA PROGRAMMY RABOTY S \LEKTRON-
+  NYMI TABLICAMI.
+      eSLI PROGRAMME CALC NE HWATAET OPERATIWNOJ PAMQTI DLQ ZAGRUZKI \LEKTRON-
+  NOJ TABLICY, TO MOVNO WOSPOLXZOWATXSQ SLEDU@]IMI REKOMENDACIQMI:
+      uWELI^ITX OB_EM PAMQTI MOVNO ZA S^ET UDALENIQ RADAKTORA KOMANDNOJ STROKI,
+  ^TO NE NARU[IT FUNKCIONIROWANIQ os, HOTQ ZNA^ITELXNO SNIZIT UDOBSTWO W RABOTE.
+      dLQ \TOGO WWOITSQ POSLEDOWATELXNOSTX KOMAND , PRI WYPOLNENII KOTORYH IZ
+  PAMQTI WYGRUVAETSQ DRAJWER SL.SYS (REDAKTOR KOMANDNOJ STROKI):
+                               SET SL OFF
+                               UNLO SL (\TA KOMANDA NE OBQZATELXNA)
+      ~TOBY UZNATX RASPREDELENIE OPERATIWNOJ PAMQTI I OPREDELITX RAZMER DOSTUP-
+  NOJ POLXZOWATEL@ SWOBODNOJ PAMQTI, MOVNO WOSPOLXZOWATXSQ KOMANDOJ SH M.
+      pRIMER WYDA^I INFORMACII NA \TU KOMANDU:
+      
+                                              VC0>SET SL OFF
+                                              VC0>UNLO SL                                              
+     VC0>SH M                                 VC0>SH M
+   Address     Module     Words             Address      Module      Words
+  -------------------------------          --------------------------------
+   160000     IOPAGE      4096               160000     IOPAGE       4096
+   150000     MEMTOR      2048               150000     MEMTOR       2048
+   146422     VC          375                146422     VC           375
+   135116     RMON        2402               135116     RMON         2402
+   127220     SL          1503               117154     USR          2441
+   117154     USR         2066               001000     ..BG..       21150
+   001000    ..BG..       20022
+                                              VC0>
+    VC0>
+     rAZMER DOSTUPNOJ SWOBODNOJ PAMQTI UWELI^ILSQ S 20022 DO 21150 SLOW. eSLI
+  \TOGO WSE VE NE DOSTATO^NO, MOVNO POPROBOWATX PEREOPREDELITX OBLASTX SWOPINGA
+  KOMANDOJ SET USR SWAP.
+                                              
+                                                               
+                  
+          
+          
+                            
+                                                               
+                                                        
+                    
+                                                                             
+                                         
+                                                                                                
+                                
+          
+      
+                     
+                                                                  
+                                                
+                                                   
+         
+                                                                                                                                                                  

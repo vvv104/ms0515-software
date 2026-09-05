@@ -1,0 +1,559 @@
+.TOC
+.STL
+.TTL
+
+tehnologi~eskij kompleks
+r t k   m i k r o
+sredstwa generacii dokumentow
+rukowodstwo operatora
+
+
+
+
+
+
+
+
+1988
+
+.MID annotaciq
+.LIN 3
+w dannom dokumente opisany sredstwa podgotowki i pe~ati dokumentow,
+wkl`~a`}ie redaktor {ablonow dokumentow i |krannyh form i generator
+dokumentow.
+.CPT nazna~enie i uslowiq primeneniq programmy
+.LIN 0
+sredstwa generacii dokumentow  prednazna~eny dlq sozdaniq w dialogowom
+revime dokumentow razli~nogo wida {irinoj do 156 simwolow i sodervat:
+.LIN 1
+- redaktor {ablonow dokumentow;
+.LIN 0
+- gEnerator dokumentow (sm. relqcionnaq subd dlq mikro-|wm,
+rukowodstwo operatora).
+.LIN 1
+otli~itelxnoj osobennostx` dannyh sredstw generacii qwlqetsq wozmovnostx
+ispolxzowaniq w dokumentah informacii iz bazy dannyh.
+.HLV 1
+redaktor {ablonow dokumentow
+.HLV 2
+nazna~enie
+.LIN
+redaktor EDDOC prednazna~en dlq wwoda i redaktirowaniq w dialogowom
+revime {ablonow dokumentow {irinoj do 156 simwolow s posledu`}im wywodom
+ih generatorom dokumentow na wne{nie ustrojstwa.
+.HLV 2
+okna {ablona
+.LIN
+{ablon dokumenta movet sodervatx izmenqemu` ~astx - okna,
+kotorye wydelq`tsq navatiem funkcionalxnoj klawi{i "wydelenie okna".
+koli~estwo navatij klawi{i "wydelenie okna" opredelqet {irinu okna {ablona,
+kotoroe na |krane displeq otobravaetsq posledowatelxnostx` simwolow "#".
+.LIN 0
+informaciq, pome}aemaq w okna, wwoditsq s klawiatury displeq ili wybiraetsq
+iz bazy dannyh na |tape generacii dokumentow.
+.TES 10
+.BLN
+su}estwuet ~etyre tipa okon:
+.LIN
+.TBL tip okna "d"
+zapolnqetsq polxzowatelem w dialogowom
+revime;
+.LIN
+.TBL tip okna "b"
+zapolnqetsq informaciej iz bazy dannyh;
+.LIN
+.TBL tip okna "n"
+prednazna~en dlq numeracii wywodimyh zapisej iz bazy dannyh;
+.LIN
+.TBL tip okna "f"
+sodervit rezulxtat wy~isleniq arifmeti~eskih
+wyravenij nad dannymi i bazy dannyh.
+.HLV 2
+powtorqemyj fragment {ablona
+.LIN
+esli {ablon sodervit informaci` iz bazy dannyh i nekotoru` ~astx ego
+trebuetsq powtoritx dlq wseh aktiwnyh zapisej bazy dannyh (sm.
+relqcionnaq subd dlq mikro-|wm, rukowodstwo operatora),
+to |ta ~astx {ablona zakl`~aetsq w
+uprawlq`}ie stroki: "(#" - w na~ale i "#)" - w konce. takoj fragment
+nazywaetsq powtorqemym fragmentom {ablona, naprimer:
+.TES 7
+.SWT
+        ------------------------------
+        !  N  !  familiq  !  premiq  !
+        ------------------------------
+        (#
+        !#####!###########!##########!
+        #)
+.LIN
+esli {ablon sodervit okna tipa "b" ili "n", to oni obqzatelxno whodqt
+w sostaw powtorqemogo fragmenta {ablona.
+.LIN 1
+opredeleny dwa tipa powtorqemogo fragmenta {ablona:
+.AND
+powtorqemyj fragment {ablona s perenosom;
+.AND 0
+powtorqemyj fragment {ablona s obrezaniem.
+.LIN 1
+esli wywodimyj tekst w okna ne pome}aetsq, a ego trebuetsq nape~atatx
+polnostx`, to ispolxzuetsq powtorqemyj fragment
+{ablona s perenosom. on w tekste
+wydelqetsq funkcionalxnymi strokami: "(#" - w na~ale i "#)" - w konce.
+wtoroj tip powtorqemogo fragmenta {ablona w tekste wydelqetsq funkcionalxnymi
+strokami: "(#o" - w na~ale i "#)" - w konce.
+.LIN 0
+dokument movet pe~atatxsq listami. dlq togo, ~toby w na~ale kavdogo lista
+pe~atalasx {apka dokumenta, tekst w dokumente zakl`~aetsq w uprawlq`}ie stroki
+"(#{" - w na~ale i "#)" - w konce.
+.LIN 0
+esli nekotoryj fragment teksta neobhodimo pe~atatx w konce kavdogo
+lista, to on zakl`~aetsq w uprawlq`}ie stroki "(#k" - w na~ale i "#)" -
+w konce.
+.TES 10
+.SWT
+   (#{
+   --------------------------------------------------
+   !  N  !    familiq    !  god rovdeniq  !  oklad  !
+   --------------------------------------------------
+   #)
+   (#k
+   --------------------------------------------------
+   #)
+   (#
+   !#####!###############!################!#########!
+   #)
+.HLV 2
+{irina dokumenta
+.LIN
+redaktor pozwolqet wwoditx i redaktirowatx {ablony dokumentow {irinoj do
+156 simwolow.
+.LIN 0
+esli {irina dokumenta prewy{aet {irinu |krana, to
+wywod na |kran lewyh i prawyh 80 pozicij dokumenta osu}estwlqetsq
+po navati` funkcionalxnyh klawi{ "lewyj |kran" i "prawyj |kran".
+.HLV 1
+generator dokumentow
+.HLV 2
+nazna~enie
+.LIN
+generator dokumentow prednazna~en dlq wywoda na pe~atx (terminal,
+magnitnyj disk) dokumentow po predwaritelxno podgotowlennomu redaktorom
+dokumentow {ablonu.
+.LIN 0
+generator dokumentow wstroen w programmu poiska relqcionnoj subd RETRDB
+i polu~aet uprawlenie po komande "pd" (sm. relqcionnaq
+subd dlq mikro-|wm, rukowodstwo operatora).
+.CPT obra}enie k programme
+.HLV 1
+shema raboty redaktora
+.LIN
+wyzow redaktora {ablonow EDDOC s sistemnogo ustrojstwa osu}estwlqetsq
+komandoj
+.SWT
+                .R EDDOC
+.BLN
+redaktor zapra{iwaet imq whodnogo fajla:
+.SWT
+                whodnoj fajl? <imq fajla>
+.BLN
+gde <imq fajla> - wwodimoe s klawiatury displeq imq redaktiruemogo fajla.
+.LIN 0
+pri navatii klawi{i "wk" redaktor zanowo sozdaet fajl.
+.LIN 0
+posle zadaniq imeni whodnogo fajla zapra{iwaetsq imq wyhodnogo fajla:
+.SWT
+                wyhodnoj fajl? <imq fajla>
+.BLN
+po navati` klawi{i "wk" imeni wyhodnogo fajla priswaiwaetsq imq whodnogo.
+esli pri |tom imq whodnogo fajla ne bylo zadano, to wydaetsq wersiq programmy
+i zaprosy na wwod imen fajlow powtorq`tsq.
+.LIN 0
+pri sozdanii fajla redaktor zapra{iwaet
+{irinu dokumenta:
+.SWT
+                {irina dokumenta?
+.LIN
+esli whodnoj fajl ne najden, wydaetsq soob}enie:
+.SWT
+                fajl ne najden
+.BLN
+i powtorno zapra{iwaetsq imq whodnogo fajla.
+.LIN 0
+pri zadanii imeni whodnogo fajla dopuskaetsq ispolxzowanie kl`~a
+/R. |tot kl`~ neobhodim pri rabote redaktora na terminalah, w kotoryh
+otsutstwuet sdwig |krana wniz (naprimer, wta 2000-30). esli kl`~
+/R zadan, to sdwig |krana wniz modeliruetsq perewywodom informacii
+na |krane.
+.LIN 0
+redaktor sozdaet po umol~ani` wyhodnoj
+fajl s ras{ireniqmi .TXD.
+.LIN 0
+pri redaktirowanii uve sozdannogo {ablona fajl s~itywaetsq w operatiwnu`
+pamqtx i na |kran displeq wywodqtsq perwye 23 stroki teksta {ablona.
+.LIN 0
+pri sozdanii nowogo fajla |kran gasitsq i wypolnqetsq wwod teksta.
+.LIN 0
+poziciq wwoda i redaktirowaniq opredelqetsq poloveniem markera.
+.LIN 0
+pri redaktirowanii sozdannogo teksta {ablona blokiruetsq razdelenie
+odnogo okna na dwa i sliqnie dwuh okon w odno.
+.LIN 0
+posle sozdaniq teksta {ablona navatiem klawi{i "opisanie okon"
+osu}estwlqetsq posledowatelxnoe opredelenie wseh okon {ablona,
+pri redaktirowanii - tolxko wnowx sozdannyh.
+.LIN 0
+redaktor pozwolqet pereopisywatx okna s sohraneniem teksta {ablona.
+po|tomu posle opisaniq okon zapra{iwaetsq:
+.SWT
+        budete korrektirowatx opisanie okon(d/n)?
+.LIN
+pri otricatelxnom otwete {ablon zapisywaetsq na wne{nij nositelx.
+.LIN 0
+pri utwerditelxnom otwete redaktor wyhodit na revim korrektirowki opisaniq
+okon. dlq pereopisaniq okna neobhodimo podwesti kursor k nuvnomu
+oknu i navatx klawi{u "pereopisanie okna". pri |tom prevnee opisanie
+okna udalqetsq i redaktor wyhodit na ego pereopisanie.
+.LIN 0
+wyhod iz revima "korrektirowki i opisaniq okon" osu}estwlqetsq
+navatiem klawi{i "opisanie okon". posle |togo redaktor powtorno
+zapra{iwaet neobhodimostx korrektirowki opisaniq okon.
+.HLV 1
+funkcionalxnye klawi{i redaktora
+.LIN
+dlq raboty s redaktorom EDDOC ispolxzu`tsq funkcionalxnye klawi{i,
+kotorye w tekste dannogo dokumenta predstawleny wzqtymi w kawy~ki
+imenami, naprimer "strelka wwerh". sootwetstwu`}ie  im  konkretnye
+klawi{i displeq priwedeny w prilovenii,  pri  |tom  rqd  dejstwij
+zadaetsq posledowatelxnym navatiem dwuh klawi{.
+.LIN 0
+krome togo funkcionalxnye klawi{i produblirowanny alfawitnymi
+klawi{ami, navimaemymi sowmestno s  uprawlq`}ej  klabi{ej  "CTRL"
+(na nekotoryh tipah displeew |ta klawi{a  obozna~aetsq  kak  "su",
+"us", "sluv.kod"), |to pozwolqet ispolxzowatx redaktor EDDOC bez
+perenastrojki
+pod konkretnye kody klawiatury na bolx{instwe tipow displeew.
+.LIN 2
+funkcionalxnye klawi{i:
+.LIN
+.TBL "strelka wwerh"
+pereme}enie markera na odnu stroku wwerh. pri polovenii
+markera w wwerhnej stroke tekst na |krane sdwigaetsq na
+odnu stroku wniz i w werhn`` stroku wywoditsq predydu}qq
+stroka teksta;
+.TBL "strelka wniz"
+pereme}enie markera na odnu stroku wniz. pri
+polovenii markera w nivnej stroke tekst  na
+|krane sdwigaetsq na odnu stroku wwerh i w nivn``
+stroku wywoditsq sledu`}aq stroka teksta;
+.TBL "strelka wprawo"
+pereme}enie markera na odnu pozici`  po  stroke wprawo;
+.TBL "strelka wlewo"
+pereme}enie markera na odnu pozici` po stroke wlewo;
+.TBL "wstawitx stroku"
+wstawka pustoj stroki;
+.TBL "udalitx stroku"
+udalenie teku}ej stroki;
+.TBL "wstawitx simwol"
+wstawka probela. simwoly sprawa ot markera sdwiga`tsq wprawo na 1
+.TBL "udalitx simwol"
+udalenie teku}ego simwola
+.TBL "w na~alo stroki"
+pereme}enie markera w na~alo teku}ej stroki |krana;
+.TBL "w konec stroki"
+pereme}enie markera w konec teku}ej stroki |krana;
+.TBL "dublx stroki"
+dublirowanie predydu}ej stroki;
+.TBL "ps"
+konec stroki teksta. pereme}enie markera w na~alo sledu`}ej stroki;
+.TBL "zaboj"
+udalenie simwola pered markerom;
+.TBL "w na~alo {ablona"
+wyhod w na~alo {ablona;
+.TBL "w konec {ablona"
+wyhod w konec {ablona;
+.TBL "lewyj |kran"
+perekl`~enie na lewye 80 pozicij teksta {ablona;
+.TBL "prawyj |kran"
+perekl`~enie na prawye 80 pozicij teksta {ablona;
+.TBL "wydelenie okna"
+wydelenie okna;
+.TBL "opisanie okon"
+perehod k revimu opisaniq okon;
+.TBL "pereopisanie okna"
+wyhod na pereopisanie okna;
+.TBL "wk"
+zawer{enie wwoda komand, sbros diagnostik.
+.TBL "perenos formata stranicy"
+priznak pe~ati teksta {ablona so sledu`}ej stranicy.
+.LIN
+.ATT prime~anie.
+.LIN 0
+klawi{a "dublx stroki" pri redaktirowanii ranee sozdannogo
+{ablona ne otrabatywaetsq.
+.HLV
+opisanie okon {ablona
+.LIN
+po navatii klawi{i "opisanie okon" wypolnqetsq opisanie
+okon {ablona. |kran gasitsq i wydaetsq zapros:
+.SWT
+        budete rabotatx s bazoj dannyh (d/n)?
+.LIN
+pri rabote s ranee sozdannym {ablonom, soderva}im opisanie bd
+zapros na rabotu s bazoj dannyh otsutstwuet.
+.BLN
+pri utwerditelxnom otwete redaktor zapra{iwaet imq bazy
+dannyh:
+.SWT
+        imq bazy dannyh? <imq>
+.LIN
+esli pri sozdanii {ablona imq bazy dannyh zadano newerno, na |kran wydaetsq
+soob}enie:
+.SWT
+        baza dannyh ne najdena
+.BLN
+i powtorno zapra{iwaetsq  imq bazy dannyh.
+.LIN 0
+pri rabote s ranee sozdannym {ablonom, soderva}im opisanie bazy
+dannyh, w slu~ae ne sootwetstwiq ego
+ispolxzuemoj bazoj dannyh
+wydaetsq soob}enie:
+.SWT
+       inicializiruemaq bd ne sootwetstwuet ispolxzuemoj
+       bd w {ablone
+.BLN
+i redaktor zapra{iwaet:
+.SWT
+       perepisanie wseh okon s inicializiruemoj bd (d/n)?
+.LIN
+pri otricatelxnom otwete powtorno zapra{iwaetsq imq bazy dannyh.
+.LIN 0
+pri utwerditelxnom - redaktor wyhodit w revim sozdaniq
+{ablona s pereopisaniem wseh okon.
+.LIN 0
+esli baza dannyh za}i}ena parolem, redaktor zapra{iwaet:
+.SWT
+        parolx?
+.BLN
+pri prawilxnom wwode parolq
+|kran gasitsq i wywoditsq perwaq 21 stroka {ablona.
+22-q i 23-q stroki |krana displeq wydelq`tsq pod dialog polxzowatelq
+s redaktorom.
+.LIN 0
+proishodit posledowatelxnoe opisanie okon {ablona. okno, opisanie kotorogo
+wypolnqetsq w teku}ij moment, wydelqetsq simwolami "$".
+.LIN 0
+w stroke dialoga redaktor zapra{iwaet:
+.SWT
+        tip okna (b/d/n/f)?
+.LIN
+esli okno opredeleno polxzowatelem kak tip "d", redaktor w dialogowoj
+stroke zapra{iwaet:
+.SWT
+        tekst zaprosa?
+.BLN
+|tot zapros w dalxnej{em budet wydawatxsq na |kran pri generacii dokumentow
+dlq wwoda zna~eniq okna.
+.LIN 0
+esli polxzowatelx ne budet rabotatx s bazoj dannyh, zapros na tip okna
+otsutstwuet.
+.LIN 0
+esli okno opredeleno kak tip  "b", redaktor zapra{iwaet:
+.SWT
+        imq stolbca bazy dannyh?
+.BLN
+i w toj ve stroke posle zaprosa wywodit na |kran imq perwogo stolbca bazy
+dannyh.
+.LIN 0
+imena stolbcow movno prosmatriwatx w revime "rolika". navatiem funkcionalxnoj
+klawi{i "strelka wniz" w dialogowoj stroke wywodqtsq imena stolbcow, sledu`}ie
+po porqdku wozrastaniq ih nomerow. navatiem klawi{i "strelka wwerh" imena
+stolbcow wywodqtsq w obratnom porqdke.
+.LIN 0
+navatiem klawi{i "wk" polxzowatelx opredelqet stolbec, iz kotorogo
+budet zapolnqtxsq sootwetstwu`}ee okno. esli wybrannyj stolbec
+imeet we}estwennyj tip, to zapra{iwaetsq format wywoda:
+.SWT
+   ~islo wywoditsq w formate s fiksirowannoj to~koj (d/n)?
+.BLN
+i w slu~ae ispolxzowaniq formata s fiksirowannoj to~koj zapra{iwaetsq
+~islo cifr, wywodimyh posle to~ki:
+.SWT
+        ~islo cifr posle to~ki?
+.LIN
+w powtorqemom fragmente {ablona su}estwuet wozmovnostx w neskolxkih oknah
+pome}atx
+informaci` iz odnogo i togo ve stolbca. esli pome}aemaq w okno informaciq
+qwlqetsq prodolveniem rannee opredelennogo okna, to posle wybora imeni
+stolbca navatiem klawi{i "wk" redaktor zapra{iwaet:
+.SWT
+        okno perenosimoe (d/n)?
+.LIN
+esli okno opredelqetsq kak tip "f", to na zapros:
+.SWT
+        wyravenie?
+.BLN
+s klawiatury wwoditsq arifmeti~eskoe wyravenie, rezulxtat kotorogo
+pome}aetsq w okno.
+.LIN 0
+arifmeti~eskoe wyravenie zadaetsq w tradicionnoj forme zapisi (skobo~noe,
+prioritetnoe).
+.LIN 0
+arifmeti~eskoe wyravenie dopuskaet arifmeti~eskie operacii "+", "-", "*",
+"/". operandami arifmeti~eskogo wyraveniq qwlq`tsq:
+.LIN
+celye i we}estwennye konstanty, naprimer:
+.SWT
+                1, 2, 3.45, 0.01
+.LIN
+stolbec, zadawaemyj nomerom, naprimer:
+.SWT
+                #1, #3
+.BLN
+gde # - priznak stolbca. w arifmeti~eskom wyravenii ispolxzu`tsq tolxko
+~islowye tipy stolbcow;
+.LIN
+funkcii nad stolbcami bazy dannyh.
+.LIN 0
+argumentom funkcii qwlqetsq arifmeti~eskoe
+wyravenie. dopustimy sledu`}ie funkcii:
+.TBL sum
+funkciq summirowaniq. dlq kavdoj aktiwnoj zapisi wy~islqet zna~enie zadannogo
+w ka~estwe argumenta funkcii wyraveniq i wypolnqet summirowanie |tih
+zna~enij po wsem aktiwnym zapisqm. w ~astnom slu~ae pozwolqet wy~islitx
+summu zna~enij stolbca, naprimer:
+.SWT
+                  sum(#1), sum(#1+#2)
+.TBL sr
+funkciq wy~isleniq srednego. dlq kavdoj aktiwnoj zapisi wy~islqet zna~enie
+zadannogo w ka~estwe argumenta funkcii wyraveniq i wy~islqet srednee ot
+|tih zna~enij, naprimer:
+.SWT
+                  sr(#5), sr(#2/10)
+.TBL min
+funkciq wy~isleniq minimuma. dlq kavdoj aktiwnoj zapisi wy~islqet zna~enie
+zadannogo w ka~estwe argumenta funkcii wyraveniq i nahodit minimalxnoe
+zna~enie sredi |tih zna~enij, naprimer:
+.SWT
+                  min(#3)
+.TBL mak
+funkciq wy~isleniq maksimuma. dlq kavdoj aktiwnoj zapisi wy~islqet zna~enie
+zadannogo w ka~estwe argumenta funkcii wyraveniq i nahodit maksimalxnoe
+zna~enie sredi |tih zna~enij;
+.TBL ~az
+funkciq wy~isleniq ~isla aktiwnyh zapisej,
+.LIN 0
+naprimer:
+.SWT
+        dopustim, ~to ~islo aktiwnyh zapisej w baze dannyh
+        rawno 10. togda pri zapisi w wyravenie funkcii ~az
+        ona primet zna~enie 10.
+.LIN
+primer arifmeti~eskogo wyraveniq:
+.SWT
+                (1+#2-3*5.4)/6
+.LIN
+specialxnaq operaciq "-" priswaiwaet zna~enie wyraveniq, stoq}ego sprawa
+ot znaka operacii, stolbcu teku}ej zapisi, nomer kotorogo ukazan slewa
+ot znaka operacii (operaciq "-" ispolxzuetsq tolxko dlq programmy poiska
+RETRDB).
+.LIN 0
+esli wyravenie sodervit o{ibki, to na |kran wydaetsq diagnosti~eskoe soob}enie
+i powtorqetsq zapros na wwod wyraveniq.
+.LIN 0
+naprimer:
+.SWT
+                wyravenie? #2*0.5+#3
+
+                wyravenie? sum(#3)
+.LIN
+esli rezulxtat wy~islenij imeet we}estwennyj tip, to
+zapra{iwaesq forma wywoda rezulxtata, kak i w slu~ae opredeleniq okna
+tipa "b".
+.LIN 0
+rezulxtat wy~isleniq wyraveniq zanositsq w okno pri generacii dokumenta.
+.CPT whodnye i wyhodnye dannye
+.LIN 0
+whodnymi i wyhodnymi dannymi dlq redaktora qwlqetsq fajl {ablona
+s ras{ireniem .TXD, soderva}ij tekst {ablona dokumenta, informaci` ob oknah
+dokumenta i opisaniq baz dannyh, informaciej iz kotoroj zapolnq`tsq okna
+{ablona.
+.LIN 0
+generator dokumentow obrabatywaet fajl {ablona, sozdannyj ranee redaktorom
+dokumentow i tekst dokumenta wywodit na pe~atx, terminal, magnitnyj disk.
+
+
+.APN funkcionalxnye klawi{i redaktora EDDOC
+.RIT tablica 1
+.SWT 0
+----------------------------------------------------------
+nazwanie klawi{i   !    CTRL-kombinaciq
+----------------------------------------------------------
+strelka wwerh      !      CTRL/]
+                   !
+strelka wniz       !      CTRL/D
+                   !
+strelka wprawo     !      CTRL/\
+                   !
+strelka wlewo      !      CTRL/V
+                   !
+wstawitx stroku    !      CTRL/G
+                   !
+udalitx stroku     !      CTRL/U
+                   !
+wstawitx simwol    !      CTRL/E
+                   !
+udalitx simwol     !      CTRL/Y
+                   !
+w na~alo stroki    !  CTRL/H-CTRL/V
+                   !
+w konec stroki     !  CTRL/H-CTRL/\
+                   !
+dublx stroki       !  CTRL/H-CTRL/R
+                   !
+ps                 !      CTRL/J
+                   !
+zaboj              !      DEL
+                   !
+w na~alo {ablona   !  CTRL/H-CTRL/]
+                   !
+w konec {ablona    !  CTRL/H-CTRL/D
+                   !
+lewyj |kran        !      CTRL/P
+                   !
+prawyj |kran       !      CTRL/A
+                   !
+wydelenie okna     !      CTRL/Z
+                   !
+opisanie okon      !      CTRL/^
+                   !
+pereopisanie okna  !      CTRL/K
+                   !
+perenos formata    !
+stranicy           !      CTRL/X
+                   !
+wk                 !      CTRL/M
+.APN diagnosti~eskie soob}eniq programmy
+.TBL "whodnoj fajl ne najden"
+newernoe zadanie imeni whodnogo fajla ili ego otsutstwie na
+ukazannom ustrojstwe.
+dejstwie: prawilxno ukazatx imq whodnogo fajla libo
+zamenitx wne{nij nositelx.
+.TBL "newernyj kl`~"
+zadan kl`~, otli~nyj ot /R.
+zadaetsq w imeni whodnogo fajla pri otsutstwii na terminale apparatnogo
+sdwiga |krana na 1 stroku wniz.
+dejstwie: ukazatx kl`~ /R pri imeni whodnogo fajla.
+.TBL "{irina dokumenta prewy{aet 156 simwolow"
+zadannaq {irina dokumenta bolx{e 156 simwolow.
+dejstwie: zadatx dopustimu` {irinu dokumenta.
+.TBL baza dannyh ne najdena.
+newerno zadanno imq zapra{iwaemoj bazy dannyh ili ee
+otsutstwii na wne{nem nositele.
+dejstwie: prawilxno ukazatx imq bazy dannyh libo
+zamenitx wne{nij nositelx.
+.TBL "inicializiruemaq bd ne sootwetstwuet ispolxzuemoj bd w {ablone"
+wydaetsq pri nesootwetstwii opisaniq stolbcow ukazannoj bazy dannyh
+s opisaniem bazy dannyh w {ablone.
+dejstwie: ukazatx bazu dannyh, kotoraq
+sootwetstwuet baze dannyh w {ablone.
+                                                                                                                                                                                                                                                                                                                     

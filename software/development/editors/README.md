@@ -1,0 +1,11 @@
+# Editors
+
+The screen editor of the kits in its two cuts: `K13U.SAV` (alias K52.SAV), the build every ОСА and ОМЕГА disk shipped - eight disks carry it byte-identical - and `KED.SAV`, the same binary with its two last English strings translated («WORKING...» → «Работаю...», «Model:» → «Образ:»), from the vvv disks - and `R15.SAV`, Rodionov's edition of the same editor («Редактор текста R15», V01.2): every prompt Russian and the help frame redrawn in pseudo-graphics, 952 bytes apart from K13U; `R15.DOC` is the K13U(K52) manual with the keypad map, `R15.HLP` the note on entering pseudo-graphics (the КМП key).  `KBAD13.SAV` of disk 063 was K13U with its second half destroyed and is not shipped.
+
+| file | what | how to run |
+|---|---|---|
+| `K13U.SAV` | Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC | bare prompt, no answer to a bogus file name |
+| `KED.SAV` | Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build | bare prompt, no answer to a bogus file name |
+| `R15.DOC` | «Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands | text: `TYPE R15.DOC`, or read on the host (koi8-r) |
+| `R15.HLP` | «Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key | text: `TYPE R15.HLP`, or read on the host (koi8-r) |
+| `R15.SAV` | «Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others | bare prompt, no answer to a bogus file name |

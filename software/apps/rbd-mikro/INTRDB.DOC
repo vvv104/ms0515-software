@@ -1,0 +1,404 @@
+.TOC
+.STL
+.TTL
+tehnologi~eskij kompleks
+r t k   m i k r o
+relqcionnaq subd dlq mikro-|wm
+interpretator komand
+rukowodstwo programmista
+
+
+
+
+
+
+
+
+1988
+
+.MID annotaciq
+.LIN 2
+interpretator komand relqcionnoj sistemy uprawleniq bazami dannyh na
+mikro-|wm (subd rbd-mikro) obespe~iwaet dostup k bazam dannyh s pomo}x`
+specialxnyh komandnyh fajlow, zadawaemyh polxzowatelem.
+.LIN 0
+nali~ie prostyh komand manipulirowaniq dannymi obespe~iwaet |ffektiwnoe
+primenenie interpretatora komand dlq {irokogo kruga prakti~eskih prilovenij,
+baziru`}ihsq na ispolxzowanii mikro-|wm.
+.CPT nazna~enie i uslowiq primeneniq
+.LIN
+interpretator komand qwlqetsq sostawnoj ~astx` subd rdb-mikro [1],
+prednazna~ennoj dlq uprawleniq relqcionnymi bazami dannyh na mikro-|wm
+tipa "|lektronika-60", "|lektronika nc 80-20" i mini-|wm tipa sm-4
+w operacionnoj sisteme
+rafos (fodos, os dwk). w ka~estwe wne{nej pamqti dlq hraneniq dannyh
+ispolxzu`tsq gibkie magnitnye diski (gmd) ili drugie ustrojstwa
+s katalogowoj organizaciej.
+.LIN 0
+interpretator komand obespe~iwaet obrabotku dannyh, sodervanie kotoroj
+opredelqetsq specialxnym komandnym fajlom, ukazywaemym polxzowatelem.
+dlq podgotowki komandnyh fajlow movet ispolxzowatxsq oby~nyj tekstowyj
+redaktor.
+.LIN 0
+interpretator komand pozwolqet otobratx po zaranee zadannym uslowiqm
+informaci` iz bazy dannyh i wywesti ee na |kran terminala, w wide
+dokumenta na pe~atx ili perenesti ee w nowu` bazu dannyh.
+.LIN 0
+wywod dannyh na |kran i pe~atx osu}estwlqetsq w proizwolxnom formate
+w sootwetstwii s ukazannym {ablonom, dlq zadaniq kotorogo ispolxzuetsq
+specialxnyj tekstowyj redaktor [2]. na |kran iz bazy dannyh movet
+wywoditxsq kak odna zapisx, tak neskolxko zapisej odnowremenno.
+.LIN 0
+interpretator komand zapuskaetsq kak s pomo}x` komandy monitora, tak i
+s pomo}x` sistemy men` [3].
+.CPT obra}enie k programme
+.LIN
+pered wyzowom interpretatora dolvna bytx wypolnena komanda monitora:
+.SWT 2
+        .SET USR NOSWAP
+.LIN 2
+wyzow inerpretatora komand s sistemnoj diskety osu}estwlqetsq komandoj:
+.SWT
+        .R INTRDB
+.LIN
+interpretator zapra{iwaet imq komandnogo fajla:
+.SWT
+        imq fajla? <imq fajla>
+.BLN
+gde <imq fajla> - wwodimoe s klawiatury imq komandnogo fajla.
+esli ras{irenie ne ukazywaetsq, to po umol~ani` ispolxzuetsq ras{irenie 'CMD'.
+.LIN
+esli ukazannyj fajl na ustrojstwe ne najden, na terminal wydaetsq soob}enie:
+.SWT
+        fajl ne najden
+.LIN
+interpretator komand movet zapuskatxsq s pomo}x` sistemy men` i s pomo}x`
+komandnogo fajla operacionnoj sistemy. w |tom slu~ae imq komandnogo fajla
+dlq interpretatora ukazywaetsq w stroke, sledu`}ej za komandoj wyzowa
+interpretatora.
+.LIN
+primer:
+.SWT 2
+        R INTRDB
+        DX1:NAME
+.CPT harakteristika programmy
+.LIN
+interpretator komand wypolnqet dejstwiq po obrabotke dannyh, kotorye
+opredelq`tsq sodervaniem zaranee zagotowlennogo specialxnogo komandnogo
+fajla. komandnyj fajl predstawlqet soboj posledowatelxnostx komand.
+kavdaq komanda sostoit iz imeni komandy i spiska parametrow.
+.LIN
+primer:
+.SWT
+        ob KADRY;
+        us otdel=155;
+        pd S1,LP:;
+.LIN
+imq komandy identificiruet komandu i opredelqet dejstwie, kotoroe wypolnqet
+komanda. parametry konkretiziru`t dejstwie wypolnqemoe komandoj.
+.LIN
+parametry mogut zadawaTx:
+.SWT
+        imq bazy dannyh;
+        parolx bazy dannyh;
+        imq fajla wywoda;
+        logi~eskoe wyravenie;
+        kl`~ewoe slowo i t.d.
+.LIN
+imq komandy dolvno bytx perwym w komande. parametry sledu`t drug za drugom
+w strogom porqdke, otdelq`tsq ot imeni komandy probelom i drug ot druga
+zapqtoj. priznakom konca komandy qwlqetsq to~ka s zapqtoj.
+.CPT soob}eniq
+.LIN
+esli w komande komandnogo fajla dopu}ena o{ibka, interpretator wydaet
+soob}enie ob o{ibke s ukazaniem haraktera i mesta o{ibki.
+.LIN
+primer:
+.SWT
+        ob KADR;
+            $
+
+        *** baza dannyh ne najdena
+.LIN
+pri obnaruvenii o{ibki interpretator prekra}aet rabotu.
+.CPT komandy interpretatora
+.LIN
+w posledu`}ih razdelah pri opisanii formatow komand dlq wydeleniq
+neobqzatelxnyh  konstrukcij ispolxzu`tsq kwadratnye skobki [...].
+.HLV 1
+komandy otkrytiq bazy dannyh
+.SWT
+         ob <imq bazy dannyh>[,<parolx>];
+.LIN
+dannaq komanda otkrywaet bazu dannyh s ukazannym imenem. w komandnom fajle
+|ta komanda dolvna pred{estwowatx wsem drugim komandam.
+.LIN 0
+esli baza dannyh za}i}ena parolem, to on movet bytx ukazan neposredstwenno
+w komande. esli parolx w komande ne ukazan, on zapra{iwaetsq w dialoge.
+.LIN
+primer:
+.SWT
+        ob KADRY,X115;
+.BLN
+gde KADRY - imq bazy dannyh, X115 - parolx.
+.LIN
+esli komandnyj fajl sodervit neskolxko komand "ob", to pered otkrytiem
+nowoj bazy dannyh, baza dannyh, otkrytaq predydu}ej komandoj "ob",
+zakrywaetsq.
+.HLV 1
+komanda opredeleniq formalxnogo parametra
+.SWT
+        fp <nomer parametra> = <zapros na wwod zna~eniq>;
+
+gde <nomer parametra> - ~islo, <zapros na wwod zna~eniq> -
+    posledowatelxnostx simwolow.
+.SWT
+primer:
+      fp 1 = wwedite datu;
+      fp 2 = wwedite nomer otdela;
+.LIN
+komanda identificiruet formalxnyj parametr i osu}estwlqet priwqzku zaprosa
+na wwod zna~eniq |togo parametra.
+.SWT
+        sintaksis formalxnogo parametra
+
+          & <nomer parametra>
+.LIN
+formalxnyj parametr movet wstre~atxsq w l`bom meste komand zadaniq uslowiq
+i poiska zapisi dannyh w baze dannyh.
+.SWT
+primer:
+      us (#4='&1')i(#3=&2)
+gde &1 i &2 - formalxnye parametry.
+.LIN 0
+kak tolxko interpretator komand ~itaet formalxnyj parametr na displej &1
+ili &2
+wydaetsq zapros:
+.SWT
+      wwedite datu
+ili
+      wwedite nomer otdela
+.BLN 0
+polxzowatel` neobhodimo wwesti zapra{iwaemye dannye s navatiem klawi{i <wk>.
+.ATT
+interpritator komand razre{aet opredelenie 15 formalxnyh
+parametrow.
+.HLV 1
+komanda uslowiq poiska
+.SWT
+        us <logi~eskoe wyravenie>;
+.LIN
+dannaq komanda prednazna~ena dlq zadaniq uslowiq poiska zapisej w baze dannyh.
+zapisi, udowletworq`}ie uslowi`, qwlq`tsq aktiwnymi. esli komanda uslowiq
+w komandnom fajle ne zadana, wse zapisi bazy dannyh qwlq`tsq aktiwnymi.
+.LIN 0
+logi~eskoe wyravenie zadaetsq w tradicionnoj prioritetnoj skobo~noj forme
+zapisi.
+.LIN
+w logi~eskom wyravenii dopuska`tsq:
+.AND 2
+arifmeti~eskie operacii - '+', '-', '*', '/';
+.AND
+operacii otno{eniq - '>', '<', '>=', '<=', '=', '<>';
+.AND
+logi~eskie operacii - 'i', 'ili', 'ne'.
+.AND
+operaciq srawneniq stroki simwolow, zadawaemoj wtorym operandom s proizwolxnoj
+podstrokoj perwogo operanda - '$';
+.BLN
+wtoroj operand neobhodimo wydelqtx kawy~kami ' '.
+.LIN
+primer:
+.SWT
+        #7$'ABC', familiq$'nn'
+.LIN
+operandami logi~eskogo wyraveniq qwlq`tsq:
+.AND 2
+celye i we}estwennye ~isla;
+.LIN
+primer:
+.SWT
+              1, 17, 3.14
+.AND
+literaly;
+.LIN
+primer:
+.SWT
+              'kiew', 'iwanow'
+.AND
+stolbcy bazy dannyh, zadawaemye swoim nomerom ili imenem;
+.LIN
+primer:
+.SWT
+              #1, #2, familiq, oklad
+.BLN
+gde # - simwol-priznak nomera stolbca.
+.LIN
+- celye, we}estwennye i simwolxnye konstanty
+.BLN
+sintaksis konstanty:
+.SWT
+       <imq konstanty> <~islo>
+.BLN
+gde <imq konstanty> = c/w/s
+.SWT
+gde c - celaq konstanta
+    w - we}estwennaq konstanta
+    s - simwolxnaq konstanta
+.ATT
+simwolxnaq konstanta ne dopuskaet probelow.
+.LIN
+<~islo> - 0/1/2/.../9
+.SWT
+primer: c1
+        w2
+.LIN 2
+primer komandy uslowiq:
+.SWT 2
+    us (pol='m')i(oklad>=200)ili(pol='v')i(oklad>=150)
+.LIN 2
+pri zadanii uslowiq neobhodimo sobl`datx sootwetstwie operacij i tipow
+operandow.
+.LIN 0
+arifmeti~eskie operacii ispolxzu`tsq dlq celyh i we}estwennyh ~isel i
+stolbcow ~islowogo tipa.
+.LIN 0
+pri ispolxzowanii operacij otno{eniq operandy dolvny sootwetstwowatx drug
+drugu po tipu.
+.LIN 0
+logi~eskie operacii otdelq`tsq ot operandow kruglymi skobkami. operandami
+dlq logi~eskih operacij sluvat otno{eniq.
+.HLV 1
+komandy zapisi dannyh
+.SWT
+    zp #<nomer stolbca> = <arifmeti~eskoe wyravenie>;
+ili
+    zp #<nomer stolbca> = <funkciq>;
+.LIN
+dannaq komanda zapisywaet w stolbec bazy dannyh, zapisannyj
+slewa ot znaka rawno, zna~enie funkcii ili wyraveniq,
+polu~ennoe pri obrabotke dannyh bazy.
+.LIN
+w komande movno ispolxzowatx funkcii
+.SWT
+      sum - funkciq summirowaniq;
+
+      sr  - funkciq wy~isleniq srednego arifmeti~eskogo;
+
+      ~az - funkciq opredeleniq ~isla zapisej,
+            udowletworq`}ih uslowi` poiska;
+
+      min - funkciq opredeleniq naimenx{ego;
+
+      mah - funkciq opredeleniq naibolx{ego;
+.ATT
+argumentom funkcii qwlqetsq tolxko nomer ~islowogo stolbca bazy dannyh.
+.LIN
+primer:
+.SWT
+      zp #3=sum(#6)
+
+gde 3 - nomer stolbca bazy dannyh, w kotoroj
+        zapisywa`tsq rezulxtaty wyravenij;
+  A 6 - nomer stolbca bazy dannyh.
+.LIN
+w komande movno ispolxzowatx arifmeti~eskoe wyravenie ne
+soderva}ee funkcij
+.LIN
+primer:
+.SWT
+        zp #1=#5/3
+.BLN
+gde 1,5 - nomera stolbcow bazy dannyh
+.ATT
+komanda zp wsegda dolvna sledowatx za komandoj us.
+.HLV 1
+komanda pe~ati dokumenta
+.SWT
+    pd <imq {ablona>,<wyhodnoj fajl>[,s][,l,<celoe1>,
+       <celoe2>][,n];
+.LIN 2
+dannaq komanda wywodit na pe~atx aktiwnye zapisi w wide dokumenta po
+zadannomu {ablonu.
+.LIN 0
+pe~atx dokumenta movet wypolnqtxsq w treh formatAh:
+.AND
+pe~atx splo{nym tekstom;
+.AND 0
+pe~atx listami standartnogo formata;
+.AND 0
+pe~atx listami nestandartnogo formata.
+.LIN
+dokument wywoditsq libo na ustrojstwo pe~ati (wyhodnoj fajl - LP:),
+libo w tekstowyj fajl, kotoryj po umol~ani` sozdaetsq s ras{ireniem 'LST'.
+.LIN 0
+{ablon dokumenta (fajl, soderva}ij {ablon dokumenta) sozdaetsq s pomo}x`
+specialxnogo tekstowogo |krannogo redaktora [2]. fajl {ablona
+po umol~ani` imeet ras{irenie 'TXD'.
+.HLV 2
+pe~atx dokumenta splo{nym tekstom
+.SWT
+        pd <imq {ablona>,<wyhodnoj fajl>;
+.LIN
+primer:
+.SWT 2
+              pd FORM,LP:;
+.BLN 2
+po {ablonu s imenem FORM dannye iz otkrytoj bazy dannyh wywodqtsq na pe~atx
+splo{nym tekstom.
+.HLV 2
+pe~atx dokumenta listami standartnogo formata
+.SWT
+        pd <imq {ablona>,<wyhodnoj fajl>,s[,n];
+.SWT 2
+gde s - priznak pe~ati listami standartnogo formata;
+    n - priznak pe~ati s numeraciej listow.
+.LIN
+list standartnogo formata rass~itan na format lista acpu i sodervit 67
+tekstowyh strok w liste i 5 pustyh strok mevdu listami.
+.LIN
+primer:
+.SWT 2
+              pd FORM1,LP:,s,n;
+.BLN 2
+po {ablonu s imenem FORM1 dannye wywodqtsq na pe~atx listami standartnogo
+formata s numeraciej listow.
+.LIN
+primer:
+.SWT 2
+              pd FORM2,PR,s;
+.BLN 2
+po {ablonu s imenem FORM2 dannye wywodqtsq w fajl s imenem PR.LST listami
+standartnogo formata bez numeracii listow.
+.HLV 2
+pe~atx dokumenta listami nestandartnogo formata
+.SWT 0
+pd <imq {ablona>,<wyhodnoj fajl>,l,<celoe1>,<celoe2>[,n];
+.SWT 2
+gde l - priznak pe~ati listami nestandartnogo formata;
+    <celoe1> - koli~estwo strok w liste;
+    <celoe2> - koli~estwo strok mevdu listami;
+    n - priznak pe~ati s numeraciej listow.
+.LIN
+primer:
+.SWT 2
+              pd FORM3,LR:,l,50,10,n;
+.BLN 2
+po {ablonu s imenem FORM3 dannye wywodqtsq na pe~atx listami, soderva}imi
+50 tekstowyh strok lista i 10 pustyh strok mevdu listami, s numeraciej
+wywodimyh na pe~atx listow.
+.CLN
+.MID pere~enx ssylo~nyh dokumentow
+.SWT 2
+1. tehnologi~eskij kompleks rtk mikro
+   relqcionnaq subd dlq mikro-|wm |krannyj interfejs
+   rukowodstwo operatora
+
+2. tehnologi~eskij kompleks rtk mikro
+   sredstwa generacii dokumentow
+   rukowodstwo operatora
+
+3. tehnologi~eskij kompleks rtk mikro
+   sistema men`
+   rukowodstwo operatora
+                                                                                                                                     

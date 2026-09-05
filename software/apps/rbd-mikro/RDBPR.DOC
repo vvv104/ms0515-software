@@ -1,0 +1,768 @@
+.TOC
+.STL
+.TTL
+
+tehnologi~eskij kompleks
+r t k   m i k r o
+relqcionnaq subd dlq mikro-|wm
+(programmnyj interfejs)
+
+
+
+
+
+
+
+
+1985
+
+.MID annotaciq
+.LIN
+relqcionnaq subd rbd-mikro prednazna~ena dlq sozdaniq
+i uprawleniq bazami dannyh na mikro-|wm tipa "|lektronika 60"
+i "|lektronika nc 80-20". w dannom dokumente priwedeno opisanie
+programmnogo interfejsa subd, pozwolq`}ego rabotatx s bazami
+dannyh iz programm, napisannyh na qzykah paskalx i
+grafi~eskij paskalx. programmnyj interfejs pozwolqet sozdawatx
+na osnowe subd specializirowannye sistemy obrabotki informacii.
+.CPT ob}ie swedeniq
+.LIN 1
+subd rbd-mikro prednazna~ena dlq sozdaniq i uprawleniq
+relqcionnymi bazami dannyh na mikro-|wm tipa "|lektronika 60".
+"|lektronika nc 80-20" w operacionnoj sisteme rafos (fodos, os dwk).
+w ka~estwe wne{nej pamqti dlq hraneniq dannyh ispolxzu`tsq
+gibkie magnitnye diski (gmd).
+.LIN 0
+subd movet ispolxzowatxsq dlq sozdaniq razli~nyh 
+informacionno-sprawo~nyh sistem, w sistemah awtomati~eskogo
+i awtomatizirowannogo sbora, hraneniq i obrabotki dannyh,
+w sistemah awtomatizacii proektirowaniq, w sistemah
+awtomatizirowannoj obrabotki rezulxtatow |ksperementow i t.p.
+subd pozwolqet obsluviwatx odnu ili neskolxko baz dannyh.
+.LIN 0
+subd imeet dwa urownq interfejsa - dialogowyj |krannyj interfejs,
+ras~itannyj na polxzowatelq-neprogrammista, i programmnyj interfejs.
+.LIN 0
+dialogowyj |krannyj interfejs obespe~iwaet naglqdnyj i
+operatiwnyj dostup k baze dannyh, pozwolq`}ij ispolxzowatx subd
+w ka~estwe gotowoj informacionno-sprawo~noj sistemy. 
+w nastoq}em dokumente dialogowyj ne rassmatriwaetsq.
+.LIN 0
+programmnyj interfejs pozwolqet rabotatx s bazoj dannyh 
+(sozdawatx, zapolnqtx, modificirowatx bazu dannyh,
+izwlekatx iz nee informaci`) iz programm, napisannyh
+na qzykah paskalx i grafi~eskij paskalx. programmnyj
+interfejs ispolxzuetsq pri sozdanii specializirowannyh
+sistem obrabotki dannyh.
+.LIN 0
+subd rbd-mikro qwlqetsq sostawnoj ~astx` tehnologi~eskogo
+kompleksa rtk mikro. ona razrabotana po r-tehnologii
+programmirowaniq na qzyke grafi~eskij paskalx.
+.CPT predstawlenie bazy dannyh na fizi~eskom urowne
+.LIN 1
+baza dannyh wo wne{nej pamqti na gmd
+predstawlqetsq tremq fajlami s ras{ireniqmi DEF,
+TBF, ADF. imena |tih treh fajlow sowpada`t s imenami
+bazy dannyh.          
+.LIN 1
+naprimer:
+.LIN 2
+.MID KADRY.DEF
+.MID KADRY.TBF
+.MID KADRY.ADF
+.LIN 2
+fajl s ras{ireniem DEF, ob'emom 1-2 bloka, sodervit
+opisanie bazy dannyh (sm.p.5).
+.LIN 0
+fajl s ras{ireniem TBF sodervit wyrawnennye po dline
+zapisi. w zapisi kavdomu tipu stolbca sootwetstwuet 
+fiksirowannoe ~islo bajtow.
+.SWT 1
+          tip 1 - 2 bajta
+          tip 2 - 4 bajta
+          tip 3 - 6 bajtow
+          tip 4 - ~islo bajtow, sowpada`}ee s ~islom simwolow
+                  w stroke fiksirowannoj dliny
+.LIN 1
+dlq stolbcow tipa 1, 2, 4 w zapisi sodervitsq neposredstwenno
+samo zna~enie stolbca - celoe ili we}estwennoe ~islo,
+stroka simwolow fiksirowannoj dliny. dlq stolbca tipa 3 w zapisi
+sodervitsq ssylka na stroku proizwolxnoj dliny. sama stroka
+nahoditsq w fajle alfawitnyh dannyh s ras{ireniem ADF.
+ssylka predstawlqet soboj tri celyh ~isla (6 bajtow),
+soderva}ie nomer bloka fajla ADF, w kotorom raspoloveno na~alo
+stroki, sme}enie na~ala stroki w bloke i dlinu stroki.
+.LIN 0
+fajl alfawitnyh dannyh s ras{ireniem ADF sodervit imena stolbcow
+i stroki proizwolxnoj dliny.
+.CPT struktura programmnogo interfejsa subd
+.LIN 1
+rabota s bazoj dannyh iz programm, napisannyh na qzykah paskalx i
+grafi~eskij paskalx, organizuetsq kak rabota s peremennoj specialxnogo
+tipa, zadawaemogo identifikatorom tipa DEFREL.
+.LIN 0
+programmnyj interfejs subd sodervit opisanie tipa DEFREL i nabor procedur
+i funkcij, realizu`}ih operacii nad bazoj dannyh.
+.LIN 0
+opisanie tipa DEFREL nahoditsq w fajle DEFRDB.RAS, kotoryj prisoedinqetsq 
+k programme polxzowatelq na |tape translqcii s qzyka paskalx. peremennaq
+tipa DEFREL qwlqetsq strukturnoj peremennoj, soderva}ej ssylki na wne{nie
+fajly bazy dannyh, informaci` o ee wnutrnnej strukture i teku}em sostoqnii.
+.LIN 0
+ispolxzuemye dlq dostupa k baze dannyh procedury i funkcii w programme
+polxzowatelq opisywa`tsq kak wne{nie i prisoedinq`tsq na |tape
+redaktirowniq swqzej iz biblioteki subd s imenem LIBRDB.OBJ.
+.LIN 0
+nive predstawlen primer protokola translqcii programmy na grafi~eskom
+paskale, soderva}ej obra}enie k baze dannyh.
+.SWT 2
+                     R GPA
+                     whodnoj fajl? NAME
+                     wyhodnoj fajl? NAME
+                     R PASCAL
+                     NAME=DEFRDB,NAME
+                     MAC NAME
+                     LINK NAME,LIBRDB
+                     RU NAME
+.LIN 2
+pomimo sredstw obra}eniq k baze dannyh programmnyj interfejs sodervit
+rqd dopolnitelxnyh wozmovnostej.
+.LIN 0
+dlq obmena dannymi s bazoj dannyh ispolxzuetsq specialxnyj tip dannyh,
+nazywaemyj wirtualxnym massiwom (identifikator tipa VSTR), zna~eniem
+kotorogo qwlqetsq posledowatelxnostx bajtow proizwolxnoj dliny.
+opisanie tipa VSTR sodervitsq w fajle opisanij DEFRDB.PAS, a procedury
+dlq raboty s wirtualxnym massiwom - w biblioteke LIBRDB.
+.LIN 0
+biblioteka LIBRDB dopolnitelxno sodervit procedury, obleg~a`}ie wwod
+s klawiatury displeq.
+.CPT wirtualxnyj massiw
+.LIN 1
+rabota s dannymi wseh 4-h tipow subd (zapisx, wyborka dannyh)
+osu}estwlqetsq s posledowatelxnostx` bajtow sootwetstwu`}ej
+dliny. dlq |togo wweden specialxnyj tip dannyh VSTR (wirtualxnyj
+massiw). w otli~ii ot oby~nogo odnomernogo simwolxnogo massiwa
+dlina wirtualxnogo massiwa movet izmenqtxsq dinami~eski w processe
+zapisi w nego posledowatelxnostej bajtow. wirtualxnyj massiw 
+movet hranitx cepo~ku bajtow dlinoj ot 0 do 32767. wnutrennee
+predstawlenie wirtualxnogo massiwa zadaetsq opredeleniem tipa VSTR,
+nahodq}imsq w fajle DEFRDB.PAS. dostup k wirtualxnomu massiwu 
+osu}estwlqetsq s pomo}x` procedur i funkcij, nahodq}ihsq w
+biblioteke LIBRDB.
+.HLV 1
+predstawlenie wirtualxnogo massiwa
+.LIN 1
+predstawlenie wirtualxnogo massiwa zadaetsq opredeleniem
+tipa VSTR, priwedennym nive 
+.SWT 1
+    CONST
+      MAXBF=80; /* razmer bufera wirtualxnogo massiwa */
+    TYPE
+      ITEMVS=RECORD /* opisanie |lementa massiwa */
+               AD:^ITEMVS; /* ssylka na sledu`}ij |lement */
+               BF:ARRAY[1..MAXBF] OF CHAR /* bufer simwolow */
+             END;
+      VSTR=RECORD
+             LV:INTEGER; /* ~islo simwolow w massiwe */
+             FV:ITEMVS   /* perwyj |lement massiwa */
+           END;
+.LIN 1
+primer opisaniq peremennoj tipa wirtualxnyj massiw:
+.SWT 1
+       VAR  V:VSTR;  /* V - wirtualxnyj massiw */
+.LIN 1
+wirtualxnyj massiw sostoit iz polq LV, opredelq`}ego dlinu wirtualxnogo
+massiwa i spiska |lementow. kavdyj |lement sostoit iz bufera
+i ssylki na sledu`}ij |lement (sm. ris.). wse |lementy
+massiwa, krome perwogo, zapra{iwa`tsq dinami~eski pri
+zapolnenii o~erednogo bufera. pri obnulenii wirtualxnogo
+massiwa wse |lementy, krome perwogo, wozwra}a`tsq nazad
+operacionnoj sisteme.
+.SWT 2
+.TES 11
+    ___________
+   !LV         !
+   !___________!
+
+    ___________         ___________                   ___________
+   !AD         !------>!           !----- - - - ---->!        NIL!
+   !___________!       !___________!                 !___________!
+   !BF         !       !           !                 !           !
+   !           !       !           !                 !           !
+   !           !       !           !                 !           !
+   !___________!       !___________!                 !___________!
+.HLV 1
+dostup k wirtualxnomu massiwu
+.LIN 1
+rabota s wirtualxnym massiwom osu}estwlqetsq s pomo}x` nabora
+wne{nih procedur i funkcij.
+.LIN 1
+kavdyj wirtualxnyj massiw dolven bytx w na~ale raboty inicializirowan
+proceduroj INITVS 
+.SWT 2
+   PROCEDURE  INITVS(VAR V:VSTR)
+.LIN 2
+procedura INITVS obnulqet dlinu wirtualxnogo massiwa i priswaiwaet
+zna~enie NIL pol` ssylki perwogo |lementa wirtualxnogo massiwa.
+.LIN 0
+primer:
+.LIN 2
+.MID INITVS(V)
+.LIN 2
+procedura NULVS sluvit dlq obnuleniq wirtualxnogo massiwa.
+.SWT 2
+   PROCEDURE  NULVS(VAR V:VSTR)
+.LIN 2
+procedura obnulqet dlinu wirtualxnogo massiwa i wozwra}aet wse 
+|lementy massiwa, krome perwogo, operacionnoj sisteme.
+.LIN 1
+funkciq LVS imeet zna~enie, rawnoe teku}ej dline wirtualxnogo massiwa.
+.SWT 2
+   FUNCTION  LVS(VAR V:VSTR):INTEGER
+.LIN 2
+procedura CHRVS sluvit dlq zapisi simwola w wirtualxnyj massiw.
+.SWT 2
+   PROCEDURE  CHRVS(C:CHAR;VAR V:VSTR)
+.LIN 2
+zadannyj perwym parametrom simwol dopisywaetsq k uve zapisannoj 
+w massiw posledowatelxnosti simwolow.
+.LIN 1
+primer:
+.SWT 1
+                           CONST
+                             ZERO='0';
+                           VAR
+                             I:INTEGER;
+                             C:CHAR; 
+                             M:ARRAY[1..10] OF CHAR;
+                             V:VSTR;
+
+                           BEGIN
+                             INITVS(V);
+                             CHRVS('A',V);
+                             CHRVS(ZERO,V);
+                             CHRVS(C,V);
+                             CHRVS(M[I+1],V)
+                           END.
+.LIN 2
+funkciq wyborki simwola iz wirtualxnogo massiwa.
+.SWT 2
+   FUNCTION  VSCHR(VAR V:VSTR; N:INTEGER):CHAR
+.LIN 2
+zna~enie funkcii rawno simwolu, nomer kotorogo zadaetsq parametrom N.
+esli N prewy{aet dlinu massiwa, to zna~enie funkcii rawno zna~eni`
+poslednego simwola massiwa.
+.LIN 1
+primery:
+.SWT 1
+                           C:=VSCHR(V,5)
+                           M[I]:=VSCHR(V,I+1)
+.LIN 2
+procedura peresylki simwolow iz odnogo wirtualxnogo massiwa w drugoj.
+.SWT 2
+   PROCEDURE  MOVVS(VAR VR,VW:VSTR)
+.LIN 2
+procedura wypolnqet peresylku stroki, soderva}ejsq w massiwe, zadawaemym
+perwym parametrom, w massiw, zadawaemyj wtorym parametrom.
+peresylka wo wtoroj massiw osu}estwlqetsq dozapisx` k uve su}estwu`}emu 
+zna~eni` massiwa.
+.LIN 1
+procedura peresylki podstroki iz odnogo massiwa w drugoj.
+.SWT 2
+   PROCEDURE  PARTVS(VAR VR:VSTR; N,L:INTEGER; VAR VW:VSTR)
+.LIN 2
+procedura wypolnqet peresylku podstroki na~inaq s simwola s nomerom N
+dlinoj L  iz massiwa, zadawaemogo perwym parametrom, w massiw,
+zadawaemyj ~etwertym parametrom. wtoroj massiw pered peresylkoj obnulqetsq.
+.LIN 1
+funkciq srawneniq strok, soderva}ihsq w dwuh wirtualxnyh massiwah.
+.SWT 2
+   FUNCTION  CHRVS(VAR V1,V2:VSTR):INTEGER 
+.LIN 2
+wypolnqetsq leksikografi~eskoe srawnenie dwuh massiwow.
+zna~enie funkcii rawno:
+.SWT 2
+                       -1,  esli V1<V2,
+                        0,  esli V1=V2,
+                        1,  esli V1>V2.
+.LIN 2
+procedura wywoda wirtualxnogo massiwa na |kran.
+.SWT 2
+   PROCEDURE  EKRVS(VAR V:VSTR)
+.HLV 1
+sredstwa preobrazowaniq dannyh
+.LIN 1
+obmen dannymi s bazoj dannyh osu}estwlqetsq ~erez wirtualxnyj massiw,
+pri |tom celoe ~islo rassmatriwaetsq kak posledowatelxnostx 2 bajtow,
+we}estwennoe ~islo - posledowatelxnostx 4 bajtow. dlq preobrazowaniq
+~isel w posledowatelxnostx bajtow i obratno ispolxzu`tsq procedury
+i funkcii, opisannye w nastoq}em razdele.
+.SWT 2
+   PROCEDURE  IB(I:INTEGER; VAR V:VSTR)
+.LIN 2
+procedura IB preobrazuet celoe ~islo w dwa bajta, kotorye peresyla`tsq
+(dozapisx`) w wirtualxnyj massiw.
+.SWT 2
+   FUNCTION  BI(VAR V:VSTR; J:INTEGER):INTEGER
+.LIN 2
+funkciq BI preobrazuet 2 bajta iz wirtualxnogo massiwa, na~inaq s bajta,
+nomer kotorogo opredelqetsq parametrom J, w celoe, qwlq`}eesq
+zna~eniem funkcii.
+.SWT 2
+   PROCEDURE  RB(R:REAL; VAR V:VSTR)
+.LIN 2
+procedura RB preobrazuet we}estwennoe ~islo w 4 bajta,
+kotorye peresyla`tsq (dozapisx`) w wirtualxnyj massiw.
+.SWT 2
+   FUNCTION  BR(VAR V:VSTR):REAL
+.LIN 2
+funkciq BR preobrazuet 4 bajta, nahodq}iesq w wirtualxnom massiwe,
+w we}estwennoe ~islo, kotoroe qwlqetsq zna~eniem funkcii.
+.CPT predstawlenie bazy dannyh w programme
+.LIN 1
+baza dannyh w programme opisywaetsq kak peremennaq tipa DEFREL.
+Opredelenie tipa priwedeno nive.
+.SWT 2
+   CONST
+     MAXCOL=32; /* maksimalxnoe ~islo stolbcow */
+   TYPE
+     /* opisanie fajla prqmogo dostupa (TBF i ADF) */
+
+     BLOCK=ARRAY[0..511] OF CHAR;
+     FILEBL=FILE OF BLOCK;
+
+     /* opisanie stolbca */
+     DEFCOL=RECORD
+              TC:INTEGER; /* tip stolbca */
+              SC:INTEGER; /* sme}enie na~ala stolbca w zapisi */
+              BN:INTEGER; /* nomer bloka ADF s imenem stolbca */
+              SN:INTEGER; /* sme}enie imeni w bloke */
+              LN:INTEGER  /* dlina imeni stolbca */
+            END;
+     DEFREL=RECORD
+              NMDB:ALFA; /* imq bazy dannyh */
+              FT:FILEBL; /* fajl zapisej */
+              FA:FILEBL; /* fajl alfawitnyh dannyh */
+              LDB:INTEGER; /* koli~estwo zapisej w bd */
+              LRC:INTEGER; /* dlina zapisi w bajtah */
+              NCL:INTEGER; /* ~islo stolbcow */
+              NBA:INTEGER; /* nomer bl. w ADF s perwym swobodnym bajtom */
+              SHA:INTEGER; /* sme}enie bajta w bloke */
+              MC:ARRAY[1..MAXCOL] OF DEFCOL; /* opisanie stolbcow */
+              FC:ARRAY[1..MAXCOL,1..4] OF INTEGER; /* opis. |krannyh tablic */
+              PRL:ARRAY[1..4] OF CHAR; /* parolx */
+              ERDB:INTEGER  /* kod o{ibki */
+            END;
+.LIN 2
+primer opisaniq bazy dannyh w programme:
+.LIN 2
+.MID W:DEFREL;
+.LIN 2
+s pomo}x` peremennoj tipa DEFREL osu}estwlqetsq dostup k dannym, 
+hranq}imsq w baze dannyh, i k otdelxnym ee parametram.
+.LIN 0
+osnownye parametry bazy dannyh:
+.SWT 1
+   W.LDB  -teku}aq dlina bazy dannyh w zapisqh;
+   W.NCL  -~islo stolbcow w baze dannyh;
+   W.LRC  -dlina zapisi w bajtah;
+   W.MC[I].TC  -tip I-go stolbca. dlq tipa 1,2,3 peremennaq
+                sodervit nomer tipa, dlq tipa 4 ( stroka
+                fiksirowannoj dliny ) peremennaq sodervit
+                dlinu fiksirowannoj stroki pl`s 20;
+   W.MC[I].SC  -sme}enie perwogo bajta I-go stolbca
+                otnositelxno na~ala zapisi.
+.LIN 2
+pole FC predstawlqet dwumernyj massiw, soderva}ij opisanie 
+4-h standartnyh |krannyh tablic. perwyj indeks massiwa opredelqet
+nomer stolbca, wtoroj - nomer |krannoj tablicy. celo~islennoe zna~enie
+|lementa massiwa FC opredelqet {irinu sootwetstwu`}ego stolbca pri 
+wywode na |kran. esli ono rawno 0, stolbec na |kran ne wywoditsq.
+we}estwennoe ~islo (tip 2) movet wywoditxsq kak w formate s plawa`}ej  
+to~koj, naprimer
+.LIN 1
+.MID 1.255430E+01
+.BLN 1
+tak i w formate s fiksirowannoj to~koj, naprimer
+.LIN 1
+.MID 12.5543
+.BLN 1
+w |tom slu~ae w star{ih 8 razrqdah sodervitsq ~islo cifr,
+wywodimyh posle to~ki.
+.LIN 0
+pole PRL sodervit parolx, w slu~ae za}ity bazy dannyh parolem.
+.LIN 0
+pole ERDB ispolxzuetsq otdelxnymi procedurami dostupa k baze dannyh
+dlq soob}eniq ob o{ibkah. esli ego zna~enie rawno nul`, o{ibok ne bylo,
+w protiwnom slu~ae pole sodervit kod o{ibki.
+.LIN 1
+pri inicializacii bazy dannyh (sm.p.6.1) proishodit s~itywanie iz fajla s
+ras{ireniem DEF |lementow opisaniq bazy dannyh i zapolnenie polej 
+peremennoj tipa DEFREL. pri zakrytii bazy dannyh zna~eniq |tih polej
+obratno perepisywa`tsq w fajl opisaniq bazy dannyh.
+.LIN 1
+w programme movno rabotatx s neskolxkimi bazami dannyh,opisaw
+sootwetstwenno neskolxko peremennyh tipa DEFREL.
+.LIN 1
+primer:
+.SWT 1
+      U,W,Z:DEFREL; /* opisanie treh baz dannyh */
+.CPT dostup k baze dannyh
+.LIN 1
+dostup k baze dannyh iz programm na qzykah paskalx i grafi~eskij
+paskalx osu}estwlqetsq s pomo}x` nabora procedur i funkcij,
+kotorye opisywa`tsq w programme polxzowatelq kak wne{nie.
+na |tape redaktirowaniq swqzej oni podkl`~a`tsq k programme
+iz biblioteki subd s imenem LIBRDB.
+.HLV 1 
+otkrytie, zakrytie, sozdanie baz dannyh
+.LIN 1
+pered rabotoj baza dannyh dolvna bytx inicializirowana (otkryta)
+odnoj iz dwuh procedur. pri inicializacii otkrywa`tsq fajl zapisej i 
+fajl alfawitnyh dannyh, a opisanie bazy dannyh iz fajla s ras{ireniem 
+DEF perepisywaetsq w operatiwnu` pamqtx, zapolnqq sootwetstwu`}ie
+polq peremennoj tipa DEFREL.
+.SWT 2
+   PROCEDURE  INITDB(VAR W:DEFREL; VAR NM:ALFA; RW:CHAR)
+.LIN 2
+procedura INITDB swqzywaet peremennu` tipa DEFREL s bazoj dannyh 
+wo wne{nej pamqti s imenem, opredelqemym parametrom NM. baza dannyh
+movet bytx otkryta dlq ~teniq, w |tom slu~ae parametr RW dolven 
+imetx zna~enie 'R', ili dlq ~teniq i dlq zapisi, w |tom slu~ae
+parametr RW dolven imetx zna~enie 'W'. pri inicializacii bazy dannyh
+s parametrom 'W' fajl zapisej i fajl alfawitnyh dannyh perepisywa`tsq
+wo wremennye fajly s wozmovnostx` ih posledu`}ego ras{ireniq.
+w perwom slu~ae takoj perepisi ne proizwoditsq.
+.LIN 1
+p_r_i_m_e_~_a_n_i_e.  otkrytie bazy dannyh tolxko dlq ~teniq tem
+ne menee pozwolqet zapisywatx w nee zna~eniq, esli tolxko |to ne 
+wedet k ras{ireni` fajlow, t.e. dopuskaetsq modifikaciq zna~enij 
+stolbcow tipa 1,2,4 uve su}estwu`}ih zapisej.
+.LIN 1
+esli baza dannyh za}i}ena parolem, to pered wypolneniem
+procedury INITDB pol` PRL peremennoj, zadawaemoj parametrom W,
+dolvno bytx priswoeno zna~enie parolq.
+.LIN 1
+esli otkrytie bazy dannyh proizo{lo uspe{no, to zna~enie koda
+zawer{eniq ERDB rawno nul`. esli ego zna~enie rawno 1,2,3,
+to wo wne{nej pamqti otsutstwu`t fajly bazy dannyh
+sootwetstwenno s ras{ireniqmi DEF, TBF, ADF. esli zna~enie
+koda zawer{eniq rawno 4, parolx za}ity bazy dannyh ne
+sowpal s parolem, zapisannym w pole PRL.
+.SWT 2
+   PROCEDURE  INIDDB(VAR W:DEFREL; VAR NM:ALFA; RW:CHAR)
+.LIN 2
+procedura INIDDB rabotaet takve kak INITDB, no w otli~ie ot nee
+w slu~ae, esli baza dannyh za}i}ena parolem, procedura INIDDB
+zapra{iwaet parolx w dialoge, wydawaq na |kran zapros:
+.LIN 1
+.MID parolx?
+.BLN 1
+w otwet na kotoryj dolven bytx wweden parolx. esli parolx
+neweren, wywoditsq diagnostika:
+.LIN 1
+.MID parolx neweren
+.BLN 1
+i zapros parolq powtorqetsq. pri powtornom wwode newernogo parolq
+opqtx wywoditsq diagnostika i wypolnenie procedury
+zawer{aetsq s kodom 4.
+.SWT 2
+   PROCEDURE  CLOSEDB(VAR W:DEFREL)
+.LIN 2
+procedura CLOSEDB perepisywaet opisanie bazy dannyh w fajl
+s ras{ireniem DEF, dozapisywaet bufera i zakrywaet fajly bazy
+dannyh. procedura wsegda dolvna ispolxzowatxsq w konce raboty
+s bazoj dannyh, esli wypolnqlisx ee modifikaciq ili ras{irenie.
+.LIN 0
+nive, w ka~estwe primera, priweden fragment programmy na 
+grafi~eskom paskale, w kotoroj wypolnqetsq zapros imeni bazy
+dannyh, otkrytie bazy dannyh, wyda~a diagnostiki w slu~ae
+otsutstwiq odnogo iz fajlow bazy dannyh ili newernogo zadaniq
+imeni bazy dannyh s powtornym zaprosom imeni, wyhod iz programmy
+w slu~ae newernogo zadaniq parolq, zakrytie bazy dannyh w konce raboty.
+.SWT 2
+          CONST
+            Z1=' imq bazy dannyh? ';
+            Z2=' baza dannyh ne najdena ';
+            RUS=16B;  /* kod russkoj klawiatury */
+            LAT=17B;  /* kod latinskoj klawiatury */
+          VAR
+            W:DEFREL;
+            NM:ALFA;  /* massiw dlq wwoda imeni bd */
+          /* opisanie dwuh wne{nih procedur */
+          PROCEDURE  INIDDB(VAR W:DEFREL; VAR NM:ALFA; RW:CHAR); EXTERNAL;
+.SWT 1
+          PROCEDURE  CLOSEDB(VAR W:DEFREL); EXTERNAL;
+          /* golownoj graf programmy */
+.SWT 2
+.TES 10
+                                      W.ERDB=4 
+          $------------------------->$------------------------------>$
+          !WRITE(CHR(RUS),Z1)        !                               ! 
+          !WRITE(CHR(LAT))           !------------------------------>!
+          !READLN(NM)                !/* rabota s bazoj dannyh */ 
+          !INIDDB(W,NAME,'W')        !          . . .
+          !                          !CLOSEDB(W) 
+          !(W.ERDB>0)AND(W.ERDB<4)   !
+          !<-------------------------!
+           WRITELN(CHR(RUS),Z2)       
+.LIN 2
+nowu` bazu dannyh movno sozdatx programmno s pomo}x` procedury CREDB.
+.SWT 2
+   PROCEDURE  CREDB(VAR W:DEFREL; VAR NM:ALFA; VAR V:VSTR)
+.LIN 2
+pered wypolneniem procedury dolvny bytx zapolneny otdelxnye polq
+peremennoj-opisaniq bazy dannyh, zadawaemoj perwym parametrom - pole
+NCL dolvno sodervatx ~islo stolbcow sozdawaemoj bazy dannyh i 
+dlq kavdogo stolbca zapolnq`tsq polq TC i LN (tip stolbca i dlina imeni 
+stolbca) massiwa opisaniq stolbcow MC. imena stolbcow w porqdke sledowaniq
+stolbcow dolvny bytx zapisany w wirtualxnyj massiw, zadawaemyj 
+tretxim parametrom. wtoroj parametr opredelqet imq bazy dannyh.
+.LIN 1
+procedura sozdaet fajly bazy dannyh i zapolnqet ostaw{iesq polq ee
+opisaniq.
+.LIN 0
+procedura zapolnqet pole parolq PRL probelami (~to ozna~aet otsutstwie 
+parolq). dlq wwoda parolq za}ity bazy dannyh posle wypolneniq procedury 
+CRERDB w pole PRL dolven bytx zapisan parolx.
+.LIN 0
+posle wypolneniq procedury baza dannyh sozdana i otkryta dlq raboty.
+dlq sohraneniq bazy dannyh wo wne{nej pamqti posle okon~aniq raboty 
+s nej dolvna bytx wypolnena procedura CLOSEDB.
+.HLV 1
+zapolnenie i modifikaciq bazy dannyh
+.LIN 1
+dlq dobawleniq zapisej w bazu dannyh sluvat procedury ADDREC i INSREC.
+.SWT 2
+   PROCEDURE  ADDREC(VAR W:DEFREL; VAR V:VSTR)
+.LIN 2
+procedura ADDREC dobawlqet zapisx, nahodq}u`sq w massiwe, zadawaemom
+parametrom V, w hwost bazy dannyh, zadawaemoj parametrom W. dlina
+bazy dannyh uweli~iwaetsq na 1.
+.SWT 2
+   PROCEDURE  INSREC(VAR W:DEFREL; T:INTEGER; VAR V:VSTR)
+.LIN 2
+procedura INSREC dobawlqet nowu` zapisx, nahodq}u`sq w massiwe,
+zadawaemom parametrom V, w bazu dannyh, zadawaemu` parametrom W,
+pod nomerom T. esli zna~enie T prewy{aet dlinu bazy dannyh,
+zapisx dobawlqetsq w hwost bazy dannyh. w protiwnom slu~ae ottqgiwaetsq
+hwost bazy dannyh, na~inaq s zapisi s nomerom T, i w oswobodiw{eesq
+mesto wstawlqetsq nowaq zapisx. dlina bazy dannyh uweli~iwaetsq na 1.
+.LIN 0
+esli zna~enie parametra T menx{e 1, kod o{ibki rawen 1. esli pri
+wypolnenii obeih procedur dlina massiwa V ne sowpadaet s dlinoj
+zapisi, kod o{ibki rawen 2.
+.LIN 0
+zapisx w wirtualxnom massiwe movet bytx sformirowana procedurami
+CHRVS, MOVVS, IB, RB. dlq togo ~toby stroku proizwolxnoj dliny
+(tip=3) zapisatx w fajl alfawitnyh dannyh, a ssylku na nee imetx
+wozmovnostx zanesti w zapisx, sluvit procedura WRALFA
+.SWT 2
+   PROCEDURE  WRALFA(VAR W:DEFREL; VAR V:VSTR)
+.LIN 2
+procedura peresylaet stroku simwolow, nahodq}u`sq w massiwe,
+zadawaemom parametrom V w fajl alfawitnyh dannyh bazy dannyh W.
+posle wypolneniq procedury massiw V sodervit 3 celyh ~isla
+(6 bajtow), opredelq`}ih polovenie stroki w fajle alfawitnyh dannyh.
+|ti 6 bajtow mogut bytx zaneseny w zapisx w ka~estwe zna~eniq
+stolbca tipa 3.
+.LIN 1
+udalenie zapisej iz bazy dannyh wypolnqetsq proceduroj DELREC.
+.SWT 2
+   PROCEDURE  DELREC(VAR W:DEFREL; T,N:INTEGER)
+.LIN 2
+procedura udalqet iz bazy dannyh, zadawaemoj parametrom W, N zapisej
+na~inaq s zapisi, nomer kotoroj opredelqetsq parametrom T. esli 
+udalqemye zapisi ne qwlq`tsq poslednimi, podtqgiwaetsq hwost bazy dannyh.
+na weli~inu N umenx{aetsq dlina bazy dannyh.
+.LIN 0
+esli parmetr T zadaet nesu}estwu`}ij nomer zapisi, kod o{ibki
+ustanawliwaetsq rawnym 1.
+.LIN 1
+dlq wyborki i zameny zapisi w predelah bazy dannyh sluvat
+procedury RREC i WREC.
+.SWT 2
+   PROCEDURE  RREC(VAR W:DEFREL; T:INTEGER; VAR V:VSTR)
+.LIN 2
+procedura RREC wybiraet zapisx s nomerom T iz bazy dannyh,
+zadawaemoj parametrom W, w massiw, zadawaemyj parametrom V.
+.SWT 2
+   PROCEDURE  WREC(VAR W:DEFREL; T:INTEGER; VAR V:VSTR)
+.LIN 2
+procedura WREC peresylaet zapisx iz massiwa w bazu dannyh,
+zadawaemu` parametrom W, pod nomerom T. staroe zna~enie zapisi stiraetsq.
+.LIN 0
+esli w obeih procedurah zadaetsq nesu}estwu`}ij nomer zapisi,
+kod o{ibki rawen 1. esli pri wypolnenii procedury WREC dlina massiwa
+ne sowpadaet s dlinoj zapisi, kod o{ibki rawen 2.
+.LIN 1
+dlq wyborki i zameny zna~eniq stolbca w predelah bazy dannyh
+sluvat procedury RCOL i WCOL.
+.SWT 2
+   PROCEDURE  RCOL(VAR W:DEFREL; T,NC:INTEGER; VAR V:VSTR)
+.LIN 2
+procedura RCOL wybiraet sodervimoe stolbca s nomerom NC zapisi s nomerom T
+iz bazy dannyh, zadawaemoj parametrom W, w massiw, zadawaemyj parametrom V.
+.SWT 2
+   PROCEDURE  WCOL(VAR W:DEFREL; T,NC:INTEGER; VAR V:VSTR)
+.LIN 2
+procedura WCOL peresylaet dannye iz massiwa, zadawaemogo parametrom V,
+w stolbec s nomerom NC zapisi s nomerom T bazy dannyh, zadawaemoj
+parametrom W. staroe zna~enie stolbca terqetsq.
+.LIN 0
+pri rabote so stolbcom tipa 3 procedury RCOL i WCOL sami osu}estwlq`t
+obra}enie k fajlu alfawitnyh dannyh, wybiraq iz fajla w wirtualxnyj
+massiw stroku proizwolxnoj dliny ili peresylaq ee iz massiwa w fajl.
+.LIN 0
+pri zadanii nesu}estwu`}ego nomera zapisi w obeih procedurah kod o{ibki
+rawen 1, pri zadanii nesu}estwu`}ego nomera stolbca kod o{ibki rawen 2.
+esli pri wypolnenii procedury WCOL dlina massiwa V ne sowpadaet s dlinoj
+stolbca, kod o{ibki rawen 3.
+.LIN 0
+imq stolbca movet bytx polu~eno s pomo}x` procedury RNMCOL.
+.SWT 2
+  PROCEDURE RNMCOL(VAR W:DEFREL; NC:INTEGER; VAR V:VSTR)
+.LIN 2
+procedura peresylaet imq stolbca, nomer kotorogo zadaetsq parametrom NC,
+w wirtualxnyj massiw, zadawaemyj parametrom V. pri zadanii nesu}estwu`}ego
+nomera stolbca kod o{ibki rawen 1.
+.CPT sredstwa wwoda s klawiatury displeq
+.HLV 1
+ob}ie swedeniq
+.LIN
+predlagaemye os rafos sredstwa wwoda s klawiatury (opira`}iesq na
+ispolxzowanie standartnogo drajwera terminala) ime`t rqd su}estwennyh
+nedostatkow, osnownymi iz kotoryh qwlq`tsq: trudnosti pri realizacii
+peremennogo wwoda russkogo i latinskogo teksta, wyda~a diagnostiki
+na anglijskom qzyke, soprowovdaemoj w rqde slu~aew awarijnym zawer{eniem
+programmy.
+.LIN 0
+opisannye nive sredstwa nastroeny na displej tipa 15i|-00-013 i obespe~iwa`t:
+.LIN 0
+wwod teksta s klawiatury s ispolxzowaniem russkih i latinskih bukw nezawisimo
+ot sostoqniq klawiatury "werhnij registr - nivnij registr", s wywodom
+wwodimyh simwolow na |kran (|hosignal) i bez wywoda;
+.LIN 0
+wwod kodow funkcionalxnyh klawi{;
+.LIN 0
+wwod celyh i we}estwennyh ~isel s wyda~ej diagnosti~eskih soob}enij na
+russkom qzyke.
+.LIN 2
+sredstwa wwoda ispolxzu`t dwe standartno opisannye w fajle DEFRDB.PAS
+celo~islennye peremennye.
+.LIN 0
+peremennaq LATRUS sodervit kod, harakterizu`}ij sostoqnie klawiatury
+"russkij registr" - kod 16w, "latinskij registr" - 17w. pri programmnom
+perekl`~enii klawiatury w odno iz |tih sostoqnij neobhodimo w peremennu`
+LATRUS zasylatx sootwetstwu`}ij kod libo polxzowatxsq opisannymi nive
+procedurami WRUS i WLAT.
+.LIN 0
+peremennaq PRKLR ispolxzuetsq dlq uprawleniq revimom wwoda i dlq pereda~i
+informacii ob o{ibkah.
+.LIN 0
+nolx mlad{ih razrqdah peremennoj ozna~aet wwod s |hom na |kran, 1 - bez |ha.
+.LIN 0
+nolx w star{ih razrqdah (star{em bajte) peremennoj ozna~aet otsutstwie
+o{ibok pri wwode, 1 - pri wwode ~isel byli obnaruveny o{ibki.
+.LIN
+wwod teksta s klawiatury dolven zakan~iwatxsq navatiem klawi{i "wk".
+.LIN 0
+pri wwode celyh i we}estwennyh ~isel opredeleno ponqtie pustogo zna~eniq
+~isla, kotoroe qwlqetsq rezulxtatom wwoda w slu~ae, esli libo byla
+navata tolxko odna klawi{a "wk", libo pri wwode ~isla byli zaregistrirowany
+o{ibki. pustoe zna~enie celogo i we}estwennogo ~isla opredelqetsq opisannymi
+w fajle DEFRDB.PAS konstantami
+.SWT 2
+                   EMPINT=-MAXINT
+                   EMPREAL=-1.0E-38
+.HLV 1
+procedury wwoda
+.LIN
+perekl`~enie ot standartnyh sredstw wwoda s klawiatury os na sredstwa wwoda
+subd i obratno wypolnq`t dwe procedury BEGKLR i ENDKLR.
+.LIN 0
+procedura BEGKLR otkl`~aet revim prerywaniq ot klawiatury i ustanawliwaet
+klawiaturu w na~alxnoe sostoqnie "russkij registr".
+.LIN 0
+procedura ENDKLR wosstanaliwaet revim prerywaniq klawiatury, wozwra}aq tem
+samym funkcii obrabotki wwoda standartnomu drajweru, i ustanawliwaet
+klawiaturu w sostoqnie "latinskij registr".
+.LIN 0
+pered obra}eniem k proceduram wwoda subd dolvna bytx wypolnena procedura
+BEGKLR. pered wyhodom iz programmy ili pri neobhodimosti wwoda ~erez
+standartnyj drajwer os dolvna bytx wypolnena procedura ENDKLR.
+.LIN
+osnownoj proceduroj wwoda s klawiatury qwlqetsq procedura RDTX.
+.SWT 2
+                      PROCEDURE RDTX(VAR V:VSTR)
+.LIN 2
+procedura osu}estlqet wwod teksta ili koda funkcionalxnoj klawi{i s
+klawiatury w wirtualxnyj massiw. wwod teksta zakan~iwaetsq navatiem
+klawi{i "wk". kod funkcionalxnoj klawi{i s~itywaetsq tolxko pri perwom navatii.
+wnutri teksta kody funkcionalxnyh klawi{ ignoriru`tsq za iskl`~eniem
+klawi{ "rus", "lat", "zab".
+.LIN 0
+wirtualxnyj massiw pered wwodom awtomati~eski obnulqetsq. kod klawi{ "wk"
+w massiw ne zanositsq. s~itannyj kod funkcionalxnoj klawi{i movet bytx
+izwle~en iz wirtualxnogo massiwa, naprimer, s pomo}x` funkcii VSCHR.
+.LIN
+primer:
+.SWT 2
+                        V:VSTR;
+                        C:INTEGER;
+                        . . .
+                        RDTX(V)
+                        C:=ORD(VSCHR(V,1))
+.LIN 2
+w zawisimosti ot zna~eniq peremennoj PRKLR (sm.p.7.1) wwod simwolow s
+klawiatury movet soprowovdatxsq wywodom ih na |kran ili ne soprowovdatxsq.
+.LIN
+~tenie s klawiatury celogo ~isla osu}estwlqetsq proceduroj RDINT
+.SWT 2
+      PROCEDURE RDINT(VAR I:INTEGER)
+.LIN 2
+procedura wypolnqet ~tenie ~isla w celo~islennu` peremennu`, zadawaemu`
+parametrom I. esli ~islo zadano newerno, wydaetsq diagnosti~eskoe soob}enie:
+.SWT 2
+                         newernoe ~islo
+.BLN 2
+esli zna~enie wwodimogo ~isla prewy{aet dopustimoe (-32768..32767), wydaetsq
+diagnosti~eskoe soob}enie:
+.SWT 2
+                         ~islo prewy{aet dopustimoe
+.LIN 2
+w slu~ae o{ibki, w peremennu` PRKLR zanositsq priznak o{ibki (1 w star{em
+bajte). pri nali~ii o{ibki, a takve pri navatii tolxko odnoj klawi{i "wk",
+peremennoj, zadawaemoj parametrom I, priswaiwaetsq zna~enie EMPINT (sm.p.7.1).
+.LIN
+~tenie s klawiatury we}estwennogo ~isla osu}estwlqetsq proceduroj RDREAL
+.SWT 2
+       PROCEDURE RDREAL(VAR R:REAL)
+.LIN 2
+procedura wypolnqet ~tenie we}estwennogo ~isla w peremennu` tipa REAL,
+zadawaemu` parametrom R. pri o{ibke w zapisi mantisy i porqdka ~isla,
+wydaetsq diagnosti~eskoe soob}enie:
+.SWT 2
+                           newernoe ~islo
+.BLN 2
+ili
+.SWT 2
+                           newernyj pokazatelx
+.BLN 2
+esli ~islo prewy{aet dopustimoe, wydaetsq soob}enie:
+.SWT 2
+                           ~islo prewy{aet dopustimoe
+.LIN 2
+w slu~ae o{ibki, w peremennu` PRKLR zanositsq priznak o{ibki (1 w star{em
+bajte). pri nali~ii o{ibki, a takve pri navatii tolxko odnoj klawi{i "wk",
+peremennoj, zadawaemoj parametrom R, priswaiwaetsq zna~enie EMPREAL (sm.p.
+7.1).
+.LIN 0
+procedury RDINT i RDREAL ispolxzu`tsq wnutri sebq dlq wwoda teksta ~isla
+proceduru RDTX.
+.LIN
+dlq perekl`~eniq klawiatury w sostoqnie "russkij registr", "latinskij
+registr" ispolxzu`tsq sootwetstwenno procedury bez parametrow WRUS i WLAT,
+kotorye odnowremenno s perekl`~eniem zapomina`t sostoqnie klawiatury w
+peremennoj  LATRUS.
+                                                                                                                                                                                                                                    

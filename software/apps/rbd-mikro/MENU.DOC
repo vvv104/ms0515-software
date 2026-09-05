@@ -1,0 +1,1054 @@
+.TOC
+.STL
+.TTL
+
+tehnologi~eskij kompleks
+r t k   m i k r o
+sistema men`
+rukowodstwo operatora
+
+
+
+
+
+
+
+
+1988
+
+.MID annotaciq
+.LIN 3
+w dannom dokumente opisana sistema men`, prednazna~ennaq dlq
+organizacii raboty na mikro |wm po zaranee
+zagotowlennomu scenari`. sistema obespe~iwaet
+maksimalxno prostoj interfejs ob}eniq s ma{inoj. w ee sostaw whodqt:
+.LIN
+programma redaktirowaniq men`;
+.LIN 0
+programma interpretacii men`;
+.LIN 0
+programma pe~ati men`.
+.CPT struktura men`
+.LIN 0
+men` predstawlqet soboj pere~enx nekotoryh rabot pod ob}im zagolowkom.
+zagolowkom men` qwlqetsq proizwolxnaq tekstowaq stroka.
+.LIN 0
+w odnom men` movet sodervatxsq ne bolee 18 rabot. men` hranitsq w fajle s
+ras{ireniem .MEN, nazywaemom fajlom men`.
+.LIN 0
+rabota w men` predstawlqetsq kak nabor sostawlq`}ih komponentow,
+opredelq`}ih ee nazwanie i dejstwiq pri wypolnenii. komponenty
+razdelq`tsq na ob}ie i specifi~eskie.
+ob}imi komponentami qwlq`tsq:
+.LIN
+imq raboty;
+.LIN 0
+tip raboty.
+.LIN
+imenem raboty qwlqetsq proizwolxnaq tekstowaq stroka. tipom raboty opredelqetsq
+sposob ee wypolneniq. ime`tsq tri tipa rabot:
+.LIN
+komandy monitora;
+.LIN 0
+sprawka;
+.LIN 0
+men`.
+.HLV
+rabota tipa "komandy monitora"
+.LIN
+specifi~eskimi komponentami raboty qwlq`tsq:
+.SWT
+        sposob wozwrata w men`;
+        komandy monitora;
+        formalxnye parametry;
+        sprawka o rabote.
+.LIN
+pri wypolnenii raboty dannogo tipa otrabatywaetsq nabor komand, analogi~nyj
+komandnomu fajlu, po zawer{eni` wypolneniq kotorogo proishodit wozwrat w men`.
+wozwrat w men` proishodit libo bezuslowno, awtomati~eski, libo
+po navati` klawi{i "wk". w poslednem slu~ae rezulxtat wypolnennoj
+raboty ne stiraetsq s |krana, poka ne budet navata klawi{a "wk".
+takoj sposob wozwrata polezno (a ~asto neobhodimo) zadawatx, esli
+dannaq rabota osu}estwlqet wywod na |kran sprawo~noj informacii,
+kotoru` nuvno prosmotretx. naprimer, wywod na |kran kataloga ustrojstwa,
+informacii po konfiguracii sistemy, podskazki po komande monitora
+i T.p.. sposob wozwrata w men` ukazywaetsq pri sozdanii ili redaktirowanii
+raboty.
+.LIN 0
+komandy monitora w men` zada`tsq analogi~no komandnomu fajlu.
+wse sogla{eniq, ograni~eniq, mehanizm wypolneniq takie ve, kak i dlq komandnogo
+fajla. w ~astnosti, wyzow programmy w nabore komand monitora imeet sledu`}u`
+osobennostx. esli programma po zawer{eni` obrabotki dannyh proizwodit
+powtornyj (cikli~eskij) zapros specifikacij, to dlq wyhoda
+iz nee w ka~estwe komandnoj stroki nuvno zadatx stroku simwolow "^C",
+immitiru`}u` odnowremennoe navatie klawi{ "CTRL" i "C".
+(CTRL/C). naprimer
+.SWT
+        R DUP
+        DK:/F/K
+        ^C
+        R MACRO
+        FILE=FILE
+        ^C
+.LIN
+komandy monitora mogut imetx formalxnye parametry.
+formalxnyj parametr zadaetsq nomerom (cifroj ot 0 do 9), pered
+kotorym stoit simwol "&". kavdyj formalxnyj parametr dolven bytx opisan,
+T.E. kavdomu nomeru formalxnogo parametra dolven bytx postawlen
+w sootwetstwie tekst zaprosa.
+.LIN 0
+fakti~eskie zna~eniq formalxnym parametram priswaiwa`tsq wo wremq wypolneniq
+raboty po zaprosam, imenu`}im formalxnye parametry.
+.LIN 0
+qzyk opisaniq formalxnyh parametrow i primery rabot tipa "komandy monitora"
+priwedeny w razdele 3.
+.LIN 0
+komponent "sprawka o rabote" sodervit imq tekstowogo fajla,
+soderva}ego sprawku o teku}ej rabote. pri wypolnenii raboty po navati`
+klawi{i "?" sprawka w revime listaniq wywoditsq na |kran (sm. podrazd. 1.2).
+zadanie fajla sprawki w rabote tipa "komandy monitora" ne qwlqetsq
+obqzatelxnym. pri otsutstwii sprawki klawi{a "?" ne otrabatywaetsq.
+.HLV
+rabota tipa "sprawka"
+.LIN
+specifi~eskim komponentom raboty tipa "sprawka" qwlqetsq imq
+tekstowogo fajla, soderva}ego sprawku.
+pri wypolnenii dannoj raboty fajl sprawki wywoditsq na |kran dlq prosmotra.
+prosmotr osu}estwlqetsq w revime listaniq kak w prqmom, tak i w obratnom
+porqdke. razmer lista rawen razmeru |krana (24 stroki). dlq
+prosmotra sprawki ispolxzu`tsq sledu`}ie funkcionalxnye klawi{i:
+.SWT
+        "strelka wniz" - wywod sledu`}ego lista sprawki;
+        "strelka wwerh" - wywod predydu}ego lista sprawki;
+        "w na~alo teksta" - wywod perwogo lista sprawki;
+        "w konec teksta"  - wywod poslednego lista sprawki
+.LIN
+wozwrat w men` osu}estwlqetsq po navati` klawi{i "wk".
+.LIN 0
+po umol~ani` fajl sprawki imeet ras{irenie "QUE".
+.LIN
+.ATT  prime~anie.
+razmer fajla sprawki programmno ne kontroliruetsq. odnako pri dostato~no
+bolx{om razmere sprawki proishodit awarijnoe zawer{enie raboty
+interpretatora men` ili dave krah operacionnoj sistemy. maksimalxno
+dopustimyj razmer fajla sprawki zawisit ot tipa monitora, ob'ema
+rezidentnyh USR i drajwerow. dlq SJ-monitora pri rezidentnyh USR i
+drajwere sistemnogo ustrojstwa fajl sprawki ne dolven prewy{atx
+40 blokow.
+.HLV
+rabota tipa "men`"
+.LIN
+specifi~eskimi komponentami raboty tipa "men`" qwlq`tsq
+.SWT
+        imq fajla
+        sprawka o rabote
+.LIN
+komponent "imq fajla" ukazywaet na fajl, soderva}ij men`.
+pri wypolneniii |toj raboty
+osu}estwlqetsq perehod na men` sledu`}ego urownq. takim obrazom,
+rabota dannogo tipa sluvit dlq poddervki ierarhi~eskoj struktury men`.
+.LIN 0
+komponent "sprawka o rabote" analogi~en takomu ve komponentu
+w rabote tipa "komandy monitora" (sm. podrazd. 1.1).
+.CPT startowaq rabota
+.LIN 0
+men` movet sodervatx startowu` rabotu,
+bezuslowno wypolnq`}u`sq pri perwom obra}enii k nemu. ona movet
+bytx odnogo iz dwuh tipow:
+.LIN
+komandy monitora;
+.LIN 0
+sprawka.
+.LIN
+startowaq rabota ne imeet nazwaniq, na |krane ne otobravaetsq i ne
+whodit w ob}ee koli~estwo rabot men`. w ostalxnom mehanizm ee redaktirowaniq
+i wypoleniq ne otli~a`tsq ot oby~noj raboty men`.
+.CPY MENU1.TXT
+.CPT logi~eskie ustrojstwa sistemy men`
+.LIN
+pri rabote sistemy men` ispolxzu`tsq logi~eskie ustrojstwa,
+kotorye polxzowatelx dolven nazna~itx pered na~alom raboty s men`:
+M, STK, SRV.
+.TBL M
+ustrojstwo, na kotorom nahoditsq interpretator men` INTMEN.SAV i,
+velatelxno, redaktor men` EDIMEN.SAV;
+.TBL SRV
+ustrojstwo, soderva}ee fajl men` so standartnym imenem
+SRV:SRVMEN.MEN,
+nazywaemoe serwisnym;
+.TBL STK
+ustrojstwo, na kotoroe w processe wypolneniq men` zapisywa`tsq wremennye
+rabo~ie fajly. |ti fajly sozda`tsq interpretatorom men`.
+.LIN
+fajl
+.SWT
+        STK:STEKM.STK
+.BLN
+sodervit informaci` o teku}em sostoqnii men` (stek men`). ispolxzuetsq
+interpretatorom men` dlq wosstanowleniq sostoqniq men` posle wypolneniq
+raboty tipa "komandy monitora". |tot fajl ispolxzuet takve redaktor men`,
+hotq dlq redaktora on i ne qwlqetsq obqzatelxnym. razmer fajla - odin
+blok.
+.LIN 0
+fajl
+.SWT
+        STK:INTMEN.CMF
+.BLN
+qwlqetsq wremennym komandnym fajlom. on sodervit komandy monitora iz
+raboty tipa "komandy monitora", po|tomu ego razmer zawisit
+ot ob'ema |tih komand. pri nebolx{ih ob'emah komand |tot fajl movet
+ne sozdawatxsq.
+.LIN 0
+fajl
+.SWT
+        STK:ZAGMEN.ZAG
+.BLN
+sozdaetsq interpretatorom men` dlq pereda~i sluvebnoj informacii redaktoru
+men`. razmer fajla - 1 blok.
+.CPT za}ita men` parolem
+.LIN 0
+men` movet bytx za}i}eno parolem. parolx sodervit ot 1 do 4 simwolow.
+parolx, sostoq}ij iz odnih probelow, rassmatriwaetsq kak otsutstwie parolq.
+parolx wwoditsq i redaktiruetsq pri sozdanii ili pri redaktirowanii men`.
+.LIN 0
+esli men` za}i}eno parolem, to l`boj rabote s nim pred{estwuet wwod parolq.
+.LIN 0
+pri wyzowe programmy raboty s men` (redaktora, programmy pe~ati ili
+interpretatora) wydaetsq zapros:
+.SWT
+        parolx?
+.BLN
+esli parolx wwoditsq newerno, wydaetsq diagnosti~eskoe soob}enie:
+.SWT
+        newernyj parolx
+.BLN
+i parolx zapra{iwaetsq powtorno. esli i wtori~no parolx wwoditsq
+newerno, powtorqetsq wywod diagnosti~eskogo soob}eniq i proishodit wyhod
+iz men` teku}ego urownq.
+.LIN 0
+pri wwode parolq s klawiatury displeq simwoly parolq na |kran ne wywodqtsq.
+.LIN 0
+pri otsutstwii parolq dostup k men` osu}estwlqetsq neposredstwenno posle
+zadaniq ego imeni.
+.CPT redaktor men`
+.LIN 0
+redaktor men` prednazna~en dlq sozdaniq i redaktirowaniq
+fajlow men`.
+.LIN 0
+wyzow redaktora s sistemnogo ustrojstwa osu}estwlqetsq komandoj:
+.SWT
+        .R EDIMEN
+
+s ustrojstwa m -
+
+        .RU M:EDIMEN
+.BLN
+redaktor zapra{iwaet imq whodnogo fajla men`:
+.SWT
+        whodnoj fajl men`?
+.BLN
+esli ras{irenie ne ukazywaetsq, to po umol~ani` beretsq "MEN". esli
+imq fajla ne ukazywaetsq - sozdaetsq nowyj fajl. posle priwqzki whodnogo
+fajla redaktor zapra{iwaet imq wyhodnogo fajla:
+.SWT
+        wyhodnoj fajl men`?
+.BLN
+po umol~ani` ras{irenie wyhodnogo fajla - "MEN". esli imq wyhodnogo fajla ne
+ukazywaetsq, to ono sowpadaet s imenem whodnogo fajla. esli imena whodnogo
+i wyhodnogo fajlow ne ukazany, to na |kran wywoditsq nomer
+wersii programmy i powtorqetsq zapros whodnogo fajla.
+.LIN 0
+redaktor pozwolqet wypolnqtx sledu`}ie funkcii:
+.SWT
+        wwod raboty;
+        redaktirowanie raboty;
+        udalenie raboty;
+        s~itywanie raboty w bufer;
+        wwod raboty iz bufera w men`;
+        wwod startowoj raboty;
+        redaktirowanie startowoj raboty;
+        udalenie startowoj raboty;
+        redaktirowanie zagolowka men`;
+        izmenenie parolq.
+.HLV
+redaktirowanie men`
+.LIN
+dlq redaktirowaniq fajl men` s~itywaetsq w bufer.
+.LIN 0
+redaktirowanie men` rabot osnowano na so~etanii dwuh priemow:
+.LIN
+wedenie dialoga ~erez men`;
+.LIN 0
+wwod i redaktirowanie teksta w okne.
+.LIN
+na |krane men` predstawlqet soboj posledowatelxnostx strok
+pod ob}im zagolowkom. pered odnoj iz strok ustanowlen ukazatelx "->"
+(strelka),
+kotoryj pri pomo}i klawi{ "strelka wwerh", "strelka wniz", "w na~alo
+teksta", "w konec teksta"
+movno pereme}atx, wybiraq nuvnu` stroku.
+pri navatii klawi{i "sbros" proishodit wyhod iz men` bez wypoleniq kakih-libo
+dejstwij. po navati` klawi{i "wk" wypolnqetsq dejstwie,
+ukazannoe w stroke, gde nahoditsq ukazatelx. na wremq wypoleniq
+|togo dejstwiq ukazatelx stanowitsq passiwnym i obozna~aetsq
+simwolom "+". passiwnyj ukazatelx wdolx men` ne pereme}aetsq.
+.LIN 0
+stroki men` mogut bytx pronumerowany.
+nomera strok odnosimwolxnye. perwye 9 strok numeru`tsq ciframi ot
+0 do 9, ostalxnye - propisnymi latinskimi bukwami w alfawitnom
+porqdke, na~inaq s bukwy "a".
+.LIN 0
+nomera strok  men` qwlq`tsq funkcionalxnymi klawi{ami.
+po navati` takoj klawi{i wypolnqetsq dejstwie stroki, nomer kotoroj ukazan na
+|toj klawi{e. movno otkazatxsq ot numeracii. dlq |togo su}estwuet
+funkcionalxnaq klawi{a "numeraciq", navatie kotoroj poperemenno
+wkl`~aet i wykl`~aet numeraci` strok men`.
+pri wykl`~ennyh nomerah ih dejstwie kak
+funkcionalxnyh klawi{ ne osu}estwlqetsq.
+.ATT
+esli na ustrojstwe STK nahoditsq fajl STEKM.STK, to redaktor men` ustanawliwaet
+tot revim numeracii, kotoryj ukazan w |tom fajle.
+esli |tot fajl otsutstwuet, to stroki men` pronumerowany po umol~ani`.
+.LIN
+funkcionalxnye klawi{i uprawleniq men` redaktora opisany w prilovenii 1.
+.LIN 0
+dlq redaktirowaniq men` rabot ispolxzu`tsq sledu`}ie men`:
+.LIN
+men` funkcij redaktora;
+.LIN 0
+men` komponentow raboty;
+.LIN 0
+men` tipow raboty;
+.LIN 0
+men` sposoba wozwrata.
+.LIN
+wse tekstowye komponenty men` rabot (zagolowok, parolx, imena rabot, komandy
+monitora, formalxnye parametry, specifikacii fajlow) redaktiru`tsq
+w specialxnyh oknah.
+w oknah movno redaktirowatx kak mnogostro~nye teksty (dlq komponentow
+"komandy monitora" i "formalxnye parametry"), tak i teksty tolxko w
+odnu stroku (dlq ostalxnyh komponentow raboty).
+.LIN 0
+redaktirowanie teksta w okne osu}estwlqetsq w neposredstwennom
+|krannom revime. funkcionalxnye klawi{i dlq okonnogo
+redaktirowaniq priwedeny w prilovenii 2.
+.LIN 0
+dlq redaktirowaniq men` wywoditsq na |kran. esli koli~estwo rabot menx{e 18,
+to poslednqq stroka men` qwlqetsq pustoj.
+esli fajl steka men` STEKM.STK na ustrojstwe STK otsutstwuet, to
+ukazatelx ustanawliwaetsq w stroke imeni perwoj raboty. w protiwnom slu~ae
+ukazatelx ustanawliwaetsq na tu rabotu, nomer kotoroj ukazan w fajle
+steka men`. |tot ukazatelx
+movno podwesti
+w stroku l`boj iz rabot ili w pustu` stroku i osu}estwitx wwod raboty ili
+redaktirowanie.
+rabota, na kotoru` ukazywaet strelka "->" qwlqetsq teku}ej.
+w nivnej ~asti |krana (pod pere~nem rabot) izobravena gorizontalxnaq
+liniq, w na~ale kotoroj wywedeno soob}enie "redaktirowanie".
+sprawa ot nego wywoditsq soob}enie, ukazywa`}ee urowenx ierarhii
+redaktiruemogo men`, zatem - imq fajla redaktiruemogo men` (ris.1).
+.LIN 0
+urowenx ierarhii opredelqetsq po fajlu steka men` STK:STEKM.STK.
+esli ve on otsutstwuet, to po umol~ani` ukazywaetsq nulewoj urowenx.
+.LIN 0
+pri navatii klawi{i "sbros" proishodit wyhod iz redaktirowaniq men` bez zapisi
+ego w fajl. pri |tom |kran o~i}aetsq i wydaetsq powtornyj zapros na wwod
+imeni whodnogo fajla men`.
+.LIN 0
+redaktirowanie men` rabot osu}estwlqetsq ~erez men` funkcij redaktora, kotoroe
+wyzywaetsq po navati` klawi{i "wk" ili nomera raboty pri wkl`~ennom revime
+numeracii.
+men` funkcij redaktora wydaetsq w
+prawom werhnem uglu |krana i predstawlqet pere~enx dopustimyh nad men`
+dejstwij. pri |tom teku}aq rabota pome~aetsq passiwnym ukazatelem, a
+strelka ustanawliwaetsq w perwoj stroke men` funkcij redaktora
+(ris.2).
+.TES 24
+.SWT 2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      tehnologi~eskij kompleks programmista rtk mikro
+
+ -> 1 wywod kataloga ustrojstwa
+    2 ob}ie swedeniq po kompleksu rtk mikro
+    3 swedeniq o distributiwe rtk mikro
+    4
+
+
+
+
+
+
+
+- redaktirowanie -------- urowenx 0 ------ FILMEN --------
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+                          ris. 1
+
+.TES 25
+.SWT 2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    tehnologi~eskij kom!     funkcii redaktora men`
+                       !
++ 1 wywod kataloga ustr!-> 1 wwod raboty
+  2 ob}ie swedeniq po k!   2 redaktirowanie raboty
+  3 swedeniq o distribu!   3 udalenie raboty
+  4                    !   4 s~itywanie raboty w bufer
+                       !   5 wwod startowoj raboty
+                       !   6 redaktirowanie zagolowka men`
+                       !   7 izmenenie parolq
+                       !   8 zapisx men` w fajl
+                       !----------------------------------
+
+
+
+
+
+- redaktirowanie -------- urowenx 0 ------ FILMEN --------
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+                          ris. 2
+.LIN 2
+po navati` klawi{i "sbros" men` funkcij redaktora is~ezaet i wosstanawliwaetsq
+men` rabot.
+.LIN 0
+po navati` klawi{i "wk" proishodit wypolnenie ukazannoj strelkoj funkcii
+redaktora, pri~em wypolnenie funkcij:
+.TES 6
+.SWT 1
+        wwod raboty;
+        redaktirowanie raboty;
+        udalenie raboty;
+        s~itywanie raboty w bufer;
+        wwod raboty iz bufera w men`
+.BLN
+zawisit ot poloveniq passiwnogo ukazatelq w men` rabot. wypolnenie ostalxnyh
+funkcij ot poloveniq ukazatelq ne zawisit.
+.LIN 0
+po zawer{eni` wypolneniq l`boj iz funkcij redaktora, za iskl`~eniem
+zapisi men` w fajl, proishodit awtomati~eskij wozwrat w men` rabot,
+pri~em ukazatelx ustanawliwaetsq na tot nomer raboty, na kotoryj
+byl ustanowlen do wypolneniq |toj funkcii.
+.HLV 2
+redaktirowanie raboty
+.LIN
+dlq redaktirowaniq raboty nuvno podwesti w men` rabot marker
+k imeni nuvnoj raboty, wyzwatx men` funkcij redaktora (ris.2), podwesti
+ukazatelx k stroke:
+.SWT
+        redaktirowanie raboty
+.BLN
+i, navaw klawi{u "wk", pristupitx k redaktirowani` raboty. ukazannaq rabota
+wywoditsq na |kran w wide, pokazannom na ris.3, ris.4 i ris.5. w perwom slu~ae
+rabota imeet tip "komandy monitora", wo wtoroM -  "sprawka", w tretxem -
+"men`".
+.TES 30
+.SWT 2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+     komponenty raboty   (I)!                         (II)
+                            !
+-> 1 imq raboty             ! tip raboty: komandy monitora
+   2 tip raboty             ! sposob wozwrata:po "wk"
+   3 sposob wozwrata w men` !
+   4 komandy monitora       !-----------------------------
+   5 formalxnye parametry   !                        (III)
+   6 sprawka o rabote       !
+   7 zapisx raboty w men`   !
+----------------------------------------------------------
+imq raboty  !   wywod kataloga ustrojstwa             (IV)
+----------------------------------------------------------
+            ! DIR/FU/VOL &1                            (V)
+  komandy   !
+ monitora   !
+            !
+----------------------------------------------------------
+            ! 1=imq ustrojstwa (naprimer DX0:)?       (VI)
+ formalxnye ! #1=DK:
+ parametry  !
+            !
+----------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+                          ris. 3
+.LIN 1
+.TES 22
+.SWT 2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+     komponenty raboty     (I) !                      (II)
+                               !
+-> 1 imq raboty                ! tip raboty : sprawka
+   2 tip raboty                !
+   3 imq fajla                 !
+   4 zapisx raboty w men`      !--------------------------
+                               !                     (III)
+                               !
+                               !
+----------------------------------------------------------
+ imq raboty  ! swedeniq o distributiwe rtk mikro      (IV)
+----------------------------------------------------------
+ imq  fajla  ! RTKDIS.QUE                            (VII)
+----------------------------------------------------------
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+                          ris. 4
+.LIN 1
+.TES 27
+.SWT 2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+     komponenty raboty     (I) !                      (II)
+                               !
+-> 1 imq raboty                ! tip raboty : men`
+   2 tip raboty                !
+   3 imq fajla                 !
+   4 sprawka o rabote          !--------------------------
+   5 zapisx raboty w men`      !                     (III)
+                               !
+                               !
+----------------------------------------------------------
+ imq raboty  ! ob}ie swedeniq po kompleksu rtk mikro  (IV)
+----------------------------------------------------------
+ imq  fajla  ! RTKMIC.MEN                            (VII)
+----------------------------------------------------------
+ sprawka     ! RTKMIC.QUE                           (VIII)
+----------------------------------------------------------
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+                        ris. 5
+.LIN 2
+kak pokazano na risunkah 3, 4 i 5, |kran razbiwaetsq na rqd okon,
+kavdoe iz kotoryh
+imeet swoe nazna~enie. w okne (I) wydaetsq men` komponentow raboty. oknO
+(II) sluvit dlq wyda~i informacii o tipe raboty, a dlq raboty tipa
+"komandy monitora" - i o sposobe wozwrata w men`. pri redaktirowanii
+tipa raboty ili wozwrata w men` w okne (II) wydaetsq men` tipa raboty ili
+men` sposoba wozwrata. okno (III) prednazna~eno dlq wyda~i soob}eniq-podskazki
+o wozmovnoj o{ibke w dannoj rabote. okno (IV) sluvit dlq wwoda
+i redaktirowaniq imeni raboty, okna (V) i (VI) - dlq wwoda i
+redaktirowaniq sootwetstwenno komand monitora i formalxnyh parametrow.
+okno (VII) - dlq wwoda i redaktirowaniq specifikacii fajla sprawki ili men`.
+.LIN 0
+okno (VIII) prelnazna~eno dlq wwoda i redaktirowaniq imeni fajla sprawki,
+priwqzannoj k teku}ej rabote. |to okno harakterno dlq rabot tipa "men`"
+i "komandy monitora".
+.LIN  0
+redaktirowanie raboty proizwoditsq ~erez men` komponentow raboty. ~toby
+otredaktirowatx nuvnyj komponent raboty, nuvno ustanowitx ukazatelx
+na ee nazwanie w men` komponentow raboty i, navaw klawi{u "wk",
+perejti k redaktirowani` |togo komponenta. po zawer{eni` redaktirowaniq
+proishodit wozwrat w men` komponentow.
+.LIN 0
+pri redaktirowanii raboty tipa "komandy monitora" komponent "formalxnye
+parametry" prisutstwuet tolxko w tom slu~ae, esli komandy monitora sodervat
+formalxnye parametry.
+.LIN 0
+wwod i redaktirowanie imeni fajla sprawki o rabote osu}estwlqetsq w
+okne (VIII). w slu~ae raboty tipa "komandy monitora" okno (VIII)
+nakladywaetsq na okno (VI).
+.LIN 0
+redaktirowanie imeni raboty,
+komand monitora, formalxnyh parametrow ili imeni
+fajla osu}estwlqetsq tekstowym okonnym redaktorom. redaktirowanie tipa raboty
+ili sposoba wozwrata w men` osu}estwlqetsq posredstwom men`, wywedennom w
+okne (II).
+.LIN 0
+men` tipa raboty imeet wid:
+.TES 6
+.SWT 1
+                  tip raboty
+
+             -> 1 komandy monitora
+                2 sprawka
+                3 men`
+.LIN 1
+men` sposoba wozwrata imeet wid:
+.TES 5
+.SWT
+                  sposob wozwrata w men`
+
+             -> 1 bezuslownyj
+                2 po navati` "wk"
+
+.LIN 0
+pri izmenenii tipa raboty osu}estwlqetsq pererazmetka |krana.
+.LIN 0
+pri sozdanii ili redaktirowanii raboty tipa "komandy monitora"
+imeetsq wozmovnostx s~itywatx sodervimoe komandnyh fajlow
+w okno komand monitora. dlq |togo nuvno, nahodqsx w okne
+"komandy monitora", navatx klawi{u "predydu}ij kadr".
+w okne diagnostiki (III) wydaetsq zapros:
+.SWT
+        imq komandnogo fajla?
+.BLN
+w otwet na kotoryj nuvno zadatx imq komandnogo fajla. esli ukazannyj
+komandnyj fajl su}estwuet, to soderva}ijsq w nem tekst dopisywaetsq w okno
+"komandy monitora", w protiwnom slu~ae wydaetsq soob}enie:
+.SWT
+        komandnyj fajl ne najden
+.BLN
+i po navati` klawi{i "wk" proishodit wozwrat w okno "komandy monitora".
+~toby wernutxsq w okno komand monitora, ne nabiraq imeni komandnogo
+fajla, nuvno navatx klawi{u "wk".
+.LIN 0
+dlq zapisi redaktiruemoj raboty w men` komponentow raboty dopolnitelxno
+wwoditsq stroka:
+.SWT
+        zapisx raboty w men`
+.LIN
+|ta stroka prisutstwuet li{x w tom slu~ae, esli
+wse komponenty raboty opredeleny i wse formalxnye parametry prawilxno
+opisany. w protiwnom slu~ae w okne (III) wydaetsq soob}enie o pri~ine o{ibki.
+wozmovny sledu`}ie soob}eniq:
+.TBL newerno opisan formalxnyj parametr
+esli dopu}ena o{ibka w sintaksise opisaniq formalxnogo parametra;
+.TBL opi{ite formalxnye parametry
+esli hotq by odin formalxnyj parametr ne opisan;
+.TBL nedopustimyj perenos
+esli newerno oformlen perenos pri opisanii
+alxternatiwnogo formalxnogo parametra;
+.TBL o{ibka zaprosa formalxnogo parametra
+esli dopu}ena o{ibka w formate zna~eniq, ili stroka podwoprosa
+alxternatiwnogo parametra qwlqetsq pustoj;
+.TBL nedopustimoe koli~estwo alxternatiw
+esli koli~estwo alxterantiw formalxnogo parametra prewy{aet
+maksimalxno dopustimoe - 22.
+.LIN
+wyhod iz revima redaktirowaniq raboty bez zapisi osu}estwlqetsq po navati`
+klawi{i "sbros" w men` komponentow raboty. w |tom slu~ae redaktiruemaq rabota
+sohranqetsq w prevnem wide.
+.HLV 2
+wwod raboty
+.LIN
+nowaq rabota w men` wwoditsq w tom meste, na kotoroe ukazywaet strelka.
+raboty, raspolovennye nive strelki sdwiga`tsq na stroku wniz.
+.LIN 0
+dlq wwoda raboty w men` neobhodimo podwesti strelku k nuvnomu mestu
+wwoda i wyzwatx men` funkcij redaktora. zatem ustanowitx strelku
+naprotiw stroki:
+.SWT
+        wwod raboty
+.BLN
+i po navati` klawi{i "wk" perejti k wwodu raboty. pri |tom |kran gasnet.
+na nem poqwlqetsq pustoe okno (IV) dlq wwoda imeni raboty. marker
+ustanawliwaetsq w na~ale okna. posle wwoda imeni raboty na |krane poqwlq`tsq
+okna (II) i (III) s men` tipa raboty w okne (II).
+.LIN 0
+esli wybran tip raboty "komandy monitora", to w okne (II) zatem poqwlqetsq
+men` sposoba wozwrata, posle wyhoda iz nego w |tom okne wydaetsq sprawo~naq
+informaciq o tipe raboty i sposobe wozwrata w men`. zatem poqwlqetsq okno (V)
+dlq wwoda komand monitora. esli komandy monitora sodervat formalxnye
+parametry, to posle zawer{eniq ih wwoda na |krane poqwlqetsq okno (VI)
+dlq wwoda opisanij formalxnyh parametrow.
+.LIN 0
+posle zawer{eniq wwoda opisanij formalxnyh parametrow ili komand
+monitora, ne soderva}ih formalxnye parametry, w okne (I) poqwlqetsq
+men` komponentow raboty i dalxnej{ie dejstwiq opisany w p.6.1.1.
+.LIN 0
+esli pri wwode raboty wybran tip "sprawka", to na |krane poqwlqetsq
+okno (VII) dlq wwoda imeni fajla sprawki, posle ~ego
+w okne (I) wydaetsq men` komponentow raboty.
+.LIN 0
+rabota tipa "men`" wwoditsq analogi~no rabote tipa "sprawka",
+odnako w men` komponentow poqwlqetsq stroka "sprawka o rabote",
+pozwolq`}aq w specialxnom okne wwoditx imq sprawki, otnosq}ejsq
+k teku}ej rabote. esli imq fajla sprawki ne najdeno, to okno sprawki na |kran
+ne wyswe~iwaetsq.
+.LIN 0
+zawer{aetsq process wwoda raboty zapisx` ee w men` ~erez men`
+komponentow raboty.
+.HLV 2
+udalenie raboty
+.LIN
+dlq udaleniq raboty iz men` ukazatelx nuvno ustanowitx na ee imq,
+wyzwatx men` funkcij redaktora, podwesti w nem ukazatelx k stroke:
+.SWT
+        udalenie raboty
+.BLN
+i navatx klawi{u "wk".
+.HLV 2
+bufer raboty
+.LIN
+dlq perestanowki ili dublirowaniq rabot ispolxzuetsq bufer raboty,
+nad kotorym dopustimy sledu`}ie dejstwiq:
+.SWT
+        s~itywanie raboty w bufer;
+        wwod raboty iz bufera w men`,
+.BLN
+kotorye wyswe~iwa`tsq w men` funkcij redaktora. dlq s~itywaniq raboty w
+bufer nuvno podwesti ukazatelx k toj rabote, wyzwatx men` funkcij,
+podwesti ukazatelx k stroke:
+.SWT
+        s~itywanie raboty w bufer
+.BLN
+i navatx klawi{u "wk". esli w bufere uve estx rabota, to ona zamenqetsq na
+nowu`. ~toby wwesti rabotu iz bufera w men`, nuvno podwesti ukazatelx k
+nuvnomu mestu, wyzwatx men` funkcij redaktora, podwesti ukazatelx k stroke:
+.SWT
+        wwod raboty iz bufera w men`
+.BLN
+i navatx klawi{u "wk".
+.HLV 2
+redaktirowanie startowoj raboty
+.LIN
+dlq redaktirowaniq startowoj raboty nuvno wyzwatx men` funkcij redaktora,
+podwesti w nem ukazatelx k stroke:
+.SWT
+        redaktirowanie startowoj raboty
+.BLN
+i, navaw klawi{u "wk", perejti k redaktirowani` startowoj raboty. mehanizm
+redaktirowaniq analogi~en opisannomu w p.6.1.1.
+.HLV 2
+wwod startowoj raboty
+.LIN
+dlq wwoda startowoj raboty nuvno wyzwatx men` funkcij redaktora, podwesti
+w nem ukazatelx k stroke:
+.SWT
+        wwod startowoj raboty
+.BLN
+i navatx klawi{u "wk". wwod startowoj raboty analogi~en wwodu oby~noj raboty
+(p.6.1.2). otli~ie sostoit w tom, ~to iz-za otsutstwiq imeni wwod
+na~inaetsq s opredeleniq tipa raboty.
+.HLV 2
+udalenie startowoj raboty
+.LIN
+dlq udaleniq startowoj raboty nuvno wyzwatx men` funkcij redaktora, podwesti w
+nem ukazatelx k stroke:
+.SWT
+        udalenie startowoj raboty
+.BLN
+i navatx klawi{u "wk".
+.HLV 2
+redaktirowanie zagolowka men`
+.LIN
+dlq redaktirowaniq zagolowka men` nuvno wyzwatx men` funkcij redaktora,
+ustanowitx ukazatelx na stroku:
+.SWT
+        redaktirowanie zagolowka men`
+.BLN
+i navatx klawi{u "wk". marker ustanowitsq w na~alo zagolowka men`.
+redaktirowanie proizwoditsq pri pomo}i klawi{, opisannyh w prilovenii 2.
+.HLV 2
+wwod, redaktirowanie i udalenie parolq
+.LIN
+posle wyzowa men` funkcij redaktora ukazatelx podwesti k stroke:
+.SWT
+        izmenenie parolq
+.BLN
+i navatx klawi{u "wk". pri |tom w stroke mevdu zagolowkom men` i spiskom imen
+rabot wydaetsq tekst-podskazka:
+.SWT
+        izmenenie parolq: XXXX
+.BLN
+gde XXXX - pole iz ~etyreh pozicij, w kotoryh proizwoditsq wwod ili
+redaktirowanie parolq.
+.LIN 0
+esli |to pole pusto, to estx ne sodervit ni odnogo otli~nogo ot probela
+simwola, to parolx otsutstwuet.
+.LIN 0
+redaktirowanie parolq zawer{aetsq navatiem klawi{i "wk".
+.HLV 2
+zapisx men` w fajl
+.LIN
+dlq zapisi men` w fajl nuvno wyzwatx men` funkcij redaktora, ustanowitx
+ukazatelx na stroku:
+.SWT
+        zapisx men` w fajl
+.BLN
+i navatx klawi{u "wk", posle ~ego men` zapisywaetsq w fajl, |kran o~i}aetsq,
+wydaetsq soob}enie:
+.SWT
+        fajl men` zapisan
+.BLN
+i powtorqetsq zapros na imq whodnogo fajla men`.
+.HLV
+sozdanie men`
+.LIN
+pri sozdanii men` |kran gasnet, w perwoj stroke wydaetsq
+zapros:
+.SWT
+        wwedite zagolowok men`:
+.BLN
+i marker ustanawliwaetsq w na~alo sledu`}ej stroki. posle wwoda zagolowka men`,
+
+zawer{a`}egosq navatiem klawi{i "wk", na |kran wydaetsq "pustoe" men`
+rabot, soderva}ee zagolowok i edinstwennu` pustu` stroku
+w spiske rabot. po navati` klawi{i "wk" wyzywaetsq men` funkcij redaktora i
+dalxnej{ie dejstwiq qwlq`tsq dejstwiqmi po redaktirowani` men`, opisannye
+w podrazd. 6.1.
+.CPT pe~atx men`
+.LIN 0
+programma pe~ati prednazna~ena dlq wyda~i na pe~atx ili drugoe ustrojstwo
+wywoda fajla men` w naglqdnom wide.
+.LIN 0
+zapusk programmy s sistemnogo ustrojstwa osu}estwlqetsq komandoj
+.SWT
+        .R PRIMEN
+.BLN
+na |kran wywoditsq zapros:
+.SWT
+        imq fajla men`?
+.BLN
+w otwet na kotoryj nuvno wwesti imq fajla men`. esli w otwet
+na dannyj zapros navatx klawi{u "wk", to wydaetsq nomer wersii programmy i
+zapros powtorqetsq. esli ukazannyj fajl ne najden,
+to na |kran wywoditsq soob}enie:
+.SWT
+        ne najden fajl men`
+.BLN
+i zapros imeni fajla men` powtorqetsq. esli fajl su}estwuet, to na |kran
+wydaetsq zapros:
+.SWT
+        imq fajla pe~ati?
+.BLN
+po umol~ani` men` zapisywaetsq na disk w fajl s imenem whodnogo fajla
+men` i s ras{ireniem "LST".
+.LIN 0
+posle ukazaniq parolq (esli on estx) men` wywoditsq
+na zadannoe ustrojstwo.
+.LIN 0
+w programme pe~ati men` imeetsq kl`~ /D dlq
+sokra}ennoj pe~ati men`. pri |tom
+w fajl pe~ati wywoditsq tolxko nazwanie men` i spisok imen rabot.
+kl`~ nuvno zadawatx pri ukazanii imeni fajla men`.
+.CPY MENU2.TXT
+.CPT funkcionalxnye klawi{i
+.LIN
+w priloveniqh pere~isleny funkcionalxnye klawi{i, nabiraemye pri
+odnowremennom navatii klawi{i "CTRL" i sootwetstwu`}ej simwolxnoj klawi{i
+(CTRL-kombinacii). |ti
+klawi{i qwlq`tsq ob}imi dlq wseh tipow terminalow, na
+kotoryh korrektno rabotaet sistema men`. sootwetstwie
+mnemoni~eskih funkcionalxnyh klawi{ CTRL-kombinaciqm dlq konkretnyh tipow
+displeew priwedeny w dokumente "unificirowannye uprawlq`}ie
+klawi{i kompleksa rtk mikro".
+
+.APN klawi{i raboty s men` redaktora
+.RIT tablica 1
+.SWT 0
+----------------------------------------------------------
+ nazwanie  !    CTRL-    !          funkciq
+ klawi{i   ! kombinaciq  !
+----------------------------------------------------------
+           !             !
+strelka    !  CTRL/]     ! pereme}enie ukazatelq na odnu
+wwerh      !             ! stroku men` wwerh
+           !             !
+strelka    !  CTRL/D     ! pereme}enie ukazatelq na odnu
+wniz       !             ! stroku wniz
+           !             !
+w na~alo   !CTRL/H CTRL/]! pereme}enie ukazatelq na per-
+teksta     !             ! wu` stroku men`
+           !             !
+w konec    !CTRL/H CTRL/D! pereme}enie ukazatelq na pos-
+teksta     !             ! ledn`` stroku men`
+           !             !
+wk         !  CTRL/M     ! wypolnenie dejstwiq, ukazanno-
+           !             ! go w teku}ej stroke
+           !             !
+sbros      !  CTRL/L     ! otkaz ot men` bez wypolneniq
+           !             ! kakih-libo dejstwij
+           !             !
+wyhod      !  CTRL/C     ! analogi~na klawi{e "sbros"
+           !             !
+numeraciq  !  CTRL/Z     ! wkl`~itx/wykl`~itx numeraci`
+           !             ! alxternatiw men`
+.APN klawi{i redaktirowaniq teksta w okne
+.RIT tablica 2
+.SWT 0
+----------------------------------------------------------
+ nazwanie  !    CTRL-    !          funkciq
+ klawi{i   ! kombinaciq  !
+----------------------------------------------------------
+strelka    !  CTRL/\     ! pereme}enie markera na odin
+wprawo     !             ! simwol wprawo w stroke
+           !             !
+strelka    !  CTRL/V     ! pereme}enie markera na odin
+wlewo      !             ! simwol wlewo w stroke
+           !             !
+udalenie   !  CTRL/Y     ! udalenie simwola, ukazannogo
+simwola    !             ! markerom
+           !             !
+wstawka    !  CTRL/E     ! razdwivka simwolow stroki na
+simwola    !             ! odin simwol ot poloveniq,
+           !             ! ukazannogo markerom
+           !             !
+zaboj      !  DEL        ! udalenie simwola, nahodq}ego-
+           !             ! sq pered markerom
+           !             !
+w konec    !CTRL/H CTRL/\! ustanowka markera w konec
+stroki     !             ! stroki
+           !             !
+w na~alo   !CTRL/H CTRL/V! ustanowka markera w na~alo
+stroki     !             ! stroki
+           !             !
+           !  rus/lat    ! perekl`~enie registra rus/lat
+           !             ! w protiwopolovnoe sostoqnie
+           !             !
+wk         !  CTRL/M     ! konec redaktirowaniq teksta w
+           !             ! teku}em okne
+           !             !
+strelka    !  CTRL/D     ! pereme}enie markera na odnu
+wniz       !             ! stroku wniz po tekstu okna.
+           !             ! esli marker nahoditsq w posled-
+           !             ! nej stroke okna, no ne w posle-
+           !             ! dnej stroke redaktiruemogo tek-
+           !             ! sta, to proishodit sdwig teksta
+           !             ! w okne na odnu stroku wwerh
+           !             ! (rolik wwerh). marker ostaetsq
+           !             ! w poslednej stroke okna. esli
+           !             ! marker nahoditsq w poslednej
+           !             ! stroke teksta, to klawi{a ne
+           !             ! otrabatywaetsq.
+.CLN
+.RIT prodolvenie tablicy 2
+.SWT 0
+----------------------------------------------------------
+ nazwanie  !    CTRL-    !          funkciq
+ klawi{i   ! kombinaciq  !
+----------------------------------------------------------
+strelka    !  CTRL/]     ! pereme}enie markera wwerh na
+wwerh      !             ! odnu stroku po tekstu okna. es-
+           !             ! li marker nahoditsq w perwoj
+           !             ! stroke okna, no ne w perwoj
+           !             ! stroke teksta, to proishodit
+           !             ! sdwig teksta w okne na odnu
+           !             ! stroku wniz (rolik wniz). mar-
+           !             ! ker ostaetsq w werhnej  stroke
+           !             ! okna. esli marker nahoditsq w
+           !             ! perwoj stroke teksta,to klawi{a
+           !             ! ne otrabatywaetsq
+           !             !
+udalenie   !  CTRL/U     ! udalenie stroki w okne
+stroki     !             !
+           !             !
+razdwivka  !  CTRL/G     ! razdwivka strok w okne
+strok      !             !
+           !             !
+dublirowa- !  CTRL/R     ! dublirowanie simwola werhnej
+nie simwola!             ! stroki
+           !             !
+ps         !  CTRL/J     ! perewod stroki. esli marker na-
+           !             ! hoditsq w sredine stroki, to
+           !             ! nahodq}iesq sprawa ot nego sim-
+           !             ! woly stroki udalq`tsq. marker
+           !             ! ustanawliwaetsq w na~alo sle-
+           !             ! du`}ej stroki
+           !             !
+w na~alo   !CTRL/H CTRL/]! wyhod w na~alo redaktiruemogo w
+teksta     !             ! okne teksta
+           !             !
+w konec    !CTRL/H CTRL/D! wyhod w konec redaktiruemogo w
+teksta     !             ! okne teksta
+           !             !
+predydu}ij ! CTRL/^      ! (tolxko dlq okna "komandy mo-
+kadr       !             ! nitora") ~tenie informacii iz
+           !             ! komandnogo fajla w okno
+           !             ! "komandy monitora"
+.LIN 2
+.ATT prime~anie.
+perwye dewqtx funkcionalxnyh klawi{ (po "wk" wkl`~itelxno)
+ispolxzu`tsq kak dlq
+redaktirowaniq mnogostro~nyh okon, tak i dlq okon tolxko w odnu stroku.
+ostalxnye - dlq redaktirowaniq tolxko mnogostro~nyh okon.
+.APN klawi{i interpretatora men`
+.RIT tablica 3
+.SWT 0
+----------------------------------------------------------
+ nazwanie  !    CTRL-    !         funkciq
+ klawi{i   ! kombinaciq  !
+----------------------------------------------------------
+           !             !
+strelka    !  CTRL/D     ! perewod ukazatelq na sledu`}u`
+wniz       !             ! rabotu. pri wyda~e sprawki  -
+           !             ! wywod sledu`}ego lista sprawki
+           !             !
+strelka    !  CTRL/]     ! perewod ukazatelq na predydu-
+wwerh      !             ! }u` rabotu.  pri wyda~e spraw-
+           !             ! ki - wywod predydu}ego lista
+           !             ! sprawki
+           !             !
+wk         !  CTRL/M     ! wypolnenie teku}ej raboty,
+           !             ! sbros diagnostiki, zawer{enie
+           !             ! wwoda stroki. pri wywode
+           !             ! sprawki -  wozwrat w men`
+           !             !
+w na~alo   !CTRL/H CTRL/]! perewod ukazatelq na perwu`
+teksta     !             ! rabotu. pri wyda~e sprawki -
+           !             ! wywod perwogo lista sprawki
+           !             !
+w konec    !CTRL/H CTRL/D! perewod ukazatelq na posledn``
+teksta     !             ! rabotu. pri wyda~e sprawki -
+           !             ! wywod poslednego lista sprawki
+           !             !
+predydu}ij !  CTRL/^     ! wozwrat w men` wys{ego urownq,
+kadr       !             ! t.e. w men`, wyzwaw{ee teku}ee
+           !             ! men`
+           !             !
+           !  rus/lat    ! perekl`~enie revimow rus/lat.
+           !             ! navatie klawi{i perewodit |kran
+           !             ! w protiwopolovnoe sostoqnie
+           !             !
+zaboj      !  DEL        ! stiranie poslednego wwedennogo
+           !             ! simwola
+           !             !
+wwod       !  CTRL/K     ! wwod komand monitora s |krana.
+komand     !             !
+           !             !
+sbros      !  CTRL/L     ! otkaz ot teksta, nabrannogo w
+           !             ! revime wwoda komand s |krana.
+           !             ! pri ustanowlennom revime
+           !             ! "buferizaciq rabot" - sbros
+           !             ! buferizacii
+           !             !
+.CLN
+.RIT prodolvenie tablicy 3
+.SWT 0
+----------------------------------------------------------
+ nazwanie  !    CTRL-    !         funkciq
+ klawi{i   ! kombinaciq  !
+----------------------------------------------------------
+buferizaciq! CTRL/P      ! wkl`~enie revima buferizacii
+           !             ! rabot
+           !             !
+ispolnenie ! CTRL/_      ! wypolnenie komand, nabrannyh
+           !             ! s |krana. w revime buferiza-
+           !             ! cii - wypolnenie buferizowa-
+           !             ! nnyh rabot
+           !             !
+redaktiro- ! CTRL/R      ! redaktirowanie teku}ego men`
+wanie      !             !
+           !             !
+serwis     ! CTRL/T      ! wyzow serwisnogo men`
+           !             !
+numeraciq  ! CTRL/Z      ! wkl`~enie/wykl`~enie revima
+           !             ! numeracii rabot
+           !             !
+*          ! *           ! wyda~a sistemnoj sprawki
+           !             !
+?          ! ?           ! wyda~a sprawki po teku}ej
+           !             ! rabote
+           !             !
+CTRL/X     ! CTRL/X      ! wyhod iz men` l`bogo urownq
+           !             ! s sohraneniem steka
+           !             !
+wyhod      ! CTRL/C      ! wyhod w monitor s nulewogo
+           !             ! urownq men`; perehod na
+           !             ! men` predydu}ego urownq,
+           !             ! esli urowenx bolx{e nulq;
+           !             ! wyhod iz serwisnoj wetki
+           !             ! men` s wozwratom w men`,
+           !             ! wyzwaw{ego serwisnoe;
+           !             ! otkaz ot formalxnogo
+           !             ! parametra s wozwratom w
+           !             ! men`
+                                                                                                           

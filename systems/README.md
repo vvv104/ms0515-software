@@ -92,7 +92,7 @@ SL activates silently.
 
 ## omega2.dsk
 
-The other real Омега — the build of vvv's own disks (`disk3`, `PAPER`,
+The other real Омега — the build of Voronkov's own vvv104 disks (`disk3`, `PAPER`,
 `h0`; the 2003 `baspasfor` read carries the same monitor one setting
 word apart).  It is not a patch of `omega.dsk`: a resident component
 around blocks 39–43 is genuinely different and 4 KB larger, and dozens

@@ -1,0 +1,571 @@
+.TOC
+.STL
+.TTL
+
+tehnologi~eskij kompleks
+r t k   m i k r o
+relqcionnaq  subd  dlq  mikro-|wm
+|krannyj interfejs
+rukowodstwo operatora
+
+
+
+
+
+
+
+1987
+
+.MID annotaciq
+.LIN 3
+relqcionnaq sistema uprawleniq bazami dannyh (subd)
+prednazna~ena dlq sozdaniq i uprawleniq bazami
+dannyh na mikro- i mini-|wm. sistema predlagaet dlq
+polxzowatelq-neprogrammista udobnyj
+i naglqdnyj |krannyj iterfejs dostupa k baze dannyh, blagodarq kotoromu subd s
+podkl`~ennoj k nej bazoj dannyh sostawlqet gotowu` informacionno-poiskowu`
+sistemu. predlagaemyj subd programmnyj  interfejs  pozwolqet sozdawatx na ee
+osnowe  specializirowannye sistemy obrabotki informacii. subd prednazna~ena dlq
+mikro-|wm  "|lektronika 60", dwk-2, dwk-3, a takve dlq mini-|wm tipa
+sm-4  s operacionnoj sistemoj rafos (fodos, os dwk, NTS).
+.CPT nazna~enie i uslowiq primeneniq
+.LIN 0
+relqcionnaq subd prednazna~ena dlq sozdaniq i uprawleniq relqcionnymi bazami
+dannyh na mikro-|wm tipa "|lektronika-60", dwk-2, dwk-3, a takve na mini-|wm
+sm-4 w operacionnoj sisteme
+rafos (fodos, NTS, os dwk). w ka~estwe wne{nej pamqti dlq hraneniq dannyh
+ispolxzu`tsq magnitnye diski (md).
+.LIN 0
+subd movet ispolxzowatxsq dlq sozdaniq razli~nyh informacionno-sprawo~nyh
+sistem, w sistemah awtomati~eskogo i awtomatizirowannogo sbora, hraneniq i
+obrabotki dannyh, w sistemah awtomatizacii proektirowaniq i t.p. subd
+pozwolqet obsluviwatx odnu ili neskolxko baz dannyh.
+.LIN 0
+subd imeet dwa urownq interfejsa - dialogowyj |krannyj interfejs, ras~itannyj
+na polxzowatelq-neprogrammista, i programmnyj interfejs.
+.LIN 0
+dialogowyj |krannyj interfejs obespe~iwaet naglqdnyj i operatiwnyj dostup
+k baze dannyh, wywodq na |kran ee sodervimoe w wide tablicy. |krannyj interfejs
+pozwolqet ispolxzowatx subd s podkl`~ennoj k nej bazoj dannyh w ka~estwe
+gotowoj informacionno-poiskowoj sistemy.
+.LIN 0
+programmnyj interfejs pozwolqet rabotatx s bazoj dannyh (sozdawatx, zapolnqtx,
+modificirowatx bazu dannyh, izwlekatx informaci` iz bazy dannyh) iz programm,
+napisannyh na qzykah paskalx i grafi~eskij paskalx (odin iz whodnyh qzykow
+kompleksa rtk mikro). programmnyj interfejs ispolxzuetsq pri
+sozdanii specializirowannyh sistem obrabotki dannyh. w nastoq}em dokumente
+programmnyj interfejs ne rassmatriwaetsq.
+.LIN 0
+relqcionnaq subd qwlqetsq sostawnoj ~astx` tehnologi~eskogo kompleksa rtk
+mikro.
+ona razrabotana po r-tehnologii programmirowaniq na qzyke grafi~eskij paskalx.
+.CPT harakteristiki programmy
+.HLV 1
+struktura bazy dannyh
+.LIN
+podderviwaemye subd bazy dannyh predstawlq`tsq w wide dwumernoj tablicy.
+tablica sostoit iz zapisej s fiksirowannym naborom stolbcow. kavdyj stolbec
+imeet imq i opredelennyj tip, edinye dlq wseh zapisej bazy dannyh. dopustimy
+sledu`}ie tipy stolbcow:
+.LIN 2
+1 - celoe ~islo w diapazone -32768..32767;
+.LIN 0
+2 - we}estwennoe ~islo;
+.LIN 0
+3 - tekst proizwolxnoj dliny;
+.LIN 0
+4 - simwolxnaq stroka fiksirowannoj dliny,
+.SWT 0
+          soderva}aq ot 1 do 32 simwolow.
+.LIN 2
+maksimalxnoe ~islo stolbcow w baze dannyh - 48.
+.LIN 0
+obra}enie k baze dannyh w subd proishodit po imeni - identifikatoru dlinoj ne
+bolee 6 simwolow (dopustimy tolxko latinskie bukwy).
+.HLV 2
+simwolxnye tipy dannyh
+.LIN
+zna~eniem stolbca tipa 3 movet bytx tekst proizwolxnoj dliny (orientirowo~no
+do 2000 simwolow), sostoq}ij iz neskolxkih strok. dlina odnoj tekstowoj
+stroki ne movet prewy{atx 79 simwOlow.
+.LIN 0
+zna~eniem stolbca tipa 4 qwlqetsq stroki fiksirowannoj dliny. esli pri zadanii
+zna~eniq stolbca wwoditsq stroka menx{ej dliny, ostaw{iesq pozicii
+awtomati~eski zapolnq`tsq probelami.
+.LIN 0
+dlq predstawleniq tekstowyh dannyh nebolx{ogo ob'ema sleduet otdawatx
+predpo~tenie tipu 4, tak kak |to w dalxnej{em movet su}estwenno uskoritx
+poisk informacii w baze dannyh, a takve proceduru sortirowki bazy dannyh.
+.HLV 1
+organizaciq dialoga w subd
+.LIN
+dialog w subd stroitsq takim obrazom, ~toby minimizirowatx i obleg~itx
+wwod, iskl`~iw pri |tom bolx{instwo wozmovnyh o{ibok. sistema sama zapra{iwaet
+w kavdom konkretnom slu~ae ws` neobhodimu` dlq raboty informaci`, wydawaq
+podskazki, kotorye ~asto sodervat i nabor dopustimyh otwetow. |to pozwolqet
+ispolxzowatx sistemu polxzowatelqm s minimalxnoj podgotowkoj.
+.HLV 2
+funkcionalxnye klawi{i
+.LIN
+dlq raboty s subd ispolxzu`tsq funkcionalxnye klawi{i, kotorye w tekste
+dannogo dokumenta predstawleny wzqtymi w kawy~ki imenami, naprimer "strelka
+wwerh". sootwetswu`}ie im konkretnye klawi{i displeq priwedeny w prilovenii,
+pri |tom rqd dejstwij zadaetsq posledowatelxnym navatiem dwuh klawi{.
+.LIN 0
+krome togo funkcionalxnye klawi{i produblirowany alfawitnymi klawi{ami,
+navimaemymi sowmestno so sluvebnoj klawi{ej "CTRL" (na nekotoryh tipah
+displeew |ta klawi{a obozna~aetsq kak "Cu", "uC", "sluv.kod"). |to pozwolqet
+ispolxzowatx subd bez perenastrojki pod konkretnye kody klawiatury
+na bolx{instwe tipow displeew.
+.HLV 2
+wwod strok
+.LIN
+l`boj |lementarnyj wwod (strok, ~isel, komand) zakan~iwaetsq navatiem
+klawi{i "wk". dlq stiraniq poslednego wywedennogo simwola ispolxzuetsq klawi{a
+"zaboj". s pomo}x` klawi{ "strelka wprawo", "strelka wlewo"
+movno podwesti marker k l`bomu wwedennomu simwolu w stroke i wwesti ego
+nowoe zna~enie. s pomo}x` klawi{ "wstawitx simwol" i "udalitx simwol" movno
+sdwinutx stroku wprawo ili wlewo ot pozicii markera.
+.ATT prime~anie.
+opisannye sredstwa redaktirowaniq stroki ne
+rasprostranq`tsq na wwod specifikacij fajlow (imeni bazy dannyh, fajla pe~ati,
+fajla formata), kotoryj osu}estwlqetsq sredstwami operacionnoj
+sistemy.
+.HLV 2
+|krannaq tablica
+.LIN
+pri zapolnenii, redaktirowanii i prosmotre bazy dannyh ispolxzuetsq osobaq
+forma organizacii dialoga, nazywaemaq |krannoj tablicej.
+.LIN 0
+primer |krannoj tablicy:
+.TES 19
+.SWT 2
+ ________________________________________________________
+!                                                        !
+!baza dannyh:KADRY : ~islo stolbcow:5 : ~islo zapisej:105!
+!""""""""""""""""""""""""""""""""""""""""""""""""""""""""!
+!                                                        !
+!                                                        !
+!""""""""""""""""""""""""""""""""""""""""""""""""""""""""!
+! N :    f.i.o.     : pol :  god rovd. : oklad : telefon !
+!--------------------------------------------------------!
+! 0 :      1        :  2  :      3     :   4   :    5    !
+!--------------------------------------------------------!
+!  1:iwanow i.i.     m             1950     180 66-25-13 !
+!  2:petrowa p.p.    v             1955     165          !
+!  3:sidorow s.s     m             1940     220 27-01-15 !
+!                                                        !
+!                          . . .                         !
+
+.LIN 2
+swerhu razme}aetsq zagolowok bazy dannyh, kotoryj sodervit imq bazy dannyh,
+~islo stolbcow i ~islo zapisej, soderva}ihsq w baze dannyh. nive raspolaga`tsq
+dwe pustye stroki, kotorye sluvat dlq wwoda komand i dannyh
+i dlq wywoda diagnosti~eskih soob}enij.
+.LIN 0
+dalee sleduet neposredstwenno tablica, sostoq}aq iz zagolowka s imenami i
+nomerami wywodimyh stolbcow, i 15 strok, w kotorye wywodqtsq zna~eniq stolbcow.
+kavdaq stroka sootwetstwuet odnoj zapisi. nulewoj stolbec sodervit porqdkowye
+nomera zapisej. mnogie komandy rabota`t s teku}ej zapisx`,
+otme~aemoj na |krane specialxnym markerom, kotoryj raspolagaetsq mevdu nulewym
+i perwym stolbcom i obozna~aetsq "#" (re{etka).
+.LIN 0
+w ob}em slu~ae |krannaq tablica movet sodervatx ne wse stolbcy. nabor
+wywodimyh na |kran stolbcow i ~islo  zanimaemyh kavdym stolbcom  pozicij
+opredelq`tsq  pri sozdanii bazy dannyh i mogut operatiwno izmenqtxsq w
+processe raboty. esli simwolxnaq stroka zna~eniq stolbca ne ume}aetsq w ~islo
+otwedennyh na |krane pozicij, to ona obrezaetsq (na |krane, no ne w pamqti).
+.LIN 0
+zna~enie l`bogo stolbca teku}ej zapisi movet bytx wywedeno w komandnu` stroku
+|krana, nezawisimo ot togo, wyweden li stolbec na |kran ili net.
+.LIN 0
+w opisanii bazy dannyh hranqtsq ~etyre formata |krannoj tablicy, nazywaemye
+standartnymi. oni opredelq`tsq pri sozdanii bazy dannyh i mogut bytx izmeneny
+pri redaktirowanii.
+.LIN 0
+wywedennye na |kran informacionnye i diagnosti~eskie soob}eniq snima`tsq
+navatiem klawi{i "wk".
+.HLV 2
+rabota s mnogostro~nym tekstom
+.LIN
+zna~eniem stolbca  tipa 3 movet bytx mnogostro~nyj tekst. perehod na nowu`
+stroku osu}estwlqetsq po navati` klawi{i "ps". dlq pereme}eniq markera
+wwerh i wniz po strokam ispolxzu`tsq klawi{i "strelka wwerh", "strelka
+wniz". dlq wstawki mevdu strok pustoj stroki i udaleniq stroki -
+klawi{i "wstawitx stroku"
+i "udalitx stroku".
+.HLV 1
+za}ita bazy dannyh parolem
+.LIN
+baza dannyh movet bytx za}i}ena parolem. parolx sodervit ot 1 do 4 simwolow.
+parolx, sostoq}ij iz odnih probelow, rassmatriwaetsq kak otsutstwie parolq.
+parolx wwoditsq pri sozdanii bazy dannyh ili pri ee redaktirowanii i movet
+bytx izmenen pri redaktirowanii bazy dannyh.
+.LIN 0
+esli baza dannyh za}i}ena parolem, to l`boj rabote s nej pred{estwuet wwod
+parolq, nezawisimo ot togo, ispolxzu`tsq li programmy, realizu`}ie
+dialogowyj interfejs (sm.razd.4), ili programmy polxzowatelq, napisannye
+s ispolxzowaniem wozmovnostej programmnogo interfejsa.
+.LIN 0
+programmy, realizu`}ie dialogowyj interfejs, zapra{iwa`t parolx w dialoge,
+wydawaq na |kran zapros:
+.SWT
+                parolx?
+.BLN
+esli parolx wwoditsq newerno, wydaetsq diagnosti~eskoe soob}enie:
+.SWT
+                newernyj parolx
+.BLN
+i parolx zapra{iwaetsq powtorno. esli i wtori~no parolx wwoditsq newerno,
+powtorqetsq wywod diagnosti~eskogo soob}eniq i wypolnenie programmy
+zawer{aetsq.
+.LIN 0
+pri wwode parolq s klawiatury displeq simwoly parolq na |kran ne wywodqtsq.
+.CPT whodnye i wyhodnye dannye
+.LIN 0
+baza dannyh na magnitnom diske hranitsq w wide treh
+fizi~eskih fajlow:  fajla zapisej
+s ras{ireniem TBF, fajla alfawitnyh dannyh s ras{ireniem ADF i fajla razmerom
+w odin ili dwa bloka s ras{ireniem DEF, soderva}im opisanie bazy dannyh.
+imena wseh treh fajlow sowpada`t s imenem bazy dannyh.
+.LIN 0
+ob'em bazy dannyh ograni~iwaetsq ob'emom odnogo diska.
+.CPT obra}enie k programme i soob}eniq
+.HLV 1
+dialogowyj interfejs subd
+.LIN
+dialogowyj interfejs subd realizuetsq sledu`}im naborom modulej:
+.SWT
+      CRERDB - programma sozdaniq bazy dannyh;
+      EDRDB  - redaktoP bazy dannyh;
+      RETRDB - programma poiska;
+      SORRDB - programma sortirowki bazy dannyh;
+      COLRDB - programma obsluviwaniq stolbcow;
+      MERRDB - programma sliqniq dwuh baz dannyh;
+      UNIRDB - programma ob'edineniq odnotipnyh baz dannyh.
+.LIN
+wyzow modulq s sistemnogo ustrojstwa wypolnqetsq komandoj:
+.SWT
+                .R MOD
+.BLN
+gde MOD - imq wyzywaemogo modulq.
+.HLV 1
+sozdanie bazy dannyh
+.LIN
+pri wyzowe modulq zapra{iwaetsq imq bazy dannyh i ~islo stolbcow. zatem, po
+kavdomu stolbcu, zapra{iwa`tsq imq stolbca i ego tip.
+.LIN 0
+dalee movet bytx zadan odin iz ~etyreh standartnyh formatow |krannoj
+tablicy, ostalxnye formaty programma generiruet sama,
+raspolagaq na |krane stolxko stolbcow po porqdku, skolxko ume}aetsq.
+~islo pozicij, zanimaemyh stolbcom, opredelqetsq kak maksimum iz ~isla pozicij,
+zanimaemyh imenem stolbca, i ~isla pozicij, wydelqemyh po umol~ani` dlq
+kavdogo tipa:
+.LIN
+1 - 6 pozicij;
+.LIN 0
+2 - 13 pozicij;
+.LIN 0
+3 - 10 pozicij;
+.LIN 0
+4 - ~islo pozicij, rawnoe dline stroki.
+.LIN
+esli format |krannoj tablicy w dialoge ne zadaetsq, to programma formiruet
+~etyre odinakowyh opisaniq |krannoj tablicy. formaty standartnyh |krannyh
+tablic mogut bytx izmeneny pri redaktirowanii.
+.LIN 0
+posle okon~aniq opisaniq bazy dannyh, w slu~ae podtwervdeniq ee sozdaniq,
+formiru`tsq tri fajla, soderva}ie bazu dannyh. w protiwnom slu~ae process
+opisaniq na~inaetsq sna~ala zaprosom imeni bazy dannyh.
+.LIN 0
+primer protokola sozdaniq bazy dannyh. pod~erkom wydeleny otwety polxzowatelq:
+.TES 7
+.SWT 2
+      .R CRERDB
+      imq  bazy dannyh? KADRY
+                        -----
+      koli~estwo stolbcow? 5
+                           -
+      dopustimye tipy stolbcow:
+         1 - celyj
+         2 - we}estwennyj
+         3 - stroka prizwolxnoj dliny
+         4 - stroka fiksirowannoj dliny 1..32 simwolow
+
+
+      imq stolbca 1? f.i.o.
+                     ------
+      tip stolbca (1..4)? 3
+                          -
+      imq stolbca 2? pol
+                     ---
+      tip stolbca (1..4)? 4
+                          -
+      koli~estwo simwolow w stroke? 1
+                                    -
+      imq stolbca 3? god rovd.
+                     ---------
+      tip stolbca (1..4)? 1
+                          -
+      imq stolbca 4? oklad
+                     -----
+      tip stolbca (1..4)? 1
+                          -
+      imq stolbca 5? telefon
+                     -------
+      tip stolbca (1..4)? 4
+                          -
+      koli~estwo simwolow w stroke? 8
+                                    -
+      ispolxzuetsq standartnyj format tablicy (d/n)? n
+                                                     -
+      swobodnyh pozicij |krana: 79
+      nulewoj stolbec  wywoditsq na |kran (d/n)? d
+                                                 -
+      {irina stolbca? 4
+                      -
+      swobodnyh pozicij |krana: 74
+      stolbec  f.i.o.  wywoditsq na |kran (d/n)? d
+                                                 -
+      {irina stolbca? 15
+                      --
+      swobodnyh pozicij |krana: 58
+      stolbec  pol  wywoditsq na |kran (d/n)? d
+                                              -
+      {irina stolbca? 5
+                      -
+      swobodnyh pozicij |krana: 52
+      stolbec  god rovd.  wywoditsq na |kran (d/n)? d
+                                                    -
+      {irina stolbca? 12
+                      --
+      swobodnyh pozicij |krana: 39
+      stolbec  oklad  wywoditsq na |kran (d/n)? d
+                                                -
+      {irina stolbca? 7
+                      -
+      swobodnyh pozicij |krana: 31
+      stolbec  telefon  wywoditsq na |kran (d/n)? d
+                                                  -
+      {irina stolbca? 8
+                      -
+
+      podtwerdite sozdanie bazy dannyh (d/n)? d
+                                              -
+
+      baza dannyh  KADRY  sozdana
+.LIN 2
+esli pri opisanii zkrannoj tablicy  w otwet na zapros o wywode stolbca
+na |kran navimaetsq tolxko klawi{a "wk", nastrojka tablicy prekra}aetsq
+i s~itaetsq, ~to ostaw{iesq stolbcy na |kran ne wywodqtsq. pri wyhode
+stolbca za granicy |krana wydaetsq diagnostika i zapros na wywod stolbca
+powtorqetsq.
+.LIN 0
+we}estwennye ~isla mogut wywoditxsq na |kran w odnom iz dwuh formatow:
+w normalizowannom (s plawa`}ej to~koj), naprimer:
+.SWT
+                1.253400E+02
+.BLN
+i w formate s fiksirowannoj to~koj, naprimer:
+.SWT
+                125.34
+.LIN
+pri nastrojke |krannoj tablicy dlq stolbcow tipa 2 (we}estwennoe ~islo)
+posle zaprosa {iriny stolbca zapra{iwaetsq format wywoda ~isla:
+.SWT 2
+   ~islo wywoditsq w formate s fiksirowannoj to~koj (d/n)?
+.BLN 2
+i w slu~ae ispolxzowaniq formata s fiksirowannoj to~koj zapra{iwaetsq
+~islo cifr, wywodimyh posle to~ki:
+.SWT 2
+        ~islo cifr posle to~ki?
+.HLV 1
+redaktor bazy dannyh
+.HLV 2
+wyzow redaktora
+.LIN
+redaktor pozwolqet zapolnqtx i redaktirowatx bazu dannyh. posle wyzowa
+redaktora zapra{iwaetsq
+imq whodnoj bazy dannyh i imq wyhodnoj (rezulxtiru`}ej) bazy dynnyh,
+naprimer:
+.SWT
+        .R EDRDB
+        imq whodnoj bazy dannyh? NAME1
+        imq wyhodnoj bazy dannyh? NAME2
+.LIN
+esli imq wyhodnoj bazy dannyh sowpadaet so whodnym, to pri
+zaprose imeni wyhodnoj bazy dannyh dostato~no navatx klawi{u "wk".
+.LIN 0
+wyhodnaq baza dannyh movet raspolagatxsq na drugom ustrojstwe.
+na mikro-|wm dwk-2, dwk-3 dlq |toj celi movet bytx ispolxzowan sistemnyj
+diskowod. dlq |togo posle zagruzki programmy EDRDB sistemnyj disk
+wynimaetsq iz ustrojstwa i na ego mesto stawitsq rabo~ij disk,
+na kotorom budet raspolagatxsq rezulxtiru`}aq baza dannyh.
+predwaritelxno dolvna bytx wypolnena komanda monitora
+.SWT
+        .SET USR NOSWAP
+.BLN
+takoj priem pozwolqet uweli~itx potencialxnyj razmer bazy dannyh, sozdawaemoj
+na mikro-|wm dwk-2, dwk-3, do razmerow odnogo gibkogo magnitnogo
+diska.
+.LIN 0
+primer wyzowa redaktora:
+.SWT
+        .SET USR NOSWAP
+        .R EDRDB
+        imq whodnoj bazy dannyh? MX1:=KADRY
+        imq wyhodnoj bazy dannyh? MX0:=KADRY
+.LIN
+posle otkrytiq bazy dannyh na |kran wywoditsq zagolowok
+bazy dannyh i tablicy. dlq zapolneniq informacionnoj ~asti
+tablicy sleduet navatx klawi{u "sledu`}aq stranica" ili
+"strelka wniz".
+.HLV 2
+klawi{i i komandy uprawleniq
+.LIN
+uprawlenie redaktorom osu}estwlqetsq s pomo}x` navatiq funkcionalxnyh klawi{
+ili wwoda komand w pole komandnoj stroki |krannoj tablicy.
+.LIN 2
+funkcionalxnye klawi{i:
+.TBL "strelka wniz"
+sdwig markera na sledu`}u` zapisx. esli marker nahoditsq w pOslednej stroke,
+to na |kran wywoditsq sledu`}aq stranica (15 zapisej) i marker
+     ustanawliwaetsq na ee perwu` zapisx
+.TBL "strelka wwerh"
+sdwig markera wwerh na predydu}u` zapisx. esli marker nahoditsq
+w perwoj stroke, to na |kran    wywoditsq predydu}aq stranica i marker
+ustanawliwaetsq na ee posledn`` zapisx
+.TBL "sledu`}aq stranica"
+wywod na zkran sledu`}ej stranicy, marker ustanawliwaetsq na perwu` zapisx
+.TBL "w na~alo bd"
+perehod w na~alo bazy dannyh. informacionnaq ~astx
+tablicy gasnet.
+.TBL "w konec bd"
+perehod w konec bazy dannyh. na |kran wywoditsq poslednqq zapisx
+i marker ustanawliwaetsq za poslednej zapisx`, t.e. prigotowlen dlq wwoda
+w "hwost" bazy dannyh nowoj zapisi
+.TBL "wyhod"
+wyhod iz redaktora bez sohraneniq teku}ego sostoqniq bazy dannyh
+.LIN 2
+komandy:
+.BLN
+.TBL w
+wwesti zapisx w stroku, ukazywaemu` markerom. esli marker nahoditsq za
+poslednej zapisx`, to nowaq zapisx dopisywaetsq w "hwost"  bazy dannyh.
+esli marker ukazywaet na konkretnu` zapisx, to proishodit razdwivka strok
+i pod |tim nomerom wwoditsq nowaq zapisx. w processe wwoda redaktor
+zapra{iwaet zna~eniq stolbcow, wydawaq  w ka~estwe podskazki  imena stolbcow.
+pri wwode kontroliruetsq tip stolbcow. wwodimye zna~eniq stolbcow poqwlq`tsq
+w sootwetstwu`}ih poziciqh  |krannoj tablicy, esli stolbec wyweden na |kran
+.TBL u
+udalitx zapisi, na~inaq s teku}ej. zapra{iwaetsq ~islo udalqemyh
+zapisej. zapisi stira`tsq s |krana i udalq`tsq iz bazy dannyh.
+esli udalqemye zapisi ne qwlq`tsq poslednimi, proishodit
+podtqgiwanie raspolovennyh nive zapisej. esli wwedennoe ~islo
+udalqemyh zapisej prewy{aet ~islo ostaw{ihsq zapisej, udalq`tsq
+wse zapisi, na~inaq s teku}ej do konca bazy dannyh
+.TBL z
+zamenitx zapisx. udalqetsq teku}aq zapisx i pod |tim nomerom
+wwoditsq nowaq zapisx
+.TBL s
+posmotretx stolbec teku}ej zapisi. zapra{iwaetsq nomer stolbca, posle
+~ego w komandnu` stroku wywoditsq zna~enie stolbca, nezawisimo
+ot togo, wyweden stolbec na |kran ili net. dlq prosmotra
+mnogostro~nogo teksta ispolxzu`tsq klawi{i "strelka wwerh",
+"strelka wniz".
+.TBL zs
+zamenitx zna~enie stolbca teku}ej zapisi. zapra{iwaetsq nomer
+stolbca, posle ~ego zna~enie stolbca udalqetsq iz bazy dannyh i iz polq
+|krannoj tablicy, esli stolbec wyweden na |kran, i zapra{iwaetsq nowoe zna~enie
+stolbca
+.TBL P
+redaktirowatx tekstowoe zna~enie stolbca teku}ej zapisi.
+zapra{iwaetsq nomer stolbca, posle ~ego zna~eniE stolbca udalqetsq iz bazy
+dannyh i polq |krannoj tablicy i poqwlqetsq w pole komandnoj stroki. dalee
+ono movet bytx otredaktirowano,
+dlq ~islowyh dannyh (tip 1 i 2) komanda rabotaet analogi~no komande "zs"
+.TBL bf
+peresylka teku}ej zapisi w specialxnyj wnutrennij bufer redaktora
+.TBL wb
+wwesti zapisx iz bufera redaktora w stroku, ukazywaemu` markerom.
+esli marker nahoditsq za poslednej zapisx`, to nowaq zapisx dopisywaetsq w
+"hwost" bazy dannyh. esli marker ukazywaet na konkretnu` zapisx, to proishodit
+razdwivka strok i pod |tim nomerom wwoditsq nowaq zapisx
+.TBL wz
+zamenitx teku}u` zapisx na zapisx iz bufera redaktora
+.TBL ws
+wwod zna~eniq stolbca potokom. zapra{iwaetsq nomer stolbca, a zatem
+ego zna~enie. posle wwoda zna~eniq stolbca proishodit sdwig markera na
+sledu`}u` zapisx i powtorqetsq zapros zna~eniq stolbca uve dlq |toj zapisi
+i t.d. wyhod iz revima wwoda osu}estwlqetsq po navati` klawi{i "wyhod".
+zna~eniq drugih stolbcow zapisej ne izmenq`tsq. pri wyhode na konec bazy
+dannyh porovdaetsq nowaq zapisx, ime`}aq wo wseh stolbcah, krome wwodimogo,
+pustye zna~eniq
+.TBL o
+poisk zadannogo obrazcom zna~eniq stolbca. posle nabora komandy zapra{iwaetsq
+nomer stolbca i obrazec. dlq ~islowyh dannyh (tip 1 i 2) obrazec dolven
+polnostx` zadawatx iskomoe ~islo. dlq simwolxnyh dannyh dopuskaetsq zadanie
+na~alxnoj podstroki. zadanie obrazca dlq nulewogo stolbca ispolxzuetsq dlq
+wywoda na |kran zapisi s trebuemym nomerom. poisk wedetsq ot zapisi, sledu`}ej
+za teku}ej, do konca bazy dannyh i ot na~ala bazy dannyh do teku}ej zapisi.
+esli iskomoe zna~enie stolbca najdeno,
+na |kran wywoditsq stranica, na~inaq s zapisi, soderva}ej
+najdennoe zna~enie stolbca. esli stolbec ne najden, ob |tom  wydaetsq
+informacionnoe soob}enie
+.TBL oz
+poisk obrazca s zamenoj. zapra{iwaEtsq nomer stolbca (zadanie nulewogo stolbca
+iz bazy dannyh). wse zna~eniq zadannogo stolbca, sootwetstwu`}ie obrazcu,
+zamenq`tsq nowym
+zna~eniem. po okon~anii prosmotra bazy dannyh wydaetsq informacionnoe soob}enie
+o koli~estwe proizwedennyh zamen i, esli zameny byli, perewywoditsq na |kran
+teku}aq stranica
+.TBL k
+wyhod iz redaktora s sohraneniem teku}ego sostoqniq bazy dannyh
+.TBL t
+nastrojka |krannoj tablicy analogi~no tomu, kak |to bylo opisano w programme
+CRERDB
+.TBL ts
+zapra{iwaetsq nomer standartnoj |krannoj tablicy (cifra ot 1 do 4), i
+perewywoditsq |krannaq tablica w sootwetstwu`}em formate
+.TBL zt
+zapisx  formata  teku}ej  |krannoj  tablicy  w
+ka~estwe  standartnoj. zapra{iwaetsq nomer standartnoj |krannoj
+tablicy (cifra ot 1 do 4), i pod |tim nomerom zapominaetsq teku}aq |krannaq
+tablica w opisanii bazy dannyh
+.TBL is
+wydatx informaci`  o  stolbcah. na |kran
+wywodqtsq w  ~etyre kolonki  swedeniq o stolbcah. po
+kavdomu  stolbcu  wydaetsq  nomer, imq, tip  i  ~islo
+zanimaemyh  na  |krane  pozicij, esli  stolbec
+wywoditsq  na  |kran
+.TBL ps
+wydatx informaci` o stolbcah na pe~atx. zapra{iwaetsq imq fajla
+(dlq pe~ati neobhodimo zadatx "LP:"), w kotoryj wywoditsq imq bazy
+dannyh, imena i tipy stolbcow, format ~etyreh |krannyh tablic.
+.TBL pr
+wwod parolq za}ity bazy dannyh. wydaetsq zapros, w otwet na kotoryj wwodqtsq
+ot 1 do 4 simwolow, kotorye zapomina`tsq kak nowyj parolx za}ity bazy
+dannyh. staryj parolx za}ity (esli on byl) terqetsq
+.TBL ?
+wydatx informaci` o komandah. na |kran wwoditsq spisok predstawlennyh
+komand i funkcionalxnyh klawi{ redaktora.
+.ATT prime~aniq.
+.LIN 0
+pri wwode zna~eniq stolbca dopuskaetsq pustoe zna~enie (navimaetsq
+tolxko odna klawi{a "wk"). w |krannoj tablice pustoe zna~enie wywoditsq
+kak nezapolnennoe pole stolbca. pri zaprose zna~eniq stolbca po komande
+"s" wydaetsq soob}enie:
+.SWT
+                net zna~eniq
+.HLV 2
+powtorenie zna~eniq stolbca predydu}ej zapisi
+.LIN
+pri wypolnenii komand "w", "z", "zs", "ws" w otwet na zapros zna~eniq stolbca
+po navati` klawi{i "powtor" movet bytx powtoreno zna~enie |togo ve stolbca iz
+predydu}ej zapisi. pri |tom zna~enie stolbca poqwlqetsq w komandnoj stroke i
+po navati` klawi{i "wk" zanositsq w bazu dannyh. navatiem klawi{i "wyhod"
+movno otkazatxsq ot |togo zna~eniq, pri |tom ono udalqetsq iz komandnoj stroki
+i powtorqetsq zapros zna~eniq stolbca. zna~enie stolbca simwolxnyh tipow
+(tip 3 i 4) pri poqwlenii w komandnoj stroke movet redaktirowatxsq.
+.CHA RDBEK1.TXT
+                                                                                                                                                                        

@@ -1,0 +1,454 @@
+.TOC
+.STL
+.TTL
+
+tehnologi~eskij kompleks
+rtk mikro
+relqcionnaq subd dlq mikro-|wm
+generator zada~
+
+
+
+
+
+
+
+
+1988
+
+.MID annotaciq
+.LIN
+generator zada~ relqcionnoj sistemy uprawleniq bazami dannyh
+na mikro-|wm (subd rdw-mikro) obespe~iwaet rabotu dwuh baz
+dannyh s pomo}x` specialxnogo komandnogo fajla zadawaemogo
+polxzowatelem.
+.LIN 0
+nali~ie prostyh komand po manipulirowani` dannymi obespe~iwaet
+nakoplenie rezulxtatow wy~isleniq nad dannymi odnoj bazy dannyh i
+zapisx ih w drugu` bazu.
+.LIN 0
+generator zada~ prednazna~en dlq re{eniq itogowyh zada~, baziru`}ihsq
+na ispolxzowanii mikro-|wm.
+.CPT nazna~enie i uslowie primeneniq
+.LIN 0
+generator zada~ qwlqetsq sostawnoj ~astx` subd rbd-mikro (sm.[1]),
+prednazna~ennyj dlq uprawleniq relqcionnymi bazami dannyh na
+mikro-|wm tipa "|lektronika-60","|lektronika nc 80-20" ili mini-|wm
+tipa sm 4
+operacionnoj sisteme rafos (fodos, os dwk). w ka~estwe wne{nej
+pamqti dlq hraneniq dannyh ispolxzuetsq magnitnye
+diski (gmd) ili drugie s katalogowoj strukturoj.
+.LIN 0
+generator zada~ obespe~iwaet obrabotku dannyh, sodervanie kotoroj
+opredelqetsq specialxnym komandnym fajlom, ukazywaemym polxzowatelem.
+dlq podgotowki komandnyh fajlow movet ispolxzowatxsq oby~nyj
+tekstowyj redaktor.
+.LIN 0
+generator zada~ obrabatywaet dwe bazy dannyh. odna iz baz dannyh
+qwlqetsq ishodnoj, drugaq rezulxtiru`}ej.
+nad dannymi ishodnoj bazy proizwodqtsq razli~nye wy~isleniq,
+zadawaemye polxzowatelem w tekste komandnogo fajla. rezulxtaty
+wy~islenij nad dannymi ishodnoj bazy zapisywa`tsq w rezulxtiru`}u`
+bazu dannyh. generator zada~ pozwolqet prowoditx wy~isleniq po
+zaranee zadannym uslowiqm.
+.CPT obra}enie k programme
+.LIN 0
+wyzow generatora zada~ s sistemnoj diskety osu}estwlqetsq komandoj:
+.SWT
+        .R GENRDB
+.LIN
+generator zapra{iwaet imq komandnogo fajla:
+.SWT
+        imq fajla? <imq fajla>
+.BLN
+gde <imq fajla> - wwodimoe s klawiatury imq komandnogo fajla.
+esli ras{irenie ne ukazywaetsq, to po umol~ani` ispolxzuetsq
+ras{irenie 'CMD'.
+.LIN 0
+esli ukazannyj fajl na ustrojstwe ne najden, na terminal wydaetsq
+soob}enie:
+.SWT
+        fajl ne najden
+.LIN
+generator zada~ movet zapuskatxsq s pomo}x` sistemy men` [2] i s
+pomo}x` komandnogo fajla operacionnoj sistemy. w |tom slu~ae imq
+komandnogo fajla dlq generatora ukazywaetsq w stroke, sledu`}ej za
+komandoj wyzowa generatora.
+.LIN
+primer:
+.SWT
+        R GENRDB
+        Dh1:NAME
+.CPT harakteristika programmy
+.LIN 0
+generator zada~ wypolnqet dejstwiq po obrabotke dannyh, kotorye
+opredelq`tsq sodervaniem zaranee zagotowlennogo specialxnogo
+komandnogo fajla. komandnyj fajl predstawlqet soboj posledowatelxnostx
+komand. kavdaq komanda sostoit iz imeni komandy i spiska
+parametrow.
+.LIN
+primer:
+.SWT
+        ib KADRY;
+        us otdel=155;
+.LIN
+imq komandy identificiruet komandu i opredelqet dejstwie,
+kotoroe wypolnqet komanda. parametry konkretiziru`t dejstwie
+wypolnqemoe komandoj.
+.LIN
+parametry mogut zadawatx:
+.SWT
+        imq bazy dannyh;
+        parolx bazy dannyh;
+        logi~eskoe wyravenie;
+        kl`~ewoe slowo i t.d.
+.LIN
+imq komandy dolvno bytx perwym w komande. parametry sledu`t drug
+za drugom w strogom porqdke, otdelq`tsq ot imeni komandy probelom
+i drug ot druga zapqtoj. priznakom konca komandy qwlqetsq to~ka
+s zapqtoj.
+.CPT soob}eniq
+.LIN 0
+esli w komande komandnogo fajla dopu}ena o{ibka, generator wydaet
+soob}enie ob o{ibke s ukazaniem haraktera i mesta o{ibki.
+.LIN
+primer:
+.SWT
+        ib KADRY;
+            $
+
+        ***baza dannyh ne najdena
+.LIN
+pri obnaruvenii o{ibki generator prekra}aet rabotu.
+.CPT komandy generatora zada~
+.LIN 0
+w posledu`}ih razdelah pri opisanii formatow komand dlq
+wydeleniq neobqzatelxnyh konstrukcij ispolxzu`tsq kwadratnye
+skobki [...].
+.HLV
+komanda otkrytiq ishodnoj bazy dannyh
+.SWT
+        ib <imq bazy dannyh>[,<parolx>];
+.LIN
+dannaq komanda otkrywaet ishodnu` bazu dannyh s ukazannym
+imenem. w komandnom fajle |ta komanda dolvna pred{estwowatx
+wsem drugim komandam.
+.LIN 0
+esli baza dannyh za}i}ena parolem, to on movet bytx ukazan
+neposredstwenno w komande. esli parolx w komande ne ukazan,
+on zapra{iwaetsq w dialoge.
+.LIN
+primer:
+.SWT
+          ib KADRY,h115;
+.BLN
+gde KADRY - imq bazy dannyh, h115 - parolx.
+.HLV
+komanda otkrytiq rezulxtiru`}ej bazy dannyh
+.SWT 0
+          rb <imq bazy dannyh>[,<parolx>];
+.LIN
+dannaq komanda otkrywaet rezulxtiru`}u` bazu
+dannyh s ukazannym imenem. w komandnom fajle
+|ta komanda dolvna sledowatx za komandoj "ib".
+.LIN
+esli rezulxtiru`}aq baza dannyh za}i}ena parolem,
+to on movet bytx ukazan neposredstwenno w komande.
+esli parolx w komande ne ukazan, on zapra{iwaetsq w
+dialoge.
+.LIN
+primer:
+.SWT
+            rb REZ,h20;
+.BLN
+gde REZ - imq bazy dannyh, h20 - parolx.
+.ATT
+rezulxtiru`}aq baza dannyh dolvna bytx predwaritelxno
+sozdana.
+.HLV
+komanda opisaniq kl`~ewogo stolbca w ishodnoj bazE dannyh.
+.SWT
+        ks #<nomer stolbca>;
+        ks #<nomer stolbca>,#<nomer stolbca>;
+   ili
+        ks !<nomer stolbca>;
+.LIN
+wozmovny tri warianta |toj komandy.
+.LIN
+primer:
+.SWT
+        ks #5;
+.BLN
+gde kl`~ewym qwlqetsq stolbec s nomerom 5.
+.SWT
+        ks #5,#6;
+.BLN
+gde kl`~ewym qwlq`tsq stolbcy 5,6.
+.SWT
+        ks !4;
+.BLN
+gde kl`~ewym qwlqetsq podstroka zna~eniq stolbca simwolxnogo
+tipa, wydelennaq razdelitelem zapqtaq ','.
+.LIN
+w ka~estwe kl`~ewogo stolbca wsegda zadaetsq
+tot stolbec ishodnoj bazy dannyh, kotoryj odnozna~no imenuet
+zapisx rezulxtiru`}ej bazy dannyh. w rezulxtiru`}ej baze
+dannyh budet stolxko zapisej, skolxko nepowtorq`}ihsq
+zna~enij w kl`~ewom stolbce ishodnoj bazy dannyh. dannye iz
+kl`~ewogo stolbca ishodnoj bazy dannyh, wsegda zapisywa`tsq w
+perwyj stolbec rezulxtiru`}ej bazy dannyh.
+.LIN 0
+rabota s dwumq kl`~ewymi stolbcami analogi~na rabote s odnim
+kl`~ewym stolbcom.
+.LIN
+primer:
+.LIN 0
+rezulxtiru`}aq baza dannyh dlq dwuh kl`~ewyh stolbcow
+.SWT
+         _____________________
+         !familiq !imq  ! ...!
+         ---------------------
+         !iwanow  !iwan !    !
+         ---------------------
+         !iwanow  !petr !    !
+         ---------------------
+         !sidorow !iwan !    !
+         ---------------------
+.LIN
+.ATT
+1. kl`~ewoj stolbec (stolbcy) ishodnoj bazy dannyh
+dolvny sootwetstwowatx po tipu perwomu (i wtoromu) stolbcu
+rezulxtiru`}ej bazy dannyh.
+.ATT
+2. komanda opisaniq kl`~ewyh stolbcow dolvna
+zapisywatxsq w komandnom fajle tolxko posle komand ib i rb i
+tolxko odin raz.
+.HLV
+komanda opredeleniq formalxnogo parametra
+.SWT 0
+        fp <nomer parametra> = <zapros na wwod zna~eniq>;
+.BLN
+gde <nomer parametra> - celoe ~islo, <zapros na wwod zna~eniq> -
+posledowatelxnostx
+simwolow.
+.SWT 1
+  primer:
+
+        fp 1 = wwedite datu;
+        fp 2 = wwedite nomer otdela;
+
+.BLN
+komanda identificiruet formalxnyj parametr i osu}estwlqet priwqzku zaprosa
+na wwod zna~eniq dlq |togo parametra.
+.SWT
+        sintaksis formalxnogo parametra
+
+            & <nomer parametra>
+.BLN
+formalxnyj parametr movet wste~atxsq w l`bom meste komand zadaniq
+uslowiq i poiska zapisi dannyh w baze dannyh.
+.SWT 1
+        primer:
+
+             us (#4='&1')i(#3=&2)
+
+gde &1 i &2 - formalxnye parametry.
+.BLN
+kak tolxko generator zada~ ~itaet formalxnyj parametr &1 ili &2 na displej
+wydaetsq
+zapros:
+.SWT
+        wwedite datu
+.BLN
+ili
+.SWT
+        wwedite nomer otdela
+.BLN
+polxzowatel` neobhodimo wwesti zapra{iwaemye dannye s navatiem klawi{i <wk>.
+.ATT
+generator zada~ razre{aet opredelenie 15 formalxnyh parametrow.
+.HLV
+komanda uslowiq poiska
+.SWT
+        us <logi~eskoe wyravenie>;
+.BLN
+ili
+.SWT
+        us ;
+.LIN
+komanda uslowiq dolvna prisutstwowatx wsegda w komandnom fajle
+i zapisywatxsq posle komand ub, rb.
+.LIN 0
+dannaq komanda prednazna~ena dlq zadaniq uslowiq poiska zapisej w ishodnoj
+baze dannyh. zapisi, udowletworq`}ie uslowi`, qwlq`tsq aktiwnymi.
+.LIN 0
+logi~eskoe wyravenie zadaetsq w tradicionnoj prioritetnoj forme
+zapisi.
+.LIN
+w logi~eskom wyravenii dopuska`tsq:
+.SWT
+arifmeti~eskie operacii - '+','-','*','/';
+
+operacii otno{eniq - '>','<','>=','<=','=','<>';
+
+logi~eskie operacii - 'i', 'ili', 'ne';
+
+operaciq srawneniq stroki simwolow, zadawaemoj wtorym
+operandom s proizwolxnoj podstrojkoj perwogo operanda -
+'$';
+.BLN
+wtoroj operand neobhodimo wydelqtx kawy~kami ' '.
+.LIN
+primer:
+.SWT
+        #7$'aws', familiq$'nn'
+.LIN
+operandami logi~eskogo wyraveniq qwlq`tsq:
+.SWT
+        celye i we}estwennye ~isla;
+.LIN
+primer:
+.SWT
+        1,7,17,3.14
+
+        literaly;
+.LIN
+primer:
+.SWT
+        'kiew','iwanow'
+
+  stolbcy bazy dannyh, zadawaemye swoim nomerom ili
+  imenem;
+.LIN
+primer:
+.SWT
+        #1, #2, familiq, oklad
+.BLN
+gde # -simwol-priznak nomera stolbca.
+.LIN
+primer komandy uslowiq:
+.SWT
+    us (pol='m')i(oklad>=200)ili(pol='v')i(oklad<=150)
+.LIN
+pri zadanii uslowiq neobhodimo sobl`datx sootwetstwie operacij
+i tipow operandow.
+.LIN 0
+arifmeti~eskie operacii ispolxzu`tsq dlq celyh i we}estwennyh
+~isel i stolbcow ~islowogo tipa.
+.LIN 0
+pri ispolxzowanii operacij otno{eniq operandy dolvny
+sootwetstwowatx po tipu.
+.LIN 0
+logi~eskie operacii otdelq`tsq ot operandow kruglymi skobkami.
+operandami dlq logi~eskih operacij sluvat otno{eniq.
+.LIN 0
+esli komanda uslowiq zapisana w formate us ;, to wse zapisi ishodnoj
+bazy qwlq`tsq aktiwnymi.
+.HLV
+komanda zapisi dannyh w rezulxtiru`}u` bazu dannyh
+.LIN 0
+zp #<nomer stolbca> = <funkciq>;
+.BLN
+ili
+.LIN
+zp #<nomer stolbca> = <arifmeti~eskoe wyravenie>;
+.LIN
+dannaq komanda zapisywaet w stolbec rezulxtiru`}ej bazy
+dannyh zapisannyj slewa ot znaka rawno zna~enie funkcii ili
+wyraveniq, polu~ennoe pri obrabotke dannyh ishodnoj bazy.
+.LIN
+w komande movno ipolxzowatx funkcii
+.SWT
+    sum - funkciq summirowaniq;
+
+    ~az - funkciq opredeleniq ~isla zapisej,
+          udowletworq`}ih uslowi` poiska;
+
+    min - funkciq opredeleniq naimenx{ego;
+
+    mah - funkciq opredeleniq naibolx{ego;
+.ATT
+argumentom funkcii sum qwlqetsq tolxko nomer ~islowogo stolbca
+ishodnoj bazy dannyh. argumentom funkcij min, mak, qwlq`tsq nomera
+~islowogo i simwolxnogo stolbca.
+.LIN
+primer:
+.SWT
+        zp #3=sum(#6)
+
+gde 3   - nomer stolbca rezulxtiru`}ej bazy dannyh,
+    a 6 - nomer stolbca ishodnoj bazy dannyh.
+.LIN
+w komande movno ispolxzowatx arifmeti~eskoe wyravenie
+ne soderva}ee funkcij
+.LIN
+primer:
+.SWT
+        zp #4=#5/3
+
+gde 4 - nomer stolbca rezulxtiru`}ej bazy dannyh;
+    5 - nomer stolbca ishodnoj bazy dannyh;
+.LIN
+.ATT
+komanda zp wsegda dolvna sledowatx za komandoj
+us;
+.LIN
+primer raboty generatora zada~
+.SWT
+               ishodnaq bd odt:
+          _________________________
+          !otdel !sektor !zarplata!
+          -------------------------
+          !nto-1 ! 1     !1000    !
+          -------------------------
+          !nto-2 ! 2     !500     !
+          -------------------------
+          !nto-1 ! 1     !700     !
+          -------------------------
+          !nto-3 ! 3     !800     !
+          -------------------------
+.LIN
+rezulxtiru`}aq bd SUM
+.TES 5
+.SWT
+          _________________________
+          !   otdel   !  itog     !
+          !           !           !
+          -------------------------
+.LIN
+komandnyj fajl summirowaniq zarplaty po otdelam
+primet wid:
+.SWT
+          ib oDt;
+          rb SUM;
+          ks #1;
+          us;
+
+          zp #2=sum (#3);
+.TES 15
+.SWT
+             rezulxtiru`}aq bd SUM
+          --------------------------
+          ! otdel     ! itog       !
+          --------------------------
+          ! nto-1     ! 1700       !
+          --------------------------
+          ! nto-2     !  500       !
+          --------------------------
+          ! nto-3     !  800       !
+          --------------------------
+.ATT
+pri opisanii ishodnoc i rezulxtiru`}ih bazy dannyh
+polxzowatxsq stolbcami s tipom 3 (simwolxnaq stroka peremennoj dlinny)
+nado tolxko w krajnem slu~ae.
+.CLN
+.MID pere~enx ssylo~nyh dokumentow
+.SWT
+1. tehnologi~eskij kompleks rtk mikro
+   relqcionnaq subd dlq mikro-|wm |krannyj interfejs.
+   rukowodstwo operatora.
+
+2. tehnologi~eskij kompleks rtk mikro
+   sistema men`.
+   rukowodstwo operatora.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

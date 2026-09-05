@@ -1,0 +1,45 @@
+# Лицей №1, Воронеж
+
+The physics and chemistry coursework of the lyceum's pupils (`IGOR` — magnetic induction, `LUDA10` — latent heat, `HIM` — oxygen), their shared title screen `ZASTL`, reports and instructions, the class data files (`10A…`, `11B…`) of the lyceum disks - and the lab's tries from its second disk: the line drawer written twice, in Whitesmiths C (`LIN.C` → `LINE.SAV`) and in Pascal (`LP.SAV`), and the `PROBA` build test with its `PROBA.COM` recipe (PAS1, MACRO, LINK against PASGRF/PASLIB); `1003L.COM` is a lab's startup file (title screen, then the gas-law program), `1003` a results sheet of the same lab.  `RUN NAME`; most begin with the title screen.
+
+| file | what | how to run |
+|---|---|---|
+| `1003` | A lab results sheet in the lyceum's format («работу выполняли ученики 10А класса», two pupils' names, then the table of t1, t2, P2, P1 and the error) - the same layout as the 10A….DAT files, written by the gas-law program ZAM | data file |
+| `1003L.COM` | Startup command file of a lyceum lab station: SET TT QUIET, RUN ZASTL (the title screen), RUN ZAM (the gas-law lab program) | `@1003L` |
+| `10ALEN.DAT` | A results sheet the lyceum's gas-law lab program writes: «работу выполняли ученики 10А класса», the two pupils' names, then per experiment t1, t2, P2, P1 and the error («равенство выполняется с погрешностью…») - pair LEN | data file |
+| `10APOR.DAT` | A results sheet the lyceum's gas-law lab program writes: «работу выполняли ученики 10А класса», the two pupils' names, then per experiment t1, t2, P2, P1 and the error («равенство выполняется с погрешностью…») - pair POR | data file |
+| `10APRG.DAT` | A results sheet the lyceum's gas-law lab program writes: «работу выполняли ученики 10А класса», the two pupils' names, then per experiment t1, t2, P2, P1 and the error («равенство выполняется с погрешностью…») - pair PRG | data file |
+| `10ASRP.DAT` | A results sheet the lyceum's gas-law lab program writes: «работу выполняли ученики 10А класса», the two pupils' names, then per experiment t1, t2, P2, P1 and the error («равенство выполняется с погрешностью…») - pair SRP | data file |
+| `10AWAR.DAT` | A results sheet the lyceum's gas-law lab program writes: «работу выполняли ученики 10А класса», the two pupils' names, then per experiment t1, t2, P2, P1 and the error («равенство выполняется с погрешностью…») - pair WAR | data file |
+| `10AWAT.DAT` | A results sheet the lyceum's gas-law lab program writes: «работу выполняли ученики 10А класса», the two pupils' names, then per experiment t1, t2, P2, P1 and the error («равенство выполняется с погрешностью…») - pair WAT | data file |
+| `11BMMM.DAT` | A results sheet of class 11Б («результаты вычислений … работу выполнили учащиеся 11Б класса»): a computed value, its interval and the error 7.8% | data file |
+| `HIM.PAS` | Program kislorod - the chemistry coursework «Кислород и его характеристика», title screen «Россия, г. Воронеж, Лицей №1» - menus of the properties of oxygen; the object PROBA.OBJ of the same program names its author, Чепков Александр, 1992 | compile with PAS1, MACRO, LINK |
+| `HIM.SAV` | Chemistry courseware, lesson "Oxygen and its properties"; Voronezh Lyceum No. 1, A. Shchepkov, 1992 | `RUN HIM` |
+| `IGOR.PAS` | Program Laborator - the physics lab on the induction of a magnet's field: coil (катушка), magnet, galvanometer; asks the class and two pupils' names, averages the measurements and prints the relative error; 1992 | compile with PAS1, MACRO, LINK |
+| `IGOR.SAV` | Physics coursework: measuring the induction of a permanent magnet's field, with a drawing of the school building; I. Druzhinin, Lyceum No. 1, 1992 | `RUN IGOR` |
+| `INSTR.TXT` | «Ход работы» of the magnetic-induction lab (IGOR): measure the coil's diameter, compute its cross-section, count the turns… | text: `TYPE INSTR.TXT`, or read on the host (koi8-r/cp866) |
+| `INSTR1.TXT` | The procedure of the gas-law lab (ZAM): measure the temperature in the vessel of hot water, lower a glass tube closed end down… | text: `TYPE INSTR1.TXT`, or read on the host (koi8-r/cp866) |
+| `LIN.C` | Source of LINE.SAV: point() XORs pixels into VRAM at 16384 (0o40000), line() by recursive midpoint subdivision, main asks two endpoints in a loop - with the scanf-without-& and self-recursion bugs intact | Whitesmiths C source (no compiler on the disks) |
+| `LINE.SAV` | Line-drawing experiment in Whitesmiths C (source LIN.C beside it): asks x0/y0/x1/y1 at a '#' prompt and draws on the 640x200 hi-res screen by direct VRAM access (short* at 16384, XOR-points, 80 bytes a row), lines by recursive midpoint subdivision. Textbook beginner bugs preserved: scanf without &, so any input crashes to ODT - the 'debugger' the old probe description saw was the C runtime's register dump; the x0>x1 case recurses on itself; horizontal lines paint the full screen width | bare prompt, no answer to a bogus file name |
+| `LP.SAV` | Working line-drawer from the amk_2 lab disk (Pascal): asks x1/y1/x2/y2 in a loop and draws the segment on the graphics screen. The same exercise as the C LINE.SAV beside it - but this one works (no scanf-without-& to crash it). Not to be confused with the LP.SYS printer handler | `RUN LP` |
+| `LUD.PAS` | Not a program despite the extension: the theory text of the latent-heat lab (heat given to a solid, melting, «при достижении температуры плавления…»), the text LUDA10 shows | compile with PAS1, MACRO, LINK |
+| `LUDA10.PAS` | Program work - the latent-heat lab: shows the theory from a text file, takes the measurements, computes averages and errors; 1992 | compile with PAS1, MACRO, LINK |
+| `LUDA10.SAV` | Physics coursework: latent heat of fusion and specific heat of paraffin; L. Borodkina, Lyceum No. 1, 1992.  Uses the shared ZASTL title screen | `RUN LUDA10` |
+| `OLGA.SAV` | Coursework in the Lyceum No. 1 series; asks for the number of experiments (at least two) | `RUN OLGA` |
+| `PROBA.COM` | Build recipe of PROBA: PAS1 → MACRO → LINK with LD4:PASGRF, LD4:PAS1 and DZ:PASLIB, then COPY of the .SAV and .PAS to DZ: - the lyceum's Pascal toolchain laid out on logical disks | `@PROBA` |
+| `PROBA.OBJ` | Object module of a build of the kislorod (HIM) program - its title strings inside name the author: «Разработал: Чепков Александр, 1992 г.» | object module for LINK |
+| `PROBA.SAV` | Carries the standard FORTRAN/Pascal runtime error table ("TRAP TO 4", "NOT A VALID DEVICE", "I/O CHANNEL NOT OPEN"); a compiled test program that prints nothing on its own | `RUN PROBA` |
+| `ROBA.PAS` | Source of ROBA.SAV, program grred: a line-drawing editor with line/point/vpeekb/vpokeb externals that keeps 50 lines in an array and writes them out as «line(...);» Pascal statements | compile with PAS1, MACRO, LINK |
+| `ROK.TXT` | An essay «Введение» on computers in Russian school education - the report that accompanied the lyceum coursework (cites Мякишев-Буховцев's physics textbook) | text: `TYPE ROK.TXT`, or read on the host (koi8-r/cp866) |
+| `ROO.DAT` | Drawing file of the grred line editor (ROBA.SAV): «line(x0,y0,x1,y1);» statements, 50 of them, all zeros - an empty drawing | data file |
+| `SOWLIT.REA` | Not a program: a literature essay «Тема исторической памяти в современной литературе» (Гроссман, Рыбаков, Ахматова, Твардовский, Домбровский) - a pupil's composition kept on the lyceum disk | data file |
+| `TEOR.TXT` | «Теория» of the magnetic-induction lab: the approximate value of the field at a magnet's pole, the field taken as uniform… | text: `TYPE TEOR.TXT`, or read on the host (koi8-r/cp866) |
+| `TEORT1.TXT` | Theory text of the gas lab: the properties of the gaseous state, pressure on the vessel walls, dependence on temperature and volume | text: `TYPE TEORT1.TXT`, or read on the host (koi8-r/cp866) |
+| `WEEK.PAS` | Program work - an electrical lab: voltage and current readings U(пр.), I(пр.) per experiment, averages and the relative error, the shared menu («для выхода в меню нажмите ВВОД»); 1992 | compile with PAS1, MACRO, LINK |
+| `WP.DAT` | Drawing file of the grred line editor (ROBA.SAV), one «line(...)» per line, all zeros - an empty drawing | data file |
+| `ZAM.PAS` | Program p3 - the gas-law lab: enters the temperatures of hot and cold water, the length of the water column and its height in the cold vessel, computes P1/P2 and the error, and writes the results sheet with the class and two pupils' names (the 10A….DAT files) | compile with PAS1, MACRO, LINK |
+| `ZAM.SAV` | School program: asks which class you are in (for example 10B or 10A) | `RUN ZAM` |
+| `ZASTL.PAS` | Source of the shared title screen: «Россия, 1992, г. Воронеж, Лицей 1 - разработал лицеист Торохов Александр» | compile with PAS1, MACRO, LINK |
+| `ZASTL.SAV` | The title screen the Lyceum No. 1 coursework programs share: a drawing of the school, "Russia, 1992, Voronezh", by the pupil A. Torokhov | `RUN ZASTL` |
+
+Programs that survived in several builds - `ROBA.SAV` - have one folder per kit here, each build in the folder of the disks it came from: `lyceum-1/` - Лицей №1, disk amk_1; `lyceum-2/` - Лицей №1, disk amk_2.  The files in the table are common to every kit.

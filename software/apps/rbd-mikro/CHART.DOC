@@ -1,0 +1,249 @@
+.TOC
+.STL
+.TTL
+
+relqcionnaq subd dlq mikro-|wm
+paket grafi~eskogo predstawleniq
+informacii iz bazy dannyh subd-mikro
+
+
+
+
+
+
+
+
+
+1988
+
+.MID annotaciq
+.LIN
+paket grafi~eskogo predstawleniq informacii bazy dannyh prednazna~en
+dlq awtomatizacii postroeniq grafi~eskih izobravenij, predstawlq`}ih
+funkcionalxnye zawisimosti mevdu zna~eniqmi atributow bazy dannyh subd-mikro.
+.CPT nazna~enie i uslowiq primeneniq
+.LIN
+paket grafi~eskogo predstawleniq informacii qwlqetsq sostawnoj ~astx` subd
+rbd-mikro i prednazna~en dlq predstawleniq informacii, hranq}ejsq w bd,
+w wide diagramm. paket realizowan na mikro-|wm tipa
+"|lektronika-60", i mini-|wm tipa sm |wm w operacionnoj sisteme
+rafos (fodos, os dwk).
+.LIN 0
+paket grafi~eskogo predstawleniq informacii obespe~iwaet obrabotku baz dannyh
+na osnowe specialxnogo komandnogo fajla formata, dlq podgotowki kotorogo
+ispolxzuetsq oby~nyj tekstowyj redaktor.
+.CPT obra}enie k programme
+.LIN 1
+wyzow paketa grafi~eskogo predstawleniq informacii s sistemnoj diskety
+osu}estwlqetsq komandoj:
+.SWT 1
+              .R CHART
+.LIN 1
+paket zapra{iwaet imq komandnogo fajla:
+.SWT 1
+              imq fajla formata? <imq fajla>
+.BLN 1
+gde <imq fajla>- wwodimoe s klawiatury imq komandnogo fajla. esli ras{irenie
+ne ukazywaetsq, to po umol~ani` ispolxzuetsq ras{irenie "FRM".
+.LIN 0
+esli ukazannyj fajl na ustrojstwe ne najden, to na terminal wydaetsq soob}enie:
+.SWT 1
+              ne najden fajl formata
+.BLN 1
+i powtorqetsq zapros imeni komandnogo fajla.
+.LIN 0
+esli imq komandnogo fajla ne ukazano, to na |kran wywoditsq nomer wersii
+programmy i zapros whodnogo fajla powtorqetsq. programma zapra{iwaet imq
+wyhodnogo fajla:
+.SWT 1
+              wyhodnoj fajl?
+.BLN 1
+protokol grafi~eskogo wywoda movet wydawatxsq na |kran displeq, pe~ata`}ee
+ustrojstwo ili zapisywatxsq na disk. esli imq wyhodnogo fajla ne zadano, to
+protokol wywoditsq na disk w fajl s imenem kak i u whodnogo fajla s
+ras{ireniem "DIG". na |kran displeq protokol wywoditsq postrani~no.
+dlq prosmotra stranic ispolxzu`tsq klawi{i, opisannye w tablice 1.
+.TES 10
+.SWT
+                               tablica 1
+______________________________________________________
+! N !    obozna~eniq na    !         funkciq         !
+!   !      klawiature      !                         !
+------------------------------------------------------
+!1. !     CTRL/D           ! sledu`}aq stranica      !
+!   !                      !                         !
+!2. !     CTRL/]           ! predydu}aq stranica     !
+!   !                      !                         !
+!3. !  CTRL/H,CTRL/D       ! poslednqq stranica      !
+!   !                      !                         !
+!4. !  CTRL/H,CTRL/]       ! perwaq stranica         !
+------------------------------------------------------
+.CPT harakteristika programmy
+.LIN 1
+paket grafi~eskogo predstawleniq informacii obespe~iwaet obrabotku baz dannyh
+i postroenie diagramm na osnowe sodervaniq zaranee zagotowlennogo komandnogo
+fajla formata. komandnyj fajl predstawlqet soboj posledowatelxnostx komand.
+kavdaq komanda sostoit iz imeni i spiska parametrow.
+.BLN 0
+imq komandy identificiruet komandu i opredelqet wypolnqemoe e` dejstwie,
+a parametry konkretiziru`t |ti dejstwiq.
+.LIN 0
+imq komandy dolvno bytx perwym w komande. parametry sledu`t drug za drugom
+w strogom porqdke, otdelq`tsq ot imeni komandy probelami, a drug ot druga
+zapqtoj. priznakom konca komandy qwlqetsq to~ka s zapqtoj.
+.CPT soob}eniq
+.LIN 1
+esli w komandnom fajle dopu}ena o{ibka, paket wydaet soob}enie ob o{ibke
+s ukazaniem haraktera o{ibki i stroki komandnogo fajla w kotoroj ona
+obnaruvena.
+.LIN 0
+pri obnaruvenii o{ibki komandnyj fajl analiziruetsq do konca i paket prekra}aet
+rabotu.
+.CPT komandy grafi~eskogo predstawleniq informacii
+.HLV 1
+komanda "otkrytx bazu dannyh"
+.SWT
+     ob <imq bd>[,<parolx>];
+.LIN
+komanda otkrywaet bazu dannyh s ukazannym imenem. w komandnom fajle
+|ta komanda dolvna pred{estwowatx wsem drugim komandam.
+.LIN 0
+esli baza                          dannyh za}i}ena parolem, to on movet bytx ukazan neposredstwenno
+komande. esli parolx w komande ne ukazan, on zapra{iwaetsq w dialoge.
+.LIN 0
+primer:
+.SWT
+    Ob NTO, K200;
+.BLN
+gde NTO - imq bazy dannyh, k200 - parolx.
+.HLV 1
+komanda "opisatx stolbcy"
+.SWT
+        OC <kl`~ewoj stolbec>,
+           <stolbec 1>:<simwol {trihowki>:<{irina>,
+                   . . . . . . .
+           <stolbec N>:<simwol {trihowki>:<{irina>;
+.SWT
+gde <kl`~ewoj stolbec>::=<imq kl`~ewogo stolbca>/
+     #<nomer kl`~ewogo stolbca>;
+    <stolbec I>::=<imq stolbca I>/#<nomer stolbca I>.
+.LIN 0
+w komande movno opisatx do 14 stolbcow. zna~enie kl`~ewogo stolbca
+movet bytx ~islowym libo  simwolxnym.
+zna~eniqmi stolbcow dolvny bytx tolxko ~isla.
+.LIN 0
+wse parametry komandy qwlq`tsq neobqzatelxnymi. po umol~ani`
+kl`~ewym s~itaetsq perwyj stolbec bazy dannyh. esli imq stolbca
+ne ukazano, to beretsq sledu`}ij , posle
+opisannogo, ~islowoj stolbec. esli ni odin stolbec ne opisan, to
+berutsq wse ~islowye stolbcy bazy dannyh. po umol~ani` simwolom
+{trihowki qwlqetsq probel. esli {irina stolbca ne ukazana, to ee zna~enie
+beretsq iz komandy "fd" (sm. p.5.6). esli komanda "fd" otsutstwuet,
+to {irina stolbcow rass~itywaetsq awtomati~eski.
+.HLV 1
+komanda "tip diagrammy"
+.SWT
+    td <nomer tipa>[,<imq osi oh>][,<imq osi ou>];
+.BLN
+gde <nomer tipa>=1 dlq stolbikowyh diagramm,
+.SWT 0
+      2 - dlq slovennyh diagramm,
+      3 - dlq linejnyh  diagramm,
+      4 - dlq sektornyh diagramm.
+.LIN
+esli nomer tipa ne ukazan, to stroqtsq stolbikowye diagrammy.
+.LIN 0
+esli imq osi oh ne ukazano, to ispolxzuetsq imq kl`~ewogo stolbca.
+.ATT
+wersiq CnART V1.02 rass~itana na postroenie diagramm
+tolxko perwogo i wtorogo tipa.
+.HLV 1
+komanda "zaglawie"
+.SWT
+     zg <tekst>;
+.LIN
+parametrom komandy qwlqetsq tekst zaglawiq, kotoryj budet nape~atan
+w na~ale perwogo lista protokola. tekst awtomati~eski centriruetsq
+otnositelxno razmerow stranicy.
+.LIN 0
+komanda "zg" ne qwlqetsq obqzatelxnoj.
+.HLV 1
+komanda "prime~anie"
+.SWT
+     pr <tekst>
+.LIN
+parmetrom komandy qwlqetsq tekst prime~aniq, kotoryj budet nape~atan
+w konce perwogo lista protokola.
+.LIN 0
+komanda "pr" ne qwlqetsq obqzatelxnoj.
+.HLV 1
+komanda "format diagrammy"
+.SWT
+    fd <{ag diagrammy>,<{irina stobcow>;
+.LIN
+wse parametry komandy ne qwlq`tsq obqzatelxnymi. esli {ag diagrammy
+ili {irina stolbcow ne ukazany, to oni rass~itywa`tsq awtomati~eski.
+.HLV 1
+komanda "format lista"
+.SWT
+     fl <wysota lista>,<{ag numeracii>,<{irina lista>;
+.LIN
+esli parametr "wysota lista" ne ukazan, to on prinimaetsq rawnym 24.
+.LIN 0
+esli parametr "{irina lista" ne ukazan, to on prinimaetsq rawnym 70.
+.LIN 0
+parametr "{ag numeracii" opredelqet {ag s kotorym wywodqtsq
+zna~eniq na osi ou. esli parametr otsutstwuet, to na osi ou ukazywaetsq tolxko
+maksimalxnoe zna~enie diagramm.
+.CPT rabota paketa grafi~eskogo predstawlenie informacii
+.LIN
+primer:
+.LIN
+ishodnaq bd NTO, za}i}ennaq parolem "LEP1"
+.TES 15
+.SWT
+__________________________________________
+! otdel   ! es |wm  ! sm |wm ! mikro |wm !
+!---------!---------!--------!-----------!
+! nto  1  !   10    !    7   !     5     !
+! nto  2  !    5    !   10   !    10     !
+! nto  3  !    1    !    4   !     5     !
+------------------------------------------
+.BLN
+komandnyj fajl formata imeet wid:
+.TES 6
+.SWT
+zg srawnitelxnye harakteristiki nali~iq |wm w otdelah nto;
+td 1,otdely,koli~estwo |wm;
+pr swedeniq na 1.01.87;
+fl 24,3,70;
+ob NTO;
+os otdel,es |wm:.:1,sm |wm:*:4,#4:/;
+.TES 27
+.SWT
+.MID srawnitelxnye harakteristiki nali~iq |wm w otdelah nto
+
+   . koli~estwo |wm
+  /!\
+   !
+10 ! !-!                    !----! !--!
+   ! !.!                    !****! !//!
+   ! !.!                    !****! !//!
+   ! !.!                    !****! !//!
+ 7 ! !.!        !--!        !****! !//!
+   ! !.!        !//!        !****! !//!
+   ! !.!        !//!        !****! !//!
+   ! !.! !----! !//!    !-! !****! !//!      !----!
+ 4 ! !.! !****! !//!    !.! !****! !//!      !****! !--!
+   ! !.! !****! !//!    !.! !****! !//!      !****! !//!
+   ! !.! !****! !//!    !.! !****! !//!      !****! !//!
+   ! !.! !****! !//!    !.! !****! !//!      !****! !//!
+ 1 ! !.! !****! !//!    !.! !****! !//!  !-! !****! !//!
+   !----------------------------------------------------->
+     nto 1              nto 2            nto 3     otdely
+
+gde es |wm     -   !.!
+    sm |wm     -   !*!
+    mikro |wm  -   !/!
+prime~anie: swedeniq na 1.01.87
+                                                                           

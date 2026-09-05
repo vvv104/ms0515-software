@@ -1,0 +1,230 @@
+ 
+           ************
+           * wopros 1 *
+           ************
+
+tERMODINAMIKA - \TO ...
+
+
+otwet:RAZDEL FIZIKI, W KOTOROM IZU^@ETSQ USLOWIQ PREWRA]ENIQ
+
+      \NERGII IZ ODNOGO WIDA W DRUGOJ I KOLI^ESTWENNYE
+
+      SOOTNO[ENIQ PRI TAKIH PREWRA]ENIQH.
+
+----------------------------------------------------------------
+!                                                               !
+!RAZDEL MKT,    RAZDEL FIZIKI,     W KOTOROM     TEPLOWYE       !
+!                                  IZU^A@TSQ     QWLENIQ        !
+!               --------------     ---------                    !
+!                                                               !
+!USLOWIQ        TEPLOTY            \NERGII        IZ ODNOGO WIDA!
+!PREWRA]ENIQ                                      W DRUGOJ I    !
+!-----------                       --------       --------------!
+!                                                               !
+!ZAKONY MKT     KOLI^ESTWENNYE     PRI TAKIH      TEPLOWYE      !
+!               SOOTNO[ENIQ        PREWRA]ENIQH   PROCESSY      !
+!               --------------     ------------                 !
+---------------------------------------------------------------- 
+
+           ************
+           * wopros 2 *
+           ************
+
+tERMODINAMI^ESKOE SOSTOQNIE - \TO ...
+
+
+otwet:SOWOKUPNOSTX ZNA^ENIJ NEKOTOROGO ^ISLA FIZI^ESKIH
+
+      WELI^IN, HARAKTERIZU@]IH FIZI^ESKIE SWOJSTWA TELA
+
+      ( SISTEMY TEL ), OPREDELQET SOSTOQNIE TELA ( SITEMY TEL )
+
+----------------------------------------------------------------
+!                                                               !
+!SOWOKUPNOSTX     NEKOTOROGO         PARAMETROW    FIZI^ESKIH   !
+!ZNA^ENIJ         ^ISLA                            WELI^IN      !
+!------------     ----------                       ----------   !
+!                                                               !
+!OPREDELQ@]IH     HARAKTERIZU@]IH    TEPLOWYE      FIZI^ESKIE   !
+!                                    SWOJSTWA      SWOJSTWA     !
+!                 ---------------                  ----------   !
+!                                                               !
+!TELA             OPREDELQET         RAZLI^NYH     TELA         !
+!(SISTEMY TEL)    SOSTOQNIE          WE]ESTW                    !
+!-------------    ----------                                    !
+----------------------------------------------------------------
+
+          ************
+          * wopros 3 *
+          ************
+
+uRAWNENIEM SOSTOQNIQ NAZYWAETSQ ...
+
+otwet:SWQZX,SU]ESTWU@]AQ MEVDU PARAMETRAMI P,V,T
+
+-----------------------------------------------------------------
+!                                                                !
+!URAWNENIE        SWQZX,            SU]ESTWU@]AQ MEVDU           !
+!                 ------           ------------------            !
+!                                                                !
+!PARAMETRAMI       R,               P,                           !
+!-----------                        ----                         !
+!                                                                !
+!    V,            m,                T                           !
+!   ---                             ---                          !
+-----------------------------------------------------------------
+
+          ************
+          * wopros 4 *
+          ************
+
+tERMODINAMI^ESKIM PROCESSOM NAZYWAETSQ ...
+
+otwet:WSQKOE IZMENENIE SOSTOQNIQ TELA (SISTEMY TEL)
+
+------------------------------------------------------------------
+!                                                                 !
+!IZMENENIE           WSQKOE               URAWNENIQ               !
+!PARAMETROW          IZMENENIE            SOSTOQNIQ               !
+!                    ---------                                    !
+!                                                                 !
+!SOSTOQNIQ           TELA                 GAZA                    !
+!                    (SISTEMY TEL)                                !
+!---------           -------------                                !
+------------------------------------------------------------------
+
+          ************
+          * wopros 5 *
+          ************
+
+iZOPROCESSAMI NAZYWA@TSQ ...
+
+otwet:TERMODINAMI^ESKIE PROCESSY,PROTEKA@]IE W SISTEME S
+
+      NEIZMENNOJ MASSOJ PRI POSTOQNNOM ZNA^ENIII ODNOGO IZ
+
+      PARAMETROW SOSTOQNIQ SISTEMY
+
+-----------------------------------------------------------------
+!                                                                !
+!TERMODINAMI^ESKIE      HARAKTERIZU@]IE       PROTEKA@]IE W      !
+!PROCESSY,                                    SISTEME            !
+!-----------------                            -------------      !
+!                                                                !
+!S NEIZMENNOJ           PRI IZMENENII         PRI POSTOQNNOM     !
+!MASSOJ                 ZNA^ENIJ              ZNA^ENII           !
+!------------                                 --------------     !
+!                                                                !
+!ODNOGO IZ              SOSTOQNIQ             TERMODINAMI^ESKIH  !
+!PARAMETROW             SISTEMY               PARAMETROW         !
+!----------             ---------                                !
+-----------------------------------------------------------------
+
+          ************
+          * wopros 6 *
+          ************
+
+iZOHORNYJ PROCESS PRI ...
+
+otwet:V=CONST
+
+------------------------------------------------------------------
+!                                                                 !
+!P=CONST              V=CONST           T=CONST                   !
+!                     -------                                     !
+------------------------------------------------------------------
+
+          ************
+          * wopros 7 *
+          ************
+
+iZOBARNYJ PROCESS PRI ...
+
+otwet:P=CONST
+
+-------------------------------------------------------------------
+!                                                                  !
+!P=CONST               V=CONST           T=CONST                   !
+!-------                                                           !
+-------------------------------------------------------------------
+
+          ************
+          * wopros 8 *
+          ************
+
+iZOTERMI^ESKIJ PROCESS PRI ...
+
+otwet:T*CONST
+
+--------------------------------------------------------------------
+!                                                                   !
+!P=CONST                V-CONST            T=CONST                  !
+!                                          -------                  !
+--------------------------------------------------------------------
+
+          ************
+          * wopros 9 *
+          ************
+
+iZOTERMI^ESKIJ PROCESS W IDEALXNOM GAZE POD^INQETSQ ...
+
+otwet:ZAKONU bOJLQ-mARIOTTA PV=CONST
+
+ ---------------------------------------------------------------------
+!                                                                     !
+!ZAKONU bOJLQ-mARIOTTA      ZAKONU {ARLQ    ZAKONU gEJ-l@SSAKA        !
+!---------------------                                                !
+!                                                                     !
+!PV=CONST                  V/T=CONST       P/T=CONST                  !  
+!--------                                                             !
+ ---------------------------------------------------------------------
+
+          *************
+          * wopros 10 *
+          *************
+
+iZOBARNYJ PROCESS W IDEALXNOM GAZE POD^INQETSQ ...
+
+otwet:ZAKONU gEJ-l@SSAKA V/T=CONST 
+ 
+-----------------------------------------------------------------------
+!                                                                      !
+!ZAKONU bOJLQ-mARIOTTA      ZAKONU {ARLQ    ZAKONU gEJ-l@SSAKA         !
+!                                           ------------------         !
+!                                                                      !
+!PV=CONST                  V/T=CONST       P/T=CONST                   !
+!                         ---------                                    !
+-----------------------------------------------------------------------
+
+          *************
+          * wopros 11 *
+          *************
+
+iZOHORNYJ PROCESS W IDEALXNOM GAZE POD^INQETSQ ...
+
+otwet:ZAKONU {ARLQ P/T=CONST
+
+----------------------------------------------------------------------
+!                                                                     !
+!ZAKONU bOJLQ-mARIOTTA      ZAKONU {ARLQ    ZAKONU gEJ-l@SSAKA        !
+!                           ------------                              !
+!                                                                     !
+!PV=CONST                  V/T=CONST       P/T=CONST                  !  
+!                                           ---------                 !
+----------------------------------------------------------------------
+
+          *************
+          * wopros 12 *
+          *************
+
+tEMPERATURA W TERMODINAMIKE IZMERQETSQ ...
+
+otwet:W KELXWINAH
+
+---------------------------------------------------------------------
+!                                                                    !
+!W GRADUSAH CELXSIQ                W KELXWINAH                       !
+!                                  ------------                      !
+---------------------------------------------------------------------
+                                                              
