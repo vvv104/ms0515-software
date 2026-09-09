@@ -33,7 +33,7 @@ per-folder README says how each program is started.
 | `software/` | the industrial half: products that came without their sources |
 | [`software/system/`](software/system/README.md) | device handlers (per family, with the load/reject matrix of every handler on every monitor), utilities, formatters, printing, shells, diagnostics |
 | [`software/development/`](software/development/README.md) | Pascal, MACRO-11 and LINK, FORTRAN, BASIC, editors, debuggers, sprite tools |
-| [`software/games/`](software/games/README.md) | the games, each with the data file it needs beside it; ПИТОН among them |
+| [`software/games/`](software/games/README.md) | the games, each with the data file it needs beside it; ПИТОН among them, and `fist/` - our own port, the one thing here that came from no diskette |
 | [`software/apps/`](software/apps/README.md) | applications: FCON, FunctionCAD, UKCALC, ART, the РБД-МИКРО database system, the savings-bank programs |
 | [`software/unsorted/`](software/unsorted/README.md) | the problem shelf: what the cross-run could not run and the reads that failed, each with what is known, until examined |
 | [`programs/`](programs/README.md) | the non-industrial half - everything home-made, with its sources, a folder each: the collector's own programs (`vvv/` - everything on his disks that no one else signed, the minesweeper inside), Домнич's calendar, Newton solver and ПИТОН, the BASIC games, VLAD & ALEX's Covox-style sampler, the МС0111 terminal complex, the KOI-7 recoder in C, the music-editor advert, the screen dumps, the BASIC programs of the other disks, the Pascal programs of no known author, and the schoolroom: AutoTeacher, Лицей №1 |

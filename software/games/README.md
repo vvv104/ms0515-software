@@ -25,4 +25,13 @@ Run a game by its bare name or `R NAME`.  ПИТОН (`UDAW.SAV`) is here as a g
 | `TROPA.SAV` | Russian version of The Oregon Trail: year 1786, the trail from Idaho to Oregon; asks for the player's nickname | `RUN TROPA` |
 | `UDAW.SAV` | Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vertically, consonants horizontally), by Домнич Александр for IVF 'МИКРОТЕХ', Voronezh 1994, 6 difficulty levels. Its true name is UDAW.SAV: the program opens 'udaw.sav' (ASCII literal at 0x1306) and sums the first 1000 words - OF ITSELF; the sum of this very binary is exactly the expected -27004, so it is a self-integrity check against renaming/tampering, and a failed check prints 'Привет хакерам!!'. The surviving copies were renamed to .EXE, which is what broke them - put back as UDAW.SAV it runs whole, no key needed | `RUN UDAW` |
 
+A folder of its own for what comes as a family or as more than one file:
+[`pacman/`](pacman/README.md) - five Pac-Man games; [`sabot2/`](sabot2/README.md)
+- Saboteur 2, loader plus body, in the two builds that survived and with the
+repair of the room that killed the machine; [`tetris/`](tetris/README.md) -
+the falling-blocks games.  And [`fist/`](fist/README.md), which is the one
+thing here that never came off a diskette: our own 2026 MACRO-11 port of
+Melbourne House's *The Way Of The Exploding Fist*, marked as ours the way
+the collection's rules ask.
+
 Programs that survived in several builds - `HANOJ.SAV`, `KOSMOS.SAV` - have one folder per kit here, each build in the folder of the disks it came from: `osa/` - the ОСА kits; `osa-rs/` - ОСА with the RS profShell.  The files in the table are common to every kit.
