@@ -28,7 +28,8 @@ version = "2026.09.11-5"
 #
 #   media              what the monitor boots from
 #   requires           the bundles it cannot work without
-#   requires_by_media  those only one media needs (DV.SYS to boot a DV disk)
+#   requires_by_media  those only one media needs: the handler it boots through -
+#                      DZ.SYS on ss and dz, DV.SYS on dv (a DV disk boots without DZ.SYS)
 #   startup            the first lines of the startup command file
 #   reserved           blocks copied from the exemplar, which no file may take
 
@@ -36,24 +37,24 @@ version = "2026.09.11-5"
 title    = "OSA 1.0"
 image    = "systems/osa.dsk"
 media    = ["ss", "dz", "dv"]
-requires = ["dz-osa", "tt-osa", "dir-osa", "dup-omega", "pip-omega"]
-requires_by_media = { dv = ["dv-omega"] }
+requires = ["tt-osa", "dir-osa", "dup-omega", "pip-omega"]
+requires_by_media = { ss = ["dz-osa"], dz = ["dz-osa"], dv = ["dv-omega"] }
 startup  = ["SET TT QUIET"]
 
 [system.omega]
 title    = "OMEGA SJ(S) V05.04"
 image    = "systems/omega.dsk"
 media    = ["ss", "dz", "dv"]
-requires = ["dz-omega", "tt-omega", "dir-omega", "dup-omega", "pip-omega"]
-requires_by_media = { dv = ["dv-omega"] }
+requires = ["tt-omega", "dir-omega", "dup-omega", "pip-omega"]
+requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
 startup  = ["SET TT QUIET"]
 
 [system.omega2]
 title    = "OMEGA SJ(S) V05.04, the vvv104 build"
 image    = "systems/omega2.dsk"
 media    = ["ss", "dz", "dv"]
-requires = ["dz-omega", "tt-omega", "dir-vvv", "dup-vvv", "pip-vvv"]
-requires_by_media = { dv = ["dv-omega"] }
+requires = ["tt-omega", "dir-vvv", "dup-vvv", "pip-vvv"]
+requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
 startup  = ["SET TT QUIET"]
 
 [system.mihin]
