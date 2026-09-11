@@ -16,10 +16,15 @@ the emulator repository under `rt11_devel/projects/fist/`.
     ms0515-disk put yoursystem.dsk FIST.DAT
 
 then, at the monitor prompt, `R FIST`.  Both files must sit on the same
-volume: `FIST.SAV` is a one-block loader and the whole program travels in
-`FIST.DAT` beside the artwork, LZSS-packed, the way `SABOT2.SAV` carries
-`SABOT2.DAT`.  The game needs the full 128 KB machine and takes it over —
-it does not return to the monitor.
+volume: `FIST.SAV` is the loader - it carries the picture it shows while
+it works - and the whole program travels in `FIST.DAT` beside the artwork,
+LZSS-packed, the way `SABOT2.SAV` carries `SABOT2.DAT`.  The game needs the
+full 128 KB machine and takes it over — it does not return to the monitor.
+
+The loader touches no memory the monitor owns: what it needs is either
+inside its own image or in the extended banks, which RT-11 cannot see.  So
+it runs on every one of the collection's systems, including Rodionov's,
+whose monitor sits low enough that the earlier loader wrote over it.
 
 The title screen holds about three seconds (or until fire), then the
 attract demo runs.  Fire starts a 1-player game, `2` a 2-player one, `0`
