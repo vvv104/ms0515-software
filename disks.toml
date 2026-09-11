@@ -349,7 +349,7 @@ files    = ["software/games/sabot2/fixed/omega/SABOT2.SAV",
 [bundle.fist]
 title = "The Way Of The Exploding Fist"
 group = "Games / Graphics"
-date  = "2003-01-01"
+date  = "1999-12-31"            # the latest the monitors print in two digits: 2003 shows as 01-01-103
 files = ["software/games/fist/FIST.SAV", "software/games/fist/FIST.DAT"]
 
 [bundle.birds]
@@ -839,7 +839,8 @@ title    = "ROSA Commander v1.3 - Rodionov's two-panel file manager"
 group    = "Shells"
 systems  = ["rodionov"]
 needs    = ["dz"]               # it hardcodes DZ0: and DZ2:
-requires = ["vm"]               # it wants LOAD VM:
+requires = ["vm"]
+startup  = ["LOAD VM:"]         # else it stops with ?MON-F- no device as it starts
 date     = "1993-10-19"
 files    = ["software/system/shells/ROSA3.SAV"]
 
@@ -1115,7 +1116,7 @@ system  = "rodionov"
 media   = "dz"
 bundles = ["sl-rodionov", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
            "resorc-osa", "screen-modes", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs"]
-startup = ["LOAD VM:", "R ROSA3"]
+startup = ["R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 
 [preset.mihin]
