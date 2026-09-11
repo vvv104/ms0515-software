@@ -1,0 +1,67 @@
+name: Disks
+
+# The collection's disks: every preset of disks.toml composed by the
+# emulator's own disk tool, released on a disks-* tag and published on Pages
+# together with the collection's files, which the browser build's wizard
+# composes from.
+
+on:
+  push:
+    tags: ['disks-*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # EMULATOR names the release whose ms0515-disk composes these disks:
+      # the collection is built with a released tool, never with whatever
+      # the emulator's main holds today.
+      - name: The disk tool
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=$(tr -d ' \r\n' < EMULATOR)
+          gh release download "$TAG" --repo vvv104/ms0515 --pattern '*-linux-x64.tar.gz' --dir emulator
+          tar -xzf emulator/*.tar.gz -C emulator
+          chmod +x emulator/ms0515-disk
+          echo "EMULATOR_TAG=$TAG" >> "$GITHUB_ENV"
+
+      - name: Compose every preset
+        run: emulator/ms0515-disk compose --repo . --all out
+
+      - name: The site
+        run: python3 .github/site.py out site
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/disks-')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          (cd out && zip -q ../ms0515-disks-${GITHUB_REF_NAME#disks-}.zip *.dsk)
+          python3 .github/site.py --notes "$EMULATOR_TAG" > notes.md
+          gh release create "$GITHUB_REF_NAME" out/*.dsk ms0515-disks-*.zip \
+            --title "Disks ${GITHUB_REF_NAME#disks-}" --notes-file notes.md
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
