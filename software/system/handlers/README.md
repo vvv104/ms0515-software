@@ -1,11 +1,12 @@
 # Device handlers
 
-The `.SYS` handlers by monitor family — a handler loads only under the sysgen it was built for, so take them from the folder of your system.  `osa` = ОСА (MON8SJ), `omega` = ОМЕГА V05.04 (both RT11SJ builds), `mihin` = OS-16SJ, `rodionov` = RT15SJ, `ms0111` = the terminal-complex disk 056.  `LOAD DV:` / `SET EM ON` / `SET SL ON` activate them; the compatibility table below is from the cross-run of every handler on every monitor.
+The `.SYS` handlers by monitor family — a handler loads only under the sysgen it was built for, so take them from the folder of your system.  `osa` = ОСА (MON8SJ), `omega` = ОМЕГА V05.04 (both RT11SJ builds), `mihin` = OS-16SJ, `rodionov` = RT15SJ, `ms0111` = the terminal-complex disk 056.  One folder holds no recovered file: `hd` is the emulator's paravirtual hard disk handler - see [`hd/`](hd/README.md) for whose it is.  `LOAD DV:` / `SET EM ON` / `SET SL ON` activate them; the compatibility table below is from the cross-run of every handler on every monitor.
 
 Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недопустимое устройство», *no boot* = the system did not come up with it in the kit, *not listed* = the monitor ignores it.
 
 | family | handler | build | from | what | osa | omega | omega2 | mihin |
 |---|---|---|---|---|---|---|---|---|
+| hd | `HD.SYS` | `3c8f3e5` | the emulator | Paravirtual hard disk HD: of the PDP-11 emulators, v2.0 of the driver kit, built for the MS-0515 - not a recovered file | loaded | loaded | loaded | rejected |
 | mihin | `DZ.SYS` | `591620e` | amk_1 | Floppy-disk handler | no boot | not listed | not listed | loaded |
 | mihin | `LD.SYS` | `1b38683` | disk3 | Logical-disk handler: mounts a container file as a volume | rejected | rejected | rejected | loaded |
 | mihin | `SL.SYS` | `cd5af8b` | disk1 | the Mihin-family SL V8.00 with a Russian assignment table (^A..^T hotkey macros) | rejected | rejected | rejected | loaded |

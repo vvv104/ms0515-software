@@ -221,20 +221,32 @@ files   = [
   "software/development/macro/mihin/LINK.SAV",
 ]
 
+# -- the emulator's hard disk
+
+[bundle.hd]
+title   = "HD.SYS: жёсткий диск эмулятора"
+systems = ["osa", "omega", "omega2", "rodionov"]   # Mihin's monitor refuses it
+date    = "1995-04-01"
+files   = ["software/system/handlers/hd/HD.SYS"]
+
 # ---- presets -------------------------------------------------------------
 #   startup  START.COM, line by line; omitted - the exemplar's own
+#   hint     what to do first, for the browser build's status line (English,
+#            as the page is)
 
 [preset.games]
 title   = "ОСА: игры"
 system  = "osa"
 media   = "dz"
 bundles = ["sabot2", "fist", "pacman", "arcade", "osa-games", "text-games"]
+hint    = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R SP13 run the games; the text games are on side 1: R DZ2:KING"
 
 [preset.devel]
 title   = "ОМЕГА: разработка"
 system  = "omega2"
 media   = "dv"
-bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools"]
+bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools", "hd"]
+hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, BASICO compile, KED edits; with an HD image mounted, INIT HD: makes it a volume"
 
 [preset.rodionov]
 title   = "Родионов: ROSA Commander"
@@ -242,9 +254,11 @@ system  = "rodionov"
 media   = "dz"
 bundles = ["rosa", "basico", "rosa-docs"]
 startup = ["SET TT QUIET", "SET SL ON", "LOAD VM:", "R ROSA3"]
+hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 
 [preset.mihin]
 title   = "Михин: OS-16SJ"
 system  = "mihin"
 media   = "dz"
 bundles = ["mihin-tools"]
+hint    = ". is the OS prompt: DIR lists the files; FDZ formats a diskette, K52 edits"
