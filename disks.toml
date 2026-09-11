@@ -201,6 +201,185 @@ protect  = true
 date     = "1985-11-12"
 files    = ["software/system/handlers/mihin/LD.SYS"]
 
+# -- SL: the single-line editor, each build as its exemplar carries it, the
+#    assignment table of its first owners blanked
+
+[bundle.sl-osa]
+title    = "SL.SYS - the single-line editor (OSA)"
+group    = "System"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1988-01-19"
+files    = ["software/system/handlers/osa/quiet/SL.SYS"]
+
+[bundle.sl-omega]
+title    = "SL.SYS - the single-line editor (OMEGA)"
+group    = "System"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/handlers/omega/quiet/SL.SYS"]
+
+[bundle.sl-vvv]
+title    = "SL.SYS - the single-line editor (vvv104 disks)"
+group    = "System"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1995-01-01"
+files    = ["software/system/handlers/vvv/quiet/SL.SYS"]
+
+[bundle.sl-mihin]
+title    = "SL.SYS - the single-line editor (Mihin)"
+group    = "System"
+provides = ["sl"]
+systems  = ["mihin"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1989-02-24"
+files    = ["software/system/handlers/mihin/quiet/SL.SYS"]
+
+[bundle.sl-rodionov]
+title    = "SL.SYS - the single-line editor (Rodionov)"
+group    = "System"
+provides = ["sl"]
+systems  = ["rodionov"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/handlers/rodionov/quiet/SL.SYS"]
+
+# -- the other handlers: one bundle per build; the family decides which one
+#    loads, so each build names its systems and all builds of one handler
+#    provide one name
+
+[bundle.hd-osa]
+title    = "HD.SYS - the emulator's hard disk"
+group    = "System"
+provides = ["hd"]
+systems  = ["osa"]
+date     = "1995-04-01"
+files    = ["software/system/handlers/osa/HD.SYS"]
+
+[bundle.hd-omega]
+title    = "HD.SYS - the emulator's hard disk"
+group    = "System"
+provides = ["hd"]
+systems  = ["omega", "omega2"]
+date     = "1995-04-01"
+files    = ["software/system/handlers/omega/HD.SYS"]
+
+[bundle.hd-rodionov]
+title    = "HD.SYS - the emulator's hard disk"
+group    = "System"
+provides = ["hd"]
+systems  = ["rodionov"]
+date     = "1995-04-01"
+files    = ["software/system/handlers/rodionov/HD.SYS"]
+
+[bundle.hd-mihin]
+title    = "HD.SYS - the emulator's hard disk"
+group    = "System"
+provides = ["hd"]
+systems  = ["mihin"]
+date     = "1995-04-01"
+files    = ["software/system/handlers/mihin/HD.SYS"]
+
+[bundle.vm-osa]
+title    = "VM.SYS - RAM disk"
+group    = "System"
+provides = ["vm"]
+systems  = ["osa", "omega", "omega2"]
+date     = "1990-12-27"
+files    = ["software/system/handlers/osa/VM.SYS"]
+
+[bundle.vm-rodionov]
+title    = "VM.SYS - RAM disk"
+group    = "System"
+provides = ["vm"]
+systems  = ["rodionov"]
+date     = "1991-12-25"
+files    = ["software/system/handlers/rodionov/VM.SYS"]
+
+[bundle.vm-mihin]
+title    = "VM.SYS - RAM disk"
+group    = "System"
+provides = ["vm"]
+systems  = ["mihin"]
+date     = "1991-08-13"
+files    = ["software/system/handlers/mihin/VM.SYS"]
+
+[bundle.vs-osa]
+title    = "VS.SYS - the sound device"
+group    = "System"
+provides = ["vs"]
+systems  = ["osa", "omega", "omega2"]
+date     = "1990-12-27"
+files    = ["software/system/handlers/osa/VS.SYS"]
+
+[bundle.vs-rodionov]
+title    = "VS.SYS - the sound device"
+group    = "System"
+provides = ["vs"]
+systems  = ["rodionov"]
+date     = "1990-12-27"
+files    = ["software/system/handlers/rodionov/VS.SYS"]
+
+[bundle.nl]
+title    = "NL.SYS - the null device"
+group    = "System"
+systems  = ["rodionov", "osa", "omega", "omega2"]
+date     = "1990-12-27"
+files    = ["software/system/handlers/rodionov/NL.SYS"]
+
+[bundle.em]
+title    = "EM.SYS - the EIS/FIS instruction emulator (SET EM ON)"
+group    = "System"
+systems  = ["osa"]
+files    = ["software/system/handlers/osa/EM.SYS"]
+
+[bundle.ex]
+title    = "EX.SYS - the RAM-disk expansion board"
+group    = "System"
+systems  = ["omega", "omega2"]
+date     = "1995-04-01"
+files    = ["software/system/handlers/omega/EX.SYS"]
+
+[bundle.lp]
+title    = "LP.SYS - the line printer"
+group    = "System"
+systems  = ["omega", "omega2"]
+date     = "1995-04-02"
+files    = ["software/system/handlers/omega/LP.SYS"]
+
+[bundle.hp]
+title    = "HP.SYS"
+group    = "System"
+systems  = ["omega", "omega2"]
+date     = "1992-10-05"
+files    = ["software/system/handlers/omega/HP.SYS"]
+
+[bundle.mz]
+title    = "MZ.SYS - whole-disk MZ: volumes"
+group    = "System"
+systems  = ["omega", "omega2"]
+date     = "1995-01-01"
+files    = ["software/system/handlers/omega/MZ.SYS"]
+
+[bundle.ld-omega]
+title    = "LD.SYS - logical disks in a file"
+group    = "System"
+systems  = ["omega", "omega2"]
+date     = "1995-04-01"
+files    = ["software/system/handlers/omega/LD.SYS"]
+
+# -- the utilities every system requires, one of each
+
 [bundle.dir-osa]
 title    = "DIR (OSA)"
 group    = "System"
@@ -272,59 +451,6 @@ provides = ["pip"]
 protect  = true
 date     = "1990-03-03"
 files    = ["software/system/utils/mihin/PIP.SAV"]
-
-# -- SL: the single-line editor, each build as its exemplar carries it, the
-#    assignment table of its first owners blanked
-
-[bundle.sl-osa]
-title    = "SL.SYS - the single-line editor (OSA)"
-group    = "System"
-provides = ["sl"]
-systems  = ["osa", "omega", "omega2"]
-startup  = ["SET SL ON"]
-protect  = true
-date     = "1988-01-19"
-files    = ["software/system/handlers/osa/quiet/SL.SYS"]
-
-[bundle.sl-omega]
-title    = "SL.SYS - the single-line editor (OMEGA)"
-group    = "System"
-provides = ["sl"]
-systems  = ["osa", "omega", "omega2"]
-startup  = ["SET SL ON"]
-protect  = true
-date     = "1991-01-31"
-files    = ["software/system/handlers/omega/quiet/SL.SYS"]
-
-[bundle.sl-vvv]
-title    = "SL.SYS - the single-line editor (vvv104 disks)"
-group    = "System"
-provides = ["sl"]
-systems  = ["osa", "omega", "omega2"]
-startup  = ["SET SL ON"]
-protect  = true
-date     = "1995-01-01"
-files    = ["software/system/handlers/vvv/quiet/SL.SYS"]
-
-[bundle.sl-mihin]
-title    = "SL.SYS - the single-line editor (Mihin)"
-group    = "System"
-provides = ["sl"]
-systems  = ["mihin"]
-startup  = ["SET SL ON"]
-protect  = true
-date     = "1989-02-24"
-files    = ["software/system/handlers/mihin/quiet/SL.SYS"]
-
-[bundle.sl-rodionov]
-title    = "SL.SYS - the single-line editor (Rodionov)"
-group    = "System"
-provides = ["sl"]
-systems  = ["rodionov"]
-startup  = ["SET SL ON"]
-protect  = true
-date     = "1991-01-31"
-files    = ["software/system/handlers/rodionov/quiet/SL.SYS"]
 
 # ==== Games ================================================================
 
@@ -706,132 +832,6 @@ title = "SPR - the sprite editor, with its manual"
 group = "Development / Sprites"
 date  = "1995-04-01"
 files = ["software/development/sprites/SPR.SAV", "software/development/sprites/SPRED.DOC"]
-
-# ==== Handlers =============================================================
-# One bundle per build: the family decides which one loads, so each build
-# names its systems and all builds of one handler provide one name.  A
-# branch of System, beside the handlers the systems require - and above the
-# startup file the wizard shows at System's end, where their SET/LOAD lines go.
-
-[bundle.hd-osa]
-title    = "HD.SYS - the emulator's hard disk"
-group    = "System / Handlers"
-provides = ["hd"]
-systems  = ["osa"]
-date     = "1995-04-01"
-files    = ["software/system/handlers/osa/HD.SYS"]
-
-[bundle.hd-omega]
-title    = "HD.SYS - the emulator's hard disk"
-group    = "System / Handlers"
-provides = ["hd"]
-systems  = ["omega", "omega2"]
-date     = "1995-04-01"
-files    = ["software/system/handlers/omega/HD.SYS"]
-
-[bundle.hd-rodionov]
-title    = "HD.SYS - the emulator's hard disk"
-group    = "System / Handlers"
-provides = ["hd"]
-systems  = ["rodionov"]
-date     = "1995-04-01"
-files    = ["software/system/handlers/rodionov/HD.SYS"]
-
-[bundle.hd-mihin]
-title    = "HD.SYS - the emulator's hard disk"
-group    = "System / Handlers"
-provides = ["hd"]
-systems  = ["mihin"]
-date     = "1995-04-01"
-files    = ["software/system/handlers/mihin/HD.SYS"]
-
-[bundle.vm-osa]
-title    = "VM.SYS - RAM disk"
-group    = "System / Handlers"
-provides = ["vm"]
-systems  = ["osa", "omega", "omega2"]
-date     = "1990-12-27"
-files    = ["software/system/handlers/osa/VM.SYS"]
-
-[bundle.vm-rodionov]
-title    = "VM.SYS - RAM disk"
-group    = "System / Handlers"
-provides = ["vm"]
-systems  = ["rodionov"]
-date     = "1991-12-25"
-files    = ["software/system/handlers/rodionov/VM.SYS"]
-
-[bundle.vm-mihin]
-title    = "VM.SYS - RAM disk"
-group    = "System / Handlers"
-provides = ["vm"]
-systems  = ["mihin"]
-date     = "1991-08-13"
-files    = ["software/system/handlers/mihin/VM.SYS"]
-
-[bundle.vs-osa]
-title    = "VS.SYS - the sound device"
-group    = "System / Handlers"
-provides = ["vs"]
-systems  = ["osa", "omega", "omega2"]
-date     = "1990-12-27"
-files    = ["software/system/handlers/osa/VS.SYS"]
-
-[bundle.vs-rodionov]
-title    = "VS.SYS - the sound device"
-group    = "System / Handlers"
-provides = ["vs"]
-systems  = ["rodionov"]
-date     = "1990-12-27"
-files    = ["software/system/handlers/rodionov/VS.SYS"]
-
-[bundle.nl]
-title    = "NL.SYS - the null device"
-group    = "System / Handlers"
-systems  = ["rodionov", "osa", "omega", "omega2"]
-date     = "1990-12-27"
-files    = ["software/system/handlers/rodionov/NL.SYS"]
-
-[bundle.em]
-title    = "EM.SYS - the EIS/FIS instruction emulator (SET EM ON)"
-group    = "System / Handlers"
-systems  = ["osa"]
-files    = ["software/system/handlers/osa/EM.SYS"]
-
-[bundle.ex]
-title    = "EX.SYS - the RAM-disk expansion board"
-group    = "System / Handlers"
-systems  = ["omega", "omega2"]
-date     = "1995-04-01"
-files    = ["software/system/handlers/omega/EX.SYS"]
-
-[bundle.lp]
-title    = "LP.SYS - the line printer"
-group    = "System / Handlers"
-systems  = ["omega", "omega2"]
-date     = "1995-04-02"
-files    = ["software/system/handlers/omega/LP.SYS"]
-
-[bundle.hp]
-title    = "HP.SYS"
-group    = "System / Handlers"
-systems  = ["omega", "omega2"]
-date     = "1992-10-05"
-files    = ["software/system/handlers/omega/HP.SYS"]
-
-[bundle.mz]
-title    = "MZ.SYS - whole-disk MZ: volumes"
-group    = "System / Handlers"
-systems  = ["omega", "omega2"]
-date     = "1995-01-01"
-files    = ["software/system/handlers/omega/MZ.SYS"]
-
-[bundle.ld-omega]
-title    = "LD.SYS - logical disks in a file"
-group    = "System / Handlers"
-systems  = ["omega", "omega2"]
-date     = "1995-04-01"
-files    = ["software/system/handlers/omega/LD.SYS"]
 
 # ==== Shells ===============================================================
 
