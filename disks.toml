@@ -1,0 +1,263 @@
+# What a disk is made of.
+#
+# Read by the composer (`ms0515-disk compose` over a local copy of this
+# repository, and the web wizard over its Pages) and by the release, which
+# builds every preset below.  A preset is exactly what the wizard makes from
+# the same choices.
+
+format = 1
+
+# ---- media ---------------------------------------------------------------
+# The composer knows these three; they are listed only as the words used
+# below.
+#   ss  400 KB single-sided: one DZ volume
+#   dz  800 KB double-sided: two DZ volumes, DZ0 boots, DZ2 is the second
+#   dv  800 KB double-sided: one DV whole-disk volume of 1600 blocks
+
+# ---- systems -------------------------------------------------------------
+# A system is an exemplar from systems/.  Its kit - monitor, SWAP, handlers,
+# DIR/DUP/PIP, START.COM, the bootstrap - comes from that image: monitors do
+# not exist here as loose files.
+#
+#   media    what the monitor boots from
+#   rebuild  false: the image is the base as it is (Rodionov's protection
+#            lives outside the file system), so only its own media is offered
+
+[system.osa]
+title  = "ОСА 1.0"
+image  = "systems/osa.dsk"
+media  = ["ss", "dz", "dv"]
+
+[system.omega]
+title  = "ОМЕГА SJ(S) V05.04"
+image  = "systems/omega.dsk"
+media  = ["ss", "dz", "dv"]
+
+[system.omega2]
+title  = "ОМЕГА SJ(S) V05.04, vvv104"
+image  = "systems/omega2.dsk"
+media  = ["ss", "dz", "dv"]
+
+[system.mihin]
+title  = "OS-16SJ (Mihinsoft)"
+image  = "systems/mihin.dsk"
+media  = ["ss", "dz"]           # the monitor refuses DV.SYS
+
+[system.rodionov]
+title   = "RT15SJ (Родионов)"
+image   = "systems/rodionov.dsk"
+media   = ["dz"]
+rebuild = false
+
+# ---- bundles -------------------------------------------------------------
+# What one checkbox adds.  A bundle's files stay on one volume together (a
+# loader and its data, a program and its sprite table).
+#
+#   files    paths in this repository; a glob expands in name order; an
+#            inline table renames on the disk: { path = "...", as = "K52.SAV" }
+#   volume   "boot" (default): the volume the system boots from - a bare
+#            name runs only from DK:.  "any": may go to DZ2 when the boot
+#            volume is full (text games run as R DZ2:NAME, documents)
+#   needs    media the bundle cannot live without
+#   systems  only these systems (default: every one)
+#   date     the RT-11 date of its files, 1972..2003 (a file may carry its
+#            own: { path = "...", date = "..." })
+#   protect  set [P] on its files (default false)
+
+# -- games
+
+[bundle.sabot2]
+title   = "Saboteur 2"
+needs   = ["ss", "dz"]          # the loader opens DZ:SABOT2.DAT by name
+systems = ["osa"]
+date    = "1990-11-09"
+files   = ["software/games/sabot2/fixed/osa/SABOT2.SAV",
+           "software/games/sabot2/fixed/osa/SABOT2.DAT"]
+
+[bundle.fist]
+title = "The Way Of The Exploding Fist"
+date  = "2003-01-01"
+files = ["software/games/fist/FIST.SAV", "software/games/fist/FIST.DAT"]
+
+[bundle.pacman]
+title = "Pac-Man"
+date  = "1989-04-30"
+files = ["software/games/pacman/*"]
+
+[bundle.arcade]
+title = "Аркады"
+date  = "1991-11-12"
+files = [
+  "software/games/BIRDS.SAV",
+  "software/games/EXPRES.SAV",
+  "software/games/EXPRES.TXT",
+  "software/games/tetris/*",
+]
+
+[bundle.osa-games]
+title   = "Игры ОСА"
+systems = ["osa"]
+date    = "1992-03-27"
+files   = ["software/games/osa/KOSMOS.SAV", "software/games/osa/HANOJ.SAV"]
+
+[bundle.text-games]
+title  = "Текстовые игры"
+volume = "any"
+date   = "1991-01-31"
+files  = [
+  "software/games/KING.SAV", "software/games/KING.DAT",
+  "software/games/KAM1.SAV", "software/games/KAMENS.DAT",
+  "software/games/TROPA.SAV", "software/games/POKER.SAV",
+  "software/games/KOSTI.SAV", "software/games/MARS.SAV",
+  "software/games/GO1.SAV", "software/games/KALAHI.SAV",
+  "software/games/DERBY.SAV", "software/games/LOTOS.SAV",
+  "software/games/TEN.SAV", "software/games/TIR.SAV",
+  "software/games/UDAW.SAV",
+]
+
+# -- development, the vvv104 kit
+
+[bundle.vvv-macro]
+title   = "MACRO-11"
+systems = ["omega2"]
+date    = "1995-04-01"
+files   = ["software/development/macro/vvv/MACRO.SAV",
+           "software/development/macro/vvv/LINK.SAV",
+           "software/development/macro/SYSMAC.SML"]
+
+[bundle.pascal]
+title   = "Pascal"
+systems = ["omega", "omega2"]
+date    = "1995-04-01"
+files   = [
+  "software/development/pascal/PAS1.SAV",
+  "software/development/pascal/PAS1.OBJ",
+  "software/development/pascal/PASLIB.OBJ",
+  "software/development/pascal/SYSLIB.OBJ",
+  "software/development/pascal/PASGRF.OBJ",
+  "software/development/pascal/GRAPH.P1U",
+  "software/development/pascal/STRING.PAS",
+]
+
+[bundle.fortran]
+title   = "FORTRAN"
+systems = ["omega", "omega2"]
+date    = "1995-04-01"
+files   = ["software/development/fortran/FORTRA.SAV",
+           "software/development/pascal/FORLIB.OBJ"]
+
+[bundle.basico]
+title = "BASIC"
+date  = "1992-02-17"
+files = ["software/development/basic/BASICO.SAV"]
+
+[bundle.vvv-tools]
+title   = "Инструменты vvv104"
+systems = ["omega2"]
+date    = "1995-04-01"
+files   = [
+  "software/development/editors/KED.SAV",
+  "software/development/debug/DESS.SAV",
+  "software/development/sprites/SPR.SAV",
+  "software/system/utils/vvv/DATIME.SAV",
+  "software/system/format/vvv/FORMH.SAV",
+  "software/system/format/vvv/FORML.SAV",
+  "software/system/handlers/omega/LD.SYS",
+  "software/system/handlers/omega/EX.SYS",
+  "software/system/handlers/omega/LP.SYS",
+  "software/system/handlers/omega/MZ.SYS",
+]
+
+[bundle.minesweeper]
+title   = "Пример: сапёр на Pascal"
+systems = ["omega", "omega2"]
+date    = "1995-04-01"
+files   = [
+  "programs/vvv/minesweeper/K.PAS",
+  "programs/vvv/minesweeper/RND.PAS",
+  "programs/vvv/minesweeper/RND.OBJ",
+  "programs/vvv/minesweeper/K.COM",
+  "programs/vvv/minesweeper/K.SAV",
+  "programs/vvv/minesweeper/K.SPT",
+]
+
+# -- Rodionov's system
+
+[bundle.rosa]
+title   = "ROSA Commander и утилиты Родионова"
+systems = ["rodionov"]
+date    = "1993-10-19"
+files   = [
+  "software/system/shells/ROSA3.SAV",
+  "software/development/editors/R15.SAV",
+  "software/development/editors/R15.HLP",
+  "software/system/utils/rodionov/HELP.SAV",
+  "software/system/utils/rodionov/DUMP.SAV",
+  "software/system/handlers/rodionov/VM.SYS",
+  "software/system/handlers/rodionov/VS.SYS",
+  "software/system/handlers/rodionov/NL.SYS",
+  "software/system/shells/SCE.SAV",
+  "software/system/shells/SCE.HLP",
+  "software/system/utils/TFP.SAV",
+  "software/system/utils/osa/RESORC.SAV",
+  "software/system/utils/WHITE.SAV",
+  "software/system/diag/183107.SAV",
+  "software/system/diag/GETEML.SAV",
+]
+
+[bundle.rosa-docs]
+title   = "Документация Родионова"
+systems = ["rodionov"]
+volume  = "any"
+date    = "1993-08-09"
+files   = [
+  "software/system/shells/INSTR.DOC",
+  "software/system/shells/REKROS.DOC",
+  "software/system/shells/REKSYS.DOC",
+  "software/development/editors/R15.DOC",
+  "software/unsorted/primer/PRIMER.DOC",
+]
+
+# -- Mihin's system
+
+[bundle.mihin-tools]
+title   = "Утилиты Михина"
+systems = ["mihin"]
+date    = "1991-07-04"
+files   = [
+  "software/system/format/FDZ.SAV",
+  "software/system/utils/BADS.SAV",
+  "software/system/utils/mihin/TERM.SAV",
+  "software/system/handlers/mihin/VM.SYS",
+  { path = "software/development/editors/K13U.SAV", as = "K52.SAV" },
+  "software/development/macro/mihin/MACRO.SAV",
+  "software/development/macro/mihin/LINK.SAV",
+]
+
+# ---- presets -------------------------------------------------------------
+#   startup  START.COM, line by line; omitted - the exemplar's own
+
+[preset.games]
+title   = "ОСА: игры"
+system  = "osa"
+media   = "dz"
+bundles = ["sabot2", "fist", "pacman", "arcade", "osa-games", "text-games"]
+
+[preset.devel]
+title   = "ОМЕГА vvv104: разработка"
+system  = "omega2"
+media   = "dv"
+bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools", "minesweeper"]
+
+[preset.rodionov]
+title   = "Родионов: ROSA Commander"
+system  = "rodionov"
+media   = "dz"
+bundles = ["rosa", "basico", "rosa-docs"]
+startup = ["SET TT QUIET", "SET SL ON", "LOAD VM:", "R ROSA3"]
+
+[preset.mihin]
+title   = "Михин: OS-16SJ"
+system  = "mihin"
+media   = "dz"
+bundles = ["mihin-tools"]
