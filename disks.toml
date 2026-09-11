@@ -24,17 +24,17 @@ format = 1
 #            lives outside the file system), so only its own media is offered
 
 [system.osa]
-title  = "ОСА 1.0"
+title  = "OSA 1.0"
 image  = "systems/osa.dsk"
 media  = ["ss", "dz", "dv"]
 
 [system.omega]
-title  = "ОМЕГА SJ(S) V05.04"
+title  = "OMEGA SJ(S) V05.04"
 image  = "systems/omega.dsk"
 media  = ["ss", "dz", "dv"]
 
 [system.omega2]
-title  = "ОМЕГА SJ(S) V05.04, vvv104"
+title  = "OMEGA SJ(S) V05.04, the vvv104 build"
 image  = "systems/omega2.dsk"
 media  = ["ss", "dz", "dv"]
 
@@ -44,7 +44,7 @@ image  = "systems/mihin.dsk"
 media  = ["ss", "dz"]           # the monitor refuses DV.SYS
 
 [system.rodionov]
-title   = "RT15SJ (Родионов)"
+title   = "RT15SJ (Rodionov)"
 image   = "systems/rodionov.dsk"
 media   = ["dz"]
 rebuild = false
@@ -85,7 +85,7 @@ date  = "1989-04-30"
 files = ["software/games/pacman/*"]
 
 [bundle.arcade]
-title = "Аркады"
+title = "Arcade games"
 date  = "1991-11-12"
 files = [
   "software/games/BIRDS.SAV",
@@ -95,13 +95,13 @@ files = [
 ]
 
 [bundle.osa-games]
-title   = "Игры ОСА"
+title   = "OSA games: Kosmos, Hanoi"
 systems = ["osa"]
 date    = "1992-03-27"
 files   = ["software/games/osa/KOSMOS.SAV", "software/games/osa/HANOJ.SAV"]
 
 [bundle.text-games]
-title  = "Текстовые игры"
+title  = "Text games"
 volume = "any"
 date   = "1991-01-31"
 files  = [
@@ -152,7 +152,7 @@ date  = "1992-02-17"
 files = ["software/development/basic/BASICO.SAV"]
 
 [bundle.vvv-tools]
-title   = "Редактор, отладчик, утилиты"
+title   = "Editor, debugger, utilities"
 systems = ["omega2"]
 date    = "1995-04-01"
 files   = [
@@ -171,7 +171,7 @@ files   = [
 # -- Rodionov's system
 
 [bundle.rosa]
-title   = "ROSA Commander и утилиты Родионова"
+title   = "ROSA Commander and Rodionov's utilities"
 systems = ["rodionov"]
 date    = "1993-10-19"
 files   = [
@@ -193,7 +193,7 @@ files   = [
 ]
 
 [bundle.rosa-docs]
-title   = "Документация Родионова"
+title   = "Rodionov's documentation"
 systems = ["rodionov"]
 volume  = "any"
 date    = "1993-08-09"
@@ -208,7 +208,7 @@ files   = [
 # -- Mihin's system
 
 [bundle.mihin-tools]
-title   = "Утилиты Михина"
+title   = "Mihin's utilities"
 systems = ["mihin"]
 date    = "1991-07-04"
 files   = [
@@ -224,32 +224,31 @@ files   = [
 # -- the emulator's hard disk
 
 [bundle.hd]
-title   = "HD.SYS: жёсткий диск эмулятора"
+title   = "HD.SYS: the emulator's hard disk"
 systems = ["osa", "omega", "omega2", "rodionov"]   # Mihin's monitor refuses it
 date    = "1995-04-01"
 files   = ["software/system/handlers/hd/HD.SYS"]
 
 # ---- presets -------------------------------------------------------------
 #   startup  START.COM, line by line; omitted - the exemplar's own
-#   hint     what to do first, for the browser build's status line (English,
-#            as the page is)
+#   hint     what to do first, for the browser build's status line
 
 [preset.games]
-title   = "ОСА: игры"
+title   = "OSA: games"
 system  = "osa"
 media   = "dz"
 bundles = ["sabot2", "fist", "pacman", "arcade", "osa-games", "text-games"]
 hint    = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R SP13 run the games; the text games are on side 1: R DZ2:KING"
 
 [preset.devel]
-title   = "ОМЕГА: разработка"
+title   = "OMEGA: development"
 system  = "omega2"
 media   = "dv"
 bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools", "hd"]
 hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, BASICO compile, KED edits; with an HD image mounted, INIT HD: makes it a volume"
 
 [preset.rodionov]
-title   = "Родионов: ROSA Commander"
+title   = "Rodionov: ROSA Commander"
 system  = "rodionov"
 media   = "dz"
 bundles = ["rosa", "basico", "rosa-docs"]
@@ -257,7 +256,7 @@ startup = ["SET TT QUIET", "SET SL ON", "LOAD VM:", "R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 
 [preset.mihin]
-title   = "Михин: OS-16SJ"
+title   = "Mihin: OS-16SJ"
 system  = "mihin"
 media   = "dz"
 bundles = ["mihin-tools"]
