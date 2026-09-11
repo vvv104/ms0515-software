@@ -223,17 +223,31 @@ files   = [
 
 # -- the emulator's hard disk
 
-[bundle.hd]
+# One bundle a family, as the handlers are kept: Mihin's monitor wants the
+# build with the TIM$IT sysgen bit.
+[bundle.hd-osa]
 title   = "HD.SYS: the emulator's hard disk"
-systems = ["osa", "omega", "omega2", "rodionov"]
+systems = ["osa"]
 date    = "1995-04-01"
-files   = ["software/system/handlers/hd/HD.SYS"]
+files   = ["software/system/handlers/osa/HD.SYS"]
+
+[bundle.hd-omega]
+title   = "HD.SYS: the emulator's hard disk"
+systems = ["omega", "omega2"]
+date    = "1995-04-01"
+files   = ["software/system/handlers/omega/HD.SYS"]
+
+[bundle.hd-rodionov]
+title   = "HD.SYS: the emulator's hard disk"
+systems = ["rodionov"]
+date    = "1995-04-01"
+files   = ["software/system/handlers/rodionov/HD.SYS"]
 
 [bundle.hd-mihin]
 title   = "HD.SYS: the emulator's hard disk"
-systems = ["mihin"]                                 # its monitor wants the TIM$IT build
+systems = ["mihin"]
 date    = "1995-04-01"
-files   = ["software/system/handlers/hd/mihin/HD.SYS"]
+files   = ["software/system/handlers/mihin/HD.SYS"]
 
 # ---- presets -------------------------------------------------------------
 #   startup  START.COM, line by line; omitted - the exemplar's own
@@ -250,7 +264,7 @@ hint    = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R SP13 r
 title   = "OMEGA: development"
 system  = "omega2"
 media   = "dv"
-bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools", "hd"]
+bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools", "hd-omega"]
 hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, BASICO compile, KED edits; with an HD image mounted, INIT HD: makes it a volume"
 
 [preset.rodionov]
