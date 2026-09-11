@@ -40,7 +40,8 @@ def site(out_dir: Path, site_dir: Path):
         shutil.copyfile(out_dir / f'{key}.dsk', disks / f'{key}.dsk')
         presets.append({'key': key, 'title': p['title'], 'system': p['system'],
                         'media': p['media'], 'image': f'disks/{key}.dsk', 'hint': p.get('hint', '')})
-    index = {'format': 1, 'manifest': 'disks.toml', 'presets': presets, 'paths': paths}
+    sizes = {p: (ROOT / p).stat().st_size for p in paths}
+    index = {'format': 1, 'manifest': 'disks.toml', 'presets': presets, 'paths': paths, 'sizes': sizes}
     (site_dir / 'index.json').write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding='utf-8')
     (site_dir / '.nojekyll').write_text('', encoding='utf-8')
     print(f'{len(paths)} files, {len(presets)} disks')
