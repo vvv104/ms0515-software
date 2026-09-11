@@ -152,7 +152,7 @@ date  = "1992-02-17"
 files = ["software/development/basic/BASICO.SAV"]
 
 [bundle.vvv-tools]
-title   = "Инструменты vvv104"
+title   = "Редактор, отладчик, утилиты"
 systems = ["omega2"]
 date    = "1995-04-01"
 files   = [
@@ -166,19 +166,6 @@ files   = [
   "software/system/handlers/omega/EX.SYS",
   "software/system/handlers/omega/LP.SYS",
   "software/system/handlers/omega/MZ.SYS",
-]
-
-[bundle.minesweeper]
-title   = "Пример: сапёр на Pascal"
-systems = ["omega", "omega2"]
-date    = "1995-04-01"
-files   = [
-  "programs/vvv/minesweeper/K.PAS",
-  "programs/vvv/minesweeper/RND.PAS",
-  "programs/vvv/minesweeper/RND.OBJ",
-  "programs/vvv/minesweeper/K.COM",
-  "programs/vvv/minesweeper/K.SAV",
-  "programs/vvv/minesweeper/K.SPT",
 ]
 
 # -- Rodionov's system
@@ -244,10 +231,10 @@ media   = "dz"
 bundles = ["sabot2", "fist", "pacman", "arcade", "osa-games", "text-games"]
 
 [preset.devel]
-title   = "ОМЕГА vvv104: разработка"
+title   = "ОМЕГА: разработка"
 system  = "omega2"
 media   = "dv"
-bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools", "minesweeper"]
+bundles = ["vvv-macro", "pascal", "fortran", "basico", "vvv-tools"]
 
 [preset.rodionov]
 title   = "Родионов: ROSA Commander"
