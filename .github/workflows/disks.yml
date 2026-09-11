@@ -38,6 +38,12 @@ jobs:
           chmod +x emulator/ms0515-disk
           echo "EMULATOR_TAG=$TAG" >> "$GITHUB_ENV"
 
+      - name: The tag names this disks.toml
+        if: startsWith(github.ref, 'refs/tags/disks-')
+        run: |
+          VERSION=$(python3 -c "import tomllib; print(tomllib.load(open('disks.toml','rb'))['version'])")
+          [ "disks-$VERSION" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME, but disks.toml says version $VERSION"; exit 1; }
+
       - name: Compose every preset
         run: emulator/ms0515-disk compose --repo . --all out
 
