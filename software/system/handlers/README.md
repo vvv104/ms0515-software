@@ -7,6 +7,7 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 | family | handler | build | from | what | osa | omega | omega2 | mihin |
 |---|---|---|---|---|---|---|---|---|
 | hd | `HD.SYS` | `3c8f3e5` | the emulator | Paravirtual hard disk HD: of the PDP-11 emulators, v2.0 of the driver kit, built for the MS-0515 - not a recovered file | loaded | loaded | loaded | rejected |
+| hd | `mihin/HD.SYS` | `4e04016` | the emulator | The same with the TIM$IT sysgen bit set, for Mihin's monitor (see hd/) | rejected | rejected | rejected | loaded |
 | mihin | `DZ.SYS` | `591620e` | amk_1 | Floppy-disk handler | no boot | not listed | not listed | loaded |
 | mihin | `LD.SYS` | `1b38683` | disk3 | Logical-disk handler: mounts a container file as a volume | rejected | rejected | rejected | loaded |
 | mihin | `SL.SYS` | `cd5af8b` | disk1 | the Mihin-family SL V8.00 with a Russian assignment table (^A..^T hotkey macros) | rejected | rejected | rejected | loaded |

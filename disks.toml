@@ -225,9 +225,15 @@ files   = [
 
 [bundle.hd]
 title   = "HD.SYS: the emulator's hard disk"
-systems = ["osa", "omega", "omega2", "rodionov"]   # Mihin's monitor refuses it
+systems = ["osa", "omega", "omega2", "rodionov"]
 date    = "1995-04-01"
 files   = ["software/system/handlers/hd/HD.SYS"]
+
+[bundle.hd-mihin]
+title   = "HD.SYS: the emulator's hard disk"
+systems = ["mihin"]                                 # its monitor wants the TIM$IT build
+date    = "1995-04-01"
+files   = ["software/system/handlers/hd/mihin/HD.SYS"]
 
 # ---- presets -------------------------------------------------------------
 #   startup  START.COM, line by line; omitted - the exemplar's own
@@ -259,5 +265,5 @@ hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs
 title   = "Mihin: OS-16SJ"
 system  = "mihin"
 media   = "dz"
-bundles = ["mihin-tools"]
+bundles = ["mihin-tools", "hd-mihin"]
 hint    = ". is the OS prompt: DIR lists the files; FDZ formats a diskette, K52 edits"

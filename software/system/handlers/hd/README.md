@@ -37,12 +37,23 @@ RT-11 registers the handlers on its boot volume by itself, so no `LOAD` is
 needed.  The device answers at `0177720` / `0177722` only while an image
 is mounted; without one the handler is refused as an invalid device.
 
-| system | HD.SYS |
+| system | handler |
 |---|---|
-| ОСА (MON8SJ) | works |
-| ОМЕГА (both RT11SJ builds) | works |
-| Rodionov's RT15SJ | works |
-| Mihin's OS-16SJ | refused: invalid device |
+| ОСА (MON8SJ) | `HD.SYS` |
+| ОМЕГА (both RT11SJ builds) | `HD.SYS` |
+| Rodionov's RT15SJ | `HD.SYS` |
+| Mihin's OS-16SJ | `mihin/HD.SYS` |
+
+**Why Mihin's needs its own.**  An RT-11 handler carries the SYSGEN options
+it was built for in word 060 of its first block, and the monitor refuses a
+handler whose options differ from its own - "Invalid device".  Mihin's
+OS-16SJ is generated with device time-out support (`TIM$IT`): every one of
+its own handlers has `000004` there, every handler of the other systems
+`000000`.  `mihin/HD.SYS` is the same handler with that bit set - one byte,
+exactly what the driver's own `SET HD TIMIT=1` writes - and it is refused by
+the other systems in turn.  With the plain build on Mihin's disk,
+`SET HD TIMIT=1` and a reboot come to the same thing.
 
 Each checked on the exemplar in `../../../systems/` with a 2000-block image:
-`INIT HD:`, then `DIR HD:` shows the empty volume.
+`INIT HD:`, then `DIR HD:` shows the empty volume; on Mihin's a file copied
+there lists back too.
