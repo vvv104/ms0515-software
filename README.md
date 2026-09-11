@@ -25,6 +25,27 @@ to the monitor prompt; the program disks and folders are mounted as a
 second drive or copied onto a system disk with `ms0515-disk put` — the
 per-folder README says how each program is started.
 
+## Ready disks, and disks of your own
+
+The [releases](https://github.com/vvv104/ms0515-software/releases) carry
+bootable diskettes put together from this collection - ОСА with its
+games, the Омега development kit, Rodionov's RT15SJ with ROSA Commander,
+Mihin's OS-16SJ with his utilities.  The browser build loads the same
+disks from this repository's Pages.
+
+What they are made of is written in [`disks.toml`](disks.toml): the
+exemplar systems, bundles of software, and the presets.  The emulator's
+disk tool builds any combination from a copy of this repository - `EMULATOR`
+names the release whose tool the published disks were built with:
+
+    ms0515-disk compose --repo . --list
+    ms0515-disk compose --repo . --preset games games.dsk
+    ms0515-disk compose --repo . --system omega --media dv --add pascal,basico my.dsk
+
+`--plan` shows where everything would go without writing a disk; what
+cannot work (a bundle for another system, Saboteur 2 on a DV disk, too
+much for the media) is refused with the reason.
+
 ## What is where
 
 | path | what |
