@@ -38,6 +38,16 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 | rodionov | `VM.SYS` | `2e114ef` | 065 | RAM-disk handler (memory used as a drive) | loaded | loaded | loaded | rejected |
 | rodionov | `VS.SYS` | `fb282b1` | 065 | Sound-device handler — not video despite the name | loaded | loaded | loaded | rejected |
 
+## The quiet SL copies
+
+`osa/quiet/`, `omega/quiet/`, `vvv/quiet/`, `mihin/quiet/` and
+`rodionov/quiet/` hold `SL.SYS` as each exemplar in `../../../systems/`
+carries it: the same handler as its family's, with the assignment table
+its first owners filled in blanked, so `SET SL ON` brings up an empty
+table - or nothing - instead of someone's thirty-year-old hotkey macros.
+They are what the disks composed from this collection get; the originals
+beside them are the recovered bytes.
+
 ## HD.SYS - the emulator's hard disk
 
 **Not a recovered file.**  The МС 0515 never had a hard disk; `HD:` is a

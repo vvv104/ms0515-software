@@ -15,40 +15,56 @@ format = 1
 #   dv  800 KB double-sided: one DV whole-disk volume of 1600 blocks
 
 # ---- systems -------------------------------------------------------------
-# A system is an exemplar from systems/.  Its kit - monitor, SWAP, handlers,
-# DIR/DUP/PIP, START.COM, the bootstrap - comes from that image: monitors do
-# not exist here as loose files.
+# Every disk is made from scratch.  A system's exemplar in systems/ gives
+# only what exists nowhere else: SWAP.SYS, the monitor and - Rodionov's - the
+# protected blocks; the bootstrap is written for the media.  Everything else
+# is bundles: the handlers and utilities the system cannot work without are
+# the bundles it requires, of the builds its exemplar carries.
 #
-#   media     what the monitor boots from
-#   rebuild   false: the image is the base as it is (Rodionov's protection
-#             lives outside the file system), so only its own media is offered
-#   reserved  blocks the composition must leave as they are
+#   media              what the monitor boots from
+#   requires           the bundles it cannot work without
+#   requires_by_media  those only one media needs (DV.SYS to boot a DV disk)
+#   startup            the first lines of the startup command file
+#   reserved           blocks copied from the exemplar, which no file may take
 
 [system.osa]
-title  = "OSA 1.0"
-image  = "systems/osa.dsk"
-media  = ["ss", "dz", "dv"]
+title    = "OSA 1.0"
+image    = "systems/osa.dsk"
+media    = ["ss", "dz", "dv"]
+requires = ["dz-osa", "tt-osa", "dir-osa", "dup-omega", "pip-omega"]
+requires_by_media = { dv = ["dv-omega"] }
+startup  = ["SET TT QUIET"]
 
 [system.omega]
-title  = "OMEGA SJ(S) V05.04"
-image  = "systems/omega.dsk"
-media  = ["ss", "dz", "dv"]
+title    = "OMEGA SJ(S) V05.04"
+image    = "systems/omega.dsk"
+media    = ["ss", "dz", "dv"]
+requires = ["dz-omega", "tt-omega", "dir-omega", "dup-omega", "pip-omega"]
+requires_by_media = { dv = ["dv-omega"] }
+startup  = ["SET TT QUIET"]
 
 [system.omega2]
-title  = "OMEGA SJ(S) V05.04, the vvv104 build"
-image  = "systems/omega2.dsk"
-media  = ["ss", "dz", "dv"]
+title    = "OMEGA SJ(S) V05.04, the vvv104 build"
+image    = "systems/omega2.dsk"
+media    = ["ss", "dz", "dv"]
+requires = ["dz-omega", "tt-omega", "dir-vvv", "dup-vvv", "pip-vvv"]
+requires_by_media = { dv = ["dv-omega"] }
+startup  = ["SET TT QUIET"]
 
 [system.mihin]
-title  = "OS-16SJ (Mihinsoft)"
-image  = "systems/mihin.dsk"
-media  = ["ss", "dz"]           # the monitor refuses DV.SYS
+title    = "OS-16SJ (Mihinsoft)"
+image    = "systems/mihin.dsk"
+media    = ["ss", "dz"]          # the monitor refuses DV.SYS
+requires = ["dz-mihin", "tt-mihin", "ld-mihin", "dir-vvv", "dup-vvv", "pip-mihin"]
+                                 # LD: the monitor's baked startup runs it
+startup  = ["SET TT QUIET"]
 
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
 image    = "systems/rodionov.dsk"
 media    = ["dz"]
-rebuild  = false
+requires = ["dz-rodionov", "tt-rodionov", "dir-rodionov", "dup-omega", "pip-omega"]
+startup  = ["SET TT QUIET"]
 reserved = [{ side = 1, lbn = 792 }, { side = 1, lbn = 799 }]   # the copy protection
 
 # ---- bundles -------------------------------------------------------------
@@ -71,11 +87,231 @@ reserved = [{ side = 1, lbn = 792 }, { side = 1, lbn = 799 }]   # the copy prote
 #   prefer    of a required name's alternatives, the one to take by default -
 #             the build that sat next to this bundle on the original disks; a
 #             list, or a table by system with a default
+#   startup   lines it adds to the startup command file (SET SL ON)
 #   date      the RT-11 date of its files, 1972..2003 (a file may carry its own)
 #   protect   set [P] on its files (default false)
 #
 # Nothing here is claimed about programs working together beyond what the
 # collection's notes record; alternatives are to be checked empirically.
+
+# ==== System ===============================================================
+# The handlers and utilities the systems require, one bundle per build; the
+# builds of one file provide one name, so no disk gets two DIRs.
+
+[bundle.dz-osa]
+title    = "DZ.SYS - the floppy handler (OSA)"
+group    = "System"
+provides = ["dz"]
+systems  = ["osa"]
+protect  = true
+date     = "1990-12-27"
+files    = ["software/system/handlers/osa/DZ.SYS"]
+
+[bundle.dz-omega]
+title    = "DZ.SYS - the floppy handler (OMEGA)"
+group    = "System"
+provides = ["dz"]
+systems  = ["omega", "omega2"]
+protect  = true
+date     = "1991-11-04"
+files    = ["software/system/handlers/omega/DZ.SYS"]
+
+[bundle.dz-mihin]
+title    = "DZ.SYS - the floppy handler (Mihin)"
+group    = "System"
+provides = ["dz"]
+systems  = ["mihin"]
+protect  = true
+date     = "1991-07-04"
+files    = ["software/system/handlers/mihin/DZ.SYS"]
+
+[bundle.dz-rodionov]
+title    = "DZ.SYS - the floppy handler (Rodionov)"
+group    = "System"
+provides = ["dz"]
+systems  = ["rodionov"]
+protect  = true
+date     = "1993-02-16"
+files    = ["software/system/handlers/rodionov/DZ.SYS"]
+
+[bundle.dv-omega]
+title    = "DV.SYS - the whole-disk DV handler"
+group    = "System"
+provides = ["dv"]
+systems  = ["osa", "omega", "omega2"]
+protect  = true
+date     = "1995-01-01"
+files    = ["software/system/handlers/omega/DV.SYS"]
+
+[bundle.tt-osa]
+title    = "TT.SYS - the terminal handler (OSA)"
+group    = "System"
+provides = ["tt"]
+systems  = ["osa"]
+protect  = true
+date     = "1990-12-27"
+files    = ["software/system/handlers/osa/TT.SYS"]
+
+[bundle.tt-omega]
+title    = "TT.SYS - the terminal handler (OMEGA)"
+group    = "System"
+provides = ["tt"]
+systems  = ["omega", "omega2"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/handlers/omega/TT.SYS"]
+
+[bundle.tt-mihin]
+title    = "TT.SYS - the terminal handler (Mihin)"
+group    = "System"
+provides = ["tt"]
+systems  = ["mihin"]
+protect  = true
+date     = "1991-07-04"
+files    = ["software/system/handlers/mihin/TT.SYS"]
+
+[bundle.tt-rodionov]
+title    = "TT.SYS - the terminal handler (Rodionov)"
+group    = "System"
+provides = ["tt"]
+systems  = ["rodionov"]
+protect  = true
+date     = "1992-03-27"
+files    = ["software/system/handlers/rodionov/TT.SYS"]
+
+[bundle.ld-mihin]
+title    = "LD.SYS - logical disks (Mihin)"
+group    = "System"
+provides = ["ld"]
+systems  = ["mihin"]
+protect  = true
+date     = "1985-11-12"
+files    = ["software/system/handlers/mihin/LD.SYS"]
+
+[bundle.dir-osa]
+title    = "DIR (OSA)"
+group    = "System"
+provides = ["dir"]
+protect  = true
+date     = "1990-12-27"
+files    = ["software/system/utils/osa/DIR.SAV"]
+
+[bundle.dir-omega]
+title    = "DIR (OMEGA)"
+group    = "System"
+provides = ["dir"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/utils/omega/DIR.SAV"]
+
+[bundle.dir-vvv]
+title    = "DIR (vvv104 disks)"
+group    = "System"
+provides = ["dir"]
+protect  = true
+date     = "1990-03-03"
+files    = ["software/system/utils/vvv/DIR.SAV"]
+
+[bundle.dir-rodionov]
+title    = "DIR (Rodionov's disks)"
+group    = "System"
+provides = ["dir"]
+protect  = true
+date     = "1989-09-27"
+files    = ["software/system/utils/rodionov/DIR.SAV"]
+
+[bundle.dup-omega]
+title    = "DUP (OMEGA)"
+group    = "System"
+provides = ["dup"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/utils/omega/DUP.SAV"]
+
+[bundle.dup-vvv]
+title    = "DUP (vvv104 disks)"
+group    = "System"
+provides = ["dup"]
+protect  = true
+date     = "1990-02-10"
+files    = ["software/system/utils/vvv/DUP.SAV"]
+
+[bundle.pip-omega]
+title    = "PIP (OMEGA)"
+group    = "System"
+provides = ["pip"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/utils/omega/PIP.SAV"]
+
+[bundle.pip-vvv]
+title    = "PIP (vvv104 disks)"
+group    = "System"
+provides = ["pip"]
+protect  = true
+date     = "1995-01-01"
+files    = ["software/system/utils/vvv/PIP.SAV"]
+
+[bundle.pip-mihin]
+title    = "PIP (Mihin's disks)"
+group    = "System"
+provides = ["pip"]
+protect  = true
+date     = "1990-03-03"
+files    = ["software/system/utils/mihin/PIP.SAV"]
+
+# -- SL: the single-line editor, each build as its exemplar carries it, the
+#    assignment table of its first owners blanked
+
+[bundle.sl-osa]
+title    = "SL.SYS - the single-line editor (OSA)"
+group    = "System"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1988-01-19"
+files    = ["software/system/handlers/osa/quiet/SL.SYS"]
+
+[bundle.sl-omega]
+title    = "SL.SYS - the single-line editor (OMEGA)"
+group    = "System"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/handlers/omega/quiet/SL.SYS"]
+
+[bundle.sl-vvv]
+title    = "SL.SYS - the single-line editor (vvv104 disks)"
+group    = "System"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1995-01-01"
+files    = ["software/system/handlers/vvv/quiet/SL.SYS"]
+
+[bundle.sl-mihin]
+title    = "SL.SYS - the single-line editor (Mihin)"
+group    = "System"
+provides = ["sl"]
+systems  = ["mihin"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1989-02-24"
+files    = ["software/system/handlers/mihin/quiet/SL.SYS"]
+
+[bundle.sl-rodionov]
+title    = "SL.SYS - the single-line editor (Rodionov)"
+group    = "System"
+provides = ["sl"]
+systems  = ["rodionov"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1991-01-31"
+files    = ["software/system/handlers/rodionov/quiet/SL.SYS"]
 
 # ==== Games ================================================================
 
@@ -461,8 +697,7 @@ files = ["software/development/sprites/SPR.SAV", "software/development/sprites/S
 # ==== Handlers =============================================================
 # One bundle per build: the family decides which one loads, so each build
 # names its systems and all builds of one handler provide one name.  The
-# handlers every exemplar already carries (DZ, TT, DV, LD on Mihin's) are not
-# offered.
+# handlers the systems require are under System above.
 
 [bundle.hd-osa]
 title    = "HD.SYS - the emulator's hard disk"
@@ -583,20 +818,6 @@ group    = "Handlers"
 systems  = ["omega", "omega2"]
 date     = "1995-04-01"
 files    = ["software/system/handlers/omega/LD.SYS"]
-
-# -- optional kit handlers: a proposal, not read yet by the composer --------
-# SL.SYS is on every exemplar and START.COM turns it on (SET SL ON).  To make
-# it a choice, a system would name the kit files that belong to a bundle, and
-# the composer would leave such a file and its startup line out unless the
-# bundle is chosen:
-#
-#   [system.osa]
-#   optional = [{ file = "SL.SYS", bundle = "sl", startup = "SET SL ON" }]
-#
-#   [bundle.sl]
-#   title = "SL.SYS - the single-line editor (command recall, keypad macros)"
-#   group = "Handlers"
-#   kit   = "SL.SYS"          # the file comes from the system's own kit
 
 # ==== Shells ===============================================================
 
@@ -855,14 +1076,14 @@ files  = ["software/apps/rbd-mikro/*"]
 # ---- presets -------------------------------------------------------------
 # What the release builds and the web offers with one click: the bundles a
 # person would tick; what they require comes by the same rules.
-#   startup  START.COM, line by line; omitted - the exemplar's own
+#   startup  lines of START.COM after the system's and the bundles' own
 #   hint     what to do first, for the browser build's status line
 
 [preset.games]
 title   = "OSA: games"
 system  = "osa"
 media   = "dz"
-bundles = ["sabot2-osa", "fist", "sp13", "sp49", "pacm", "pac6", "labrn", "birds", "expres",
+bundles = ["sl-osa", "sabot2-osa", "fist", "sp13", "sp49", "pacm", "pac6", "labrn", "birds", "expres",
            "pent", "rubis", "ttr2", "kosmos-osa", "hanoj-osa",
            "king", "kam1", "tropa", "poker", "kosti", "mars", "go1", "kalahi", "derby", "lotos", "ten", "tir", "udaw"]
 hint    = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R SP13 run the games; the text games are on side 1: R DZ2:KING"
@@ -871,7 +1092,7 @@ hint    = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R SP13 r
 title   = "OMEGA: development"
 system  = "omega2"
 media   = "dv"
-bundles = ["pascal", "pascal-graphics", "pascal-units", "fortran", "basico", "ked", "dess", "spr",
+bundles = ["sl-vvv", "pascal", "pascal-graphics", "pascal-units", "fortran", "basico", "ked", "dess", "spr",
            "datime-vvv", "form-vvv", "ld-omega", "ex", "lp", "mz", "hd-omega"]
 hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, BASICO compile, KED edits; with an HD image mounted, INIT HD: makes it a volume"
 
@@ -879,14 +1100,14 @@ hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, B
 title   = "Rodionov: ROSA Commander"
 system  = "rodionov"
 media   = "dz"
-bundles = ["rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
+bundles = ["sl-rodionov", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
            "resorc-osa", "screen-modes", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs"]
-startup = ["SET TT QUIET", "SET SL ON", "LOAD VM:", "R ROSA3"]
+startup = ["LOAD VM:", "R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 
 [preset.mihin]
 title   = "Mihin: OS-16SJ"
 system  = "mihin"
 media   = "dz"
-bundles = ["fdz", "bads", "term-mihin", "vm-mihin", "k52", "macro-mihin", "link-mihin", "hd-mihin"]
+bundles = ["sl-mihin", "fdz", "bads", "term-mihin", "vm-mihin", "k52", "macro-mihin", "link-mihin", "hd-mihin"]
 hint    = ". is the OS prompt: DIR lists the files; FDZ formats a diskette, K52 edits"
