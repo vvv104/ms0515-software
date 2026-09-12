@@ -44,6 +44,15 @@ jobs:
           VERSION=$(python3 -c "import tomllib; print(tomllib.load(open('disks.toml','rb'))['version'])")
           [ "disks-$VERSION" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME, but disks.toml says version $VERSION"; exit 1; }
 
+      - name: Every bundle carries a date
+        run: |
+          python3 - <<'PY'
+          import tomllib, sys
+          m = tomllib.load(open('disks.toml', 'rb'))
+          undated = [k for k, b in m['bundle'].items() if not b.get('date')]
+          if undated: sys.exit('bundles without a date (their files would go on the disk undated): ' + ', '.join(undated))
+          PY
+
       - name: Compose every preset
         run: emulator/ms0515-disk compose --repo . --all out
 
