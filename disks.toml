@@ -489,6 +489,12 @@ group = "Games / Graphics"
 date  = "1999-12-31"            # the latest the monitors print in two digits: 2003 shows as 01-01-103
 files = ["software/games/fist/FIST.SAV", "software/games/fist/FIST.DAT"]
 
+[bundle.manicm]
+title = "Manic Miner"
+group = "Games / Graphics"
+date  = "1999-12-31"
+files = ["software/games/manicm/MANICM.SAV", "software/games/manicm/MANICM.DAT"]
+
 [bundle.birds]
 title = "BIRDS - colour arcade game"
 group = "Games / Graphics"
@@ -1109,7 +1115,7 @@ files  = ["software/apps/rbd-mikro/*"]
 title   = "OSA: games"
 system  = "osa"
 media   = "dz"
-bundles = ["sl-osa", "sabot2-osa", "fist", "sp13", "sp49", "pacm", "pac6", "labrn", "birds", "expres",
+bundles = ["sl-osa", "sabot2-osa", "fist", "manicm", "sp13", "sp49", "pacm", "pac6", "labrn", "birds", "expres",
            "pent", "rubis", "ttr2", "kosmos-osa", "hanoj-osa",
            "king", "kam1", "tropa", "poker", "kosti", "mars", "go1", "kalahi", "derby", "lotos", "ten", "tir", "udaw"]
 hint    = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R SP13 run the games; the text games are on side 1: R DZ2:KING"
