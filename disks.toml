@@ -351,6 +351,7 @@ files    = ["software/system/handlers/rodionov/NL.SYS"]
 [bundle.em]
 title    = "EM.SYS - the EIS/FIS instruction emulator (SET EM ON)"
 group    = "System"
+date     = "1981-03-03"   # the disk says 2013: an age bit, 1981 + 32
 systems  = ["osa"]
 files    = ["software/system/handlers/osa/EM.SYS"]
 
@@ -715,6 +716,7 @@ files    = ["software/development/macro/mihin/MACRO.SAV"]
 [bundle.macro-omega]
 title    = "MACRO V05.01b (OMEGA disk 064)"
 group    = "Development / Assembler"
+date     = "1995-04-01"   # this copy carried none; the disks' other copies say so
 provides = ["macro11"]
 requires = ["sysmac"]
 files    = ["software/development/macro/omega/MACRO.SAV"]
@@ -769,11 +771,12 @@ files    = ["software/development/pascal/STRING.PAS",
 [bundle.pascal-docs]
 title    = "Pascal manuals - PASCAL.LST, PASUSE.LST, PASGR.DOC"
 group    = "Development / Pascal"
+date     = "1995-05-16"
 requires = ["pascal"]
 volume   = "any"
 files    = ["software/development/pascal/PASCAL.LST",
             "software/development/pascal/PASUSE.LST",
-            "software/development/pascal/PASGR.DOC"]
+            { path = "software/development/pascal/PASGR.DOC", date = "1995-05-15" }]
 
 [bundle.forlib]
 title = "FORLIB.OBJ - the FORTRAN IV run-time library"
@@ -799,12 +802,14 @@ files    = ["software/development/basic/BASICO.SAV"]
 [bundle.basic-rafos]
 title    = "BASIC / RAFOS V02-030"
 group    = "Development / BASIC"
+date     = "1991-08-14"
 provides = ["basic"]
 files    = ["software/development/basic/BASIC.SAV"]
 
 [bundle.basico-docs]
 title    = "BASICO.DOC - the Omega BASIC manual"
 group    = "Development / BASIC"
+date     = "1995-01-01"
 requires = ["basico"]
 volume   = "any"
 files    = ["software/development/basic/BASICO.DOC"]
@@ -882,6 +887,7 @@ files = ["software/system/shells/SCE.SAV",
 [bundle.rs]
 title    = "RS.SYS - EmeSoft's RT11 profShell (LOAD RS, SET RS ON)"
 group    = "Shells"
+date     = "1994-09-13"
 systems  = ["osa"]
 requires = ["em"]               # it uses EIS instructions
 files    = ["software/system/shells/RS.SYS"]
@@ -919,6 +925,7 @@ files    = ["software/system/utils/rodionov/HELP.SAV"]
 [bundle.help-dec]
 title    = "HELP - the command reference (DEC's)"
 group    = "Utilities"
+date     = "1984-02-01"
 provides = ["help"]
 files    = ["software/system/utils/dec/HELP.SAV"]
 
@@ -951,6 +958,7 @@ files = ["software/system/utils/TFP.SAV"]
 [bundle.bincom]
 title = "BINCOM V05.08 - binary compare"
 group = "Utilities"
+date  = "1995-01-01"
 files = ["software/system/utils/BINCOM.SAV"]
 
 [bundle.bads]
@@ -968,11 +976,13 @@ files = ["software/system/utils/CALEND.SAV"]
 [bundle.asc]
 title = "ASC - character codes"
 group = "Utilities"
+date  = "1995-04-02"
 files = ["software/system/utils/ASC.SAV"]
 
 [bundle.day]
 title = "DAY - asks for a date"
 group = "Utilities"
+date  = "1986-02-14"
 files = ["software/system/utils/DAY.SAV"]
 
 [bundle.screen-modes]
@@ -1009,11 +1019,13 @@ files    = ["software/system/format/vvv/FORML.SAV", "software/system/format/vvv/
 [bundle.out17]
 title = "OUT17 - text files to the MS6317 ink-jet printer"
 group = "Utilities / Printing"
+date  = "1995-01-01"
 files = ["software/system/print/OUT17.SAV", "software/system/print/OUT17.DOC"]
 
 [bundle.outc]
 title = "OUTC - text files to the SM6337 printer"
 group = "Utilities / Printing"
+date  = "1995-01-01"
 files = ["software/system/print/OUTC.SAV", "software/system/print/OUTC.DOC"]
 
 [bundle.out2]
@@ -1025,6 +1037,7 @@ files = ["software/system/print/OUT2.SAV"]
 [bundle.p6337]
 title = "6337 - print utility for the MS 6337 printer"
 group = "Utilities / Printing"
+date  = "1995-01-01"
 files = ["software/system/print/6337.SAV"]
 
 # -- diagnostics
@@ -1044,6 +1057,7 @@ files = ["software/system/diag/183107.SAV"]
 [bundle.timing]
 title    = "The C* instruction-timing suite"
 group    = "Utilities / Diagnostics"
+date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
 requires = ["geteml"]
 volume   = "any"
 files    = ["software/system/diag/C*.SAV"]
@@ -1051,6 +1065,7 @@ files    = ["software/system/diag/C*.SAV"]
 [bundle.scan-codes]
 title = "SCN15I - keyboard scan-code viewer"
 group = "Utilities / Diagnostics"
+date  = "1995-04-25"   # the disk says 2027: an age bit, 1995 + 32
 files = ["software/system/diag/SCN15I.SAV"]
 
 # ==== Applications =========================================================
@@ -1064,6 +1079,7 @@ files = ["software/apps/ART.SAV", { path = "programs/pictures/MORDA.SCR", date =
 [bundle.ukcalc]
 title = "UKCALC - spreadsheet, with its manual and two worksheets"
 group = "Applications"
+date  = "1995-01-01"
 files = ["software/apps/UKCALC.SAV", "software/apps/UKCALC.LST",
          "software/apps/GAUSS.CLC", "software/apps/KRAMER.CLC"]
 
@@ -1082,26 +1098,31 @@ files = ["software/apps/FCON.SAV"]
 [bundle.edsp]
 title = "EDSP - frame editor"
 group = "Applications"
+date  = "1993-09-04"
 files = ["software/apps/EDSP.SAV"]
 
 [bundle.def]
 title = "DEF - fault-finding handbook"
 group = "Applications"
+date  = "1988-10-27"
 files = ["software/apps/DEF.SAV"]
 
 [bundle.tr7004]
 title = "TR7004 - keyboard trainer and test"
 group = "Applications"
+date  = "1995-01-01"
 files = ["software/apps/TR7004.SAV"]
 
 [bundle.umn]
 title = "UMN - multiplication-table trainer"
 group = "Applications"
+date  = "1995-01-01"
 files = ["software/apps/UMN.SAV"]
 
 [bundle.rbd-mikro]
 title  = "RBD-MIKRO - the database system, with its manuals"
 group  = "Applications"
+date   = "1995-01-01"
 volume = "any"
 files  = ["software/apps/rbd-mikro/*"]
 
