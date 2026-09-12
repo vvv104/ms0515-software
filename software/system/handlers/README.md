@@ -6,6 +6,7 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 
 | family | handler | build | from | what | osa | omega | omega2 | mihin |
 |---|---|---|---|---|---|---|---|---|
+| mihin | `DV.SYS` | `dv-mihin` | the emulator | The Omega DV handler made for a TIM$IT monitor: a `$TIMIT` word added at its end (see below) | rejected | rejected | rejected | loaded |
 | mihin | `DZ.SYS` | `591620e` | amk_1 | Floppy-disk handler | no boot | not listed | not listed | loaded |
 | mihin | `HD.SYS` | `4e04016` | the emulator | The same with the TIM$IT sysgen bit set, which Mihin's monitor wants (see below) | rejected | rejected | rejected | loaded |
 | mihin | `LD.SYS` | `1b38683` | disk3 | Logical-disk handler: mounts a container file as a volume | rejected | rejected | rejected | loaded |
@@ -93,13 +94,30 @@ one its monitor accepts.
 
 **Why Mihin's needs its own.**  An RT-11 handler carries the SYSGEN options
 it was built for in word 060 of its first block, and the monitor refuses a
-handler whose options differ from its own - "Invalid device".  Mihin's
-OS-16SJ is generated with device time-out support (`TIM$IT`): every one of
-its own handlers has `000004` there, every handler of the other systems
-`000000`.  `mihin/HD.SYS` is the same handler with that bit set - one byte,
-the bit the driver's own `SET HD TIMIT=1` sets (its source says so) - and it
-is refused by the other systems in turn.
+handler whose options differ from its own - "Invalid device" at `LOAD`,
+"?KMON-F-Conflicting SYSGEN options" at `INSTALL`.  Mihin's OS-16SJ is
+generated with device time-out support (`TIM$IT`): every one of its own
+handlers has `000004` there, every handler of the other systems `000000`.
 
-Each checked on the exemplar in `../../../systems/` with a 2000-block image:
-`INIT HD:`, then `DIR HD:` shows the empty volume; on Mihin's a file copied
-there lists back too.
+The word is not a formality.  A handler ends (`.DREND` in `SYSMAC.SML`)
+with pointer words the monitor fills when it loads the handler, `$INPTR`
+and `$FKPTR`, and a monitor with `TIM$IT` expects a third before them,
+`$TIMIT` - it finds them from the handler's end, by its own layout.  With
+the bit alone flipped, Mihin's monitor writes `$TIMIT` over the last word
+of the handler's code: in `DV.SYS` that is the `270` of `.DRFIN`'s
+`JMP @270(R5)`, the return into the monitor after every request, and the
+machine drops into ODT the first time the volume is read.  So
+`mihin/DV.SYS` is the Omega handler with a zero word inserted before
+`$INPTR`, its size and the offsets past the insertion grown by two, and the
+bit set - made by the emulator repository's `tools/timit_handler.py`,
+which refuses a handler that addresses the pointer words itself (`.DRAST`,
+`.FORK`; the MS-0515 floppy handlers poll and use neither).  `mihin/HD.SYS`
+is the same handler with only the bit set, from before this was understood:
+it works because the word before its `$INPTR` happens to be a spare zero.
+Both are refused by the other systems in turn.
+
+Each checked on the exemplar in `../../../systems/`: HD with a 2000-block
+image - `INIT HD:`, then `DIR HD:` shows the empty volume; on Mihin's a
+file copied there lists back too.  DV on Mihin's: a DV diskette in the
+second drive lists and a file copied off it is byte-exact, and a Mihin
+system composed as one DV volume boots, copies and lists.

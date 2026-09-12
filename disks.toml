@@ -65,17 +65,19 @@ startup  = ["SET TT QUIET"]
 [system.mihin]
 title    = "OS-16SJ (Mihinsoft)"
 image    = "systems/mihin.dsk"
-media    = ["ss", "dz"]          # the monitor refuses DV.SYS
-requires = ["dz-mihin", "tt-mihin", "ld-mihin", "dir", "dup", "pip"]
+media    = ["ss", "dz", "dv"]
+requires = ["tt-mihin", "ld-mihin", "dir", "dup", "pip"]
                                  # LD: the monitor's baked startup runs it
+requires_by_media = { ss = ["dz-mihin"], dz = ["dz-mihin"], dv = ["dv-mihin"] }
 prefer   = ["dir-vvv", "dup-vvv", "pip-mihin"]
 startup  = ["SET TT QUIET"]
 
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
 image    = "systems/rodionov.dsk"
-media    = ["dz"]
-requires = ["dz-rodionov", "tt-rodionov", "dir", "dup", "pip"]
+media    = ["dz", "dv"]
+requires = ["tt-rodionov", "dir", "dup", "pip"]
+requires_by_media = { dz = ["dz-rodionov"], dv = ["dv-omega"] }
 prefer   = ["dir-rodionov", "dup-omega", "pip-omega"]
 startup  = ["SET TT QUIET"]
 reserved = [{ side = 1, lbn = 792 }, { side = 1, lbn = 799 }]   # the copy protection
@@ -151,10 +153,19 @@ files    = ["software/system/handlers/rodionov/DZ.SYS"]
 title    = "DV.SYS - the whole-disk DV handler"
 group    = "System"
 provides = ["dv"]
-systems  = ["osa", "omega", "omega2"]
+systems  = ["osa", "omega", "omega2", "rodionov"]
 protect  = true
 date     = "1995-01-01"
 files    = ["software/system/handlers/omega/DV.SYS"]
+
+[bundle.dv-mihin]
+title    = "DV.SYS - the whole-disk DV handler (for Mihin's monitor)"
+group    = "System"
+provides = ["dv"]
+systems  = ["mihin"]
+protect  = true
+date     = "1995-01-01"
+files    = ["software/system/handlers/mihin/DV.SYS"]
 
 [bundle.tt-osa]
 title    = "TT.SYS - the terminal handler (OSA)"

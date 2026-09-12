@@ -110,9 +110,12 @@ BLACK screen, DOS-style drive letters, a DATIME date-and-time dialogue
 
 OS-16SJ — the Воронеж sysgen by Mihinsoft & СПФ «Сенсор» (1990), with
 its own driver line («Самые лучшие драйверы для УПБК!!!»).  Built
-fresh from native files like the others; the monitor refuses the DV
-handler, so it is 800 KB as two DZ volumes: the system boots from side
-0 (`DZ0:`), side 1 is an empty freshly-initialised workspace (`DZ2:`).
+fresh from native files like the others, 800 KB as two DZ volumes: the
+system boots from side 0 (`DZ0:`), side 1 is an empty freshly-initialised
+workspace (`DZ2:`).  No Mihin disk ever carried a DV handler and the
+monitor refuses the Omega one; a DV disk of this system is composed with
+the `dv-mihin` bundle, the same handler made for its sysgen (see
+`../software/system/handlers/README.md`).
 
 Kit: `RT11SJ.SYS`, `SWAP.SYS`, `DZ.SYS`, `TT.SYS`, `DIR.SAV`,
 `DUP.SAV`, `PIP.SAV` (all native `amk_1`), `LD.SYS` (amk_1 shipped
