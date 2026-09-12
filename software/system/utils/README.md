@@ -9,7 +9,7 @@ DEC's RT-11 utilities in their Soviet builds plus the small helpers of the kits,
 | `BINCOM.SAV` | DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP) | bare prompt, no answer to a bogus file name |
 | `BLACK.SAV` | Blanks the screen to black and returns to the monitor | `RUN BLACK` |
 | `CALEND.SAV` | Calendar generator for the years 1583-5000, to a file or to LP:; A. V. Domnich, 16-06-94 | `RUN CALEND` |
-| `DATSET.SAV` | Date-setting program of the OSA kit | `RUN DATSET` |
+| `DATSET.SAV` | Date-setting program of the OSA kit: asks for the date as `дд-мм-гг`, then for a startup file to run (an empty answer lists the directory instead). It reads its answers from a command file, which OSA's own `DATE` command never does - KMON there compares the Russian month in the form the console driver delivers, and refuses any spelling a file holds - so this is how an OSA disk gets its date at boot: `startup = ["R DATSET", "01-04-92", ""]` in a wizard selection, bundle `datset` added. Games such as LABRN refuse to run with no date | `RUN DATSET` |
 | `DAY.SAV` | Asks for a date, offering 18-MAR-93 as the default | `RUN DAY` |
 | `HELP.TXT` | «Описание команд операционной системы ФОДОС-3» - the command reference HELP.SAV prints, as plain text: ASSIGN, BOOT, COPY… with their syntax | text: `TYPE HELP.TXT`, or read on the host (koi8-r) |
 | `NEG.SAV` | Writes 000010 into System Register C (177604): selects the 640x200 hi-res mode with a black border.  The video-mode counterpart of BLACK, BLUE and WHITE | `RUN NEG` |
