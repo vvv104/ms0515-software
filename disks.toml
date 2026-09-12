@@ -28,6 +28,9 @@ version = "2026.09.12"
 #
 #   media              what the monitor boots from
 #   requires           the bundles it cannot work without
+#   suggests           names ticked along with it and left to be unticked: the
+#                      utilities its disks carried (DIR, DUP, PIP), which a games
+#                      disk can do without
 #   prefer             its own builds where it requires a name several provide
 #                      ("dir"): what sat on its original disks; another can be picked
 #   requires_by_media  those only one media needs: the handler it boots through -
@@ -39,46 +42,46 @@ version = "2026.09.12"
 title    = "OSA 1.0"
 image    = "systems/osa.dsk"
 media    = ["ss", "dz", "dv"]
-requires = ["tt-osa", "dir", "dup", "pip"]
+requires = ["tt-osa"]
+suggests = ["dir-osa", "dup-omega", "pip-omega"]
 requires_by_media = { ss = ["dz-osa"], dz = ["dz-osa"], dv = ["dv-omega"] }
-prefer   = ["dir-osa", "dup-omega", "pip-omega"]
 startup  = ["SET TT QUIET"]
 
 [system.omega]
 title    = "OMEGA SJ(S) V05.04"
 image    = "systems/omega.dsk"
 media    = ["ss", "dz", "dv"]
-requires = ["tt-omega", "dir", "dup", "pip"]
+requires = ["tt-omega"]
+suggests = ["dir-omega", "dup-omega", "pip-omega"]
 requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
-prefer   = ["dir-omega", "dup-omega", "pip-omega"]
 startup  = ["SET TT QUIET"]
 
 [system.omega2]
 title    = "OMEGA SJ(S) V05.04, the vvv104 build"
 image    = "systems/omega2.dsk"
 media    = ["ss", "dz", "dv"]
-requires = ["tt-omega", "dir", "dup", "pip"]
+requires = ["tt-omega"]
+suggests = ["dir-vvv", "dup-vvv", "pip-vvv"]
 requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
-prefer   = ["dir-vvv", "dup-vvv", "pip-vvv"]
 startup  = ["SET TT QUIET"]
 
 [system.mihin]
 title    = "OS-16SJ (Mihinsoft)"
 image    = "systems/mihin.dsk"
 media    = ["ss", "dz", "dv"]
-requires = ["tt-mihin", "ld-mihin", "dir", "dup", "pip"]
+requires = ["tt-mihin", "ld-mihin"]
+suggests = ["dir-vvv", "dup-vvv", "pip-mihin"]
                                  # LD: the monitor's baked startup runs it
 requires_by_media = { ss = ["dz-mihin"], dz = ["dz-mihin"], dv = ["dv-mihin"] }
-prefer   = ["dir-vvv", "dup-vvv", "pip-mihin"]
 startup  = ["SET TT QUIET"]
 
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
 image    = "systems/rodionov.dsk"
 media    = ["dz", "dv"]
-requires = ["tt-rodionov", "dir", "dup", "pip"]
+requires = ["tt-rodionov"]
+suggests = ["dir-rodionov", "dup-omega", "pip-omega"]
 requires_by_media = { dz = ["dz-rodionov"], dv = ["dv-omega"] }
-prefer   = ["dir-rodionov", "dup-omega", "pip-omega"]
 startup  = ["SET TT QUIET"]
 reserved = [{ side = 1, lbn = 792 }, { side = 1, lbn = 799 }]   # the copy protection
 
@@ -985,11 +988,23 @@ group = "Utilities"
 date  = "1986-02-14"
 files = ["software/system/utils/DAY.SAV"]
 
-[bundle.screen-modes]
-title = "BLACK, WHITE, NEG - screen colour and hi-res mode"
-group = "Utilities"
+[bundle.black]
+title = "BLACK - the screen black, back to the monitor"
+group = "Utilities / Screen"
 date  = "1992-12-04"
-files = ["software/system/utils/BLACK.SAV", "software/system/utils/WHITE.SAV", "software/system/utils/NEG.SAV"]
+files = ["software/system/utils/BLACK.SAV"]
+
+[bundle.white]
+title = "WHITE - the screen white, back to the monitor"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["software/system/utils/WHITE.SAV"]
+
+[bundle.neg]
+title = "NEG - the 640x200 hi-res mode with a black border"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["software/system/utils/NEG.SAV"]
 
 # -- diskette formatters
 
@@ -1131,13 +1146,16 @@ files  = ["software/apps/rbd-mikro/*"]
 # person would tick; what they require comes by the same rules.
 #   startup  lines of START.COM after the system's and the bundles' own
 #   hint     what to do first, for the browser build's status line
+# A preset names the system's utilities (DIR, DUP, PIP) itself, which the
+# system only suggests: a released tool older than `suggests` still builds
+# the same disk.
 
 [preset.games]
 title     = "OMEGA: games"
 system    = "omega2"
 media     = "ss"
 bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa",
-             "pent", "labrn", "kam1", "derby", "udaw", "poker", "ten"]
+             "pent", "labrn", "kam1", "derby", "udaw", "poker", "ten", "dir-vvv", "dup-vvv", "pip-vvv"]
 startup   = ["DATE 01-APR-92"]
 volume_id = "GAMES"
 hint      = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R MANICM run the games"
@@ -1147,7 +1165,7 @@ title   = "OMEGA: development"
 system  = "omega2"
 media   = "dv"
 bundles = ["sl-vvv", "pascal", "pascal-graphics", "pascal-units", "fortran", "basico", "ked", "dess", "spr",
-           "datime-vvv", "form-vvv", "ld-omega", "ex", "lp", "mz", "hd-omega"]
+           "datime-vvv", "form-vvv", "ld-omega", "ex", "lp", "mz", "hd-omega", "dir-vvv", "dup-vvv", "pip-vvv"]
 hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, BASICO compile, KED edits; with an HD image mounted, INIT HD: makes it a volume"
 
 [preset.rodionov]
@@ -1155,7 +1173,7 @@ title   = "Rodionov: ROSA Commander"
 system  = "rodionov"
 media   = "dz"
 bundles = ["sl-rodionov", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
-           "resorc-osa", "screen-modes", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs"]
+           "resorc-osa", "black", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
 startup = ["R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 
@@ -1163,5 +1181,5 @@ hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs
 title   = "Mihin: OS-16SJ"
 system  = "mihin"
 media   = "dz"
-bundles = ["sl-mihin", "fdz", "bads", "term-mihin", "vm-mihin", "k52", "macro-mihin", "link-mihin", "hd-mihin"]
+bundles = ["sl-mihin", "fdz", "bads", "term-mihin", "vm-mihin", "k52", "macro-mihin", "link-mihin", "hd-mihin", "dir-vvv", "dup-vvv", "pip-mihin"]
 hint    = ". is the OS prompt: DIR lists the files; FDZ formats a diskette, K52 edits"
