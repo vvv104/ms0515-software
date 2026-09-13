@@ -2746,6 +2746,12 @@ DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PAT
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: its own Russian switch help and version banner; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 b76b1abdfd92*
 
+### `software/system/utils/BLUE.SAV`
+
+Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV.  On eight of the nine disks that carry it (osa, System, System3, 059, 062, 063, 066, 172) it is this copy; 065 holds a one-byte variant
+
+*written in assembler (no runtime library); text; cross-run: ran (blue screen, yellow text, prompt back); disks: 9; identified from: program screen 2026-09-13; sha256 f3261ec2e9dd*
+
 ### `software/system/utils/BLACK.SAV`
 
 Blanks the screen to black and returns to the monitor

@@ -988,11 +988,11 @@ group = "Utilities"
 date  = "1986-02-14"
 files = ["software/system/utils/DAY.SAV"]
 
-[bundle.black]
-title = "BLACK - the screen black, back to the monitor"
+[bundle.blue]
+title = "BLUE - the screen blue, yellow letters, back to the monitor"
 group = "Utilities / Screen"
 date  = "1992-12-04"
-files = ["software/system/utils/BLACK.SAV"]
+files = ["software/system/utils/BLUE.SAV"]
 
 [bundle.white]
 title = "WHITE - the screen white, back to the monitor"
@@ -1173,7 +1173,7 @@ title   = "Rodionov: ROSA Commander"
 system  = "rodionov"
 media   = "dz"
 bundles = ["sl-rodionov", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
-           "resorc-osa", "black", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
+           "resorc-osa", "blue", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
 startup = ["R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 
