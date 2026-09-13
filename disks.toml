@@ -781,6 +781,13 @@ files    = ["software/development/pascal/PASCAL.LST",
             "software/development/pascal/PASUSE.LST",
             { path = "software/development/pascal/PASGR.DOC", date = "1995-05-15" }]
 
+[bundle.hello-pas]
+title    = "HELLO.PAS - a Hello, world! to build first: PAS1, MACRO, LINK, RUN"
+group    = "Development / Pascal"
+requires = ["pascal"]
+date     = "1992-04-01"     # written for the collection in 2026: the Pascal disk's working date
+files    = ["programs/examples/HELLO.PAS"]
+
 [bundle.forlib]
 title = "FORLIB.OBJ - the FORTRAN IV run-time library"
 group = "Development / FORTRAN"
