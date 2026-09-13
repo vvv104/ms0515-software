@@ -10,7 +10,7 @@ format = 1
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.09.13-3"
+version = "2026.09.13-4"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -1169,7 +1169,7 @@ files  = ["software/apps/rbd-mikro/*"]
 title     = "OSA: games"
 system    = "osa"
 media     = "ss"
-bundles   = ["sl-omega", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa", "pent",
+bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa", "pent",
              "labrn", "kam1", "derby", "udaw", "poker", "ten", "datset", "tir", "go1", "dir-osa", "pip-omega", "neg"]
 startup   = '''
 DATSET 01-04-92
