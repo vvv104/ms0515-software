@@ -28,9 +28,9 @@ version = "2026.09.13-4"
 #
 #   media              what the monitor boots from
 #   requires           the bundles it cannot work without
-#   suggests           names ticked along with it and left to be unticked: the
-#                      utilities its disks carried (DIR, DUP, PIP), which a games
-#                      disk can do without
+#   suggests           its own builds of the utilities its disks carried (DIR,
+#                      DUP, PIP): not ticked by themselves - a games disk can do
+#                      without - but one ticked follows the system when it changes
 #   prefer             its own builds where it requires a name several provide
 #                      ("dir"): what sat on its original disks; another can be picked
 #   requires_by_media  those only one media needs: the handler it boots through -
@@ -404,7 +404,7 @@ date     = "1990-12-27"
 files    = ["software/system/utils/osa/DIR.SAV"]
 
 [bundle.dir-omega]
-title    = "DIR (OMEGA)"
+title    = "DIR (OMEGA, OMEGA2)"
 group    = "System"
 provides = ["dir"]
 protect  = true
@@ -412,7 +412,7 @@ date     = "1991-01-31"
 files    = ["software/system/utils/omega/DIR.SAV"]
 
 [bundle.dir-vvv]
-title    = "DIR (vvv104 disks)"
+title    = "DIR (OMEGA2, MIHIN)"
 group    = "System"
 provides = ["dir"]
 protect  = true
@@ -420,7 +420,7 @@ date     = "1990-03-03"
 files    = ["software/system/utils/vvv/DIR.SAV"]
 
 [bundle.dir-rodionov]
-title    = "DIR (Rodionov's disks)"
+title    = "DIR (OMEGA, RODIONOV)"
 group    = "System"
 provides = ["dir"]
 protect  = true
@@ -428,7 +428,7 @@ date     = "1989-09-27"
 files    = ["software/system/utils/rodionov/DIR.SAV"]
 
 [bundle.dup-omega]
-title    = "DUP (OMEGA)"
+title    = "DUP (OSA, OMEGA, RODIONOV)"
 group    = "System"
 provides = ["dup"]
 protect  = true
@@ -436,7 +436,7 @@ date     = "1991-01-31"
 files    = ["software/system/utils/omega/DUP.SAV"]
 
 [bundle.dup-vvv]
-title    = "DUP (vvv104 disks)"
+title    = "DUP (OMEGA2, MIHIN)"
 group    = "System"
 provides = ["dup"]
 protect  = true
@@ -444,7 +444,7 @@ date     = "1990-02-10"
 files    = ["software/system/utils/vvv/DUP.SAV"]
 
 [bundle.pip-omega]
-title    = "PIP (OMEGA)"
+title    = "PIP (OSA, OMEGA, RODIONOV)"
 group    = "System"
 provides = ["pip"]
 protect  = true
@@ -452,7 +452,7 @@ date     = "1991-01-31"
 files    = ["software/system/utils/omega/PIP.SAV"]
 
 [bundle.pip-vvv]
-title    = "PIP (vvv104 disks)"
+title    = "PIP (OMEGA2)"
 group    = "System"
 provides = ["pip"]
 protect  = true
@@ -460,7 +460,7 @@ date     = "1995-01-01"
 files    = ["software/system/utils/vvv/PIP.SAV"]
 
 [bundle.pip-mihin]
-title    = "PIP (Mihin's disks)"
+title    = "PIP (MIHIN)"
 group    = "System"
 provides = ["pip"]
 protect  = true
