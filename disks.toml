@@ -10,7 +10,7 @@ format = 1
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.09.12"
+version = "2026.09.13"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -1158,29 +1158,82 @@ files  = ["software/apps/rbd-mikro/*"]
 # ---- presets -------------------------------------------------------------
 # What the release builds and the web offers with one click: the bundles a
 # person would tick; what they require comes by the same rules.
-#   startup  lines of START.COM after the system's and the bundles' own
+#   startup  lines of START.COM after the system's and the bundles' own - a list, or one multiline string
+#   banner   BANNER.TXT, typed by START.COM - the same two forms; clear_screen = true starts it with ESC H ESC J
 #   hint     what to do first, for the browser build's status line
 # A preset names the system's utilities (DIR, DUP, PIP) itself, which the
 # system only suggests: a released tool older than `suggests` still builds
 # the same disk.
 
 [preset.games]
-title     = "OMEGA: games"
-system    = "omega2"
+title     = "OSA: games"
+system    = "osa"
 media     = "ss"
-bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa",
-             "pent", "labrn", "kam1", "derby", "udaw", "poker", "ten", "dir-vvv", "dup-vvv", "pip-vvv"]
-startup   = ["DATE 01-APR-92"]
+bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa", "pent",
+             "labrn", "kam1", "derby", "udaw", "poker", "ten", "datset", "tir", "go1", "dir-osa", "pip-omega", "neg"]
+startup   = '''
+DATSET 01-04-92
+NEG
+TYPE BANNER.TXT'''
+banner    = '''
+To play a game, type its name and press Enter:
+
+  SABOT2  Saboteur 2, ZX Spectrum port with joystick support
+  FIST    The Way Of The Exploding Fist, ZX Spectrum port
+  MANICM  Manic Miner, ZX Spectrum port
+  BIRDS   Spaceship fires on firebirds
+  EXPRES  Arcade game set on a moving train
+  KOSMOS  A text-mode space game
+  HANOJ   The towers of Hanoi
+  PENT    A Tetris-like game in text mode
+  LABRN   Pac-Man in text mode
+  KAM1    A classic Sokoban game
+  DERBY   Horse racing in text mode
+  UDAW    A Snake game that teaches the Russian alphabet
+  POKER   Poker game in text mode
+  TEN     Tennis game in character graphics
+  TIR     Shooting gallery for up to eight players
+  GO1     Classic GO in text mode
+'''
+clear_screen = true
 volume_id = "GAMES"
-hint      = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R MANICM run the games"
+hint      = "The menu is on the screen: type a game's name and press Enter; DIR lists the files"
 
 [preset.devel]
-title   = "OMEGA: development"
+title   = "OMEGA: Pascal"
 system  = "omega2"
 media   = "dv"
-bundles = ["sl-vvv", "pascal", "pascal-graphics", "pascal-units", "fortran", "basico", "ked", "dess", "spr",
-           "datime-vvv", "form-vvv", "ld-omega", "ex", "lp", "mz", "hd-omega", "dir-vvv", "dup-vvv", "pip-vvv"]
-hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, BASICO compile, KED edits; with an HD image mounted, INIT HD: makes it a volume"
+bundles = ["pascal", "pascal-graphics", "pascal-units", "pascal-docs", "ked", "hd-omega", "sl-vvv", "dess", "sce",
+           "dump-omega", "geteml", "dir-vvv", "pip-vvv", "dup-vvv", "blue", "hello-pas", "hello-mac"]
+startup = '''
+DATE 01-APR-92
+BLUE
+TYPE BANNER.TXT'''
+banner  = '''
+A Pascal disk: PAS1 compiles, MACRO assembles, LINK binds with PASLIB.
+
+HELLO.PAS is a first program to build, it prints Hello, world!
+
+  TYPE HELLO.PAS            see the source
+  KED HELLO.PAS             edit it in the screen editor
+  PAS1 HELLO=HELLO          compile:  HELLO.PAS -> HELLO.MAC
+  MACRO HELLO               assemble: HELLO.MAC -> HELLO.OBJ
+  LINK HELLO,PASLIB,PAS1    link with the Pascal run-time -> HELLO.SAV
+  RUN HELLO                 run it
+
+Your own program goes the same way, with its name in place of HELLO.
+No switches are needed for any of the four steps.
+
+HELLOA.MAC is the same program in MACRO-11 assembler: MACRO, LINK, RUN.
+
+  TYPE HELLOA.MAC           see the source (eight lines: .PRINT and .EXIT)
+  MACRO HELLOA              assemble: HELLOA.MAC -> HELLOA.OBJ
+  LINK HELLOA               link:     HELLOA.OBJ -> HELLOA.SAV
+  RUN HELLOA                run it
+'''
+clear_screen = true
+volume_id = "PASCAL"
+hint    = "The recipe is on the screen: PAS1 HELLO=HELLO, MACRO HELLO, LINK HELLO,PASLIB,PAS1, RUN HELLO; KED edits"
 
 [preset.rodionov]
 title   = "Rodionov: ROSA Commander"
