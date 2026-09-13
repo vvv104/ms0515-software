@@ -1868,7 +1868,7 @@ The Towers of Hanoi as the ОСА disk 058 carries it - the text in KOI-7 upper 
 
 ### `software/games/osa/KOSMOS.SAV`
 
-KOSMOS as 058 and 066 carry it - the same program with its text in the other letter case (case-bit flips)
+A text-mode space game.  KOSMOS as 058 and 066 carry it - the same program with its text in the other letter case (case-bit flips)
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: program screen; the the ОСА kits build; sha256 4bef3e9dbf43*
 
@@ -1884,7 +1884,7 @@ The Towers of Hanoi as bg0515 carries it - the same program with its text in the
 
 ### `software/games/osa-rs/KOSMOS.SAV`
 
-KOSMOS of the System, System2, System3, bg0515 and osa disks - the text in one letter case
+A text-mode space game.  KOSMOS of the System, System2, System3, bg0515 and osa disks - the text in one letter case
 
 *written in assembler (no runtime library); text; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 5; identified from: program screen; the ОСА with the RS profShell build; sha256 bf9f023cfc02*
 
@@ -1990,7 +1990,7 @@ RUBIS.SAV with two bytes changed: empty cells drawn as spaces instead of '.' (wh
 
 ### `software/games/BIRDS.SAV`
 
-Colour arcade game with a score and wave banner across the top
+Colour arcade game - a spaceship fires on firebirds - with a score and wave banner across the top
 
 *written in assembler (no runtime library); graphics; cross-run: ran; disks: 7; identified from: program screen; sha256 c6dde7f70e98*
 
@@ -2026,7 +2026,7 @@ Kalah (mancala) against the machine; asks whether side A is played by the machin
 
 ### `software/games/KAM1.SAV`
 
-Stops with ?I/O ERROR: RESET FAILURE on DK:KAMENS.DAT - it needs that data file next to it
+A classic Sokoban game (KAMENS = stones).  Stops with ?I/O ERROR: RESET FAILURE on DK:KAMENS.DAT - it needs that data file next to it
 
 *written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 2; identified from: program screen; sha256 f10783e4156e*
 
@@ -2745,6 +2745,12 @@ Bad-block scanner (RT-11 BAD-style): at its '*' prompt give a device ('DZ0:'), i
 DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP)
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: its own Russian switch help and version banner; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 b76b1abdfd92*
+
+### `software/system/utils/BLUE.SAV`
+
+Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV.  On eight of the nine disks that carry it (osa, System, System3, 059, 062, 063, 066, 172) it is this copy; 065 holds a one-byte variant
+
+*written in assembler (no runtime library); text; cross-run: ran (blue screen, yellow text, prompt back); disks: 9; identified from: program screen 2026-09-13; sha256 f3261ec2e9dd*
 
 ### `software/system/utils/BLACK.SAV`
 

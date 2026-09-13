@@ -10,7 +10,7 @@ format = 1
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.09.12"
+version = "2026.09.13"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -470,7 +470,7 @@ files    = ["software/system/utils/mihin/PIP.SAV"]
 # ==== Games ================================================================
 
 [bundle.sabot2-osa]
-title    = "Saboteur 2 (keyboard build, OSA disks)"
+title    = "Saboteur 2 - ZX Spectrum port (keyboard build, OSA disks)"
 group    = "Games / Graphics"
 provides = ["saboteur2"]
 needs    = ["ss", "dz"]         # the loader opens DZ:SABOT2.DAT by name
@@ -479,7 +479,7 @@ files    = ["software/games/sabot2/fixed/osa/SABOT2.SAV",
             "software/games/sabot2/fixed/osa/SABOT2.DAT"]
 
 [bundle.sabot2-omega]
-title    = "Saboteur 2 (joystick build, omega-games disk)"
+title    = "Saboteur 2 - ZX Spectrum port with joystick support (omega-games disk)"
 group    = "Games / Graphics"
 provides = ["saboteur2"]
 needs    = ["ss", "dz"]
@@ -488,38 +488,38 @@ files    = ["software/games/sabot2/fixed/omega/SABOT2.SAV",
             "software/games/sabot2/fixed/omega/SABOT2.DAT"]
 
 [bundle.fist]
-title = "The Way Of The Exploding Fist"
+title = "The Way Of The Exploding Fist - ZX Spectrum port"
 group = "Games / Graphics"
 date  = "1999-12-31"            # the latest the monitors print in two digits: 2003 shows as 01-01-103
 files = ["software/games/fist/FIST.SAV", "software/games/fist/FIST.DAT"]
 
 [bundle.manicm]
-title = "Manic Miner"
+title = "Manic Miner - ZX Spectrum port"
 group = "Games / Graphics"
 date  = "1999-12-31"
 files = ["software/games/manicm/MANICM.SAV", "software/games/manicm/MANICM.DAT"]
 
 [bundle.birds]
-title = "BIRDS - colour arcade game"
+title = "BIRDS - a spaceship fires on firebirds"
 group = "Games / Graphics"
 date  = "1991-11-05"
 files = ["software/games/BIRDS.SAV"]
 
 [bundle.expres]
-title = "EXPRES - arcade game on a moving train, with its rules"
+title = "EXPRES - arcade game set on a moving train, with its rules"
 group = "Games / Graphics"
 date  = "1991-11-12"
 files = ["software/games/EXPRES.SAV", { path = "software/games/EXPRES.TXT", date = "1990-09-27" }]
 
 [bundle.kosmos-osa]
-title    = "KOSMOS (OSA build)"
+title    = "KOSMOS - a text-mode space game (OSA build)"
 group    = "Games / Graphics"
 provides = ["kosmos"]
 date     = "1992-03-27"
 files    = ["software/games/osa/KOSMOS.SAV"]
 
 [bundle.kosmos-osa-rs]
-title    = "KOSMOS (OSA build of the profShell disks)"
+title    = "KOSMOS - a text-mode space game (OSA build of the profShell disks)"
 group    = "Games / Graphics"
 provides = ["kosmos"]
 date     = "1992-03-27"
@@ -564,13 +564,13 @@ date  = "1989-04-30"
 files = ["software/games/pacman/PAC6.SAV"]
 
 [bundle.labrn]
-title = "LABRN - Pac-Man in a big ASCII labyrinth, with its results file"
+title = "LABRN - Pac-Man in text mode, a big labyrinth, with its results file"
 group = "Games / Pac-Man"
 date  = "1989-04-30"
 files = ["software/games/pacman/LABRN.SAV", "software/games/pacman/LABRN.DAT"]
 
 [bundle.pent]
-title = "PENT - falling blocks"
+title = "PENT - a Tetris-like game in text mode"
 group = "Games / Tetris"
 date  = "1991-11-12"
 files = ["software/games/tetris/PENT.SAV"]
@@ -595,7 +595,7 @@ date   = "1991-01-31"
 files  = ["software/games/KING.SAV", "software/games/KING.DAT"]
 
 [bundle.kam1]
-title  = "KAM1 - stones, with its level maps"
+title  = "KAM1 - a classic Sokoban game, with its level maps"
 group  = "Games / Text"
 volume = "any"
 date   = "1991-01-31"
@@ -609,7 +609,7 @@ date   = "1991-01-31"
 files  = ["software/games/TROPA.SAV"]
 
 [bundle.poker]
-title  = "POKER"
+title  = "POKER - poker in text mode"
 group  = "Games / Text"
 volume = "any"
 date   = "1991-01-31"
@@ -637,7 +637,7 @@ date   = "1991-01-31"
 files  = ["software/games/MARS2.SAV"]
 
 [bundle.go1]
-title  = "GO1 - go"
+title  = "GO1 - classic go in text mode"
 group  = "Games / Text"
 volume = "any"
 date   = "1989-03-22"
@@ -651,7 +651,7 @@ date   = "1985-02-11"
 files  = ["software/games/KALAHI.SAV"]
 
 [bundle.derby]
-title  = "DERBY - horse racing"
+title  = "DERBY - horse racing in text mode"
 group  = "Games / Text"
 volume = "any"
 date   = "1991-01-31"
@@ -686,7 +686,7 @@ date   = "1991-01-31"
 files  = ["software/games/TIR.SAV"]
 
 [bundle.udaw]
-title  = "UDAW (PITON) - the educational snake"
+title  = "UDAW (PITON) - a Snake game that teaches the Russian alphabet"
 group  = "Games / Text"
 volume = "any"
 date   = "1994-01-01"
@@ -780,6 +780,20 @@ volume   = "any"
 files    = ["software/development/pascal/PASCAL.LST",
             "software/development/pascal/PASUSE.LST",
             { path = "software/development/pascal/PASGR.DOC", date = "1995-05-15" }]
+
+[bundle.hello-pas]
+title    = "HELLO.PAS - a Hello, world! to build first: PAS1, MACRO, LINK, RUN"
+group    = "Development / Pascal"
+requires = ["pascal"]
+date     = "1992-04-01"     # written for the collection in 2026: the Pascal disk's working date
+files    = ["programs/examples/HELLO.PAS"]
+
+[bundle.hello-mac]
+title    = "HELLOA.MAC - the same Hello, world! in MACRO-11: MACRO, LINK, RUN"
+group    = "Development / Assembler"
+requires = ["macro11", "link"]
+date     = "1992-04-01"     # written for the collection in 2026: the Pascal disk's working date
+files    = ["programs/examples/HELLOA.MAC"]
 
 [bundle.forlib]
 title = "FORLIB.OBJ - the FORTRAN IV run-time library"
@@ -988,11 +1002,11 @@ group = "Utilities"
 date  = "1986-02-14"
 files = ["software/system/utils/DAY.SAV"]
 
-[bundle.black]
-title = "BLACK - the screen black, back to the monitor"
+[bundle.blue]
+title = "BLUE - the screen blue, yellow letters, back to the monitor"
 group = "Utilities / Screen"
 date  = "1992-12-04"
-files = ["software/system/utils/BLACK.SAV"]
+files = ["software/system/utils/BLUE.SAV"]
 
 [bundle.white]
 title = "WHITE - the screen white, back to the monitor"
@@ -1144,36 +1158,89 @@ files  = ["software/apps/rbd-mikro/*"]
 # ---- presets -------------------------------------------------------------
 # What the release builds and the web offers with one click: the bundles a
 # person would tick; what they require comes by the same rules.
-#   startup  lines of START.COM after the system's and the bundles' own
+#   startup  lines of START.COM after the system's and the bundles' own - a list, or one multiline string
+#   banner   BANNER.TXT, typed by START.COM - the same two forms; clear_screen = true starts it with ESC H ESC J
 #   hint     what to do first, for the browser build's status line
 # A preset names the system's utilities (DIR, DUP, PIP) itself, which the
 # system only suggests: a released tool older than `suggests` still builds
 # the same disk.
 
 [preset.games]
-title     = "OMEGA: games"
-system    = "omega2"
+title     = "OSA: games"
+system    = "osa"
 media     = "ss"
-bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa",
-             "pent", "labrn", "kam1", "derby", "udaw", "poker", "ten", "dir-vvv", "dup-vvv", "pip-vvv"]
-startup   = ["DATE 01-APR-92"]
+bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa", "pent",
+             "labrn", "kam1", "derby", "udaw", "poker", "ten", "datset", "tir", "go1", "dir-osa", "pip-omega", "neg"]
+startup   = '''
+DATSET 01-04-92
+NEG
+TYPE BANNER.TXT'''
+banner    = '''
+To play a game, type its name and press Enter:
+
+  SABOT2  Saboteur 2, ZX Spectrum port with joystick support
+  FIST    The Way Of The Exploding Fist, ZX Spectrum port
+  MANICM  Manic Miner, ZX Spectrum port
+  BIRDS   Spaceship fires on firebirds
+  EXPRES  Arcade game set on a moving train
+  KOSMOS  A text-mode space game
+  HANOJ   The towers of Hanoi
+  PENT    A Tetris-like game in text mode
+  LABRN   Pac-Man in text mode
+  KAM1    A classic Sokoban game
+  DERBY   Horse racing in text mode
+  UDAW    A Snake game that teaches the Russian alphabet
+  POKER   Poker game in text mode
+  TEN     Tennis game in character graphics
+  TIR     Shooting gallery for up to eight players
+  GO1     Classic GO in text mode
+'''
+clear_screen = true
 volume_id = "GAMES"
-hint      = ". is the OS prompt: DIR lists the files, R SABOT2 / R FIST / R MANICM run the games"
+hint      = "The menu is on the screen: type a game's name and press Enter; DIR lists the files"
 
 [preset.devel]
-title   = "OMEGA: development"
+title   = "OMEGA: Pascal"
 system  = "omega2"
 media   = "dv"
-bundles = ["sl-vvv", "pascal", "pascal-graphics", "pascal-units", "fortran", "basico", "ked", "dess", "spr",
-           "datime-vvv", "form-vvv", "ld-omega", "ex", "lp", "mz", "hd-omega", "dir-vvv", "dup-vvv", "pip-vvv"]
-hint    = ". is the OS prompt: DIR lists the files; PAS1, MACRO, LINK, FORTRA, BASICO compile, KED edits; with an HD image mounted, INIT HD: makes it a volume"
+bundles = ["pascal", "pascal-graphics", "pascal-units", "pascal-docs", "ked", "hd-omega", "sl-vvv", "dess", "sce",
+           "dump-omega", "geteml", "dir-vvv", "pip-vvv", "dup-vvv", "blue", "hello-pas", "hello-mac"]
+startup = '''
+DATE 01-APR-92
+BLUE
+TYPE BANNER.TXT'''
+banner  = '''
+A Pascal disk: PAS1 compiles, MACRO assembles, LINK binds with PASLIB.
+
+HELLO.PAS is a first program to build, it prints Hello, world!
+
+  TYPE HELLO.PAS            see the source
+  KED HELLO.PAS             edit it in the screen editor
+  PAS1 HELLO=HELLO          compile:  HELLO.PAS -> HELLO.MAC
+  MACRO HELLO               assemble: HELLO.MAC -> HELLO.OBJ
+  LINK HELLO,PASLIB,PAS1    link with the Pascal run-time -> HELLO.SAV
+  RUN HELLO                 run it
+
+Your own program goes the same way, with its name in place of HELLO.
+No switches are needed for any of the four steps.
+
+HELLOA.MAC is the same program in MACRO-11 assembler: MACRO, LINK, RUN.
+
+  TYPE HELLOA.MAC           see the source (eight lines: .PRINT and .EXIT)
+  MACRO HELLOA              assemble: HELLOA.MAC -> HELLOA.OBJ
+  LINK HELLOA               link:     HELLOA.OBJ -> HELLOA.SAV
+  RUN HELLOA                run it
+'''
+clear_screen = true
+volume_id = "PASCAL"
+hint    = "The recipe is on the screen: PAS1 HELLO=HELLO, MACRO HELLO, LINK HELLO,PASLIB,PAS1, RUN HELLO; KED edits"
 
 [preset.rodionov]
 title   = "Rodionov: ROSA Commander"
 system  = "rodionov"
 media   = "dz"
 bundles = ["sl-rodionov", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
-           "resorc-osa", "black", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
+           "resorc-osa", "blue", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
 startup = ["R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 

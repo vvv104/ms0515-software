@@ -1,0 +1,9 @@
+        .TITLE  HELLOA
+        .MCALL  .PRINT, .EXIT
+
+START:  .PRINT  #MSG            ; the monitor prints the string, then a new line
+        .EXIT                   ; back to the monitor
+
+MSG:    .ASCIZ  /Hello, world!/
+        .EVEN
+        .END    START
