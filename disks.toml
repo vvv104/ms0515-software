@@ -28,9 +28,9 @@ version = "2026.09.13-4"
 #
 #   media              what the monitor boots from
 #   requires           the bundles it cannot work without
-#   suggests           names ticked along with it and left to be unticked: the
-#                      utilities its disks carried (DIR, DUP, PIP), which a games
-#                      disk can do without
+#   suggests           its own builds of the utilities its disks carried (DIR,
+#                      DUP, PIP): not ticked by themselves - a games disk can do
+#                      without - but one ticked follows the system when it changes
 #   prefer             its own builds where it requires a name several provide
 #                      ("dir"): what sat on its original disks; another can be picked
 #   requires_by_media  those only one media needs: the handler it boots through -
