@@ -1,6 +1,6 @@
 # Utilities: the ОСА kits
 
-Disks 058, System, System3 and osa - the plain ОСА: the Lvov НИПП «Омега» build of RT-11 SJ V05.04 with Russian monitor messages, banner «ОСА Версия 1.0».  The exemplar `systems/osa.dsk` is built from 058.
+Disks 058, System, System3 and osa - the plain ОСА: the Lvov НИПП «Омега» build of RT-11 SJ V05.04 with Russian monitor messages, banner «ОСА Версия 1.0».  Its monitor, in `systems/osa/`, is 058's.
 
 The builds below are the ones these disks carried; each card says on which of them it was found, and where a near-identical copy (a few bytes off - bit rot, a patched banner) lies on another disk.
 

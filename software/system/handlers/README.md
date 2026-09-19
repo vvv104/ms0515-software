@@ -42,8 +42,8 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 ## The quiet SL copies
 
 `osa/quiet/`, `omega/quiet/`, `vvv/quiet/`, `mihin/quiet/` and
-`rodionov/quiet/` hold `SL.SYS` as each exemplar in `../../../systems/`
-carries it: the same handler as its family's, with the assignment table
+`rodionov/quiet/` hold `SL.SYS` as the collection's system disks carried it
+- the same handler as its family's, with the assignment table
 its first owners filled in blanked, so `SET SL ON` brings up an empty
 table - or nothing - instead of someone's thirty-year-old hotkey macros.
 They are what the disks composed from this collection get; the originals
@@ -116,7 +116,7 @@ is the same handler with only the bit set, from before this was understood:
 it works because the word before its `$INPTR` happens to be a spare zero.
 Both are refused by the other systems in turn.
 
-Each checked on the exemplar in `../../../systems/`: HD with a 2000-block
+Each checked on a system disk of this collection: HD with a 2000-block
 image - `INIT HD:`, then `DIR HD:` shows the empty volume; on Mihin's a
 file copied there lists back too.  DV on Mihin's: a DV diskette in the
 second drive lists and a file copied off it is byte-exact, and a Mihin

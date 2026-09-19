@@ -11,19 +11,17 @@ The diskettes come from the collection gathered on the zx-pk.ru forum
 blocks recovered from donor copies, and every file identified by its
 content.  The methodology, the raw reads and the tooling live in the
 emulator repository under `disk_recovery/`; this repository holds only
-the result — the files themselves, bootable systems and the knowledge
-about them.
+the result — the files themselves, the systems' monitors and the
+knowledge about them.
 
 ## Running
 
-Get a release of the emulator, then boot any of the exemplar systems:
-
-    ms0515 --disk0 systems/osa.dsk
-
-or open the same image in the browser build.  Every system disk boots
-to the monitor prompt; the program disks and folders are mounted as a
-second drive or copied onto a system disk with `ms0515-disk put` — the
-per-folder README says how each program is started.
+Get a release of the emulator and boot one of the ready disks below, or
+make a disk of your own with the emulator's disk wizard - in the browser
+build, or `ms0515-disk compose` over a copy of this repository.  Every
+system boots to the monitor prompt; a program is copied onto a system disk
+with the wizard or with `ms0515-disk put` — the per-folder README says how
+each program is started.
 
 ## Ready disks, and disks of your own
 
@@ -34,7 +32,7 @@ Mihin's OS-16SJ with his utilities.  The browser build loads the same
 disks from this repository's Pages.
 
 What they are made of is written in [`disks.toml`](disks.toml): the
-exemplar systems, bundles of software, and the presets.  The emulator's
+systems, bundles of software, and the presets.  The emulator's
 disk tool builds any combination from a copy of this repository - `EMULATOR`
 names the release whose tool the published disks were built with:
 
@@ -50,7 +48,7 @@ much for the media) is refused with the reason.
 
 | path | what |
 |---|---|
-| [`systems/`](systems/README.md) | five bootable exemplar systems, one per monitor build: ОСА, two ОМЕГА sysgens, Mihin's OS-16SJ, Rodionov's RT15SJ — native kits, quiet startups, labelled volumes |
+| [`systems/`](systems/README.md) | the five monitors every disk is made from, one per monitor build: ОСА, two ОМЕГА sysgens, Mihin's OS-16SJ, Rodionov's RT15SJ (with his copy protection's two sectors) |
 | `software/` | the industrial half: products that came without their sources |
 | [`software/system/`](software/system/README.md) | device handlers (per family, with the load/reject matrix of every handler on every monitor), utilities, formatters, printing, shells, diagnostics |
 | [`software/development/`](software/development/README.md) | Pascal, MACRO-11 and LINK, FORTRAN, BASIC, editors, debuggers, sprite tools |
@@ -73,10 +71,12 @@ much for the media) is refused with the reason.
   image were renamed so by the collector long after the fact (RT-11
   has no `.EXE`; ПИТОН even checks its own file under the `.SAV` name),
   and they ship here as `.SAV`.
-- A few things are ours and are marked as such: the quiet `START.COM`
-  of every system, the `@START` patch of the monitors' baked startup
-  command, blanked hotkey tables in two SL handlers, and any helper
-  file re-created for a program whose original was lost.
+- A few things are ours and are marked as such: the monitors' baked
+  startup command made DEC's `@STARTS` and the quiet `STARTS.COM` every
+  composed disk carries, one bit of the vvv104 ОМЕГА monitor set right
+  (flipped in the copy all its disks came from), blanked hotkey tables
+  in two SL handlers, and any helper file re-created for a program whose
+  original was lost.
 - Nothing here is claimed: the authors are named in the Hall of Fame
   wherever the software names them.  If you are one of them and want a
   program removed or credited differently, open an issue.

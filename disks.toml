@@ -5,7 +5,7 @@
 # builds every preset below.  A preset is exactly what the wizard makes from
 # the same choices.
 
-format = 1
+format = 2
 
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
@@ -20,12 +20,17 @@ version = "2026.09.15"
 #   dv  800 KB double-sided: one DV whole-disk volume of 1600 blocks
 
 # ---- systems -------------------------------------------------------------
-# Every disk is made from scratch.  A system's exemplar in systems/ gives
-# only what exists nowhere else: SWAP.SYS, the monitor and - Rodionov's - the
-# protected blocks; the bootstrap is written for the media.  Everything else
+# Every disk is made from scratch.  A system gives only what exists nowhere
+# else: its monitor - in systems/<system>/, patched to run DEC's STARTS.COM -
+# and, Rodionov's, the blocks it protects; SWAP.SYS is scratch the monitor
+# writes before it reads, so the composer makes it, of zeros, as long as the
+# system's own was; the bootstrap is written for the media.  Everything else
 # is bundles: the handlers and utilities the system cannot work without are
-# the bundles it requires, of the builds its exemplar carries.
+# the bundles it requires, of the builds its original disks carried.
 #
+#   monitor            the monitor's file and its date
+#   swap               the length of SWAP.SYS in blocks, and its date
+#   startup_date       the date of the startup command file
 #   media              what the monitor boots from
 #   requires           the bundles it cannot work without
 #   suggests           its own builds of the utilities its disks carried (DIR,
@@ -36,11 +41,14 @@ version = "2026.09.15"
 #   requires_by_media  those only one media needs: the handler it boots through -
 #                      DZ.SYS on ss and dz, DV.SYS on dv (a DV disk boots without DZ.SYS)
 #   startup            the first lines of the startup command file
-#   reserved           blocks copied from the exemplar, which no file may take
+#   reserved           blocks the system protects - a side and its DZ block, the
+#                      file of its 512 bytes: put on their sectors, no file takes them
 
 [system.osa]
 title    = "OSA 1.0"
-image    = "systems/osa.dsk"
+monitor  = { path = "systems/osa/MON8SJ.SYS", date = "1990-12-27" }
+swap     = { blocks = 32, date = "1990-12-27" }
+startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
 requires = ["tt-osa"]
 suggests = ["dir-osa", "dup-omega", "pip-omega"]
@@ -49,7 +57,9 @@ startup  = ["SET TT QUIET"]
 
 [system.omega]
 title    = "OMEGA SJ(S) V05.04"
-image    = "systems/omega.dsk"
+monitor  = { path = "systems/omega/RT11SJ.SYS", date = "1991-11-12" }
+swap     = { blocks = 32, date = "1989-12-11" }
+startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
 requires = ["tt-omega"]
 suggests = ["dir-omega", "dup-omega", "pip-omega"]
@@ -58,7 +68,9 @@ startup  = ["SET TT QUIET"]
 
 [system.omega2]
 title    = "OMEGA SJ(S) V05.04, the vvv104 build"
-image    = "systems/omega2.dsk"
+monitor  = { path = "systems/omega2/RT11SJ.SYS", date = "1995-01-01" }
+swap     = { blocks = 32, date = "1995-01-01" }
+startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
 requires = ["tt-omega"]
 suggests = ["dir-vvv", "dup-vvv", "pip-vvv"]
@@ -67,7 +79,9 @@ startup  = ["SET TT QUIET"]
 
 [system.mihin]
 title    = "OS-16SJ (Mihinsoft)"
-image    = "systems/mihin.dsk"
+monitor  = { path = "systems/mihin/RT11SJ.SYS", date = "1991-06-17" }
+swap     = { blocks = 27, date = "1990-11-23" }
+startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
 requires = ["tt-mihin", "ld-mihin"]
 suggests = ["dir-vvv", "dup-vvv", "pip-mihin"]
@@ -77,13 +91,16 @@ startup  = ["SET TT QUIET"]
 
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
-image    = "systems/rodionov.dsk"
+monitor  = { path = "systems/rodionov/RT15SJ.SYS", date = "1992-03-31" }
+swap     = { blocks = 32, date = "1991-12-25" }
+startup_date = "1995-04-01"
 media    = ["dz", "dv"]
 requires = ["tt-rodionov"]
 suggests = ["dir-rodionov", "dup-omega", "pip-omega"]
 requires_by_media = { dz = ["dz-rodionov"], dv = ["dv-omega"] }
 startup  = ["SET TT QUIET"]
-reserved = [{ side = 1, lbn = 792 }, { side = 1, lbn = 799 }]   # the copy protection
+reserved = [{ side = 1, lbn = 792, path = "systems/rodionov/SIDE1-792.BLK" },   # the copy protection
+            { side = 1, lbn = 799, path = "systems/rodionov/SIDE1-799.BLK" }]
 
 # ---- bundles -------------------------------------------------------------
 # What one checkbox adds.  A bundle's files stay on one volume together (a
@@ -1158,8 +1175,8 @@ files  = ["software/apps/rbd-mikro/*"]
 # ---- presets -------------------------------------------------------------
 # What the release builds and the web offers with one click: the bundles a
 # person would tick; what they require comes by the same rules.
-#   startup  lines of START.COM after the system's and the bundles' own - a list, or one multiline string
-#   banner   BANNER.TXT, typed by START.COM - the same two forms; clear_screen = true starts it with ESC H ESC J
+#   startup  lines of STARTS.COM after the system's and the bundles' own - a list, or one multiline string
+#   banner   BANNER.TXT, typed by STARTS.COM - the same two forms; clear_screen = true starts it with ESC H ESC J
 #   hint     what to do first, for the browser build's status line
 # A preset names the system's utilities (DIR, DUP, PIP) itself, which the
 # system only suggests: a released tool older than `suggests` still builds

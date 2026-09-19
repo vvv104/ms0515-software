@@ -1,6 +1,6 @@
 # Utilities: Rodionov's RT15SJ disks
 
-Disks 065 and 066 - Родионов's private system: the RT15SJ monitor, ROSA Commander, the R15 editor, his games and BASIC collection; the kit utilities are the Омега ones, some with his own touches.  The exemplar `systems/rodionov.dsk` is built from 065.
+Disks 065 and 066 - Родионов's private system: the RT15SJ monitor, ROSA Commander, the R15 editor, his games and BASIC collection; the kit utilities are the Омега ones, some with his own touches.  His monitor, in `systems/rodionov/`, is 065's.
 
 The builds below are the ones these disks carried; each card says on which of them it was found, and where a near-identical copy (a few bytes off - bit rot, a patched banner) lies on another disk.
 
