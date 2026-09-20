@@ -18,7 +18,7 @@ found in one place:
 | `mihin/` | `mihin` | Mihin's OS-16SJ |
 | `rodionov/` | `rodionov` | Rodionov's RT15SJ, with the two sectors of his copy protection |
 | `dec/` | `dec`, `dec-ru` | DEC's RT-11 V5.4 built for the machine from DEC's sources, with handlers written for it - nothing in it was recovered from a diskette |
-| `vvv/` | `omega2` | the collector's vvv104 diskettes: an ОМЕГА V05.04 monitor of their own (one stored setting word apart from `omega`'s, `omega2` here) and a FODOS-flavoured set of utilities around it, English where ОМЕГА's are Russian |
+| `vvv/` | `omega2` | Voronkov's own diskettes — `disk3` (read also as `h0`/`h1`), `PAPER`, `baspasfor`, `disk4`.  Their ОМЕГА V05.04 monitor is `omega2`, not a patch of `omega`'s: it blinks the cursor through ROM-B and its pointers are moved to match (see below).  Their utilities are the English-message ФОДОС builds, the ones Mihin's disks carry too |
 
 [`HANDLERS.md`](HANDLERS.md) is the cross-run of every handler on every
 monitor: which load where.  What belongs to no kit - games, applications,
