@@ -19,7 +19,6 @@ found in one place:
 | `rodionov/` | `rodionov` | Rodionov's RT15SJ, with the two sectors of his copy protection |
 | `dec/` | `dec`, `dec-ru` | DEC's RT-11 V5.4 built for the machine from DEC's sources, with handlers written for it - nothing in it was recovered from a diskette |
 | `vvv/` | - | the FODOS-flavoured builds of the collector's vvv104 diskettes (ОМЕГА's second sysgen and Mihin's monitor ran with them) |
-| `ms0111/` | - | the МС0111 terminal-complex disk 056 |
 
 [`HANDLERS.md`](HANDLERS.md) is the cross-run of every handler on every
 monitor: which load where.  What belongs to no kit - games, applications,

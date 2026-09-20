@@ -2,7 +2,7 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 54 files</summary>
+<details open><summary><b>kits/</b> — 51 files</summary>
 
 <details><summary><b>kits/mihin/</b> — 8 files</summary>
 
@@ -63,36 +63,6 @@ RAM-disk handler (memory used as a drive)
 The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА», exit with СУ/E
 
 *written in assembler (no runtime library); text; cross-run: ran; disks: 8; identified from: program strings of both builds; TERM.TXT manual on disk 056; the Mihin's OS-16SJ kits build; sha256 31c254f8780b*
-
-</details>
-
-</details>
-
-<details><summary><b>kits/ms0111/</b> — 3 files</summary>
-
-<details><summary><b>kits/ms0111/handlers/</b> — 1 file</summary>
-
-### `kits/ms0111/handlers/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
-
-</details>
-
-<details><summary><b>kits/ms0111/utils/</b> — 2 files</summary>
-
-### `kits/ms0111/utils/DATIME.SAV`
-
-DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 056 - the greeter with escape-sequence highlighting
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the the МС0111 complex disk build; sha256 55d955b8fcee*
-
-### `kits/ms0111/utils/TERM.SAV`
-
-The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the the МС0111 complex disk build; sha256 149b71963551*
 
 </details>
 
@@ -1834,7 +1804,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 160 files</summary>
+<details open><summary><b>software/</b> — 163 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2488,7 +2458,7 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 
 </details>
 
-<details><summary><b>software/system/</b> — 53 files</summary>
+<details><summary><b>software/system/</b> — 56 files</summary>
 
 <details><summary><b>software/system/diag/</b> — 26 files</summary>
 
@@ -2700,7 +2670,7 @@ Prints text files on an SM6337 printer attached to the parallel port of the MS 0
 
 </details>
 
-<details><summary><b>software/system/shells/</b> — 7 files</summary>
+<details><summary><b>software/system/shells/</b> — 8 files</summary>
 
 ### `software/system/shells/INSTR.DOC`
 
@@ -2744,9 +2714,15 @@ Two-panel file manager in the Norton Commander style, Russian labels: directory 
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
 
+### `software/system/shells/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
+
 </details>
 
-<details><summary><b>software/system/utils/</b> — 13 files</summary>
+<details><summary><b>software/system/utils/</b> — 15 files</summary>
 
 ### `software/system/utils/ASC.SAV`
 
@@ -2784,6 +2760,12 @@ Calendar generator for the years 1583-5000, to a file or to LP:; A. V. Domnich, 
 
 *written in Pascal (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; the same file as in programs/domnich/, where its source is; sha256 0997a687c0a7*
 
+### `software/system/utils/DATIME.SAV`
+
+DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 056 - the greeter with escape-sequence highlighting
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the the МС0111 complex disk build; sha256 55d955b8fcee*
+
 ### `software/system/utils/DATSET.SAV`
 
 Date-setting program of the OSA kit
@@ -2807,6 +2789,12 @@ Asks for a date, offering 18-MAR-93 as the default
 Writes 000010 into System Register C (177604): selects the 640x200 hi-res mode with a black border.  The video-mode counterpart of BLACK, BLUE and WHITE
 
 *written in assembler (no runtime library); text; cross-run: ran 6/8; disks: 4; identified from: disassembly; sha256 77e302e20a24*
+
+### `software/system/utils/TERM.SAV`
+
+The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the the МС0111 complex disk build; sha256 149b71963551*
 
 ### `software/system/utils/TERM.TXT`
 

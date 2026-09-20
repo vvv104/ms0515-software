@@ -45,9 +45,6 @@ title = "RT-11 V5.4 from DEC's sources"
 [kit.vvv]
 title = "vvv104 diskettes (FODOS builds)"
 
-[kit.ms0111]
-title = "MS0111 terminal complex"
-
 # ---- systems -------------------------------------------------------------
 # Every disk is made from scratch.  A system gives only what exists nowhere
 # else: its monitor - in its kit's folder, patched to run DEC's STARTS.COM -

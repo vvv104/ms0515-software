@@ -10,10 +10,12 @@ DEC's RT-11 utilities in their Soviet builds plus the small helpers of the kits,
 | `BLACK.SAV` | Blanks the screen to black and returns to the monitor | `RUN BLACK` |
 | `BLUE.SAV` | Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV | `RUN BLUE` |
 | `CALEND.SAV` | Calendar generator for the years 1583-5000, to a file or to LP:; A. V. Domnich, 16-06-94 | `RUN CALEND` |
+| `DATIME.SAV` | DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 056 - the greeter with escape-sequence highlighting  (on 056) | `RUN DATIME` |
 | `DATSET.SAV` | Date-setting program of the OSA kit: asks for the date as `дд-мм-гг`, then for a startup file to run (an empty answer lists the directory instead). It reads its answers from a command file, which OSA's own `DATE` command never does - KMON there compares the Russian month in the form the console driver delivers, and refuses any spelling a file holds - so this is how an OSA disk gets its date at boot: `startup = ["R DATSET", "01-04-92", ""]` in a wizard selection, bundle `datset` added. Games such as LABRN refuse to run with no date | `RUN DATSET` |
 | `DAY.SAV` | Asks for a date, offering 18-MAR-93 as the default | `RUN DAY` |
 | `HELP.TXT` | «Описание команд операционной системы ФОДОС-3» - the command reference HELP.SAV prints, as plain text: ASSIGN, BOOT, COPY… with their syntax | text: `TYPE HELP.TXT`, or read on the host (koi8-r) |
 | `NEG.SAV` | Writes 000010 into System Register C (177604): selects the 640x200 hi-res mode with a black border.  The video-mode counterpart of BLACK, BLUE and WHITE | `RUN NEG` |
+| `TERM.SAV` | The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7  (on 056, 172) | `RUN TERM` |
 | `TERM.TXT` | Manual of TERM.SAV as used in the МС0111 complex check-out: the МС-0515 as a terminal of the central МС0108 (ФОДОС-4, TS/TSX monitor, DEMO.SAV on the central machine) | text: `TYPE TERM.TXT`, or read on the host (koi8-r) |
 | `TFP.SAV` | Text formatter of the OSA kit; the manual recommends keeping it on the system device | bare prompt, no answer to a bogus file name |
 | `WHITE.SAV` | Sets the screen to white and returns to the monitor; the counterpart of BLACK.SAV and BLUE.SAV | `RUN WHITE` |
