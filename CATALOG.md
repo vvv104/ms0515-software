@@ -226,7 +226,7 @@ PIP V05.14 with Russian messages («?PIP-F-Нет файла») - the build of e
 
 </details>
 
-<details><summary><b>kits/osa/</b> — 8 files</summary>
+<details><summary><b>kits/osa/</b> — 9 files</summary>
 
 <details><summary><b>kits/osa/handlers/</b> — 6 files</summary>
 
@@ -268,7 +268,17 @@ Sound-device handler — not video despite the name
 
 </details>
 
-<details><summary><b>kits/osa/utils/</b> — 2 files</summary>
+<details><summary><b>kits/osa/utils/</b> — 3 files</summary>
+
+<details><summary><b>kits/osa/utils/rs/</b> — 1 file</summary>
+
+### `kits/osa/utils/rs/RESORC.SAV`
+
+RESORC V05.69, Russian - the cut of the RS-shell ОСА disks (System2, bg0515, superBAK7), two blocks (800 bytes) apart from the plain one
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: DEC RT-11; the ОСА with the RS profShell build; sha256 732e0b358c14*
+
+</details>
 
 ### `kits/osa/utils/DIR.SAV`
 
@@ -281,20 +291,6 @@ DIR V05.03 with Russian messages («Неправильная версия мон
 RESORC V05.69 with Russian messages («Версия(и) =») - the plain ОСА disks and Rodionov's 065
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 5; identified from: DEC RT-11; the the ОСА kits build; sha256 39fd8396335b*
-
-</details>
-
-</details>
-
-<details><summary><b>kits/osa-rs/</b> — 1 file</summary>
-
-<details><summary><b>kits/osa-rs/utils/</b> — 1 file</summary>
-
-### `kits/osa-rs/utils/RESORC.SAV`
-
-RESORC V05.69, Russian - the cut of the RS-shell ОСА disks (System2, bg0515, superBAK7), two blocks (800 bytes) apart from the plain one
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: DEC RT-11; the ОСА with the RS profShell build; sha256 732e0b358c14*
 
 </details>
 

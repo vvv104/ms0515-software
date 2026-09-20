@@ -8,3 +8,5 @@ The builds below are the ones these disks carried; each card says on which of th
 |---|---|---|
 | `DIR.SAV` | DIR V05.03 with Russian messages («Неправильная версия монитора») - the cut of the ОСА disks, ОМЕГА 062/063 and Rodionov's  (on 058, System, System2, System3, bg0515, osa, superBAK7; near-identical copies on 062, 063, 065, 066) | `RUN DIR` |
 | `RESORC.SAV` | RESORC V05.69 with Russian messages («Версия(и) =») - the plain ОСА disks and Rodionov's 065  (on 058, 065, System, System3, osa) | bare prompt, no answer to a bogus file name |
+
+`rs/` holds the builds of the same kit's other factory configuration - the disks that shipped with the RS profShell (System2, bg0515, superBAK7) - where they differ from these: [`rs/README.md`](rs/README.md).
