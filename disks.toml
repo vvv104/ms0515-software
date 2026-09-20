@@ -21,7 +21,7 @@ version = "2026.09.15"
 
 # ---- systems -------------------------------------------------------------
 # Every disk is made from scratch.  A system gives only what exists nowhere
-# else: its monitor - in systems/<system>/, patched to run DEC's STARTS.COM -
+# else: its monitor - in its kit's folder, patched to run DEC's STARTS.COM -
 # and, Rodionov's, the blocks it protects; SWAP.SYS is scratch the monitor
 # writes before it reads, so the composer makes it, of zeros, as long as the
 # system's own was; the bootstrap is written for the media.  Everything else
@@ -46,7 +46,7 @@ version = "2026.09.15"
 
 [system.osa]
 title    = "OSA 1.0"
-monitor  = { path = "systems/osa/MON8SJ.SYS", date = "1990-12-27" }
+monitor  = { path = "kits/osa/MON8SJ.SYS", date = "1990-12-27" }
 swap     = { blocks = 32, date = "1990-12-27" }
 startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
@@ -57,7 +57,7 @@ startup  = ["SET TT QUIET"]
 
 [system.omega]
 title    = "OMEGA SJ(S) V05.04"
-monitor  = { path = "systems/omega/RT11SJ.SYS", date = "1991-11-12" }
+monitor  = { path = "kits/omega/RT11SJ.SYS", date = "1991-11-12" }
 swap     = { blocks = 32, date = "1989-12-11" }
 startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
@@ -68,7 +68,7 @@ startup  = ["SET TT QUIET"]
 
 [system.omega2]
 title    = "OMEGA SJ(S) V05.04, the vvv104 build"
-monitor  = { path = "systems/omega2/RT11SJ.SYS", date = "1995-01-01" }
+monitor  = { path = "kits/omega/omega2/RT11SJ.SYS", date = "1995-01-01" }
 swap     = { blocks = 32, date = "1995-01-01" }
 startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
@@ -79,7 +79,7 @@ startup  = ["SET TT QUIET"]
 
 [system.mihin]
 title    = "OS-16SJ (Mihinsoft)"
-monitor  = { path = "systems/mihin/RT11SJ.SYS", date = "1991-06-17" }
+monitor  = { path = "kits/mihin/RT11SJ.SYS", date = "1991-06-17" }
 swap     = { blocks = 27, date = "1990-11-23" }
 startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
@@ -91,7 +91,7 @@ startup  = ["SET TT QUIET"]
 
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
-monitor  = { path = "systems/rodionov/RT15SJ.SYS", date = "1992-03-31" }
+monitor  = { path = "kits/rodionov/RT15SJ.SYS", date = "1992-03-31" }
 swap     = { blocks = 32, date = "1991-12-25" }
 startup_date = "1995-04-01"
 media    = ["dz", "dv"]
@@ -99,8 +99,8 @@ requires = ["tt-rodionov"]
 suggests = ["dir-rodionov", "dup-omega", "pip-omega"]
 requires_by_media = { dz = ["dz-rodionov"], dv = ["dv-omega"] }
 startup  = ["SET TT QUIET"]
-reserved = [{ side = 1, lbn = 792, path = "systems/rodionov/SIDE1-792.BLK" },   # the copy protection
-            { side = 1, lbn = 799, path = "systems/rodionov/SIDE1-799.BLK" }]
+reserved = [{ side = 1, lbn = 792, path = "kits/rodionov/SIDE1-792.BLK" },   # the copy protection
+            { side = 1, lbn = 799, path = "kits/rodionov/SIDE1-799.BLK" }]
 
 # DEC's RT-11 V05.04 built for the MS 0515 from DEC's sources (the emulator
 # repository's rt11_devel/projects/rt11, profiles dec and dec-ru), with the
@@ -108,7 +108,7 @@ reserved = [{ side = 1, lbn = 792, path = "systems/rodionov/SIDE1-792.BLK" },   
 # console and clock, so Omega's handlers load under it as well.
 [system.dec]
 title    = "RT-11SJ V05.04 (DEC's, for the MS 0515)"
-monitor  = { path = "systems/dec/RT11SJ.SYS", date = "1999-12-31" }
+monitor  = { path = "kits/dec/RT11SJ.SYS", date = "1999-12-31" }
 swap     = { blocks = 32, date = "1999-12-31" }
 startup_date = "1999-12-31"
 media    = ["ss", "dz", "dv"]
@@ -119,7 +119,7 @@ startup  = ["SET TT QUIET"]
 
 [system.dec-ru]
 title    = "RT-11SJ V05.04 (DEC's, for the MS 0515), in Russian"
-monitor  = { path = "systems/dec-ru/RT11SJ.SYS", date = "1999-12-31" }
+monitor  = { path = "kits/dec/dec-ru/RT11SJ.SYS", date = "1999-12-31" }
 swap     = { blocks = 32, date = "1999-12-31" }
 startup_date = "1999-12-31"
 media    = ["ss", "dz", "dv"]
@@ -166,7 +166,7 @@ provides = ["dz"]
 systems  = ["osa"]
 protect  = true
 date     = "1990-12-27"
-files    = ["software/system/handlers/osa/DZ.SYS"]
+files    = ["kits/osa/handlers/DZ.SYS"]
 
 [bundle.dz-omega]
 title    = "DZ.SYS - the floppy handler (OMEGA)"
@@ -175,7 +175,7 @@ provides = ["dz"]
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 protect  = true
 date     = "1991-11-04"
-files    = ["software/system/handlers/omega/DZ.SYS"]
+files    = ["kits/omega/handlers/DZ.SYS"]
 
 [bundle.dz-mihin]
 title    = "DZ.SYS - the floppy handler (Mihin)"
@@ -184,7 +184,7 @@ provides = ["dz"]
 systems  = ["mihin"]
 protect  = true
 date     = "1991-07-04"
-files    = ["software/system/handlers/mihin/DZ.SYS"]
+files    = ["kits/mihin/handlers/DZ.SYS"]
 
 [bundle.dz-rodionov]
 title    = "DZ.SYS - the floppy handler (Rodionov)"
@@ -193,7 +193,7 @@ provides = ["dz"]
 systems  = ["rodionov"]
 protect  = true
 date     = "1993-02-16"
-files    = ["software/system/handlers/rodionov/DZ.SYS"]
+files    = ["kits/rodionov/handlers/DZ.SYS"]
 
 [bundle.dv-omega]
 title    = "DV.SYS - the whole-disk DV handler"
@@ -202,7 +202,7 @@ provides = ["dv"]
 systems  = ["osa", "omega", "omega2", "rodionov", "dec", "dec-ru"]
 protect  = true
 date     = "1995-01-01"
-files    = ["software/system/handlers/omega/DV.SYS"]
+files    = ["kits/omega/handlers/DV.SYS"]
 
 [bundle.dv-mihin]
 title    = "DV.SYS - the whole-disk DV handler (for Mihin's monitor)"
@@ -211,7 +211,7 @@ provides = ["dv"]
 systems  = ["mihin"]
 protect  = true
 date     = "1995-01-01"
-files    = ["software/system/handlers/mihin/DV.SYS"]
+files    = ["kits/mihin/handlers/DV.SYS"]
 
 [bundle.tt-osa]
 title    = "TT.SYS - the terminal handler (OSA)"
@@ -220,7 +220,7 @@ provides = ["tt"]
 systems  = ["osa"]
 protect  = true
 date     = "1990-12-27"
-files    = ["software/system/handlers/osa/TT.SYS"]
+files    = ["kits/osa/handlers/TT.SYS"]
 
 [bundle.tt-omega]
 title    = "TT.SYS - the terminal handler (OMEGA)"
@@ -229,7 +229,7 @@ provides = ["tt"]
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 protect  = true
 date     = "1991-01-31"
-files    = ["software/system/handlers/omega/TT.SYS"]
+files    = ["kits/omega/handlers/TT.SYS"]
 
 [bundle.tt-mihin]
 title    = "TT.SYS - the terminal handler (Mihin)"
@@ -238,7 +238,7 @@ provides = ["tt"]
 systems  = ["mihin"]
 protect  = true
 date     = "1991-07-04"
-files    = ["software/system/handlers/mihin/TT.SYS"]
+files    = ["kits/mihin/handlers/TT.SYS"]
 
 [bundle.tt-rodionov]
 title    = "TT.SYS - the terminal handler (Rodionov)"
@@ -247,7 +247,7 @@ provides = ["tt"]
 systems  = ["rodionov"]
 protect  = true
 date     = "1992-03-27"
-files    = ["software/system/handlers/rodionov/TT.SYS"]
+files    = ["kits/rodionov/handlers/TT.SYS"]
 
 [bundle.ld-mihin]
 title    = "LD.SYS - logical disks (Mihin)"
@@ -256,7 +256,7 @@ provides = ["ld"]
 systems  = ["mihin"]
 protect  = true
 date     = "1985-11-12"
-files    = ["software/system/handlers/mihin/LD.SYS"]
+files    = ["kits/mihin/handlers/LD.SYS"]
 
 # -- SL: the single-line editor, each build as its exemplar carries it, the
 #    assignment table of its first owners blanked
@@ -269,7 +269,7 @@ systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1988-01-19"
-files    = ["software/system/handlers/osa/quiet/SL.SYS"]
+files    = ["kits/osa/handlers/quiet/SL.SYS"]
 
 [bundle.sl-omega]
 title    = "SL.SYS - the single-line editor (OMEGA)"
@@ -279,7 +279,7 @@ systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1991-01-31"
-files    = ["software/system/handlers/omega/quiet/SL.SYS"]
+files    = ["kits/omega/handlers/quiet/SL.SYS"]
 
 [bundle.sl-vvv]
 title    = "SL.SYS - the single-line editor (vvv104 disks)"
@@ -289,7 +289,7 @@ systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1995-01-01"
-files    = ["software/system/handlers/vvv/quiet/SL.SYS"]
+files    = ["kits/vvv/handlers/quiet/SL.SYS"]
 
 [bundle.sl-mihin]
 title    = "SL.SYS - the single-line editor (Mihin)"
@@ -299,7 +299,7 @@ systems  = ["mihin"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1989-02-24"
-files    = ["software/system/handlers/mihin/quiet/SL.SYS"]
+files    = ["kits/mihin/handlers/quiet/SL.SYS"]
 
 [bundle.sl-rodionov]
 title    = "SL.SYS - the single-line editor (Rodionov)"
@@ -309,7 +309,7 @@ systems  = ["rodionov"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1991-01-31"
-files    = ["software/system/handlers/rodionov/quiet/SL.SYS"]
+files    = ["kits/rodionov/handlers/quiet/SL.SYS"]
 
 # -- the other handlers: one bundle per build; the family decides which one
 #    loads, so each build names its systems and all builds of one handler
@@ -321,7 +321,7 @@ group    = "System"
 provides = ["hd"]
 systems  = ["osa"]
 date     = "1995-04-01"
-files    = ["software/system/handlers/osa/HD.SYS"]
+files    = ["kits/osa/handlers/HD.SYS"]
 
 [bundle.hd-omega]
 title    = "HD.SYS - the emulator's hard disk"
@@ -329,7 +329,7 @@ group    = "System"
 provides = ["hd"]
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 date     = "1995-04-01"
-files    = ["software/system/handlers/omega/HD.SYS"]
+files    = ["kits/omega/handlers/HD.SYS"]
 
 [bundle.hd-rodionov]
 title    = "HD.SYS - the emulator's hard disk"
@@ -337,7 +337,7 @@ group    = "System"
 provides = ["hd"]
 systems  = ["rodionov"]
 date     = "1995-04-01"
-files    = ["software/system/handlers/rodionov/HD.SYS"]
+files    = ["kits/rodionov/handlers/HD.SYS"]
 
 [bundle.hd-mihin]
 title    = "HD.SYS - the emulator's hard disk"
@@ -345,7 +345,7 @@ group    = "System"
 provides = ["hd"]
 systems  = ["mihin"]
 date     = "1995-04-01"
-files    = ["software/system/handlers/mihin/HD.SYS"]
+files    = ["kits/mihin/handlers/HD.SYS"]
 
 [bundle.vm-osa]
 title    = "VM.SYS - RAM disk"
@@ -353,7 +353,7 @@ group    = "System"
 provides = ["vm"]
 systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
 date     = "1990-12-27"
-files    = ["software/system/handlers/osa/VM.SYS"]
+files    = ["kits/osa/handlers/VM.SYS"]
 
 [bundle.vm-rodionov]
 title    = "VM.SYS - RAM disk"
@@ -361,7 +361,7 @@ group    = "System"
 provides = ["vm"]
 systems  = ["rodionov"]
 date     = "1991-12-25"
-files    = ["software/system/handlers/rodionov/VM.SYS"]
+files    = ["kits/rodionov/handlers/VM.SYS"]
 
 [bundle.vm-mihin]
 title    = "VM.SYS - RAM disk"
@@ -369,7 +369,7 @@ group    = "System"
 provides = ["vm"]
 systems  = ["mihin"]
 date     = "1991-08-13"
-files    = ["software/system/handlers/mihin/VM.SYS"]
+files    = ["kits/mihin/handlers/VM.SYS"]
 
 [bundle.vs-osa]
 title    = "VS.SYS - the sound device"
@@ -377,7 +377,7 @@ group    = "System"
 provides = ["vs"]
 systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
 date     = "1990-12-27"
-files    = ["software/system/handlers/osa/VS.SYS"]
+files    = ["kits/osa/handlers/VS.SYS"]
 
 [bundle.vs-rodionov]
 title    = "VS.SYS - the sound device"
@@ -385,7 +385,7 @@ group    = "System"
 provides = ["vs"]
 systems  = ["rodionov"]
 date     = "1990-12-27"
-files    = ["software/system/handlers/rodionov/VS.SYS"]
+files    = ["kits/rodionov/handlers/VS.SYS"]
 
 [bundle.nl]
 title    = "NL.SYS - the null device"
@@ -393,14 +393,14 @@ group    = "System"
 provides = ["nl"]
 systems  = ["rodionov", "osa", "omega", "omega2", "dec", "dec-ru"]
 date     = "1990-12-27"
-files    = ["software/system/handlers/rodionov/NL.SYS"]
+files    = ["kits/rodionov/handlers/NL.SYS"]
 
 [bundle.em]
 title    = "EM.SYS - the EIS/FIS instruction emulator (SET EM ON)"
 group    = "System"
 date     = "1981-03-03"   # the disk says 2013: an age bit, 1981 + 32
 systems  = ["osa", "dec", "dec-ru"]
-files    = ["software/system/handlers/osa/EM.SYS"]
+files    = ["kits/osa/handlers/EM.SYS"]
 
 [bundle.ex]
 title    = "EX.SYS - the RAM-disk expansion board"
@@ -408,7 +408,7 @@ group    = "System"
 provides = ["ex"]
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 date     = "1995-04-01"
-files    = ["software/system/handlers/omega/EX.SYS"]
+files    = ["kits/omega/handlers/EX.SYS"]
 
 [bundle.lp]
 title    = "LP.SYS - the line printer"
@@ -416,14 +416,14 @@ group    = "System"
 provides = ["lp"]
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 date     = "1995-04-02"
-files    = ["software/system/handlers/omega/LP.SYS"]
+files    = ["kits/omega/handlers/LP.SYS"]
 
 [bundle.hp]
 title    = "HP.SYS"
 group    = "System"
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 date     = "1992-10-05"
-files    = ["software/system/handlers/omega/HP.SYS"]
+files    = ["kits/omega/handlers/HP.SYS"]
 
 [bundle.mz]
 title    = "MZ.SYS - whole-disk MZ: volumes"
@@ -431,7 +431,7 @@ group    = "System"
 provides = ["mz"]
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 date     = "1995-01-01"
-files    = ["software/system/handlers/omega/MZ.SYS"]
+files    = ["kits/omega/handlers/MZ.SYS"]
 
 [bundle.ld-omega]
 title    = "LD.SYS - logical disks in a file"
@@ -439,7 +439,7 @@ group    = "System"
 provides = ["ld"]
 systems  = ["omega", "omega2", "dec", "dec-ru"]
 date     = "1995-04-01"
-files    = ["software/system/handlers/omega/LD.SYS"]
+files    = ["kits/omega/handlers/LD.SYS"]
 
 # -- the utilities every system requires, one of each
 
@@ -449,7 +449,7 @@ group    = "System"
 provides = ["dir"]
 protect  = true
 date     = "1990-12-27"
-files    = ["software/system/utils/osa/DIR.SAV"]
+files    = ["kits/osa/utils/DIR.SAV"]
 
 [bundle.dir-omega]
 title    = "DIR (OMEGA, OMEGA2)"
@@ -457,7 +457,7 @@ group    = "System"
 provides = ["dir"]
 protect  = true
 date     = "1991-01-31"
-files    = ["software/system/utils/omega/DIR.SAV"]
+files    = ["kits/omega/utils/DIR.SAV"]
 
 [bundle.dir-vvv]
 title    = "DIR (OMEGA2, MIHIN)"
@@ -465,7 +465,7 @@ group    = "System"
 provides = ["dir"]
 protect  = true
 date     = "1990-03-03"
-files    = ["software/system/utils/vvv/DIR.SAV"]
+files    = ["kits/vvv/utils/DIR.SAV"]
 
 [bundle.dir-rodionov]
 title    = "DIR (OMEGA, RODIONOV)"
@@ -473,7 +473,7 @@ group    = "System"
 provides = ["dir"]
 protect  = true
 date     = "1989-09-27"
-files    = ["software/system/utils/rodionov/DIR.SAV"]
+files    = ["kits/rodionov/utils/DIR.SAV"]
 
 [bundle.dup-omega]
 title    = "DUP (OSA, OMEGA, RODIONOV)"
@@ -481,7 +481,7 @@ group    = "System"
 provides = ["dup"]
 protect  = true
 date     = "1991-01-31"
-files    = ["software/system/utils/omega/DUP.SAV"]
+files    = ["kits/omega/utils/DUP.SAV"]
 
 [bundle.dup-vvv]
 title    = "DUP (OMEGA2, MIHIN)"
@@ -489,7 +489,7 @@ group    = "System"
 provides = ["dup"]
 protect  = true
 date     = "1990-02-10"
-files    = ["software/system/utils/vvv/DUP.SAV"]
+files    = ["kits/vvv/utils/DUP.SAV"]
 
 [bundle.pip-omega]
 title    = "PIP (OSA, OMEGA, RODIONOV)"
@@ -497,7 +497,7 @@ group    = "System"
 provides = ["pip"]
 protect  = true
 date     = "1991-01-31"
-files    = ["software/system/utils/omega/PIP.SAV"]
+files    = ["kits/omega/utils/PIP.SAV"]
 
 [bundle.pip-vvv]
 title    = "PIP (OMEGA2)"
@@ -505,7 +505,7 @@ group    = "System"
 provides = ["pip"]
 protect  = true
 date     = "1995-01-01"
-files    = ["software/system/utils/vvv/PIP.SAV"]
+files    = ["kits/vvv/utils/PIP.SAV"]
 
 [bundle.pip-mihin]
 title    = "PIP (MIHIN)"
@@ -513,7 +513,7 @@ group    = "System"
 provides = ["pip"]
 protect  = true
 date     = "1990-03-03"
-files    = ["software/system/utils/mihin/PIP.SAV"]
+files    = ["kits/mihin/utils/PIP.SAV"]
 
 # -- RT-11 from sources: the handlers written or built in the emulator
 # repository (rt11_devel/projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
@@ -528,7 +528,7 @@ provides = ["dz"]
 systems  = ["dec", "dec-ru"]
 protect  = true
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/DZ.SYS"]
+files    = ["kits/dec/handlers/DZ.SYS"]
 
 [bundle.dv-rt11]
 title    = "DV.SYS - the whole-disk DV handler (from sources)"
@@ -537,7 +537,7 @@ provides = ["dv"]
 systems  = ["dec", "dec-ru"]
 protect  = true
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/DV.SYS"]
+files    = ["kits/dec/handlers/DV.SYS"]
 
 [bundle.mz-rt11]
 title    = "MZ.SYS - whole-disk MZ: volumes (from sources)"
@@ -545,7 +545,7 @@ group    = "System"
 provides = ["mz"]
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/MZ.SYS"]
+files    = ["kits/dec/handlers/MZ.SYS"]
 
 [bundle.tt-rt11]
 title    = "TT.SYS - the terminal handler (from sources)"
@@ -554,7 +554,7 @@ provides = ["tt"]
 systems  = ["dec", "dec-ru"]
 protect  = true
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/TT.SYS"]
+files    = ["kits/dec/handlers/TT.SYS"]
 
 [bundle.vm-rt11]
 title    = "VM.SYS - RAM disk (from sources)"
@@ -562,7 +562,7 @@ group    = "System"
 provides = ["vm"]
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/VM.SYS"]
+files    = ["kits/dec/handlers/VM.SYS"]
 
 [bundle.ex-rt11]
 title    = "EX.SYS - the RAM-disk expansion board, all 1024 blocks (from sources)"
@@ -570,7 +570,7 @@ group    = "System"
 provides = ["ex"]
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/EX.SYS"]
+files    = ["kits/dec/handlers/EX.SYS"]
 
 [bundle.hd-rt11]
 title    = "HD.SYS - the emulator's hard disk (from sources)"
@@ -578,7 +578,7 @@ group    = "System"
 provides = ["hd"]
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/HD.SYS"]
+files    = ["kits/dec/handlers/HD.SYS"]
 
 [bundle.nl-rt11]
 title    = "NL.SYS - the null device (DEC's)"
@@ -586,7 +586,7 @@ group    = "System"
 provides = ["nl"]
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/NL.SYS"]
+files    = ["kits/dec/handlers/NL.SYS"]
 
 [bundle.ld-rt11]
 title    = "LD.SYS - logical disks in a file (DEC's)"
@@ -594,7 +594,7 @@ group    = "System"
 provides = ["ld"]
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/LD.SYS"]
+files    = ["kits/dec/handlers/LD.SYS"]
 
 [bundle.lp-rt11]
 title    = "LP.SYS - the line printer (DEC's, an LP11 at 177514: untried)"
@@ -602,14 +602,14 @@ group    = "System"
 provides = ["lp"]
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/LP.SYS"]
+files    = ["kits/dec/handlers/LP.SYS"]
 
 [bundle.ls-rt11]
 title    = "LS.SYS - the serial printer (DEC's: untried)"
 group    = "System"
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/handlers/rt11/LS.SYS"]
+files    = ["kits/dec/handlers/LS.SYS"]
 
 [bundle.dir-rt11]
 title    = "DIR (DEC's V5.4, from sources)"
@@ -617,7 +617,7 @@ group    = "System"
 provides = ["dir"]
 protect  = true
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/DIR.SAV"]
+files    = ["kits/dec/utils/DIR.SAV"]
 
 [bundle.dup-rt11]
 title    = "DUP (DEC's V5.4, from sources)"
@@ -625,7 +625,7 @@ group    = "System"
 provides = ["dup"]
 protect  = true
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/DUP.SAV"]
+files    = ["kits/dec/utils/DUP.SAV"]
 
 [bundle.pip-rt11]
 title    = "PIP (DEC's V5.4, from sources)"
@@ -633,7 +633,7 @@ group    = "System"
 provides = ["pip"]
 protect  = true
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/PIP.SAV"]
+files    = ["kits/dec/utils/PIP.SAV"]
 
 # ==== Games ================================================================
 
@@ -874,7 +874,7 @@ group    = "Development / Assembler"
 provides = ["macro11"]
 requires = ["sysmac"]
 date     = "1995-04-01"
-files    = ["software/development/macro/vvv/MACRO.SAV"]
+files    = ["kits/vvv/development/MACRO.SAV"]
 
 [bundle.macro-mihin]
 title    = "MACRO V05.04 (Mihin's OS-16SJ disks)"
@@ -882,7 +882,7 @@ group    = "Development / Assembler"
 provides = ["macro11"]
 requires = ["sysmac"]
 date     = "1991-01-29"
-files    = ["software/development/macro/mihin/MACRO.SAV"]
+files    = ["kits/mihin/development/MACRO.SAV"]
 
 [bundle.macro-omega]
 title    = "MACRO V05.01b (OMEGA disk 064)"
@@ -890,21 +890,21 @@ group    = "Development / Assembler"
 date     = "1995-04-01"   # this copy carried none; the disks' other copies say so
 provides = ["macro11"]
 requires = ["sysmac"]
-files    = ["software/development/macro/omega/MACRO.SAV"]
+files    = ["kits/omega/development/MACRO.SAV"]
 
 [bundle.link-vvv]
 title    = "LINK V05.14 (FODOS kit of the vvv104 disks)"
 group    = "Development / Linker"
 provides = ["link"]
 date     = "1995-04-01"
-files    = ["software/development/macro/vvv/LINK.SAV"]
+files    = ["kits/vvv/development/LINK.SAV"]
 
 [bundle.link-mihin]
 title    = "LINK V08.04 (Mihin's OS-16SJ disks)"
 group    = "Development / Linker"
 provides = ["link"]
 date     = "1986-09-05"
-files    = ["software/development/macro/mihin/LINK.SAV"]
+files    = ["kits/mihin/development/LINK.SAV"]
 
 [bundle.syslib]
 title = "SYSLIB.OBJ - the system library"
@@ -1049,25 +1049,25 @@ title    = "LINK V5.4 (DEC's, byte for byte from its sources)"
 group    = "Development / Linker"
 provides = ["link"]
 date     = "1999-12-31"
-files    = ["software/development/rt11/LINK.SAV"]
+files    = ["kits/dec/development/LINK.SAV"]
 
 [bundle.libr-rt11]
 title    = "LIBR - the librarian, which no kit of the machine had"
 group    = "Development / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/development/rt11/LIBR.SAV"]
+files    = ["kits/dec/development/LIBR.SAV"]
 
 [bundle.sysmac-rt11]
 title    = "SYSMAC.SML and SYSLIB.OBJ - DEC's system macro and object libraries"
 group    = "Development / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/development/rt11/SYSMAC.SML", "software/development/rt11/SYSLIB.OBJ"]
+files    = ["kits/dec/development/SYSMAC.SML", "kits/dec/development/SYSLIB.OBJ"]
 
 [bundle.odt-rt11]
 title    = "ODT.OBJ - the octal debugger, linked into a program"
 group    = "Development / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/development/rt11/ODT.OBJ"]
+files    = ["kits/dec/development/ODT.OBJ"]
 
 # ==== Shells ===============================================================
 
@@ -1113,49 +1113,49 @@ title    = "RESORC - system resources (OSA build)"
 group    = "Utilities"
 provides = ["resorc"]
 date     = "1990-12-27"
-files    = ["software/system/utils/osa/RESORC.SAV"]
+files    = ["kits/osa/utils/RESORC.SAV"]
 
 [bundle.dump-omega]
 title    = "DUMP (OMEGA build)"
 group    = "Utilities"
 provides = ["dump"]
 date     = "1987-12-16"
-files    = ["software/system/utils/omega/DUMP.SAV"]
+files    = ["kits/omega/utils/DUMP.SAV"]
 
 [bundle.dump-rodionov]
 title    = "DUMP (Rodionov's disks)"
 group    = "Utilities"
 provides = ["dump"]
 date     = "1987-12-16"
-files    = ["software/system/utils/rodionov/DUMP.SAV"]
+files    = ["kits/rodionov/utils/DUMP.SAV"]
 
 [bundle.help-rodionov]
 title    = "HELP - the command reference (Rodionov's disks)"
 group    = "Utilities"
 provides = ["help"]
 date     = "1990-12-27"
-files    = ["software/system/utils/rodionov/HELP.SAV"]
+files    = ["kits/rodionov/utils/HELP.SAV"]
 
 [bundle.help-dec]
 title    = "HELP - the command reference (DEC's)"
 group    = "Utilities"
 date     = "1984-02-01"
 provides = ["help"]
-files    = ["software/system/utils/dec/HELP.SAV"]
+files    = ["kits/dec-originals/utils/HELP.SAV"]
 
 [bundle.term-mihin]
 title    = "TERM - terminal program (Mihin's disks)"
 group    = "Utilities"
 provides = ["term"]
 date     = "1991-01-31"
-files    = ["software/system/utils/mihin/TERM.SAV"]
+files    = ["kits/mihin/utils/TERM.SAV"]
 
 [bundle.datime-vvv]
 title    = "DATIME - date and time (vvv104 disks)"
 group    = "Utilities"
 provides = ["datime"]
 date     = "1995-04-01"
-files    = ["software/system/utils/vvv/DATIME.SAV"]
+files    = ["kits/vvv/utils/DATIME.SAV"]
 
 [bundle.datset]
 title = "DATSET - date setting of the OSA kit"
@@ -1231,14 +1231,14 @@ title    = "FORML, FORMH - diskette formatters (OMEGA build)"
 group    = "Utilities / Formatters"
 provides = ["formatter"]
 date     = "1992-01-14"
-files    = ["software/system/format/omega/FORML.SAV", "software/system/format/omega/FORMH.SAV"]
+files    = ["kits/omega/format/FORML.SAV", "kits/omega/format/FORMH.SAV"]
 
 [bundle.form-vvv]
 title    = "FORML, FORMH - diskette formatters (vvv104 build)"
 group    = "Utilities / Formatters"
 provides = ["formatter"]
 date     = "1995-04-01"
-files    = ["software/system/format/vvv/FORML.SAV", "software/system/format/vvv/FORMH.SAV"]
+files    = ["kits/vvv/format/FORML.SAV", "kits/vvv/format/FORMH.SAV"]
 
 # -- printing
 
@@ -1301,80 +1301,80 @@ files = ["software/system/diag/SCN15I.SAV"]
 title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
 group    = "Utilities / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/FORMAT.SAV"]
+files    = ["kits/dec/utils/FORMAT.SAV"]
 
 [bundle.edit-rt11]
 title    = "EDIT - DEC's text editor"
 group    = "Utilities / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/EDIT.SAV"]
+files    = ["kits/dec/utils/EDIT.SAV"]
 
 [bundle.help-rt11]
 title    = "HELP with its library HELP.MLB"
 group    = "Utilities / RT-11 V5.4 from sources"
 provides = ["help"]
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/HELP.SAV", "software/system/utils/rt11/HELP.MLB"]
+files    = ["kits/dec/utils/HELP.SAV", "kits/dec/utils/HELP.MLB"]
 
 [bundle.dump-rt11]
 title    = "DUMP"
 group    = "Utilities / RT-11 V5.4 from sources"
 provides = ["dump"]
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/DUMP.SAV"]
+files    = ["kits/dec/utils/DUMP.SAV"]
 
 [bundle.resorc-rt11]
 title    = "RESORC - SHOW: devices, memory, configuration"
 group    = "Utilities / RT-11 V5.4 from sources"
 provides = ["resorc"]
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/RESORC.SAV"]
+files    = ["kits/dec/utils/RESORC.SAV"]
 
 [bundle.datime-rt11]
 title    = "DATIME - asks for the date and time at startup"
 group    = "Utilities / RT-11 V5.4 from sources"
 provides = ["datime"]
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/DATIME.SAV"]
+files    = ["kits/dec/utils/DATIME.SAV"]
 
 [bundle.compare-rt11]
 title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
 group    = "Utilities / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/SRCCOM.SAV", "software/system/utils/rt11/BINCOM.SAV"]
+files    = ["kits/dec/utils/SRCCOM.SAV", "kits/dec/utils/BINCOM.SAV"]
 
 [bundle.patch-rt11]
 title    = "SLP, PAT, SIPP - patching sources, objects and programs"
 group    = "Utilities / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/SLP.SAV", "software/system/utils/rt11/PAT.SAV", "software/system/utils/rt11/SIPP.SAV"]
+files    = ["kits/dec/utils/SLP.SAV", "kits/dec/utils/PAT.SAV", "kits/dec/utils/SIPP.SAV"]
 
 [bundle.strip-rt11]
 title    = "STRIP and SPLIT"
 group    = "Utilities / RT-11 V5.4 from sources"
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/STRIP.SAV", "software/system/utils/rt11/SPLIT.SAV"]
+files    = ["kits/dec/utils/STRIP.SAV", "kits/dec/utils/SPLIT.SAV"]
 
 [bundle.ucl-rt11]
 title    = "UCL and LET - commands of one's own (the dec monitors pass unknown commands to UCL)"
 group    = "Utilities / RT-11 V5.4 from sources"
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/UCL.SAV", "software/system/utils/rt11/LET.SAV"]
+files    = ["kits/dec/utils/UCL.SAV", "kits/dec/utils/LET.SAV"]
 
 [bundle.batch-rt11]
 title    = "BATCH with its handler BA.SYS"
 group    = "Utilities / RT-11 V5.4 from sources"
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/BATCH.SAV", "software/system/handlers/rt11/BA.SYS"]
+files    = ["kits/dec/utils/BATCH.SAV", "kits/dec/handlers/BA.SYS"]
 
 [bundle.spool-rt11]
 title    = "SPOOL, QUEUE, QUEMAN with the handler SP.SYS - printing in the background (untried)"
 group    = "Utilities / RT-11 V5.4 from sources"
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/system/utils/rt11/SPOOL.REL", "software/system/utils/rt11/QUEUE.REL", "software/system/utils/rt11/QUEMAN.SAV", "software/system/handlers/rt11/SP.SYS"]
+files    = ["kits/dec/utils/SPOOL.REL", "kits/dec/utils/QUEUE.REL", "kits/dec/utils/QUEMAN.SAV", "kits/dec/handlers/SP.SYS"]
 
 # ==== Applications =========================================================
 

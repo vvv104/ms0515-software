@@ -2,6 +2,438 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
+<details open><summary><b>kits/</b> — 54 files</summary>
+
+<details><summary><b>kits/dec-originals/</b> — 2 files</summary>
+
+<details><summary><b>kits/dec-originals/utils/</b> — 2 files</summary>
+
+### `kits/dec-originals/utils/HELP.SAV`
+
+RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не найден файл HELP.MLB»), carried by the ОСА System2, Rodionov's 065 and vvv disk4, and DEC's untranslated V05.04 (69632 B, «What topic do you want help with?») from the Омега disk 062 - each in the folder of its kit. Both need HELP.MLB, the help library, which no disk preserved; HELP.TXT is its text
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: strings of both builds 2026-09-06; the DEC's originals build; sha256 67d7793f5cfb*
+
+### `kits/dec-originals/utils/RESORC.SAV`
+
+DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «Emulated RT-11 environment») - the untranslated original, found on the collector's disk4
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: identified 2026-09-05; the DEC's originals build; sha256 887b418ca5de*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/mihin/</b> — 8 files</summary>
+
+<details><summary><b>kits/mihin/development/</b> — 2 files</summary>
+
+### `kits/mihin/development/LINK.SAV`
+
+LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01» on Mihin's disks; the copy on ОМЕГА 064 keeps the V08.04 banner (21 bytes apart)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 84967964c932*
+
+### `kits/mihin/development/MACRO.SAV`
+
+MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
+
+</details>
+
+<details><summary><b>kits/mihin/handlers/</b> — 5 files</summary>
+
+### `kits/mihin/handlers/DZ.SYS`
+
+Floppy-disk handler
+
+*disks: 4; identified from: factory manual; sha256 591620eb0ec4*
+
+### `kits/mihin/handlers/LD.SYS`
+
+Logical-disk handler: mounts a container file as a volume
+
+*en / ascii; disks: 1; identified from: DEC RT-11; sha256 1b3868364854*
+
+### `kits/mihin/handlers/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
+
+### `kits/mihin/handlers/TT.SYS`
+
+Terminal handler
+
+*disks: 4; identified from: factory manual; sha256 f69410a15a2b*
+
+### `kits/mihin/handlers/VM.SYS`
+
+RAM-disk handler (memory used as a drive)
+
+*disks: 4; identified from: factory manual; sha256 67036c0322c1*
+
+</details>
+
+<details><summary><b>kits/mihin/utils/</b> — 1 file</summary>
+
+### `kits/mihin/utils/TERM.SAV`
+
+The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА», exit with СУ/E
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 8; identified from: program strings of both builds; TERM.TXT manual on disk 056; the Mihin's OS-16SJ kits build; sha256 31c254f8780b*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/ms0111/</b> — 3 files</summary>
+
+<details><summary><b>kits/ms0111/handlers/</b> — 1 file</summary>
+
+### `kits/ms0111/handlers/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
+
+</details>
+
+<details><summary><b>kits/ms0111/utils/</b> — 2 files</summary>
+
+### `kits/ms0111/utils/DATIME.SAV`
+
+DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 056 - the greeter with escape-sequence highlighting
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the the МС0111 complex disk build; sha256 55d955b8fcee*
+
+### `kits/ms0111/utils/TERM.SAV`
+
+The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the the МС0111 complex disk build; sha256 149b71963551*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/omega/</b> — 17 files</summary>
+
+<details><summary><b>kits/omega/development/</b> — 1 file</summary>
+
+### `kits/omega/development/MACRO.SAV`
+
+MACRO V05.01b - an older release of the assembler, from the ОМЕГА disk 064 alone
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 762ca9886138*
+
+</details>
+
+<details><summary><b>kits/omega/format/</b> — 2 files</summary>
+
+### `kits/omega/format/FORMH.SAV`
+
+Formats the upper surface of a diskette; asks for confirmation first.  Destructive; the lower surface is FORML
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 f9e5bb4be0f7*
+
+### `kits/omega/format/FORML.SAV`
+
+Formats the lower surface of a diskette; asks for confirmation first.  Destructive; the upper surface is FORMH
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 2c7d73a2c8f3*
+
+</details>
+
+<details><summary><b>kits/omega/handlers/</b> — 10 files</summary>
+
+### `kits/omega/handlers/DV.SYS`
+
+Whole double-sided diskette as one 1600-block volume, cylinder 0 last
+
+*disks: 6; identified from: handler disassembly; sha256 09d5bce02ca3*
+
+### `kits/omega/handlers/DZ.SYS`
+
+Floppy-disk handler
+
+*disks: 10; identified from: factory manual; sha256 7606fe575fc4*
+
+### `kits/omega/handlers/EX.SYS`
+
+Electronic-disk handler of the memory/interface expansion board (EX0:)
+
+*disks: 6; identified from: board manual; sha256 0354d18e2689*
+
+### `kits/omega/handlers/HP.SYS`
+
+Printer-like character-device handler of the Omega kit (HP:)
+
+*disks: 3; identified from: identified 2026-09-05; sha256 531643556798*
+
+### `kits/omega/handlers/LD.SYS`
+
+Logical-disk handler: mounts a container file as a volume
+
+*en / ascii; disks: 2; identified from: DEC RT-11; sha256 6b81c8b61846*
+
+### `kits/omega/handlers/LP.SYS`
+
+Line-printer handler
+
+*disks: 6; identified from: DEC RT-11; sha256 6d8e23cd50b1*
+
+### `kits/omega/handlers/MZ.SYS`
+
+Whole double-sided diskette as one 1600-block volume, cylinder 0 first
+
+*disks: 2; identified from: handler disassembly; sha256 1a2133a72b6a*
+
+### `kits/omega/handlers/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*ru+en / koi8-r; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 90360936c411*
+
+### `kits/omega/handlers/TT.SYS`
+
+Terminal handler
+
+*disks: 20; identified from: factory manual; sha256 521c0931aff9*
+
+### `kits/omega/handlers/VM.SYS`
+
+RAM-disk handler (memory used as a drive)
+
+*disks: 17; identified from: factory manual; sha256 2e114ef2c2c0*
+
+</details>
+
+<details><summary><b>kits/omega/utils/</b> — 4 files</summary>
+
+### `kits/omega/utils/DIR.SAV`
+
+DIR V05.03 with Russian messages - the cut of the ОМЕГА disks 059, 064 and 172, 165 bytes apart from the other Russian build
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: factory manual; the the ОМЕГА kits build; sha256 b2083ab1c5af*
+
+### `kits/omega/utils/DUMP.SAV`
+
+DUMP V05.07 - the build of the ОМЕГА kits (059, 062, 064, 172)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 5; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 5ed26b1e1fa7*
+
+### `kits/omega/utils/DUP.SAV`
+
+DUP V05.28 with Russian messages («Несоответствие версий») - the ОСА, ОМЕГА and Rodionov disks alike
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?DUP-F-Недопустимаякоманда*; disks: 11; identified from: factory manual; the the ОМЕГА kits build; sha256 f6591f37ae56*
+
+### `kits/omega/utils/PIP.SAV`
+
+PIP V05.14 with Russian messages («?PIP-F-Нет файла») - the build of every ОСА, ОМЕГА and Rodionov disk
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?PIP-F-НетфайлаDK:NOSUCH.XXX*; disks: 15; identified from: factory manual; the the ОМЕГА kits build; sha256 eebe08107f1c*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/osa/</b> — 8 files</summary>
+
+<details><summary><b>kits/osa/handlers/</b> — 6 files</summary>
+
+### `kits/osa/handlers/DZ.SYS`
+
+Floppy-disk handler
+
+*disks: 8; identified from: factory manual; sha256 9b79707be0f0*
+
+### `kits/osa/handlers/EM.SYS`
+
+The instruction-set emulator handler: SET EM ON makes the missing EIS/FIS instructions work by trapping vector 10.  The canonical use, from Alex_K's forum post (zx-pk 15146 p.31): SET EM ON, GET CMOV, D 1002=44760, ST
+
+*disks: 1; identified from: forum usage + our experiment; sha256 3f0e1d671b5a*
+
+### `kits/osa/handlers/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 f9885698de8c*
+
+### `kits/osa/handlers/TT.SYS`
+
+Terminal handler
+
+*disks: 20; identified from: factory manual; sha256 521c0931aff9*
+
+### `kits/osa/handlers/VM.SYS`
+
+RAM-disk handler (memory used as a drive)
+
+*disks: 17; identified from: factory manual; sha256 2e114ef2c2c0*
+
+### `kits/osa/handlers/VS.SYS`
+
+Sound-device handler — not video despite the name
+
+*disks: 9; identified from: factory manual; sha256 fb282b1054f6*
+
+</details>
+
+<details><summary><b>kits/osa/utils/</b> — 2 files</summary>
+
+### `kits/osa/utils/DIR.SAV`
+
+DIR V05.03 with Russian messages («Неправильная версия монитора») - the cut of the ОСА disks, ОМЕГА 062/063 and Rodionov's
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: factory manual; the the ОСА kits build; sha256 374dfc435c46*
+
+### `kits/osa/utils/RESORC.SAV`
+
+RESORC V05.69 with Russian messages («Версия(и) =») - the plain ОСА disks and Rodionov's 065
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 5; identified from: DEC RT-11; the the ОСА kits build; sha256 39fd8396335b*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/osa-rs/</b> — 1 file</summary>
+
+<details><summary><b>kits/osa-rs/utils/</b> — 1 file</summary>
+
+### `kits/osa-rs/utils/RESORC.SAV`
+
+RESORC V05.69, Russian - the cut of the RS-shell ОСА disks (System2, bg0515, superBAK7), two blocks (800 bytes) apart from the plain one
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: DEC RT-11; the ОСА with the RS profShell build; sha256 732e0b358c14*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/rodionov/</b> — 7 files</summary>
+
+<details><summary><b>kits/rodionov/handlers/</b> — 5 files</summary>
+
+### `kits/rodionov/handlers/DZ.SYS`
+
+Floppy-disk handler
+
+*disks: 2; identified from: factory manual; sha256 3ce58aecd03e*
+
+### `kits/rodionov/handlers/NL.SYS`
+
+Null-device handler
+
+*disks: 2; identified from: DEC RT-11; sha256 aa16988e29b7*
+
+### `kits/rodionov/handlers/TT.SYS`
+
+Terminal handler
+
+*disks: 2; identified from: factory manual; sha256 cb5ceb6df72c*
+
+### `kits/rodionov/handlers/VM.SYS`
+
+RAM-disk handler (memory used as a drive)
+
+*disks: 17; identified from: factory manual; sha256 2e114ef2c2c0*
+
+### `kits/rodionov/handlers/VS.SYS`
+
+Sound-device handler — not video despite the name
+
+*disks: 9; identified from: factory manual; sha256 fb282b1054f6*
+
+</details>
+
+<details><summary><b>kits/rodionov/utils/</b> — 2 files</summary>
+
+### `kits/rodionov/utils/DUMP.SAV`
+
+DUMP V05.07 as Rodionov's 065/066 carry it - one block (292 bytes) differs from the ОМЕГА build: his own touch
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the Rodionov's RT15SJ disks build; sha256 0ddaad7278e0*
+
+### `kits/rodionov/utils/HELP.SAV`
+
+RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не найден файл HELP.MLB»), carried by the ОСА System2, Rodionov's 065 and vvv disk4, and DEC's untranslated V05.04 (69632 B, «What topic do you want help with?») from the Омега disk 062 - each in the folder of its kit. Both need HELP.MLB, the help library, which no disk preserved; HELP.TXT is its text
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 3; identified from: strings of both builds 2026-09-06; the Rodionov's RT15SJ disks build; sha256 04d6039dcaaf*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/vvv/</b> — 8 files</summary>
+
+<details><summary><b>kits/vvv/development/</b> — 2 files</summary>
+
+### `kits/vvv/development/LINK.SAV`
+
+LINK V05.14 (its cross-reference title reads V05.15) - the linker of the collector's ФОДОС kit
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 7c3ac9ded6e2*
+
+### `kits/vvv/development/MACRO.SAV`
+
+MACRO V05.04 - the assembler of the collector's ФОДОС kit (disk3, PAPER; disk4 as well)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 69c9775f6882*
+
+</details>
+
+<details><summary><b>kits/vvv/format/</b> — 2 files</summary>
+
+### `kits/vvv/format/FORMH.SAV`
+
+The upper-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована», a plain [Y/N] prompt).  Destructive - it formats the diskette in the drive
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 26ee03f842f5*
+
+### `kits/vvv/format/FORML.SAV`
+
+The lower-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована»).  Destructive - it formats the diskette in the drive
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 63b5b54ea831*
+
+</details>
+
+<details><summary><b>kits/vvv/utils/</b> — 4 files</summary>
+
+### `kits/vvv/utils/DATIME.SAV`
+
+The DATIME of the collector's and Mihin's disks: asks the date and time at boot and sets them (English month names JAN…DEC)
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 6; identified from: program screen; the the collector's disks build; sha256 6d728ed10477*
+
+### `kits/vvv/utils/DIR.SAV`
+
+DIR V05.03 with English messages («Wrong version of RT-11») - the build of the collector's ФОДОС disks and of Mihin's kits
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 12; identified from: factory manual; the the collector's disks build; sha256 ca5ad185ad6d*
+
+### `kits/vvv/utils/DUP.SAV`
+
+DUP V05.28 with English messages («No V5 boot on volume») - the collector's and Mihin's disks
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DUP-F-Invalidcommand*; disks: 12; identified from: factory manual; the the collector's disks build; sha256 a80f04f8da65*
+
+### `kits/vvv/utils/PIP.SAV`
+
+PIP V05.14 with English messages («?PIP-F-File not found») - the collector's disks (two bytes off Mihin's copy)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?PIP-F-FilenotfoundDK:NOSUCH.XXX*; disks: 4; identified from: factory manual; the the collector's disks build; sha256 0012a08d84d0*
+
+</details>
+
+</details>
+
+</details>
+
 <details open><summary><b>programs/</b> — 222 files</summary>
 
 <details><summary><b>programs/autoteacher/</b> — 11 files</summary>
@@ -1414,7 +1846,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 213 files</summary>
+<details open><summary><b>software/</b> — 160 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -1602,7 +2034,7 @@ Multiplication-table trainer in machine code («проверяем таблиц�
 
 </details>
 
-<details><summary><b>software/development/</b> — 35 files</summary>
+<details><summary><b>software/development/</b> — 30 files</summary>
 
 <details><summary><b>software/development/basic/</b> — 3 files</summary>
 
@@ -1686,49 +2118,7 @@ FORTRAN compiler; prompts with * for a command line the way the RT-11 compilers 
 
 </details>
 
-<details><summary><b>software/development/macro/</b> — 6 files</summary>
-
-<details><summary><b>software/development/macro/mihin/</b> — 2 files</summary>
-
-### `software/development/macro/mihin/LINK.SAV`
-
-LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01» on Mihin's disks; the copy on ОМЕГА 064 keeps the V08.04 banner (21 bytes apart)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 84967964c932*
-
-### `software/development/macro/mihin/MACRO.SAV`
-
-MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
-
-</details>
-
-<details><summary><b>software/development/macro/omega/</b> — 1 file</summary>
-
-### `software/development/macro/omega/MACRO.SAV`
-
-MACRO V05.01b - an older release of the assembler, from the ОМЕГА disk 064 alone
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 762ca9886138*
-
-</details>
-
-<details><summary><b>software/development/macro/vvv/</b> — 2 files</summary>
-
-### `software/development/macro/vvv/LINK.SAV`
-
-LINK V05.14 (its cross-reference title reads V05.15) - the linker of the collector's ФОДОС kit
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 7c3ac9ded6e2*
-
-### `software/development/macro/vvv/MACRO.SAV`
-
-MACRO V05.04 - the assembler of the collector's ФОДОС kit (disk3, PAPER; disk4 as well)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 69c9775f6882*
-
-</details>
+<details><summary><b>software/development/macro/</b> — 1 file</summary>
 
 ### `software/development/macro/SYSMAC.SML`
 
@@ -2110,7 +2500,7 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 
 </details>
 
-<details><summary><b>software/system/</b> — 101 files</summary>
+<details><summary><b>software/system/</b> — 53 files</summary>
 
 <details><summary><b>software/system/diag/</b> — 26 files</summary>
 
@@ -2272,231 +2662,13 @@ Prints its title "Scan-code of keys (interrupt), Alphaprog" and waits for keys -
 
 </details>
 
-<details><summary><b>software/system/format/</b> — 5 files</summary>
-
-<details><summary><b>software/system/format/omega/</b> — 2 files</summary>
-
-### `software/system/format/omega/FORMH.SAV`
-
-Formats the upper surface of a diskette; asks for confirmation first.  Destructive; the lower surface is FORML
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 f9e5bb4be0f7*
-
-### `software/system/format/omega/FORML.SAV`
-
-Formats the lower surface of a diskette; asks for confirmation first.  Destructive; the upper surface is FORMH
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 2c7d73a2c8f3*
-
-</details>
-
-<details><summary><b>software/system/format/vvv/</b> — 2 files</summary>
-
-### `software/system/format/vvv/FORMH.SAV`
-
-The upper-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована», a plain [Y/N] prompt).  Destructive - it formats the diskette in the drive
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 26ee03f842f5*
-
-### `software/system/format/vvv/FORML.SAV`
-
-The lower-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована»).  Destructive - it formats the diskette in the drive
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 63b5b54ea831*
-
-</details>
+<details><summary><b>software/system/format/</b> — 1 file</summary>
 
 ### `software/system/format/FDZ.SAV`
 
 Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990.  Destructive: it asks Y/N and then formats
 
 *written in assembler (no runtime library); text; cross-run: ran; disks: 4; identified from: program screen; sha256 8fc049e88d08*
-
-</details>
-
-<details><summary><b>software/system/handlers/</b> — 27 files</summary>
-
-<details><summary><b>software/system/handlers/mihin/</b> — 5 files</summary>
-
-### `software/system/handlers/mihin/DZ.SYS`
-
-Floppy-disk handler
-
-*disks: 4; identified from: factory manual; sha256 591620eb0ec4*
-
-### `software/system/handlers/mihin/LD.SYS`
-
-Logical-disk handler: mounts a container file as a volume
-
-*en / ascii; disks: 1; identified from: DEC RT-11; sha256 1b3868364854*
-
-### `software/system/handlers/mihin/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
-
-### `software/system/handlers/mihin/TT.SYS`
-
-Terminal handler
-
-*disks: 4; identified from: factory manual; sha256 f69410a15a2b*
-
-### `software/system/handlers/mihin/VM.SYS`
-
-RAM-disk handler (memory used as a drive)
-
-*disks: 4; identified from: factory manual; sha256 67036c0322c1*
-
-</details>
-
-<details><summary><b>software/system/handlers/ms0111/</b> — 1 file</summary>
-
-### `software/system/handlers/ms0111/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
-
-</details>
-
-<details><summary><b>software/system/handlers/omega/</b> — 10 files</summary>
-
-### `software/system/handlers/omega/DV.SYS`
-
-Whole double-sided diskette as one 1600-block volume, cylinder 0 last
-
-*disks: 6; identified from: handler disassembly; sha256 09d5bce02ca3*
-
-### `software/system/handlers/omega/DZ.SYS`
-
-Floppy-disk handler
-
-*disks: 10; identified from: factory manual; sha256 7606fe575fc4*
-
-### `software/system/handlers/omega/EX.SYS`
-
-Electronic-disk handler of the memory/interface expansion board (EX0:)
-
-*disks: 6; identified from: board manual; sha256 0354d18e2689*
-
-### `software/system/handlers/omega/HP.SYS`
-
-Printer-like character-device handler of the Omega kit (HP:)
-
-*disks: 3; identified from: identified 2026-09-05; sha256 531643556798*
-
-### `software/system/handlers/omega/LD.SYS`
-
-Logical-disk handler: mounts a container file as a volume
-
-*en / ascii; disks: 2; identified from: DEC RT-11; sha256 6b81c8b61846*
-
-### `software/system/handlers/omega/LP.SYS`
-
-Line-printer handler
-
-*disks: 6; identified from: DEC RT-11; sha256 6d8e23cd50b1*
-
-### `software/system/handlers/omega/MZ.SYS`
-
-Whole double-sided diskette as one 1600-block volume, cylinder 0 first
-
-*disks: 2; identified from: handler disassembly; sha256 1a2133a72b6a*
-
-### `software/system/handlers/omega/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*ru+en / koi8-r; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 90360936c411*
-
-### `software/system/handlers/omega/TT.SYS`
-
-Terminal handler
-
-*disks: 20; identified from: factory manual; sha256 521c0931aff9*
-
-### `software/system/handlers/omega/VM.SYS`
-
-RAM-disk handler (memory used as a drive)
-
-*disks: 17; identified from: factory manual; sha256 2e114ef2c2c0*
-
-</details>
-
-<details><summary><b>software/system/handlers/osa/</b> — 6 files</summary>
-
-### `software/system/handlers/osa/DZ.SYS`
-
-Floppy-disk handler
-
-*disks: 8; identified from: factory manual; sha256 9b79707be0f0*
-
-### `software/system/handlers/osa/EM.SYS`
-
-The instruction-set emulator handler: SET EM ON makes the missing EIS/FIS instructions work by trapping vector 10.  The canonical use, from Alex_K's forum post (zx-pk 15146 p.31): SET EM ON, GET CMOV, D 1002=44760, ST
-
-*disks: 1; identified from: forum usage + our experiment; sha256 3f0e1d671b5a*
-
-### `software/system/handlers/osa/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 f9885698de8c*
-
-### `software/system/handlers/osa/TT.SYS`
-
-Terminal handler
-
-*disks: 20; identified from: factory manual; sha256 521c0931aff9*
-
-### `software/system/handlers/osa/VM.SYS`
-
-RAM-disk handler (memory used as a drive)
-
-*disks: 17; identified from: factory manual; sha256 2e114ef2c2c0*
-
-### `software/system/handlers/osa/VS.SYS`
-
-Sound-device handler — not video despite the name
-
-*disks: 9; identified from: factory manual; sha256 fb282b1054f6*
-
-</details>
-
-<details><summary><b>software/system/handlers/rodionov/</b> — 5 files</summary>
-
-### `software/system/handlers/rodionov/DZ.SYS`
-
-Floppy-disk handler
-
-*disks: 2; identified from: factory manual; sha256 3ce58aecd03e*
-
-### `software/system/handlers/rodionov/NL.SYS`
-
-Null-device handler
-
-*disks: 2; identified from: DEC RT-11; sha256 aa16988e29b7*
-
-### `software/system/handlers/rodionov/TT.SYS`
-
-Terminal handler
-
-*disks: 2; identified from: factory manual; sha256 cb5ceb6df72c*
-
-### `software/system/handlers/rodionov/VM.SYS`
-
-RAM-disk handler (memory used as a drive)
-
-*disks: 17; identified from: factory manual; sha256 2e114ef2c2c0*
-
-### `software/system/handlers/rodionov/VS.SYS`
-
-Sound-device handler — not video despite the name
-
-*disks: 9; identified from: factory manual; sha256 fb282b1054f6*
-
-</details>
 
 </details>
 
@@ -2586,147 +2758,7 @@ Two-panel file manager in the Norton Commander style, Russian labels: directory 
 
 </details>
 
-<details><summary><b>software/system/utils/</b> — 30 files</summary>
-
-<details><summary><b>software/system/utils/dec/</b> — 2 files</summary>
-
-### `software/system/utils/dec/HELP.SAV`
-
-RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не найден файл HELP.MLB»), carried by the ОСА System2, Rodionov's 065 and vvv disk4, and DEC's untranslated V05.04 (69632 B, «What topic do you want help with?») from the Омега disk 062 - each in the folder of its kit. Both need HELP.MLB, the help library, which no disk preserved; HELP.TXT is its text
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: strings of both builds 2026-09-06; the DEC's originals build; sha256 67d7793f5cfb*
-
-### `software/system/utils/dec/RESORC.SAV`
-
-DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «Emulated RT-11 environment») - the untranslated original, found on the collector's disk4
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: identified 2026-09-05; the DEC's originals build; sha256 887b418ca5de*
-
-</details>
-
-<details><summary><b>software/system/utils/mihin/</b> — 1 file</summary>
-
-### `software/system/utils/mihin/TERM.SAV`
-
-The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА», exit with СУ/E
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 8; identified from: program strings of both builds; TERM.TXT manual on disk 056; the Mihin's OS-16SJ kits build; sha256 31c254f8780b*
-
-</details>
-
-<details><summary><b>software/system/utils/ms0111/</b> — 2 files</summary>
-
-### `software/system/utils/ms0111/DATIME.SAV`
-
-DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 056 - the greeter with escape-sequence highlighting
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the the МС0111 complex disk build; sha256 55d955b8fcee*
-
-### `software/system/utils/ms0111/TERM.SAV`
-
-The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the the МС0111 complex disk build; sha256 149b71963551*
-
-</details>
-
-<details><summary><b>software/system/utils/omega/</b> — 4 files</summary>
-
-### `software/system/utils/omega/DIR.SAV`
-
-DIR V05.03 with Russian messages - the cut of the ОМЕГА disks 059, 064 and 172, 165 bytes apart from the other Russian build
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: factory manual; the the ОМЕГА kits build; sha256 b2083ab1c5af*
-
-### `software/system/utils/omega/DUMP.SAV`
-
-DUMP V05.07 - the build of the ОМЕГА kits (059, 062, 064, 172)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 5; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 5ed26b1e1fa7*
-
-### `software/system/utils/omega/DUP.SAV`
-
-DUP V05.28 with Russian messages («Несоответствие версий») - the ОСА, ОМЕГА and Rodionov disks alike
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?DUP-F-Недопустимаякоманда*; disks: 11; identified from: factory manual; the the ОМЕГА kits build; sha256 f6591f37ae56*
-
-### `software/system/utils/omega/PIP.SAV`
-
-PIP V05.14 with Russian messages («?PIP-F-Нет файла») - the build of every ОСА, ОМЕГА and Rodionov disk
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?PIP-F-НетфайлаDK:NOSUCH.XXX*; disks: 15; identified from: factory manual; the the ОМЕГА kits build; sha256 eebe08107f1c*
-
-</details>
-
-<details><summary><b>software/system/utils/osa/</b> — 2 files</summary>
-
-### `software/system/utils/osa/DIR.SAV`
-
-DIR V05.03 with Russian messages («Неправильная версия монитора») - the cut of the ОСА disks, ОМЕГА 062/063 and Rodionov's
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: factory manual; the the ОСА kits build; sha256 374dfc435c46*
-
-### `software/system/utils/osa/RESORC.SAV`
-
-RESORC V05.69 with Russian messages («Версия(и) =») - the plain ОСА disks and Rodionov's 065
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 5; identified from: DEC RT-11; the the ОСА kits build; sha256 39fd8396335b*
-
-</details>
-
-<details><summary><b>software/system/utils/osa-rs/</b> — 1 file</summary>
-
-### `software/system/utils/osa-rs/RESORC.SAV`
-
-RESORC V05.69, Russian - the cut of the RS-shell ОСА disks (System2, bg0515, superBAK7), two blocks (800 bytes) apart from the plain one
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: DEC RT-11; the ОСА with the RS profShell build; sha256 732e0b358c14*
-
-</details>
-
-<details><summary><b>software/system/utils/rodionov/</b> — 2 files</summary>
-
-### `software/system/utils/rodionov/DUMP.SAV`
-
-DUMP V05.07 as Rodionov's 065/066 carry it - one block (292 bytes) differs from the ОМЕГА build: his own touch
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the Rodionov's RT15SJ disks build; sha256 0ddaad7278e0*
-
-### `software/system/utils/rodionov/HELP.SAV`
-
-RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не найден файл HELP.MLB»), carried by the ОСА System2, Rodionov's 065 and vvv disk4, and DEC's untranslated V05.04 (69632 B, «What topic do you want help with?») from the Омега disk 062 - each in the folder of its kit. Both need HELP.MLB, the help library, which no disk preserved; HELP.TXT is its text
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 3; identified from: strings of both builds 2026-09-06; the Rodionov's RT15SJ disks build; sha256 04d6039dcaaf*
-
-</details>
-
-<details><summary><b>software/system/utils/vvv/</b> — 4 files</summary>
-
-### `software/system/utils/vvv/DATIME.SAV`
-
-The DATIME of the collector's and Mihin's disks: asks the date and time at boot and sets them (English month names JAN…DEC)
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 6; identified from: program screen; the the collector's disks build; sha256 6d728ed10477*
-
-### `software/system/utils/vvv/DIR.SAV`
-
-DIR V05.03 with English messages («Wrong version of RT-11») - the build of the collector's ФОДОС disks and of Mihin's kits
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 12; identified from: factory manual; the the collector's disks build; sha256 ca5ad185ad6d*
-
-### `software/system/utils/vvv/DUP.SAV`
-
-DUP V05.28 with English messages («No V5 boot on volume») - the collector's and Mihin's disks
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DUP-F-Invalidcommand*; disks: 12; identified from: factory manual; the the collector's disks build; sha256 a80f04f8da65*
-
-### `software/system/utils/vvv/PIP.SAV`
-
-PIP V05.14 with English messages («?PIP-F-File not found») - the collector's disks (two bytes off Mihin's copy)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?PIP-F-FilenotfoundDK:NOSUCH.XXX*; disks: 4; identified from: factory manual; the the collector's disks build; sha256 0012a08d84d0*
-
-</details>
+<details><summary><b>software/system/utils/</b> — 13 files</summary>
 
 ### `software/system/utils/ASC.SAV`
 
@@ -2746,17 +2778,17 @@ DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PAT
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: its own Russian switch help and version banner; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 b76b1abdfd92*
 
-### `software/system/utils/BLUE.SAV`
-
-Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV.  On eight of the nine disks that carry it (osa, System, System3, 059, 062, 063, 066, 172) it is this copy; 065 holds a one-byte variant
-
-*written in assembler (no runtime library); text; cross-run: ran (blue screen, yellow text, prompt back); disks: 9; identified from: program screen 2026-09-13; sha256 f3261ec2e9dd*
-
 ### `software/system/utils/BLACK.SAV`
 
 Blanks the screen to black and returns to the monitor
 
 *written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 8; identified from: program screen; sha256 17c2870dc2ae*
+
+### `software/system/utils/BLUE.SAV`
+
+Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV.  On eight of the nine disks that carry it (osa, System, System3, 059, 062, 063, 066, 172) it is this copy; 065 holds a one-byte variant
+
+*written in assembler (no runtime library); text; cross-run: ran (blue screen, yellow text, prompt back); disks: 9; identified from: program screen 2026-09-13; sha256 f3261ec2e9dd*
 
 ### `software/system/utils/CALEND.SAV`
 
