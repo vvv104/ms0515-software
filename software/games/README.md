@@ -34,4 +34,4 @@ thing here that never came off a diskette: our own 2026 MACRO-11 port of
 Melbourne House's *The Way Of The Exploding Fist*, marked as ours the way
 the collection's rules ask.
 
-Programs that survived in several builds - `HANOJ.SAV`, `KOSMOS.SAV` - have one folder per kit here, each build in the folder of the disks it came from: `osa/` - the ОСА kits; `osa-rs/` - ОСА with the RS profShell.  The files in the table are common to every kit.
+Programs that survived in several builds - `HANOJ.SAV`, `KOSMOS.SAV` - have a folder each for the disks they came from: `osa/` - the ОСА disks; `osa-rs/` - the ОСА disks that booted into the RS profShell (the same monitor, its other factory configuration).  The files in the table are common to every kit.

@@ -1,6 +1,6 @@
-# MACRO-11 and LINK
+# MACRO-11: the system macro library
 
-The assembler and the linker; `SYSMAC.SML` is the system macro library MACRO needs on `SY:`.
+`SYSMAC.SML` is what MACRO reads from `SY:`, and it is the same file on every kit's disks.  The assemblers and linkers themselves are in [`../../../kits/`](../../../kits/README.md), each in its kit's `development/`.
 
 | file | what | how to run |
 |---|---|---|
