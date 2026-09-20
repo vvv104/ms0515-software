@@ -14,11 +14,11 @@ found in one place:
 | kit | systems | what |
 |---|---|---|
 | `osa/` | `osa` | ОСА 1.0 of НИПП «Омега», Lvov; `utils/rs/` is what the same monitor's other factory configuration carried - the disks with the RS profShell |
-| `omega/` | `omega`, `omega2` | ОМЕГА SJ(S) V05.04, two sysgens |
+| `omega/` | `omega` | ОМЕГА SJ(S) V05.04, as the disks 059, 062, 063 carried it |
 | `mihin/` | `mihin` | Mihin's OS-16SJ |
 | `rodionov/` | `rodionov` | Rodionov's RT15SJ, with the two sectors of his copy protection |
 | `dec/` | `dec`, `dec-ru` | DEC's RT-11 V5.4 built for the machine from DEC's sources, with handlers written for it - nothing in it was recovered from a diskette |
-| `vvv/` | - | the FODOS-flavoured builds of the collector's vvv104 diskettes (ОМЕГА's second sysgen and Mihin's monitor ran with them) |
+| `vvv/` | `omega2` | the collector's vvv104 diskettes: an ОМЕГА V05.04 monitor of their own (one stored setting word apart from `omega`'s, `omega2` here) and a FODOS-flavoured set of utilities around it, English where ОМЕГА's are Russian |
 
 [`HANDLERS.md`](HANDLERS.md) is the cross-run of every handler on every
 monitor: which load where.  What belongs to no kit - games, applications,
@@ -59,7 +59,7 @@ the bootstrap for the media.
 |---|---|---|---|---|---|
 | `osa/` | ОСА Версия 1.0 | `MON8SJ.SYS` | `a96aa57` | `17e8d86` | `058.dsk` |
 | `omega/` | ОМЕГА SJ(S) V05.04 | `RT11SJ.SYS` | `ad6d31b` | the same | `059.dsk` (also `062`, `063`) |
-| `omega/omega2/` | ОМЕГА SJ(S) V05.04 | `RT11SJ.SYS` | `b27e827` | `2c1f616` | vvv104 `disk3` (also `PAPER`, `h0`) |
+| `vvv/` | ОМЕГА SJ(S) V05.04 | `RT11SJ.SYS` | `b27e827` | `2c1f616` | vvv104 `disk3` (also `PAPER`, `h0`) |
 | `mihin/` | OS-16SJ (C) Mihinsoft | `RT11SJ.SYS` | `bc9b0f4` | the same | `amk_1.dsk` (also amk `disk3`) |
 | `rodionov/` | ©1992 Родионов С.А. | `RT15SJ.SYS` | `8f1e919` | `2b8bb64` | `065` (both sides) |
 

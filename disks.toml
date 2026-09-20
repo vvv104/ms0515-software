@@ -43,7 +43,7 @@ title = "Rodionov's RT15SJ"
 title = "RT-11 V5.4 from DEC's sources"
 
 [kit.vvv]
-title = "vvv104 diskettes (FODOS builds)"
+title = "the vvv104 diskettes (OMEGA2, FODOS builds)"
 
 # ---- systems -------------------------------------------------------------
 # Every disk is made from scratch.  A system gives only what exists nowhere
@@ -96,8 +96,8 @@ startup  = ["SET TT QUIET"]
 
 [system.omega2]
 title    = "OMEGA SJ(S) V05.04, the vvv104 build"
-kit      = "omega"
-monitor  = { path = "kits/omega/omega2/RT11SJ.SYS", date = "1995-01-01" }
+kit      = "vvv"
+monitor  = { path = "kits/vvv/RT11SJ.SYS", date = "1995-01-01" }
 swap     = { blocks = 32, date = "1995-01-01" }
 startup_date = "1995-04-01"
 media    = ["ss", "dz", "dv"]
