@@ -4,26 +4,6 @@ One card per file of the collection: what it is, how it was identified, on which
 
 <details open><summary><b>kits/</b> — 54 files</summary>
 
-<details><summary><b>kits/dec-originals/</b> — 2 files</summary>
-
-<details><summary><b>kits/dec-originals/utils/</b> — 2 files</summary>
-
-### `kits/dec-originals/utils/HELP.SAV`
-
-RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не найден файл HELP.MLB»), carried by the ОСА System2, Rodionov's 065 and vvv disk4, and DEC's untranslated V05.04 (69632 B, «What topic do you want help with?») from the Омега disk 062 - each in the folder of its kit. Both need HELP.MLB, the help library, which no disk preserved; HELP.TXT is its text
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: strings of both builds 2026-09-06; the DEC's originals build; sha256 67d7793f5cfb*
-
-### `kits/dec-originals/utils/RESORC.SAV`
-
-DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «Emulated RT-11 environment») - the untranslated original, found on the collector's disk4
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: identified 2026-09-05; the DEC's originals build; sha256 887b418ca5de*
-
-</details>
-
-</details>
-
 <details><summary><b>kits/mihin/</b> — 8 files</summary>
 
 <details><summary><b>kits/mihin/development/</b> — 2 files</summary>
@@ -118,7 +98,7 @@ The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: ask
 
 </details>
 
-<details><summary><b>kits/omega/</b> — 17 files</summary>
+<details><summary><b>kits/omega/</b> — 18 files</summary>
 
 <details><summary><b>kits/omega/development/</b> — 1 file</summary>
 
@@ -210,7 +190,7 @@ RAM-disk handler (memory used as a drive)
 
 </details>
 
-<details><summary><b>kits/omega/utils/</b> — 4 files</summary>
+<details><summary><b>kits/omega/utils/</b> — 5 files</summary>
 
 ### `kits/omega/utils/DIR.SAV`
 
@@ -229,6 +209,12 @@ DUMP V05.07 - the build of the ОМЕГА kits (059, 062, 064, 172)
 DUP V05.28 with Russian messages («Несоответствие версий») - the ОСА, ОМЕГА and Rodionov disks alike
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?DUP-F-Недопустимаякоманда*; disks: 11; identified from: factory manual; the the ОМЕГА kits build; sha256 f6591f37ae56*
+
+### `kits/omega/utils/HELP.SAV`
+
+RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не найден файл HELP.MLB»), carried by the ОСА System2, Rodionov's 065 and vvv disk4, and DEC's untranslated V05.04 (69632 B, «What topic do you want help with?») from the Омега disk 062 - each in the folder of its kit. Both need HELP.MLB, the help library, which no disk preserved; HELP.TXT is its text
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: strings of both builds 2026-09-06; the DEC's originals build; sha256 67d7793f5cfb*
 
 ### `kits/omega/utils/PIP.SAV`
 
@@ -368,7 +354,7 @@ RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не н�
 
 </details>
 
-<details><summary><b>kits/vvv/</b> — 8 files</summary>
+<details><summary><b>kits/vvv/</b> — 9 files</summary>
 
 <details><summary><b>kits/vvv/development/</b> — 2 files</summary>
 
@@ -402,7 +388,7 @@ The lower-surface formatter in a later edition than the ОМЕГА disks' one: t
 
 </details>
 
-<details><summary><b>kits/vvv/utils/</b> — 4 files</summary>
+<details><summary><b>kits/vvv/utils/</b> — 5 files</summary>
 
 ### `kits/vvv/utils/DATIME.SAV`
 
@@ -427,6 +413,12 @@ DUP V05.28 with English messages («No V5 boot on volume») - the collector's an
 PIP V05.14 with English messages («?PIP-F-File not found») - the collector's disks (two bytes off Mihin's copy)
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?PIP-F-FilenotfoundDK:NOSUCH.XXX*; disks: 4; identified from: factory manual; the the collector's disks build; sha256 0012a08d84d0*
+
+### `kits/vvv/utils/RESORC.SAV`
+
+DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «Emulated RT-11 environment») - the untranslated original, found on the collector's disk4
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: identified 2026-09-05; the DEC's originals build; sha256 887b418ca5de*
 
 </details>
 

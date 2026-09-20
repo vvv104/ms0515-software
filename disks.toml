@@ -51,9 +51,6 @@ title = "OSA with the RS shell"
 [kit.ms0111]
 title = "MS0111 terminal complex"
 
-[kit.dec-originals]
-title = "DEC's originals, as found"
-
 # ---- systems -------------------------------------------------------------
 # Every disk is made from scratch.  A system gives only what exists nowhere
 # else: its monitor - in its kit's folder, patched to run DEC's STARTS.COM -
@@ -448,6 +445,14 @@ date     = "1995-04-01"   # this copy carried none; the disks' other copies say 
 provides = ["macro11"]
 requires = ["sysmac"]
 files    = ["kits/omega/development/MACRO.SAV"]
+
+[bundle.help-dec]
+title    = "HELP - DEC's original, as diskette 062 carried it (no HELP.MLB)"
+kit      = "omega"
+group    = "Utilities"
+date     = "1984-02-01"
+provides = ["help"]
+files    = ["kits/omega/utils/HELP.SAV"]
 
 # ---- mihin -----------------------------------------------------------------
 
@@ -983,16 +988,6 @@ group    = "Development"
 provides = ["link"]
 date     = "1995-04-01"
 files    = ["kits/vvv/development/LINK.SAV"]
-
-# ---- dec-originals ---------------------------------------------------------
-
-[bundle.help-dec]
-title    = "HELP - the command reference (DEC's)"
-kit      = "dec-originals"
-group    = "Utilities"
-date     = "1984-02-01"
-provides = ["help"]
-files    = ["kits/dec-originals/utils/HELP.SAV"]
 
 # ==== Games ================================================================
 

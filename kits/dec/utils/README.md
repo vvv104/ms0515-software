@@ -1,6 +1,6 @@
 # Utilities: RT-11 V5.4 from sources
 
-DEC's RT-11 V5.4 utilities, built from DEC's own sources by DEC's own command files, with DEC's LINK and libraries, inside the emulator (`rt11_devel/projects/rt11` of the emulator's repository). English messages, as DEC wrote them. `../../dec-originals/` is a different thing: DEC's originals as they were *found* on the Soviet kits' diskettes.
+DEC's RT-11 V5.4 utilities, built from DEC's own sources by DEC's own command files, with DEC's LINK and libraries, inside the emulator (`rt11_devel/projects/rt11` of the emulator's repository). English messages, as DEC wrote them. DEC's originals as they were *found* on the Soviet diskettes are with the kits of those diskettes: `HELP.SAV` of 062 in `../../omega/utils/`, `RESORC.SAV` of the vvv104 disk4 in `../../vvv/utils/` - which is all but four bytes of the `RESORC.SAV` built here.
 
 Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.
 

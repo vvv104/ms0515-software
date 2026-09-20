@@ -20,7 +20,6 @@ found in one place:
 | `dec/` | `dec`, `dec-ru` | DEC's RT-11 V5.4 built for the machine from DEC's sources, with handlers written for it - nothing in it was recovered from a diskette |
 | `vvv/` | - | the FODOS-flavoured builds of the collector's vvv104 diskettes (ОМЕГА's second sysgen and Mihin's monitor ran with them) |
 | `osa-rs/`, `ms0111/` | - | the ОСА disks with the RS shell; the МС0111 terminal-complex disk 056 |
-| `dec-originals/` | - | DEC's own untranslated utilities as they were found on the Soviet diskettes |
 
 [`HANDLERS.md`](HANDLERS.md) is the cross-run of every handler on every
 monitor: which load where.  What belongs to no kit - games, applications,
