@@ -392,7 +392,7 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 </details>
 
-<details open><summary><b>programs/</b> — 222 files</summary>
+<details open><summary><b>programs/</b> — 218 files</summary>
 
 <details><summary><b>programs/autoteacher/</b> — 11 files</summary>
 
@@ -1242,7 +1242,7 @@ The title screen the Lyceum No. 1 coursework programs share: a drawing of the sc
 
 </details>
 
-<details><summary><b>programs/ms0111/</b> — 14 files</summary>
+<details><summary><b>programs/ms0111/</b> — 10 files</summary>
 
 ### `programs/ms0111/EPP.BAK`
 
@@ -1292,18 +1292,6 @@ Ten-word in-memory patch from the МС0111 terminal-complex disk: pokes a pollin
 
 *written in assembler (source on the disks); text; cross-run: exited; disks: 1; identified from: KUBUS.MAC read in full; 056 disk context via TERM.TXT; sha256 14ef320efc86*
 
-### `programs/ms0111/PC.COM`
-
-SIPP patch script for PC.SYS (R SIPP, DK:PC.SYS/C, then the patched offsets)
-
-*disks: 1; identified from: read 2026-09-06; sha256 95adaabd0f4b*
-
-### `programs/ms0111/PC.SYS`
-
-Handler of the МС0111 terminal-complex disk (056): the link to the central machine as a character device
-
-*disks: 1; identified from: identified 2026-09-05; sha256 2ea0d76682ca*
-
 ### `programs/ms0111/PIC.SAV`
 
 Extended-memory mapping TEST from the МС0111 complex disk (056): takes a file at its CSI '*' prompt, asks 'poehali?' and walks the mapped-memory API - create region, create window, map window, read/write/remap, reporting 'remap OK / read OK / write OK' per step (also prints 'user mode'/'digit mode'). Under our SJ monitors the mapping step fails with 'ERROR in macro or I-O error 22' - it expects the multi-user/XM environment of the complex's central machine world
@@ -1315,18 +1303,6 @@ Extended-memory mapping TEST from the МС0111 complex disk (056): takes a file 
 PIC.SAV with eleven bytes changed - ten size constants 6->8 and one address 040->044: the same memory-mapping test rebuilt for a larger window/region. An engineer's parameter sweep preserved as two binaries
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: byte diff against PIC.SAV; sha256 b7bda7f8e81a*
-
-### `programs/ms0111/RK.COM`
-
-SIPP patch script for RK.SYS (R SIPP, DK:RK.SYS/C, then the patched offsets)
-
-*disks: 1; identified from: read 2026-09-06; sha256 1a3887444fb6*
-
-### `programs/ms0111/RK.SYS`
-
-Handler of the МС0111 terminal-complex disk (056): the central machine's disk seen over the link
-
-*disks: 1; identified from: identified 2026-09-05; sha256 6cb6ec99f915*
 
 </details>
 
@@ -1804,7 +1780,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 163 files</summary>
+<details open><summary><b>software/</b> — 167 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2458,7 +2434,7 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 
 </details>
 
-<details><summary><b>software/system/</b> — 56 files</summary>
+<details><summary><b>software/system/</b> — 60 files</summary>
 
 <details><summary><b>software/system/diag/</b> — 26 files</summary>
 
@@ -2630,6 +2606,40 @@ Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990. 
 
 </details>
 
+<details><summary><b>software/system/handlers/</b> — 5 files</summary>
+
+### `software/system/handlers/PC.COM`
+
+SIPP patch script for PC.SYS (R SIPP, DK:PC.SYS/C, then the patched offsets)
+
+*disks: 1; identified from: read 2026-09-06; sha256 95adaabd0f4b*
+
+### `software/system/handlers/PC.SYS`
+
+Handler of the МС0111 terminal-complex disk (056): the link to the central machine as a character device
+
+*disks: 1; identified from: identified 2026-09-05; sha256 2ea0d76682ca*
+
+### `software/system/handlers/RK.COM`
+
+SIPP patch script for RK.SYS (R SIPP, DK:RK.SYS/C, then the patched offsets)
+
+*disks: 1; identified from: read 2026-09-06; sha256 1a3887444fb6*
+
+### `software/system/handlers/RK.SYS`
+
+Handler of the МС0111 terminal-complex disk (056): the central machine's disk seen over the link
+
+*disks: 1; identified from: identified 2026-09-05; sha256 6cb6ec99f915*
+
+### `software/system/handlers/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
+
+</details>
+
 <details><summary><b>software/system/print/</b> — 6 files</summary>
 
 ### `software/system/print/6337.SAV`
@@ -2670,7 +2680,7 @@ Prints text files on an SM6337 printer attached to the parallel port of the MS 0
 
 </details>
 
-<details><summary><b>software/system/shells/</b> — 8 files</summary>
+<details><summary><b>software/system/shells/</b> — 7 files</summary>
 
 ### `software/system/shells/INSTR.DOC`
 
@@ -2713,12 +2723,6 @@ The help text of the SCE shell, «сделан Гостевым Дмитрием
 Two-panel file manager in the Norton Commander style, Russian labels: directory panel with an info panel, command line Copy/Type/Prot/uNprot/Ren/Del/Quit/Vol/Go/Sque/Z-ini
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
-
-### `software/system/shells/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
 
 </details>
 
