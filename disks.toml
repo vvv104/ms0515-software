@@ -1362,12 +1362,6 @@ systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
 files    = ["software/system/utils/rt11/UCL.SAV", "software/system/utils/rt11/LET.SAV"]
 
-[bundle.speed-rt11]
-title    = "SPEED"
-group    = "Utilities / RT-11 V5.4 from sources"
-date     = "1999-12-31"
-files    = ["software/system/utils/rt11/SPEED.SAV"]
-
 [bundle.batch-rt11]
 title    = "BATCH with its handler BA.SYS"
 group    = "Utilities / RT-11 V5.4 from sources"

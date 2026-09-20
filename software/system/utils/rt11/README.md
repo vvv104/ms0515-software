@@ -17,10 +17,9 @@ Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.
 | `STRIP.SAV` `SPLIT.SAV` | Takes the symbols off a program; cuts a file in parts |
 | `UCL.SAV` `LET.SAV` | Commands of one's own: the `dec` monitors hand what they do not know to `UCL` |
 | `FORMAT.SAV` | DEC's FORMAT with a module for the machine's drive in the place of DEC's stub for the Professional 350: formats `DZ`, `DV` and `MZ` diskettes, and verifies them (`FORMAT/VERIFY`). Needs an emulator whose controller has WRITE TRACK: later than v1.14.1 |
-| `SPEED.SAV` | DEC's processor speed meter |
 | `BATCH.SAV` | Batch jobs; its handler is `BA.SYS` |
 | `QUEMAN.SAV` `QUEUE.REL` `SPOOL.REL` | The print queue and the spooler. **Untried** |
 
-Left out on purpose: `SETUP` (VT100 and LA50 escape sequences and the Professional 350's tables), `MDUP`, `FILEX`, `TERMID`, `MSCPCK`, `GIDIS`; `ERROUT` and `EL.SYS`, which need a monitor built with error logging. Not ready: `IND`, `VTCOM`.
+Left out on purpose: `SETUP` (VT100 and LA50 escape sequences and the Professional 350's tables), `SPEED` (sets the baud rates of a PDT-11/150), `MDUP`, `FILEX`, `TERMID`, `MSCPCK`, `GIDIS`; `ERROUT` and `EL.SYS`, which need a monitor built with error logging. Not ready: `IND`, `VTCOM`.
 
 Not in the catalogue (`CATALOG.md`, `catalog.csv`) yet.
