@@ -1,0 +1,124 @@
+# ==== Utilities ============================================================
+
+[bundle.datset]
+title = "DATSET - date setting of the OSA kit"
+group = "Utilities"
+date  = "1991-11-26"
+files = ["software/system/utils/DATSET.SAV"]
+
+[bundle.tfp]
+title = "TFP - text formatter of the OSA kit"
+group = "Utilities"
+date  = "1990-12-27"
+files = ["software/system/utils/TFP.SAV"]
+
+[bundle.bincom]
+title = "BINCOM V05.08 - binary compare"
+group = "Utilities"
+date  = "1995-01-01"
+files = ["software/system/utils/BINCOM.SAV"]
+
+[bundle.bads]
+title = "BADS - bad-block scanner"
+group = "Utilities"
+date  = "1989-11-01"
+files = ["software/system/utils/BADS.SAV"]
+
+[bundle.calend]
+title = "CALEND - calendar for 1583-5000"
+group = "Utilities"
+date  = "1994-06-16"
+files = ["software/system/utils/CALEND.SAV"]
+
+[bundle.asc]
+title = "ASC - character codes"
+group = "Utilities"
+date  = "1995-04-02"
+files = ["software/system/utils/ASC.SAV"]
+
+[bundle.day]
+title = "DAY - asks for a date"
+group = "Utilities"
+date  = "1986-02-14"
+files = ["software/system/utils/DAY.SAV"]
+
+[bundle.blue]
+title = "BLUE - the screen blue, yellow letters, back to the monitor"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["software/system/utils/BLUE.SAV"]
+
+[bundle.white]
+title = "WHITE - the screen white, back to the monitor"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["software/system/utils/WHITE.SAV"]
+
+[bundle.neg]
+title = "NEG - the 640x200 hi-res mode with a black border"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["software/system/utils/NEG.SAV"]
+
+# -- diskette formatters
+
+[bundle.fdz]
+title    = "FDZ - diskette formatter (Mihin-soft & SPF Sensor)"
+group    = "Utilities / Formatters"
+provides = ["formatter"]
+date     = "1991-07-04"
+files    = ["software/system/format/FDZ.SAV"]
+
+# -- printing
+
+[bundle.out17]
+title = "OUT17 - text files to the MS6317 ink-jet printer"
+group = "Utilities / Printing"
+date  = "1995-01-01"
+files = ["software/system/print/OUT17.SAV", "software/system/print/OUT17.DOC"]
+
+[bundle.outc]
+title = "OUTC - text files to the SM6337 printer"
+group = "Utilities / Printing"
+date  = "1995-01-01"
+files = ["software/system/print/OUTC.SAV", "software/system/print/OUTC.DOC"]
+
+[bundle.out2]
+title = "OUT2 - of the OUT printing family"
+group = "Utilities / Printing"
+date  = "1991-12-17"
+files = ["software/system/print/OUT2.SAV"]
+
+[bundle.p6337]
+title = "6337 - print utility for the MS 6337 printer"
+group = "Utilities / Printing"
+date  = "1995-01-01"
+files = ["software/system/print/6337.SAV"]
+
+# -- diagnostics
+
+[bundle.geteml]
+title = "GETEML - the loadable EIS/FIS instruction emulator"
+group = "Utilities / Diagnostics"
+date  = "1991-10-18"
+files = ["software/system/diag/GETEML.SAV"]
+
+[bundle.exerciser]
+title = "183107 - the factory exerciser"
+group = "Utilities / Diagnostics"
+date  = "1991-01-15"
+files = ["software/system/diag/183107.SAV"]
+
+[bundle.timing]
+title    = "The C* instruction-timing suite"
+group    = "Utilities / Diagnostics"
+date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
+requires = ["geteml"]
+volume   = "any"
+files    = ["software/system/diag/C*.SAV"]
+
+[bundle.scan-codes]
+title = "SCN15I - keyboard scan-code viewer"
+group = "Utilities / Diagnostics"
+date  = "1995-04-25"   # the disk says 2027: an age bit, 1995 + 32
+files = ["software/system/diag/SCN15I.SAV"]

@@ -1,0 +1,46 @@
+# The kits of the collection: which there are, where each lies, and the order
+# everything is listed in - here and, through the assembled disks.toml, in the
+# wizard.  A kit's own systems and bundles are in its folder's bundles.toml;
+# tools/build_disks_toml.py puts them together.
+
+# The folders that follow the kits, in that order; one with a bundles.toml
+# that is named nowhere here is appended at the end, and the script says so.
+areas = [
+    "software/games",
+    "software/development",
+    "software/system/shells",
+    "software/system",
+    "software/apps",
+]
+
+# ---- kits ----------------------------------------------------------------
+# A kit is what came together: a monitor and the handlers, utilities and
+# tools of its make, a folder each under kits/.  A system names its kit, and so
+# does every bundle that is a part of one; the wizard lists a kit's bundles by
+# the system chosen - its own kit as "System", the others under "Other kits" -
+# and `group` is then the place inside the kit (Handlers, Utilities,
+# Development).
+
+[kit.osa]
+title = "OSA"
+path  = "kits/osa"
+
+[kit.omega]
+title = "OMEGA"
+path  = "kits/omega"
+
+[kit.mihin]
+title = "Mihin's OS-16SJ"
+path  = "kits/mihin"
+
+[kit.rodionov]
+title = "Rodionov's RT15SJ"
+path  = "kits/rodionov"
+
+[kit.dec]
+title = "RT-11 V5.4 from DEC's sources"
+path  = "kits/dec"
+
+[kit.vvv]
+title = "the vvv104 diskettes (OMEGA2, FODOS builds)"
+path  = "kits/vvv"

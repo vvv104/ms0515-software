@@ -1,0 +1,106 @@
+[system.mihin]
+title    = "OS-16SJ (Mihinsoft)"
+kit      = "mihin"
+monitor  = { path = "kits/mihin/RT11SJ.SYS", date = "1991-06-17" }
+swap     = { blocks = 27, date = "1990-11-23" }
+startup_date = "1995-04-01"
+media    = ["ss", "dz", "dv"]
+requires = ["tt-mihin", "ld-mihin"]
+suggests = ["dir-vvv", "dup-vvv", "pip-mihin"]
+                                 # LD: the monitor's baked startup runs it
+requires_by_media = { ss = ["dz-mihin"], dz = ["dz-mihin"], dv = ["dv-mihin"] }
+startup  = ["SET TT QUIET"]
+
+# ---- mihin -----------------------------------------------------------------
+
+[bundle.dz-mihin]
+title    = "DZ.SYS - the floppy handler (Mihin)"
+kit      = "mihin"
+provides = ["dz"]
+systems  = ["mihin"]
+protect  = true
+date     = "1991-07-04"
+files    = ["kits/mihin/handlers/DZ.SYS"]
+
+[bundle.dv-mihin]
+title    = "DV.SYS - the whole-disk DV handler (for Mihin's monitor)"
+kit      = "mihin"
+provides = ["dv"]
+systems  = ["mihin"]
+protect  = true
+date     = "1995-01-01"
+files    = ["kits/mihin/handlers/DV.SYS"]
+
+[bundle.tt-mihin]
+title    = "TT.SYS - the terminal handler (Mihin)"
+kit      = "mihin"
+provides = ["tt"]
+systems  = ["mihin"]
+protect  = true
+date     = "1991-07-04"
+files    = ["kits/mihin/handlers/TT.SYS"]
+
+[bundle.ld-mihin]
+title    = "LD.SYS - logical disks (Mihin)"
+kit      = "mihin"
+provides = ["ld"]
+systems  = ["mihin"]
+protect  = true
+date     = "1985-11-12"
+files    = ["kits/mihin/handlers/LD.SYS"]
+
+[bundle.sl-mihin]
+title    = "SL.SYS - the single-line editor (Mihin)"
+kit      = "mihin"
+provides = ["sl"]
+systems  = ["mihin"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1989-02-24"
+files    = ["kits/mihin/handlers/quiet/SL.SYS"]
+
+[bundle.hd-mihin]
+title    = "HD.SYS - the emulator's hard disk"
+kit      = "mihin"
+provides = ["hd"]
+systems  = ["mihin"]
+date     = "1995-04-01"
+files    = ["kits/mihin/handlers/HD.SYS"]
+
+[bundle.vm-mihin]
+title    = "VM.SYS - RAM disk"
+kit      = "mihin"
+provides = ["vm"]
+systems  = ["mihin"]
+date     = "1991-08-13"
+files    = ["kits/mihin/handlers/VM.SYS"]
+
+[bundle.pip-mihin]
+title    = "PIP (MIHIN)"
+kit      = "mihin"
+provides = ["pip"]
+protect  = true
+date     = "1990-03-03"
+files    = ["kits/mihin/utils/PIP.SAV"]
+
+[bundle.term-mihin]
+title    = "TERM - terminal program (Mihin's disks)"
+kit      = "mihin"
+provides = ["term"]
+date     = "1991-01-31"
+files    = ["kits/mihin/utils/TERM.SAV"]
+
+[bundle.macro-mihin]
+title    = "MACRO V05.04 (Mihin's OS-16SJ disks)"
+kit      = "mihin"
+provides = ["macro11"]
+requires = ["sysmac"]
+date     = "1991-01-29"
+files    = ["kits/mihin/development/MACRO.SAV"]
+
+[bundle.link-mihin]
+title    = "LINK V08.04 (Mihin's OS-16SJ disks)"
+kit      = "mihin"
+provides = ["link"]
+date     = "1986-09-05"
+files    = ["kits/mihin/development/LINK.SAV"]

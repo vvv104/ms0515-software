@@ -1,0 +1,183 @@
+# What a disk is made of.  ASSEMBLED - do not edit: this file is made by
+# tools/build_disks_toml.py out of the pieces that lie with the files they
+# describe - disks.head.toml (this heading, the media, the presets),
+# kits.toml (which kits there are and in what order) and a bundles.toml in
+# every folder that has files on a disk.  CI checks the two agree.
+#
+# Read by the composer (`ms0515-disk compose` over a local copy of this
+# repository, and the web wizard over its Pages) and by the release, which
+# builds every preset below.  A preset is exactly what the wizard makes from
+# the same choices.
+
+format = 2
+
+# The version of this description - of what the collection holds and how it
+# makes disks.  A choice saved by a wizard names it; a disks release is tagged
+# disks-<version>, and its CI refuses a tag that says otherwise.
+version = "2026.09.15"
+
+# ---- media ---------------------------------------------------------------
+# The composer knows these three; they are listed only as the words used
+# below.
+#   ss  400 KB single-sided: one DZ volume
+#   dz  800 KB double-sided: two DZ volumes, DZ0 boots, DZ2 is the second
+#   dv  800 KB double-sided: one DV whole-disk volume of 1600 blocks
+
+# ---- systems -------------------------------------------------------------
+# Every disk is made from scratch.  A system gives only what exists nowhere
+# else: its monitor - in its kit's folder, patched to run DEC's STARTS.COM -
+# and, Rodionov's, the blocks it protects; SWAP.SYS is scratch the monitor
+# writes before it reads, so the composer makes it, of zeros, as long as the
+# system's own was; the bootstrap is written for the media.  Everything else
+# is bundles: the handlers and utilities the system cannot work without are
+# the bundles it requires, of the builds its original disks carried.
+#
+#   monitor            the monitor's file and its date
+#   swap               the length of SWAP.SYS in blocks, and its date
+#   startup_date       the date of the startup command file
+#   media              what the monitor boots from
+#   requires           the bundles it cannot work without
+#   suggests           its own builds of the utilities its disks carried (DIR,
+#                      DUP, PIP): not ticked by themselves - a games disk can do
+#                      without - but one ticked follows the system when it changes
+#   prefer             its own builds where it requires a name several provide
+#                      ("dir"): what sat on its original disks; another can be picked
+#   requires_by_media  those only one media needs: the handler it boots through -
+#                      DZ.SYS on ss and dz, DV.SYS on dv (a DV disk boots without DZ.SYS)
+#   startup            the first lines of the startup command file
+#   reserved           blocks the system protects - a side and its DZ block, the
+#                      file of its 512 bytes: put on their sectors, no file takes them
+
+# ---- bundles -------------------------------------------------------------
+# What one checkbox adds.  A bundle's files stay on one volume together (a
+# loader and its data, a program and its sprite table).
+#
+#   title     what the wizard shows
+#   kit       the kit it is a part of, if it is: the wizard then lists it by the
+#             system chosen, under "System" when the kit is the system's own
+#             and under "Other kits" and the kit's title when it is not - one
+#             flat list either way, handlers first, as this file has them
+#   group     where the wizard lists it ("Development / Pascal").  A kit's
+#             bundle needs none: a kit is one flat list, in this file's order
+#   files     paths in this repository; a glob expands in name order; an
+#             inline table renames or dates one: { path = "...", as = "K52.SAV" }
+#   volume    "boot" (default): the volume the system boots from - a bare name
+#             runs only from DK:.  "any": may go to DZ2 when the boot volume
+#             is full (text games run as R DZ2:NAME, documents)
+#   needs     media the bundle cannot live without
+#   systems   only these systems (default: every one) - a handler loads only
+#             under the sysgen it was built for
+#   provides  names it satisfies besides its key; the bundles providing one
+#             name are alternatives, and only one of them goes on a disk
+#   requires  what must go with it: bundle keys or provided names
+#   prefer    of a required name's alternatives, the one to take by default -
+#             the build that sat next to this bundle on the original disks; a
+#             list, or a table by system with a default
+#   startup   lines it adds to the startup command file (SET SL ON)
+#   date      the RT-11 date of its files, 1972..2003 (a file may carry its own)
+#   protect   set [P] on its files (default false)
+#
+# Nothing here is claimed about programs working together beyond what the
+# collection's notes record; alternatives are to be checked empirically.
+
+# ==== Kits ================================================================
+# Kit by kit: the handlers, the utilities, the tools of each - one bundle per
+# build; the builds of one file provide one name, so no disk gets two DIRs.
+# What a system requires is of its own kit, with a named guest where its
+# original disks had none.
+
+# ---- presets -------------------------------------------------------------
+# What the release builds and the web offers with one click: the bundles a
+# person would tick; what they require comes by the same rules.
+#   startup  lines of STARTS.COM after the system's and the bundles' own - a list, or one multiline string
+#   banner   BANNER.TXT, typed by STARTS.COM - the same two forms; clear_screen = true starts it with ESC H ESC J
+#   hint     what to do first, for the browser build's status line
+# A preset names the system's utilities (DIR, DUP, PIP) itself, which the
+# system only suggests: a released tool older than `suggests` still builds
+# the same disk.
+
+[preset.games]
+title     = "OSA: games"
+system    = "osa"
+media     = "ss"
+bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa", "pent",
+             "labrn", "kam1", "derby", "udaw", "poker", "ten", "datset", "tir", "go1", "dir-osa", "pip-omega", "neg"]
+startup   = '''
+DATSET 01-04-92
+NEG
+TYPE BANNER.TXT'''
+banner    = '''
+To play a game, type its name and press Enter:
+
+  SABOT2  Saboteur 2, ZX Spectrum port with joystick support
+  FIST    The Way Of The Exploding Fist, ZX Spectrum port
+  MANICM  Manic Miner, ZX Spectrum port
+  BIRDS   Spaceship fires on firebirds
+  EXPRES  Arcade game set on a moving train
+  KOSMOS  A text-mode space game
+  HANOJ   The towers of Hanoi
+  PENT    A Tetris-like game in text mode
+  LABRN   Pac-Man in text mode
+  KAM1    A classic Sokoban game
+  DERBY   Horse racing in text mode
+  UDAW    A Snake game that teaches the Russian alphabet
+  POKER   Poker game in text mode
+  TEN     Tennis game in character graphics
+  TIR     Shooting gallery for up to eight players
+  GO1     Classic GO in text mode
+'''
+clear_screen = true
+volume_id = "GAMES"
+hint      = "The menu is on the screen: type a game's name and press Enter; DIR lists the files"
+
+[preset.devel]
+title   = "OMEGA: Pascal"
+system  = "omega2"
+media   = "dv"
+bundles = ["pascal", "pascal-graphics", "pascal-units", "pascal-docs", "ked", "hd-omega", "sl-vvv", "dess", "sce",
+           "dump-omega", "geteml", "dir-vvv", "pip-vvv", "dup-vvv", "blue", "hello-pas", "hello-mac", "dz-omega"]
+startup = '''
+DATE 01-APR-92
+BLUE
+TYPE BANNER.TXT'''
+banner  = '''
+A Pascal disk: PAS1 compiles, MACRO assembles, LINK binds with PASLIB.
+
+HELLO.PAS is a first program to build, it prints Hello, world!
+
+  TYPE HELLO.PAS            see the source
+  KED HELLO.PAS             edit it in the screen editor
+  PAS1 HELLO=HELLO          compile:  HELLO.PAS -> HELLO.MAC
+  MACRO HELLO               assemble: HELLO.MAC -> HELLO.OBJ
+  LINK HELLO,PASLIB,PAS1    link with the Pascal run-time -> HELLO.SAV
+  RUN HELLO                 run it
+
+Your own program goes the same way, with its name in place of HELLO.
+No switches are needed for any of the four steps.
+
+HELLOA.MAC is the same program in MACRO-11 assembler: MACRO, LINK, RUN.
+
+  TYPE HELLOA.MAC           see the source (eight lines: .PRINT and .EXIT)
+  MACRO HELLOA              assemble: HELLOA.MAC -> HELLOA.OBJ
+  LINK HELLOA               link:     HELLOA.OBJ -> HELLOA.SAV
+  RUN HELLOA                run it
+'''
+clear_screen = true
+volume_id = "DEVELOP"
+hint    = "The recipe is on the screen: PAS1 HELLO=HELLO, MACRO HELLO, LINK HELLO,PASLIB,PAS1, RUN HELLO; KED edits"
+
+[preset.rodionov]
+title   = "Rodionov: ROSA Commander"
+system  = "rodionov"
+media   = "dz"
+bundles = ["sl-rodionov", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
+           "resorc-osa", "blue", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
+startup = ["R ROSA3"]
+hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
+
+[preset.mihin]
+title   = "Mihin: OS-16SJ"
+system  = "mihin"
+media   = "dz"
+bundles = ["sl-mihin", "fdz", "bads", "term-mihin", "vm-mihin", "k52", "macro-mihin", "link-mihin", "hd-mihin", "dir-vvv", "dup-vvv", "pip-mihin"]
+hint    = ". is the OS prompt: DIR lists the files; FDZ formats a diskette, K52 edits"

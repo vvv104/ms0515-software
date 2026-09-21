@@ -1,0 +1,57 @@
+# ==== Applications =========================================================
+
+[bundle.art]
+title = "ART - colour paint program, with a picture"
+group = "Applications"
+date  = "1992-05-10"
+files = ["software/apps/ART.SAV", { path = "programs/pictures/MORDA.SCR", date = "1992-05-05" }]
+
+[bundle.ukcalc]
+title = "UKCALC - spreadsheet, with its manual and two worksheets"
+group = "Applications"
+date  = "1995-01-01"
+files = ["software/apps/UKCALC.SAV", "software/apps/UKCALC.LST",
+         "software/apps/GAUSS.CLC", "software/apps/KRAMER.CLC"]
+
+[bundle.fcad]
+title = "FunctionCAD - plots functions"
+group = "Applications"
+date  = "1994-01-01"
+files = ["software/apps/FCAD.SAV"]
+
+[bundle.fcon]
+title = "FCON - RT-11 / DOS / TR-DOS file converter"
+group = "Applications"
+date  = "1993-07-01"
+files = ["software/apps/FCON.SAV"]
+
+[bundle.edsp]
+title = "EDSP - frame editor"
+group = "Applications"
+date  = "1993-09-04"
+files = ["software/apps/EDSP.SAV"]
+
+[bundle.def]
+title = "DEF - fault-finding handbook"
+group = "Applications"
+date  = "1988-10-27"
+files = ["software/apps/DEF.SAV"]
+
+[bundle.tr7004]
+title = "TR7004 - keyboard trainer and test"
+group = "Applications"
+date  = "1995-01-01"
+files = ["software/apps/TR7004.SAV"]
+
+[bundle.umn]
+title = "UMN - multiplication-table trainer"
+group = "Applications"
+date  = "1995-01-01"
+files = ["software/apps/UMN.SAV"]
+
+[bundle.rbd-mikro]
+title  = "RBD-MIKRO - the database system, with its manuals"
+group  = "Applications"
+date   = "1995-01-01"
+volume = "any"
+files  = ["software/apps/rbd-mikro/*"]

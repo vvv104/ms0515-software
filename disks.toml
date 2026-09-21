@@ -1,4 +1,8 @@
-# What a disk is made of.
+# What a disk is made of.  ASSEMBLED - do not edit: this file is made by
+# tools/build_disks_toml.py out of the pieces that lie with the files they
+# describe - disks.head.toml (this heading, the media, the presets),
+# kits.toml (which kits there are and in what order) and a bundles.toml in
+# every folder that has files on a disk.  CI checks the two agree.
 #
 # Read by the composer (`ms0515-disk compose` over a local copy of this
 # repository, and the web wizard over its Pages) and by the release, which
@@ -29,21 +33,27 @@ version = "2026.09.15"
 
 [kit.osa]
 title = "OSA"
+path  = "kits/osa"
 
 [kit.omega]
 title = "OMEGA"
+path  = "kits/omega"
 
 [kit.mihin]
 title = "Mihin's OS-16SJ"
+path  = "kits/mihin"
 
 [kit.rodionov]
 title = "Rodionov's RT15SJ"
+path  = "kits/rodionov"
 
 [kit.dec]
 title = "RT-11 V5.4 from DEC's sources"
+path  = "kits/dec"
 
 [kit.vvv]
 title = "the vvv104 diskettes (OMEGA2, FODOS builds)"
+path  = "kits/vvv"
 
 # ---- systems -------------------------------------------------------------
 # Every disk is made from scratch.  A system gives only what exists nowhere
@@ -82,6 +92,8 @@ suggests = ["dir-osa", "dup-omega", "pip-omega"]
 requires_by_media = { ss = ["dz-osa"], dz = ["dz-osa"], dv = ["dv-omega"] }
 startup  = ["SET TT QUIET"]
 
+# ---- osa -------------------------------------------------------------------
+
 [system.omega]
 title    = "OMEGA SJ(S) V05.04"
 kit      = "omega"
@@ -94,17 +106,7 @@ suggests = ["dir-omega", "dup-omega", "pip-omega"]
 requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
 startup  = ["SET TT QUIET"]
 
-[system.omega2]
-title    = "OMEGA SJ(S) V05.04, the vvv104 build"
-kit      = "vvv"
-monitor  = { path = "kits/vvv/RT11SJ.SYS", date = "1995-01-01" }
-swap     = { blocks = 32, date = "1995-01-01" }
-startup_date = "1995-04-01"
-media    = ["ss", "dz", "dv"]
-requires = ["tt-omega"]
-suggests = ["dir-vvv", "dup-vvv", "pip-vvv"]
-requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
-startup  = ["SET TT QUIET"]
+# ---- omega -----------------------------------------------------------------
 
 [system.mihin]
 title    = "OS-16SJ (Mihinsoft)"
@@ -118,6 +120,8 @@ suggests = ["dir-vvv", "dup-vvv", "pip-mihin"]
                                  # LD: the monitor's baked startup runs it
 requires_by_media = { ss = ["dz-mihin"], dz = ["dz-mihin"], dv = ["dv-mihin"] }
 startup  = ["SET TT QUIET"]
+
+# ---- mihin -----------------------------------------------------------------
 
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
@@ -137,6 +141,9 @@ reserved = [{ side = 1, lbn = 792, path = "kits/rodionov/SIDE1-792.BLK" },   # t
 # repository's rt11_devel/projects/rt11, profiles dec and dec-ru), with the
 # handlers and utilities built there too (the *-rt11 bundles).  Omega's
 # console and clock, so Omega's handlers load under it as well.
+
+# ---- rodionov --------------------------------------------------------------
+
 [system.dec]
 title    = "RT-11SJ V05.04 (DEC's, for the MS 0515)"
 kit      = "dec"
@@ -160,6 +167,28 @@ requires = ["tt-rt11"]
 suggests = ["dir-rt11", "dup-rt11", "pip-rt11"]
 requires_by_media = { ss = ["dz-rt11"], dz = ["dz-rt11"], dv = ["dv-rt11"] }
 startup  = ["SET TT QUIET"]
+
+# ---- dec -------------------------------------------------------------------
+
+# -- RT-11 from sources: the handlers written or built in the emulator
+# repository (rt11_devel/projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
+# VM, EX and HD are the machine's own, with sources; NL, LD, LP, LS, SP and BA
+# are DEC's V5.4 as they are.  DEC's SL is not here: its screen control does
+# not fit the console, and the kits' SL load under the dec monitors.
+
+[system.omega2]
+title    = "OMEGA SJ(S) V05.04, the vvv104 build"
+kit      = "vvv"
+monitor  = { path = "kits/vvv/RT11SJ.SYS", date = "1995-01-01" }
+swap     = { blocks = 32, date = "1995-01-01" }
+startup_date = "1995-04-01"
+media    = ["ss", "dz", "dv"]
+requires = ["tt-omega"]
+suggests = ["dir-vvv", "dup-vvv", "pip-vvv"]
+requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
+startup  = ["SET TT QUIET"]
+
+# ---- vvv -------------------------------------------------------------------
 
 # ---- bundles -------------------------------------------------------------
 # What one checkbox adds.  A bundle's files stay on one volume together (a
@@ -198,8 +227,6 @@ startup  = ["SET TT QUIET"]
 # build; the builds of one file provide one name, so no disk gets two DIRs.
 # What a system requires is of its own kit, with a named guest where its
 # original disks had none.
-
-# ---- osa -------------------------------------------------------------------
 
 [bundle.dz-osa]
 title    = "DZ.SYS - the floppy handler (OSA)"
@@ -283,9 +310,6 @@ kit      = "osa"
 provides = ["resorc"]
 date     = "1990-12-27"
 files    = ["kits/osa/utils/RESORC.SAV"]
-
-# ---- omega -----------------------------------------------------------------
-
 [bundle.dz-omega]
 title    = "DZ.SYS - the floppy handler (OMEGA)"
 kit      = "omega"
@@ -422,9 +446,6 @@ kit      = "omega"
 date     = "1984-02-01"
 provides = ["help"]
 files    = ["kits/omega/utils/HELP.SAV"]
-
-# ---- mihin -----------------------------------------------------------------
-
 [bundle.dz-mihin]
 title    = "DZ.SYS - the floppy handler (Mihin)"
 kit      = "mihin"
@@ -516,9 +537,6 @@ kit      = "mihin"
 provides = ["link"]
 date     = "1986-09-05"
 files    = ["kits/mihin/development/LINK.SAV"]
-
-# ---- rodionov --------------------------------------------------------------
-
 [bundle.dz-rodionov]
 title    = "DZ.SYS - the floppy handler (Rodionov)"
 kit      = "rodionov"
@@ -600,15 +618,6 @@ kit      = "rodionov"
 provides = ["help"]
 date     = "1990-12-27"
 files    = ["kits/rodionov/utils/HELP.SAV"]
-
-# ---- dec -------------------------------------------------------------------
-
-# -- RT-11 from sources: the handlers written or built in the emulator
-# repository (rt11_devel/projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
-# VM, EX and HD are the machine's own, with sources; NL, LD, LP, LS, SP and BA
-# are DEC's V5.4 as they are.  DEC's SL is not here: its screen control does
-# not fit the console, and the kits' SL load under the dec monitors.
-
 [bundle.dz-rt11]
 title    = "DZ.SYS - the floppy handler (from sources)"
 kit      = "dec"
@@ -833,9 +842,6 @@ title    = "ODT.OBJ - the octal debugger, linked into a program"
 kit      = "dec"
 date     = "1999-12-31"
 files    = ["kits/dec/development/ODT.OBJ"]
-
-# ---- vvv -------------------------------------------------------------------
-
 [bundle.sl-vvv]
 title    = "SL.SYS - the single-line editor (vvv104 disks)"
 kit      = "vvv"
@@ -898,7 +904,6 @@ kit      = "vvv"
 provides = ["link"]
 date     = "1995-04-01"
 files    = ["kits/vvv/development/LINK.SAV"]
-
 # ==== Games ================================================================
 
 [bundle.sabot2-osa]
@@ -1123,7 +1128,6 @@ group  = "Games / Text"
 volume = "any"
 date   = "1994-01-01"
 files  = ["software/games/UDAW.SAV"]
-
 # ==== Development ==========================================================
 
 [bundle.sysmac]
@@ -1265,7 +1269,6 @@ title = "SPR - the sprite editor, with its manual"
 group = "Development / Sprites"
 date  = "1995-04-01"
 files = ["software/development/sprites/SPR.SAV", "software/development/sprites/SPRED.DOC"]
-
 # ==== Shells ===============================================================
 
 [bundle.rosa3]
@@ -1302,7 +1305,6 @@ date     = "1994-09-13"
 systems  = ["osa"]
 requires = ["em"]               # it uses EIS instructions
 files    = ["software/system/shells/RS.SYS"]
-
 # ==== Utilities ============================================================
 
 [bundle.datset]
@@ -1427,7 +1429,6 @@ title = "SCN15I - keyboard scan-code viewer"
 group = "Utilities / Diagnostics"
 date  = "1995-04-25"   # the disk says 2027: an age bit, 1995 + 32
 files = ["software/system/diag/SCN15I.SAV"]
-
 # ==== Applications =========================================================
 
 [bundle.art]
@@ -1485,7 +1486,6 @@ group  = "Applications"
 date   = "1995-01-01"
 volume = "any"
 files  = ["software/apps/rbd-mikro/*"]
-
 # ---- presets -------------------------------------------------------------
 # What the release builds and the web offers with one click: the bundles a
 # person would tick; what they require comes by the same rules.

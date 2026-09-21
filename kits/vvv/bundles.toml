@@ -1,0 +1,76 @@
+[system.omega2]
+title    = "OMEGA SJ(S) V05.04, the vvv104 build"
+kit      = "vvv"
+monitor  = { path = "kits/vvv/RT11SJ.SYS", date = "1995-01-01" }
+swap     = { blocks = 32, date = "1995-01-01" }
+startup_date = "1995-04-01"
+media    = ["ss", "dz", "dv"]
+requires = ["tt-omega"]
+suggests = ["dir-vvv", "dup-vvv", "pip-vvv"]
+requires_by_media = { ss = ["dz-omega"], dz = ["dz-omega"], dv = ["dv-omega"] }
+startup  = ["SET TT QUIET"]
+
+# ---- vvv -------------------------------------------------------------------
+
+[bundle.sl-vvv]
+title    = "SL.SYS - the single-line editor (vvv104 disks)"
+kit      = "vvv"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1995-01-01"
+files    = ["kits/vvv/handlers/quiet/SL.SYS"]
+
+[bundle.dir-vvv]
+title    = "DIR (OMEGA2, MIHIN)"
+kit      = "vvv"
+provides = ["dir"]
+protect  = true
+date     = "1990-03-03"
+files    = ["kits/vvv/utils/DIR.SAV"]
+
+[bundle.dup-vvv]
+title    = "DUP (OMEGA2, MIHIN)"
+kit      = "vvv"
+provides = ["dup"]
+protect  = true
+date     = "1990-02-10"
+files    = ["kits/vvv/utils/DUP.SAV"]
+
+[bundle.pip-vvv]
+title    = "PIP (OMEGA2)"
+kit      = "vvv"
+provides = ["pip"]
+protect  = true
+date     = "1995-01-01"
+files    = ["kits/vvv/utils/PIP.SAV"]
+
+[bundle.datime-vvv]
+title    = "DATIME - date and time (vvv104 disks)"
+kit      = "vvv"
+provides = ["datime"]
+date     = "1995-04-01"
+files    = ["kits/vvv/utils/DATIME.SAV"]
+
+[bundle.form-vvv]
+title    = "FORML, FORMH - diskette formatters (vvv104 build)"
+kit      = "vvv"
+provides = ["formatter"]
+date     = "1995-04-01"
+files    = ["kits/vvv/format/FORML.SAV", "kits/vvv/format/FORMH.SAV"]
+
+[bundle.macro-vvv]
+title    = "MACRO V05.04 (FODOS kit of the vvv104 disks)"
+kit      = "vvv"
+provides = ["macro11"]
+requires = ["sysmac"]
+date     = "1995-04-01"
+files    = ["kits/vvv/development/MACRO.SAV"]
+
+[bundle.link-vvv]
+title    = "LINK V05.14 (FODOS kit of the vvv104 disks)"
+kit      = "vvv"
+provides = ["link"]
+date     = "1995-04-01"
+files    = ["kits/vvv/development/LINK.SAV"]

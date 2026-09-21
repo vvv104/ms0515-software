@@ -1,0 +1,96 @@
+[system.osa]
+title    = "OSA 1.0"
+kit      = "osa"
+monitor  = { path = "kits/osa/MON8SJ.SYS", date = "1990-12-27" }
+swap     = { blocks = 32, date = "1990-12-27" }
+startup_date = "1995-04-01"
+media    = ["ss", "dz", "dv"]
+requires = ["tt-osa"]
+suggests = ["dir-osa", "dup-omega", "pip-omega"]
+requires_by_media = { ss = ["dz-osa"], dz = ["dz-osa"], dv = ["dv-omega"] }
+startup  = ["SET TT QUIET"]
+
+# ---- osa -------------------------------------------------------------------
+
+[bundle.dz-osa]
+title    = "DZ.SYS - the floppy handler (OSA)"
+kit      = "osa"
+provides = ["dz"]
+systems  = ["osa"]
+protect  = true
+date     = "1990-12-27"
+files    = ["kits/osa/handlers/DZ.SYS"]
+
+[bundle.tt-osa]
+title    = "TT.SYS - the terminal handler (OSA)"
+kit      = "osa"
+provides = ["tt"]
+systems  = ["osa"]
+protect  = true
+date     = "1990-12-27"
+files    = ["kits/osa/handlers/TT.SYS"]
+
+# -- SL: the single-line editor, each build as its exemplar carries it, the
+#    assignment table of its first owners blanked
+
+[bundle.sl-osa]
+title    = "SL.SYS - the single-line editor (OSA)"
+kit      = "osa"
+provides = ["sl"]
+systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1988-01-19"
+files    = ["kits/osa/handlers/quiet/SL.SYS"]
+
+# -- the other handlers: one bundle per build; the family decides which one
+#    loads, so each build names its systems and all builds of one handler
+#    provide one name
+
+[bundle.hd-osa]
+title    = "HD.SYS - the emulator's hard disk"
+kit      = "osa"
+provides = ["hd"]
+systems  = ["osa"]
+date     = "1995-04-01"
+files    = ["kits/osa/handlers/HD.SYS"]
+
+[bundle.vm-osa]
+title    = "VM.SYS - RAM disk"
+kit      = "osa"
+provides = ["vm"]
+systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
+date     = "1990-12-27"
+files    = ["kits/osa/handlers/VM.SYS"]
+
+[bundle.vs-osa]
+title    = "VS.SYS - the sound device"
+kit      = "osa"
+provides = ["vs"]
+systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
+date     = "1990-12-27"
+files    = ["kits/osa/handlers/VS.SYS"]
+
+[bundle.em]
+title    = "EM.SYS - the EIS/FIS instruction emulator (SET EM ON)"
+kit      = "osa"
+date     = "1981-03-03"   # the disk says 2013: an age bit, 1981 + 32
+systems  = ["osa", "dec", "dec-ru"]
+files    = ["kits/osa/handlers/EM.SYS"]
+
+# -- the utilities every system requires, one of each
+
+[bundle.dir-osa]
+title    = "DIR (OSA)"
+kit      = "osa"
+provides = ["dir"]
+protect  = true
+date     = "1990-12-27"
+files    = ["kits/osa/utils/DIR.SAV"]
+
+[bundle.resorc-osa]
+title    = "RESORC - system resources (OSA build)"
+kit      = "osa"
+provides = ["resorc"]
+date     = "1990-12-27"
+files    = ["kits/osa/utils/RESORC.SAV"]

@@ -1,0 +1,102 @@
+[system.rodionov]
+title    = "RT15SJ (Rodionov)"
+kit      = "rodionov"
+monitor  = { path = "kits/rodionov/RT15SJ.SYS", date = "1992-03-31" }
+swap     = { blocks = 32, date = "1991-12-25" }
+startup_date = "1995-04-01"
+media    = ["dz", "dv"]
+requires = ["tt-rodionov"]
+suggests = ["dir-rodionov", "dup-omega", "pip-omega"]
+requires_by_media = { dz = ["dz-rodionov"], dv = ["dv-omega"] }
+startup  = ["SET TT QUIET"]
+reserved = [{ side = 1, lbn = 792, path = "kits/rodionov/SIDE1-792.BLK" },   # the copy protection
+            { side = 1, lbn = 799, path = "kits/rodionov/SIDE1-799.BLK" }]
+
+# DEC's RT-11 V05.04 built for the MS 0515 from DEC's sources (the emulator
+# repository's rt11_devel/projects/rt11, profiles dec and dec-ru), with the
+# handlers and utilities built there too (the *-rt11 bundles).  Omega's
+# console and clock, so Omega's handlers load under it as well.
+
+# ---- rodionov --------------------------------------------------------------
+
+[bundle.dz-rodionov]
+title    = "DZ.SYS - the floppy handler (Rodionov)"
+kit      = "rodionov"
+provides = ["dz"]
+systems  = ["rodionov"]
+protect  = true
+date     = "1993-02-16"
+files    = ["kits/rodionov/handlers/DZ.SYS"]
+
+[bundle.tt-rodionov]
+title    = "TT.SYS - the terminal handler (Rodionov)"
+kit      = "rodionov"
+provides = ["tt"]
+systems  = ["rodionov"]
+protect  = true
+date     = "1992-03-27"
+files    = ["kits/rodionov/handlers/TT.SYS"]
+
+[bundle.sl-rodionov]
+title    = "SL.SYS - the single-line editor (Rodionov)"
+kit      = "rodionov"
+provides = ["sl"]
+systems  = ["rodionov"]
+startup  = ["SET SL ON"]
+protect  = true
+date     = "1991-01-31"
+files    = ["kits/rodionov/handlers/quiet/SL.SYS"]
+
+[bundle.hd-rodionov]
+title    = "HD.SYS - the emulator's hard disk"
+kit      = "rodionov"
+provides = ["hd"]
+systems  = ["rodionov"]
+date     = "1995-04-01"
+files    = ["kits/rodionov/handlers/HD.SYS"]
+
+[bundle.vm-rodionov]
+title    = "VM.SYS - RAM disk"
+kit      = "rodionov"
+provides = ["vm"]
+systems  = ["rodionov"]
+date     = "1991-12-25"
+files    = ["kits/rodionov/handlers/VM.SYS"]
+
+[bundle.vs-rodionov]
+title    = "VS.SYS - the sound device"
+kit      = "rodionov"
+provides = ["vs"]
+systems  = ["rodionov"]
+date     = "1990-12-27"
+files    = ["kits/rodionov/handlers/VS.SYS"]
+
+[bundle.nl]
+title    = "NL.SYS - the null device"
+kit      = "rodionov"
+provides = ["nl"]
+systems  = ["rodionov", "osa", "omega", "omega2", "dec", "dec-ru"]
+date     = "1990-12-27"
+files    = ["kits/rodionov/handlers/NL.SYS"]
+
+[bundle.dir-rodionov]
+title    = "DIR (OMEGA, RODIONOV)"
+kit      = "rodionov"
+provides = ["dir"]
+protect  = true
+date     = "1989-09-27"
+files    = ["kits/rodionov/utils/DIR.SAV"]
+
+[bundle.dump-rodionov]
+title    = "DUMP (Rodionov's disks)"
+kit      = "rodionov"
+provides = ["dump"]
+date     = "1987-12-16"
+files    = ["kits/rodionov/utils/DUMP.SAV"]
+
+[bundle.help-rodionov]
+title    = "HELP - the command reference (Rodionov's disks)"
+kit      = "rodionov"
+provides = ["help"]
+date     = "1990-12-27"
+files    = ["kits/rodionov/utils/HELP.SAV"]
