@@ -1606,3 +1606,15 @@ system  = "mihin"
 media   = "dz"
 bundles = ["sl-mihin", "fdz", "bads", "term-mihin", "vm-mihin", "k52", "macro-mihin", "link-mihin", "hd-mihin", "dir-vvv", "dup-vvv", "pip-mihin"]
 hint    = ". is the OS prompt: DIR lists the files; FDZ formats a diskette, K52 edits"
+
+[preset.dec]
+title   = "RT-11 V5.4: DEC's own, built for the machine"
+system  = "dec"
+media   = "dv"
+bundles = ["dz-rt11", "hd-rt11", "vm-rt11", "ld-rt11", "nl-rt11", "lp-rt11",
+           "dir-rt11", "dup-rt11", "pip-rt11", "dump-rt11", "resorc-rt11",
+           "datime-rt11", "help-rt11", "compare-rt11", "ucl-rt11",
+           "link-rt11", "syslib-rt11", "macro-vvv",
+           "edit-rt11", "format-rt11", "patch-rt11", "strip-rt11",
+           "libr-rt11", "odt-rt11", "k52", "sl-omega", "asc", "bads"]
+hint    = ". is the monitor prompt: DIR lists the files, HELP names a command, FORMAT DZ1: formats a diskette in the second drive"
