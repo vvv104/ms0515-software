@@ -24,8 +24,11 @@ found in one place:
 Each kit's `bundles.toml` says what its files are and which systems take them; [`../kits.toml`](../kits.toml) names the kits and their order.
 
 [`HANDLERS.md`](HANDLERS.md) is the cross-run of every handler on every
-monitor: which load where.  What belongs to no kit - games, applications,
-languages, shells, diagnostics, printing - is in `../software/`.
+monitor: which load where.  What runs the machine is all here now - each
+system's own in its kit, what any of them can take in `common/`, down to
+the compilers and the editors.  `../software/` keeps what one runs on the
+machine rather than what runs it: the games, the applications, the sprite
+tools; `../programs/` everything home-made.
 
 # Systems
 
@@ -101,7 +104,8 @@ The three factory configurations of this monitor: `058` bakes `@ST`, the
 shipped with the profShell commander and Сторожевых's SL, which announce
 themselves at boot), and the `Buhgal` cut bakes `PMK` — that machine
 booted straight into a savings-bank teller program.  The profShell and SL
-live in `../software/system/shells/` for anyone who wants the deluxe boot.
+live in `shells/` of their own kits - `osa/shells/RS.SYS` and the SL of
+`vvv/handlers/` - for anyone who wants the deluxe boot.
 
 ## omega
 
@@ -151,7 +155,7 @@ pair or a DV disk and ends the free space before them, so no file — the
 composer's or the OS's — takes them.  The RT15SJ monitor reads them at
 boot: the very same disk with those two sectors blanked dies in ODT at
 000017 before the monitor comes up; with them it boots, and `ROSA3.SAV`
-(`../software/system/shells/`, with `LOAD VM:`) passes its author's check
+(`rodionov/shells/`, with `LOAD VM:`) passes its author's check
 («Программа, переписанная без разрешения АВТОРА, не работает»).  On the
 original, whose side-1 directory ended in a plain empty entry `500..799`,
 those sectors sat inside what the OS regarded as free space — and his own

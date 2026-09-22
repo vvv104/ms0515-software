@@ -6,6 +6,7 @@ The builds below are the ones these disks carried; each card says on which of th
 
 | file | what | how to run |
 |---|---|---|
+| `BINCOM.SAV` | DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP) - off disk4, where the collector had renamed it `.EXE`. DEC's own build, made here from the V5.4 sources, is in `kits/dec/utils/`  (on vvv104 disk4) | bare prompt, no answer to a bogus file name |
 | `DATIME.SAV` | The DATIME of the collector's and Mihin's disks: asks the date and time at boot and sets them (English month names JAN…DEC)  (on PAPER, baspasfor, vvv104 disk1, vvv104 disk2, vvv104 disk4) | `RUN DATIME` |
 | `DIR.SAV` | DIR V05.03 with English messages («Wrong version of RT-11») - the build of the collector's ФОДОС disks and of Mihin's kits  (on PAPER, amk disk3, amk_1, baspasfor, disk1, disk2, h0, vvv104 disk1, vvv104 disk2, vvv104 disk3, vvv104 disk4) | `RUN DIR` |
 | `DUP.SAV` | DUP V05.28 with English messages («No V5 boot on volume») - the collector's and Mihin's disks  (on PAPER, amk disk3, amk_1, baspasfor, disk1, disk2, h0, vvv104 disk1, vvv104 disk2, vvv104 disk3, vvv104 disk4) | prompt; answers ?DUP-F-Invalidcommand* |

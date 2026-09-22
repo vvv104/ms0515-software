@@ -1,7 +1,0 @@
-# ==== Utilities ============================================================
-
-[bundle.bincom]
-title = "BINCOM V05.08 - binary compare"
-group = "Utilities"
-date  = "1995-01-01"
-files = ["software/system/utils/BINCOM.SAV"]

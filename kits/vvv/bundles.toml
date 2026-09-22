@@ -74,3 +74,9 @@ kit      = "vvv"
 provides = ["link"]
 date     = "1995-04-01"
 files    = ["kits/vvv/development/LINK.SAV"]
+
+[bundle.bincom]
+kit      = "vvv"
+title = "BINCOM V05.08 - binary compare"
+date  = "1995-01-01"
+files = ["kits/vvv/utils/BINCOM.SAV"]

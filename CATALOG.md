@@ -2,9 +2,9 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 132 files</summary>
+<details open><summary><b>kits/</b> — 137 files</summary>
 
-<details><summary><b>kits/common/</b> — 70 files</summary>
+<details><summary><b>kits/common/</b> — 71 files</summary>
 
 <details><summary><b>kits/common/development/</b> — 26 files</summary>
 
@@ -382,7 +382,7 @@ Two-panel file manager in the Norton Commander style, Russian labels: directory 
 
 </details>
 
-<details><summary><b>kits/common/utils/</b> — 10 files</summary>
+<details><summary><b>kits/common/utils/</b> — 11 files</summary>
 
 ### `kits/common/utils/ASC.SAV`
 
@@ -426,6 +426,12 @@ Asks for a date, offering 18-MAR-93 as the default
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 0a58aa5e5ce0*
 
+### `kits/common/utils/HELP.TXT`
+
+«Описание команд операционной системы ФОДОС-3» - the command reference HELP.SAV prints, as plain text: ASSIGN, BOOT, COPY… with their syntax
+
+*ru+en / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 bd7f86f0db83*
+
 ### `kits/common/utils/NEG.SAV`
 
 Writes 000010 into System Register C (177604): selects the 640x200 hi-res mode with a black border.  The video-mode counterpart of BLACK, BLUE and WHITE
@@ -448,7 +454,7 @@ Sets the screen to white and returns to the monitor; the counterpart of BLACK.SA
 
 </details>
 
-<details><summary><b>kits/mihin/</b> — 14 files</summary>
+<details><summary><b>kits/mihin/</b> — 15 files</summary>
 
 <details><summary><b>kits/mihin/development/</b> — 2 files</summary>
 
@@ -548,7 +554,7 @@ RAM-disk handler (memory used as a drive)
 
 </details>
 
-<details><summary><b>kits/mihin/utils/</b> — 1 file</summary>
+<details><summary><b>kits/mihin/utils/</b> — 2 files</summary>
 
 ### `kits/mihin/utils/TERM.SAV`
 
@@ -560,7 +566,17 @@ The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: 
 
 </details>
 
-<details><summary><b>kits/omega/</b> — 18 files</summary>
+<details><summary><b>kits/mihin/utils/056/</b> — 1 file</summary>
+
+### `kits/mihin/utils/056/DATIME.SAV`
+
+DATIME «(C) 1987» of the ВЦ АН СССР, from the work diskette 056 - the greeter with escape-sequence highlighting
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the work diskette 056 build; sha256 55d955b8fcee*
+
+</details>
+
+<details><summary><b>kits/omega/</b> — 20 files</summary>
 
 <details><summary><b>kits/omega/development/</b> — 1 file</summary>
 
@@ -652,7 +668,7 @@ RAM-disk handler (memory used as a drive)
 
 </details>
 
-<details><summary><b>kits/omega/utils/</b> — 5 files</summary>
+<details><summary><b>kits/omega/utils/</b> — 7 files</summary>
 
 ### `kits/omega/utils/DIR.SAV`
 
@@ -683,6 +699,18 @@ RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не н�
 PIP V05.14 with Russian messages («?PIP-F-Нет файла») - the build of every ОСА, ОМЕГА and Rodionov disk
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?PIP-F-НетфайлаDK:NOSUCH.XXX*; disks: 15; identified from: factory manual; the the ОМЕГА kits build; sha256 eebe08107f1c*
+
+### `kits/omega/utils/TERM.SAV`
+
+The terminal emulator as the work diskettes 056 and 172 of the КВИ «Электроника МС0111» complex carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the work diskette 056 build; sha256 149b71963551*
+
+### `kits/omega/utils/TERM.TXT`
+
+The operator's page of TERM: how to call it, what «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА» means and that СУ/Е returns to ОСА - one block, on the 064, 066 and 172 disks.  Not the nine-block manual of the same name on the work diskette 056, which describes the whole КВИ «Электроника МС0111» complex and is kept in programs/ms0111/
+
+*ru / koi8-r; disks: 3; identified from: content read 2026-09-05; sha256 66691848ec61*
 
 </details>
 
@@ -850,7 +878,7 @@ RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не н�
 
 </details>
 
-<details><summary><b>kits/vvv/</b> — 9 files</summary>
+<details><summary><b>kits/vvv/</b> — 10 files</summary>
 
 <details><summary><b>kits/vvv/development/</b> — 2 files</summary>
 
@@ -884,7 +912,13 @@ The lower-surface formatter in a later edition than the ОМЕГА disks' one: t
 
 </details>
 
-<details><summary><b>kits/vvv/utils/</b> — 5 files</summary>
+<details><summary><b>kits/vvv/utils/</b> — 6 files</summary>
+
+### `kits/vvv/utils/BINCOM.SAV`
+
+DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP)
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: its own Russian switch help and version banner; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 b76b1abdfd92*
 
 ### `kits/vvv/utils/DATIME.SAV`
 
@@ -2310,7 +2344,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 86 files</summary>
+<details open><summary><b>software/</b> — 81 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2781,44 +2815,6 @@ Russian version of The Oregon Trail: year 1786, the trail from Idaho to Oregon; 
 Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vertically, consonants horizontally), by Домнич Александр for IVF 'МИКРОТЕХ', Voronezh 1994, 6 difficulty levels. Its true name is UDAW.SAV: the program opens 'udaw.sav' (ASCII literal at 0x1306) and sums the first 1000 words - OF ITSELF; the sum of this very binary is exactly the expected -27004, so it is a self-integrity check against renaming/tampering, and a failed check prints 'Привет хакерам!!'. The surviving copies were renamed to .EXE, which is what broke them - put back as UDAW.SAV it runs whole, no key needed
 
 *written in Pascal (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: user's insight 2026-09-05, proved: sum(first 1000 words of UDAW.EXE) = -27004; renamed copy runs clean with no taunt; UDAW.PAS + EXE strings; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; the same file as in programs/domnich/piton/, where its source is; sha256 1c5bad7a40b5*
-
-</details>
-
-<details><summary><b>software/system/</b> — 5 files</summary>
-
-<details><summary><b>software/system/utils/</b> — 5 files</summary>
-
-### `software/system/utils/BINCOM.SAV`
-
-DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP)
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: its own Russian switch help and version banner; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 b76b1abdfd92*
-
-### `software/system/utils/DATIME.SAV`
-
-DATIME «(C) 1987» of the ВЦ АН СССР, from the work diskette 056 - the greeter with escape-sequence highlighting
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the work diskette 056 build; sha256 55d955b8fcee*
-
-### `software/system/utils/HELP.TXT`
-
-«Описание команд операционной системы ФОДОС-3» - the command reference HELP.SAV prints, as plain text: ASSIGN, BOOT, COPY… with their syntax
-
-*ru+en / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 bd7f86f0db83*
-
-### `software/system/utils/TERM.SAV`
-
-The terminal emulator as the work diskettes 056 and 172 of the КВИ «Электроника МС0111» complex carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the work diskette 056 build; sha256 149b71963551*
-
-### `software/system/utils/TERM.TXT`
-
-The operator's page of TERM: how to call it, what «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА» means and that СУ/Е returns to ОСА - one block, on the 064, 066 and 172 disks.  Not the nine-block manual of the same name on the work diskette 056, which describes the whole КВИ «Электроника МС0111» complex and is kept in programs/ms0111/
-
-*ru / koi8-r; disks: 3; identified from: content read 2026-09-05; sha256 66691848ec61*
-
-</details>
 
 </details>
 

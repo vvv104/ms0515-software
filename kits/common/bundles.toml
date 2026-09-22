@@ -112,7 +112,7 @@ group    = "Utilities / Diagnostics"
 date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
 requires = ["geteml"]
 volume   = "any"
-files    = ["software/system/diag/C*.SAV"]
+files    = ["kits/common/diag/C*.SAV"]
 
 [bundle.scan-codes]
 title = "SCN15I - keyboard scan-code viewer"

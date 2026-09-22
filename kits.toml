@@ -8,7 +8,6 @@
 areas = [
     "software/games",
     "software/development",
-    "software/system",
     "software/apps",
 ]
 

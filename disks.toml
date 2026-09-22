@@ -922,6 +922,12 @@ kit      = "vvv"
 provides = ["link"]
 date     = "1995-04-01"
 files    = ["kits/vvv/development/LINK.SAV"]
+
+[bundle.bincom]
+kit      = "vvv"
+title = "BINCOM V05.08 - binary compare"
+date  = "1995-01-01"
+files = ["kits/vvv/utils/BINCOM.SAV"]
 [bundle.datset]
 title = "DATSET - date setting of the OSA kit"
 kit      = "common"
@@ -1031,7 +1037,7 @@ group    = "Utilities / Diagnostics"
 date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
 requires = ["geteml"]
 volume   = "any"
-files    = ["software/system/diag/C*.SAV"]
+files    = ["kits/common/diag/C*.SAV"]
 
 [bundle.scan-codes]
 title = "SCN15I - keyboard scan-code viewer"
@@ -1458,13 +1464,6 @@ title = "SPR - the sprite editor, with its manual"
 group = "Development / Sprites"
 date  = "1995-04-01"
 files = ["software/development/sprites/SPR.SAV", "software/development/sprites/SPRED.DOC"]
-# ==== Utilities ============================================================
-
-[bundle.bincom]
-title = "BINCOM V05.08 - binary compare"
-group = "Utilities"
-date  = "1995-01-01"
-files = ["software/system/utils/BINCOM.SAV"]
 # ==== Applications =========================================================
 
 [bundle.art]
