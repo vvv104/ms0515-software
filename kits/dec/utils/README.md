@@ -20,6 +20,8 @@ Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.
 | `BATCH.SAV` | Batch jobs; its handler is `BA.SYS` |
 | `QUEMAN.SAV` `QUEUE.REL` `SPOOL.REL` | The print queue and the spooler. **Untried** |
 
+| `IND.SAV` | The indirect command file processor - variables, conditions, `.GOTO`, `@<EOF>` - built from DEC's sources in five command files on one machine.  It gets `@file` only after `SET KMON IND`, which its bundle puts in the startup file; without it KMON runs the file itself and reads an IND directive as an invalid command | `SET KMON IND`, then `@FILE` |
+
 Left out on purpose: `SETUP` (VT100 and LA50 escape sequences and the Professional 350's tables), `SPEED` (sets the baud rates of a PDT-11/150), `MDUP`, `FILEX`, `TERMID`, `MSCPCK`, `GIDIS`; `ERROUT` and `EL.SYS`, which need a monitor built with error logging. Not ready: `IND`, `VTCOM`.
 
 Not in the catalogue (`CATALOG.md`, `catalog.csv`) yet.
