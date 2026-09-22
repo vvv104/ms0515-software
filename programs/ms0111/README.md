@@ -1,6 +1,6 @@
 # The МС0111 terminal complex
 
-The МС-0515 as a terminal of an МС0108 under ФОДОС-4/TS: the link initializer `EPP`, the `KUBUS` patch, the memory-mapping tests `PIC`/`PIC1`, and and the memory-mapping tests of that disk; its `PC` and `RK` handlers, which came without sources, are in [`../../software/system/handlers/`](../../software/system/handlers/README.md).  The terminal emulator itself, `TERM.SAV`, is a standard utility that the complex used - it is in `software/system/utils/` with its manual.  The link registers are not emulated, so these only start.
+The МС-0515 as a terminal of an МС0108 under ФОДОС-4/TS: the link initializer `EPP`, the `KUBUS` patch, the memory-mapping tests `PIC`/`PIC1`, and and the memory-mapping tests of that disk; its `PC` and `RK` handlers, which came without sources, are in [`../../kits/mihin/handlers/056/`](../../kits/mihin/handlers/056/README.md).  The terminal emulator itself, `TERM.SAV`, is a standard utility that the complex used - it is in `software/system/utils/` with its manual.  The link registers are not emulated, so these only start.
 
 | file | what | how to run |
 |---|---|---|

@@ -2,7 +2,7 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 100 files</summary>
+<details open><summary><b>kits/</b> — 105 files</summary>
 
 <details><summary><b>kits/common/</b> — 43 files</summary>
 
@@ -282,7 +282,7 @@ Sets the screen to white and returns to the monitor; the counterpart of BLACK.SA
 
 </details>
 
-<details><summary><b>kits/mihin/</b> — 9 files</summary>
+<details><summary><b>kits/mihin/</b> — 14 files</summary>
 
 <details><summary><b>kits/mihin/development/</b> — 2 files</summary>
 
@@ -310,7 +310,41 @@ Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990. 
 
 </details>
 
-<details><summary><b>kits/mihin/handlers/</b> — 5 files</summary>
+<details><summary><b>kits/mihin/handlers/</b> — 10 files</summary>
+
+<details><summary><b>kits/mihin/handlers/056/</b> — 5 files</summary>
+
+### `kits/mihin/handlers/056/PC.COM`
+
+SIPP patch script for PC.SYS (R SIPP, DK:PC.SYS/C, then the patched offsets)
+
+*disks: 1; identified from: read 2026-09-06; sha256 95adaabd0f4b*
+
+### `kits/mihin/handlers/056/PC.SYS`
+
+Handler of the МС0111 terminal-complex disk (056): the link to the central machine as a character device
+
+*disks: 1; identified from: identified 2026-09-05; sha256 2ea0d76682ca*
+
+### `kits/mihin/handlers/056/RK.COM`
+
+SIPP patch script for RK.SYS (R SIPP, DK:RK.SYS/C, then the patched offsets)
+
+*disks: 1; identified from: read 2026-09-06; sha256 1a3887444fb6*
+
+### `kits/mihin/handlers/056/RK.SYS`
+
+Handler of the МС0111 terminal-complex disk (056): the central machine's disk seen over the link
+
+*disks: 1; identified from: identified 2026-09-05; sha256 6cb6ec99f915*
+
+### `kits/mihin/handlers/056/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
+
+</details>
 
 ### `kits/mihin/handlers/DZ.SYS`
 
@@ -2106,7 +2140,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 118 files</summary>
+<details open><summary><b>software/</b> — 113 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2760,41 +2794,7 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 
 </details>
 
-<details><summary><b>software/system/</b> — 11 files</summary>
-
-<details><summary><b>software/system/handlers/</b> — 5 files</summary>
-
-### `software/system/handlers/PC.COM`
-
-SIPP patch script for PC.SYS (R SIPP, DK:PC.SYS/C, then the patched offsets)
-
-*disks: 1; identified from: read 2026-09-06; sha256 95adaabd0f4b*
-
-### `software/system/handlers/PC.SYS`
-
-Handler of the МС0111 terminal-complex disk (056): the link to the central machine as a character device
-
-*disks: 1; identified from: identified 2026-09-05; sha256 2ea0d76682ca*
-
-### `software/system/handlers/RK.COM`
-
-SIPP patch script for RK.SYS (R SIPP, DK:RK.SYS/C, then the patched offsets)
-
-*disks: 1; identified from: read 2026-09-06; sha256 1a3887444fb6*
-
-### `software/system/handlers/RK.SYS`
-
-Handler of the МС0111 terminal-complex disk (056): the central machine's disk seen over the link
-
-*disks: 1; identified from: identified 2026-09-05; sha256 6cb6ec99f915*
-
-### `software/system/handlers/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
-
-</details>
+<details><summary><b>software/system/</b> — 6 files</summary>
 
 <details><summary><b>software/system/utils/</b> — 6 files</summary>
 

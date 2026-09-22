@@ -2,6 +2,8 @@
 
 The `.SYS` handlers by monitor family — a handler loads only under the sysgen it was built for, so take them from the folder of your system.  `osa` = ОСА (MON8SJ), `omega` = ОМЕГА V05.04 (both RT11SJ builds), `mihin` = OS-16SJ, `rodionov` = RT15SJ.  One handler in every folder is no recovered file: `HD.SYS`, the emulator's paravirtual hard disk - see [the section below](#hdsys---the-emulators-hard-disk) for whose it is.  `LOAD DV:` / `SET EM ON` / `SET SL ON` activate them; the compatibility table below is from the cross-run of every handler on every monitor.
 
+The `056/` handlers of Mihin's kit were run on every system on 2026-09-22: ОСА, ОМЕГА and ОМЕГА2 answer «Conflicting SYSGEN options» and then «Invalid device», Mihin's `INSTALL` and `LOAD` take all three.  No bundle names `PC` or `RK`: the emulator has neither device.
+
 Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недопустимое устройство», *no boot* = the system did not come up with it in the kit, *not listed* = the monitor ignores it.
 
 | family | handler | build | from | what | osa | omega | omega2 | mihin |
@@ -13,7 +15,9 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 | mihin | `SL.SYS` | `cd5af8b` | disk1 | the Mihin-family SL V8.00 with a Russian assignment table (^A..^T hotkey macros) | rejected | rejected | rejected | loaded |
 | mihin | `TT.SYS` | `f69410a` | amk_1 | Terminal handler | rejected | rejected | rejected | loaded |
 | mihin | `VM.SYS` | `67036c0` | amk_1 | RAM-disk handler (memory used as a drive) | rejected | rejected | rejected | loaded |
-| (no kit) | `SL.SYS` | `85ad85f` | 056 | Сторожевых's SL V06.00b of 1987, off the МС0111 complex's work diskette; in `../software/system/shells/` | rejected | rejected | rejected | loaded |
+| mihin | `056/SL.SYS` | `85ad85f` | 056 | Сторожевых's SL V06.00b of 1987, off the work diskette 056 - the English build with the LET language | rejected | rejected | rejected | loaded |
+| mihin | `056/PC.SYS` | - | 056 | DEC's PC11 paper-tape handler (code 7, CSR 177550, vectors 070/074), sysgen patched to TIM$IT | rejected | rejected | rejected | loaded |
+| mihin | `056/RK.SYS` | - | 056 | DEC's RK05 handler, 4800 blocks, moved to CSR 173100 and vector 350 | rejected | rejected | rejected | loaded |
 | omega | `DV.SYS` | `09d5bce` | disk3 | Whole double-sided diskette as one 1600-block volume, cylinder 0 last | loaded | loaded | loaded | rejected |
 | omega | `DZ.SYS` | `7606fe5` | disk3 | Floppy-disk handler | loaded | loaded | loaded | no boot |
 | omega | `EX.SYS` | `0354d18` | disk3 | Electronic-disk handler of the memory/interface expansion board (EX0:) | loaded | loaded | loaded | rejected |

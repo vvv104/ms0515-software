@@ -1,4 +1,3 @@
-# System software
+# System software of no kit
 
-What runs the machine rather than the user and belongs to no kit: utilities that are nobody's build of a DEC program, a formatter, printing, the shells, diagnostics.  The monitors and everything of their make - handlers, DIR, DUP, PIP, RESORC, HELP, MACRO, LINK - are in `../../kits/`, a folder per kit (patched to run DEC's STARTS.COM; the three factory configurations that differ only in that baked command are described there).  Each subfolder says which build goes with which system; a disk composed from the collection carries the minimum kit, so copy from here only what you add.
-
+What is left here belongs to no kit and has a rival build elsewhere, so it could not go to [`../../kits/common/`](../../kits/common/README.md) either: `BINCOM`, `CALEND`, `DATIME`, `TERM` with its manual, and `HELP.TXT`.  Everything else that runs the machine is in [`../../kits/`](../../kits/README.md) — each kit's own in its folder, what every system can take in `kits/common/`.
