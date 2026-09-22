@@ -944,7 +944,7 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 </details>
 
-<details open><summary><b>programs/</b> — 221 files</summary>
+<details open><summary><b>programs/</b> — 220 files</summary>
 
 <details><summary><b>programs/autoteacher/</b> — 11 files</summary>
 
@@ -1422,23 +1422,7 @@ An LD1/LOAD recording in the players' 8K-word format (8192 words of one 8-bit sa
 
 </details>
 
-<details><summary><b>programs/domnich/</b> — 4 files</summary>
-
-<details><summary><b>programs/domnich/piton/</b> — 2 files</summary>
-
-### `programs/domnich/piton/UDAW.PAS`
-
-Source of ПИТОН: the rules text («игра может быть полезна учащимся младших классов при изучении темы: гласные и согласные»), the snake driven by the cursor keys eating vowels vertically and consonants horizontally, and the self-check of the .SAV
-
-*ru / koi8-r; disks: 2; identified from: read 2026-09-05; sha256 9fc29dee1033*
-
-### `programs/domnich/piton/UDAW.SAV`
-
-Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vertically, consonants horizontally), by Домнич Александр for IVF 'МИКРОТЕХ', Voronezh 1994, 6 difficulty levels. Its true name is UDAW.SAV: the program opens 'udaw.sav' (ASCII literal at 0x1306) and sums the first 1000 words - OF ITSELF; the sum of this very binary is exactly the expected -27004, so it is a self-integrity check against renaming/tampering, and a failed check prints 'Привет хакерам!!'. The surviving copies were renamed to .EXE, which is what broke them - put back as UDAW.SAV it runs whole, no key needed
-
-*written in Pascal (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: user's insight 2026-09-05, proved: sum(first 1000 words of UDAW.EXE) = -27004; renamed copy runs clean with no taunt; UDAW.PAS + EXE strings; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 1c5bad7a40b5*
-
-</details>
+<details><summary><b>programs/domnich/</b> — 3 files</summary>
 
 ### `programs/domnich/CALEND.PAS`
 
@@ -1451,6 +1435,12 @@ Source of the perpetual calendar, signed «Домнич А.В 16-06-94г.» in i
 Newton's method for a system of nonlinear equations - «Решение системы» - in FORTRAN, header «13.05.94 Fortran/FODOS-2», «программист Домнич Александр»
 
 *ru / koi8-r; disks: 2; identified from: read 2026-09-05; sha256 a58207d8f995*
+
+### `programs/domnich/UDAW.PAS`
+
+Source of ПИТОН: the rules text («игра может быть полезна учащимся младших классов при изучении темы: гласные и согласные»), the snake driven by the cursor keys eating vowels vertically and consonants horizontally, and the self-check of the .SAV
+
+*ru / koi8-r; disks: 2; identified from: read 2026-09-05; sha256 9fc29dee1033*
 
 </details>
 

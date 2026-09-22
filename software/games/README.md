@@ -1,6 +1,6 @@
 # Games
 
-Run a game by its bare name or `R NAME`.  ПИТОН (`UDAW.SAV`) is here as a game and in `programs/domnich/piton/` with its source.  A game with a data file next to it needs that file on the same volume (`SABOT2.DAT`, `KING.DAT`, `KAMENS.DAT`); the notes say what each one asks first.  Many games print their Russian text in KOI-7 - the seven-bit code where the lowercase Latin positions ARE the Cyrillic letters - and read as transliteration («na~nem?», «e}e raz?») until the terminal is in РУС mode: in the emulator press Right Alt (РУС/ЛАТ) before running such a game, and again to return.  Real-time games need `--realtime` in the CLI.
+Run a game by its bare name or `R NAME`.  ПИТОН (`UDAW.SAV`) is here as a game; its source is with its author in `programs/domnich/`.  A game with a data file next to it needs that file on the same volume (`SABOT2.DAT`, `KING.DAT`, `KAMENS.DAT`); the notes say what each one asks first.  Many games print their Russian text in KOI-7 - the seven-bit code where the lowercase Latin positions ARE the Cyrillic letters - and read as transliteration («na~nem?», «e}e raz?») until the terminal is in РУС mode: in the emulator press Right Alt (РУС/ЛАТ) before running such a game, and again to return.  Real-time games need `--realtime` in the CLI.
 
 | file | what | how to run |
 |---|---|---|
