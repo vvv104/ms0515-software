@@ -51,7 +51,7 @@ much for the media) is refused with the reason.
 | [`kits/`](kits/README.md) | a kit is what came together - a monitor and the handlers, utilities and tools of its make, a folder each: ОСА, ОМЕГА (both sysgens), Mihin's OS-16SJ, Rodionov's RT15SJ (with his copy protection's two sectors), `dec` - DEC's RT-11 V5.4 built for the machine from sources - and the kits with no monitor of their own; [`HANDLERS.md`](kits/HANDLERS.md) has the load/reject matrix of every handler on every monitor |
 | `software/` | the industrial half: products that came without their sources |
 | [`software/system/`](software/system/README.md) | what runs the machine and belongs to no kit: screen and date utilities, a formatter, printing, shells, diagnostics |
-| [`software/development/`](software/development/README.md) | Pascal, MACRO-11 and LINK, FORTRAN, BASIC, editors, debuggers, sprite tools |
+| [`software/development/`](software/development/README.md) | the sprite editor and the Hello-world examples; what one writes programs with — Pascal, FORTRAN, the BASICs, the screen editor, the dump viewer — is in [`kits/common/development/`](kits/common/development/README.md), and each kit's own assembler and linker in that kit |
 | [`software/games/`](software/games/README.md) | the games, each with the data file it needs beside it; ПИТОН among them, and `fist/` - our own port, the one thing here that came from no diskette |
 | [`software/apps/`](software/apps/README.md) | applications: FCON, FunctionCAD, UKCALC, ART, the РБД-МИКРО database system, the savings-bank programs |
 | [`software/unsorted/`](software/unsorted/README.md) | the problem shelf: what the cross-run could not run and the reads that failed, each with what is known, until examined |

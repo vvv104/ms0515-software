@@ -1,6 +1,6 @@
 # Voronkov's programs
 
-Voronkov's own programs, 1993-1995 - everything on his disks that no one else signed.  From his logical-disk container `PROGS.DSK` (`minesweeper/`), where they sat beside the minesweeper sources: small Pascal programs - graphics and sound tries, university exercises, file-conversion tools and hardware probes.  From the Pascal disk: the formula editor `FORMUL.PAS`, `GR.PAS`, `STONH.PAS`.  From the games disk: the BASIC sea battle «МОРСКОЙ БОЙ» and the joystick shooter `LUNA` with their sprite tables and screen.  The built `CODTXT.SAV` and `BIG2SM.SAV`, and the piano-keyboard screen of his 1993 music editor, `MUZRED.SCR`.  The container's sources - compile with PAS1, MACRO, LINK and PASLIB (see `../../software/development/pascal/`); the graphics ones need PASGRF.OBJ as well.
+Voronkov's own programs, 1993-1995 - everything on his disks that no one else signed.  From his logical-disk container `PROGS.DSK` (`minesweeper/`), where they sat beside the minesweeper sources: small Pascal programs - graphics and sound tries, university exercises, file-conversion tools and hardware probes.  From the Pascal disk: the formula editor `FORMUL.PAS`, `GR.PAS`, `STONH.PAS`.  From the games disk: the BASIC sea battle «МОРСКОЙ БОЙ» and the joystick shooter `LUNA` with their sprite tables and screen.  The built `CODTXT.SAV` and `BIG2SM.SAV`, and the piano-keyboard screen of his 1993 music editor, `MUZRED.SCR`.  The container's sources - compile with PAS1, MACRO, LINK and PASLIB (see `../../kits/common/development/`); the graphics ones need PASGRF.OBJ as well.
 
 | file | what | how to run |
 |---|---|---|
@@ -17,7 +17,7 @@ Voronkov's own programs, 1993-1995 - everything on his disks that no one else si
 | `BIG2SM.PAS` | copies a .PAS file turning capitals into small letters | source - compile with PAS1, MACRO, LINK |
 | `SAVTXT.PAS` | turns any file into a text-shaped one: keeps the printable bytes, breaks lines at 78 | source - compile with PAS1, MACRO, LINK |
 | `DMPMOD.PAS` | trims a DUMP listing: drops its three header lines and everything before the `/` of each line | source - compile with PAS1, MACRO, LINK |
-| `REDUMP.PAS` | the inverse of DUMP: reads an octal listing back into a binary file (unrelated to REDUMP.SAV of `../../software/development/debug/`) | source - compile with PAS1, MACRO, LINK |
+| `REDUMP.PAS` | the inverse of DUMP: reads an octal listing back into a binary file (unrelated to REDUMP.SAV of `../../kits/common/development/`) | source - compile with PAS1, MACRO, LINK |
 | `LSTROM.PAS` | dumps the ROM 140000..177377 into PZU.DAT | source - compile with PAS1, MACRO, LINK |
 | `PR.PAS` | scans the I/O page 160000..177777, writing each byte back changed and recording in ADR.DAT the addresses that responded | source - compile with PAS1, MACRO, LINK |
 | `CHAIN.PAS` | a .CHAIN test: fills the RT-11 chain block at 500 with a RAD50 file name and issues EMT 374 with R0=4000 - and prints a jibe if control ever comes back | source - compile with PAS1, MACRO, LINK |

@@ -163,3 +163,128 @@ title    = "ODT.OBJ - the octal debugger, linked into a program"
 kit      = "common"
 date     = "1999-12-31"
 files    = ["kits/common/development/ODT.OBJ"]
+
+# ---- development ----------------------------------------------------------
+# The compilers and their libraries, the editors, the debugger and the two
+# BASICs: one build of each, and none of them minds which monitor it runs
+# under.
+
+[bundle.sysmac]
+kit      = "common"
+title = "SYSMAC.SML - the system macro library"
+date  = "1995-04-01"
+files = ["kits/common/development/SYSMAC.SML"]
+
+[bundle.syslib]
+kit      = "common"
+title = "SYSLIB.OBJ - the system library"
+date  = "1995-04-01"
+files = ["kits/common/development/SYSLIB.OBJ"]
+
+[bundle.pascal]
+kit      = "common"
+title    = "Pascal - PAS1 with its run-time library"
+requires = ["macro11", "link", "syslib"]     # PAS1 emits MACRO-11, LINK binds PASLIB
+prefer   = { mihin = ["macro-mihin", "link-mihin"], default = ["macro-vvv", "link-vvv"] }
+date     = "1995-04-01"
+files    = ["kits/common/development/PAS1.SAV",
+            "kits/common/development/PAS1.OBJ",
+            "kits/common/development/PASLIB.OBJ"]
+
+[bundle.pascal-graphics]
+kit      = "common"
+title    = "Pascal graphics - PASGRF and GRAPH.P1U"
+requires = ["pascal"]
+date     = "1995-04-01"
+files    = ["kits/common/development/PASGRF.OBJ", "kits/common/development/GRAPH.P1U"]
+
+[bundle.pascal-units]
+kit      = "common"
+title    = "Pascal units - STRING, SETPIX, GETDAT sources"
+requires = ["pascal"]
+volume   = "any"
+date     = "1995-04-01"
+files    = ["kits/common/development/STRING.PAS",
+            "kits/common/development/SETPIX.PAS",
+            "kits/common/development/GETDAT.PAS"]
+
+[bundle.pascal-docs]
+kit      = "common"
+title    = "Pascal manuals - PASCAL.LST, PASUSE.LST, PASGR.DOC"
+date     = "1995-05-16"
+requires = ["pascal"]
+volume   = "any"
+files    = ["kits/common/development/PASCAL.LST",
+            "kits/common/development/PASUSE.LST",
+            { path = "kits/common/development/PASGR.DOC", date = "1995-05-15" }]
+
+[bundle.forlib]
+kit      = "common"
+title = "FORLIB.OBJ - the FORTRAN IV run-time library"
+date  = "1995-04-01"
+files = ["kits/common/development/FORLIB.OBJ"]
+
+[bundle.fortran]
+kit      = "common"
+title    = "FORTRAN IV compiler"
+requires = ["link", "forlib", "syslib"]
+prefer   = { mihin = ["link-mihin"], default = ["link-vvv"] }
+date     = "1995-04-01"
+files    = ["kits/common/development/FORTRA.SAV"]
+
+[bundle.basico]
+kit      = "common"
+title    = "BASIC - Omega BASIC 1-01a, the machine's native BASIC"
+provides = ["basic"]
+date     = "1992-02-17"
+files    = ["kits/common/development/BASICO.SAV"]
+
+[bundle.basic-rafos]
+kit      = "common"
+title    = "BASIC / RAFOS V02-030"
+date     = "1991-08-14"
+provides = ["basic"]
+files    = ["kits/common/development/BASIC.SAV"]
+
+[bundle.basico-docs]
+kit      = "common"
+title    = "BASICO.DOC - the Omega BASIC manual"
+date     = "1995-01-01"
+requires = ["basico"]
+volume   = "any"
+files    = ["kits/common/development/BASICO.DOC"]
+
+[bundle.ked]
+kit      = "common"
+title    = "KED - keypad screen editor (vvv104 disks)"
+provides = ["k13-editor"]
+date     = "1995-04-01"
+files    = ["kits/common/development/KED.SAV"]
+
+[bundle.k52]
+kit      = "common"
+title    = "K52 - screen editor of the OSA and OMEGA kits"
+provides = ["k13-editor"]
+date     = "1991-01-31"
+files    = [{ path = "kits/common/development/K13U.SAV", as = "K52.SAV" }]
+
+[bundle.r15]
+kit      = "common"
+title    = "R15 - Rodionov's edition of the editor, with its help"
+provides = ["k13-editor"]
+date     = "1990-11-29"
+files    = ["kits/common/development/R15.SAV",
+            { path = "kits/common/development/R15.HLP", date = "1993-03-24" }]
+
+[bundle.r15-docs]
+kit      = "common"
+title    = "R15.DOC - the manual of the K13 family editor"
+volume   = "any"
+date     = "1993-08-09"
+files    = ["kits/common/development/R15.DOC"]
+
+[bundle.dess]
+kit      = "common"
+title = "DESS - DEZI dump viewer and disassembler"
+date  = "1995-04-01"
+files = ["kits/common/development/DESS.SAV"]

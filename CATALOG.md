@@ -2,9 +2,169 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 105 files</summary>
+<details open><summary><b>kits/</b> — 131 files</summary>
 
-<details><summary><b>kits/common/</b> — 43 files</summary>
+<details><summary><b>kits/common/</b> — 69 files</summary>
+
+<details><summary><b>kits/common/development/</b> — 26 files</summary>
+
+### `kits/common/development/BASIC.SAV`
+
+BASIC / RAFOS V02-030 interpreter; asks which optional functions to load (ALL, NONE, OR INDIVIDUAL)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 dbdca9ec1f44*
+
+### `kits/common/development/BASICO.DOC`
+
+Manual of БЕЙСИК-ОМЕГА («РАЗРАБОТАН ЛЬВОВСКИМ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), 363 blocks. Pages 8-14 are lost: under blocks 29-45 the diskette holds monitor swap code, not text, and the three reads of disk5 (the only disk with the file) disagree there
+
+*ru+en / koi8-r; disks: 1; identified from: gap analysis 2026-09-06; sha256 0b2216607079*
+
+### `kits/common/development/BASICO.SAV`
+
+Omega BASIC for the Elektronika MS 0515, edition 1-01a; the native BASIC of the machine, ready prompt in Russian
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 16; identified from: program screen; sha256 9ac32ba9c014*
+
+### `kits/common/development/DESS.SAV`
+
+DEZI V05.01, 'Originally written by D. Climov' (phone in the banner): an interactive octal dump viewer-cum-disassembler - full-screen word dump with ASCII gutter, BLCK/ADDR/TYPE header, a Stack line and a live 'Macro-11:' disassembly of the word at the cursor; modes words/bytes/radix/ascii/Inst, pattern search. The machine's резидентный инструмент дизассемблирования; on all five of the keeper's disks
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DEZI-F-FilenotfoundDK:NOSUCH.XXX*; disks: 5; identified from: banner + live run on DIR.SAV 2026-09-05 (screenshot with Macro-11: HALT); sha256 bd0665c3c864*
+
+### `kits/common/development/FORLIB.OBJ`
+
+The FORTRAN IV run-time library (105 KB) that the OMSI Pascal programs are LINKed against for RAN and the FORTRAN-declared routines
+
+*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 b0e071fa478a*
+
+### `kits/common/development/FORTRA.SAV`
+
+FORTRAN compiler; prompts with * for a command line the way the RT-11 compilers do
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 8; identified from: program screen; sha256 02fa7a6e143a*
+
+### `kits/common/development/GETDAT.PAS`
+
+getdat(var d:data) - the system date (year 1972.., month, day) unpacked from the RT-11 .DATE word with inline MACRO-11 ({$C ... }), a unit for programs that stamp their output
+
+*disks: 2; identified from: read from the source 2026-09-06; sha256 b63341ce9c24*
+
+### `kits/common/development/GRAPH.P1U`
+
+Declarations file of the PASGRF graphics library for OMSI Pascal-1: the EXTERNAL procedure headers (InitGraph, SetColor, SetFon, SetBorder, SetPixel...) to include in a program that links with PASGRF.OBJ
+
+*disks: 4; identified from: read 2026-09-06; sha256 6fc757560c75*
+
+### `kits/common/development/K13U.SAV`
+
+Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 8; identified from: byte diff of the family 2026-09-06; sha256 c80b5bca6911*
+
+### `kits/common/development/KED.SAV`
+
+Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: byte diff of the family 2026-09-06; sha256 788620421a59*
+
+### `kits/common/development/PAS1.OBJ`
+
+The OMSI Pascal run-time support module («Trap to 4», «Not a valid device», «End of file on device»…) every compiled program is LINKed with
+
+*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 9cdeed1f03b1*
+
+### `kits/common/development/PAS1.SAV`
+
+First pass of the Pascal compiler; prompts with * for a command line
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 13; identified from: program screen; sha256 0e79f7b1a319*
+
+### `kits/common/development/PAS1HD.OBJ`
+
+A one-block object module whose only text is «Graphics library -- copyleft by Naumov A.I.» - the header of the graphics library
+
+*disks: 1; identified from: strings 2026-09-06; sha256 8539d3195820*
+
+### `kits/common/development/PASCAL.LST`
+
+The Pascal language listing/reference that came with the compiler. Two reads of disk5 survived; this is the clean one (the other has junk in blocks 130, 150, 168-170)
+
+*ru+en / koi8-r; disks: 1; identified from: two disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 4164731eb6c0*
+
+### `kits/common/development/PASGR.DOC`
+
+Manual of the Pascal graphics library PASGRF.OBJ: InitGraph, SetColor, SetFon, SetBorder, SetBright/ResBright, SetFlach, drawing and text routines, KbMode/inkey keyboard polling, with examples. Three reads of disk5 survived; this is the one clean one (the other two carry corrupt blocks 6-13 and 26)
+
+*ru / koi8-r; disks: 1; identified from: three disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 115fea56ecb3*
+
+### `kits/common/development/PASGRF.OBJ`
+
+The graphics library for OMSI Pascal on the МС-0515: InitGraph, SetPixel, LINE, sprites - what the graphics programs LINK with
+
+*disks: 2; identified from: strings 2026-09-06; sha256 c9cadedc0f90*
+
+### `kits/common/development/PASLIB.OBJ`
+
+The Pascal library with the terminal routines (ClrScr, GotoXY, Inkey, KbMode, cursor on/off) the programs declare EXTERNAL
+
+*disks: 5; identified from: strings 2026-09-06; sha256 5d70cb23ee66*
+
+### `kits/common/development/PASUSE.LST`
+
+«ПАСКАЛЬ - руководство программиста», 45 sheets, 1982: the Pascal programmer's manual of the machine
+
+*ru+en / koi8-r; disks: 1; identified from: title page 2026-09-06; sha256 4ec5d643b0f5*
+
+### `kits/common/development/R15.DOC`
+
+«Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands
+
+*ru+en / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 d1558cc2f063*
+
+### `kits/common/development/R15.HLP`
+
+«Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key
+
+*ru / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 e81b3cc40142*
+
+### `kits/common/development/R15.SAV`
+
+«Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
+
+### `kits/common/development/REDUMP.SAV`
+
+DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local rebadge of DESS.SAV, the same program (string tables byte-identical); unrelated to the small REDUMP.PAS in PROGS.DSK
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: banner comparison: 'REDUMP B5.0e ...ginally written by D. Climov'; sha256 f29f7dc3113d*
+
+### `kits/common/development/SETPIX.PAS`
+
+SetPixel for the 640x200 hi-res screen written straight against the hardware: the pixel byte at VRAM 40000B + 80*y + x div 8, ORed with the bit mask, with the memory-dispatcher register 177400B / its shadow at 157700B switched to reach the video bank and restored; a one-call test main follows
+
+*disks: 2; identified from: read from the source 2026-09-06; sha256 f1dbfeead45c*
+
+### `kits/common/development/STRING.PAS`
+
+String library for OMSI Pascal (which has no string type): STRING = array[1..79] of char with STRINIT, STRLENG, STRREAD (raw keyboard input through the external KBMODE/INKEY of PASGRF, with backspace editing), STRWRITE, STRDELETE, STRINSERT and VAL (string to real with an error position); ends with a small self-test main
+
+*disks: 2; identified from: read from the source 2026-09-06; sha256 7810b7a6abab*
+
+### `kits/common/development/SYSLIB.OBJ`
+
+The RT-11 system library SYSLIB (28 KB) LINK draws the system calls from
+
+*disks: 5; identified from: strings 2026-09-06; sha256 5f12d6ff00e0*
+
+### `kits/common/development/SYSMAC.SML`
+
+MACRO-11 system macro library
+
+*en / ascii; disks: 4; identified from: DEC RT-11; sha256 a9d716957163*
+
+</details>
 
 <details><summary><b>kits/common/diag/</b> — 26 files</summary>
 
@@ -2144,7 +2304,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 113 files</summary>
+<details open><summary><b>software/</b> — 87 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2332,187 +2492,7 @@ Multiplication-table trainer in machine code («проверяем таблиц�
 
 </details>
 
-<details><summary><b>software/development/</b> — 30 files</summary>
-
-<details><summary><b>software/development/basic/</b> — 3 files</summary>
-
-### `software/development/basic/BASIC.SAV`
-
-BASIC / RAFOS V02-030 interpreter; asks which optional functions to load (ALL, NONE, OR INDIVIDUAL)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 dbdca9ec1f44*
-
-### `software/development/basic/BASICO.DOC`
-
-Manual of БЕЙСИК-ОМЕГА («РАЗРАБОТАН ЛЬВОВСКИМ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), 363 blocks. Pages 8-14 are lost: under blocks 29-45 the diskette holds monitor swap code, not text, and the three reads of disk5 (the only disk with the file) disagree there
-
-*ru+en / koi8-r; disks: 1; identified from: gap analysis 2026-09-06; sha256 0b2216607079*
-
-### `software/development/basic/BASICO.SAV`
-
-Omega BASIC for the Elektronika MS 0515, edition 1-01a; the native BASIC of the machine, ready prompt in Russian
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 16; identified from: program screen; sha256 9ac32ba9c014*
-
-</details>
-
-<details><summary><b>software/development/debug/</b> — 2 files</summary>
-
-### `software/development/debug/DESS.SAV`
-
-DEZI V05.01, 'Originally written by D. Climov' (phone in the banner): an interactive octal dump viewer-cum-disassembler - full-screen word dump with ASCII gutter, BLCK/ADDR/TYPE header, a Stack line and a live 'Macro-11:' disassembly of the word at the cursor; modes words/bytes/radix/ascii/Inst, pattern search. The machine's резидентный инструмент дизассемблирования; on all five of the keeper's disks
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DEZI-F-FilenotfoundDK:NOSUCH.XXX*; disks: 5; identified from: banner + live run on DIR.SAV 2026-09-05 (screenshot with Macro-11: HALT); sha256 bd0665c3c864*
-
-### `software/development/debug/REDUMP.SAV`
-
-DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local rebadge of DESS.SAV, the same program (string tables byte-identical); unrelated to the small REDUMP.PAS in PROGS.DSK
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: banner comparison: 'REDUMP B5.0e ...ginally written by D. Climov'; sha256 f29f7dc3113d*
-
-</details>
-
-<details><summary><b>software/development/editors/</b> — 5 files</summary>
-
-### `software/development/editors/K13U.SAV`
-
-Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 8; identified from: byte diff of the family 2026-09-06; sha256 c80b5bca6911*
-
-### `software/development/editors/KED.SAV`
-
-Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: byte diff of the family 2026-09-06; sha256 788620421a59*
-
-### `software/development/editors/R15.DOC`
-
-«Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands
-
-*ru+en / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 d1558cc2f063*
-
-### `software/development/editors/R15.HLP`
-
-«Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key
-
-*ru / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 e81b3cc40142*
-
-### `software/development/editors/R15.SAV`
-
-«Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
-
-</details>
-
-<details><summary><b>software/development/fortran/</b> — 1 file</summary>
-
-### `software/development/fortran/FORTRA.SAV`
-
-FORTRAN compiler; prompts with * for a command line the way the RT-11 compilers do
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 8; identified from: program screen; sha256 02fa7a6e143a*
-
-</details>
-
-<details><summary><b>software/development/macro/</b> — 1 file</summary>
-
-### `software/development/macro/SYSMAC.SML`
-
-MACRO-11 system macro library
-
-*en / ascii; disks: 4; identified from: DEC RT-11; sha256 a9d716957163*
-
-</details>
-
-<details><summary><b>software/development/pascal/</b> — 14 files</summary>
-
-### `software/development/pascal/FORLIB.OBJ`
-
-The FORTRAN IV run-time library (105 KB) that the OMSI Pascal programs are LINKed against for RAN and the FORTRAN-declared routines
-
-*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 b0e071fa478a*
-
-### `software/development/pascal/GETDAT.PAS`
-
-getdat(var d:data) - the system date (year 1972.., month, day) unpacked from the RT-11 .DATE word with inline MACRO-11 ({$C ... }), a unit for programs that stamp their output
-
-*disks: 2; identified from: read from the source 2026-09-06; sha256 b63341ce9c24*
-
-### `software/development/pascal/GRAPH.P1U`
-
-Declarations file of the PASGRF graphics library for OMSI Pascal-1: the EXTERNAL procedure headers (InitGraph, SetColor, SetFon, SetBorder, SetPixel...) to include in a program that links with PASGRF.OBJ
-
-*disks: 4; identified from: read 2026-09-06; sha256 6fc757560c75*
-
-### `software/development/pascal/PAS1.OBJ`
-
-The OMSI Pascal run-time support module («Trap to 4», «Not a valid device», «End of file on device»…) every compiled program is LINKed with
-
-*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 9cdeed1f03b1*
-
-### `software/development/pascal/PAS1.SAV`
-
-First pass of the Pascal compiler; prompts with * for a command line
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 13; identified from: program screen; sha256 0e79f7b1a319*
-
-### `software/development/pascal/PAS1HD.OBJ`
-
-A one-block object module whose only text is «Graphics library -- copyleft by Naumov A.I.» - the header of the graphics library
-
-*disks: 1; identified from: strings 2026-09-06; sha256 8539d3195820*
-
-### `software/development/pascal/PASCAL.LST`
-
-The Pascal language listing/reference that came with the compiler. Two reads of disk5 survived; this is the clean one (the other has junk in blocks 130, 150, 168-170)
-
-*ru+en / koi8-r; disks: 1; identified from: two disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 4164731eb6c0*
-
-### `software/development/pascal/PASGR.DOC`
-
-Manual of the Pascal graphics library PASGRF.OBJ: InitGraph, SetColor, SetFon, SetBorder, SetBright/ResBright, SetFlach, drawing and text routines, KbMode/inkey keyboard polling, with examples. Three reads of disk5 survived; this is the one clean one (the other two carry corrupt blocks 6-13 and 26)
-
-*ru / koi8-r; disks: 1; identified from: three disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 115fea56ecb3*
-
-### `software/development/pascal/PASGRF.OBJ`
-
-The graphics library for OMSI Pascal on the МС-0515: InitGraph, SetPixel, LINE, sprites - what the graphics programs LINK with
-
-*disks: 2; identified from: strings 2026-09-06; sha256 c9cadedc0f90*
-
-### `software/development/pascal/PASLIB.OBJ`
-
-The Pascal library with the terminal routines (ClrScr, GotoXY, Inkey, KbMode, cursor on/off) the programs declare EXTERNAL
-
-*disks: 5; identified from: strings 2026-09-06; sha256 5d70cb23ee66*
-
-### `software/development/pascal/PASUSE.LST`
-
-«ПАСКАЛЬ - руководство программиста», 45 sheets, 1982: the Pascal programmer's manual of the machine
-
-*ru+en / koi8-r; disks: 1; identified from: title page 2026-09-06; sha256 4ec5d643b0f5*
-
-### `software/development/pascal/SETPIX.PAS`
-
-SetPixel for the 640x200 hi-res screen written straight against the hardware: the pixel byte at VRAM 40000B + 80*y + x div 8, ORed with the bit mask, with the memory-dispatcher register 177400B / its shadow at 157700B switched to reach the video bank and restored; a one-call test main follows
-
-*disks: 2; identified from: read from the source 2026-09-06; sha256 f1dbfeead45c*
-
-### `software/development/pascal/STRING.PAS`
-
-String library for OMSI Pascal (which has no string type): STRING = array[1..79] of char with STRINIT, STRLENG, STRREAD (raw keyboard input through the external KBMODE/INKEY of PASGRF, with backspace editing), STRWRITE, STRDELETE, STRINSERT and VAL (string to real with an error position); ends with a small self-test main
-
-*disks: 2; identified from: read from the source 2026-09-06; sha256 7810b7a6abab*
-
-### `software/development/pascal/SYSLIB.OBJ`
-
-The RT-11 system library SYSLIB (28 KB) LINK draws the system calls from
-
-*disks: 5; identified from: strings 2026-09-06; sha256 5f12d6ff00e0*
-
-</details>
+<details><summary><b>software/development/</b> — 4 files</summary>
 
 <details><summary><b>software/development/sprites/</b> — 4 files</summary>
 
