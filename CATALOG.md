@@ -346,6 +346,16 @@ Single-line editor - command recall and editing at the monitor prompt; the V08.0
 
 </details>
 
+<details><summary><b>kits/mihin/handlers/npf-sensor/</b> — 1 file</summary>
+
+### `kits/mihin/handlers/npf-sensor/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+
+*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
+
+</details>
+
 ### `kits/mihin/handlers/DZ.SYS`
 
 Floppy-disk handler
@@ -357,12 +367,6 @@ Floppy-disk handler
 Logical-disk handler: mounts a container file as a volume
 
 *en / ascii; disks: 1; identified from: DEC RT-11; sha256 1b3868364854*
-
-### `kits/mihin/handlers/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
-
-*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
 
 ### `kits/mihin/handlers/TT.SYS`
 

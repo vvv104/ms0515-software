@@ -125,11 +125,26 @@ file-system converter `FCON.EXE` («Экспериментальная верс�
 `EXPRES.SAV` («ITA EXPRESS», © 1990, joystick or keyboard) is the same
 city at play.
 
-**Mihin-soft & SPF «Сенсор», Воронеж, 1990** — the OS-16SJ monitor
-(«Самые лучшие драйверы для УПБК!!!»), the FDZ diskette formatter for
-УПБК-16 — and, uniquely in the collection, a postal address baked into
-the program:
-> «394043 г. Воронеж ул. Фронтовая 5.  Всегда буду рад.» (FDZ.SAV)
+**Михин Ю.А. — «МИХИН-СОФТ» — и СПФ/НПФ «Сенсор», Воронеж, 1990** — the
+OS-16SJ monitor («Самые лучшие драйверы для УПБК!!!»), the FDZ diskette
+formatter («ПРОГРАММА ФОРМАТИРОВАНИЯ ДИСКЕТ ДЛЯ УПБК-16», «(C) МИХИН-СОФТ
+& СПФ "СЕНСОР"»), and Сторожевых's SL V8.00 made over for the machine
+(«АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"»), carrying that installation's own ten
+hotkey commands.  The formatter names the author and — uniquely in the
+collection — an address to write to:
+> «...РАЗРАБОТАННОЙ МИХИНЫМ Ю.А.  С ДЕЛЬНЫМИ ПОЖЕЛАНИЯМИ ПРОСИМ ПО
+> АДРЕСУ: 394043 г. Воронеж ул. Фронтовая 5.  Всегда буду рад.» (FDZ.SAV)
+
+**УБПК, which all three of them address, is this machine**: the МС 0515
+was developed in Voronezh in 1990 and made at the «Процессор» plant, and
+`Электроника УПБК-16` was its name while it was being developed — a plant
+engineer on the zx-pk.ru forum puts it plainly, «УБПК это и есть МС 0515»,
+adding what went with which name: «на МС 0515, операционка ОСА-1, на УБПК
+ОС-16 и ПРОС (Д)».  ОС-16 is this kit's monitor, so this is the software
+of the plant's own line, not of a house writing for somebody else's
+computer.  Whether «Сенсор» was a part of the plant is not settled: the
+firm is named in these programs and in no source outside them that has
+been found.
 
 **EmeSoft, 1990** — «RS v06.05 RT11 profShell» (`RS.SYS`, build dated
 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block

@@ -512,7 +512,7 @@ systems  = ["mihin"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1989-02-24"
-files    = ["kits/mihin/handlers/quiet/SL.SYS"]
+files    = ["kits/mihin/handlers/npf-sensor/quiet/SL.SYS"]
 
 [bundle.hd-mihin]
 title    = "HD.SYS - the emulator's hard disk"
