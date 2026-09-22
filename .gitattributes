@@ -1,4 +1,4 @@
 *.dsk binary
 *.md text eol=lf
-*.PAS text eol=crlf
-*.MAC text eol=crlf
+*.PAS -text
+*.MAC -text
