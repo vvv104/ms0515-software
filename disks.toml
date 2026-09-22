@@ -14,7 +14,7 @@ format = 2
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.09.22-3"
+version = "2026.09.22-4"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -1062,6 +1062,13 @@ kit      = "common"
 date     = "1999-12-31"
 files    = ["kits/common/utils/EDIT.SAV"]
 
+[bundle.k52-rt11]
+title    = "K52 - DEC's screen editor for the VT52 keypad (KED as built for this terminal)"
+kit      = "common"
+startup  = ["SET EDIT K52"]    # the monitor's EDIT command runs it: EDIT FILE.TXT
+date     = "1999-12-31"
+files    = ["kits/common/utils/K52.SAV"]
+
 [bundle.patch-rt11]
 title    = "SLP, PAT, SIPP - patching sources, objects and programs"
 kit      = "common"
@@ -1623,13 +1630,14 @@ media   = "dv"
 # and DEC has none of: MACRO, whose source the V5.4 kit does not carry, and
 # HD.SYS, for a disk DEC never had.  FORMAT is DEC's with a module of ours
 # for this drive in the place of DEC's stub for the Professional 350.  The
-# editor is DEC's own EDIT: the screen editor of the kits is somebody else's
-# program and is not on this disk.
+# editors are DEC's own: EDIT, and K52 - KED as DEC built it for the VT52
+# keypad.  The screen editor of the kits is somebody else's program and is
+# not on this disk.
 bundles = ["dz-rt11", "hd-rt11", "vm-rt11", "ld-rt11", "nl-rt11", "lp-rt11",
            "dir-rt11", "dup-rt11", "pip-rt11", "dump-rt11", "resorc-rt11",
            "datime-rt11", "help-rt11", "compare-rt11", "ucl-rt11", "ind-rt11",
            "link-rt11", "syslib-rt11", "macro-vvv",
-           "edit-rt11", "format-rt11", "patch-rt11", "strip-rt11",
+           "edit-rt11", "k52-rt11", "format-rt11", "patch-rt11", "strip-rt11",
            "libr-rt11", "odt-rt11"]
-startup = ["SET EDIT EDIT"]   # the monitor's EDIT command means KED, which is not here; ind-rt11 adds SET KMON IND
-hint    = ". is the monitor prompt: DIR lists the files, HELP names a command, EDIT edits one, FORMAT DZ1: formats a diskette in the second drive"
+# The startup file is the bundles': k52-rt11 says SET EDIT K52, ind-rt11 SET KMON IND.
+hint    = ". is the monitor prompt: DIR lists the files, HELP names a command, EDIT edits one on the screen (GOLD is NumLock), FORMAT DZ1: formats a diskette in the second drive"

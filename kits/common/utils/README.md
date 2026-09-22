@@ -5,6 +5,7 @@ One build each, and they run on any system.  The RT-11 ones (`EDIT`, `FORMAT`, `
 | file | what | how to run |
 |---|---|---|
 | `EDIT.SAV` | DEC's text editor - no kit of the machine carried it. A command ends with two ALTMODEs, which on the МС 7004 keyboard is F11 |
+| `K52.SAV` | DEC's screen editor KED, built for the VT52 keypad from DEC's sources by DEC's own IND build file (`@K52`, `rt11_devel/projects/rt11/kit/build_ind.py` of the emulator's repository).  GOLD is ПФ1 (NumLock in the emulator's window), GOLD 7 is COMMAND, and `EXIT` there writes the file; a file that does not exist it offers to create.  The `?2` it prints at the start is its VT100-to-VT52 escape sequence, which the console does not know | `R K52`, then `*FILE.TXT`; or `EDIT FILE.TXT` after `SET EDIT K52` |
 | `FORMAT.SAV` | DEC's FORMAT with a module for the machine's drive in the place of DEC's stub for the Professional 350: formats `DZ`, `DV` and `MZ` diskettes, and verifies them (`FORMAT/VERIFY`). Needs an emulator whose controller has WRITE TRACK: later than v1.14.1 |
 | `SLP.SAV` `PAT.SAV` `SIPP.SAV` | Patching sources, objects and programs - how DEC shipped its corrections | `R SLP`, `R PAT`, `R SIPP` |
 | `STRIP.SAV` `SPLIT.SAV` | Takes the symbols off a program; cuts a file in parts | `R STRIP`, `R SPLIT` |
