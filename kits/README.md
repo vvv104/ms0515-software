@@ -19,6 +19,7 @@ found in one place:
 | `rodionov/` | `rodionov` | Rodionov's RT15SJ, with the two sectors of his copy protection |
 | `dec/` | `dec`, `dec-ru` | DEC's RT-11 V5.4 built for the machine from DEC's sources, with handlers written for it - nothing in it was recovered from a diskette |
 | `vvv/` | `omega2` | Voronkov's own diskettes — `disk3` (read also as `h0`/`h1`), `PAPER`, `baspasfor`, `disk4`.  Their ОМЕГА V05.04 monitor is `omega2`, not a patch of `omega`'s: it blinks the cursor through ROM-B and its pointers are moved to match (see below).  Their utilities are the English-message ФОДОС builds, the ones Mihin's disks carry too |
+| `common/` | every one | not a kit of a machine: what runs on any of these monitors and of which the collection has one build - the RT-11 utilities no second build survived of, the machine's little programs, the printing programs, the factory diagnostics, `SCE`.  The wizard lists it under **System** whichever system is chosen |
 
 Each kit's `bundles.toml` says what its files are and which systems take them; [`../kits.toml`](../kits.toml) names the kits and their order.
 
