@@ -116,8 +116,13 @@ the lycée's own «Практическое руководство по язык
 
 ## The software houses
 
-**НИПП «Омега», Львов** — the professional heart of the machine's
-software: the ОМЕГА SJ(S) V05.04 monitors, the БЕЙСИК-ОМЕГА
+**НИПП «Омега», Львов — Понимаш Владимир Анатольевич** — the machine
+itself and the professional heart of its software.  The plant's own
+veteran, asked on the zx-pk.ru thread who led which board, answers for
+this one: «НС4 - УПБК ? Разработка + ОС и т.д. - Понимаш Владимир -
+оригинальная, взял за основу Sincler, поставил процессор T11, видеопамять
+по другому организовал» — and adds what was made for it and never shipped,
+«видеоввод, жесткий диск AT».  From the same house: the ОМЕГА SJ(S) V05.04 monitors, the БЕЙСИК-ОМЕГА
 interpreter (`BASICO.SAV`; its manual: «РАЗРАБОТАН ЛЬВОВСКИМ
 НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), the RT11/DOS/TR-DOS
 file-system converter `FCON.EXE` («Экспериментальная версия Июль 1993
@@ -142,9 +147,13 @@ engineer on the zx-pk.ru forum puts it plainly, «УБПК это и есть М
 adding what went with which name: «на МС 0515, операционка ОСА-1, на УБПК
 ОС-16 и ПРОС (Д)».  ОС-16 is this kit's monitor, so this is the software
 of the plant's own line, not of a house writing for somebody else's
-computer.  Whether «Сенсор» was a part of the plant is not settled: the
-firm is named in these programs and in no source outside them that has
-been found.
+computer.  Whether «Сенсор» was a part of the plant is not settled: on the
+zx-pk.ru thread on the plant's history somebody asked the very same
+question — «Что за организация НПФ "Сенсор", и как она связана с
+"Процессором"? Они разрабатывали ПО на Э85 для игр КВН 90-го года и
+драйверы для УБПК-16 (МС 0515)» — and nobody answered.  So: they wrote for
+the Электроника 85 as well, the КВН games of 1990; and outside their own
+programs the firm is named nowhere.
 
 **EmeSoft, 1990** — «RS v06.05 RT11 profShell» (`RS.SYS`, build dated
 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block
