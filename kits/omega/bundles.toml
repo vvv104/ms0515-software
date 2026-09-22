@@ -40,14 +40,14 @@ date     = "1991-01-31"
 files    = ["kits/omega/handlers/TT.SYS"]
 
 [bundle.sl-omega]
-title    = "SL.SYS - the single-line editor (OMEGA)"
+title    = "SL.SYS - the single-line editor"
 kit      = "omega"
 provides = ["sl"]
-systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
+systems  = ["osa", "omega", "omega2", "rodionov", "dec", "dec-ru"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1991-01-31"
-files    = ["kits/omega/handlers/quiet/SL.SYS"]
+files    = ["kits/omega/handlers/SL.SYS"]
 
 [bundle.hd-omega]
 title    = "HD.SYS - the emulator's hard disk"

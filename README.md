@@ -73,8 +73,8 @@ much for the media) is refused with the reason.
 - A few things are ours and are marked as such: the monitors' baked
   startup command made DEC's `@STARTS` and the quiet `STARTS.COM` every
   composed disk carries, one bit of the vvv104 ОМЕГА monitor set right
-  (flipped in the copy all its disks came from), blanked hotkey tables
-  in two SL handlers, and any helper file re-created for a program whose
+  (flipped in the copy all its disks came from), the ОСА `SL.SYS`, whose hotkey table
+  was blanked here, and any helper file re-created for a program whose
   original was lost.
 - Nothing here is claimed: the authors are named in the Hall of Fame
   wherever the software names them.  If you are one of them and want a

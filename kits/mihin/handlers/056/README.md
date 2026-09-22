@@ -46,5 +46,5 @@ KOI-7: `НАЗНАЧЕНИЯ`, `СИМВОЛ  СТАТУС  СТРОКА`, `СВ
 `?SL-W-[NO]PRINT ignored`) and it comes with that installation's own ten
 hotkey assignments — `BASIC ALL`, `DIR DZ4:`, `AS DZ4: DK:`, `DEL DZ:`,
 `DEL DZ4:`, `COP/Q DZ: DZ4:`, `COP/Q DZ4: DZ`, `COP/Q VM: DZ4:`,
-`COP/Q DZ: VM:`, `RUN DBAS ALL` — where the copy in `../quiet/` has them
-blanked.  The English `LET` help is gone.
+`COP/Q DZ: VM:`, `RUN DBAS ALL` — where the copy of amk disk3, the one shipped as `../SL.SYS`,
+has them blank.  The English `LET` help is gone.

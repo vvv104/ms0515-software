@@ -105,7 +105,7 @@ shipped with the profShell commander and Сторожевых's SL, which announ
 themselves at boot), and the `Buhgal` cut bakes `PMK` — that machine
 booted straight into a savings-bank teller program.  The profShell and SL
 live in `shells/` of their own kits - `osa/shells/RS.SYS` and the SL of
-`vvv/handlers/` - for anyone who wants the deluxe boot.
+`omega/handlers/` - for anyone who wants the deluxe boot.
 
 ## omega
 
@@ -122,7 +122,7 @@ setting word apart).  It is not a patch of `omega`: its clock interrupt
 calls the ROM's cursor blink (slot 160014 of ROM-B — on ROM-A that slot
 is the cassette loader, so this monitor wants ROM-B), and pointers
 throughout the monitor are moved to match.  Its kit: `disk3`'s own
-files, the family's `DV.SYS` and `SL.SYS` among them.  The original disk3
+files, the family's `DV.SYS` among them; its SL was the ОМЕГА build over again, so this system takes `sl-omega` like the others.  The original disk3
 startup was a whole morning ritual — BLACK screen, DOS-style drive
 letters, a DATIME date-and-time dialogue.
 

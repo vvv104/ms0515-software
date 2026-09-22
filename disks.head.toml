@@ -100,7 +100,7 @@ version = "2026.09.15"
 title     = "OSA: games"
 system    = "osa"
 media     = "ss"
-bundles   = ["sl-vvv", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa", "pent",
+bundles   = ["sl-omega", "sabot2-omega", "fist", "manicm", "birds", "expres", "kosmos-osa", "hanoj-osa", "pent",
              "labrn", "kam1", "derby", "udaw", "poker", "ten", "datset", "tir", "go1", "dir-osa", "pip-omega", "neg"]
 startup   = '''
 DATSET 01-04-92
@@ -134,7 +134,7 @@ hint      = "The menu is on the screen: type a game's name and press Enter; DIR 
 title   = "OMEGA: Pascal"
 system  = "omega2"
 media   = "dv"
-bundles = ["pascal", "pascal-graphics", "pascal-units", "pascal-docs", "ked", "hd-omega", "sl-vvv", "dess", "sce",
+bundles = ["pascal", "pascal-graphics", "pascal-units", "pascal-docs", "ked", "hd-omega", "sl-omega", "dess", "sce",
            "dump-omega", "geteml", "dir-vvv", "pip-vvv", "dup-vvv", "blue", "hello-pas", "hello-mac", "dz-omega"]
 startup = '''
 DATE 01-APR-92
@@ -170,7 +170,7 @@ hint    = "The recipe is on the screen: PAS1 HELLO=HELLO, MACRO HELLO, LINK HELL
 title   = "Rodionov: ROSA Commander"
 system  = "rodionov"
 media   = "dz"
-bundles = ["sl-rodionov", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
+bundles = ["sl-omega", "rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
            "resorc-osa", "blue", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
 startup = ["R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"

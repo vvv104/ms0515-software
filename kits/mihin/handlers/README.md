@@ -8,7 +8,7 @@ The kit's own handlers - `DZ`, `DV`, `TT`, `VM`, `LD` - all built with its sysge
 
 > «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"»
 
-`quiet/SL.SYS` is the same build with the ten hotkey assignments blanked — the one a composed disk takes, so that it does not announce a stranger's macros at every boot.
+The copy here is amk disk3's, the one whose ten hotkey assignments were already blank; disk1's and disk2's had them filled in.  Which is why a composed disk does not announce a stranger's macros at every boot.
 
 **УБПК is this machine.**  The Электроника МС 0515 was developed in Voronezh in 1990 and made at the «Процессор» plant; `Электроника УПБК-16` was its name while it was being developed, and a plant engineer on the zx-pk.ru forum says plainly «УБПК это и есть МС 0515».  The same thread notes what went with which name: «на МС 0515, операционка ОСА-1, на УБПК ОС-16 и ПРОС (Д)» — and OS-16 is the monitor of this kit.
 

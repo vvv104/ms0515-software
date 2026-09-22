@@ -41,7 +41,7 @@ systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
 startup  = ["SET SL ON"]
 protect  = true
 date     = "1988-01-19"
-files    = ["kits/osa/handlers/quiet/SL.SYS"]
+files    = ["kits/osa/handlers/SL.SYS"]
 
 # -- the other handlers: one bundle per build; the family decides which one
 #    loads, so each build names its systems and all builds of one handler

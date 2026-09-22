@@ -37,16 +37,6 @@ protect  = true
 date     = "1992-03-27"
 files    = ["kits/rodionov/handlers/TT.SYS"]
 
-[bundle.sl-rodionov]
-title    = "SL.SYS - the single-line editor (Rodionov)"
-kit      = "rodionov"
-provides = ["sl"]
-systems  = ["rodionov"]
-startup  = ["SET SL ON"]
-protect  = true
-date     = "1991-01-31"
-files    = ["kits/rodionov/handlers/quiet/SL.SYS"]
-
 [bundle.hd-rodionov]
 title    = "HD.SYS - the emulator's hard disk"
 kit      = "rodionov"

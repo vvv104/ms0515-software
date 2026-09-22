@@ -12,7 +12,7 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 | mihin | `DZ.SYS` | `591620e` | amk_1 | Floppy-disk handler | no boot | not listed | not listed | loaded |
 | mihin | `HD.SYS` | `4e04016` | the emulator | The same with the TIM$IT sysgen bit set, which Mihin's monitor wants (see below) | rejected | rejected | rejected | loaded |
 | mihin | `LD.SYS` | `1b38683` | disk3 | Logical-disk handler: mounts a container file as a volume | rejected | rejected | rejected | loaded |
-| mihin | `SL.SYS` | `cd5af8b` | disk1 | the Mihin-family SL V8.00 with a Russian assignment table (^A..^T hotkey macros) | rejected | rejected | rejected | loaded |
+| mihin | `SL.SYS` | `58d34ae` | amk disk3 | the Mihin-family SL V8.00, «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"», with an empty assignment table | rejected | rejected | rejected | loaded |
 | mihin | `TT.SYS` | `f69410a` | amk_1 | Terminal handler | rejected | rejected | rejected | loaded |
 | mihin | `VM.SYS` | `67036c0` | amk_1 | RAM-disk handler (memory used as a drive) | rejected | rejected | rejected | loaded |
 | mihin | `056/SL.SYS` | `85ad85f` | 056 | Сторожевых's SL V06.00b of 1987, off the work diskette 056 - the English build with the LET language | rejected | rejected | rejected | loaded |
@@ -26,13 +26,13 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 | omega | `LD.SYS` | `6b81c8b` | disk3 | Logical-disk handler: mounts a container file as a volume | loaded | loaded | loaded | rejected |
 | omega | `LP.SYS` | `6d8e23c` | disk3 | Line-printer handler | loaded | loaded | loaded | rejected |
 | omega | `MZ.SYS` | `1a2133a` | disk3 | Whole double-sided diskette as one 1600-block volume, cylinder 0 first | loaded | loaded | loaded | rejected |
-| omega | `SL.SYS` | `9036093` | disk3 | the vvv Omega SL (disk3/h0), activates silently | loaded | loaded | loaded | rejected |
+| omega | `SL.SYS` | `cb7b42a` | 062 | the 6656-byte SL V08.00 of the ОМЕГА and collector's disks, activates silently | loaded | loaded | loaded | rejected |
 | omega | `TT.SYS` | `521c093` | disk3 | Terminal handler | loaded | loaded | loaded | rejected |
 | omega | `VM.SYS` | `2e114ef` | disk3 | RAM-disk handler (memory used as a drive) | loaded | loaded | loaded | rejected |
 | osa | `DZ.SYS` | `9b79707` | 058 | Floppy-disk handler | loaded | loaded | loaded | no boot |
 | osa | `EM.SYS` | `3f0e1d6` | osa | The instruction-set emulator handler: SET EM ON makes the missing EIS/FIS instructions work by trapping vector 10 | loaded | loaded | loaded | rejected |
 | osa | `HD.SYS` | `3c8f3e5` | the emulator | Paravirtual hard disk HD: of the PDP-11 emulators, v2.0 of Patron's HD driver kit built for the MS-0515 - not a recovered file (see below) | loaded | loaded | loaded | rejected |
-| osa | `SL.SYS` | `f988569` | superBAK7 | Storozhevykh's SL V08.00 [SW] 1988 - prints its assignment table on SET SL ON | loaded | loaded | loaded | rejected |
+| osa | `SL.SYS` | `7283ef9` | superBAK7 | Storozhevykh's SL V08.00 [SW] 1988, the ОСА build, its assignment table blanked here | loaded | loaded | loaded | rejected |
 | osa | `TT.SYS` | `521c093` | 058 | Terminal handler | loaded | loaded | loaded | rejected |
 | osa | `VM.SYS` | `2e114ef` | 058 | RAM-disk handler (memory used as a drive) | loaded | loaded | loaded | rejected |
 | osa | `VS.SYS` | `fb282b1` | 058 | Sound-device handler — not video despite the name | loaded | loaded | loaded | rejected |
@@ -43,15 +43,36 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 | rodionov | `VM.SYS` | `2e114ef` | 065 | RAM-disk handler (memory used as a drive) | loaded | loaded | loaded | rejected |
 | rodionov | `VS.SYS` | `fb282b1` | 065 | Sound-device handler — not video despite the name | loaded | loaded | loaded | rejected |
 
-## The quiet SL copies
+## SL: one clean copy of each build
 
-`osa/quiet/`, `omega/quiet/`, `vvv/quiet/`, `mihin/quiet/` and
-`rodionov/quiet/` hold `SL.SYS` as the collection's system disks carried it
-- the same handler as its family's, with the assignment table
-its first owners filled in blanked, so `SET SL ON` brings up an empty
-table - or nothing - instead of someone's thirty-year-old hotkey macros.
-They are what the disks composed from this collection get; the originals
-beside them are the recovered bytes.
+`SL.SYS` keeps its state inside itself.  Booting a disk once is enough to
+change it: `SET SL ON` writes a word into the file - twice, 0o3006 bytes
+apart, at 0o310 and 0o11562 - which was measured here by composing a disk,
+reading `SL.SYS` out of the image, booting the machine once and reading it
+out again: two bytes, those two.  The hotkey assignments live in the file
+too, so every diskette's copy differs from every other's in what its owner
+had set and in where it was last loaded.
+
+Masking those areas leaves the code, and the code says there were five
+builds among the thirteen copies the reads gave:
+
+| build | size | on the diskettes | here |
+|---|---|---|---|
+| Сторожевых SL V06.00b, 1987, English | 5120 | 056 | `mihin/handlers/056/SL.SYS` |
+| SL V08.00 of the ОСА disks | 5120 | bg0515, superBAK7 | `osa/handlers/SL.SYS` |
+| SL V08.00 «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"» | 5120 | disk1, disk2, amk disk3 | `mihin/handlers/SL.SYS` |
+| a fourth 5120 build | 5120 | amk_1 | not shipped |
+| SL V08.00, the 6656-byte build | 6656 | 062, 063, h0, PAPER, baspasfor, vvv104 disk1..3 | `omega/handlers/SL.SYS` |
+
+One clean copy of each is shipped, in the kit whose diskettes carried it -
+clean meaning an empty assignment table, so that `SET SL ON` does not bring
+up a stranger's thirty-year-old macros.  For the ОМЕГА build and for
+Mihin's the diskettes themselves had a clean copy (062/063 and amk disk3);
+the ОСА one was blanked here, and that is the only SL in the collection
+whose bytes are not a diskette's.
+
+There is no separate SL for the `vvv` and `rodionov` kits: their copies
+were the ОМЕГА build over again, so those systems take `sl-omega`.
 
 ## HD.SYS - the emulator's hard disk
 

@@ -12,16 +12,6 @@ startup  = ["SET TT QUIET"]
 
 # ---- vvv -------------------------------------------------------------------
 
-[bundle.sl-vvv]
-title    = "SL.SYS - the single-line editor (vvv104 disks)"
-kit      = "vvv"
-provides = ["sl"]
-systems  = ["osa", "omega", "omega2", "dec", "dec-ru"]
-startup  = ["SET SL ON"]
-protect  = true
-date     = "1995-01-01"
-files    = ["kits/vvv/handlers/quiet/SL.SYS"]
-
 [bundle.dir-vvv]
 title    = "DIR (OMEGA2, MIHIN)"
 kit      = "vvv"

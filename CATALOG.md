@@ -492,9 +492,9 @@ Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990. 
 
 ### `kits/mihin/handlers/SL.SYS`
 
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver; its banner «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"» names the Voronezh firm that adapted it for the УБПК, the machine's own development name
+Сторожевых's single-line editor SL V08.00 with the banner «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР" <1990>», the build of Mihin's disks (disk1, disk2, amk disk3).  This copy is amk disk3's, whose ten hotkey assignments were already blank
 
-*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
+*en / ascii; disks: 2; identified from: program strings; amk disk3's copy of the disk1/disk2 build; sha256 58d34aee453c*
 
 <details><summary><b>kits/mihin/handlers/056/</b> — 5 files</summary>
 
@@ -648,9 +648,9 @@ Whole double-sided diskette as one 1600-block volume, cylinder 0 first
 
 ### `kits/omega/handlers/SL.SYS`
 
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+Сторожевых's single-line editor SL V08.00, the 6656-byte build - the one every ОМЕГА and every collector's diskette carried (062, 063, h0, PAPER, baspasfor, vvv104 disk1..disk3): one build, the copies differing only in the assignments their owners had set and in the word the monitor writes into the file at `SET SL ON`.  This copy is the one of 062/063, whose table was already empty
 
-*ru+en / koi8-r; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 90360936c411*
+*ru+en / koi8-r; disks: 2; identified from: program strings; the same code on all nine copies once the areas the machine writes are masked out 2026-09-22; sha256 35fa4e4e2e3d*
 
 ### `kits/omega/handlers/TT.SYS`
 
@@ -732,9 +732,9 @@ The instruction-set emulator handler: SET EM ON makes the missing EIS/FIS instru
 
 ### `kits/osa/handlers/SL.SYS`
 
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+Сторожевых's single-line editor SL V08.00 as the ОСА disks carried it (bg0515, superBAK7) - command recall and editing at the monitor prompt, `SET SL ON` to activate.  The copy here has the assignment table of its first owner blanked, so that a composed disk does not announce a stranger's macros
 
-*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 f9885698de8c*
+*en / ascii; disks: 2; identified from: program strings; the ОСА disks' build, its table blanked here; sha256 7283ef9f3fa5*
 
 ### `kits/osa/handlers/TT.SYS`
 
