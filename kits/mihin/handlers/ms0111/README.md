@@ -1,4 +1,4 @@
-# The handlers of the work diskette 056
+# The handlers of the МС0111 work diskette
 
 Diskette `056` carries no monitor: it is the work diskette of the КВИ «Электроника МС0111» complex — an installation, not a machine, in which our МС 0515 runs ОСА and works as the terminal of a central МС 0108 under ФОДОС-4/TS (the diskette's own `TERM.TXT` says so, and is kept in [`../../../../programs/ms0111/`](../../../../programs/ms0111/README.md)) — and these five files are its handlers.  All three `.SYS` carry the sysgen word `TIM$IT` (4), which of the collection's monitors only Mihin's OS-16SJ has, and the cross-run bears that out: ОСА, ОМЕГА and ОМЕГА2 answer «Conflicting SYSGEN options» and then «Invalid device», Mihin's `INSTALL` and `LOAD` take all three.  That is why they lie here.
 
@@ -16,13 +16,25 @@ Both `PC` and `RK` are of an RT-11 older than V5.4: their version words say `01`
 
 The complex's own programs, with their sources, are in [`../../../../programs/ms0111/`](../../../../programs/ms0111/README.md).
 
-## The two SL of this kit
+## Why an SL lies here, and what the two of them are
 
-`056/SL.SYS` is V06.00b of 1987, `../SL.SYS` is V8.00 of 1990 — the same
-program of the same author, five years apart.  Both are 5120 bytes and both
-carry the `TIM$IT` sysgen word; the code of the newer is 174 bytes longer
-(`004316` against `004060`), and it uses header words the older leaves at
-zero (the class word, the `076` in the CSR field, the two install entries).
+The kit has two versions of Сторожевых's single-line editor, and both are
+of this family's diskettes - no ОСА, ОМЕГА, Rodionov or collector's disk
+carries either:
+
+* `SL.SYS` here is **V06.00b [SW] of 1987**, and the only diskette that has
+  it is this one, 056.
+* `../SL.SYS` is **V8.00 of 1990**, «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"», the
+  one Mihin's own disks carried - disk1, disk2, amk disk3 and amk_1.  Those
+  four copies are one build: they differ only inside `0o4136..0o5046`, the
+  assignment area, by what each owner had set there.  The shipped copy is
+  amk disk3's, whose table was blank.
+
+So: two versions, five years apart, both only here.  What the ОСА disks
+carry under the same V08.00 number is a third, different build - 213 bytes
+apart in the code - and it is in `../../../osa/handlers/`.
+
+The two differ like this:
 
 **V06.00b, 1987 — Сторожевых's own, in English.**  Its texts are English
 throughout: `Assignments:`, `Symbol  Status  Value`, `Empty bytes:`,

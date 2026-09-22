@@ -496,33 +496,33 @@ Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990. 
 
 *en / ascii; disks: 2; identified from: program strings; amk disk3's copy of the disk1/disk2 build; sha256 58d34aee453c*
 
-<details><summary><b>kits/mihin/handlers/056/</b> — 5 files</summary>
+<details><summary><b>kits/mihin/handlers/ms0111/</b> — 5 files</summary>
 
-### `kits/mihin/handlers/056/PC.COM`
+### `kits/mihin/handlers/ms0111/PC.COM`
 
 SIPP patch script for PC.SYS (R SIPP, DK:PC.SYS/C, then the patched offsets)
 
 *disks: 1; identified from: read 2026-09-06; sha256 95adaabd0f4b*
 
-### `kits/mihin/handlers/056/PC.SYS`
+### `kits/mihin/handlers/ms0111/PC.SYS`
 
 DEC's PC handler - the PC11 paper-tape reader and punch: device code 7, CSR 177550, vectors 070 (reader) and 074 (punch), as PC.MAC of DEC's V5.4 sources declares; version 01, so from an older RT-11, with the sysgen word patched to TIM$IT.  Of the collection's monitors only Mihin's loads it
 
 *disks: 1; identified from: identified 2026-09-05; sha256 2ea0d76682ca*
 
-### `kits/mihin/handlers/056/RK.COM`
+### `kits/mihin/handlers/ms0111/RK.COM`
 
 SIPP patch script for RK.SYS (R SIPP, DK:RK.SYS/C, then the patched offsets)
 
 *disks: 1; identified from: read 2026-09-06; sha256 1a3887444fb6*
 
-### `kits/mihin/handlers/056/RK.SYS`
+### `kits/mihin/handlers/ms0111/RK.SYS`
 
 DEC's RK handler - the RK05 cartridge disk of 4800 blocks, as RK.MAC of DEC's V5.4 sources declares, moved to CSR 173100 and vector 350 and given the TIM$IT sysgen word by RK.COM; it has a primary driver, so such a disk could be booted from.  Of the collection's monitors only Mihin's loads it
 
 *disks: 1; identified from: identified 2026-09-05; sha256 6cb6ec99f915*
 
-### `kits/mihin/handlers/056/SL.SYS`
+### `kits/mihin/handlers/ms0111/SL.SYS`
 
 Сторожевых's single-line editor SL V06.00b of 1987, off the work diskette 056: the older of the two SL of this kit and the one in English - the LET language with its own prompt and help, the keypad functions it binds, and a terminal it recognises («Your console is a VT» / «100 in VT52 mode»); the V8.00 beside it is the 1990 adaptation for the УБПК by НПФ «Сенсор», Russian, with that installation's ten hotkey assignments.  Of the collection's monitors only Mihin's loads it
 
@@ -1272,13 +1272,13 @@ A digital-audio recording in the VLAD & ALEX sampler format (SER4/LD1/LOAD): 327
 
 ### `programs/covox/LD1.SAV`
 
-Player/manager of the VLAD & ALEX digital-audio family (same hardware layer as SER4: home-made ADC on the Centronics port, Covox-style 4-bit output on PPI 177542): menu Exit/Load/Save/Play/Delay, loads a recording by name, plays it at a chosen delay (=sample rate); 'Thanks for use our program!' on exit
+Player/manager of the VLAD & ALEX digital-audio family (same hardware layer as SER4: home-made ADC on the Centronics port, Covox-style 4-bit output on PPI 177542): menu Exit/Load/Save/Play/Delay, loads a recording by name, plays it at a chosen delay (=sample rate); 'Thanks for use our program!' on exit.  Its source did not survive: of this family only SER4 has one
 
 *written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 2; identified from: strings + shared 157700/177540/177542 hardware code with SERV4.MAC; sha256 60a2142bf442*
 
 ### `programs/covox/LOAD.SAV`
 
-Themed build of the VLAD & ALEX audio player: banners 'This is MUPPET SHOW !' and 'This is European Top Twenty !', 'Greatest hit played.' - someone sampled the Muppet Show intro and chart hits through the home-made ADC and played them back; Load-or-Play menu, writes loader.bin. The recordings themselves survive on no disk - only the player remembers them
+Themed build of the VLAD & ALEX audio player: banners 'This is MUPPET SHOW !' and 'This is European Top Twenty !', 'Greatest hit played.' - someone sampled the Muppet Show intro and chart hits through the home-made ADC and played them back; Load-or-Play menu, writes loader.bin. The recordings themselves survive on no disk - only the player remembers them.  Its source did not survive: of this family only SER4 has one
 
 *written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 1; identified from: strings + shared hardware layer with SER4/LD1; sha256 e87f61bb511a*
 
@@ -1560,7 +1560,7 @@ Line-drawing experiment in Whitesmiths C (source LIN.C beside it): asks x0/y0/x1
 
 ### `programs/lyceum1/LP.SAV`
 
-Working line-drawer from the amk_2 lab disk (Pascal): asks x1/y1/x2/y2 in a loop and draws the segment on the graphics screen. The same exercise as the C LINE.SAV beside it - but this one works (no scanf-without-& to crash it). Not to be confused with the LP.SYS printer handler
+Working line-drawer from the amk_2 lab disk (Pascal): asks x1/y1/x2/y2 in a loop and draws the segment on the graphics screen. The same exercise as the C LINE.SAV beside it - but this one works (no scanf-without-& to crash it). Not to be confused with the LP.SYS printer handler.  Its source did not survive
 
 *written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 1; identified from: live run 2026-09-05: (10,10)-(300,150) drawn, loops for the next pair; sha256 df7035955783*
 
@@ -1584,7 +1584,7 @@ Physics coursework: latent heat of fusion and specific heat of paraffin; L. Boro
 
 ### `programs/lyceum1/OLGA.SAV`
 
-Coursework in the Lyceum No. 1 series; asks for the number of experiments (at least two)
+Coursework in the Lyceum No. 1 series; asks for the number of experiments (at least two).  Its source did not survive
 
 *written in high-level (runtime library linked); graphics; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 ce63f291d8f7*
 
@@ -1602,7 +1602,7 @@ Object module of a build of the kislorod (HIM) program - its title strings insid
 
 ### `programs/lyceum1/PROBA.SAV`
 
-Carries the standard FORTRAN/Pascal runtime error table ("TRAP TO 4", "NOT A VALID DEVICE", "I/O CHANNEL NOT OPEN"); a compiled test program that prints nothing on its own
+Carries the standard FORTRAN/Pascal runtime error table ("TRAP TO 4", "NOT A VALID DEVICE", "I/O CHANNEL NOT OPEN"); a compiled test program that prints nothing on its own.  The object module PROBA.OBJ and the build recipe PROBA.COM are beside it; the Pascal text they were made from is not
 
 *written in high-level (runtime library linked); text; en / ascii; cross-run: exited; disks: 1; identified from: strings in the file; sha256 6d379afe8b34*
 
@@ -1748,13 +1748,13 @@ Ten-word in-memory patch from the work diskette 056 of the КВИ «Электр
 
 ### `programs/ms0111/PIC.SAV`
 
-Extended-memory mapping TEST from the work diskette 056 of the КВИ «Электроника МС0111» complex: takes a file at its CSI '*' prompt, asks 'poehali?' and walks the mapped-memory API - create region, create window, map window, read/write/remap, reporting 'remap OK / read OK / write OK' per step (also prints 'user mode'/'digit mode'). Under our SJ monitors the mapping step fails with 'ERROR in macro or I-O error 22' - it expects the multi-user/XM environment of the complex's central machine world
+Extended-memory mapping TEST from the work diskette 056 of the КВИ «Электроника МС0111» complex: takes a file at its CSI '*' prompt, asks 'poehali?' and walks the mapped-memory API - create region, create window, map window, read/write/remap, reporting 'remap OK / read OK / write OK' per step (also prints 'user mode'/'digit mode'). Under our SJ monitors the mapping step fails with 'ERROR in macro or I-O error 22' - it expects the multi-user/XM environment of the complex's central machine world.  Its source did not survive, unlike EPP's and KUBUS's
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: strings + live run 2026-09-05; sha256 7982d95a8635*
 
 ### `programs/ms0111/PIC1.SAV`
 
-PIC.SAV with eleven bytes changed - ten size constants 6->8 and one address 040->044: the same memory-mapping test rebuilt for a larger window/region. An engineer's parameter sweep preserved as two binaries
+PIC.SAV with eleven bytes changed - ten size constants 6->8 and one address 040->044: the same memory-mapping test rebuilt for a larger window/region. An engineer's parameter sweep preserved as two binaries.  Its source did not survive either
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: byte diff against PIC.SAV; sha256 b7bda7f8e81a*
 
@@ -1776,7 +1776,7 @@ Re-created melody file for ZASTM (the original is lost): integers ending in 0, t
 
 ### `programs/muzred/ZASTM.SAV`
 
-Advertising splash of the Muzykalnyj Redaktor (FMG, Voronezh 1994): animated logo plus a melody looping until ENTER, which exits to the monitor; it chains to nothing. Reads REKL.HLP (lost) as a list of integers terminated by 0 - unterminated data draws a 'Bad integer' each cycle. The editor itself survives nowhere - only MUZRED.SCR remains
+Advertising splash of the Muzykalnyj Redaktor (FMG, Voronezh 1994): animated logo plus a melody looping until ENTER, which exits to the monitor; it chains to nothing. Reads REKL.HLP (lost) as a list of integers terminated by 0 - unterminated data draws a 'Bad integer' each cycle. The editor itself survives nowhere - only MUZRED.SCR remains, and no source of the splash itself
 
 *written in high-level (runtime library linked); graphics; en / ascii; cross-run: ran; disks: 2; identified from: probe experiments 2026-09-05: synthetic integers paint the full logo, a trailing 0 (or -1) ends the read cleanly; ENTER exits, SPACE does nothing; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 641e292f57ef*
 

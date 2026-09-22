@@ -4,4 +4,4 @@ All that survives of ФМГ's music editor (Воронеж 1994): its animated a
 
 | file | what | how to run |
 |---|---|---|
-| `ZASTM.SAV` | Advertising splash of the Muzykalnyj Redaktor (FMG, Voronezh 1994): animated logo plus a melody looping until ENTER, which exits to the monitor; it chains to nothing. Reads REKL.HLP (lost) as a list of integers terminated by 0 - unterminated data draws a 'Bad integer' each cycle. The editor itself survives nowhere - only MUZRED.SCR remains | `RUN ZASTM` with a `REKL.HLP` (melody integers, 0-terminated) beside it |
+| `ZASTM.SAV` | Advertising splash of the Muzykalnyj Redaktor (FMG, Voronezh 1994): animated logo plus a melody looping until ENTER, which exits to the monitor; it chains to nothing. Reads REKL.HLP (lost) as a list of integers terminated by 0 - unterminated data draws a 'Bad integer' each cycle. The editor itself survives nowhere - only MUZRED.SCR remains, and no source of the splash itself | `RUN ZASTM` with a `REKL.HLP` (melody integers, 0-terminated) beside it |
