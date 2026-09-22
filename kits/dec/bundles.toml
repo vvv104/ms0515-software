@@ -214,7 +214,16 @@ date     = "1999-12-31"
 files    = ["kits/dec/development/LINK.SAV"]
 
 [bundle.sysmac-rt11]
-title    = "SYSMAC.SML and SYSLIB.OBJ - DEC's system macro and object libraries"
+title    = "SYSMAC.SML - DEC's system macro library"
 kit      = "dec"
+provides = ["sysmac"]
+systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["kits/dec/development/SYSMAC.SML", "kits/dec/development/SYSLIB.OBJ"]
+files    = ["kits/dec/development/SYSMAC.SML"]
+
+[bundle.syslib-rt11]
+title    = "SYSLIB.OBJ - DEC's system object library"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/development/SYSLIB.OBJ"]

@@ -846,10 +846,19 @@ date     = "1999-12-31"
 files    = ["kits/dec/development/LINK.SAV"]
 
 [bundle.sysmac-rt11]
-title    = "SYSMAC.SML and SYSLIB.OBJ - DEC's system macro and object libraries"
+title    = "SYSMAC.SML - DEC's system macro library"
 kit      = "dec"
+provides = ["sysmac"]
+systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["kits/dec/development/SYSMAC.SML", "kits/dec/development/SYSLIB.OBJ"]
+files    = ["kits/dec/development/SYSMAC.SML"]
+
+[bundle.syslib-rt11]
+title    = "SYSLIB.OBJ - DEC's system object library"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/development/SYSLIB.OBJ"]
 [bundle.dir-vvv]
 title    = "DIR (OMEGA2, MIHIN)"
 kit      = "vvv"
@@ -1083,6 +1092,7 @@ files = ["kits/common/utils/CALEND.SAV"]
 [bundle.sysmac]
 kit      = "common"
 title = "SYSMAC.SML - the system macro library"
+provides = ["sysmac"]
 date  = "1995-04-01"
 files = ["kits/common/development/SYSMAC.SML"]
 
@@ -1096,6 +1106,7 @@ files = ["kits/common/development/SYSLIB.OBJ"]
 kit      = "common"
 title    = "Pascal - PAS1 with its run-time library"
 requires = ["macro11", "link", "syslib"]     # PAS1 emits MACRO-11, LINK binds PASLIB
+suggests = ["forlib"]                        # a program calling RAN links FORLIB too
 prefer   = { mihin = ["macro-mihin", "link-mihin"], default = ["macro-vvv", "link-vvv"] }
 date     = "1995-04-01"
 files    = ["kits/common/development/PAS1.SAV",
