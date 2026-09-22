@@ -181,6 +181,14 @@ kit      = "dec"
 date     = "1999-12-31"
 files    = ["kits/dec/utils/SRCCOM.SAV", "kits/dec/utils/BINCOM.SAV"]
 
+[bundle.ind-rt11]
+title    = "IND - the indirect command file processor: variables, conditions, @<EOF>"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+startup  = ["SET KMON IND"]    # else @file goes to KMON's own processor, which reads an IND directive as an invalid command
+date     = "1999-12-31"
+files    = ["kits/dec/utils/IND.SAV"]
+
 [bundle.ucl-rt11]
 title    = "UCL and LET - commands of one's own (the dec monitors pass unknown commands to UCL)"
 kit      = "dec"
