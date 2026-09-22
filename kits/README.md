@@ -13,7 +13,7 @@ found in one place:
 
 | kit | systems | what |
 |---|---|---|
-| `osa/` | `osa` | ОСА 1.0 of НИПП «Омега», Lvov; `utils/rs/` is what the same monitor's other factory configuration carried - the disks with the RS profShell |
+| `osa/` | `osa` | ОСА 1.0 of НИПП «Омега», Lvov; the disks of its other factory configuration, the ones with the RS profShell, carried the same utilities |
 | `omega/` | `omega` | ОМЕГА SJ(S) V05.04, as the disks 059, 062, 063 carried it |
 | `mihin/` | `mihin` | Mihin's OS-16SJ |
 | `rodionov/` | `rodionov` | Rodionov's RT15SJ, with the two sectors of his copy protection |

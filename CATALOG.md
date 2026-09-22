@@ -2,7 +2,7 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 138 files</summary>
+<details open><summary><b>kits/</b> — 137 files</summary>
 
 <details><summary><b>kits/common/</b> — 72 files</summary>
 
@@ -714,7 +714,7 @@ The operator's page of TERM: how to call it, what «РЕЖИМ ЭМУЛЯЦИИ 
 
 </details>
 
-<details><summary><b>kits/osa/</b> — 10 files</summary>
+<details><summary><b>kits/osa/</b> — 9 files</summary>
 
 <details><summary><b>kits/osa/handlers/</b> — 6 files</summary>
 
@@ -766,17 +766,7 @@ EmeSoft's 'RT11 profShell' v06.05 (1990, build 13-Sep-94): a Norton-Commander-st
 
 </details>
 
-<details><summary><b>kits/osa/utils/</b> — 3 files</summary>
-
-<details><summary><b>kits/osa/utils/rs/</b> — 1 file</summary>
-
-### `kits/osa/utils/rs/RESORC.SAV`
-
-RESORC V05.69, Russian - the cut of the RS-shell ОСА disks (System2, bg0515, superBAK7), two blocks (800 bytes) apart from the plain one
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: DEC RT-11; the ОСА with the RS profShell build; sha256 732e0b358c14*
-
-</details>
+<details><summary><b>kits/osa/utils/</b> — 2 files</summary>
 
 ### `kits/osa/utils/DIR.SAV`
 
