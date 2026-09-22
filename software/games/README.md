@@ -1,6 +1,6 @@
 # Games
 
-Run a game by its bare name or `R NAME`.  ПИТОН (`UDAW.SAV`) is here as a game and in `programs/domnich/piton/` with its source.  A game with a data file next to it needs that file on the same volume (`SABOT2.DAT`, `KING.DAT`, `KAMENS.DAT`); the notes say what each one asks first.  Many games print their Russian text in KOI-7 - the seven-bit code where the lowercase Latin positions ARE the Cyrillic letters - and read as transliteration («na~nem?», «e}e raz?») until the terminal is in РУС mode: in the emulator press Right Alt (РУС/ЛАТ) before running such a game, and again to return.  Real-time games need `--realtime` in the CLI.
+Run a game by its bare name or `R NAME`.  ПИТОН (`UDAW.SAV`) is here as a game; its source is with its author in `programs/domnich/`.  A game with a data file next to it needs that file on the same volume (`SABOT2.DAT`, `KING.DAT`, `KAMENS.DAT`); the notes say what each one asks first.  Many games print their Russian text in KOI-7 - the seven-bit code where the lowercase Latin positions ARE the Cyrillic letters - and read as transliteration («na~nem?», «e}e raz?») until the terminal is in РУС mode: in the emulator press Right Alt (РУС/ЛАТ) before running such a game, and again to return.  Real-time games need `--realtime` in the CLI.
 
 | file | what | how to run |
 |---|---|---|
@@ -34,4 +34,4 @@ thing here that never came off a diskette: our own 2026 MACRO-11 port of
 Melbourne House's *The Way Of The Exploding Fist*, marked as ours the way
 the collection's rules ask.
 
-Programs that survived in several builds - `HANOJ.SAV`, `KOSMOS.SAV` - have one folder per kit here, each build in the folder of the disks it came from: `osa/` - the ОСА kits; `osa-rs/` - ОСА with the RS profShell.  The files in the table are common to every kit.
+Programs that survived in several builds - `HANOJ.SAV`, `KOSMOS.SAV` - have a folder each for the disks they came from: `osa/` - the ОСА disks; `osa-rs/` - the ОСА disks that booted into the RS profShell (the same monitor, its other factory configuration).  The files in the table are common to every kit.

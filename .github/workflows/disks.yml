@@ -38,6 +38,9 @@ jobs:
           chmod +x emulator/ms0515-disk
           echo "EMULATOR_TAG=$TAG" >> "$GITHUB_ENV"
 
+      - name: disks.toml is what its pieces say
+        run: python3 tools/build_disks_toml.py --check
+
       - name: The tag names this disks.toml
         if: startsWith(github.ref, 'refs/tags/disks-')
         run: |

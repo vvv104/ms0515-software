@@ -1,0 +1,224 @@
+# ==== Games ================================================================
+
+[bundle.sabot2-osa]
+title    = "Saboteur 2 - ZX Spectrum port (keyboard build, OSA disks)"
+group    = "Games / Graphics"
+provides = ["saboteur2"]
+needs    = ["ss", "dz"]         # the loader opens DZ:SABOT2.DAT by name
+date     = "1990-11-09"
+files    = ["software/games/sabot2/fixed/osa/SABOT2.SAV",
+            "software/games/sabot2/fixed/osa/SABOT2.DAT"]
+
+[bundle.sabot2-omega]
+title    = "Saboteur 2 - ZX Spectrum port with joystick support (omega-games disk)"
+group    = "Games / Graphics"
+provides = ["saboteur2"]
+needs    = ["ss", "dz"]
+date     = "1991-11-05"
+files    = ["software/games/sabot2/fixed/omega/SABOT2.SAV",
+            "software/games/sabot2/fixed/omega/SABOT2.DAT"]
+
+[bundle.fist]
+title = "The Way Of The Exploding Fist - ZX Spectrum port"
+group = "Games / Graphics"
+date  = "1999-12-31"            # the latest the monitors print in two digits: 2003 shows as 01-01-103
+files = ["software/games/fist/FIST.SAV", "software/games/fist/FIST.DAT"]
+
+[bundle.manicm]
+title = "Manic Miner - ZX Spectrum port"
+group = "Games / Graphics"
+date  = "1999-12-31"
+files = ["software/games/manicm/MANICM.SAV", "software/games/manicm/MANICM.DAT"]
+
+[bundle.birds]
+title = "BIRDS - a spaceship fires on firebirds"
+group = "Games / Graphics"
+date  = "1991-11-05"
+files = ["software/games/BIRDS.SAV"]
+
+[bundle.expres]
+title = "EXPRES - arcade game set on a moving train, with its rules"
+group = "Games / Graphics"
+date  = "1991-11-12"
+files = ["software/games/EXPRES.SAV", { path = "software/games/EXPRES.TXT", date = "1990-09-27" }]
+
+[bundle.kosmos-osa]
+title    = "KOSMOS - a text-mode space game (OSA build)"
+group    = "Games / Graphics"
+provides = ["kosmos"]
+date     = "1992-03-27"
+files    = ["software/games/osa/KOSMOS.SAV"]
+
+[bundle.kosmos-osa-rs]
+title    = "KOSMOS - a text-mode space game (OSA build of the profShell disks)"
+group    = "Games / Graphics"
+provides = ["kosmos"]
+date     = "1992-03-27"
+files    = ["software/games/osa-rs/KOSMOS.SAV"]
+
+[bundle.hanoj-osa]
+title    = "HANOJ - the towers of Hanoi (OSA build)"
+group    = "Games / Graphics"
+provides = ["hanoj"]
+date     = "1992-03-27"
+files    = ["software/games/osa/HANOJ.SAV"]
+
+[bundle.hanoj-osa-rs]
+title    = "HANOJ - the towers of Hanoi (OSA build of the profShell disks)"
+group    = "Games / Graphics"
+provides = ["hanoj"]
+date     = "1992-03-27"
+files    = ["software/games/osa-rs/HANOJ.SAV"]
+
+[bundle.sp13]
+title = "SP13 - Pac-Man"
+group = "Games / Pac-Man"
+date  = "1989-04-30"
+files = ["software/games/pacman/SP13.SAV"]
+
+[bundle.sp49]
+title = "SP49 - Labyrinths of power"
+group = "Games / Pac-Man"
+date  = "1989-04-30"
+files = ["software/games/pacman/SP49.SAV"]
+
+[bundle.pacm]
+title = "PACM - Pac-Man with the PAC-HALL table"
+group = "Games / Pac-Man"
+date  = "1989-04-30"
+files = ["software/games/pacman/PACM.SAV"]
+
+[bundle.pac6]
+title = "PAC6 - PACMAN V5.2 with six mazes"
+group = "Games / Pac-Man"
+date  = "1989-04-30"
+files = ["software/games/pacman/PAC6.SAV"]
+
+[bundle.labrn]
+title = "LABRN - Pac-Man in text mode, a big labyrinth, with its results file"
+group = "Games / Pac-Man"
+date  = "1989-04-30"
+files = ["software/games/pacman/LABRN.SAV", "software/games/pacman/LABRN.DAT"]
+
+[bundle.pent]
+title = "PENT - a Tetris-like game in text mode"
+group = "Games / Tetris"
+date  = "1991-11-12"
+files = ["software/games/tetris/PENT.SAV"]
+
+[bundle.rubis]
+title = "RUBIS - falling blocks, KOI-7 labels"
+group = "Games / Tetris"
+date  = "1991-11-12"
+files = ["software/games/tetris/RUBIS.SAV"]
+
+[bundle.ttr2]
+title = "TTR2 - falling blocks, a narrower well"
+group = "Games / Tetris"
+date  = "1991-11-12"
+files = ["software/games/tetris/TTR2.SAV"]
+
+[bundle.king]
+title  = "KING - the kingdom simulation, with its saved kingdom"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/KING.SAV", "software/games/KING.DAT"]
+
+[bundle.kam1]
+title  = "KAM1 - a classic Sokoban game, with its level maps"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/KAM1.SAV", "software/games/KAMENS.DAT"]
+
+[bundle.tropa]
+title  = "TROPA - the Oregon Trail"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/TROPA.SAV"]
+
+[bundle.poker]
+title  = "POKER - poker in text mode"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/POKER.SAV"]
+
+[bundle.kosti]
+title  = "KOSTI - dice"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/KOSTI.SAV"]
+
+[bundle.mars]
+title  = "MARS - Martian invaders, Russian edition"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/MARS.SAV"]
+
+[bundle.mars2]
+title  = "MARS2 - Martian invaders, German edition"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/MARS2.SAV"]
+
+[bundle.go1]
+title  = "GO1 - classic go in text mode"
+group  = "Games / Text"
+volume = "any"
+date   = "1989-03-22"
+files  = ["software/games/GO1.SAV"]
+
+[bundle.kalahi]
+title  = "KALAHI - kalah against the machine"
+group  = "Games / Text"
+volume = "any"
+date   = "1985-02-11"
+files  = ["software/games/KALAHI.SAV"]
+
+[bundle.derby]
+title  = "DERBY - horse racing in text mode"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/DERBY.SAV"]
+
+[bundle.lotos]
+title  = "LOTOS"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/LOTOS.SAV"]
+
+[bundle.love]
+title  = "LOVE - a questionnaire"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/LOVE.SAV"]
+
+[bundle.ten]
+title  = "TEN - tennis in character graphics"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/TEN.SAV"]
+
+[bundle.tir]
+title  = "TIR - shooting gallery for up to eight players"
+group  = "Games / Text"
+volume = "any"
+date   = "1991-01-31"
+files  = ["software/games/TIR.SAV"]
+
+[bundle.udaw]
+title  = "UDAW (PITON) - a Snake game that teaches the Russian alphabet"
+group  = "Games / Text"
+volume = "any"
+date   = "1994-01-01"
+files  = ["software/games/UDAW.SAV"]

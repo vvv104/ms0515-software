@@ -1,9 +1,11 @@
 # Voronkov's programs
 
-Voronkov's own programs, 1993-1995 - everything on his disks that no one else signed.  From his logical-disk container `PROGS.DSK` (`minesweeper/`), where they sat beside the minesweeper sources: small Pascal programs - graphics and sound tries, university exercises, file-conversion tools and hardware probes.  From the Pascal disk: the formula editor `FORMUL.PAS`, `GR.PAS`, `STONH.PAS`.  From the games disk: the BASIC sea battle «МОРСКОЙ БОЙ» and the joystick shooter `LUNA` with their sprite tables and screen.  The built `CODTXT.SAV` and `BIG2SM.SAV`, and the piano-keyboard screen of his 1993 music editor, `MUZRED.SCR`.  The container's sources - compile with PAS1, MACRO, LINK and PASLIB (see `../../software/development/pascal/`); the graphics ones need PASGRF.OBJ as well.
+Voronkov's own programs, 1993-1995 - everything on his disks that no one else signed.  From his logical-disk container `PROGS.DSK` (`minesweeper/`), where they sat beside the minesweeper sources: small Pascal programs - graphics and sound tries, university exercises, file-conversion tools and hardware probes.  From the Pascal disk: the formula editor `FORMUL.PAS`, `GR.PAS`, `STONH.PAS`.  From disk3/h1: the two UKCALC worksheets `GAUSS.CLC` and `KRAMER.CLC` - a Gauss elimination and Cramer's rule laid out in the spreadsheet, which is a piece of coursework and not a part of the program (UKCALC itself is in `../../software/apps/`, and its bundle still puts these two on the disk with it).  From the games disk: the BASIC sea battle «МОРСКОЙ БОЙ» and the joystick shooter `LUNA` with their sprite tables and screen.  The built `CODTXT.SAV` and `BIG2SM.SAV`, and the piano-keyboard screen of his 1993 music editor, `MUZRED.SCR`.  The container's sources - compile with PAS1, MACRO, LINK and PASLIB (see `../../kits/common/development/`); the graphics ones need PASGRF.OBJ as well.
 
 | file | what | how to run |
 |---|---|---|
+| `GAUSS.CLC` | UKCALC worksheet of his disk3/h1 («POWERR SPREADSHEET» header - UKCALC's own file format): solves a system of linear equations by Gauss elimination, cells with formulas like C3-C6*A3, B2/A2 | data file |
+| `KRAMER.CLC` | UKCALC worksheet of his disk3/h1: solves a 2x2 linear system by Cramer's rule - cells for the determinant («Det A =», A1*B2-B1*A2), Dx, and «x=», «y=» | data file |
 | `minesweeper/` | the minesweeper - the game, its sources and its workshop | see inside |
 | `CODTXT.PAS` | source of `CODTXT.SAV` beside it: the text coder/decoder whose cipher the minesweeper's K.HLP is in - it prints every byte as it goes | source - compile with PAS1, MACRO, LINK |
 | `STARS.PAS` | a starfield: thirty dots fly out of the centre of the graphics screen and respawn, until the keyboard flag at 177440 changes | source - compile with PAS1, MACRO, LINK |
@@ -17,7 +19,7 @@ Voronkov's own programs, 1993-1995 - everything on his disks that no one else si
 | `BIG2SM.PAS` | copies a .PAS file turning capitals into small letters | source - compile with PAS1, MACRO, LINK |
 | `SAVTXT.PAS` | turns any file into a text-shaped one: keeps the printable bytes, breaks lines at 78 | source - compile with PAS1, MACRO, LINK |
 | `DMPMOD.PAS` | trims a DUMP listing: drops its three header lines and everything before the `/` of each line | source - compile with PAS1, MACRO, LINK |
-| `REDUMP.PAS` | the inverse of DUMP: reads an octal listing back into a binary file (unrelated to REDUMP.SAV of `../../software/development/debug/`) | source - compile with PAS1, MACRO, LINK |
+| `REDUMP.PAS` | the inverse of DUMP: reads an octal listing back into a binary file (unrelated to REDUMP.SAV of `../../kits/common/development/`) | source - compile with PAS1, MACRO, LINK |
 | `LSTROM.PAS` | dumps the ROM 140000..177377 into PZU.DAT | source - compile with PAS1, MACRO, LINK |
 | `PR.PAS` | scans the I/O page 160000..177777, writing each byte back changed and recording in ADR.DAT the addresses that responded | source - compile with PAS1, MACRO, LINK |
 | `CHAIN.PAS` | a .CHAIN test: fills the RT-11 chain block at 500 with a RAD50 file name and issues EMT 374 with R0=4000 - and prints a jibe if control ever comes back | source - compile with PAS1, MACRO, LINK |

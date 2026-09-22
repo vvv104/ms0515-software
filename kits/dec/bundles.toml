@@ -1,0 +1,229 @@
+[system.dec]
+title    = "RT-11SJ V05.04 (DEC's, for the MS 0515)"
+kit      = "dec"
+monitor  = { path = "kits/dec/RT11SJ.SYS", date = "1999-12-31" }
+swap     = { blocks = 32, date = "1999-12-31" }
+startup_date = "1999-12-31"
+media    = ["ss", "dz", "dv"]
+requires = ["tt-rt11"]
+suggests = ["dir-rt11", "dup-rt11", "pip-rt11"]
+requires_by_media = { ss = ["dz-rt11"], dz = ["dz-rt11"], dv = ["dv-rt11"] }
+startup  = ["SET TT QUIET"]
+
+[system.dec-ru]
+title    = "RT-11SJ V05.04 (DEC's, for the MS 0515), in Russian"
+kit      = "dec"
+monitor  = { path = "kits/dec/dec-ru/RT11SJ.SYS", date = "1999-12-31" }
+swap     = { blocks = 32, date = "1999-12-31" }
+startup_date = "1999-12-31"
+media    = ["ss", "dz", "dv"]
+requires = ["tt-rt11"]
+suggests = ["dir-rt11", "dup-rt11", "pip-rt11"]
+requires_by_media = { ss = ["dz-rt11"], dz = ["dz-rt11"], dv = ["dv-rt11"] }
+startup  = ["SET TT QUIET"]
+
+# ---- dec -------------------------------------------------------------------
+
+# -- RT-11 from sources: the handlers written or built in the emulator
+# repository (rt11_devel/projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
+# VM, EX and HD are the machine's own, with sources; NL, LD, LP, LS, SP and BA
+# are DEC's V5.4 as they are.  DEC's SL is not here: its screen control does
+# not fit the console, and the kits' SL load under the dec monitors.
+
+[bundle.dz-rt11]
+title    = "DZ.SYS - the floppy handler (from sources)"
+kit      = "dec"
+provides = ["dz"]
+systems  = ["dec", "dec-ru"]
+protect  = true
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/DZ.SYS"]
+
+[bundle.dv-rt11]
+title    = "DV.SYS - the whole-disk DV handler (from sources)"
+kit      = "dec"
+provides = ["dv"]
+systems  = ["dec", "dec-ru"]
+protect  = true
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/DV.SYS"]
+
+[bundle.mz-rt11]
+title    = "MZ.SYS - whole-disk MZ: volumes (from sources)"
+kit      = "dec"
+provides = ["mz"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/MZ.SYS"]
+
+[bundle.tt-rt11]
+title    = "TT.SYS - the terminal handler (from sources)"
+kit      = "dec"
+provides = ["tt"]
+systems  = ["dec", "dec-ru"]
+protect  = true
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/TT.SYS"]
+
+[bundle.vm-rt11]
+title    = "VM.SYS - RAM disk (from sources)"
+kit      = "dec"
+provides = ["vm"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/VM.SYS"]
+
+[bundle.ex-rt11]
+title    = "EX.SYS - the RAM-disk expansion board, all 1024 blocks (from sources)"
+kit      = "dec"
+provides = ["ex"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/EX.SYS"]
+
+[bundle.hd-rt11]
+title    = "HD.SYS - the emulator's hard disk (from sources)"
+kit      = "dec"
+provides = ["hd"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/HD.SYS"]
+
+[bundle.nl-rt11]
+title    = "NL.SYS - the null device (DEC's)"
+kit      = "dec"
+provides = ["nl"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/NL.SYS"]
+
+[bundle.ld-rt11]
+title    = "LD.SYS - logical disks in a file (DEC's)"
+kit      = "dec"
+provides = ["ld"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/LD.SYS"]
+
+[bundle.lp-rt11]
+title    = "LP.SYS - the line printer (DEC's, an LP11 at 177514: untried)"
+kit      = "dec"
+provides = ["lp"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/LP.SYS"]
+
+[bundle.ls-rt11]
+title    = "LS.SYS - the serial printer (DEC's: untried)"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/handlers/LS.SYS"]
+
+[bundle.dir-rt11]
+title    = "DIR (DEC's V5.4, from sources)"
+kit      = "dec"
+provides = ["dir"]
+protect  = true
+date     = "1999-12-31"
+files    = ["kits/dec/utils/DIR.SAV"]
+
+[bundle.dup-rt11]
+title    = "DUP (DEC's V5.4, from sources)"
+kit      = "dec"
+provides = ["dup"]
+protect  = true
+date     = "1999-12-31"
+files    = ["kits/dec/utils/DUP.SAV"]
+
+[bundle.pip-rt11]
+title    = "PIP (DEC's V5.4, from sources)"
+kit      = "dec"
+provides = ["pip"]
+protect  = true
+date     = "1999-12-31"
+files    = ["kits/dec/utils/PIP.SAV"]
+
+# -- RT-11 from sources: DEC's V5.4 utilities, built from DEC's sources with
+# DEC's own LINK and libraries (rt11_devel/projects/rt11 of the emulator).
+
+[bundle.help-rt11]
+title    = "HELP with its library HELP.MLB"
+kit      = "dec"
+provides = ["help"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/HELP.SAV", "kits/dec/utils/HELP.MLB"]
+
+[bundle.dump-rt11]
+title    = "DUMP"
+kit      = "dec"
+provides = ["dump"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/DUMP.SAV"]
+
+[bundle.resorc-rt11]
+title    = "RESORC - SHOW: devices, memory, configuration"
+kit      = "dec"
+provides = ["resorc"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/RESORC.SAV"]
+
+[bundle.datime-rt11]
+title    = "DATIME - asks for the date and time at startup"
+kit      = "dec"
+provides = ["datime"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/DATIME.SAV"]
+
+[bundle.compare-rt11]
+title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
+kit      = "dec"
+date     = "1999-12-31"
+files    = ["kits/dec/utils/SRCCOM.SAV", "kits/dec/utils/BINCOM.SAV"]
+
+[bundle.ucl-rt11]
+title    = "UCL and LET - commands of one's own (the dec monitors pass unknown commands to UCL)"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/UCL.SAV", "kits/dec/utils/LET.SAV"]
+
+[bundle.batch-rt11]
+title    = "BATCH with its handler BA.SYS"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/BATCH.SAV", "kits/dec/handlers/BA.SYS"]
+
+[bundle.spool-rt11]
+title    = "SPOOL, QUEUE, QUEMAN with the handler SP.SYS - printing in the background (untried)"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/SPOOL.REL", "kits/dec/utils/QUEUE.REL", "kits/dec/utils/QUEMAN.SAV", "kits/dec/handlers/SP.SYS"]
+
+# -- RT-11 from sources: what DEC's programs are built with.  SYSLIB here is
+# DEC's; the Pascal kit's is not, and a PIP linked against that one dies of an
+# overlay error.
+
+[bundle.link-rt11]
+title    = "LINK V5.4 (DEC's, byte for byte from its sources)"
+kit      = "dec"
+provides = ["link"]
+date     = "1999-12-31"
+files    = ["kits/dec/development/LINK.SAV"]
+
+[bundle.sysmac-rt11]
+title    = "SYSMAC.SML - DEC's system macro library"
+kit      = "dec"
+provides = ["sysmac"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/development/SYSMAC.SML"]
+
+[bundle.syslib-rt11]
+title    = "SYSLIB.OBJ - DEC's system object library"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/development/SYSLIB.OBJ"]

@@ -1,6 +1,6 @@
 # Applications
 
-Everything a user would run for a purpose: the RT-11/DOS/TR-DOS converter `FCON`, Домнич's FunctionCAD, the UKCALC spreadsheet with two of its worksheets (`.CLC`: Gauss elimination and Cramer's rule), the ART paint program (`R ART`; 320x200 graphics), the fault handbook `DEF` and the frame editor `EDSP` that plausibly authored it (survived 70% zeroed), the multiplication trainer `UMN`.
+Everything a user would run for a purpose: the RT-11/DOS/TR-DOS converter `FCON`, Домнич's FunctionCAD, the UKCALC spreadsheet (the two `.CLC` worksheets that came on the collector's disk3 are his own work, in `../../programs/vvv/`, and the bundle still puts them on a UKCALC disk), the ART paint program (`R ART`; 320x200 graphics), the fault handbook `DEF` and the frame editor `EDSP` that plausibly authored it (survived 70% zeroed), the multiplication trainer `UMN`.
 
 | file | what | how to run |
 |---|---|---|
@@ -9,8 +9,6 @@ Everything a user would run for a purpose: the RT-11/DOS/TR-DOS converter `FCON`
 | `EDSP.SAV` | Frame ('кадр') EDITOR - an authoring tool with the menu Видео / Редактирование / Сжать / Сборка / Печать / Картотека and commands 'Записать кадр', 'Загрузить файл', 'Окно': courseware/reference frames assembled from a card-file, in the АОС tradition; plausibly the authoring half of DEF's handbook. The sole surviving build is 70% zeroed blocks - the confirmed-unreadable one among the eight truly broken | `RUN EDSP` |
 | `FCAD.SAV` | FunctionCAD v1.1 for the MS-0515 (1994, A. V. Domnich): plots functions and draws them on an EM7052 pen plotter; F-key menu | `RUN FCAD` |
 | `FCON.SAV` | File-system converter (Омега, Львов, experimental, July 1993) bridging THREE worlds: RT-11 (any device, catalogue/delete/rename), DOS FAT floppies (root dir, volume label, capacity/free in KB, write-back), and ZX Spectrum TR-DOS (catalogue with start/length/sectors, both directions). Auto-detects 40/80-track SS/DS. Porting-pipeline features: marks files copied from TR-DOS as 'программа в кодах Spectrum для дизассемблера', converts Spectrum screen images, transcodes text between code pages. Needs SL.SYS fetched - absent on Rodionov's system, hence its one error cell in the cross. The very conveyor the Omega Spectrum ports came through | `RUN FCON`; wants `SL.SYS` on SY: and a large memory (not under RT15SJ) |
-| `GAUSS.CLC` | UKCALC worksheet («POWERR SPREADSHEET» header - UKCALC's own file format): solves a system of linear equations by Gauss elimination, cells with formulas like C3-C6*A3, B2/A2 | data file |
-| `KRAMER.CLC` | UKCALC worksheet: solves a 2x2 linear system by Cramer's rule - cells for the determinant («Det A =», A1*B2-B1*A2), Dx, and «x=», «y=» | data file |
 | `TR7004.SAV` | Keyboard trainer/test for the MS7004 keyboard (name after the keyboard model); prints what it receives | `RUN TR7004` |
 | `UKCALC.LST` | Operator's manual of the UKCALC spreadsheet (listing form). Three reads of disk5 survived; this is the one clean one, the other two carry corrupt blocks | text: `TYPE UKCALC.LST`, or read on the host (koi8-r/cp866) |
 | `UKCALC.SAV` | UKCALC, a large-format spreadsheet; has its own operator manual (UKCALC.LST) | `RUN UKCALC` |
