@@ -294,3 +294,23 @@ kit      = "common"
 title = "DESS - DEZI dump viewer and disassembler"
 date  = "1995-04-01"
 files = ["kits/common/development/DESS.SAV"]
+
+[bundle.hello-pas]
+kit      = "common"
+title    = "HELLO.PAS - a Hello, world! to build first: PAS1, MACRO, LINK, RUN"
+requires = ["pascal"]
+date     = "1992-04-01"     # written for the collection in 2026: the Pascal disk's working date
+files    = ["programs/examples/HELLO.PAS"]
+
+[bundle.hello-mac]
+kit      = "common"
+title    = "HELLOA.MAC - the same Hello, world! in MACRO-11: MACRO, LINK, RUN"
+requires = ["macro11", "link"]
+date     = "1992-04-01"     # written for the collection in 2026: the Pascal disk's working date
+files    = ["programs/examples/HELLOA.MAC"]
+
+[bundle.spr]
+kit      = "common"
+title = "SPR - makes sprite files for Pascal programs"
+date  = "1995-04-01"
+files = ["kits/common/development/SPR.SAV"]

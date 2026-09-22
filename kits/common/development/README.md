@@ -6,6 +6,7 @@ What one writes programs with on this machine, in the one build the collection h
 |---|---|---|
 | `LIBR.SAV` | The librarian, built from DEC's V5.4 sources.  No kit of the machine had one, so no library could be rebuilt | `RUN LIBR` |
 | `ODT.OBJ` | The octal debugger, to be linked into the program it debugs | object module for LINK |
+| `SPR.SAV` | «Программа создания файла спрайтов для языка PASCAL-RAFOS»: asks for the file name, the screen resolution (0 medium, 1 high) and then, sprite by sprite up to 256, the image colour, the background, the brightness and the blink.  Compiled with PAS1 - the OMSI run-time messages are inside it - and not to be confused with the BASIC «Редактор SPRITE» of `programs/sprites/`, whose manual it does not have | `RUN SPR` |
 | `SYSMAC.SML` | MACRO-11 system macro library — what MACRO reads from `SY:`, the same file on every kit's disks | read by MACRO |
 
 ## Pascal

@@ -7,7 +7,6 @@
 # that is named nowhere here is appended at the end, and the script says so.
 areas = [
     "software/games",
-    "software/development",
     "software/apps",
 ]
 

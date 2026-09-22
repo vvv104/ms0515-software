@@ -2,11 +2,11 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 137 files</summary>
+<details open><summary><b>kits/</b> — 138 files</summary>
 
-<details><summary><b>kits/common/</b> — 71 files</summary>
+<details><summary><b>kits/common/</b> — 72 files</summary>
 
-<details><summary><b>kits/common/development/</b> — 26 files</summary>
+<details><summary><b>kits/common/development/</b> — 27 files</summary>
 
 ### `kits/common/development/BASIC.SAV`
 
@@ -145,6 +145,12 @@ DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local
 SetPixel for the 640x200 hi-res screen written straight against the hardware: the pixel byte at VRAM 40000B + 80*y + x div 8, ORed with the bit mask, with the memory-dispatcher register 177400B / its shadow at 157700B switched to reach the video bank and restored; a one-call test main follows
 
 *disks: 2; identified from: read from the source 2026-09-06; sha256 f1dbfeead45c*
+
+### `kits/common/development/SPR.SAV`
+
+«Программа создания файла спрайтов для языка PASCAL-RAFOS»: asks for the file name, the screen resolution (0 medium, 1 high) and then, sprite by sprite up to 256, the image colour, the background, the brightness and the blink, and writes the sprite file a Pascal program reads.  Not the BASIC «Редактор SPRITE» of SPRED.BAS and not what SPRED.DOC describes: the OMSI Pascal run-time messages are inside it («TRAP TO 4», «BAD SUPPORT PACKAGE»), so it was compiled with PAS1, and it answers an empty file name with «Я что-то не пойму, за каким хреном ты меня запускал?»
+
+*written in high-level (runtime library linked); text; ru+en / koi8-r; cross-run: ran; disks: 4; identified from: its own banner and the OMSI Pascal run-time strings in it 2026-09-22; sha256 578e60fc70a1*
 
 ### `kits/common/development/STRING.PAS`
 
@@ -956,7 +962,7 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 </details>
 
-<details open><summary><b>programs/</b> — 218 files</summary>
+<details open><summary><b>programs/</b> — 221 files</summary>
 
 <details><summary><b>programs/autoteacher/</b> — 11 files</summary>
 
@@ -2030,6 +2036,28 @@ Compiled build of RECODE.C, the SO/SI KOI-7 -> KOI-8 filter (reads standard inpu
 
 </details>
 
+<details><summary><b>programs/sprites/</b> — 3 files</summary>
+
+### `programs/sprites/GENSPR.BAS`
+
+Sprite generator «COPYRIGHT 1994 BY GOSTEV DMITRY, Россия, Воронеж - идея подана Грудзинским А.С. с физического факультета Львовского университета»: draws 8x8 sprites on a magnified grid and writes them as SPRITE data
+
+*ru+en / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 71a8292a0ea6*
+
+### `programs/sprites/SPRED.BAS`
+
+«Редактор SPRITE - программа составлена на физическом факультете Львовского университета, автор Грудзинский А.С.»: edits an 8x8 sprite, asks the file name, number (>3), colours and brightness, and BSAVEs the table
+
+*ru+en / koi8-r; disks: 3; identified from: read 2026-09-06; sha256 2952e18b5baa*
+
+### `programs/sprites/SPRED.DOC`
+
+«Программное обеспечение ПЭВМ Электроника 0515 - Редактор SPRITE - Руководство пользователя», 7 sheets, Львов 1991
+
+*ru / koi8-r; disks: 1; identified from: title page 2026-09-06; sha256 445e440a6eeb*
+
+</details>
+
 <details><summary><b>programs/vvv/</b> — 50 files</summary>
 
 <details><summary><b>programs/vvv/minesweeper/</b> — 18 files</summary>
@@ -2344,7 +2372,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 81 files</summary>
+<details open><summary><b>software/</b> — 77 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2529,38 +2557,6 @@ UKCALC, a large-format spreadsheet; has its own operator manual (UKCALC.LST)
 Multiplication-table trainer in machine code («проверяем таблицу умножения»): move the cursor to the right digit and press ВК; «много ошибок» when you fail, «ещё раз д/н» at the end. Shipped as UMN.SAV; nothing to do with UMN.BAS beyond the topic
 
 *written in BASIC (source on the disks); graphics; ru / koi8-r; cross-run: ran; disks: 1; identified from: strings 2026-09-06; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 0f2c6505944b*
-
-</details>
-
-<details><summary><b>software/development/</b> — 4 files</summary>
-
-<details><summary><b>software/development/sprites/</b> — 4 files</summary>
-
-### `software/development/sprites/GENSPR.BAS`
-
-Sprite generator «COPYRIGHT 1994 BY GOSTEV DMITRY, Россия, Воронеж - идея подана Грудзинским А.С. с физического факультета Львовского университета»: draws 8x8 sprites on a magnified grid and writes them as SPRITE data
-
-*ru+en / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 71a8292a0ea6*
-
-### `software/development/sprites/SPR.SAV`
-
-Sprite editor for the MS 0515 (the SPRED manual); writes a sprite file for PASCAL-RAFOS programs
-
-*written in BASIC (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 4; identified from: RTK MIKRO manuals (disk5); sha256 578e60fc70a1*
-
-### `software/development/sprites/SPRED.BAS`
-
-«Редактор SPRITE - программа составлена на физическом факультете Львовского университета, автор Грудзинский А.С.»: edits an 8x8 sprite, asks the file name, number (>3), colours and brightness, and BSAVEs the table
-
-*ru+en / koi8-r; disks: 3; identified from: read 2026-09-06; sha256 2952e18b5baa*
-
-### `software/development/sprites/SPRED.DOC`
-
-«Программное обеспечение ПЭВМ Электроника 0515 - Редактор SPRITE - Руководство пользователя», 7 sheets, Львов 1991
-
-*ru / koi8-r; disks: 1; identified from: title page 2026-09-06; sha256 445e440a6eeb*
-
-</details>
 
 </details>
 
