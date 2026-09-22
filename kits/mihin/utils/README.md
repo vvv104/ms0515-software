@@ -6,6 +6,8 @@ The builds below are the ones these disks carried; each card says on which of th
 
 | file | what | how to run |
 |---|---|---|
+| `DATIME.SAV` | DATIME «(C) 1987» of the ВЦ АН СССР, off the work diskette 056 - the greeter with escape-sequence highlighting.  A different program from the `DATIME` of the `dec` and `vvv` kits: another author, another year | `RUN DATIME` |
+| `PIP.SAV` | PIP V05.14 with English messages, this kit's build | prompt; answers `?PIP-F-File not found` |
 | `TERM.SAV` | The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА», exit with СУ/E  (on 064, 065, 066, amk disk3, amk_2, disk1, disk2) | `RUN TERM` |
 
-`056/` holds the one program of the work diskette 056 that is not a handler - see [`056/README.md`](056/README.md).  The other cut of `TERM.SAV`, the 2048-byte one that diskette carried, is in `kits/omega/utils/`.
+`DATIME.SAV` is the only file of this kit placed by association rather than by proof: nothing in it says which monitor it was meant for.  It comes from the work diskette 056, whose handlers are filed with this kit because they carry its sysgen word `TIM$IT` (see [`../handlers/056/`](../handlers/056/README.md)), and it follows them.  The other cut of `TERM.SAV`, the 2048-byte one that diskette also carried, is in `kits/omega/utils/`.
