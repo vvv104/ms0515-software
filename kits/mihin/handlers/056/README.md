@@ -1,6 +1,6 @@
 # The handlers of the work diskette 056
 
-Diskette `056` carries no monitor: it is the work diskette of an МС0111 terminal complex — the МС-0515 as a terminal of a central МС0108 — and these five files are its handlers.  All three `.SYS` carry the sysgen word `TIM$IT` (4), which of the collection's monitors only Mihin's OS-16SJ has, and the cross-run bears that out: ОСА, ОМЕГА and ОМЕГА2 answer «Conflicting SYSGEN options» and then «Invalid device», Mihin's `INSTALL` and `LOAD` take all three.  That is why they lie here.
+Diskette `056` carries no monitor: it is the work diskette of the КВИ «Электроника МС0111» complex — an installation, not a machine, in which our МС 0515 runs ОСА and works as the terminal of a central МС 0108 under ФОДОС-4/TS (the diskette's own `TERM.TXT` says so, and is kept in [`../../../../programs/ms0111/`](../../../../programs/ms0111/README.md)) — and these five files are its handlers.  All three `.SYS` carry the sysgen word `TIM$IT` (4), which of the collection's monitors only Mihin's OS-16SJ has, and the cross-run bears that out: ОСА, ОМЕГА and ОМЕГА2 answer «Conflicting SYSGEN options» and then «Invalid device», Mihin's `INSTALL` and `LOAD` take all three.  That is why they lie here.
 
 **No bundle names them**: `PC` and `RK` drive hardware the emulator does not have, so a disk made with them would only fail differently.  What is known about them is written down here instead; if the devices are ever emulated, the bundles are a few lines.
 

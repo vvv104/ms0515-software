@@ -1,23 +1,13 @@
 # Utilities
 
-DEC's RT-11 utilities in their Soviet builds plus the small helpers of the kits, the terminal emulator `TERM` that makes the machine a terminal of another computer over its serial line, and Домнич's perpetual calendar `CALEND.SAV`, whose source is in `programs/domnich/`.  Run a utility by its bare name at the monitor prompt (`DIR`, `PIP`, `DUP`) or with `R NAME`; the CSI ones prompt with `*` for an output=input command line and exit on `^C`.
+The five that belong to no kit and could not go to [`../../../kits/common/`](../../../kits/common/README.md) either, because a rival build of each is in a kit: `BINCOM` (the common kit has DEC's, built from the V5.4 sources), `DATIME` (the `dec` and `vvv` kits have theirs), `TERM` with its manual (Mihin's kit has the other cut) and `HELP.TXT`.  Run a utility by its bare name at the monitor prompt or with `R NAME`.
+
+`TERM` makes the machine a terminal of another computer over its serial line.  The cut kept here is the one the work diskettes 056 and 172 carried, of the КВИ «Электроника МС0111» complex — an installation, not a machine: the МС 0515 runs ОСА and is the terminal, the central computer is an МС 0108 under ФОДОС-4 with the multi-user monitor TS.  The complex's own programs and the long manual that describes all this are in [`../../../programs/ms0111/`](../../../programs/ms0111/README.md).
 
 | file | what | how to run |
 |---|---|---|
-| `ASC.SAV` | Interactive character-code lookup: press any key and it prints the ASCII code (A -> 65, 7 -> 55; the console upcases letters first). A pocket reference vvv kept on every one of his disks - indispensable in a KOI-7/KOI-8/CP866 world | `RUN ASC` |
-| `BADS.SAV` | Bad-block scanner (RT-11 BAD-style): at its '*' prompt give a device ('DZ0:'), it reads every block with a running counter and reports 'N bad blocks detected' / 'Block N is bad.'; switches C,S,E,A,O. Three blocks of assembler - the sibling craft of KBAD13 | bare prompt, no answer to a bogus file name |
 | `BINCOM.SAV` | DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP) | bare prompt, no answer to a bogus file name |
-| `BLACK.SAV` | Blanks the screen to black and returns to the monitor | `RUN BLACK` |
-| `BLUE.SAV` | Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV | `RUN BLUE` |
-| `CALEND.SAV` | Calendar generator for the years 1583-5000, to a file or to LP:; A. V. Domnich, 16-06-94 | `RUN CALEND` |
-| `DATIME.SAV` | DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 056 - the greeter with escape-sequence highlighting  (on 056) | `RUN DATIME` |
-| `DATSET.SAV` | Date-setting program of the OSA kit: asks for the date as `дд-мм-гг`, then for a startup file to run (an empty answer lists the directory instead). It reads its answers from a command file, which OSA's own `DATE` command never does - KMON there compares the Russian month in the form the console driver delivers, and refuses any spelling a file holds - so this is how an OSA disk gets its date at boot: `startup = ["R DATSET", "01-04-92", ""]` in a wizard selection, bundle `datset` added. Games such as LABRN refuse to run with no date | `RUN DATSET` |
-| `DAY.SAV` | Asks for a date, offering 18-MAR-93 as the default | `RUN DAY` |
+| `DATIME.SAV` | DATIME «(C) 1987» of the ВЦ АН СССР, from the work diskette 056 - the greeter with escape-sequence highlighting | `RUN DATIME` |
 | `HELP.TXT` | «Описание команд операционной системы ФОДОС-3» - the command reference HELP.SAV prints, as plain text: ASSIGN, BOOT, COPY… with their syntax | text: `TYPE HELP.TXT`, or read on the host (koi8-r) |
-| `NEG.SAV` | Writes 000010 into System Register C (177604): selects the 640x200 hi-res mode with a black border.  The video-mode counterpart of BLACK, BLUE and WHITE | `RUN NEG` |
-| `TERM.SAV` | The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7  (on 056, 172) | `RUN TERM` |
-| `TERM.TXT` | Manual of TERM.SAV as used in the МС0111 complex check-out: the МС-0515 as a terminal of the central МС0108 (ФОДОС-4, TS/TSX monitor, DEMO.SAV on the central machine) | text: `TYPE TERM.TXT`, or read on the host (koi8-r) |
-| `TFP.SAV` | Text formatter of the OSA kit; the manual recommends keeping it on the system device | bare prompt, no answer to a bogus file name |
-| `WHITE.SAV` | Sets the screen to white and returns to the monitor; the counterpart of BLACK.SAV and BLUE.SAV | `RUN WHITE` |
-
-The utilities that came with a monitor — `DIR`, `DUP`, `PIP`, `DUMP`, `HELP`, `RESORC` and the rest, a build per kit — are in [`../../../kits/`](../../../kits/README.md), each in its kit's `utils/`.  What is here belongs to no kit: it was on the diskettes of several, or on one that carried no monitor at all.
+| `TERM.SAV` | The terminal emulator as the work diskettes 056 and 172 carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7 | `RUN TERM` |
+| `TERM.TXT` | The operator's page: how to call `TERM`, what «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА» means and that СУ/Е returns to ОСА.  One block, on the 064, 066 and 172 disks.  The nine-block manual of the same name, which describes the whole complex and its check-out, is in `programs/ms0111/` | text: `TYPE TERM.TXT`, or read on the host (koi8-r) |

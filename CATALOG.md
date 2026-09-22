@@ -488,7 +488,7 @@ SIPP patch script for PC.SYS (R SIPP, DK:PC.SYS/C, then the patched offsets)
 
 ### `kits/mihin/handlers/056/PC.SYS`
 
-Handler of the МС0111 terminal-complex disk (056): the link to the central machine as a character device
+DEC's PC handler - the PC11 paper-tape reader and punch: device code 7, CSR 177550, vectors 070 (reader) and 074 (punch), as PC.MAC of DEC's V5.4 sources declares; version 01, so from an older RT-11, with the sysgen word patched to TIM$IT.  Of the collection's monitors only Mihin's loads it
 
 *disks: 1; identified from: identified 2026-09-05; sha256 2ea0d76682ca*
 
@@ -500,13 +500,13 @@ SIPP patch script for RK.SYS (R SIPP, DK:RK.SYS/C, then the patched offsets)
 
 ### `kits/mihin/handlers/056/RK.SYS`
 
-Handler of the МС0111 terminal-complex disk (056): the central machine's disk seen over the link
+DEC's RK handler - the RK05 cartridge disk of 4800 blocks, as RK.MAC of DEC's V5.4 sources declares, moved to CSR 173100 and vector 350 and given the TIM$IT sysgen word by RK.COM; it has a primary driver, so such a disk could be booted from.  Of the collection's monitors only Mihin's loads it
 
 *disks: 1; identified from: identified 2026-09-05; sha256 6cb6ec99f915*
 
 ### `kits/mihin/handlers/056/SL.SYS`
 
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+Сторожевых's single-line editor SL V06.00b of 1987, off the work diskette 056: the older of the two SL of this kit and the one in English - the LET language with its own prompt and help, the keypad functions it binds, and a terminal it recognises («Your console is a VT» / «100 in VT52 mode»); the V8.00 beside it is the 1990 adaptation for the УБПК by НПФ «Сенсор», Russian, with that installation's ten hotkey assignments.  Of the collection's monitors only Mihin's loads it
 
 *en / ascii; disks: 1; identified from: DEC RT-11 + the driver's own banner string; sha256 85ad85f1cdf2*
 
@@ -516,7 +516,7 @@ Single-line editor - command recall and editing at the monitor prompt; the V08.0
 
 ### `kits/mihin/handlers/npf-sensor/SL.SYS`
 
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver; its banner «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"» names the Voronezh firm that adapted it for the УБПК, the machine's own development name
 
 *en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
 
@@ -922,7 +922,7 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 </details>
 
-<details open><summary><b>programs/</b> — 217 files</summary>
+<details open><summary><b>programs/</b> — 218 files</summary>
 
 <details><summary><b>programs/autoteacher/</b> — 11 files</summary>
 
@@ -1766,7 +1766,7 @@ The title screen the Lyceum No. 1 coursework programs share: a drawing of the sc
 
 </details>
 
-<details><summary><b>programs/ms0111/</b> — 10 files</summary>
+<details><summary><b>programs/ms0111/</b> — 11 files</summary>
 
 ### `programs/ms0111/EPP.BAK`
 
@@ -1788,7 +1788,7 @@ Object module of EPP.MAC
 
 ### `programs/ms0111/EPP.SAV`
 
-Link-channel initializer from the МС0111 terminal-complex disk: an 8251-style UART setup sequence into 173206 (dummy/mode/command bytes) plus 173406, then a test of 177552; run before TERM. Source EPP.MAC survives beside it
+Link-channel initializer from the work diskette 056 of the КВИ «Электроника МС0111» complex: an 8251-style UART setup sequence into 173206 (dummy/mode/command bytes) plus 173406, then a test of 177552; run before TERM. Source EPP.MAC survives beside it
 
 *written in assembler (source on the disks); text; cross-run: exited; disks: 1; identified from: EPP.MAC read in full; 056 disk context via TERM.TXT; sha256 8e1e2cba7f5b*
 
@@ -1812,13 +1812,13 @@ Object module of KUBUS.MAC
 
 ### `programs/ms0111/KUBUS.SAV`
 
-Ten-word in-memory patch from the МС0111 terminal-complex disk: pokes a polling sequence for I/O register 175200 (the link adapter) into code loaded at 125464 and exits. Source KUBUS.MAC survives beside it
+Ten-word in-memory patch from the work diskette 056 of the КВИ «Электроника МС0111» complex: pokes a polling sequence for I/O register 175200 (the link adapter) into code loaded at 125464 and exits. Source KUBUS.MAC survives beside it
 
 *written in assembler (source on the disks); text; cross-run: exited; disks: 1; identified from: KUBUS.MAC read in full; 056 disk context via TERM.TXT; sha256 14ef320efc86*
 
 ### `programs/ms0111/PIC.SAV`
 
-Extended-memory mapping TEST from the МС0111 complex disk (056): takes a file at its CSI '*' prompt, asks 'poehali?' and walks the mapped-memory API - create region, create window, map window, read/write/remap, reporting 'remap OK / read OK / write OK' per step (also prints 'user mode'/'digit mode'). Under our SJ monitors the mapping step fails with 'ERROR in macro or I-O error 22' - it expects the multi-user/XM environment of the complex's central machine world
+Extended-memory mapping TEST from the work diskette 056 of the КВИ «Электроника МС0111» complex: takes a file at its CSI '*' prompt, asks 'poehali?' and walks the mapped-memory API - create region, create window, map window, read/write/remap, reporting 'remap OK / read OK / write OK' per step (also prints 'user mode'/'digit mode'). Under our SJ monitors the mapping step fails with 'ERROR in macro or I-O error 22' - it expects the multi-user/XM environment of the complex's central machine world
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: strings + live run 2026-09-05; sha256 7982d95a8635*
 
@@ -1827,6 +1827,12 @@ Extended-memory mapping TEST from the МС0111 complex disk (056): takes a file 
 PIC.SAV with eleven bytes changed - ten size constants 6->8 and one address 040->044: the same memory-mapping test rebuilt for a larger window/region. An engineer's parameter sweep preserved as two binaries
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: byte diff against PIC.SAV; sha256 b7bda7f8e81a*
+
+### `programs/ms0111/TERM.TXT`
+
+«Работа в режиме эмуляции терминала центральной ЭВМ» - the check-out procedure of the КВИ «Электроника МС0111» complex, on the work diskette 056 only: the complex is TERM.SAV on the ПЭВМ «Электроника МС0515» under ОСА and DEMO.SAV on the central ЭВМ «Электроника МС0108» under ФОДОС-4 with the multi-user monitor TS V6.1, and the text walks the check-out - DU then TSX on the central machine, R TERM on ours, «Линия #N» on the screen.  Nine blocks; the one-block TERM.TXT of the other disks is a different document
+
+*text; ru / koi8-r; disks: 1; identified from: content read 2026-09-22; sha256 15e2f32e5d85*
 
 </details>
 
@@ -2790,9 +2796,9 @@ DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PAT
 
 ### `software/system/utils/DATIME.SAV`
 
-DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 056 - the greeter with escape-sequence highlighting
+DATIME «(C) 1987» of the ВЦ АН СССР, from the work diskette 056 - the greeter with escape-sequence highlighting
 
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the the МС0111 complex disk build; sha256 55d955b8fcee*
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the work diskette 056 build; sha256 55d955b8fcee*
 
 ### `software/system/utils/HELP.TXT`
 
@@ -2802,13 +2808,13 @@ DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 05
 
 ### `software/system/utils/TERM.SAV`
 
-The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
+The terminal emulator as the work diskettes 056 and 172 of the КВИ «Электроника МС0111» complex carried it: asks the line speed (9600=1, 4800=0) and whether scrolling is smooth before entering terminal mode; this cut prints its prompts in KOI-7
 
-*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the the МС0111 complex disk build; sha256 149b71963551*
+*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: program strings of both builds; TERM.TXT manual on disk 056; the work diskette 056 build; sha256 149b71963551*
 
 ### `software/system/utils/TERM.TXT`
 
-Manual of TERM.SAV as used in the МС0111 complex check-out: the МС-0515 as a terminal of the central МС0108 (ФОДОС-4, TS/TSX monitor, DEMO.SAV on the central machine)
+The operator's page of TERM: how to call it, what «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА» means and that СУ/Е returns to ОСА - one block, on the 064, 066 and 172 disks.  Not the nine-block manual of the same name on the work diskette 056, which describes the whole КВИ «Электроника МС0111» complex and is kept in programs/ms0111/
 
 *ru / koi8-r; disks: 3; identified from: content read 2026-09-05; sha256 66691848ec61*
 
