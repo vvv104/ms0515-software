@@ -948,26 +948,6 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 <details><summary><b>programs/autoteacher/</b> — 11 files</summary>
 
-<details><summary><b>programs/autoteacher/lyceum-1/</b> — 1 file</summary>
-
-### `programs/autoteacher/lyceum-1/CR.SAV`
-
-The constructor as the lyceum's amk_1 carries it - a rebuilt copy with a KOI-7 «ВЫ УВЕРЕНЫ? (Д/Н)» prompt; all 41 blocks differ
-
-*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 1; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Лицей №1, disk amk_1 build; sha256 2fd2b99af8f7*
-
-</details>
-
-<details><summary><b>programs/autoteacher/mihin/</b> — 1 file</summary>
-
-### `programs/autoteacher/mihin/CR.SAV`
-
-The question-bank constructor as Mihin's disks carry it
-
-*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 3; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Mihin's OS-16SJ kits build; sha256 76ace27a8706*
-
-</details>
-
 ### `programs/autoteacher/1003.DOC`
 
 The question bank of an AutoTeacher physics test in readable form: twenty questions on the ideal gas (state equation, pressure, temperature…), each with its answer - the text the .QUS of the same name was built from
@@ -1016,11 +996,27 @@ AutoTeacher V3.10 (SB Soft Ware Ltd., 1992) - the school testing system's player
 
 *written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 4; identified from: its banner + the amk_1 disk kit; sha256 d9081e80492a*
 
+### `programs/autoteacher/CR.SAV`
+
+The question-bank constructor of AutoTeacher (SB Soft Ware Ltd.), the build its own diskettes carry (disk1, disk2, amk disk3): writes the .QUS files AT.SAV plays
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 3; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Mihin's OS-16SJ kits build; sha256 76ace27a8706*
+
 ### `programs/autoteacher/STUD.PUP`
 
 AutoTeacher results file: 'файл данных о проверке знаний учащихся' - the pupils' test records for AT.SAV
 
 *disks: 1; identified from: AT.SAV's own banner text; sha256 ce5714a4f2e8*
+
+</details>
+
+<details><summary><b>programs/autoteacher/amk_1/</b> — 1 file</summary>
+
+### `programs/autoteacher/amk_1/CR.SAV`
+
+The AutoTeacher constructor as the lyceum's own diskette amk_1 carries it - a rebuilt copy, all 41 blocks apart from SB Soft Ware's, with a KOI-7 «ВЫ УВЕРЕНЫ? (Д/Н)» prompt
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 1; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Лицей №1, disk amk_1 build; sha256 2fd2b99af8f7*
 
 </details>
 
@@ -1534,26 +1530,6 @@ Sprite table of TENNIS.BAS (SPRITE BLOAD): the ball, the rackets and the net as 
 
 <details><summary><b>programs/lyceum1/</b> — 39 files</summary>
 
-<details><summary><b>programs/lyceum1/lyceum-1/</b> — 1 file</summary>
-
-### `programs/lyceum1/lyceum-1/ROBA.SAV`
-
-ROBA as amk_1 carries it
-
-*written in Pascal (source on the disks); graphics; en / ascii; cross-run: ran; disks: 1; identified from: read 2026-09-06; the Лицей №1, disk amk_1 build; sha256 d13857061873*
-
-</details>
-
-<details><summary><b>programs/lyceum1/lyceum-2/</b> — 1 file</summary>
-
-### `programs/lyceum1/lyceum-2/ROBA.SAV`
-
-ROBA as amk_2 carries it - another build, all 21 blocks differ
-
-*written in Pascal (source on the disks); text; en / ascii; cross-run: ran; disks: 1; identified from: read 2026-09-06; the Лицей №1, disk amk_2 build; sha256 6d4df27d4a2e*
-
-</details>
-
 ### `programs/lyceum1/1003`
 
 A lab results sheet in the lyceum's format («работу выполняли ученики 10А класса», two pupils' names, then the table of t1, t2, P2, P1 and the error) - the same layout as the 10A….DAT files, written by the gas-law program ZAM
@@ -1710,6 +1686,12 @@ Source of ROBA.SAV, program grred: a line-drawing editor with line/point/vpeekb/
 
 *disks: 1; identified from: read 2026-09-06; sha256 1ca1e050df63*
 
+### `programs/lyceum1/ROBA.SAV`
+
+ROBA as the lyceum's first diskette amk_1 carries it - 21 blocks; the source ROBA.PAS is beside it
+
+*written in Pascal (source on the disks); graphics; en / ascii; cross-run: ran; disks: 1; identified from: read 2026-09-06; the Лицей №1, disk amk_1 build; sha256 d13857061873*
+
 ### `programs/lyceum1/ROK.TXT`
 
 An essay «Введение» on computers in Russian school education - the report that accompanied the lyceum coursework (cites Мякишев-Буховцев's physics textbook)
@@ -1775,6 +1757,16 @@ Source of the shared title screen: «Россия, 1992, г. Воронеж, Л�
 The title screen the Lyceum No. 1 coursework programs share: a drawing of the school, "Russia, 1992, Voronezh", by the pupil A. Torokhov
 
 *written in Pascal (source on the disks); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 26cb8633555d*
+
+</details>
+
+<details><summary><b>programs/lyceum1/amk_2/</b> — 1 file</summary>
+
+### `programs/lyceum1/amk_2/ROBA.SAV`
+
+ROBA as the lyceum's second diskette amk_2 carries it - another build, 18 blocks, every one of them different from amk_1's
+
+*written in Pascal (source on the disks); text; en / ascii; cross-run: ran; disks: 1; identified from: read 2026-09-06; the Лицей №1, disk amk_2 build; sha256 6d4df27d4a2e*
 
 </details>
 

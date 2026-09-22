@@ -30,6 +30,7 @@ The physics and chemistry coursework of the lyceum's pupils (`IGOR` — magnetic
 | `PROBA.OBJ` | Object module of a build of the kislorod (HIM) program - its title strings inside name the author: «Разработал: Чепков Александр, 1992 г.» | object module for LINK |
 | `PROBA.SAV` | Carries the standard FORTRAN/Pascal runtime error table ("TRAP TO 4", "NOT A VALID DEVICE", "I/O CHANNEL NOT OPEN"); a compiled test program that prints nothing on its own | `RUN PROBA` |
 | `ROBA.PAS` | Source of ROBA.SAV, program grred: a line-drawing editor with line/point/vpeekb/vpokeb externals that keeps 50 lines in an array and writes them out as «line(...);» Pascal statements | compile with PAS1, MACRO, LINK |
+| `ROBA.SAV` | ROBA as the lyceum's first diskette amk_1 carries it, 21 blocks; the source `ROBA.PAS` is beside it.  The second diskette's build is in `amk_2/` - 18 blocks, every one of them different | `RUN ROBA` |
 | `ROK.TXT` | An essay «Введение» on computers in Russian school education - the report that accompanied the lyceum coursework (cites Мякишев-Буховцев's physics textbook) | text: `TYPE ROK.TXT`, or read on the host (koi8-r/cp866) |
 | `ROO.DAT` | Drawing file of the grred line editor (ROBA.SAV): «line(x0,y0,x1,y1);» statements, 50 of them, all zeros - an empty drawing | data file |
 | `SOWLIT.REA` | Not a program: a literature essay «Тема исторической памяти в современной литературе» (Гроссман, Рыбаков, Ахматова, Твардовский, Домбровский) - a pupil's composition kept on the lyceum disk | data file |
@@ -42,4 +43,4 @@ The physics and chemistry coursework of the lyceum's pupils (`IGOR` — magnetic
 | `ZASTL.PAS` | Source of the shared title screen: «Россия, 1992, г. Воронеж, Лицей 1 - разработал лицеист Торохов Александр» | compile with PAS1, MACRO, LINK |
 | `ZASTL.SAV` | The title screen the Lyceum No. 1 coursework programs share: a drawing of the school, "Russia, 1992, Voronezh", by the pupil A. Torokhov | `RUN ZASTL` |
 
-Programs that survived in several builds - `ROBA.SAV` - have one folder per kit here, each build in the folder of the disks it came from: `lyceum-1/` - Лицей №1, disk amk_1; `lyceum-2/` - Лицей №1, disk amk_2.  The files in the table are common to every kit.
+Everything here is the lyceum's own: the pupils' coursework, their shared title screen, the lab's tries and the class data.  The machine they worked at ran Mihin's OS-16SJ, so their two diskettes are `amk_1` and `amk_2` in the collection's names - and the AutoTeacher testing system that came on them, somebody else's program, is in [`../autoteacher/`](../autoteacher/README.md), the constructor as this lyceum rebuilt it included.  `ROBA.SAV` survived in two builds, one per diskette: the first is here, the second in [`amk_2/`](amk_2/).

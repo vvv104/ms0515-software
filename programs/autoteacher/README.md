@@ -12,6 +12,7 @@ SB Soft Ware's school testing system V3.10 (1992): `AT.SAV` plays a `.QUS` quest
 | `10L04.DOC` | The question bank of an AutoTeacher test in readable form: fourteen questions on resistivity and conductors («удельным сопротивлением проводника называется…»), with answers | text: `TYPE 10L04.DOC`, or read on the host (koi8-r/cp866) |
 | `10L04.QUS` | AutoTeacher question file: 14 questions on resistivity and conductors with their answers cut into words; the readable form is 10L04.DOC | data file of `AT.SAV`, keep beside it |
 | `AT.SAV` | AutoTeacher V3.10 (SB Soft Ware Ltd., 1992) - the school testing system's player: runs .QUS question files (word-grid answers), keeps pupil records in STUD.PUP; questions are authored with CR.SAV | `RUN AT`, then a `.QUS` file name (`1018.QUS`) |
+| `CR.SAV` | The question-bank constructor of AutoTeacher (SB Soft Ware Ltd.), the build its own diskettes carry (disk1, disk2, amk disk3): writes the .QUS files AT.SAV plays | `RUN CR` |
 | `STUD.PUP` | AutoTeacher results file: 'файл данных о проверке знаний учащихся' - the pupils' test records for AT.SAV | data file of `AT.SAV`, keep beside it |
 
-Programs that survived in several builds - `CR.SAV` - have one folder per kit here, each build in the folder of the disks it came from: `lyceum-1/` - Лицей №1, disk amk_1; `mihin/` - Mihin's OS-16SJ kits.  The files in the table are common to every kit.
+`amk_1/` holds the constructor as the Лицей №1 diskette carries it - a rebuilt copy, all 41 blocks apart from the one above, with a KOI-7 «ВЫ УВЕРЕНЫ? (Д/Н)» prompt.  That lyceum's machine ran Mihin's OS-16SJ, which is why AutoTeacher was on its disks at all; the pupils' own work is in [`../lyceum1/`](../lyceum1/README.md).
