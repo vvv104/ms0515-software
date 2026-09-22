@@ -189,6 +189,27 @@ startup  = ["SET KMON IND"]    # else @file goes to KMON's own processor, which 
 date     = "1999-12-31"
 files    = ["kits/dec/utils/IND.SAV"]
 
+[bundle.filex-rt11]
+title    = "FILEX - file exchange with DOS-11, RSTS/E and IBM interchange media"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/FILEX.SAV"]
+
+[bundle.mdup-rt11]
+title    = "MDUP - DUP cut down to what bootstrapping a volume takes"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/MDUP.SAV"]
+
+[bundle.termid-rt11]
+title    = "TERMID, MSCPCK - the terminal and MSCP checks; nothing here for them to find"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/utils/TERMID.SAV", "kits/dec/utils/MSCPCK.SAV"]
+
 [bundle.ucl-rt11]
 title    = "UCL and LET - commands of one's own (the dec monitors pass unknown commands to UCL)"
 kit      = "dec"
@@ -235,3 +256,10 @@ kit      = "dec"
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
 files    = ["kits/dec/development/SYSLIB.OBJ"]
+
+[bundle.libcom-rt11]
+title    = "LIBCOM - compares two object libraries module by module"
+kit      = "dec"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["kits/dec/development/LIBCOM.SAV"]

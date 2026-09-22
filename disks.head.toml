@@ -14,7 +14,7 @@ format = 2
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.09.22-4"
+version = "2026.09.22-5"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -196,7 +196,8 @@ media   = "dv"
 bundles = ["dz-rt11", "hd-rt11", "vm-rt11", "ld-rt11", "nl-rt11", "lp-rt11",
            "dir-rt11", "dup-rt11", "pip-rt11", "dump-rt11", "resorc-rt11",
            "datime-rt11", "help-rt11", "compare-rt11", "ucl-rt11", "ind-rt11",
-           "link-rt11", "syslib-rt11", "macro-vvv",
+           "filex-rt11", "mdup-rt11",
+           "link-rt11", "syslib-rt11", "libcom-rt11", "macro-vvv",
            "edit-rt11", "k52-rt11", "format-rt11", "patch-rt11", "strip-rt11",
            "libr-rt11", "odt-rt11"]
 # The startup file is the bundles': k52-rt11 says SET EDIT K52, ind-rt11 SET KMON IND.

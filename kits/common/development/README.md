@@ -54,7 +54,7 @@ The screen editor of the kits in its two cuts: `K13U.SAV` (alias K52.SAV), the b
 
 | file | what | how to run |
 |---|---|---|
-| `K13U.SAV` | Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC | bare prompt, no answer to a bogus file name |
+| `K13U.SAV` | Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; the diskettes carried it under DEC's name `K52.SAV` too, which is not DEC's `K52` - that one is `../utils/K52.SAV`), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC | bare prompt, no answer to a bogus file name |
 | `KED.SAV` | Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build | bare prompt, no answer to a bogus file name |
 | `R15.DOC` | «Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands | text: `TYPE R15.DOC`, or read on the host (koi8-r) |
 | `R15.HLP` | «Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key | text: `TYPE R15.HLP`, or read on the host (koi8-r) |
