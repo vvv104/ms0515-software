@@ -5,9 +5,3 @@ title = "BINCOM V05.08 - binary compare"
 group = "Utilities"
 date  = "1995-01-01"
 files = ["software/system/utils/BINCOM.SAV"]
-
-[bundle.calend]
-title = "CALEND - calendar for 1583-5000"
-group = "Utilities"
-date  = "1994-06-16"
-files = ["software/system/utils/CALEND.SAV"]

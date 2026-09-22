@@ -2,9 +2,9 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 131 files</summary>
+<details open><summary><b>kits/</b> — 132 files</summary>
 
-<details><summary><b>kits/common/</b> — 69 files</summary>
+<details><summary><b>kits/common/</b> — 70 files</summary>
 
 <details><summary><b>kits/common/development/</b> — 26 files</summary>
 
@@ -382,7 +382,7 @@ Two-panel file manager in the Norton Commander style, Russian labels: directory 
 
 </details>
 
-<details><summary><b>kits/common/utils/</b> — 9 files</summary>
+<details><summary><b>kits/common/utils/</b> — 10 files</summary>
 
 ### `kits/common/utils/ASC.SAV`
 
@@ -407,6 +407,12 @@ Blanks the screen to black and returns to the monitor
 Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV.  On eight of the nine disks that carry it (osa, System, System3, 059, 062, 063, 066, 172) it is this copy; 065 holds a one-byte variant
 
 *written in assembler (no runtime library); text; cross-run: ran (blue screen, yellow text, prompt back); disks: 9; identified from: program screen 2026-09-13; sha256 f3261ec2e9dd*
+
+### `kits/common/utils/CALEND.SAV`
+
+Calendar generator for the years 1583-5000, to a file or to LP:; A. V. Domnich, 16-06-94
+
+*written in Pascal (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; the source it was built from is in programs/domnich/; sha256 0997a687c0a7*
 
 ### `kits/common/utils/DATSET.SAV`
 
@@ -916,7 +922,7 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 </details>
 
-<details open><summary><b>programs/</b> — 218 files</summary>
+<details open><summary><b>programs/</b> — 217 files</summary>
 
 <details><summary><b>programs/autoteacher/</b> — 11 files</summary>
 
@@ -1394,7 +1400,7 @@ An LD1/LOAD recording in the players' 8K-word format (8192 words of one 8-bit sa
 
 </details>
 
-<details><summary><b>programs/domnich/</b> — 5 files</summary>
+<details><summary><b>programs/domnich/</b> — 4 files</summary>
 
 <details><summary><b>programs/domnich/piton/</b> — 2 files</summary>
 
@@ -1417,12 +1423,6 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 Source of the perpetual calendar, signed «Домнич А.В 16-06-94г.» in its header: prints any year 1583..5000 as a table three months wide (shmc=3) into an output file, Russian month names
 
 *ru / koi8-r; disks: 2; identified from: read 2026-09-05; sha256 d891fc636350*
-
-### `programs/domnich/CALEND.SAV`
-
-Calendar generator for the years 1583-5000, to a file or to LP:; A. V. Domnich, 16-06-94
-
-*written in Pascal (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; sha256 0997a687c0a7*
 
 ### `programs/domnich/NEWTON.FOR`
 
@@ -2304,7 +2304,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 87 files</summary>
+<details open><summary><b>software/</b> — 86 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2778,21 +2778,15 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 
 </details>
 
-<details><summary><b>software/system/</b> — 6 files</summary>
+<details><summary><b>software/system/</b> — 5 files</summary>
 
-<details><summary><b>software/system/utils/</b> — 6 files</summary>
+<details><summary><b>software/system/utils/</b> — 5 files</summary>
 
 ### `software/system/utils/BINCOM.SAV`
 
 DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP)
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: its own Russian switch help and version banner; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 b76b1abdfd92*
-
-### `software/system/utils/CALEND.SAV`
-
-Calendar generator for the years 1583-5000, to a file or to LP:; A. V. Domnich, 16-06-94
-
-*written in Pascal (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; the same file as in programs/domnich/, where its source is; sha256 0997a687c0a7*
 
 ### `software/system/utils/DATIME.SAV`
 

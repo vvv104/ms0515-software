@@ -164,6 +164,12 @@ kit      = "common"
 date     = "1999-12-31"
 files    = ["kits/common/development/ODT.OBJ"]
 
+[bundle.calend]
+kit      = "common"
+title = "CALEND - calendar for 1583-5000"
+date  = "1994-06-16"
+files = ["kits/common/utils/CALEND.SAV"]
+
 # ---- development ----------------------------------------------------------
 # The compilers and their libraries, the editors, the debugger and the two
 # BASICs: one build of each, and none of them minds which monitor it runs
