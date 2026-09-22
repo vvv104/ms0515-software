@@ -8,7 +8,6 @@
 areas = [
     "software/games",
     "software/development",
-    "software/system/shells",
     "software/system",
     "software/apps",
 ]
@@ -44,3 +43,11 @@ path  = "kits/dec"
 [kit.vvv]
 title = "the vvv104 diskettes (OMEGA2, FODOS builds)"
 path  = "kits/vvv"
+
+# Not a kit of a machine: what every system can take and the collection
+# has one build of.  The wizard lists it under "System" whichever system
+# is chosen, after that system's own.
+[kit.common]
+title  = "common to every system"
+path   = "kits/common"
+common = true

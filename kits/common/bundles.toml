@@ -1,0 +1,165 @@
+# The files every system can take, of which the collection has one build:
+# the RT-11 utilities no kit had a second copy of, the little programs of
+# the machine, the printing programs, the factory diagnostics.  A kit's
+# folder holds what is its own; this one what is everyone's.
+
+[bundle.datset]
+title = "DATSET - date setting of the OSA kit"
+kit      = "common"
+group = "Utilities"
+date  = "1991-11-26"
+files = ["kits/common/utils/DATSET.SAV"]
+
+[bundle.tfp]
+title = "TFP - text formatter of the OSA kit"
+kit      = "common"
+group = "Utilities"
+date  = "1990-12-27"
+files = ["kits/common/utils/TFP.SAV"]
+
+[bundle.bads]
+title = "BADS - bad-block scanner"
+kit      = "common"
+group = "Utilities"
+date  = "1989-11-01"
+files = ["kits/common/utils/BADS.SAV"]
+
+[bundle.asc]
+title = "ASC - character codes"
+kit      = "common"
+group = "Utilities"
+date  = "1995-04-02"
+files = ["kits/common/utils/ASC.SAV"]
+
+[bundle.day]
+title = "DAY - asks for a date"
+kit      = "common"
+group = "Utilities"
+date  = "1986-02-14"
+files = ["kits/common/utils/DAY.SAV"]
+
+[bundle.blue]
+title = "BLUE - the screen blue, yellow letters, back to the monitor"
+kit      = "common"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["kits/common/utils/BLUE.SAV"]
+
+[bundle.white]
+title = "WHITE - the screen white, back to the monitor"
+kit      = "common"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["kits/common/utils/WHITE.SAV"]
+
+[bundle.neg]
+title = "NEG - the 640x200 hi-res mode with a black border"
+kit      = "common"
+group = "Utilities / Screen"
+date  = "1992-12-04"
+files = ["kits/common/utils/NEG.SAV"]
+
+# -- diskette formatters
+
+[bundle.out17]
+title = "OUT17 - text files to the MS6317 ink-jet printer"
+kit      = "common"
+group = "Utilities / Printing"
+date  = "1995-01-01"
+files = ["kits/common/print/OUT17.SAV", "kits/common/print/OUT17.DOC"]
+
+[bundle.outc]
+title = "OUTC - text files to the SM6337 printer"
+kit      = "common"
+group = "Utilities / Printing"
+date  = "1995-01-01"
+files = ["kits/common/print/OUTC.SAV", "kits/common/print/OUTC.DOC"]
+
+[bundle.out2]
+title = "OUT2 - of the OUT printing family"
+kit      = "common"
+group = "Utilities / Printing"
+date  = "1991-12-17"
+files = ["kits/common/print/OUT2.SAV"]
+
+[bundle.p6337]
+title = "6337 - print utility for the MS 6337 printer"
+kit      = "common"
+group = "Utilities / Printing"
+date  = "1995-01-01"
+files = ["kits/common/print/6337.SAV"]
+
+# -- diagnostics
+
+[bundle.geteml]
+title = "GETEML - the loadable EIS/FIS instruction emulator"
+kit      = "common"
+group = "Utilities / Diagnostics"
+date  = "1991-10-18"
+files = ["kits/common/diag/GETEML.SAV"]
+
+[bundle.exerciser]
+title = "183107 - the factory exerciser"
+kit      = "common"
+group = "Utilities / Diagnostics"
+date  = "1991-01-15"
+files = ["kits/common/diag/183107.SAV"]
+
+[bundle.timing]
+title    = "The C* instruction-timing suite"
+kit      = "common"
+group    = "Utilities / Diagnostics"
+date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
+requires = ["geteml"]
+volume   = "any"
+files    = ["software/system/diag/C*.SAV"]
+
+[bundle.scan-codes]
+title = "SCN15I - keyboard scan-code viewer"
+kit      = "common"
+group = "Utilities / Diagnostics"
+date  = "1995-04-25"   # the disk says 2027: an age bit, 1995 + 32
+files = ["kits/common/diag/SCN15I.SAV"]
+[bundle.sce]
+title = "SCE - two-panel file manager, with its help"
+kit      = "common"
+group = "Shells"
+date  = "1993-09-29"
+files = ["kits/common/shells/SCE.SAV",
+         { path = "kits/common/shells/SCE.HLP", date = "1989-01-04" }]
+
+[bundle.format-rt11]
+title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
+kit      = "common"
+date     = "1999-12-31"
+files    = ["kits/common/utils/FORMAT.SAV"]
+
+[bundle.edit-rt11]
+title    = "EDIT - DEC's text editor"
+kit      = "common"
+date     = "1999-12-31"
+files    = ["kits/common/utils/EDIT.SAV"]
+
+[bundle.patch-rt11]
+title    = "SLP, PAT, SIPP - patching sources, objects and programs"
+kit      = "common"
+date     = "1999-12-31"
+files    = ["kits/common/utils/SLP.SAV", "kits/common/utils/PAT.SAV", "kits/common/utils/SIPP.SAV"]
+
+[bundle.strip-rt11]
+title    = "STRIP and SPLIT"
+kit      = "common"
+date     = "1999-12-31"
+files    = ["kits/common/utils/STRIP.SAV", "kits/common/utils/SPLIT.SAV"]
+
+[bundle.libr-rt11]
+title    = "LIBR - the librarian, which no kit of the machine had"
+kit      = "common"
+date     = "1999-12-31"
+files    = ["kits/common/development/LIBR.SAV"]
+
+[bundle.odt-rt11]
+title    = "ODT.OBJ - the octal debugger, linked into a program"
+kit      = "common"
+date     = "1999-12-31"
+files    = ["kits/common/development/ODT.OBJ"]

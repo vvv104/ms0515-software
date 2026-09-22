@@ -100,3 +100,25 @@ kit      = "rodionov"
 provides = ["help"]
 date     = "1990-12-27"
 files    = ["kits/rodionov/utils/HELP.SAV"]
+
+[bundle.rosa3]
+title    = "ROSA Commander v1.3 - Rodionov's two-panel file manager"
+kit      = "rodionov"
+group    = "Shells"
+systems  = ["rodionov"]
+needs    = ["dz"]               # it hardcodes DZ0: and DZ2:
+requires = ["vm"]
+startup  = ["LOAD VM:"]         # else it stops with ?MON-F- no device as it starts
+date     = "1993-10-19"
+files    = ["kits/rodionov/shells/ROSA3.SAV"]
+
+[bundle.rosa-docs]
+title    = "Rodionov's instruction, advertisement and comparison sheets"
+kit      = "rodionov"
+group    = "Shells"
+systems  = ["rodionov"]
+volume   = "any"
+date     = "1993-03-18"
+files    = [{ path = "kits/rodionov/shells/INSTR.DOC", date = "1993-08-09" },
+            "kits/rodionov/shells/REKROS.DOC",
+            "kits/rodionov/shells/REKSYS.DOC"]

@@ -2,9 +2,287 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 51 files</summary>
+<details open><summary><b>kits/</b> — 100 files</summary>
 
-<details><summary><b>kits/mihin/</b> — 8 files</summary>
+<details><summary><b>kits/common/</b> — 43 files</summary>
+
+<details><summary><b>kits/common/diag/</b> — 26 files</summary>
+
+### `kits/common/diag/183107.SAV`
+
+The factory exerciser (Uprazhnitel MS0515 V1.0) from the manual: prints its banner, tells the operator to set the work mode in cell 001076 and drops into ODT BY DESIGN - the mode is deposited with D and the run resumed with P.  The C* timing meters are its companions
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: failed — dropped into ODT at 001414; disks: 4; identified from: program screen + factory manual; sha256 1840f4660b70*
+
+### `kits/common/diag/184106.SAV`
+
+Companion of the 183107 exerciser in .EXE form; enters ODT at 000020 on start - likely the same deposit-and-proceed interface
+
+*written in assembler (no runtime library); ru / koi8-r; cross-run: failed — dropped into ODT at 000020; disks: 1; identified from: program screen; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 320bcafba75e*
+
+### `kits/common/diag/CADD.SAV`
+
+One of the C* instruction-timing suite: measures ADD in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7c95a5ee11a9*
+
+### `kits/common/diag/CBIC.SAV`
+
+One of the C* instruction-timing suite: measures BIC in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 3b24de048137*
+
+### `kits/common/diag/CBICB.SAV`
+
+One of the C* instruction-timing suite: measures BICB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 d1e6a85d3abf*
+
+### `kits/common/diag/CBIS.SAV`
+
+One of the C* instruction-timing suite: measures BIS in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7fb87978bbf8*
+
+### `kits/common/diag/CBISB.SAV`
+
+One of the C* instruction-timing suite: measures BISB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 40b541de5d13*
+
+### `kits/common/diag/CBIT.SAV`
+
+One of the C* instruction-timing suite: measures BIT in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb39cba0174f*
+
+### `kits/common/diag/CBITB.SAV`
+
+One of the C* instruction-timing suite: measures BITB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 28f683f4b628*
+
+### `kits/common/diag/CBR.SAV`
+
+One of the C* instruction-timing suite: measures branches in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 cf9621b33508*
+
+### `kits/common/diag/CCMP.SAV`
+
+One of the C* instruction-timing suite: measures CMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 77aa3d972f8a*
+
+### `kits/common/diag/CCMPB.SAV`
+
+One of the C* instruction-timing suite: measures CMPB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 b18b1b3ff9eb*
+
+### `kits/common/diag/CJMP.SAV`
+
+One of the C* instruction-timing suite: measures JMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 2b5d91324f54*
+
+### `kits/common/diag/CMOV.SAV`
+
+Instruction timing meter: measures MOV in CPU cycles for every addressing-mode pair and prints the matrix, using the 50 Hz vector-100 interrupt as the timebase (word 1002 holds the calibration).  One of the C* suite; needs the instruction emulator resident (SET EM ON or R GETEML).  Alex_K ran it on real hardware: 7.5 MHz
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7e5894e423c7*
+
+### `kits/common/diag/CMOVB.SAV`
+
+One of the C* instruction-timing suite: measures MOVB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7ac375c0a819*
+
+### `kits/common/diag/COP1.SAV`
+
+One of the C* instruction-timing suite: measures single-operand ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 248320dd3094*
+
+### `kits/common/diag/COP2P0.SAV`
+
+One of the C* instruction-timing suite: measures two-operand ops (part 0) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb844ce2e101*
+
+### `kits/common/diag/COP2P1.SAV`
+
+One of the C* instruction-timing suite: measures two-operand ops (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 abc7103ff536*
+
+### `kits/common/diag/COP2P2.SAV`
+
+One of the C* instruction-timing suite: measures two-operand ops (part 2) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 41f4b2b03f33*
+
+### `kits/common/diag/COP2PC.SAV`
+
+One of the C* instruction-timing suite: measures PC-addressing ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 1de8fffa9acc*
+
+### `kits/common/diag/CPRF.SAV`
+
+One of the C* instruction-timing suite: measures performance summary in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 0a5c750bc8ec*
+
+### `kits/common/diag/CRDWR.SAV`
+
+One of the C* instruction-timing suite: measures memory read/write in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 6c47b746d8ef*
+
+### `kits/common/diag/CRDWR1.SAV`
+
+One of the C* instruction-timing suite: measures memory read/write (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 5a347c3b618f*
+
+### `kits/common/diag/CSOB.SAV`
+
+One of the C* instruction-timing suite: measures SOB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 525973b6600a*
+
+### `kits/common/diag/GETEML.SAV`
+
+Loadable instruction-set emulator: hooks the reserved-instruction vector (10), relocates to 154000 and emulates the EIS/FIS instructions the KR1807VM1 lacks (FADD/FSUB/FMUL/FDIV confirmed by disassembly; CMOV.SAV's MUL/DIV work under it too).  Resident: prints nothing.  The driver form is EM.SYS (SET EM ON)
+
+*written in assembler (no runtime library); text; cross-run: exited 7/8; disks: 5; identified from: disassembly + experiment; sha256 1491920f3588*
+
+### `kits/common/diag/SCN15I.SAV`
+
+Prints its title "Scan-code of keys (interrupt), Alphaprog" and waits for keys - a keyboard scan-code viewer
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; sha256 712a6fcb4506*
+
+</details>
+
+<details><summary><b>kits/common/print/</b> — 6 files</summary>
+
+### `kits/common/print/6337.SAV`
+
+Print utility for the МС 6337 dot-matrix printer (hence the numeric name): 'file?' asks for a text file to load, then a menu - load / print / select type (fonts long, dubble, fat, small, step 2.117) / one-side / high quality. On every rebuilt volume it dies before loading: its file-open path uses old-format EMTs (.FETCH at 011144, .LOOKUP at 011264) and fails differently per directory format ('NOT A VALID DEVICE' on a 1-segment volume, '?MON-F-Invalid directory' on 4-segment) - it apparently expects its native System3/disk4 environment. The cross verdict 'ran' only means the prompt came up
+
+*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 1; identified from: menu strings + disassembly of the failing requests + feed experiments 2026-09-05; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 95292998bc4e*
+
+### `kits/common/print/OUT17.DOC`
+
+«Утилита OUT17 предназначена для вывода текстовых файлов на струйный принтер МС6317, подключенный к параллельному порту МС0515» - its short manual, ending with Домнич's contact line
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 205f41f630d9*
+
+### `kits/common/print/OUT17.SAV`
+
+Prints text files on an MS6317 ink-jet printer attached to the parallel port of the MS 0515
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 2c85151dce6b*
+
+### `kits/common/print/OUT2.SAV`
+
+One of the OUT family with OUT17 and OUTC
+
+*written in assembler (no runtime library); cross-run: ran; disks: 4; identified from: program screen; sha256 ab17fa0a5f17*
+
+### `kits/common/print/OUTC.DOC`
+
+«Утилита OUTC предназначена для вывода текстовых файлов на принтер СМ6337, подключенный к параллельному порту МС0515» - its short manual
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 fdc0846e8e62*
+
+### `kits/common/print/OUTC.SAV`
+
+Prints text files on an SM6337 printer attached to the parallel port of the MS 0515
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 21305756bd96*
+
+</details>
+
+<details><summary><b>kits/common/shells/</b> — 2 files</summary>
+
+### `kits/common/shells/SCE.HLP`
+
+The help text of the SCE shell, «сделан Гостевым Дмитрием (Школа профессионального самоопределения, г. Воронеж), Copyright 12.24.1993»: the key list B-bad blocks, C-copy, D-delete, E-edit, G-run, H-help, K-create/undelete, L-dismount, M-logical disks, U-boot, W-bootstrap…
+
+*ru / koi8-r; disks: 4; identified from: read 2026-09-06; sha256 dcc37aa51ad9*
+
+### `kits/common/shells/SCE.SAV`
+
+Two-panel file manager in the Norton Commander style, Russian labels: directory panel with an info panel, command line Copy/Type/Prot/uNprot/Ren/Del/Quit/Vol/Go/Sque/Z-ini
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
+
+</details>
+
+<details><summary><b>kits/common/utils/</b> — 9 files</summary>
+
+### `kits/common/utils/ASC.SAV`
+
+Interactive character-code lookup: press any key and it prints the ASCII code (A -> 65, 7 -> 55; the console upcases letters first). A pocket reference vvv kept on every one of his disks - indispensable in a KOI-7/KOI-8/CP866 world
+
+*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 5; identified from: live run 2026-09-05: keys answered with their codes; sha256 0579bc9f81f4*
+
+### `kits/common/utils/BADS.SAV`
+
+Bad-block scanner (RT-11 BAD-style): at its '*' prompt give a device ('DZ0:'), it reads every block with a running counter and reports 'N bad blocks detected' / 'Block N is bad.'; switches C,S,E,A,O. Three blocks of assembler - the sibling craft of KBAD13
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: its own strings + live scan 2026-09-05 ('No bad blocks detected.'); sha256 4c64cf4995a7*
+
+### `kits/common/utils/BLACK.SAV`
+
+Blanks the screen to black and returns to the monitor
+
+*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 8; identified from: program screen; sha256 17c2870dc2ae*
+
+### `kits/common/utils/BLUE.SAV`
+
+Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV.  On eight of the nine disks that carry it (osa, System, System3, 059, 062, 063, 066, 172) it is this copy; 065 holds a one-byte variant
+
+*written in assembler (no runtime library); text; cross-run: ran (blue screen, yellow text, prompt back); disks: 9; identified from: program screen 2026-09-13; sha256 f3261ec2e9dd*
+
+### `kits/common/utils/DATSET.SAV`
+
+Date-setting program of the OSA kit
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 5; identified from: OSA manual; sha256 3d748a2cdc42*
+
+### `kits/common/utils/DAY.SAV`
+
+Asks for a date, offering 18-MAR-93 as the default
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 0a58aa5e5ce0*
+
+### `kits/common/utils/NEG.SAV`
+
+Writes 000010 into System Register C (177604): selects the 640x200 hi-res mode with a black border.  The video-mode counterpart of BLACK, BLUE and WHITE
+
+*written in assembler (no runtime library); text; cross-run: ran 6/8; disks: 4; identified from: disassembly; sha256 77e302e20a24*
+
+### `kits/common/utils/TFP.SAV`
+
+Text formatter of the OSA kit; the manual recommends keeping it on the system device
+
+*written in high-level (runtime library linked); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: OSA manual; sha256 b85e3e59cbc6*
+
+### `kits/common/utils/WHITE.SAV`
+
+Sets the screen to white and returns to the monitor; the counterpart of BLACK.SAV and BLUE.SAV
+
+*written in assembler (no runtime library); text; cross-run: exited 6/8; disks: 5; identified from: program screen; sha256 e28d9cf189ac*
+
+</details>
+
+</details>
+
+<details><summary><b>kits/mihin/</b> — 9 files</summary>
 
 <details><summary><b>kits/mihin/development/</b> — 2 files</summary>
 
@@ -19,6 +297,16 @@ LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01
 MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
 
 *written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
+
+</details>
+
+<details><summary><b>kits/mihin/format/</b> — 1 file</summary>
+
+### `kits/mihin/format/FDZ.SAV`
+
+Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990.  Destructive: it asks Y/N and then formats
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 4; identified from: program screen; sha256 8fc049e88d08*
 
 </details>
 
@@ -196,7 +484,7 @@ PIP V05.14 with Russian messages («?PIP-F-Нет файла») - the build of e
 
 </details>
 
-<details><summary><b>kits/osa/</b> — 9 files</summary>
+<details><summary><b>kits/osa/</b> — 10 files</summary>
 
 <details><summary><b>kits/osa/handlers/</b> — 6 files</summary>
 
@@ -238,6 +526,16 @@ Sound-device handler — not video despite the name
 
 </details>
 
+<details><summary><b>kits/osa/shells/</b> — 1 file</summary>
+
+### `kits/osa/shells/RS.SYS`
+
+EmeSoft's 'RT11 profShell' v06.05 (1990, build 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block pseudo-device handler. File panel with marks, and the whole toolbox on hotkeys - COPY/DELETE/RENAME/SQUEEZE/PROTECT/TYPE/DUMP (words/bytes/radix)/CREATE/INIT/MOUNT/BOOT/COPY-BOOT - plus LD containers, bad-block scan, search, saved state, and the greeting 'Жми на клавишу, не бойся ...'. Start with R RS.SYS or SET RS ON; uses EIS, so needs GETEML/EM on this machine. The System2/bg0515/superBAK7 and Buhgal monitors print its banner at boot - profShell is built into those builds
+
+*ru / koi8-r; disks: 1; identified from: strings + live run 2026-09-05 (panel and help screen captured; traps to vector 10 without the instruction emulator); sha256 484be60cb8a9*
+
+</details>
+
 <details><summary><b>kits/osa/utils/</b> — 3 files</summary>
 
 <details><summary><b>kits/osa/utils/rs/</b> — 1 file</summary>
@@ -266,7 +564,7 @@ RESORC V05.69 with Russian messages («Версия(и) =») - the plain ОСА 
 
 </details>
 
-<details><summary><b>kits/rodionov/</b> — 7 files</summary>
+<details><summary><b>kits/rodionov/</b> — 11 files</summary>
 
 <details><summary><b>kits/rodionov/handlers/</b> — 5 files</summary>
 
@@ -299,6 +597,34 @@ RAM-disk handler (memory used as a drive)
 Sound-device handler — not video despite the name
 
 *disks: 9; identified from: factory manual; sha256 fb282b1054f6*
+
+</details>
+
+<details><summary><b>kits/rodionov/shells/</b> — 4 files</summary>
+
+### `kits/rodionov/shells/INSTR.DOC`
+
+«Инструкция по работе с компьютером МС 0515» - Rodionov's one-page operating instruction for his ROSA disk: insert the ROSA diskette, power on, turn the drive latch when the music plays, enter the date at «Дата [дд-мм-гг]?», print files from the commander
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 8f1519cec69e*
+
+### `kits/rodionov/shells/REKROS.DOC`
+
+A framed advertisement sheet for Rodionov's system: «Сервисная программа … сделано на МС0515, используя RT15SJ.SYS, R15.SAV, ROSA.SAV» - copying, renaming, protection of files…
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 106e148fbc55*
+
+### `kits/rodionov/shells/REKSYS.DOC`
+
+«Сравнительные характеристики существующего и предлагаемого программного обеспечения» - Rodionov's comparison table of his programs against the standard ones, drawn in pseudo-graphics
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 7d976906483d*
+
+### `kits/rodionov/shells/ROSA3.SAV`
+
+ROSA Commander v1.3 (c) 1993 Rodionov Sergey Alekseevich, Voronezh - his two-panel file manager, launched by his boot: asks the date numerically, then panels DZ0: (left) and DZ2: (right) with a file-info box, 'protected from deletion' flags, PM help key. Needs LOAD VM: and is DZ-bound: it hardcodes DZ0:/DZ2:, so on a DV-booted Omega it dies ('?MON-F-No device', or ODT after LOAD DZ); runs fine on the DZ-pair exemplar. Refuses a copy that fails its author check
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: error 7/8 — ?MON-F-Нетустройства002146ROSACommanderv1.31993РодионовСерге; disks: 2; identified from: live on rodionov.dsk (panel screenshot) and omega.dsk 2026-09-05; sha256 b89e41c1dd2b*
 
 </details>
 
@@ -1780,7 +2106,7 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 167 files</summary>
+<details open><summary><b>software/</b> — 118 files</summary>
 
 <details><summary><b>software/apps/</b> — 29 files</summary>
 
@@ -2434,177 +2760,7 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 
 </details>
 
-<details><summary><b>software/system/</b> — 60 files</summary>
-
-<details><summary><b>software/system/diag/</b> — 26 files</summary>
-
-### `software/system/diag/183107.SAV`
-
-The factory exerciser (Uprazhnitel MS0515 V1.0) from the manual: prints its banner, tells the operator to set the work mode in cell 001076 and drops into ODT BY DESIGN - the mode is deposited with D and the run resumed with P.  The C* timing meters are its companions
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: failed — dropped into ODT at 001414; disks: 4; identified from: program screen + factory manual; sha256 1840f4660b70*
-
-### `software/system/diag/184106.SAV`
-
-Companion of the 183107 exerciser in .EXE form; enters ODT at 000020 on start - likely the same deposit-and-proceed interface
-
-*written in assembler (no runtime library); ru / koi8-r; cross-run: failed — dropped into ODT at 000020; disks: 1; identified from: program screen; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 320bcafba75e*
-
-### `software/system/diag/CADD.SAV`
-
-One of the C* instruction-timing suite: measures ADD in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7c95a5ee11a9*
-
-### `software/system/diag/CBIC.SAV`
-
-One of the C* instruction-timing suite: measures BIC in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 3b24de048137*
-
-### `software/system/diag/CBICB.SAV`
-
-One of the C* instruction-timing suite: measures BICB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 d1e6a85d3abf*
-
-### `software/system/diag/CBIS.SAV`
-
-One of the C* instruction-timing suite: measures BIS in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7fb87978bbf8*
-
-### `software/system/diag/CBISB.SAV`
-
-One of the C* instruction-timing suite: measures BISB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 40b541de5d13*
-
-### `software/system/diag/CBIT.SAV`
-
-One of the C* instruction-timing suite: measures BIT in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb39cba0174f*
-
-### `software/system/diag/CBITB.SAV`
-
-One of the C* instruction-timing suite: measures BITB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 28f683f4b628*
-
-### `software/system/diag/CBR.SAV`
-
-One of the C* instruction-timing suite: measures branches in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 cf9621b33508*
-
-### `software/system/diag/CCMP.SAV`
-
-One of the C* instruction-timing suite: measures CMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 77aa3d972f8a*
-
-### `software/system/diag/CCMPB.SAV`
-
-One of the C* instruction-timing suite: measures CMPB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 b18b1b3ff9eb*
-
-### `software/system/diag/CJMP.SAV`
-
-One of the C* instruction-timing suite: measures JMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 2b5d91324f54*
-
-### `software/system/diag/CMOV.SAV`
-
-Instruction timing meter: measures MOV in CPU cycles for every addressing-mode pair and prints the matrix, using the 50 Hz vector-100 interrupt as the timebase (word 1002 holds the calibration).  One of the C* suite; needs the instruction emulator resident (SET EM ON or R GETEML).  Alex_K ran it on real hardware: 7.5 MHz
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7e5894e423c7*
-
-### `software/system/diag/CMOVB.SAV`
-
-One of the C* instruction-timing suite: measures MOVB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7ac375c0a819*
-
-### `software/system/diag/COP1.SAV`
-
-One of the C* instruction-timing suite: measures single-operand ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 248320dd3094*
-
-### `software/system/diag/COP2P0.SAV`
-
-One of the C* instruction-timing suite: measures two-operand ops (part 0) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb844ce2e101*
-
-### `software/system/diag/COP2P1.SAV`
-
-One of the C* instruction-timing suite: measures two-operand ops (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 abc7103ff536*
-
-### `software/system/diag/COP2P2.SAV`
-
-One of the C* instruction-timing suite: measures two-operand ops (part 2) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 41f4b2b03f33*
-
-### `software/system/diag/COP2PC.SAV`
-
-One of the C* instruction-timing suite: measures PC-addressing ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 1de8fffa9acc*
-
-### `software/system/diag/CPRF.SAV`
-
-One of the C* instruction-timing suite: measures performance summary in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 0a5c750bc8ec*
-
-### `software/system/diag/CRDWR.SAV`
-
-One of the C* instruction-timing suite: measures memory read/write in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 6c47b746d8ef*
-
-### `software/system/diag/CRDWR1.SAV`
-
-One of the C* instruction-timing suite: measures memory read/write (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 5a347c3b618f*
-
-### `software/system/diag/CSOB.SAV`
-
-One of the C* instruction-timing suite: measures SOB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 525973b6600a*
-
-### `software/system/diag/GETEML.SAV`
-
-Loadable instruction-set emulator: hooks the reserved-instruction vector (10), relocates to 154000 and emulates the EIS/FIS instructions the KR1807VM1 lacks (FADD/FSUB/FMUL/FDIV confirmed by disassembly; CMOV.SAV's MUL/DIV work under it too).  Resident: prints nothing.  The driver form is EM.SYS (SET EM ON)
-
-*written in assembler (no runtime library); text; cross-run: exited 7/8; disks: 5; identified from: disassembly + experiment; sha256 1491920f3588*
-
-### `software/system/diag/SCN15I.SAV`
-
-Prints its title "Scan-code of keys (interrupt), Alphaprog" and waits for keys - a keyboard scan-code viewer
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; sha256 712a6fcb4506*
-
-</details>
-
-<details><summary><b>software/system/format/</b> — 1 file</summary>
-
-### `software/system/format/FDZ.SAV`
-
-Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990.  Destructive: it asks Y/N and then formats
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 4; identified from: program screen; sha256 8fc049e88d08*
-
-</details>
+<details><summary><b>software/system/</b> — 11 files</summary>
 
 <details><summary><b>software/system/handlers/</b> — 5 files</summary>
 
@@ -2640,123 +2796,13 @@ Single-line editor - command recall and editing at the monitor prompt; the V08.0
 
 </details>
 
-<details><summary><b>software/system/print/</b> — 6 files</summary>
-
-### `software/system/print/6337.SAV`
-
-Print utility for the МС 6337 dot-matrix printer (hence the numeric name): 'file?' asks for a text file to load, then a menu - load / print / select type (fonts long, dubble, fat, small, step 2.117) / one-side / high quality. On every rebuilt volume it dies before loading: its file-open path uses old-format EMTs (.FETCH at 011144, .LOOKUP at 011264) and fails differently per directory format ('NOT A VALID DEVICE' on a 1-segment volume, '?MON-F-Invalid directory' on 4-segment) - it apparently expects its native System3/disk4 environment. The cross verdict 'ran' only means the prompt came up
-
-*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 1; identified from: menu strings + disassembly of the failing requests + feed experiments 2026-09-05; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 95292998bc4e*
-
-### `software/system/print/OUT17.DOC`
-
-«Утилита OUT17 предназначена для вывода текстовых файлов на струйный принтер МС6317, подключенный к параллельному порту МС0515» - its short manual, ending with Домнич's contact line
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 205f41f630d9*
-
-### `software/system/print/OUT17.SAV`
-
-Prints text files on an MS6317 ink-jet printer attached to the parallel port of the MS 0515
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 2c85151dce6b*
-
-### `software/system/print/OUT2.SAV`
-
-One of the OUT family with OUT17 and OUTC
-
-*written in assembler (no runtime library); cross-run: ran; disks: 4; identified from: program screen; sha256 ab17fa0a5f17*
-
-### `software/system/print/OUTC.DOC`
-
-«Утилита OUTC предназначена для вывода текстовых файлов на принтер СМ6337, подключенный к параллельному порту МС0515» - its short manual
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 fdc0846e8e62*
-
-### `software/system/print/OUTC.SAV`
-
-Prints text files on an SM6337 printer attached to the parallel port of the MS 0515
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 21305756bd96*
-
-</details>
-
-<details><summary><b>software/system/shells/</b> — 7 files</summary>
-
-### `software/system/shells/INSTR.DOC`
-
-«Инструкция по работе с компьютером МС 0515» - Rodionov's one-page operating instruction for his ROSA disk: insert the ROSA diskette, power on, turn the drive latch when the music plays, enter the date at «Дата [дд-мм-гг]?», print files from the commander
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 8f1519cec69e*
-
-### `software/system/shells/REKROS.DOC`
-
-A framed advertisement sheet for Rodionov's system: «Сервисная программа … сделано на МС0515, используя RT15SJ.SYS, R15.SAV, ROSA.SAV» - copying, renaming, protection of files…
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 106e148fbc55*
-
-### `software/system/shells/REKSYS.DOC`
-
-«Сравнительные характеристики существующего и предлагаемого программного обеспечения» - Rodionov's comparison table of his programs against the standard ones, drawn in pseudo-graphics
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 7d976906483d*
-
-### `software/system/shells/ROSA3.SAV`
-
-ROSA Commander v1.3 (c) 1993 Rodionov Sergey Alekseevich, Voronezh - his two-panel file manager, launched by his boot: asks the date numerically, then panels DZ0: (left) and DZ2: (right) with a file-info box, 'protected from deletion' flags, PM help key. Needs LOAD VM: and is DZ-bound: it hardcodes DZ0:/DZ2:, so on a DV-booted Omega it dies ('?MON-F-No device', or ODT after LOAD DZ); runs fine on the DZ-pair exemplar. Refuses a copy that fails its author check
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: error 7/8 — ?MON-F-Нетустройства002146ROSACommanderv1.31993РодионовСерге; disks: 2; identified from: live on rodionov.dsk (panel screenshot) and omega.dsk 2026-09-05; sha256 b89e41c1dd2b*
-
-### `software/system/shells/RS.SYS`
-
-EmeSoft's 'RT11 profShell' v06.05 (1990, build 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block pseudo-device handler. File panel with marks, and the whole toolbox on hotkeys - COPY/DELETE/RENAME/SQUEEZE/PROTECT/TYPE/DUMP (words/bytes/radix)/CREATE/INIT/MOUNT/BOOT/COPY-BOOT - plus LD containers, bad-block scan, search, saved state, and the greeting 'Жми на клавишу, не бойся ...'. Start with R RS.SYS or SET RS ON; uses EIS, so needs GETEML/EM on this machine. The System2/bg0515/superBAK7 and Buhgal monitors print its banner at boot - profShell is built into those builds
-
-*ru / koi8-r; disks: 1; identified from: strings + live run 2026-09-05 (panel and help screen captured; traps to vector 10 without the instruction emulator); sha256 484be60cb8a9*
-
-### `software/system/shells/SCE.HLP`
-
-The help text of the SCE shell, «сделан Гостевым Дмитрием (Школа профессионального самоопределения, г. Воронеж), Copyright 12.24.1993»: the key list B-bad blocks, C-copy, D-delete, E-edit, G-run, H-help, K-create/undelete, L-dismount, M-logical disks, U-boot, W-bootstrap…
-
-*ru / koi8-r; disks: 4; identified from: read 2026-09-06; sha256 dcc37aa51ad9*
-
-### `software/system/shells/SCE.SAV`
-
-Two-panel file manager in the Norton Commander style, Russian labels: directory panel with an info panel, command line Copy/Type/Prot/uNprot/Ren/Del/Quit/Vol/Go/Sque/Z-ini
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
-
-</details>
-
-<details><summary><b>software/system/utils/</b> — 15 files</summary>
-
-### `software/system/utils/ASC.SAV`
-
-Interactive character-code lookup: press any key and it prints the ASCII code (A -> 65, 7 -> 55; the console upcases letters first). A pocket reference vvv kept on every one of his disks - indispensable in a KOI-7/KOI-8/CP866 world
-
-*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 5; identified from: live run 2026-09-05: keys answered with their codes; sha256 0579bc9f81f4*
-
-### `software/system/utils/BADS.SAV`
-
-Bad-block scanner (RT-11 BAD-style): at its '*' prompt give a device ('DZ0:'), it reads every block with a running counter and reports 'N bad blocks detected' / 'Block N is bad.'; switches C,S,E,A,O. Three blocks of assembler - the sibling craft of KBAD13
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: its own strings + live scan 2026-09-05 ('No bad blocks detected.'); sha256 4c64cf4995a7*
+<details><summary><b>software/system/utils/</b> — 6 files</summary>
 
 ### `software/system/utils/BINCOM.SAV`
 
 DEC RT-11 BINCOM V05.08, Russian-localized binary compare (files or devices, PATCH output for SIPP)
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: its own Russian switch help and version banner; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 b76b1abdfd92*
-
-### `software/system/utils/BLACK.SAV`
-
-Blanks the screen to black and returns to the monitor
-
-*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 8; identified from: program screen; sha256 17c2870dc2ae*
-
-### `software/system/utils/BLUE.SAV`
-
-Sets the screen blue with yellow letters and returns to the monitor; the counterpart of BLACK.SAV and WHITE.SAV.  On eight of the nine disks that carry it (osa, System, System3, 059, 062, 063, 066, 172) it is this copy; 065 holds a one-byte variant
-
-*written in assembler (no runtime library); text; cross-run: ran (blue screen, yellow text, prompt back); disks: 9; identified from: program screen 2026-09-13; sha256 f3261ec2e9dd*
 
 ### `software/system/utils/CALEND.SAV`
 
@@ -2770,29 +2816,11 @@ DATIME «(C) 1987» of the ВЦ АН СССР, from the МС0111 complex disk 05
 
 *written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the the МС0111 complex disk build; sha256 55d955b8fcee*
 
-### `software/system/utils/DATSET.SAV`
-
-Date-setting program of the OSA kit
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 5; identified from: OSA manual; sha256 3d748a2cdc42*
-
-### `software/system/utils/DAY.SAV`
-
-Asks for a date, offering 18-MAR-93 as the default
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 0a58aa5e5ce0*
-
 ### `software/system/utils/HELP.TXT`
 
 «Описание команд операционной системы ФОДОС-3» - the command reference HELP.SAV prints, as plain text: ASSIGN, BOOT, COPY… with their syntax
 
 *ru+en / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 bd7f86f0db83*
-
-### `software/system/utils/NEG.SAV`
-
-Writes 000010 into System Register C (177604): selects the 640x200 hi-res mode with a black border.  The video-mode counterpart of BLACK, BLUE and WHITE
-
-*written in assembler (no runtime library); text; cross-run: ran 6/8; disks: 4; identified from: disassembly; sha256 77e302e20a24*
 
 ### `software/system/utils/TERM.SAV`
 
@@ -2805,18 +2833,6 @@ The terminal emulator as the МС0111 complex disk 056 (and 172) carried it: ask
 Manual of TERM.SAV as used in the МС0111 complex check-out: the МС-0515 as a terminal of the central МС0108 (ФОДОС-4, TS/TSX monitor, DEMO.SAV on the central machine)
 
 *ru / koi8-r; disks: 3; identified from: content read 2026-09-05; sha256 66691848ec61*
-
-### `software/system/utils/TFP.SAV`
-
-Text formatter of the OSA kit; the manual recommends keeping it on the system device
-
-*written in high-level (runtime library linked); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: OSA manual; sha256 b85e3e59cbc6*
-
-### `software/system/utils/WHITE.SAV`
-
-Sets the screen to white and returns to the monitor; the counterpart of BLACK.SAV and BLUE.SAV
-
-*written in assembler (no runtime library); text; cross-run: exited 6/8; disks: 5; identified from: program screen; sha256 e28d9cf189ac*
 
 </details>
 

@@ -147,18 +147,6 @@ files    = ["kits/dec/utils/PIP.SAV"]
 # -- RT-11 from sources: DEC's V5.4 utilities, built from DEC's sources with
 # DEC's own LINK and libraries (rt11_devel/projects/rt11 of the emulator).
 
-[bundle.format-rt11]
-title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/utils/FORMAT.SAV"]
-
-[bundle.edit-rt11]
-title    = "EDIT - DEC's text editor"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/utils/EDIT.SAV"]
-
 [bundle.help-rt11]
 title    = "HELP with its library HELP.MLB"
 kit      = "dec"
@@ -193,18 +181,6 @@ kit      = "dec"
 date     = "1999-12-31"
 files    = ["kits/dec/utils/SRCCOM.SAV", "kits/dec/utils/BINCOM.SAV"]
 
-[bundle.patch-rt11]
-title    = "SLP, PAT, SIPP - patching sources, objects and programs"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/utils/SLP.SAV", "kits/dec/utils/PAT.SAV", "kits/dec/utils/SIPP.SAV"]
-
-[bundle.strip-rt11]
-title    = "STRIP and SPLIT"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/utils/STRIP.SAV", "kits/dec/utils/SPLIT.SAV"]
-
 [bundle.ucl-rt11]
 title    = "UCL and LET - commands of one's own (the dec monitors pass unknown commands to UCL)"
 kit      = "dec"
@@ -237,20 +213,8 @@ provides = ["link"]
 date     = "1999-12-31"
 files    = ["kits/dec/development/LINK.SAV"]
 
-[bundle.libr-rt11]
-title    = "LIBR - the librarian, which no kit of the machine had"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/development/LIBR.SAV"]
-
 [bundle.sysmac-rt11]
 title    = "SYSMAC.SML and SYSLIB.OBJ - DEC's system macro and object libraries"
 kit      = "dec"
 date     = "1999-12-31"
 files    = ["kits/dec/development/SYSMAC.SML", "kits/dec/development/SYSLIB.OBJ"]
-
-[bundle.odt-rt11]
-title    = "ODT.OBJ - the octal debugger, linked into a program"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/development/ODT.OBJ"]
