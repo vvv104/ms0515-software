@@ -944,81 +944,7 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 </details>
 
-<details open><summary><b>programs/</b> — 220 files</summary>
-
-<details><summary><b>programs/autoteacher/</b> — 11 files</summary>
-
-### `programs/autoteacher/1003.DOC`
-
-The question bank of an AutoTeacher physics test in readable form: twenty questions on the ideal gas (state equation, pressure, temperature…), each with its answer - the text the .QUS of the same name was built from
-
-*disks: 1; identified from: content read 2026-09-06; sha256 76c6c5f305a2*
-
-### `programs/autoteacher/1003.QUS`
-
-AutoTeacher question file: 20 questions on the ideal gas («уравнение состояния идеального газа характеризует…»), each with its answer cut into words for the word-grid answering; the readable form is 1003.DOC
-
-*disks: 1; identified from: content read 2026-09-06; sha256 d71a1304f540*
-
-### `programs/autoteacher/1018.QUS`
-
-AutoTeacher question file: physics test on the magnetic field ('МАГНИТНЫМ ПОЛЕМ НАЗЫВАЕТСЯ...') with word-grids the pupil assembles definitions from; authored with CR.SAV, played by AT.SAV
-
-*disks: 1; identified from: content read 2026-09-05; sha256 e4773a660ef6*
-
-### `programs/autoteacher/10L01.DOC`
-
-The question bank of an AutoTeacher test in readable form: twelve questions on thermodynamics («термодинамика - это…»), with answers
-
-*disks: 1; identified from: content read 2026-09-06; sha256 f99b380805d3*
-
-### `programs/autoteacher/10L01.QUS`
-
-AutoTeacher question file: 12 questions on thermodynamics with their answers cut into words; the readable form is 10L01.DOC
-
-*disks: 1; identified from: content read 2026-09-06; sha256 21120d833c01*
-
-### `programs/autoteacher/10L04.DOC`
-
-The question bank of an AutoTeacher test in readable form: fourteen questions on resistivity and conductors («удельным сопротивлением проводника называется…»), with answers
-
-*disks: 1; identified from: content read 2026-09-06; sha256 9ffaf3ff27e8*
-
-### `programs/autoteacher/10L04.QUS`
-
-AutoTeacher question file: 14 questions on resistivity and conductors with their answers cut into words; the readable form is 10L04.DOC
-
-*disks: 1; identified from: content read 2026-09-06; sha256 7c9d28fb3964*
-
-### `programs/autoteacher/AT.SAV`
-
-AutoTeacher V3.10 (SB Soft Ware Ltd., 1992) - the school testing system's player: runs .QUS question files (word-grid answers), keeps pupil records in STUD.PUP; questions are authored with CR.SAV
-
-*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 4; identified from: its banner + the amk_1 disk kit; sha256 d9081e80492a*
-
-### `programs/autoteacher/CR.SAV`
-
-The question-bank constructor of AutoTeacher (SB Soft Ware Ltd.), the build its own diskettes carry (disk1, disk2, amk disk3): writes the .QUS files AT.SAV plays
-
-*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 3; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Mihin's OS-16SJ kits build; sha256 76ace27a8706*
-
-### `programs/autoteacher/STUD.PUP`
-
-AutoTeacher results file: 'файл данных о проверке знаний учащихся' - the pupils' test records for AT.SAV
-
-*disks: 1; identified from: AT.SAV's own banner text; sha256 ce5714a4f2e8*
-
-</details>
-
-<details><summary><b>programs/autoteacher/amk_1/</b> — 1 file</summary>
-
-### `programs/autoteacher/amk_1/CR.SAV`
-
-The AutoTeacher constructor as the lyceum's own diskette amk_1 carries it - a rebuilt copy, all 41 blocks apart from SB Soft Ware's, with a KOI-7 «ВЫ УВЕРЕНЫ? (Д/Н)» prompt
-
-*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 1; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Лицей №1, disk amk_1 build; sha256 2fd2b99af8f7*
-
-</details>
+<details open><summary><b>programs/</b> — 211 files</summary>
 
 <details><summary><b>programs/basic/</b> — 43 files</summary>
 
@@ -2022,7 +1948,19 @@ Sprite generator «COPYRIGHT 1994 BY GOSTEV DMITRY, Россия, Воронеж
 
 </details>
 
-<details><summary><b>programs/vvv/</b> — 50 files</summary>
+<details><summary><b>programs/vvv/</b> — 52 files</summary>
+
+### `programs/vvv/GAUSS.CLC`
+
+UKCALC worksheet («POWERR SPREADSHEET» header - UKCALC's own file format): solves a system of linear equations by Gauss elimination, cells with formulas like C3-C6*A3, B2/A2
+
+*disks: 2; identified from: read 2026-09-06; sha256 d39bba3a71df*
+
+### `programs/vvv/KRAMER.CLC`
+
+UKCALC worksheet: solves a 2x2 linear system by Cramer's rule - cells for the determinant («Det A =», A1*B2-B1*A2), Dx, and «x=», «y=»
+
+*disks: 2; identified from: read 2026-09-06; sha256 9f76d84b36f5*
 
 <details><summary><b>programs/vvv/minesweeper/</b> — 18 files</summary>
 
@@ -2336,9 +2274,83 @@ fills the graphics screen with random pixels, forever
 
 </details>
 
-<details open><summary><b>software/</b> — 77 files</summary>
+<details open><summary><b>software/</b> — 86 files</summary>
 
-<details><summary><b>software/apps/</b> — 29 files</summary>
+<details><summary><b>software/apps/</b> — 38 files</summary>
+
+<details><summary><b>software/apps/autoteacher/</b> — 11 files</summary>
+
+### `software/apps/autoteacher/1003.DOC`
+
+The question bank of an AutoTeacher physics test in readable form: twenty questions on the ideal gas (state equation, pressure, temperature…), each with its answer - the text the .QUS of the same name was built from
+
+*disks: 1; identified from: content read 2026-09-06; sha256 76c6c5f305a2*
+
+### `software/apps/autoteacher/1003.QUS`
+
+AutoTeacher question file: 20 questions on the ideal gas («уравнение состояния идеального газа характеризует…»), each with its answer cut into words for the word-grid answering; the readable form is 1003.DOC
+
+*disks: 1; identified from: content read 2026-09-06; sha256 d71a1304f540*
+
+### `software/apps/autoteacher/1018.QUS`
+
+AutoTeacher question file: physics test on the magnetic field ('МАГНИТНЫМ ПОЛЕМ НАЗЫВАЕТСЯ...') with word-grids the pupil assembles definitions from; authored with CR.SAV, played by AT.SAV
+
+*disks: 1; identified from: content read 2026-09-05; sha256 e4773a660ef6*
+
+### `software/apps/autoteacher/10L01.DOC`
+
+The question bank of an AutoTeacher test in readable form: twelve questions on thermodynamics («термодинамика - это…»), with answers
+
+*disks: 1; identified from: content read 2026-09-06; sha256 f99b380805d3*
+
+### `software/apps/autoteacher/10L01.QUS`
+
+AutoTeacher question file: 12 questions on thermodynamics with their answers cut into words; the readable form is 10L01.DOC
+
+*disks: 1; identified from: content read 2026-09-06; sha256 21120d833c01*
+
+### `software/apps/autoteacher/10L04.DOC`
+
+The question bank of an AutoTeacher test in readable form: fourteen questions on resistivity and conductors («удельным сопротивлением проводника называется…»), with answers
+
+*disks: 1; identified from: content read 2026-09-06; sha256 9ffaf3ff27e8*
+
+### `software/apps/autoteacher/10L04.QUS`
+
+AutoTeacher question file: 14 questions on resistivity and conductors with their answers cut into words; the readable form is 10L04.DOC
+
+*disks: 1; identified from: content read 2026-09-06; sha256 7c9d28fb3964*
+
+### `software/apps/autoteacher/AT.SAV`
+
+AutoTeacher V3.10 (SB Soft Ware Ltd., 1992) - the school testing system's player: runs .QUS question files (word-grid answers), keeps pupil records in STUD.PUP; questions are authored with CR.SAV
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 4; identified from: its banner + the amk_1 disk kit; sha256 d9081e80492a*
+
+### `software/apps/autoteacher/CR.SAV`
+
+The question-bank constructor of AutoTeacher (SB Soft Ware Ltd.), the build its own diskettes carry (disk1, disk2, amk disk3): writes the .QUS files AT.SAV plays
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 3; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Mihin's OS-16SJ kits build; sha256 76ace27a8706*
+
+### `software/apps/autoteacher/STUD.PUP`
+
+AutoTeacher results file: 'файл данных о проверке знаний учащихся' - the pupils' test records for AT.SAV
+
+*disks: 1; identified from: AT.SAV's own banner text; sha256 ce5714a4f2e8*
+
+</details>
+
+<details><summary><b>software/apps/autoteacher/amk_1/</b> — 1 file</summary>
+
+### `software/apps/autoteacher/amk_1/CR.SAV`
+
+The AutoTeacher constructor as the lyceum's own diskette amk_1 carries it - a rebuilt copy, all 41 blocks apart from SB Soft Ware's, with a KOI-7 «ВЫ УВЕРЕНЫ? (Д/Н)» prompt
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 1; identified from: its KOI-7 strings (ВВЕДИТЕ ВОПРОС/РАМКИ/ПРАВИЛЬНЫЙ ОТВЕТ) + 1018.QUS structure; the Лицей №1, disk amk_1 build; sha256 2fd2b99af8f7*
+
+</details>
 
 <details><summary><b>software/apps/buhgal/</b> — 3 files</summary>
 
@@ -2485,18 +2497,6 @@ FunctionCAD v1.1 for the MS-0515 (1994, A. V. Domnich): plots functions and draw
 File-system converter (Омега, Львов, experimental, July 1993) bridging THREE worlds: RT-11 (any device, catalogue/delete/rename), DOS FAT floppies (root dir, volume label, capacity/free in KB, write-back), and ZX Spectrum TR-DOS (catalogue with start/length/sectors, both directions). Auto-detects 40/80-track SS/DS. Porting-pipeline features: marks files copied from TR-DOS as 'программа в кодах Spectrum для дизассемблера', converts Spectrum screen images, transcodes text between code pages. Needs SL.SYS fetched - absent on Rodionov's system, hence its one error cell in the cross. The very conveyor the Omega Spectrum ports came through
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran 7/8; disks: 1; identified from: full string vocabulary + menu screenshot; SL dependency proved by load bisection; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 e8179a455487*
-
-### `software/apps/GAUSS.CLC`
-
-UKCALC worksheet («POWERR SPREADSHEET» header - UKCALC's own file format): solves a system of linear equations by Gauss elimination, cells with formulas like C3-C6*A3, B2/A2
-
-*disks: 2; identified from: read 2026-09-06; sha256 d39bba3a71df*
-
-### `software/apps/KRAMER.CLC`
-
-UKCALC worksheet: solves a 2x2 linear system by Cramer's rule - cells for the determinant («Det A =», A1*B2-B1*A2), Dx, and «x=», «y=»
-
-*disks: 2; identified from: read 2026-09-06; sha256 9f76d84b36f5*
 
 ### `software/apps/TR7004.SAV`
 

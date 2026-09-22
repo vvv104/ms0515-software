@@ -1456,7 +1456,7 @@ title = "UKCALC - spreadsheet, with its manual and two worksheets"
 group = "Applications"
 date  = "1995-01-01"
 files = ["software/apps/UKCALC.SAV", "software/apps/UKCALC.LST",
-         "software/apps/GAUSS.CLC", "software/apps/KRAMER.CLC"]
+         "programs/vvv/GAUSS.CLC", "programs/vvv/KRAMER.CLC"]
 
 [bundle.fcad]
 title = "FunctionCAD - plots functions"
