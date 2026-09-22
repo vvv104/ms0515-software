@@ -1,4 +1,8 @@
-# SL as НПФ «Сенсор» adapted it
+# Handlers: Mihin's OS-16SJ
+
+The kit's own handlers - `DZ`, `DV`, `TT`, `VM`, `LD` - all built with its sysgen, plus `HD.SYS`, the emulator's paravirtual disk, which is ours and not a recovered file.  Which of them loads under which monitor is in [`../../HANDLERS.md`](../../HANDLERS.md).  `056/` holds the handlers of the work diskette 056, filed with this kit because they carry its sysgen word.
+
+## SL as НПФ «Сенсор» adapted it
 
 `SL V8.00`, Сторожевых's single-line editor with a banner of its own:
 

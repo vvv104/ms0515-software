@@ -490,6 +490,12 @@ Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990. 
 
 <details><summary><b>kits/mihin/handlers/</b> — 10 files</summary>
 
+### `kits/mihin/handlers/SL.SYS`
+
+Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver; its banner «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"» names the Voronezh firm that adapted it for the УБПК, the machine's own development name
+
+*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
+
 <details><summary><b>kits/mihin/handlers/056/</b> — 5 files</summary>
 
 ### `kits/mihin/handlers/056/PC.COM`
@@ -524,16 +530,6 @@ DEC's RK handler - the RK05 cartridge disk of 4800 blocks, as RK.MAC of DEC's V5
 
 </details>
 
-<details><summary><b>kits/mihin/handlers/npf-sensor/</b> — 1 file</summary>
-
-### `kits/mihin/handlers/npf-sensor/SL.SYS`
-
-Single-line editor - command recall and editing at the monitor prompt; the V08.00 build is signed 'SL V08.00 [SW] Сторожевых С.В. 1988' inside the driver; its banner «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР"» names the Voronezh firm that adapted it for the УБПК, the machine's own development name
-
-*en / ascii; disks: 2; identified from: DEC RT-11 + the driver's own banner string; sha256 cd5af8b82d6a*
-
-</details>
-
 ### `kits/mihin/handlers/DZ.SYS`
 
 Floppy-disk handler
@@ -562,6 +558,12 @@ RAM-disk handler (memory used as a drive)
 
 <details><summary><b>kits/mihin/utils/</b> — 2 files</summary>
 
+### `kits/mihin/utils/DATIME.SAV`
+
+DATIME «(C) 1987» of the ВЦ АН СССР, from the work diskette 056 - the greeter with escape-sequence highlighting
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the work diskette 056 build; sha256 55d955b8fcee*
+
 ### `kits/mihin/utils/TERM.SAV`
 
 The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: «РЕЖИМ ЭМУЛЯЦИИ ТЕРМИНАЛА», exit with СУ/E
@@ -569,16 +571,6 @@ The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: 
 *written in assembler (no runtime library); text; cross-run: ran; disks: 8; identified from: program strings of both builds; TERM.TXT manual on disk 056; the Mihin's OS-16SJ kits build; sha256 31c254f8780b*
 
 </details>
-
-</details>
-
-<details><summary><b>kits/mihin/utils/056/</b> — 1 file</summary>
-
-### `kits/mihin/utils/056/DATIME.SAV`
-
-DATIME «(C) 1987» of the ВЦ АН СССР, from the work diskette 056 - the greeter with escape-sequence highlighting
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; the work diskette 056 build; sha256 55d955b8fcee*
 
 </details>
 

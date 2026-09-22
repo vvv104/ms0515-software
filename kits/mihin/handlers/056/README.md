@@ -18,7 +18,7 @@ The complex's own programs, with their sources, are in [`../../../../programs/ms
 
 ## The two SL of this kit
 
-`056/SL.SYS` is V06.00b of 1987, `../npf-sensor/SL.SYS` is V8.00 of 1990 — the same
+`056/SL.SYS` is V06.00b of 1987, `../SL.SYS` is V8.00 of 1990 — the same
 program of the same author, five years apart.  Both are 5120 bytes and both
 carry the `TIM$IT` sysgen word; the code of the newer is 174 bytes longer
 (`004316` against `004060`), and it uses header words the older leaves at
@@ -46,5 +46,5 @@ KOI-7: `НАЗНАЧЕНИЯ`, `СИМВОЛ  СТАТУС  СТРОКА`, `СВ
 `?SL-W-[NO]PRINT ignored`) and it comes with that installation's own ten
 hotkey assignments — `BASIC ALL`, `DIR DZ4:`, `AS DZ4: DK:`, `DEL DZ:`,
 `DEL DZ4:`, `COP/Q DZ: DZ4:`, `COP/Q DZ4: DZ`, `COP/Q VM: DZ4:`,
-`COP/Q DZ: VM:`, `RUN DBAS ALL` — where the copy in `npf-sensor/quiet/` has them
+`COP/Q DZ: VM:`, `RUN DBAS ALL` — where the copy in `../quiet/` has them
 blanked.  The English `LET` help is gone.
