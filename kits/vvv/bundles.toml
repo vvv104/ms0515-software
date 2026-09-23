@@ -1,5 +1,6 @@
 [system.omega2]
 title    = "OMEGA SJ(S) V05.04, the vvv104 build"
+rom      = "b"    # its clock calls ROM-B's cursor blink, which in ROM-A is the cassette loader: it hangs there
 kit      = "vvv"
 monitor  = { path = "kits/vvv/RT11SJ.SYS", date = "1995-01-01" }
 swap     = { blocks = 32, date = "1995-01-01" }

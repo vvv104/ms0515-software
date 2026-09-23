@@ -1,5 +1,6 @@
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
+rom      = "a"    # its terminal driver jumps into ROM-A's own routines by their addresses
 kit      = "rodionov"
 monitor  = { path = "kits/rodionov/RT15SJ.SYS", date = "1992-03-31" }
 swap     = { blocks = 32, date = "1991-12-25" }
