@@ -76,6 +76,10 @@ common = true
 #   swap               the length of SWAP.SYS in blocks, and its date
 #   startup_date       the date of the startup command file
 #   media              what the monitor boots from
+#   rom                the ROM it runs on - "a" or "b" - where it runs on one
+#                      alone (ОМЕГА2 hangs on ROM-A, Rodionov's needs ROM-A); the
+#                      browser build switches to it when the disk is put in drive A.
+#                      Left out where either ROM does
 #   requires           the bundles it cannot work without
 #   suggests           its own builds of the utilities its disks carried (DIR,
 #                      DUP, PIP): not ticked by themselves - a games disk can do
@@ -133,6 +137,7 @@ startup  = ["SET TT QUIET"]
 
 [system.rodionov]
 title    = "RT15SJ (Rodionov)"
+rom      = "a"    # its terminal driver jumps into ROM-A's own routines by their addresses
 kit      = "rodionov"
 monitor  = { path = "kits/rodionov/RT15SJ.SYS", date = "1992-03-31" }
 swap     = { blocks = 32, date = "1991-12-25" }
@@ -186,6 +191,7 @@ startup  = ["SET TT QUIET"]
 
 [system.omega2]
 title    = "OMEGA SJ(S) V05.04, the vvv104 build"
+rom      = "b"    # its clock calls ROM-B's cursor blink, which in ROM-A is the cassette loader: it hangs there
 kit      = "vvv"
 monitor  = { path = "kits/vvv/RT11SJ.SYS", date = "1995-01-01" }
 swap     = { blocks = 32, date = "1995-01-01" }
