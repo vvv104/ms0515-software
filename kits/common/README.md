@@ -6,7 +6,7 @@ The wizard shows these under **System**, after the chosen system's own files, wh
 
 | where | what |
 |---|---|
-| [`utils/`](utils/README.md) | the RT-11 utilities no second build of which survived — `EDIT`, `FORMAT`, `SLP`/`PAT`/`SIPP`, `STRIP`/`SPLIT` — and the little programs of the machine: the screen colours, the date setter, the bad-block scanner, the text formatter |
+| [`utils/`](utils/README.md) | the RT-11 utilities no second build of which survived — `FORMAT`, `SLP`/`PAT`/`SIPP`, `STRIP`/`SPLIT` — and the little programs of the machine: the screen colours, the date setter, the bad-block scanner, the text formatter |
 | [`print/`](print/README.md) | the printing programs |
 | [`diag/`](diag/README.md) | the factory exerciser, the instruction-timing meters, the scan-code viewer, the instruction emulator `GETEML` |
 | [`shells/`](shells/README.md) | `SCE`, the one shell that is nobody's kit |

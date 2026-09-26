@@ -134,19 +134,6 @@ kit      = "common"
 date     = "1999-12-31"
 files    = ["kits/common/utils/FORMAT.SAV"]
 
-[bundle.edit-rt11]
-title    = "EDIT - DEC's text editor"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/EDIT.SAV"]
-
-[bundle.k52-rt11]
-title    = "K52 - DEC's screen editor for the VT52 keypad (KED as built for this terminal)"
-kit      = "common"
-startup  = ["SET EDIT K52"]    # the monitor's EDIT command runs it: EDIT FILE.TXT
-date     = "1999-12-31"
-files    = ["kits/common/utils/K52.SAV"]
-
 [bundle.patch-rt11]
 title    = "SLP, PAT, SIPP - patching sources, objects and programs"
 kit      = "common"

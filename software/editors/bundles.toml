@@ -28,3 +28,16 @@ title    = "R15.DOC - the manual of the K13 family editor"
 volume   = "any"
 date     = "1993-08-09"
 files    = ["software/editors/R15.DOC"]
+
+[bundle.edit-rt11]
+title    = "EDIT - DEC's text editor"
+group    = "Editors"
+date     = "1999-12-31"
+files    = ["software/editors/EDIT.SAV"]
+
+[bundle.k52-rt11]
+title    = "K52 - DEC's screen editor for the VT52 keypad (KED as built for this terminal)"
+group    = "Editors"
+startup  = ["SET EDIT K52"]    # the monitor's EDIT command runs it: EDIT FILE.TXT
+date     = "1999-12-31"
+files    = ["software/editors/K52.SAV"]
