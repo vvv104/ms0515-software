@@ -873,13 +873,6 @@ files    = ["kits/dec/utils/SPOOL.REL", "kits/dec/utils/QUEUE.REL", "kits/dec/ut
 # DEC's; the Pascal kit's is not, and a PIP linked against that one dies of an
 # overlay error.
 
-[bundle.link-rt11]
-title    = "LINK V5.4 (DEC's, byte for byte from its sources)"
-kit      = "dec"
-provides = ["link"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/LINK.SAV"]
-
 [bundle.sysmac-rt11]
 title    = "SYSMAC.SML - DEC's system macro library"
 kit      = "dec"
@@ -938,21 +931,6 @@ kit      = "vvv"
 provides = ["formatter"]
 date     = "1995-04-01"
 files    = ["kits/vvv/format/FORML.SAV", "kits/vvv/format/FORMH.SAV"]
-
-[bundle.macro-vvv]
-title    = "MACRO V05.04 (FODOS kit of the vvv104 disks)"
-kit      = "vvv"
-provides = ["macro11"]
-requires = ["sysmac"]
-date     = "1995-04-01"
-files    = ["kits/vvv/development/MACRO.SAV"]
-
-[bundle.link-vvv]
-title    = "LINK V05.14 (FODOS kit of the vvv104 disks)"
-kit      = "vvv"
-provides = ["link"]
-date     = "1995-04-01"
-files    = ["kits/vvv/development/LINK.SAV"]
 
 [bundle.bincom]
 kit      = "vvv"
@@ -1115,18 +1093,6 @@ kit      = "common"
 date     = "1999-12-31"
 files    = ["kits/common/utils/STRIP.SAV", "kits/common/utils/SPLIT.SAV"]
 
-[bundle.libr-rt11]
-title    = "LIBR - the librarian, which no kit of the machine had"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/development/LIBR.SAV"]
-
-[bundle.odt-rt11]
-title    = "ODT.OBJ - the octal debugger, linked into a program"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/development/ODT.OBJ"]
-
 [bundle.calend]
 kit      = "common"
 title = "CALEND - calendar for 1583-5000"
@@ -1151,115 +1117,6 @@ title = "SYSLIB.OBJ - the system library"
 date  = "1995-04-01"
 files = ["kits/common/development/SYSLIB.OBJ"]
 
-[bundle.pascal]
-kit      = "common"
-title    = "Pascal - PAS1 with its run-time library"
-requires = ["macro11", "link", "syslib"]     # PAS1 emits MACRO-11, LINK binds PASLIB
-suggests = ["forlib"]                        # a program calling RAN links FORLIB too
-prefer   = { mihin = ["macro-mihin", "link-mihin"], default = ["macro-vvv", "link-vvv"] }
-date     = "1995-04-01"
-files    = ["kits/common/development/PAS1.SAV",
-            "kits/common/development/PAS1.OBJ",
-            "kits/common/development/PASLIB.OBJ"]
-
-[bundle.pascal-graphics]
-kit      = "common"
-title    = "Pascal graphics - PASGRF and GRAPH.P1U"
-requires = ["pascal"]
-date     = "1995-04-01"
-files    = ["kits/common/development/PASGRF.OBJ", "kits/common/development/GRAPH.P1U"]
-
-[bundle.pascal-units]
-kit      = "common"
-title    = "Pascal units - STRING, SETPIX, GETDAT sources"
-requires = ["pascal"]
-volume   = "any"
-date     = "1995-04-01"
-files    = ["kits/common/development/STRING.PAS",
-            "kits/common/development/SETPIX.PAS",
-            "kits/common/development/GETDAT.PAS"]
-
-[bundle.pascal-docs]
-kit      = "common"
-title    = "Pascal manuals - PASCAL.LST, PASUSE.LST, PASGR.DOC"
-date     = "1995-05-16"
-requires = ["pascal"]
-volume   = "any"
-files    = ["kits/common/development/PASCAL.LST",
-            "kits/common/development/PASUSE.LST",
-            { path = "kits/common/development/PASGR.DOC", date = "1995-05-15" }]
-
-[bundle.forlib]
-kit      = "common"
-title = "FORLIB.OBJ - the FORTRAN IV run-time library"
-date  = "1995-04-01"
-files = ["kits/common/development/FORLIB.OBJ"]
-
-[bundle.fortran]
-kit      = "common"
-title    = "FORTRAN IV compiler"
-requires = ["link", "forlib", "syslib"]
-prefer   = { mihin = ["link-mihin"], default = ["link-vvv"] }
-date     = "1995-04-01"
-files    = ["kits/common/development/FORTRA.SAV"]
-
-[bundle.basico]
-kit      = "common"
-title    = "BASIC - Omega BASIC 1-01a, the machine's native BASIC"
-provides = ["basic"]
-date     = "1992-02-17"
-files    = ["kits/common/development/BASICO.SAV"]
-
-[bundle.basic-rafos]
-kit      = "common"
-title    = "BASIC / RAFOS V02-030"
-date     = "1991-08-14"
-provides = ["basic"]
-files    = ["kits/common/development/BASIC.SAV"]
-
-[bundle.basico-docs]
-kit      = "common"
-title    = "BASICO.DOC - the Omega BASIC manual"
-date     = "1995-01-01"
-requires = ["basico"]
-volume   = "any"
-files    = ["kits/common/development/BASICO.DOC"]
-
-[bundle.ked]
-kit      = "common"
-title    = "KED - keypad screen editor (vvv104 disks)"
-provides = ["k13-editor"]
-date     = "1995-04-01"
-files    = ["kits/common/development/KED.SAV"]
-
-[bundle.k52]
-kit      = "common"
-title    = "K52 - screen editor of the OSA and OMEGA kits"
-provides = ["k13-editor"]
-date     = "1991-01-31"
-files    = [{ path = "kits/common/development/K13U.SAV", as = "K52.SAV" }]
-
-[bundle.r15]
-kit      = "common"
-title    = "R15 - Rodionov's edition of the editor, with its help"
-provides = ["k13-editor"]
-date     = "1990-11-29"
-files    = ["kits/common/development/R15.SAV",
-            { path = "kits/common/development/R15.HLP", date = "1993-03-24" }]
-
-[bundle.r15-docs]
-kit      = "common"
-title    = "R15.DOC - the manual of the K13 family editor"
-volume   = "any"
-date     = "1993-08-09"
-files    = ["kits/common/development/R15.DOC"]
-
-[bundle.dess]
-kit      = "common"
-title = "DESS - DEZI dump viewer and disassembler"
-date  = "1995-04-01"
-files = ["kits/common/development/DESS.SAV"]
-
 [bundle.hello-pas]
 kit      = "common"
 title    = "HELLO.PAS - a Hello, world! to build first: PAS1, MACRO, LINK, RUN"
@@ -1274,11 +1131,6 @@ requires = ["macro11", "link"]
 date     = "1992-04-01"     # written for the collection in 2026: the Pascal disk's working date
 files    = ["programs/examples/HELLOA.MAC"]
 
-[bundle.spr]
-kit      = "common"
-title = "SPR - makes sprite files for Pascal programs"
-date  = "1995-04-01"
-files = ["kits/common/development/SPR.SAV"]
 # ==== Games ================================================================
 
 [bundle.sabot2-osa]
@@ -1562,6 +1414,148 @@ volume = "any"
 files  = ["software/apps/rbd-mikro/*"]
 # ==== Development ==========================================================
 
+[bundle.libr-rt11]
+title    = "LIBR - the librarian, which no kit of the machine had"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/LIBR.SAV"]
+
+[bundle.odt-rt11]
+title    = "ODT.OBJ - the octal debugger, linked into a program"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/ODT.OBJ"]
+
+[bundle.pascal]
+group    = "Development"
+title    = "Pascal - PAS1 with its run-time library"
+requires = ["macro11", "link", "syslib"]     # PAS1 emits MACRO-11, LINK binds PASLIB
+suggests = ["forlib"]                        # a program calling RAN links FORLIB too
+prefer   = { mihin = ["macro-mihin", "link-mihin"], default = ["macro-vvv", "link-rt11"] }
+date     = "1995-04-01"
+files    = ["software/development/pascal/PAS1.SAV",
+            "software/development/pascal/PAS1.OBJ",
+            "software/development/pascal/PASLIB.OBJ"]
+
+[bundle.pascal-graphics]
+group    = "Development"
+title    = "Pascal graphics - PASGRF and GRAPH.P1U"
+requires = ["pascal"]
+date     = "1995-04-01"
+files    = ["software/development/pascal/PASGRF.OBJ", "software/development/pascal/GRAPH.P1U"]
+
+[bundle.pascal-units]
+group    = "Development"
+title    = "Pascal units - STRING, SETPIX, GETDAT sources"
+requires = ["pascal"]
+volume   = "any"
+date     = "1995-04-01"
+files    = ["software/development/pascal/STRING.PAS",
+            "software/development/pascal/SETPIX.PAS",
+            "software/development/pascal/GETDAT.PAS"]
+
+[bundle.pascal-docs]
+group    = "Development"
+title    = "Pascal manuals - PASCAL.LST, PASUSE.LST, PASGR.DOC"
+date     = "1995-05-16"
+requires = ["pascal"]
+volume   = "any"
+files    = ["software/development/pascal/PASCAL.LST",
+            "software/development/pascal/PASUSE.LST",
+            { path = "software/development/pascal/PASGR.DOC", date = "1995-05-15" }]
+
+[bundle.forlib]
+group    = "Development"
+title = "FORLIB.OBJ - the FORTRAN IV run-time library"
+date  = "1995-04-01"
+files = ["software/development/fortran/FORLIB.OBJ"]
+
+[bundle.fortran]
+group    = "Development"
+title    = "FORTRAN IV compiler"
+requires = ["link", "forlib", "syslib"]
+prefer   = { mihin = ["link-mihin"], default = ["link-rt11"] }
+date     = "1995-04-01"
+files    = ["software/development/fortran/FORTRA.SAV"]
+
+[bundle.basico]
+group    = "Development"
+title    = "BASIC - Omega BASIC 1-01a, the machine's native BASIC"
+provides = ["basic"]
+date     = "1992-02-17"
+files    = ["software/development/basic/BASICO.SAV"]
+
+[bundle.basic-rafos]
+group    = "Development"
+title    = "BASIC / RAFOS V02-030"
+date     = "1991-08-14"
+provides = ["basic"]
+files    = ["software/development/basic/BASIC.SAV"]
+
+[bundle.basico-docs]
+group    = "Development"
+title    = "BASICO.DOC - the Omega BASIC manual"
+date     = "1995-01-01"
+requires = ["basico"]
+volume   = "any"
+files    = ["software/development/basic/BASICO.DOC"]
+
+[bundle.ked]
+group    = "Development"
+title    = "KED - keypad screen editor (vvv104 disks)"
+provides = ["k13-editor"]
+date     = "1995-04-01"
+files    = ["software/development/editors/KED.SAV"]
+
+[bundle.k52]
+group    = "Development"
+title    = "K52 - screen editor of the OSA and OMEGA kits"
+provides = ["k13-editor"]
+date     = "1991-01-31"
+files    = [{ path = "software/development/editors/K13U.SAV", as = "K52.SAV" }]
+
+[bundle.r15]
+group    = "Development"
+title    = "R15 - Rodionov's edition of the editor, with its help"
+provides = ["k13-editor"]
+date     = "1990-11-29"
+files    = ["software/development/editors/R15.SAV",
+            { path = "software/development/editors/R15.HLP", date = "1993-03-24" }]
+
+[bundle.r15-docs]
+group    = "Development"
+title    = "R15.DOC - the manual of the K13 family editor"
+volume   = "any"
+date     = "1993-08-09"
+files    = ["software/development/editors/R15.DOC"]
+
+[bundle.dess]
+group    = "Development"
+title = "DESS - DEZI dump viewer and disassembler"
+date  = "1995-04-01"
+files = ["software/development/dezi/DESS.SAV"]
+
+[bundle.spr]
+group    = "Development"
+title = "SPR - makes sprite files for Pascal programs"
+date  = "1995-04-01"
+files = ["software/development/pascal/SPR.SAV"]
+
+[bundle.macro-vvv]
+title    = "MACRO V05.04 (FODOS kit of the vvv104 disks)"
+group    = "Development"
+provides = ["macro11"]
+requires = ["sysmac"]
+date     = "1995-04-01"
+files    = ["software/development/MACRO.SAV"]
+
+[bundle.link-rt11]
+title    = "LINK V5.4 (DEC's, byte for byte from its sources)"
+group    = "Development"
+provides = ["link"]
+date     = "1999-12-31"
+files    = ["software/development/LINK.SAV"]
+
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
 # (rt11_devel/projects/decusc of the emulator), in two builds of the same
@@ -1575,7 +1569,7 @@ group    = "Development"
 title    = "DECUS C - the compiler, its assembler and library, for the T11 (no EIS)"
 provides = ["decus-c"]
 requires = ["link"]
-prefer   = { mihin = ["link-mihin"], default = ["link-vvv"] }
+prefer   = { mihin = ["link-mihin"], default = ["link-rt11"] }
 date     = "1983-10-13"
 files    = ["software/development/decusc/CC.SAV",
             "software/development/decusc/AS.SAV",
@@ -1589,7 +1583,7 @@ group    = "Development"
 title    = "DECUS C for EM.SYS - the compiler, its assembler and library with EIS inline"
 provides = ["decus-c"]
 requires = ["link", "em"]
-prefer   = { mihin = ["link-mihin"], default = ["link-vvv"] }
+prefer   = { mihin = ["link-mihin"], default = ["link-rt11"] }
 date     = "1983-10-13"
 files    = ["software/development/decusc/eis/CC.SAV",
             "software/development/decusc/eis/AS.SAV",

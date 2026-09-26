@@ -4,7 +4,7 @@ Voronkov's own diskettes: disk3 (the ОМЕГА sysgen whose monitor is `kits/om
 
 The builds below are the ones these disks carried; each card says on which of them it was found, and where a near-identical copy (a few bytes off - bit rot, a patched banner) lies on another disk.
 
-| file | what | how to run |
-|---|---|---|
-| `LINK.SAV` | LINK V05.14 (its cross-reference title reads V05.15) - the linker of the collector's ФОДОС kit  (on baspasfor, h0, vvv104 disk3; near-identical copies on PAPER, vvv104 disk4) | `RUN LINK` |
-| `MACRO.SAV` | MACRO V05.04 - the assembler of the collector's ФОДОС kit (disk3, PAPER; disk4 as well)  (on PAPER, h0, vvv104 disk3; near-identical copies on vvv104 disk4) | `RUN MACRO` |
+The two files themselves are now under [`software/development/`](../../../software/development/README.md):
+`MACRO.SAV` moved there as the assembler the emulator's projects are built
+with; `LINK.SAV` was byte for byte DEC's LINK V5.4 (`kits/dec/development/`
+had the same bytes from DEC's sources) and the one copy is there.
