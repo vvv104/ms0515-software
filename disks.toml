@@ -899,18 +899,6 @@ files = ["kits/common/utils/NEG.SAV"]
 
 # -- diskette formatters
 
-[bundle.patch-rt11]
-title    = "SLP, PAT, SIPP - patching sources, objects and programs"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/SLP.SAV", "kits/common/utils/PAT.SAV", "kits/common/utils/SIPP.SAV"]
-
-[bundle.strip-rt11]
-title    = "STRIP and SPLIT"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/STRIP.SAV", "kits/common/utils/SPLIT.SAV"]
-
 [bundle.calend]
 kit      = "common"
 title = "CALEND - calendar for 1583-5000"
@@ -1389,6 +1377,18 @@ date     = "1995-04-01"   # this copy carried none; the disks' other copies say 
 provides = ["macro11"]
 requires = ["sysmac"]
 files    = ["software/development/fodos/omega/MACRO.SAV"]
+
+[bundle.patch-rt11]
+title    = "SLP, PAT, SIPP - patching sources, objects and programs"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/SLP.SAV", "software/development/PAT.SAV", "software/development/SIPP.SAV"]
+
+[bundle.strip-rt11]
+title    = "STRIP and SPLIT"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/STRIP.SAV", "software/development/SPLIT.SAV"]
 
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system

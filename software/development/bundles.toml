@@ -171,6 +171,18 @@ provides = ["macro11"]
 requires = ["sysmac"]
 files    = ["software/development/fodos/omega/MACRO.SAV"]
 
+[bundle.patch-rt11]
+title    = "SLP, PAT, SIPP - patching sources, objects and programs"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/SLP.SAV", "software/development/PAT.SAV", "software/development/SIPP.SAV"]
+
+[bundle.strip-rt11]
+title    = "STRIP and SPLIT"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/STRIP.SAV", "software/development/SPLIT.SAV"]
+
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
 # (rt11_devel/projects/decusc of the emulator), in two builds of the same

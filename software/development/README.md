@@ -6,8 +6,8 @@ the BASICs, the dump viewer - and, in this folder itself, what every
 language's build goes through: the assembler, the linker, the system macro library and the system object
 library the emulator's own projects are built with (`rt11_devel/` there
 composes its build system from these - DEC's, built from its V5.4 sources
-by `rt11_devel/projects/rt11`), the librarian, the debugger and the
-library comparer.  The kits' own system libraries, another pair, are in
+by `rt11_devel/projects/rt11`), the librarian, the debugger, the
+library comparer and the patchers.  The kits' own system libraries, another pair, are in
 `fodos/`.
 
 | where | what |
@@ -27,6 +27,8 @@ library comparer.  The kits' own system libraries, another pair, are in
 | `SYSLIB.OBJ` | DEC's system object library. Not interchangeable with the Pascal kit's `SYSLIB.OBJ` (`fodos/`): a `PIP` linked against that one builds without a complaint and dies of an overlay error |
 | `LIBCOM.SAV` | Compares two object libraries module by module |
 | `LIBR.SAV` | The librarian, built from DEC's V5.4 sources.  No kit of the machine had one, so no library could be rebuilt | `RUN LIBR` |
+| `SLP.SAV` `PAT.SAV` `SIPP.SAV` | Patching sources, objects and programs - how DEC shipped its corrections | `R SLP`, `R PAT`, `R SIPP` |
+| `STRIP.SAV` `SPLIT.SAV` | Takes the symbols off a program; cuts a file in parts | `R STRIP`, `R SPLIT` |
 | `ODT.OBJ` | The octal debugger, to be linked into the program it debugs | object module for LINK |
 
 `MACRO.SAV` is the FODOS kit's of the vvv104 disks and `LINK.SAV` DEC's,

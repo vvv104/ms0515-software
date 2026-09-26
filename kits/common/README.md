@@ -6,7 +6,7 @@ The wizard shows these under **System**, after the chosen system's own files, wh
 
 | where | what |
 |---|---|
-| [`utils/`](utils/README.md) | the RT-11 utilities no second build of which survived — `SLP`/`PAT`/`SIPP`, `STRIP`/`SPLIT` — and the little programs of the machine: the screen colours, the date setter, the bad-block scanner, the text formatter |
+| [`utils/`](utils/README.md) | the little programs of the machine: the screen colours, the date setter, the bad-block scanner, the text formatter |
 
 A file here has no rival build in the collection.  Where two kits' disks carried different builds of a program — `DIR`, `DUP`, `PIP`, `MACRO`, `LINK`, `HELP`, `RESORC`, `DUMP`, `DATIME`, `SL` — each stays in the folder of its kit, and the wizard offers them as alternatives.
 
