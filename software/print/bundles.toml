@@ -1,0 +1,27 @@
+# ==== Printing ====================================================
+
+[bundle.out17]
+title = "OUT17 - text files to the MS6317 ink-jet printer"
+group = "Printing"
+date  = "1995-01-01"
+files = ["software/print/OUT17.SAV", "software/print/OUT17.DOC"]
+
+[bundle.outc]
+title = "OUTC - text files to the SM6337 printer"
+group = "Printing"
+date  = "1995-01-01"
+files = ["software/print/OUTC.SAV", "software/print/OUTC.DOC"]
+
+[bundle.out2]
+title = "OUT2 - of the OUT printing family"
+group = "Printing"
+date  = "1991-12-17"
+files = ["software/print/OUT2.SAV"]
+
+[bundle.p6337]
+title = "6337 - print utility for the MS 6337 printer"
+group = "Printing"
+date  = "1995-01-01"
+files = ["software/print/6337.SAV"]
+
+# -- diagnostics

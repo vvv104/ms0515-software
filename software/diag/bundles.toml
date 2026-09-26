@@ -1,0 +1,27 @@
+# ==== Diagnostics =================================================
+
+[bundle.geteml]
+title = "GETEML - the loadable EIS/FIS instruction emulator"
+group = "Diagnostics"
+date  = "1991-10-18"
+files = ["software/diag/GETEML.SAV"]
+
+[bundle.exerciser]
+title = "183107 - the factory exerciser"
+group = "Diagnostics"
+date  = "1991-01-15"
+files = ["software/diag/183107.SAV"]
+
+[bundle.timing]
+title    = "The C* instruction-timing suite"
+group    = "Diagnostics"
+date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
+requires = ["geteml"]
+volume   = "any"
+files    = ["software/diag/C*.SAV"]
+
+[bundle.scan-codes]
+title = "SCN15I - keyboard scan-code viewer"
+group = "Diagnostics"
+date  = "1995-04-25"   # the disk says 2027: an age bit, 1995 + 32
+files = ["software/diag/SCN15I.SAV"]

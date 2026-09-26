@@ -1,14 +1,12 @@
 # Common to every system
 
-What runs on any of the monitors here and of which the collection has one build — so it belongs to no kit and is listed with every one of them. A kit's folder holds what is its own; this one holds what is everyone's, in the same shape: `utils/`, `print/`, `diag/`, `shells/`.  What one writes programs with is not here any more but under [`software/development/`](../../software/development/README.md), the kits' own system libraries included.
+What runs on any of the monitors here and of which the collection has one build — so it belongs to no kit and is listed with every one of them. A kit's folder holds what is its own; this one holds what is everyone's, in the same shape: `utils/`, `shells/`.  The printing programs and the diagnostics are under [`software/print/`](../../software/print/README.md) and [`software/diag/`](../../software/diag/README.md).  What one writes programs with is not here any more but under [`software/development/`](../../software/development/README.md), the kits' own system libraries included.
 
 The wizard shows these under **System**, after the chosen system's own files, whichever system that is.
 
 | where | what |
 |---|---|
 | [`utils/`](utils/README.md) | the RT-11 utilities no second build of which survived — `FORMAT`, `SLP`/`PAT`/`SIPP`, `STRIP`/`SPLIT` — and the little programs of the machine: the screen colours, the date setter, the bad-block scanner, the text formatter |
-| [`print/`](print/README.md) | the printing programs |
-| [`diag/`](diag/README.md) | the factory exerciser, the instruction-timing meters, the scan-code viewer, the instruction emulator `GETEML` |
 | [`shells/`](shells/README.md) | `SCE`, the one shell that is nobody's kit |
 
 A file here has no rival build in the collection.  Where two kits' disks carried different builds of a program — `DIR`, `DUP`, `PIP`, `MACRO`, `LINK`, `HELP`, `RESORC`, `DUMP`, `DATIME`, `SL` — each stays in the folder of its kit, and the wizard offers them as alternatives.
