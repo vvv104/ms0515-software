@@ -105,12 +105,3 @@ provides = ["link"]
 date     = "1986-09-05"
 files    = ["kits/mihin/development/LINK.SAV"]
 
-[bundle.fdz]
-title    = "FDZ - diskette formatter (Mihin-soft & SPF Sensor)"
-kit      = "mihin"
-group    = "Utilities / Formatters"
-provides = ["formatter"]
-date     = "1991-07-04"
-files    = ["kits/mihin/format/FDZ.SAV"]
-
-# -- printing

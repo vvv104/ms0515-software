@@ -445,13 +445,6 @@ provides = ["dump"]
 date     = "1987-12-16"
 files    = ["kits/omega/utils/DUMP.SAV"]
 
-[bundle.form-omega]
-title    = "FORML, FORMH - diskette formatters (OMEGA build)"
-kit      = "omega"
-provides = ["formatter"]
-date     = "1992-01-14"
-files    = ["kits/omega/format/FORML.SAV", "kits/omega/format/FORMH.SAV"]
-
 [bundle.macro-omega]
 title    = "MACRO V05.01b (OMEGA disk 064)"
 kit      = "omega"
@@ -558,15 +551,6 @@ provides = ["link"]
 date     = "1986-09-05"
 files    = ["kits/mihin/development/LINK.SAV"]
 
-[bundle.fdz]
-title    = "FDZ - diskette formatter (Mihin-soft & SPF Sensor)"
-kit      = "mihin"
-group    = "Utilities / Formatters"
-provides = ["formatter"]
-date     = "1991-07-04"
-files    = ["kits/mihin/format/FDZ.SAV"]
-
-# -- printing
 [bundle.dz-rodionov]
 title    = "DZ.SYS - the floppy handler (Rodionov)"
 kit      = "rodionov"
@@ -875,13 +859,6 @@ provides = ["datime"]
 date     = "1995-04-01"
 files    = ["kits/vvv/utils/DATIME.SAV"]
 
-[bundle.form-vvv]
-title    = "FORML, FORMH - diskette formatters (vvv104 build)"
-kit      = "vvv"
-provides = ["formatter"]
-date     = "1995-04-01"
-files    = ["kits/vvv/format/FORML.SAV", "kits/vvv/format/FORMH.SAV"]
-
 [bundle.bincom]
 kit      = "vvv"
 title = "BINCOM V05.08 - binary compare"
@@ -944,12 +921,6 @@ date  = "1992-12-04"
 files = ["kits/common/utils/NEG.SAV"]
 
 # -- diskette formatters
-
-[bundle.format-rt11]
-title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/FORMAT.SAV"]
 
 [bundle.patch-rt11]
 title    = "SLP, PAT, SIPP - patching sources, objects and programs"
@@ -1588,6 +1559,36 @@ files    = ["software/development/decusc/eis/BANNER.SAV",
             "software/development/decusc/eis/PHBOOK.SAV",
             "software/development/decusc/eis/PTR.SAV",
             "software/development/decusc/eis/SH.SAV"]
+# ==== Formatters ===========================================================
+
+[bundle.format-rt11]
+title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
+group    = "Formatters"
+date     = "1999-12-31"
+files    = ["software/format/FORMAT.SAV"]
+
+[bundle.fdz]
+title    = "FDZ - diskette formatter (Mihin-soft & SPF Sensor)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1991-07-04"
+files    = ["software/format/FDZ.SAV"]
+
+# -- printing
+
+[bundle.form-omega]
+title    = "FORML, FORMH - diskette formatters (OMEGA build)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1992-01-14"
+files    = ["software/format/omega/FORML.SAV", "software/format/omega/FORMH.SAV"]
+
+[bundle.form-vvv]
+title    = "FORML, FORMH - diskette formatters (vvv104 build)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1995-04-01"
+files    = ["software/format/vvv/FORML.SAV", "software/format/vvv/FORMH.SAV"]
 # ==== Editors ==============================================================
 
 [bundle.ked]

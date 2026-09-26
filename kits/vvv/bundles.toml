@@ -44,13 +44,6 @@ provides = ["datime"]
 date     = "1995-04-01"
 files    = ["kits/vvv/utils/DATIME.SAV"]
 
-[bundle.form-vvv]
-title    = "FORML, FORMH - diskette formatters (vvv104 build)"
-kit      = "vvv"
-provides = ["formatter"]
-date     = "1995-04-01"
-files    = ["kits/vvv/format/FORML.SAV", "kits/vvv/format/FORMH.SAV"]
-
 [bundle.bincom]
 kit      = "vvv"
 title = "BINCOM V05.08 - binary compare"

@@ -61,12 +61,6 @@ files = ["kits/common/utils/NEG.SAV"]
 
 # -- diskette formatters
 
-[bundle.format-rt11]
-title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/FORMAT.SAV"]
-
 [bundle.patch-rt11]
 title    = "SLP, PAT, SIPP - patching sources, objects and programs"
 kit      = "common"

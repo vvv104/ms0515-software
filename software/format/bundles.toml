@@ -1,0 +1,30 @@
+# ==== Formatters ===========================================================
+
+[bundle.format-rt11]
+title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
+group    = "Formatters"
+date     = "1999-12-31"
+files    = ["software/format/FORMAT.SAV"]
+
+[bundle.fdz]
+title    = "FDZ - diskette formatter (Mihin-soft & SPF Sensor)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1991-07-04"
+files    = ["software/format/FDZ.SAV"]
+
+# -- printing
+
+[bundle.form-omega]
+title    = "FORML, FORMH - diskette formatters (OMEGA build)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1992-01-14"
+files    = ["software/format/omega/FORML.SAV", "software/format/omega/FORMH.SAV"]
+
+[bundle.form-vvv]
+title    = "FORML, FORMH - diskette formatters (vvv104 build)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1995-04-01"
+files    = ["software/format/vvv/FORML.SAV", "software/format/vvv/FORMH.SAV"]

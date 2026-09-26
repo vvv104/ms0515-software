@@ -2,7 +2,7 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 69 files</summary>
+<details open><summary><b>kits/</b> — 64 files</summary>
 
 <details><summary><b>kits/common/</b> — 11 files</summary>
 
@@ -78,7 +78,7 @@ Sets the screen to white and returns to the monitor; the counterpart of BLACK.SA
 
 </details>
 
-<details><summary><b>kits/mihin/</b> — 15 files</summary>
+<details><summary><b>kits/mihin/</b> — 14 files</summary>
 
 <details><summary><b>kits/mihin/development/</b> — 2 files</summary>
 
@@ -93,16 +93,6 @@ LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01
 MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
 
 *written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
-
-</details>
-
-<details><summary><b>kits/mihin/format/</b> — 1 files</summary>
-
-### `kits/mihin/format/FDZ.SAV`
-
-Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990.  Destructive: it asks Y/N and then formats
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 4; identified from: program screen; sha256 8fc049e88d08*
 
 </details>
 
@@ -192,7 +182,7 @@ The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: 
 
 </details>
 
-<details><summary><b>kits/omega/</b> — 20 files</summary>
+<details><summary><b>kits/omega/</b> — 18 files</summary>
 
 <details><summary><b>kits/omega/development/</b> — 1 files</summary>
 
@@ -201,22 +191,6 @@ The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: 
 MACRO V05.01b - an older release of the assembler, from the ОМЕГА disk 064 alone
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 762ca9886138*
-
-</details>
-
-<details><summary><b>kits/omega/format/</b> — 2 files</summary>
-
-### `kits/omega/format/FORMH.SAV`
-
-Formats the upper surface of a diskette; asks for confirmation first.  Destructive; the lower surface is FORML
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 f9e5bb4be0f7*
-
-### `kits/omega/format/FORML.SAV`
-
-Formats the lower surface of a diskette; asks for confirmation first.  Destructive; the upper surface is FORMH
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 2c7d73a2c8f3*
 
 </details>
 
@@ -446,23 +420,7 @@ RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не н�
 
 </details>
 
-<details><summary><b>kits/vvv/</b> — 8 files</summary>
-
-<details><summary><b>kits/vvv/format/</b> — 2 files</summary>
-
-### `kits/vvv/format/FORMH.SAV`
-
-The upper-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована», a plain [Y/N] prompt).  Destructive - it formats the diskette in the drive
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 26ee03f842f5*
-
-### `kits/vvv/format/FORML.SAV`
-
-The lower-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована»).  Destructive - it formats the diskette in the drive
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 63b5b54ea831*
-
-</details>
+<details><summary><b>kits/vvv/</b> — 6 files</summary>
 
 <details><summary><b>kits/vvv/utils/</b> — 6 files</summary>
 
@@ -1838,7 +1796,7 @@ a sprite-file viewer: asks for a file of 8-word sprites and draws them with SETS
 
 </details>
 
-<details open><summary><b>software/</b> — 154 files</summary>
+<details open><summary><b>software/</b> — 159 files</summary>
 
 <details><summary><b>software/apps/</b> — 38 files</summary>
 
@@ -2447,6 +2405,48 @@ Keypad screen editor: the K13U.SAV binary with its last two English strings tran
 «Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
 
 *written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
+
+</details>
+
+<details><summary><b>software/format/</b> — 5 files</summary>
+
+### `software/format/FDZ.SAV`
+
+Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990.  Destructive: it asks Y/N and then formats
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 4; identified from: program screen; sha256 8fc049e88d08*
+
+<details><summary><b>software/format/omega/</b> — 2 files</summary>
+
+### `software/format/omega/FORMH.SAV`
+
+Formats the upper surface of a diskette; asks for confirmation first.  Destructive; the lower surface is FORML
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 f9e5bb4be0f7*
+
+### `software/format/omega/FORML.SAV`
+
+Formats the lower surface of a diskette; asks for confirmation first.  Destructive; the upper surface is FORMH
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 2c7d73a2c8f3*
+
+</details>
+
+<details><summary><b>software/format/vvv/</b> — 2 files</summary>
+
+### `software/format/vvv/FORMH.SAV`
+
+The upper-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована», a plain [Y/N] prompt).  Destructive - it formats the diskette in the drive
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 26ee03f842f5*
+
+### `software/format/vvv/FORML.SAV`
+
+The lower-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована»).  Destructive - it formats the diskette in the drive
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 63b5b54ea831*
+
+</details>
 
 </details>
 
