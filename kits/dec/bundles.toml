@@ -235,24 +235,3 @@ files    = ["kits/dec/utils/SPOOL.REL", "kits/dec/utils/QUEUE.REL", "kits/dec/ut
 # DEC's; the Pascal kit's is not, and a PIP linked against that one dies of an
 # overlay error.
 
-[bundle.sysmac-rt11]
-title    = "SYSMAC.SML - DEC's system macro library"
-kit      = "dec"
-provides = ["sysmac"]
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/SYSMAC.SML"]
-
-[bundle.syslib-rt11]
-title    = "SYSLIB.OBJ - DEC's system object library"
-kit      = "dec"
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/SYSLIB.OBJ"]
-
-[bundle.libcom-rt11]
-title    = "LIBCOM - compares two object libraries module by module"
-kit      = "dec"
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/LIBCOM.SAV"]

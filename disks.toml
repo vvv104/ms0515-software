@@ -873,27 +873,6 @@ files    = ["kits/dec/utils/SPOOL.REL", "kits/dec/utils/QUEUE.REL", "kits/dec/ut
 # DEC's; the Pascal kit's is not, and a PIP linked against that one dies of an
 # overlay error.
 
-[bundle.sysmac-rt11]
-title    = "SYSMAC.SML - DEC's system macro library"
-kit      = "dec"
-provides = ["sysmac"]
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/SYSMAC.SML"]
-
-[bundle.syslib-rt11]
-title    = "SYSLIB.OBJ - DEC's system object library"
-kit      = "dec"
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/SYSLIB.OBJ"]
-
-[bundle.libcom-rt11]
-title    = "LIBCOM - compares two object libraries module by module"
-kit      = "dec"
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/LIBCOM.SAV"]
 [bundle.dir-vvv]
 title    = "DIR (OMEGA2, MIHIN)"
 kit      = "vvv"
@@ -1103,19 +1082,6 @@ files = ["kits/common/utils/CALEND.SAV"]
 # The compilers and their libraries, the editors, the debugger and the two
 # BASICs: one build of each, and none of them minds which monitor it runs
 # under.
-
-[bundle.sysmac]
-kit      = "common"
-title = "SYSMAC.SML - the system macro library"
-provides = ["sysmac"]
-date  = "1995-04-01"
-files = ["kits/common/development/SYSMAC.SML"]
-
-[bundle.syslib]
-kit      = "common"
-title = "SYSLIB.OBJ - the system library"
-date  = "1995-04-01"
-files = ["kits/common/development/SYSLIB.OBJ"]
 
 [bundle.hello-pas]
 kit      = "common"
@@ -1555,6 +1521,41 @@ group    = "Development"
 provides = ["link"]
 date     = "1999-12-31"
 files    = ["software/development/LINK.SAV"]
+
+[bundle.sysmac]
+group    = "Development"
+title = "SYSMAC.SML - the system macro library"
+provides = ["sysmac"]
+date  = "1995-04-01"
+files = ["software/development/fodos/SYSMAC.SML"]
+
+[bundle.syslib]
+group    = "Development"
+title = "SYSLIB.OBJ - the system library"
+date  = "1995-04-01"
+files = ["software/development/fodos/SYSLIB.OBJ"]
+
+[bundle.sysmac-rt11]
+title    = "SYSMAC.SML - DEC's system macro library"
+group    = "Development"
+provides = ["sysmac"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["software/development/SYSMAC.SML"]
+
+[bundle.syslib-rt11]
+title    = "SYSLIB.OBJ - DEC's system object library"
+group    = "Development"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["software/development/SYSLIB.OBJ"]
+
+[bundle.libcom-rt11]
+title    = "LIBCOM - compares two object libraries module by module"
+group    = "Development"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["software/development/LIBCOM.SAV"]
 
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system

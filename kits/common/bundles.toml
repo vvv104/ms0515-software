@@ -170,19 +170,6 @@ files = ["kits/common/utils/CALEND.SAV"]
 # BASICs: one build of each, and none of them minds which monitor it runs
 # under.
 
-[bundle.sysmac]
-kit      = "common"
-title = "SYSMAC.SML - the system macro library"
-provides = ["sysmac"]
-date  = "1995-04-01"
-files = ["kits/common/development/SYSMAC.SML"]
-
-[bundle.syslib]
-kit      = "common"
-title = "SYSLIB.OBJ - the system library"
-date  = "1995-04-01"
-files = ["kits/common/development/SYSLIB.OBJ"]
-
 [bundle.hello-pas]
 kit      = "common"
 title    = "HELLO.PAS - a Hello, world! to build first: PAS1, MACRO, LINK, RUN"

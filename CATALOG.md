@@ -2,25 +2,9 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 110 files</summary>
+<details open><summary><b>kits/</b> — 108 files</summary>
 
-<details><summary><b>kits/common/</b> — 47 files</summary>
-
-<details><summary><b>kits/common/development/</b> — 2 files</summary>
-
-### `kits/common/development/SYSLIB.OBJ`
-
-The RT-11 system library SYSLIB (28 KB) LINK draws the system calls from
-
-*disks: 5; identified from: strings 2026-09-06; sha256 5f12d6ff00e0*
-
-### `kits/common/development/SYSMAC.SML`
-
-MACRO-11 system macro library
-
-*en / ascii; disks: 4; identified from: DEC RT-11; sha256 a9d716957163*
-
-</details>
+<details><summary><b>kits/common/</b> — 45 files</summary>
 
 <details><summary><b>kits/common/diag/</b> — 26 files</summary>
 
@@ -2108,7 +2092,7 @@ a sprite-file viewer: asks for a file of 8-word sprites and draws them with SETS
 
 </details>
 
-<details open><summary><b>software/</b> — 113 files</summary>
+<details open><summary><b>software/</b> — 115 files</summary>
 
 <details><summary><b>software/apps/</b> — 38 files</summary>
 
@@ -2358,7 +2342,7 @@ Joins databases of the same shape; part of RBD-MIKRO
 
 </details>
 
-<details><summary><b>software/development/</b> — 27 files</summary>
+<details><summary><b>software/development/</b> — 29 files</summary>
 
 ### `software/development/LINK.SAV`
 
@@ -2441,6 +2425,22 @@ Keypad screen editor: the K13U.SAV binary with its last two English strings tran
 «Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
 
 *written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
+
+</details>
+
+<details><summary><b>software/development/fodos/</b> — 2 files</summary>
+
+### `software/development/fodos/SYSLIB.OBJ`
+
+The RT-11 system library SYSLIB (28 KB) LINK draws the system calls from
+
+*disks: 5; identified from: strings 2026-09-06; sha256 5f12d6ff00e0*
+
+### `software/development/fodos/SYSMAC.SML`
+
+MACRO-11 system macro library
+
+*en / ascii; disks: 4; identified from: DEC RT-11; sha256 a9d716957163*
 
 </details>
 
