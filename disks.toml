@@ -745,12 +745,6 @@ provides = ["datime"]
 date     = "1999-12-31"
 files    = ["kits/dec/utils/DATIME.SAV"]
 
-[bundle.compare-rt11]
-title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/utils/SRCCOM.SAV", "kits/dec/utils/BINCOM.SAV"]
-
 [bundle.ind-rt11]
 title    = "IND - the indirect command file processor: variables, conditions, @<EOF>"
 kit      = "dec"
@@ -1389,6 +1383,12 @@ title    = "STRIP and SPLIT"
 group    = "Development"
 date     = "1999-12-31"
 files    = ["software/development/STRIP.SAV", "software/development/SPLIT.SAV"]
+
+[bundle.compare-rt11]
+title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/SRCCOM.SAV", "software/development/BINCOM.SAV"]
 
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system

@@ -183,6 +183,12 @@ group    = "Development"
 date     = "1999-12-31"
 files    = ["software/development/STRIP.SAV", "software/development/SPLIT.SAV"]
 
+[bundle.compare-rt11]
+title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/SRCCOM.SAV", "software/development/BINCOM.SAV"]
+
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
 # (rt11_devel/projects/decusc of the emulator), in two builds of the same
