@@ -3,7 +3,7 @@
 What one uses beside a compiler, the file-handling and the debugging
 programs of the machine.  The first five are DEC's, built from its V5.4
 sources for this collection; no diskette of the machine preserved a build
-of them.  The two comparers are DEC's too - `BINCOM` of the vvv104 disks,
+of them.  The comparers, and `LIBCOM` that compares object libraries, are DEC's too - `BINCOM` of the vvv104 disks,
 another build, is with the vvv kit's utilities.
 
 | file | what | how to run |
@@ -11,6 +11,7 @@ another build, is with the vvv kit's utilities.
 | `SLP.SAV` `PAT.SAV` `SIPP.SAV` | Patching sources, objects and programs - how DEC shipped its corrections | `R SLP`, `R PAT`, `R SIPP` |
 | `STRIP.SAV` `SPLIT.SAV` | Takes the symbols off a program; cuts a file in parts | `R STRIP`, `R SPLIT` |
 | `SRCCOM.SAV` `BINCOM.SAV` | `DIFFERENCES` of texts and of binaries |
+| `LIBCOM.SAV` | Compares two object libraries module by module |
 
 ## Dump viewer
 

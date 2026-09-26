@@ -146,7 +146,7 @@ title    = "LIBCOM - compares two object libraries module by module"
 group    = "Development"
 systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
-files    = ["software/development/LIBCOM.SAV"]
+files    = ["software/development/utils/LIBCOM.SAV"]
 
 [bundle.macro-mihin]
 title    = "MACRO V05.04 (Mihin's OS-16SJ disks)"
