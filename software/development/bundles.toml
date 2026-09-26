@@ -86,35 +86,6 @@ requires = ["basico"]
 volume   = "any"
 files    = ["software/development/basic/BASICO.DOC"]
 
-[bundle.ked]
-group    = "Development"
-title    = "KED - keypad screen editor (vvv104 disks)"
-provides = ["k13-editor"]
-date     = "1995-04-01"
-files    = ["software/development/editors/KED.SAV"]
-
-[bundle.k52]
-group    = "Development"
-title    = "K52 - screen editor of the OSA and OMEGA kits"
-provides = ["k13-editor"]
-date     = "1991-01-31"
-files    = [{ path = "software/development/editors/K13U.SAV", as = "K52.SAV" }]
-
-[bundle.r15]
-group    = "Development"
-title    = "R15 - Rodionov's edition of the editor, with its help"
-provides = ["k13-editor"]
-date     = "1990-11-29"
-files    = ["software/development/editors/R15.SAV",
-            { path = "software/development/editors/R15.HLP", date = "1993-03-24" }]
-
-[bundle.r15-docs]
-group    = "Development"
-title    = "R15.DOC - the manual of the K13 family editor"
-volume   = "any"
-date     = "1993-08-09"
-files    = ["software/development/editors/R15.DOC"]
-
 [bundle.dess]
 group    = "Development"
 title = "DESS - DEZI dump viewer and disassembler"

@@ -2,9 +2,8 @@
 
 What one writes programs with on this machine, in the one build the
 collection has of each - the compilers with their libraries and manuals,
-the BASICs, the screen editor in its three cuts, the dump viewer - and, in
-this folder itself, what every language's build goes through: the
-assembler, the linker, the system macro library and the system object
+the BASICs, the dump viewer - and, in this folder itself, what every
+language's build goes through: the assembler, the linker, the system macro library and the system object
 library the emulator's own projects are built with (`rt11_devel/` there
 composes its build system from these - DEC's, built from its V5.4 sources
 by `rt11_devel/projects/rt11`), the librarian, the debugger and the
@@ -16,7 +15,6 @@ library comparer.  The kits' own system libraries, another pair, are in
 | [`pascal/`](pascal/README.md) | OMSI Pascal-1: `PAS1` with its libraries, the graphics library, the units, the manuals, the sprite maker |
 | [`fortran/`](fortran/README.md) | FORTRAN IV with its library |
 | [`basic/`](basic/README.md) | БЕЙСИК-ОМЕГА and BASIC/RAFOS |
-| [`editors/`](editors/README.md) | the screen editor in its three cuts: `K13U`, `KED`, `R15` |
 | [`dezi/`](dezi/README.md) | DEZI, the octal dump viewer, and its rebadged twin |
 | [`fodos/`](fodos/README.md) | the system macro library and the system object library of the machine's kits, the same files on every kit's disks - what PAS1's and FORTRAN's programs link against |
 | [`decusc/`](decusc/README.md) | DECUS C, rebuilt from the RT-11 SIG tape's sources: the files themselves for the machine as it is, `eis/` for the machine with `EM.SYS`, the headers, the tape's software tools |

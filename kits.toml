@@ -9,6 +9,7 @@ areas = [
     "software/games",
     "software/apps",
     "software/development",
+    "software/editors",
 ]
 
 # ---- kits ----------------------------------------------------------------

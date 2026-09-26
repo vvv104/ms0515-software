@@ -2342,7 +2342,7 @@ Joins databases of the same shape; part of RBD-MIKRO
 
 </details>
 
-<details><summary><b>software/development/</b> — 29 files</summary>
+<details><summary><b>software/development/</b> — 24 files</summary>
 
 ### `software/development/LINK.SAV`
 
@@ -2391,40 +2391,6 @@ DEZI V05.01, 'Originally written by D. Climov' (phone in the banner): an interac
 DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local rebadge of DESS.SAV, the same program (string tables byte-identical); unrelated to the small REDUMP.PAS in PROGS.DSK
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: banner comparison: 'REDUMP B5.0e ...ginally written by D. Climov'; sha256 f29f7dc3113d*
-
-</details>
-
-<details><summary><b>software/development/editors/</b> — 5 files</summary>
-
-### `software/development/editors/K13U.SAV`
-
-Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 8; identified from: byte diff of the family 2026-09-06; sha256 c80b5bca6911*
-
-### `software/development/editors/KED.SAV`
-
-Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: byte diff of the family 2026-09-06; sha256 788620421a59*
-
-### `software/development/editors/R15.DOC`
-
-«Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands
-
-*ru+en / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 d1558cc2f063*
-
-### `software/development/editors/R15.HLP`
-
-«Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key
-
-*ru / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 e81b3cc40142*
-
-### `software/development/editors/R15.SAV`
-
-«Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
 
 </details>
 
@@ -2541,6 +2507,40 @@ String library for OMSI Pascal (which has no string type): STRING = array[1..79]
 *disks: 2; identified from: read from the source 2026-09-06; sha256 7810b7a6abab*
 
 </details>
+
+</details>
+
+<details><summary><b>software/editors/</b> — 5 files</summary>
+
+### `software/editors/K13U.SAV`
+
+Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 8; identified from: byte diff of the family 2026-09-06; sha256 c80b5bca6911*
+
+### `software/editors/KED.SAV`
+
+Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: byte diff of the family 2026-09-06; sha256 788620421a59*
+
+### `software/editors/R15.DOC`
+
+«Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands
+
+*ru+en / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 d1558cc2f063*
+
+### `software/editors/R15.HLP`
+
+«Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key
+
+*ru / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 e81b3cc40142*
+
+### `software/editors/R15.SAV`
+
+«Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
 
 </details>
 
