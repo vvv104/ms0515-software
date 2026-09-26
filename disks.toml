@@ -1565,7 +1565,7 @@ files  = ["software/apps/rbd-mikro/*"]
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
 # (rt11_devel/projects/decusc of the emulator), in two builds of the same
-# names: noeis for the machine as it is, eis for the machine with
+# names: the folder itself for the machine as it is, eis/ for the machine with
 # EM.SYS, the instruction emulator.  A diskette takes one of the two; the
 # headers serve either, and the tools come in three parts so that one fits
 # beside the compiler.
@@ -1577,12 +1577,12 @@ provides = ["decus-c"]
 requires = ["link"]
 prefer   = { mihin = ["link-mihin"], default = ["link-vvv"] }
 date     = "1983-10-13"
-files    = ["software/development/decusc/noeis/CC.SAV",
-            "software/development/decusc/noeis/AS.SAV",
-            "software/development/decusc/noeis/CLIB.OBJ",
-            "software/development/decusc/noeis/SUPORT.OBJ",
-            "software/development/decusc/noeis/DTOA.OBJ",
-            "software/development/decusc/noeis/ATOF.OBJ"]
+files    = ["software/development/decusc/CC.SAV",
+            "software/development/decusc/AS.SAV",
+            "software/development/decusc/CLIB.OBJ",
+            "software/development/decusc/SUPORT.OBJ",
+            "software/development/decusc/DTOA.OBJ",
+            "software/development/decusc/ATOF.OBJ"]
 
 [bundle.decusc-eis]
 group    = "Development"
@@ -1625,55 +1625,55 @@ files    = ["software/development/decusc/include/BUILD.H",
 group    = "Development"
 title    = "DECUS C - the text tools: GREP, DIFF, COMM, UNIQ, WC, SORTC, PR, OD, MC, NC, DETAB, ENTAB, SCAT, SCOPY, LINEPR, ECHO"
 date     = "1983-10-13"
-files    = ["software/development/decusc/noeis/COMM.SAV",
-            "software/development/decusc/noeis/DETAB.SAV",
-            "software/development/decusc/noeis/DIFF.SAV",
-            "software/development/decusc/noeis/ECHO.SAV",
-            "software/development/decusc/noeis/ENTAB.SAV",
-            "software/development/decusc/noeis/GREP.SAV",
-            "software/development/decusc/noeis/LINEPR.SAV",
-            "software/development/decusc/noeis/MC.SAV",
-            "software/development/decusc/noeis/NC.SAV",
-            "software/development/decusc/noeis/OD.SAV",
-            "software/development/decusc/noeis/PR.SAV",
-            "software/development/decusc/noeis/SCAT.SAV",
-            "software/development/decusc/noeis/SCOPY.SAV",
-            "software/development/decusc/noeis/SORTC.SAV",
-            "software/development/decusc/noeis/UNIQ.SAV",
-            "software/development/decusc/noeis/WC.SAV"]
+files    = ["software/development/decusc/COMM.SAV",
+            "software/development/decusc/DETAB.SAV",
+            "software/development/decusc/DIFF.SAV",
+            "software/development/decusc/ECHO.SAV",
+            "software/development/decusc/ENTAB.SAV",
+            "software/development/decusc/GREP.SAV",
+            "software/development/decusc/LINEPR.SAV",
+            "software/development/decusc/MC.SAV",
+            "software/development/decusc/NC.SAV",
+            "software/development/decusc/OD.SAV",
+            "software/development/decusc/PR.SAV",
+            "software/development/decusc/SCAT.SAV",
+            "software/development/decusc/SCOPY.SAV",
+            "software/development/decusc/SORTC.SAV",
+            "software/development/decusc/UNIQ.SAV",
+            "software/development/decusc/WC.SAV"]
 
 [bundle.decusc-devtools]
 group    = "Development"
 title    = "DECUS C - the tools of C development: MP (the macro preprocessor), NM, XRF, BUILD, GETCMD, ARCH, KWIK, GETKWK, GETRNO, RNOIDX, FIXDOC, T"
 date     = "1983-10-13"
-files    = ["software/development/decusc/noeis/ARCH.SAV",
-            "software/development/decusc/noeis/BUILD.SAV",
-            "software/development/decusc/noeis/FIXDOC.SAV",
-            "software/development/decusc/noeis/GETCMD.SAV",
-            "software/development/decusc/noeis/GETKWK.SAV",
-            "software/development/decusc/noeis/GETRNO.SAV",
-            "software/development/decusc/noeis/KWIK.SAV",
-            "software/development/decusc/noeis/MP.SAV",
-            "software/development/decusc/noeis/NM.SAV",
-            "software/development/decusc/noeis/RNOIDX.SAV",
-            "software/development/decusc/noeis/T.SAV",
-            "software/development/decusc/noeis/XRF.SAV"]
+files    = ["software/development/decusc/ARCH.SAV",
+            "software/development/decusc/BUILD.SAV",
+            "software/development/decusc/FIXDOC.SAV",
+            "software/development/decusc/GETCMD.SAV",
+            "software/development/decusc/GETKWK.SAV",
+            "software/development/decusc/GETRNO.SAV",
+            "software/development/decusc/KWIK.SAV",
+            "software/development/decusc/MP.SAV",
+            "software/development/decusc/NM.SAV",
+            "software/development/decusc/RNOIDX.SAV",
+            "software/development/decusc/T.SAV",
+            "software/development/decusc/XRF.SAV"]
 
 [bundle.decusc-misc]
 group    = "Development"
 title    = "DECUS C - the rest of the tape's kit: BANNER, CALEND, CRYPT, DUAL, E, GRAB, HACK, KALEID, PHBOOK, PTR, SH"
 date     = "1983-10-13"
-files    = ["software/development/decusc/noeis/BANNER.SAV",
-            "software/development/decusc/noeis/CALEND.SAV",
-            "software/development/decusc/noeis/CRYPT.SAV",
-            "software/development/decusc/noeis/DUAL.SAV",
-            "software/development/decusc/noeis/E.SAV",
-            "software/development/decusc/noeis/GRAB.SAV",
-            "software/development/decusc/noeis/HACK.SAV",
-            "software/development/decusc/noeis/KALEID.SAV",
-            "software/development/decusc/noeis/PHBOOK.SAV",
-            "software/development/decusc/noeis/PTR.SAV",
-            "software/development/decusc/noeis/SH.SAV"]
+files    = ["software/development/decusc/BANNER.SAV",
+            "software/development/decusc/CALEND.SAV",
+            "software/development/decusc/CRYPT.SAV",
+            "software/development/decusc/DUAL.SAV",
+            "software/development/decusc/E.SAV",
+            "software/development/decusc/GRAB.SAV",
+            "software/development/decusc/HACK.SAV",
+            "software/development/decusc/KALEID.SAV",
+            "software/development/decusc/PHBOOK.SAV",
+            "software/development/decusc/PTR.SAV",
+            "software/development/decusc/SH.SAV"]
 
 [bundle.decusc-tools-eis]
 group    = "Development"

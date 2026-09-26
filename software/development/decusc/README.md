@@ -16,7 +16,7 @@ Two builds, the same names in each, so a diskette takes one folder whole:
 
 | folder | for | how |
 |---|---|---|
-| [`noeis/`](noeis/) | the machine as it is | `RT11.MAC`: `C$$EIS = 0`, multiply, divide and shift by the library; `CC` calls the library unless told `/E` |
+| the folder itself | the machine as it is | `RT11.MAC`: `C$$EIS = 0`, multiply, divide and shift by the library; `CC` calls the library unless told `/E` |
 | [`eis/`](eis/) | the machine with `EM.SYS` (`SET EM SYSGEN`, `SET EM ON`), the EIS instructions emulated | `RT11.EIS`: the instructions inline in the library, and `CC` makes them inline unless told `/N` |
 | [`include/`](include/) | both | the headers, as the tape's kit had them |
 
