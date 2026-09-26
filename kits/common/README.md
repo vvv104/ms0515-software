@@ -8,6 +8,7 @@ The wizard shows these under **System**, after the chosen system's own files, wh
 |---|---|
 | [`utils/`](utils/README.md) | the RT-11 utilities no second build of which survived — `EDIT`, `FORMAT`, `SLP`/`PAT`/`SIPP`, `STRIP`/`SPLIT` — and the little programs of the machine: the screen colours, the date setter, the bad-block scanner, the text formatter |
 | [`development/`](development/README.md) | what one writes programs with: the macro library, Pascal, FORTRAN, the two BASICs, the screen editor in its three cuts, the dump viewer, `LIBR` and `ODT` |
+| [`decusc/`](decusc/README.md) | DECUS C, the C compiler of the machine's own C programs, rebuilt from its sources: `no-eis/` for the machine as it is, `with-eis/` for the machine with `EM.SYS`, the same names in each, and the tape's software tools (`GREP`, `DIFF`, `WC`, `MP`...) built both ways |
 | [`print/`](print/README.md) | the printing programs |
 | [`diag/`](diag/README.md) | the factory exerciser, the instruction-timing meters, the scan-code viewer, the instruction emulator `GETEML` |
 | [`shells/`](shells/README.md) | `SCE`, the one shell that is nobody's kit |
