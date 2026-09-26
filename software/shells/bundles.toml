@@ -1,0 +1,36 @@
+# ==== Shells ===============================================================
+
+[bundle.sce]
+title = "SCE - two-panel file manager, with its help"
+group = "Shells"
+date  = "1993-09-29"
+files = ["software/shells/SCE.SAV",
+         { path = "software/shells/SCE.HLP", date = "1989-01-04" }]
+
+[bundle.rs]
+title    = "RS.SYS - EmeSoft's RT11 profShell (LOAD RS, SET RS ON)"
+group    = "Shells"
+date     = "1994-09-13"
+systems  = ["osa"]
+requires = ["em"]               # it uses EIS instructions
+files    = ["software/shells/RS.SYS"]
+
+[bundle.rosa3]
+title    = "ROSA Commander v1.3 - Rodionov's two-panel file manager"
+group    = "Shells"
+systems  = ["rodionov"]
+needs    = ["dz"]               # it hardcodes DZ0: and DZ2:
+requires = ["vm"]
+startup  = ["LOAD VM:"]         # else it stops with ?MON-F- no device as it starts
+date     = "1993-10-19"
+files    = ["software/shells/ROSA3.SAV"]
+
+[bundle.rosa-docs]
+title    = "Rodionov's instruction, advertisement and comparison sheets"
+group    = "Shells"
+systems  = ["rodionov"]
+volume   = "any"
+date     = "1993-03-18"
+files    = [{ path = "software/shells/INSTR.DOC", date = "1993-08-09" },
+            "software/shells/REKROS.DOC",
+            "software/shells/REKSYS.DOC"]

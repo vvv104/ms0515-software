@@ -2,25 +2,9 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 76 files</summary>
+<details open><summary><b>kits/</b> — 69 files</summary>
 
-<details><summary><b>kits/common/</b> — 13 files</summary>
-
-<details><summary><b>kits/common/shells/</b> — 2 files</summary>
-
-### `kits/common/shells/SCE.HLP`
-
-The help text of the SCE shell, «сделан Гостевым Дмитрием (Школа профессионального самоопределения, г. Воронеж), Copyright 12.24.1993»: the key list B-bad blocks, C-copy, D-delete, E-edit, G-run, H-help, K-create/undelete, L-dismount, M-logical disks, U-boot, W-bootstrap…
-
-*ru / koi8-r; disks: 4; identified from: read 2026-09-06; sha256 dcc37aa51ad9*
-
-### `kits/common/shells/SCE.SAV`
-
-Two-panel file manager in the Norton Commander style, Russian labels: directory panel with an info panel, command line Copy/Type/Prot/uNprot/Ren/Del/Quit/Vol/Go/Sque/Z-ini
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
-
-</details>
+<details><summary><b>kits/common/</b> — 11 files</summary>
 
 <details><summary><b>kits/common/utils/</b> — 11 files</summary>
 
@@ -348,7 +332,7 @@ The operator's page of TERM: how to call it, what «РЕЖИМ ЭМУЛЯЦИИ 
 
 </details>
 
-<details><summary><b>kits/osa/</b> — 9 files</summary>
+<details><summary><b>kits/osa/</b> — 8 files</summary>
 
 <details><summary><b>kits/osa/handlers/</b> — 6 files</summary>
 
@@ -390,16 +374,6 @@ Sound-device handler — not video despite the name
 
 </details>
 
-<details><summary><b>kits/osa/shells/</b> — 1 files</summary>
-
-### `kits/osa/shells/RS.SYS`
-
-EmeSoft's 'RT11 profShell' v06.05 (1990, build 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block pseudo-device handler. File panel with marks, and the whole toolbox on hotkeys - COPY/DELETE/RENAME/SQUEEZE/PROTECT/TYPE/DUMP (words/bytes/radix)/CREATE/INIT/MOUNT/BOOT/COPY-BOOT - plus LD containers, bad-block scan, search, saved state, and the greeting 'Жми на клавишу, не бойся ...'. Start with R RS.SYS or SET RS ON; uses EIS, so needs GETEML/EM on this machine. The System2/bg0515/superBAK7 and Buhgal monitors print its banner at boot - profShell is built into those builds
-
-*ru / koi8-r; disks: 1; identified from: strings + live run 2026-09-05 (panel and help screen captured; traps to vector 10 without the instruction emulator); sha256 484be60cb8a9*
-
-</details>
-
 <details><summary><b>kits/osa/utils/</b> — 2 files</summary>
 
 ### `kits/osa/utils/DIR.SAV`
@@ -418,7 +392,7 @@ RESORC V05.69 with Russian messages («Версия(и) =») - the plain ОСА 
 
 </details>
 
-<details><summary><b>kits/rodionov/</b> — 11 files</summary>
+<details><summary><b>kits/rodionov/</b> — 7 files</summary>
 
 <details><summary><b>kits/rodionov/handlers/</b> — 5 files</summary>
 
@@ -451,34 +425,6 @@ RAM-disk handler (memory used as a drive)
 Sound-device handler — not video despite the name
 
 *disks: 9; identified from: factory manual; sha256 fb282b1054f6*
-
-</details>
-
-<details><summary><b>kits/rodionov/shells/</b> — 4 files</summary>
-
-### `kits/rodionov/shells/INSTR.DOC`
-
-«Инструкция по работе с компьютером МС 0515» - Rodionov's one-page operating instruction for his ROSA disk: insert the ROSA diskette, power on, turn the drive latch when the music plays, enter the date at «Дата [дд-мм-гг]?», print files from the commander
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 8f1519cec69e*
-
-### `kits/rodionov/shells/REKROS.DOC`
-
-A framed advertisement sheet for Rodionov's system: «Сервисная программа … сделано на МС0515, используя RT15SJ.SYS, R15.SAV, ROSA.SAV» - copying, renaming, protection of files…
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 106e148fbc55*
-
-### `kits/rodionov/shells/REKSYS.DOC`
-
-«Сравнительные характеристики существующего и предлагаемого программного обеспечения» - Rodionov's comparison table of his programs against the standard ones, drawn in pseudo-graphics
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 7d976906483d*
-
-### `kits/rodionov/shells/ROSA3.SAV`
-
-ROSA Commander v1.3 (c) 1993 Rodionov Sergey Alekseevich, Voronezh - his two-panel file manager, launched by his boot: asks the date numerically, then panels DZ0: (left) and DZ2: (right) with a file-info box, 'protected from deletion' flags, PM help key. Needs LOAD VM: and is DZ-bound: it hardcodes DZ0:/DZ2:, so on a DV-booted Omega it dies ('?MON-F-No device', or ODT after LOAD DZ); runs fine on the DZ-pair exemplar. Refuses a copy that fails its author check
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: error 7/8 — ?MON-F-Нетустройства002146ROSACommanderv1.31993РодионовСерге; disks: 2; identified from: live on rodionov.dsk (panel screenshot) and omega.dsk 2026-09-05; sha256 b89e41c1dd2b*
 
 </details>
 
@@ -1892,7 +1838,7 @@ a sprite-file viewer: asks for a file of 8-word sprites and draws them with SETS
 
 </details>
 
-<details open><summary><b>software/</b> — 147 files</summary>
+<details open><summary><b>software/</b> — 154 files</summary>
 
 <details><summary><b>software/apps/</b> — 38 files</summary>
 
@@ -2791,6 +2737,52 @@ One of the OUT family with OUT17 and OUTC
 Prints text files on an SM6337 printer attached to the parallel port of the MS 0515
 
 *written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 21305756bd96*
+
+</details>
+
+<details><summary><b>software/shells/</b> — 7 files</summary>
+
+### `software/shells/SCE.HLP`
+
+The help text of the SCE shell, «сделан Гостевым Дмитрием (Школа профессионального самоопределения, г. Воронеж), Copyright 12.24.1993»: the key list B-bad blocks, C-copy, D-delete, E-edit, G-run, H-help, K-create/undelete, L-dismount, M-logical disks, U-boot, W-bootstrap…
+
+*ru / koi8-r; disks: 4; identified from: read 2026-09-06; sha256 dcc37aa51ad9*
+
+### `software/shells/SCE.SAV`
+
+Two-panel file manager in the Norton Commander style, Russian labels: directory panel with an info panel, command line Copy/Type/Prot/uNprot/Ren/Del/Quit/Vol/Go/Sque/Z-ini
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
+
+### `software/shells/RS.SYS`
+
+EmeSoft's 'RT11 profShell' v06.05 (1990, build 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block pseudo-device handler. File panel with marks, and the whole toolbox on hotkeys - COPY/DELETE/RENAME/SQUEEZE/PROTECT/TYPE/DUMP (words/bytes/radix)/CREATE/INIT/MOUNT/BOOT/COPY-BOOT - plus LD containers, bad-block scan, search, saved state, and the greeting 'Жми на клавишу, не бойся ...'. Start with R RS.SYS or SET RS ON; uses EIS, so needs GETEML/EM on this machine. The System2/bg0515/superBAK7 and Buhgal monitors print its banner at boot - profShell is built into those builds
+
+*ru / koi8-r; disks: 1; identified from: strings + live run 2026-09-05 (panel and help screen captured; traps to vector 10 without the instruction emulator); sha256 484be60cb8a9*
+
+### `software/shells/INSTR.DOC`
+
+«Инструкция по работе с компьютером МС 0515» - Rodionov's one-page operating instruction for his ROSA disk: insert the ROSA diskette, power on, turn the drive latch when the music plays, enter the date at «Дата [дд-мм-гг]?», print files from the commander
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 8f1519cec69e*
+
+### `software/shells/REKROS.DOC`
+
+A framed advertisement sheet for Rodionov's system: «Сервисная программа … сделано на МС0515, используя RT15SJ.SYS, R15.SAV, ROSA.SAV» - copying, renaming, protection of files…
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 106e148fbc55*
+
+### `software/shells/REKSYS.DOC`
+
+«Сравнительные характеристики существующего и предлагаемого программного обеспечения» - Rodionov's comparison table of his programs against the standard ones, drawn in pseudo-graphics
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 7d976906483d*
+
+### `software/shells/ROSA3.SAV`
+
+ROSA Commander v1.3 (c) 1993 Rodionov Sergey Alekseevich, Voronezh - his two-panel file manager, launched by his boot: asks the date numerically, then panels DZ0: (left) and DZ2: (right) with a file-info box, 'protected from deletion' flags, PM help key. Needs LOAD VM: and is DZ-bound: it hardcodes DZ0:/DZ2:, so on a DV-booted Omega it dies ('?MON-F-No device', or ODT after LOAD DZ); runs fine on the DZ-pair exemplar. Refuses a copy that fails its author check
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: error 7/8 — ?MON-F-Нетустройства002146ROSACommanderv1.31993РодионовСерге; disks: 2; identified from: live on rodionov.dsk (panel screenshot) and omega.dsk 2026-09-05; sha256 b89e41c1dd2b*
 
 </details>
 

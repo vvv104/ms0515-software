@@ -61,14 +61,6 @@ files = ["kits/common/utils/NEG.SAV"]
 
 # -- diskette formatters
 
-[bundle.sce]
-title = "SCE - two-panel file manager, with its help"
-kit      = "common"
-group = "Shells"
-date  = "1993-09-29"
-files = ["kits/common/shells/SCE.SAV",
-         { path = "kits/common/shells/SCE.HLP", date = "1989-01-04" }]
-
 [bundle.format-rt11]
 title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
 kit      = "common"

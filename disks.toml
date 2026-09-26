@@ -330,14 +330,6 @@ provides = ["resorc"]
 date     = "1990-12-27"
 files    = ["kits/osa/utils/RESORC.SAV"]
 
-[bundle.rs]
-title    = "RS.SYS - EmeSoft's RT11 profShell (LOAD RS, SET RS ON)"
-kit      = "osa"
-group    = "Shells"
-date     = "1994-09-13"
-systems  = ["osa"]
-requires = ["em"]               # it uses EIS instructions
-files    = ["kits/osa/shells/RS.SYS"]
 [bundle.dz-omega]
 title    = "DZ.SYS - the floppy handler (OMEGA)"
 kit      = "omega"
@@ -647,27 +639,6 @@ provides = ["help"]
 date     = "1990-12-27"
 files    = ["kits/rodionov/utils/HELP.SAV"]
 
-[bundle.rosa3]
-title    = "ROSA Commander v1.3 - Rodionov's two-panel file manager"
-kit      = "rodionov"
-group    = "Shells"
-systems  = ["rodionov"]
-needs    = ["dz"]               # it hardcodes DZ0: and DZ2:
-requires = ["vm"]
-startup  = ["LOAD VM:"]         # else it stops with ?MON-F- no device as it starts
-date     = "1993-10-19"
-files    = ["kits/rodionov/shells/ROSA3.SAV"]
-
-[bundle.rosa-docs]
-title    = "Rodionov's instruction, advertisement and comparison sheets"
-kit      = "rodionov"
-group    = "Shells"
-systems  = ["rodionov"]
-volume   = "any"
-date     = "1993-03-18"
-files    = [{ path = "kits/rodionov/shells/INSTR.DOC", date = "1993-08-09" },
-            "kits/rodionov/shells/REKROS.DOC",
-            "kits/rodionov/shells/REKSYS.DOC"]
 [bundle.dz-rt11]
 title    = "DZ.SYS - the floppy handler (from sources)"
 kit      = "dec"
@@ -973,14 +944,6 @@ date  = "1992-12-04"
 files = ["kits/common/utils/NEG.SAV"]
 
 # -- diskette formatters
-
-[bundle.sce]
-title = "SCE - two-panel file manager, with its help"
-kit      = "common"
-group = "Shells"
-date  = "1993-09-29"
-files = ["kits/common/shells/SCE.SAV",
-         { path = "kits/common/shells/SCE.HLP", date = "1989-01-04" }]
 
 [bundle.format-rt11]
 title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
@@ -1722,6 +1685,42 @@ date  = "1995-01-01"
 files = ["software/print/6337.SAV"]
 
 # -- diagnostics
+# ==== Shells ===============================================================
+
+[bundle.sce]
+title = "SCE - two-panel file manager, with its help"
+group = "Shells"
+date  = "1993-09-29"
+files = ["software/shells/SCE.SAV",
+         { path = "software/shells/SCE.HLP", date = "1989-01-04" }]
+
+[bundle.rs]
+title    = "RS.SYS - EmeSoft's RT11 profShell (LOAD RS, SET RS ON)"
+group    = "Shells"
+date     = "1994-09-13"
+systems  = ["osa"]
+requires = ["em"]               # it uses EIS instructions
+files    = ["software/shells/RS.SYS"]
+
+[bundle.rosa3]
+title    = "ROSA Commander v1.3 - Rodionov's two-panel file manager"
+group    = "Shells"
+systems  = ["rodionov"]
+needs    = ["dz"]               # it hardcodes DZ0: and DZ2:
+requires = ["vm"]
+startup  = ["LOAD VM:"]         # else it stops with ?MON-F- no device as it starts
+date     = "1993-10-19"
+files    = ["software/shells/ROSA3.SAV"]
+
+[bundle.rosa-docs]
+title    = "Rodionov's instruction, advertisement and comparison sheets"
+group    = "Shells"
+systems  = ["rodionov"]
+volume   = "any"
+date     = "1993-03-18"
+files    = [{ path = "software/shells/INSTR.DOC", date = "1993-08-09" },
+            "software/shells/REKROS.DOC",
+            "software/shells/REKSYS.DOC"]
 # ---- presets -------------------------------------------------------------
 # What the release builds and the web offers with one click: the bundles a
 # person would tick; what they require comes by the same rules.
