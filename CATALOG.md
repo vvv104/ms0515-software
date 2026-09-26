@@ -2,7 +2,7 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 64 files</summary>
+<details open><summary><b>kits/</b> — 61 files</summary>
 
 <details><summary><b>kits/common/</b> — 11 files</summary>
 
@@ -78,23 +78,7 @@ Sets the screen to white and returns to the monitor; the counterpart of BLACK.SA
 
 </details>
 
-<details><summary><b>kits/mihin/</b> — 14 files</summary>
-
-<details><summary><b>kits/mihin/development/</b> — 2 files</summary>
-
-### `kits/mihin/development/LINK.SAV`
-
-LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01» on Mihin's disks; the copy on ОМЕГА 064 keeps the V08.04 banner (21 bytes apart)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 84967964c932*
-
-### `kits/mihin/development/MACRO.SAV`
-
-MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
-
-</details>
+<details><summary><b>kits/mihin/</b> — 12 files</summary>
 
 <details><summary><b>kits/mihin/handlers/</b> — 5 files</summary>
 
@@ -182,17 +166,7 @@ The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: 
 
 </details>
 
-<details><summary><b>kits/omega/</b> — 18 files</summary>
-
-<details><summary><b>kits/omega/development/</b> — 1 files</summary>
-
-### `kits/omega/development/MACRO.SAV`
-
-MACRO V05.01b - an older release of the assembler, from the ОМЕГА disk 064 alone
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 762ca9886138*
-
-</details>
+<details><summary><b>kits/omega/</b> — 17 files</summary>
 
 <details><summary><b>kits/omega/handlers/</b> — 10 files</summary>
 
@@ -1796,7 +1770,7 @@ a sprite-file viewer: asks for a file of 8-word sprites and draws them with SETS
 
 </details>
 
-<details open><summary><b>software/</b> — 159 files</summary>
+<details open><summary><b>software/</b> — 162 files</summary>
 
 <details><summary><b>software/apps/</b> — 38 files</summary>
 
@@ -2046,7 +2020,7 @@ Joins databases of the same shape; part of RBD-MIKRO
 
 </details>
 
-<details><summary><b>software/development/</b> — 24 files</summary>
+<details><summary><b>software/development/</b> — 27 files</summary>
 
 ### `software/development/LINK.SAV`
 
@@ -2111,6 +2085,32 @@ The RT-11 system library SYSLIB (28 KB) LINK draws the system calls from
 MACRO-11 system macro library
 
 *en / ascii; disks: 4; identified from: DEC RT-11; sha256 a9d716957163*
+
+</details>
+
+<details><summary><b>software/development/fodos/mihin/</b> — 2 files</summary>
+
+### `software/development/fodos/mihin/LINK.SAV`
+
+LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01» on Mihin's disks; the copy on ОМЕГА 064 keeps the V08.04 banner (21 bytes apart)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 84967964c932*
+
+### `software/development/fodos/mihin/MACRO.SAV`
+
+MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
+
+</details>
+
+<details><summary><b>software/development/fodos/omega/</b> — 1 files</summary>
+
+### `software/development/fodos/omega/MACRO.SAV`
+
+MACRO V05.01b - an older release of the assembler, from the ОМЕГА disk 064 alone
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 762ca9886138*
 
 </details>
 

@@ -148,6 +148,29 @@ systems  = ["dec", "dec-ru"]
 date     = "1999-12-31"
 files    = ["software/development/LIBCOM.SAV"]
 
+[bundle.macro-mihin]
+title    = "MACRO V05.04 (Mihin's OS-16SJ disks)"
+group    = "Development"
+provides = ["macro11"]
+requires = ["sysmac"]
+date     = "1991-01-29"
+files    = ["software/development/fodos/mihin/MACRO.SAV"]
+
+[bundle.link-mihin]
+title    = "LINK V08.04 (Mihin's OS-16SJ disks)"
+group    = "Development"
+provides = ["link"]
+date     = "1986-09-05"
+files    = ["software/development/fodos/mihin/LINK.SAV"]
+
+[bundle.macro-omega]
+title    = "MACRO V05.01b (OMEGA disk 064)"
+group    = "Development"
+date     = "1995-04-01"   # this copy carried none; the disks' other copies say so
+provides = ["macro11"]
+requires = ["sysmac"]
+files    = ["software/development/fodos/omega/MACRO.SAV"]
+
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
 # (rt11_devel/projects/decusc of the emulator), in two builds of the same

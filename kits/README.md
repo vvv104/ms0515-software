@@ -8,7 +8,6 @@ found in one place:
                             folder of its own: omega/omega2/, dec/dec-ru/)
     kits/<kit>/handlers/    its .SYS files
     kits/<kit>/utils/       DIR, DUP, PIP, RESORC, HELP ... of its build
-    kits/<kit>/development/ its MACRO, LINK (Mihin's alone: the rest is in software/development/)
 
 | kit | systems | what |
 |---|---|---|

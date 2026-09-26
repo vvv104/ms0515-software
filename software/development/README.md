@@ -16,7 +16,7 @@ library comparer.  The kits' own system libraries, another pair, are in
 | [`fortran/`](fortran/README.md) | FORTRAN IV with its library |
 | [`basic/`](basic/README.md) | БЕЙСИК-ОМЕГА and BASIC/RAFOS |
 | [`dezi/`](dezi/README.md) | DEZI, the octal dump viewer, and its rebadged twin |
-| [`fodos/`](fodos/README.md) | the system macro library and the system object library of the machine's kits, the same files on every kit's disks - what PAS1's and FORTRAN's programs link against |
+| [`fodos/`](fodos/README.md) | what the machine's kits brought: the system macro library and the system object library, the same files on every kit's disks - what PAS1's and FORTRAN's programs link against - and Mihin's and the ОМЕГА kits' own MACRO and LINK |
 | [`decusc/`](decusc/README.md) | DECUS C, rebuilt from the RT-11 SIG tape's sources: the files themselves for the machine as it is, `eis/` for the machine with `EM.SYS`, the headers, the tape's software tools |
 
 | file | what | how to run |
@@ -31,4 +31,4 @@ library comparer.  The kits' own system libraries, another pair, are in
 
 `MACRO.SAV` is the FODOS kit's of the vvv104 disks and `LINK.SAV` DEC's,
 byte for byte from its sources - the vvv104 disks' LINK was the same file.
-Mihin's MACRO and LINK, other builds, are in `kits/mihin/development/`.
+Mihin's MACRO and LINK and the ОМЕГА kits' older MACRO, other builds, are in `fodos/mihin/` and `fodos/omega/`.

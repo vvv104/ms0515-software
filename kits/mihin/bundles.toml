@@ -90,18 +90,3 @@ provides = ["term"]
 date     = "1991-01-31"
 files    = ["kits/mihin/utils/TERM.SAV"]
 
-[bundle.macro-mihin]
-title    = "MACRO V05.04 (Mihin's OS-16SJ disks)"
-kit      = "mihin"
-provides = ["macro11"]
-requires = ["sysmac"]
-date     = "1991-01-29"
-files    = ["kits/mihin/development/MACRO.SAV"]
-
-[bundle.link-mihin]
-title    = "LINK V08.04 (Mihin's OS-16SJ disks)"
-kit      = "mihin"
-provides = ["link"]
-date     = "1986-09-05"
-files    = ["kits/mihin/development/LINK.SAV"]
-

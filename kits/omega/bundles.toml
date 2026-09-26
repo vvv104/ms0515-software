@@ -127,14 +127,6 @@ provides = ["dump"]
 date     = "1987-12-16"
 files    = ["kits/omega/utils/DUMP.SAV"]
 
-[bundle.macro-omega]
-title    = "MACRO V05.01b (OMEGA disk 064)"
-kit      = "omega"
-date     = "1995-04-01"   # this copy carried none; the disks' other copies say so
-provides = ["macro11"]
-requires = ["sysmac"]
-files    = ["kits/omega/development/MACRO.SAV"]
-
 [bundle.help-dec]
 title    = "HELP - DEC's original, as diskette 062 carried it (no HELP.MLB)"
 kit      = "omega"
