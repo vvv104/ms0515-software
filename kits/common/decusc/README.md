@@ -25,6 +25,14 @@ Two builds, the same names in each, so a diskette takes one folder whole:
 emulated instruction is a trap and a hundred instructions of `EM`, where
 the library's routine is a loop of twenty.
 
+In `disks.toml` the compiler is `decusc` or `decusc-eis` (one of the two),
+the headers `decusc-headers`, and the tools three parts of a diskette
+each - `decusc-tools` (the text tools), `decusc-devtools` (those of C
+development) and `decusc-misc` (the rest of the tape's kit), with `-eis`
+for the other build.  With the `dec` system on a diskette the compiler and
+the headers leave 244 blocks, and any one part of the tools fits beside
+the system alone; a `dv` volume takes everything.
+
 ## The compiler
 
 | file | what | how to run |
