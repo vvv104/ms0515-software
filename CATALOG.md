@@ -2,391 +2,9 @@
 
 One card per file of the collection: what it is, how it was identified, on which monitors it ran in the cross-run (`runs`), and where it sits in this repository.  The folders fold and unfold as the repository's own do; every card names its path.  Machine-readable twin: `catalog.csv`.
 
-<details open><summary><b>kits/</b> — 137 files</summary>
+<details open><summary><b>kits/</b> — 61 files</summary>
 
-<details><summary><b>kits/common/</b> — 72 files</summary>
-
-<details><summary><b>kits/common/development/</b> — 27 files</summary>
-
-### `kits/common/development/BASIC.SAV`
-
-BASIC / RAFOS V02-030 interpreter; asks which optional functions to load (ALL, NONE, OR INDIVIDUAL)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 dbdca9ec1f44*
-
-### `kits/common/development/BASICO.DOC`
-
-Manual of БЕЙСИК-ОМЕГА («РАЗРАБОТАН ЛЬВОВСКИМ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), 363 blocks. Pages 8-14 are lost: under blocks 29-45 the diskette holds monitor swap code, not text, and the three reads of disk5 (the only disk with the file) disagree there
-
-*ru+en / koi8-r; disks: 1; identified from: gap analysis 2026-09-06; sha256 0b2216607079*
-
-### `kits/common/development/BASICO.SAV`
-
-Omega BASIC for the Elektronika MS 0515, edition 1-01a; the native BASIC of the machine, ready prompt in Russian
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 16; identified from: program screen; sha256 9ac32ba9c014*
-
-### `kits/common/development/DESS.SAV`
-
-DEZI V05.01, 'Originally written by D. Climov' (phone in the banner): an interactive octal dump viewer-cum-disassembler - full-screen word dump with ASCII gutter, BLCK/ADDR/TYPE header, a Stack line and a live 'Macro-11:' disassembly of the word at the cursor; modes words/bytes/radix/ascii/Inst, pattern search. The machine's резидентный инструмент дизассемблирования; on all five of the keeper's disks
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DEZI-F-FilenotfoundDK:NOSUCH.XXX*; disks: 5; identified from: banner + live run on DIR.SAV 2026-09-05 (screenshot with Macro-11: HALT); sha256 bd0665c3c864*
-
-### `kits/common/development/FORLIB.OBJ`
-
-The FORTRAN IV run-time library (105 KB) that the OMSI Pascal programs are LINKed against for RAN and the FORTRAN-declared routines
-
-*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 b0e071fa478a*
-
-### `kits/common/development/FORTRA.SAV`
-
-FORTRAN compiler; prompts with * for a command line the way the RT-11 compilers do
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 8; identified from: program screen; sha256 02fa7a6e143a*
-
-### `kits/common/development/GETDAT.PAS`
-
-getdat(var d:data) - the system date (year 1972.., month, day) unpacked from the RT-11 .DATE word with inline MACRO-11 ({$C ... }), a unit for programs that stamp their output
-
-*disks: 2; identified from: read from the source 2026-09-06; sha256 b63341ce9c24*
-
-### `kits/common/development/GRAPH.P1U`
-
-Declarations file of the PASGRF graphics library for OMSI Pascal-1: the EXTERNAL procedure headers (InitGraph, SetColor, SetFon, SetBorder, SetPixel...) to include in a program that links with PASGRF.OBJ
-
-*disks: 4; identified from: read 2026-09-06; sha256 6fc757560c75*
-
-### `kits/common/development/K13U.SAV`
-
-Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 8; identified from: byte diff of the family 2026-09-06; sha256 c80b5bca6911*
-
-### `kits/common/development/KED.SAV`
-
-Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: byte diff of the family 2026-09-06; sha256 788620421a59*
-
-### `kits/common/development/PAS1.OBJ`
-
-The OMSI Pascal run-time support module («Trap to 4», «Not a valid device», «End of file on device»…) every compiled program is LINKed with
-
-*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 9cdeed1f03b1*
-
-### `kits/common/development/PAS1.SAV`
-
-First pass of the Pascal compiler; prompts with * for a command line
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 13; identified from: program screen; sha256 0e79f7b1a319*
-
-### `kits/common/development/PAS1HD.OBJ`
-
-A one-block object module whose only text is «Graphics library -- copyleft by Naumov A.I.» - the header of the graphics library
-
-*disks: 1; identified from: strings 2026-09-06; sha256 8539d3195820*
-
-### `kits/common/development/PASCAL.LST`
-
-The Pascal language listing/reference that came with the compiler. Two reads of disk5 survived; this is the clean one (the other has junk in blocks 130, 150, 168-170)
-
-*ru+en / koi8-r; disks: 1; identified from: two disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 4164731eb6c0*
-
-### `kits/common/development/PASGR.DOC`
-
-Manual of the Pascal graphics library PASGRF.OBJ: InitGraph, SetColor, SetFon, SetBorder, SetBright/ResBright, SetFlach, drawing and text routines, KbMode/inkey keyboard polling, with examples. Three reads of disk5 survived; this is the one clean one (the other two carry corrupt blocks 6-13 and 26)
-
-*ru / koi8-r; disks: 1; identified from: three disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 115fea56ecb3*
-
-### `kits/common/development/PASGRF.OBJ`
-
-The graphics library for OMSI Pascal on the МС-0515: InitGraph, SetPixel, LINE, sprites - what the graphics programs LINK with
-
-*disks: 2; identified from: strings 2026-09-06; sha256 c9cadedc0f90*
-
-### `kits/common/development/PASLIB.OBJ`
-
-The Pascal library with the terminal routines (ClrScr, GotoXY, Inkey, KbMode, cursor on/off) the programs declare EXTERNAL
-
-*disks: 5; identified from: strings 2026-09-06; sha256 5d70cb23ee66*
-
-### `kits/common/development/PASUSE.LST`
-
-«ПАСКАЛЬ - руководство программиста», 45 sheets, 1982: the Pascal programmer's manual of the machine
-
-*ru+en / koi8-r; disks: 1; identified from: title page 2026-09-06; sha256 4ec5d643b0f5*
-
-### `kits/common/development/R15.DOC`
-
-«Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands
-
-*ru+en / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 d1558cc2f063*
-
-### `kits/common/development/R15.HLP`
-
-«Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key
-
-*ru / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 e81b3cc40142*
-
-### `kits/common/development/R15.SAV`
-
-«Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
-
-### `kits/common/development/REDUMP.SAV`
-
-DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local rebadge of DESS.SAV, the same program (string tables byte-identical); unrelated to the small REDUMP.PAS in PROGS.DSK
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: banner comparison: 'REDUMP B5.0e ...ginally written by D. Climov'; sha256 f29f7dc3113d*
-
-### `kits/common/development/SETPIX.PAS`
-
-SetPixel for the 640x200 hi-res screen written straight against the hardware: the pixel byte at VRAM 40000B + 80*y + x div 8, ORed with the bit mask, with the memory-dispatcher register 177400B / its shadow at 157700B switched to reach the video bank and restored; a one-call test main follows
-
-*disks: 2; identified from: read from the source 2026-09-06; sha256 f1dbfeead45c*
-
-### `kits/common/development/SPR.SAV`
-
-«Программа создания файла спрайтов для языка PASCAL-RAFOS»: asks for the file name, the screen resolution (0 medium, 1 high) and then, sprite by sprite up to 256, the image colour, the background, the brightness and the blink, and writes the sprite file a Pascal program reads.  Not the BASIC «Редактор SPRITE» of SPRED.BAS and not what SPRED.DOC describes: the OMSI Pascal run-time messages are inside it («TRAP TO 4», «BAD SUPPORT PACKAGE»), so it was compiled with PAS1, and it answers an empty file name with «Я что-то не пойму, за каким хреном ты меня запускал?»
-
-*written in high-level (runtime library linked); text; ru+en / koi8-r; cross-run: ran; disks: 4; identified from: its own banner and the OMSI Pascal run-time strings in it 2026-09-22; sha256 578e60fc70a1*
-
-### `kits/common/development/STRING.PAS`
-
-String library for OMSI Pascal (which has no string type): STRING = array[1..79] of char with STRINIT, STRLENG, STRREAD (raw keyboard input through the external KBMODE/INKEY of PASGRF, with backspace editing), STRWRITE, STRDELETE, STRINSERT and VAL (string to real with an error position); ends with a small self-test main
-
-*disks: 2; identified from: read from the source 2026-09-06; sha256 7810b7a6abab*
-
-### `kits/common/development/SYSLIB.OBJ`
-
-The RT-11 system library SYSLIB (28 KB) LINK draws the system calls from
-
-*disks: 5; identified from: strings 2026-09-06; sha256 5f12d6ff00e0*
-
-### `kits/common/development/SYSMAC.SML`
-
-MACRO-11 system macro library
-
-*en / ascii; disks: 4; identified from: DEC RT-11; sha256 a9d716957163*
-
-</details>
-
-<details><summary><b>kits/common/diag/</b> — 26 files</summary>
-
-### `kits/common/diag/183107.SAV`
-
-The factory exerciser (Uprazhnitel MS0515 V1.0) from the manual: prints its banner, tells the operator to set the work mode in cell 001076 and drops into ODT BY DESIGN - the mode is deposited with D and the run resumed with P.  The C* timing meters are its companions
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: failed — dropped into ODT at 001414; disks: 4; identified from: program screen + factory manual; sha256 1840f4660b70*
-
-### `kits/common/diag/184106.SAV`
-
-Companion of the 183107 exerciser in .EXE form; enters ODT at 000020 on start - likely the same deposit-and-proceed interface
-
-*written in assembler (no runtime library); ru / koi8-r; cross-run: failed — dropped into ODT at 000020; disks: 1; identified from: program screen; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 320bcafba75e*
-
-### `kits/common/diag/CADD.SAV`
-
-One of the C* instruction-timing suite: measures ADD in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7c95a5ee11a9*
-
-### `kits/common/diag/CBIC.SAV`
-
-One of the C* instruction-timing suite: measures BIC in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 3b24de048137*
-
-### `kits/common/diag/CBICB.SAV`
-
-One of the C* instruction-timing suite: measures BICB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 d1e6a85d3abf*
-
-### `kits/common/diag/CBIS.SAV`
-
-One of the C* instruction-timing suite: measures BIS in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7fb87978bbf8*
-
-### `kits/common/diag/CBISB.SAV`
-
-One of the C* instruction-timing suite: measures BISB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 40b541de5d13*
-
-### `kits/common/diag/CBIT.SAV`
-
-One of the C* instruction-timing suite: measures BIT in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb39cba0174f*
-
-### `kits/common/diag/CBITB.SAV`
-
-One of the C* instruction-timing suite: measures BITB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 28f683f4b628*
-
-### `kits/common/diag/CBR.SAV`
-
-One of the C* instruction-timing suite: measures branches in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 cf9621b33508*
-
-### `kits/common/diag/CCMP.SAV`
-
-One of the C* instruction-timing suite: measures CMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 77aa3d972f8a*
-
-### `kits/common/diag/CCMPB.SAV`
-
-One of the C* instruction-timing suite: measures CMPB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 b18b1b3ff9eb*
-
-### `kits/common/diag/CJMP.SAV`
-
-One of the C* instruction-timing suite: measures JMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 2b5d91324f54*
-
-### `kits/common/diag/CMOV.SAV`
-
-Instruction timing meter: measures MOV in CPU cycles for every addressing-mode pair and prints the matrix, using the 50 Hz vector-100 interrupt as the timebase (word 1002 holds the calibration).  One of the C* suite; needs the instruction emulator resident (SET EM ON or R GETEML).  Alex_K ran it on real hardware: 7.5 MHz
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7e5894e423c7*
-
-### `kits/common/diag/CMOVB.SAV`
-
-One of the C* instruction-timing suite: measures MOVB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7ac375c0a819*
-
-### `kits/common/diag/COP1.SAV`
-
-One of the C* instruction-timing suite: measures single-operand ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 248320dd3094*
-
-### `kits/common/diag/COP2P0.SAV`
-
-One of the C* instruction-timing suite: measures two-operand ops (part 0) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb844ce2e101*
-
-### `kits/common/diag/COP2P1.SAV`
-
-One of the C* instruction-timing suite: measures two-operand ops (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 abc7103ff536*
-
-### `kits/common/diag/COP2P2.SAV`
-
-One of the C* instruction-timing suite: measures two-operand ops (part 2) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 41f4b2b03f33*
-
-### `kits/common/diag/COP2PC.SAV`
-
-One of the C* instruction-timing suite: measures PC-addressing ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 1de8fffa9acc*
-
-### `kits/common/diag/CPRF.SAV`
-
-One of the C* instruction-timing suite: measures performance summary in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 0a5c750bc8ec*
-
-### `kits/common/diag/CRDWR.SAV`
-
-One of the C* instruction-timing suite: measures memory read/write in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 6c47b746d8ef*
-
-### `kits/common/diag/CRDWR1.SAV`
-
-One of the C* instruction-timing suite: measures memory read/write (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 5a347c3b618f*
-
-### `kits/common/diag/CSOB.SAV`
-
-One of the C* instruction-timing suite: measures SOB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
-
-*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 525973b6600a*
-
-### `kits/common/diag/GETEML.SAV`
-
-Loadable instruction-set emulator: hooks the reserved-instruction vector (10), relocates to 154000 and emulates the EIS/FIS instructions the KR1807VM1 lacks (FADD/FSUB/FMUL/FDIV confirmed by disassembly; CMOV.SAV's MUL/DIV work under it too).  Resident: prints nothing.  The driver form is EM.SYS (SET EM ON)
-
-*written in assembler (no runtime library); text; cross-run: exited 7/8; disks: 5; identified from: disassembly + experiment; sha256 1491920f3588*
-
-### `kits/common/diag/SCN15I.SAV`
-
-Prints its title "Scan-code of keys (interrupt), Alphaprog" and waits for keys - a keyboard scan-code viewer
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; sha256 712a6fcb4506*
-
-</details>
-
-<details><summary><b>kits/common/print/</b> — 6 files</summary>
-
-### `kits/common/print/6337.SAV`
-
-Print utility for the МС 6337 dot-matrix printer (hence the numeric name): 'file?' asks for a text file to load, then a menu - load / print / select type (fonts long, dubble, fat, small, step 2.117) / one-side / high quality. On every rebuilt volume it dies before loading: its file-open path uses old-format EMTs (.FETCH at 011144, .LOOKUP at 011264) and fails differently per directory format ('NOT A VALID DEVICE' on a 1-segment volume, '?MON-F-Invalid directory' on 4-segment) - it apparently expects its native System3/disk4 environment. The cross verdict 'ran' only means the prompt came up
-
-*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 1; identified from: menu strings + disassembly of the failing requests + feed experiments 2026-09-05; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 95292998bc4e*
-
-### `kits/common/print/OUT17.DOC`
-
-«Утилита OUT17 предназначена для вывода текстовых файлов на струйный принтер МС6317, подключенный к параллельному порту МС0515» - its short manual, ending with Домнич's contact line
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 205f41f630d9*
-
-### `kits/common/print/OUT17.SAV`
-
-Prints text files on an MS6317 ink-jet printer attached to the parallel port of the MS 0515
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 2c85151dce6b*
-
-### `kits/common/print/OUT2.SAV`
-
-One of the OUT family with OUT17 and OUTC
-
-*written in assembler (no runtime library); cross-run: ran; disks: 4; identified from: program screen; sha256 ab17fa0a5f17*
-
-### `kits/common/print/OUTC.DOC`
-
-«Утилита OUTC предназначена для вывода текстовых файлов на принтер СМ6337, подключенный к параллельному порту МС0515» - its short manual
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 fdc0846e8e62*
-
-### `kits/common/print/OUTC.SAV`
-
-Prints text files on an SM6337 printer attached to the parallel port of the MS 0515
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 21305756bd96*
-
-</details>
-
-<details><summary><b>kits/common/shells/</b> — 2 files</summary>
-
-### `kits/common/shells/SCE.HLP`
-
-The help text of the SCE shell, «сделан Гостевым Дмитрием (Школа профессионального самоопределения, г. Воронеж), Copyright 12.24.1993»: the key list B-bad blocks, C-copy, D-delete, E-edit, G-run, H-help, K-create/undelete, L-dismount, M-logical disks, U-boot, W-bootstrap…
-
-*ru / koi8-r; disks: 4; identified from: read 2026-09-06; sha256 dcc37aa51ad9*
-
-### `kits/common/shells/SCE.SAV`
-
-Two-panel file manager in the Norton Commander style, Russian labels: directory panel with an info panel, command line Copy/Type/Prot/uNprot/Ren/Del/Quit/Vol/Go/Sque/Z-ini
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
-
-</details>
+<details><summary><b>kits/common/</b> — 11 files</summary>
 
 <details><summary><b>kits/common/utils/</b> — 11 files</summary>
 
@@ -460,41 +78,41 @@ Sets the screen to white and returns to the monitor; the counterpart of BLACK.SA
 
 </details>
 
-<details><summary><b>kits/mihin/</b> — 15 files</summary>
+<details><summary><b>kits/mihin/</b> — 12 files</summary>
 
-<details><summary><b>kits/mihin/development/</b> — 2 files</summary>
-
-### `kits/mihin/development/LINK.SAV`
-
-LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01» on Mihin's disks; the copy on ОМЕГА 064 keeps the V08.04 banner (21 bytes apart)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 84967964c932*
-
-### `kits/mihin/development/MACRO.SAV`
-
-MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
-
-</details>
-
-<details><summary><b>kits/mihin/format/</b> — 1 file</summary>
-
-### `kits/mihin/format/FDZ.SAV`
-
-Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990.  Destructive: it asks Y/N and then formats
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 4; identified from: program screen; sha256 8fc049e88d08*
-
-</details>
-
-<details><summary><b>kits/mihin/handlers/</b> — 10 files</summary>
+<details><summary><b>kits/mihin/handlers/</b> — 5 files</summary>
 
 ### `kits/mihin/handlers/SL.SYS`
 
 Сторожевых's single-line editor SL V08.00 with the banner «АДАПТАЦИЯ ДЛЯ УБПК НПФ "СЕНСОР" <1990>», the build of Mihin's disks (disk1, disk2, amk disk3).  This copy is amk disk3's, whose ten hotkey assignments were already blank
 
 *en / ascii; disks: 2; identified from: program strings; amk disk3's copy of the disk1/disk2 build; sha256 58d34aee453c*
+
+### `kits/mihin/handlers/DZ.SYS`
+
+Floppy-disk handler
+
+*disks: 4; identified from: factory manual; sha256 591620eb0ec4*
+
+### `kits/mihin/handlers/LD.SYS`
+
+Logical-disk handler: mounts a container file as a volume
+
+*en / ascii; disks: 1; identified from: DEC RT-11; sha256 1b3868364854*
+
+### `kits/mihin/handlers/TT.SYS`
+
+Terminal handler
+
+*disks: 4; identified from: factory manual; sha256 f69410a15a2b*
+
+### `kits/mihin/handlers/VM.SYS`
+
+RAM-disk handler (memory used as a drive)
+
+*disks: 4; identified from: factory manual; sha256 67036c0322c1*
+
+</details>
 
 <details><summary><b>kits/mihin/handlers/ms0111/</b> — 5 files</summary>
 
@@ -530,32 +148,6 @@ DEC's RK handler - the RK05 cartridge disk of 4800 blocks, as RK.MAC of DEC's V5
 
 </details>
 
-### `kits/mihin/handlers/DZ.SYS`
-
-Floppy-disk handler
-
-*disks: 4; identified from: factory manual; sha256 591620eb0ec4*
-
-### `kits/mihin/handlers/LD.SYS`
-
-Logical-disk handler: mounts a container file as a volume
-
-*en / ascii; disks: 1; identified from: DEC RT-11; sha256 1b3868364854*
-
-### `kits/mihin/handlers/TT.SYS`
-
-Terminal handler
-
-*disks: 4; identified from: factory manual; sha256 f69410a15a2b*
-
-### `kits/mihin/handlers/VM.SYS`
-
-RAM-disk handler (memory used as a drive)
-
-*disks: 4; identified from: factory manual; sha256 67036c0322c1*
-
-</details>
-
 <details><summary><b>kits/mihin/utils/</b> — 2 files</summary>
 
 ### `kits/mihin/utils/DATIME.SAV`
@@ -574,33 +166,7 @@ The terminal emulator as Mihin's, Rodionov's and ОМЕГА 064 disks carry it: 
 
 </details>
 
-<details><summary><b>kits/omega/</b> — 20 files</summary>
-
-<details><summary><b>kits/omega/development/</b> — 1 file</summary>
-
-### `kits/omega/development/MACRO.SAV`
-
-MACRO V05.01b - an older release of the assembler, from the ОМЕГА disk 064 alone
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 762ca9886138*
-
-</details>
-
-<details><summary><b>kits/omega/format/</b> — 2 files</summary>
-
-### `kits/omega/format/FORMH.SAV`
-
-Formats the upper surface of a diskette; asks for confirmation first.  Destructive; the lower surface is FORML
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 f9e5bb4be0f7*
-
-### `kits/omega/format/FORML.SAV`
-
-Formats the lower surface of a diskette; asks for confirmation first.  Destructive; the upper surface is FORMH
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 2c7d73a2c8f3*
-
-</details>
+<details><summary><b>kits/omega/</b> — 17 files</summary>
 
 <details><summary><b>kits/omega/handlers/</b> — 10 files</summary>
 
@@ -714,7 +280,7 @@ The operator's page of TERM: how to call it, what «РЕЖИМ ЭМУЛЯЦИИ 
 
 </details>
 
-<details><summary><b>kits/osa/</b> — 9 files</summary>
+<details><summary><b>kits/osa/</b> — 8 files</summary>
 
 <details><summary><b>kits/osa/handlers/</b> — 6 files</summary>
 
@@ -756,16 +322,6 @@ Sound-device handler — not video despite the name
 
 </details>
 
-<details><summary><b>kits/osa/shells/</b> — 1 file</summary>
-
-### `kits/osa/shells/RS.SYS`
-
-EmeSoft's 'RT11 profShell' v06.05 (1990, build 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block pseudo-device handler. File panel with marks, and the whole toolbox on hotkeys - COPY/DELETE/RENAME/SQUEEZE/PROTECT/TYPE/DUMP (words/bytes/radix)/CREATE/INIT/MOUNT/BOOT/COPY-BOOT - plus LD containers, bad-block scan, search, saved state, and the greeting 'Жми на клавишу, не бойся ...'. Start with R RS.SYS or SET RS ON; uses EIS, so needs GETEML/EM on this machine. The System2/bg0515/superBAK7 and Buhgal monitors print its banner at boot - profShell is built into those builds
-
-*ru / koi8-r; disks: 1; identified from: strings + live run 2026-09-05 (panel and help screen captured; traps to vector 10 without the instruction emulator); sha256 484be60cb8a9*
-
-</details>
-
 <details><summary><b>kits/osa/utils/</b> — 2 files</summary>
 
 ### `kits/osa/utils/DIR.SAV`
@@ -784,7 +340,7 @@ RESORC V05.69 with Russian messages («Версия(и) =») - the plain ОСА 
 
 </details>
 
-<details><summary><b>kits/rodionov/</b> — 11 files</summary>
+<details><summary><b>kits/rodionov/</b> — 7 files</summary>
 
 <details><summary><b>kits/rodionov/handlers/</b> — 5 files</summary>
 
@@ -820,34 +376,6 @@ Sound-device handler — not video despite the name
 
 </details>
 
-<details><summary><b>kits/rodionov/shells/</b> — 4 files</summary>
-
-### `kits/rodionov/shells/INSTR.DOC`
-
-«Инструкция по работе с компьютером МС 0515» - Rodionov's one-page operating instruction for his ROSA disk: insert the ROSA diskette, power on, turn the drive latch when the music plays, enter the date at «Дата [дд-мм-гг]?», print files from the commander
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 8f1519cec69e*
-
-### `kits/rodionov/shells/REKROS.DOC`
-
-A framed advertisement sheet for Rodionov's system: «Сервисная программа … сделано на МС0515, используя RT15SJ.SYS, R15.SAV, ROSA.SAV» - copying, renaming, protection of files…
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 106e148fbc55*
-
-### `kits/rodionov/shells/REKSYS.DOC`
-
-«Сравнительные характеристики существующего и предлагаемого программного обеспечения» - Rodionov's comparison table of his programs against the standard ones, drawn in pseudo-graphics
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 7d976906483d*
-
-### `kits/rodionov/shells/ROSA3.SAV`
-
-ROSA Commander v1.3 (c) 1993 Rodionov Sergey Alekseevich, Voronezh - his two-panel file manager, launched by his boot: asks the date numerically, then panels DZ0: (left) and DZ2: (right) with a file-info box, 'protected from deletion' flags, PM help key. Needs LOAD VM: and is DZ-bound: it hardcodes DZ0:/DZ2:, so on a DV-booted Omega it dies ('?MON-F-No device', or ODT after LOAD DZ); runs fine on the DZ-pair exemplar. Refuses a copy that fails its author check
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: error 7/8 — ?MON-F-Нетустройства002146ROSACommanderv1.31993РодионовСерге; disks: 2; identified from: live on rodionov.dsk (panel screenshot) and omega.dsk 2026-09-05; sha256 b89e41c1dd2b*
-
-</details>
-
 <details><summary><b>kits/rodionov/utils/</b> — 2 files</summary>
 
 ### `kits/rodionov/utils/DUMP.SAV`
@@ -866,39 +394,7 @@ RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не н�
 
 </details>
 
-<details><summary><b>kits/vvv/</b> — 10 files</summary>
-
-<details><summary><b>kits/vvv/development/</b> — 2 files</summary>
-
-### `kits/vvv/development/LINK.SAV`
-
-LINK V05.14 (its cross-reference title reads V05.15) - the linker of the collector's ФОДОС kit
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 7c3ac9ded6e2*
-
-### `kits/vvv/development/MACRO.SAV`
-
-MACRO V05.04 - the assembler of the collector's ФОДОС kit (disk3, PAPER; disk4 as well)
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 69c9775f6882*
-
-</details>
-
-<details><summary><b>kits/vvv/format/</b> — 2 files</summary>
-
-### `kits/vvv/format/FORMH.SAV`
-
-The upper-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована», a plain [Y/N] prompt).  Destructive - it formats the diskette in the drive
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 26ee03f842f5*
-
-### `kits/vvv/format/FORML.SAV`
-
-The lower-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована»).  Destructive - it formats the diskette in the drive
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 63b5b54ea831*
-
-</details>
+<details><summary><b>kits/vvv/</b> — 6 files</summary>
 
 <details><summary><b>kits/vvv/utils/</b> — 6 files</summary>
 
@@ -1684,15 +1180,15 @@ The title screen the Lyceum No. 1 coursework programs share: a drawing of the sc
 
 *written in Pascal (source on the disks); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 26cb8633555d*
 
-</details>
-
-<details><summary><b>programs/lyceum1/amk_2/</b> — 1 file</summary>
+<details><summary><b>programs/lyceum1/amk_2/</b> — 1 files</summary>
 
 ### `programs/lyceum1/amk_2/ROBA.SAV`
 
 ROBA as the lyceum's second diskette amk_2 carries it - another build, 18 blocks, every one of them different from amk_1's
 
 *written in Pascal (source on the disks); text; en / ascii; cross-run: ran; disks: 1; identified from: read 2026-09-06; the Лицей №1, disk amk_2 build; sha256 6d4df27d4a2e*
+
+</details>
 
 </details>
 
@@ -1900,7 +1396,7 @@ Morse code: a table of letters, digits and punctuation to dot-dash strings, conv
 
 </details>
 
-<details><summary><b>programs/pictures/</b> — 1 file</summary>
+<details><summary><b>programs/pictures/</b> — 1 files</summary>
 
 ### `programs/pictures/MORDA.SCR`
 
@@ -1961,122 +1457,6 @@ UKCALC worksheet («POWERR SPREADSHEET» header - UKCALC's own file format): sol
 UKCALC worksheet: solves a 2x2 linear system by Cramer's rule - cells for the determinant («Det A =», A1*B2-B1*A2), Dx, and «x=», «y=»
 
 *disks: 2; identified from: read 2026-09-06; sha256 9f76d84b36f5*
-
-<details><summary><b>programs/vvv/minesweeper/</b> — 18 files</summary>
-
-<details><summary><b>programs/vvv/minesweeper/v1.01/</b> — 9 files</summary>
-
-### `programs/vvv/minesweeper/v1.01/CHECK.PAS`
-
-CHECK: an integrity check of the game's own .SAV - sums its words, compares with the stored checksum, halts with a rude message on a mismatch, then reads the sprite table appended to the file
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/DATSPR.PAS`
-
-source of DATSPR.SAV: reads K.DAT and writes SPR.PAS
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/K.DAT`
-
-the sprite data DATSPR reads: 63 sprites of 8 words (an earlier revision of K.SPT)
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/K.HLP`
-
-the game's help, two screens of text encoded with CODTXT's stream cipher (the first two bytes seed FORTRAN's RAN, every next byte is shifted by TRUNC(RAN*256)); decoded below
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/K.PAS`
-
-the modular main program of the later minesweeper: the F9 menu (Help F1, New F2, Beginner/Intermediate/Expert F3-F5, Custom F6, Marker on/off, Best times, Exit, Version), the cursor moves, VZRYV (a mine goes off) and POBEDA (the field is cleared); the field, sprite and help code is in the modules below
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/MS.PAS`
-
-the game-logic module: SETPOLE lays the mines and draws the board, HELP reads and decodes K.HLP, BEGINNER 8x8/10, INTERMEDIATE 16x16/40, EXPERT 30x16/99; carries its own copy of the sprite table and blitter
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/RND.PAS`
-
-another revision of the same game-logic module (`{$E+}` separate compilation) that also holds CUSTOM, BESTTIMES, VERSION, MENU and the cursor/open/mark procedures - not the random-number unit of the same name in the parent folder
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/SPR.PAS`
-
-the sprite module: GETTABSPR with the 63-sprite table as assignments (the output of DATSPR), SETSPR drawing a 16x8 sprite straight into video RAM in put/or/xor modes, PUTCUR/RESCUR for the board cursor
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-### `programs/vvv/minesweeper/v1.01/TYGRF.PAS`
-
-a sprite-file viewer: asks for a file of 8-word sprites and draws them with SETSPR in either graphics mode - the blitter's test bench
-
-*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
-
-</details>
-
-### `programs/vvv/minesweeper/DATSPR.SAV`
-
-Code generator from the K minesweeper's toolchain: reads the binary sprite data K.DAT (compiled-in name) and WRITES SPR.PAS - a Pascal module with procedure GETTABSPR holding the whole 64-sprite table as assignments. Proved working: with K.DAT alongside it runs clean and produces the 21-block SPR.PAS; without it, it dies at END OF FILE. Source DATSPR.PAS and its K.DAT both survive inside PROGS.DSK (LBN 59 and 66)
-
-*written in high-level (runtime library linked); text; en / ascii; cross-run: exited; disks: 2; identified from: DATSPR.PAS read out of PROGS.DSK + a live run 2026-09-05 that generated SPR.PAS; sha256 bb3420d24b88*
-
-### `programs/vvv/minesweeper/K.COM`
-
-Build recipe of the minesweeper: PAS1 K=K, MACRO K, LINK K,PASLIB,RND,PAS1,FORLIB, then run - the vvv104 disk1 / PAPER form (links the RND unit)
-
-*disks: 3; identified from: read 2026-09-06; sha256 7c360a72f491*
-
-### `programs/vvv/minesweeper/K.MAC`
-
-MACRO-11 listing of the minesweeper (a disassembly-style listing, 000000 HALT ...); written in 256-byte records - every 512-byte block is half text, half zeros, identically in all three reads, so that is the file's own shape, not damage
-
-*disks: 1; identified from: three reads compared 2026-09-06; sha256 927a7e4fb111*
-
-### `programs/vvv/minesweeper/K.PAS`
-
-PROGRAM MINESWEEPER, the EARLIER version - the single-file source of K.SAV as the PAPER/disk1 kit carried it: a fixed 16x16 field with 40 mines, no menu and no win check yet, the 16x8 sprite blitter SETSPR writing straight into video RAM, LOADSPRT reading DK:K.SPT, cursor keys / space / Enter play, ESC N quits; RND and RANDOMIZE are EXTERNAL - the RND.PAS unit beside it, exactly as K.COM links them.  The later, modular version 1.01 is in v1.01/ (the directory dates do not tell them apart - both K.PAS carry 1995-04-01, and a PIP copy re-dates a file - the code does)
-
-*disks: 2; sha256 8693d4852568*
-
-### `programs/vvv/minesweeper/K.SAV`
-
-Minesweeper by V. V. Voronkov in Pascal, 1995 (K.PAS is on the same disks); this build stops at once with "DEVIDE BY ZERO - FROM PC 024534"
-
-*written in Pascal (source on the disks); graphics; en / ascii; cross-run: failed 4/8 — runtime error: DEVIDEBYZERO-FROMPC024534.; disks: 2; identified from: program screen; sha256 d13d3474d652*
-
-### `programs/vvv/minesweeper/K.SPT`
-
-The minesweeper's SPRITE TABLE: 64 sprites of 8 words (16x8 dots) each, 1024 bytes; K.PAS loads it with LOADSPRT('DK:K.SPT') - with it K paints its full board, without it dies at the door
-
-*disks: 2; identified from: K.PAS source (RESET(F,FILNAM,'SPT'), LOADSPRT) + probe 2026-09-05; sha256 c85b883c6194*
-
-### `programs/vvv/minesweeper/PROGS.DSK`
-
-Voronkov's logical-disk container (volume PROGRAMS, owner VVV, 208 blocks) with the whole workshop of the later, modular minesweeper: K.PAS (the menu-driven main program), MS.PAS and RND.PAS (two revisions of the game-logic module), SPR.PAS (sprite table + blitter), CHECK.PAS, DATSPR.PAS with K.DAT, the encoded help K.HLP - and some twenty small Pascal programs written around it (a starfield, the knight's tour, note frequencies, a DUMP inverter, a Norton Commander mock-up...).  The minesweeper files are unpacked in v1.01/ with the help decoded, the rest in the vvv folder above
-
-*ru+en / koi8-r; disks: 1; identified from: directory and every file read 2026-09-06; K.HLP decoded with CODTXT in the emulator; sha256 f6da77542d21*
-
-### `programs/vvv/minesweeper/RND.OBJ`
-
-Object module of the RND.PAS random-number unit, as LINKed into K.SAV
-
-*disks: 2; sha256 660a3c23c741*
-
-### `programs/vvv/minesweeper/RND.PAS`
-
-Random-number unit: Rnd(Seed) - a 16-bit multiplicative generator returning seed/32767 - and Randomize(Seed) seeded from the clock (time*1000); the unit the single-file K.PAS declares EXTERNAL and K.COM links (LINK K,PASLIB,RND,PAS1,FORLIB).  Not the RND.PAS inside PROGS.DSK, which is a revision of the game-logic module (the PAS1 'ZSK OVERFLOW' incident of the emulator work was that one)
-
-*disks: 2; identified from: read from the source 2026-09-06; K.COM of the same kit; sha256 b5169280eb8a*
-
-</details>
 
 ### `programs/vvv/BIG2SM.PAS`
 
@@ -2270,15 +1650,185 @@ fills the graphics screen with random pixels, forever
 
 *identified from: read out of PROGS.DSK 2026-09-06; sha256 *
 
+<details><summary><b>programs/vvv/minesweeper/</b> — 9 files</summary>
+
+### `programs/vvv/minesweeper/DATSPR.SAV`
+
+Code generator from the K minesweeper's toolchain: reads the binary sprite data K.DAT (compiled-in name) and WRITES SPR.PAS - a Pascal module with procedure GETTABSPR holding the whole 64-sprite table as assignments. Proved working: with K.DAT alongside it runs clean and produces the 21-block SPR.PAS; without it, it dies at END OF FILE. Source DATSPR.PAS and its K.DAT both survive inside PROGS.DSK (LBN 59 and 66)
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: exited; disks: 2; identified from: DATSPR.PAS read out of PROGS.DSK + a live run 2026-09-05 that generated SPR.PAS; sha256 bb3420d24b88*
+
+### `programs/vvv/minesweeper/K.COM`
+
+Build recipe of the minesweeper: PAS1 K=K, MACRO K, LINK K,PASLIB,RND,PAS1,FORLIB, then run - the vvv104 disk1 / PAPER form (links the RND unit)
+
+*disks: 3; identified from: read 2026-09-06; sha256 7c360a72f491*
+
+### `programs/vvv/minesweeper/K.MAC`
+
+MACRO-11 listing of the minesweeper (a disassembly-style listing, 000000 HALT ...); written in 256-byte records - every 512-byte block is half text, half zeros, identically in all three reads, so that is the file's own shape, not damage
+
+*disks: 1; identified from: three reads compared 2026-09-06; sha256 927a7e4fb111*
+
+### `programs/vvv/minesweeper/K.PAS`
+
+PROGRAM MINESWEEPER, the EARLIER version - the single-file source of K.SAV as the PAPER/disk1 kit carried it: a fixed 16x16 field with 40 mines, no menu and no win check yet, the 16x8 sprite blitter SETSPR writing straight into video RAM, LOADSPRT reading DK:K.SPT, cursor keys / space / Enter play, ESC N quits; RND and RANDOMIZE are EXTERNAL - the RND.PAS unit beside it, exactly as K.COM links them.  The later, modular version 1.01 is in v1.01/ (the directory dates do not tell them apart - both K.PAS carry 1995-04-01, and a PIP copy re-dates a file - the code does)
+
+*disks: 2; sha256 8693d4852568*
+
+### `programs/vvv/minesweeper/K.SAV`
+
+Minesweeper by V. V. Voronkov in Pascal, 1995 (K.PAS is on the same disks); this build stops at once with "DEVIDE BY ZERO - FROM PC 024534"
+
+*written in Pascal (source on the disks); graphics; en / ascii; cross-run: failed 4/8 — runtime error: DEVIDEBYZERO-FROMPC024534.; disks: 2; identified from: program screen; sha256 d13d3474d652*
+
+### `programs/vvv/minesweeper/K.SPT`
+
+The minesweeper's SPRITE TABLE: 64 sprites of 8 words (16x8 dots) each, 1024 bytes; K.PAS loads it with LOADSPRT('DK:K.SPT') - with it K paints its full board, without it dies at the door
+
+*disks: 2; identified from: K.PAS source (RESET(F,FILNAM,'SPT'), LOADSPRT) + probe 2026-09-05; sha256 c85b883c6194*
+
+### `programs/vvv/minesweeper/PROGS.DSK`
+
+Voronkov's logical-disk container (volume PROGRAMS, owner VVV, 208 blocks) with the whole workshop of the later, modular minesweeper: K.PAS (the menu-driven main program), MS.PAS and RND.PAS (two revisions of the game-logic module), SPR.PAS (sprite table + blitter), CHECK.PAS, DATSPR.PAS with K.DAT, the encoded help K.HLP - and some twenty small Pascal programs written around it (a starfield, the knight's tour, note frequencies, a DUMP inverter, a Norton Commander mock-up...).  The minesweeper files are unpacked in v1.01/ with the help decoded, the rest in the vvv folder above
+
+*ru+en / koi8-r; disks: 1; identified from: directory and every file read 2026-09-06; K.HLP decoded with CODTXT in the emulator; sha256 f6da77542d21*
+
+### `programs/vvv/minesweeper/RND.OBJ`
+
+Object module of the RND.PAS random-number unit, as LINKed into K.SAV
+
+*disks: 2; sha256 660a3c23c741*
+
+### `programs/vvv/minesweeper/RND.PAS`
+
+Random-number unit: Rnd(Seed) - a 16-bit multiplicative generator returning seed/32767 - and Randomize(Seed) seeded from the clock (time*1000); the unit the single-file K.PAS declares EXTERNAL and K.COM links (LINK K,PASLIB,RND,PAS1,FORLIB).  Not the RND.PAS inside PROGS.DSK, which is a revision of the game-logic module (the PAS1 'ZSK OVERFLOW' incident of the emulator work was that one)
+
+*disks: 2; identified from: read from the source 2026-09-06; K.COM of the same kit; sha256 b5169280eb8a*
+
+</details>
+
+<details><summary><b>programs/vvv/minesweeper/v1.01/</b> — 9 files</summary>
+
+### `programs/vvv/minesweeper/v1.01/CHECK.PAS`
+
+CHECK: an integrity check of the game's own .SAV - sums its words, compares with the stored checksum, halts with a rude message on a mismatch, then reads the sprite table appended to the file
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/DATSPR.PAS`
+
+source of DATSPR.SAV: reads K.DAT and writes SPR.PAS
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/K.DAT`
+
+the sprite data DATSPR reads: 63 sprites of 8 words (an earlier revision of K.SPT)
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/K.HLP`
+
+the game's help, two screens of text encoded with CODTXT's stream cipher (the first two bytes seed FORTRAN's RAN, every next byte is shifted by TRUNC(RAN*256)); decoded below
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/K.PAS`
+
+the modular main program of the later minesweeper: the F9 menu (Help F1, New F2, Beginner/Intermediate/Expert F3-F5, Custom F6, Marker on/off, Best times, Exit, Version), the cursor moves, VZRYV (a mine goes off) and POBEDA (the field is cleared); the field, sprite and help code is in the modules below
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/MS.PAS`
+
+the game-logic module: SETPOLE lays the mines and draws the board, HELP reads and decodes K.HLP, BEGINNER 8x8/10, INTERMEDIATE 16x16/40, EXPERT 30x16/99; carries its own copy of the sprite table and blitter
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/RND.PAS`
+
+another revision of the same game-logic module (`{$E+}` separate compilation) that also holds CUSTOM, BESTTIMES, VERSION, MENU and the cursor/open/mark procedures - not the random-number unit of the same name in the parent folder
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/SPR.PAS`
+
+the sprite module: GETTABSPR with the 63-sprite table as assignments (the output of DATSPR), SETSPR drawing a 16x8 sprite straight into video RAM in put/or/xor modes, PUTCUR/RESCUR for the board cursor
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+### `programs/vvv/minesweeper/v1.01/TYGRF.PAS`
+
+a sprite-file viewer: asks for a file of 8-word sprites and draws them with SETSPR in either graphics mode - the blitter's test bench
+
+*identified from: read out of PROGS.DSK 2026-09-06; sha256 *
+
+</details>
+
 </details>
 
 </details>
 
-<details open><summary><b>software/</b> — 86 files</summary>
+<details open><summary><b>software/</b> — 162 files</summary>
 
 <details><summary><b>software/apps/</b> — 38 files</summary>
 
-<details><summary><b>software/apps/autoteacher/</b> — 11 files</summary>
+### `software/apps/ART.SAV`
+
+Colour paint program: menu bar (print / file / attributes / brushes / mix / buffer, window / fill / zoom / text / shapes) and a mouse pointer
+
+*written in assembler (no runtime library); graphics; ru / koi8-r; cross-run: ran; disks: 6; identified from: program screen; sha256 4addab020df1*
+
+### `software/apps/DEF.SAV`
+
+Fault-finding HANDBOOK (DEF = дефекты): a loader menu 'ЗАГРУЗКА ПРОГРАММЫ - СПРАВОЧНИК' (Cyrillic drawn with Latin glyphs) offering a search mode (Х) and monitor exit (Е); the baked-in texts are diagnostic verdicts - 'СИСТЕМА НЕИСПРАВНА НЕ УСТ. В 0', 'АВАРИЯ', 'НОРМА', 'задайте задержку T(мкс)=N*4'. Linked as a DEBUG build (OMSI Pascal Debugger V2.2 inside). In the CLI probe it paints the menu and ignores every key (Latin, KOI-7 and real Cyrillic alike) - likely raw РУС-keyboard input; worth trying in the GUI. Possibly the player half of the EDSP frame system on the same 062 disk
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 1; identified from: strings + live key experiments 2026-09-05; sha256 8de9d30f44dd*
+
+### `software/apps/EDSP.SAV`
+
+Frame ('кадр') EDITOR - an authoring tool with the menu Видео / Редактирование / Сжать / Сборка / Печать / Картотека and commands 'Записать кадр', 'Загрузить файл', 'Окно': courseware/reference frames assembled from a card-file, in the АОС tradition; plausibly the authoring half of DEF's handbook. The sole surviving build is 70% zeroed blocks - the confirmed-unreadable one among the eight truly broken
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: surviving menu strings 2026-09-05; sha256 e171c561fda7*
+
+### `software/apps/FCAD.SAV`
+
+FunctionCAD v1.1 for the MS-0515 (1994, A. V. Domnich): plots functions and draws them on an EM7052 pen plotter; F-key menu
+
+*written in high-level (runtime library linked); graphics; ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; sha256 f1efd762b7a0*
+
+### `software/apps/FCON.SAV`
+
+File-system converter (Омега, Львов, experimental, July 1993) bridging THREE worlds: RT-11 (any device, catalogue/delete/rename), DOS FAT floppies (root dir, volume label, capacity/free in KB, write-back), and ZX Spectrum TR-DOS (catalogue with start/length/sectors, both directions). Auto-detects 40/80-track SS/DS. Porting-pipeline features: marks files copied from TR-DOS as 'программа в кодах Spectrum для дизассемблера', converts Spectrum screen images, transcodes text between code pages. Needs SL.SYS fetched - absent on Rodionov's system, hence its one error cell in the cross. The very conveyor the Omega Spectrum ports came through
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran 7/8; disks: 1; identified from: full string vocabulary + menu screenshot; SL dependency proved by load bisection; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 e8179a455487*
+
+### `software/apps/TR7004.SAV`
+
+Keyboard trainer/test for the MS7004 keyboard (name after the keyboard model); prints what it receives
+
+*written in high-level (runtime library linked); graphics; en / ascii; cross-run: ran; disks: 1; identified from: identified 2026-09-05; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 786724f31b3f*
+
+### `software/apps/UKCALC.LST`
+
+Operator's manual of the UKCALC spreadsheet (listing form). Three reads of disk5 survived; this is the one clean one, the other two carry corrupt blocks
+
+*disks: 1; identified from: three disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 d22d7d5ef6dc*
+
+### `software/apps/UKCALC.SAV`
+
+UKCALC, a large-format spreadsheet; has its own operator manual (UKCALC.LST)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: RTK MIKRO manuals (disk5); shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 344089474944*
+
+### `software/apps/UMN.SAV`
+
+Multiplication-table trainer in machine code («проверяем таблицу умножения»): move the cursor to the right digit and press ВК; «много ошибок» when you fail, «ещё раз д/н» at the end. Shipped as UMN.SAV; nothing to do with UMN.BAS beyond the topic
+
+*written in BASIC (source on the disks); graphics; ru / koi8-r; cross-run: ran; disks: 1; identified from: strings 2026-09-06; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 0f2c6505944b*
+
+<details><summary><b>software/apps/autoteacher/</b> — 10 files</summary>
 
 ### `software/apps/autoteacher/1003.DOC`
 
@@ -2342,7 +1892,7 @@ AutoTeacher results file: 'файл данных о проверке знани�
 
 </details>
 
-<details><summary><b>software/apps/autoteacher/amk_1/</b> — 1 file</summary>
+<details><summary><b>software/apps/autoteacher/amk_1/</b> — 1 files</summary>
 
 ### `software/apps/autoteacher/amk_1/CR.SAV`
 
@@ -2468,193 +2018,439 @@ Joins databases of the same shape; part of RBD-MIKRO
 
 </details>
 
-### `software/apps/ART.SAV`
+</details>
 
-Colour paint program: menu bar (print / file / attributes / brushes / mix / buffer, window / fill / zoom / text / shapes) and a mouse pointer
+<details><summary><b>software/development/</b> — 27 files</summary>
 
-*written in assembler (no runtime library); graphics; ru / koi8-r; cross-run: ran; disks: 6; identified from: program screen; sha256 4addab020df1*
+### `software/development/LINK.SAV`
 
-### `software/apps/DEF.SAV`
+LINK V05.14 (its cross-reference title reads V05.15) - the linker of the collector's ФОДОС kit
 
-Fault-finding HANDBOOK (DEF = дефекты): a loader menu 'ЗАГРУЗКА ПРОГРАММЫ - СПРАВОЧНИК' (Cyrillic drawn with Latin glyphs) offering a search mode (Х) and monitor exit (Е); the baked-in texts are diagnostic verdicts - 'СИСТЕМА НЕИСПРАВНА НЕ УСТ. В 0', 'АВАРИЯ', 'НОРМА', 'задайте задержку T(мкс)=N*4'. Linked as a DEBUG build (OMSI Pascal Debugger V2.2 inside). In the CLI probe it paints the menu and ignores every key (Latin, KOI-7 and real Cyrillic alike) - likely raw РУС-keyboard input; worth trying in the GUI. Possibly the player half of the EDSP frame system on the same 062 disk
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 7c3ac9ded6e2*
 
-*written in high-level (runtime library linked); text; en / ascii; cross-run: ran; disks: 1; identified from: strings + live key experiments 2026-09-05; sha256 8de9d30f44dd*
+### `software/development/MACRO.SAV`
 
-### `software/apps/EDSP.SAV`
+MACRO V05.04 - the assembler of the collector's ФОДОС kit (disk3, PAPER; disk4 as well)
 
-Frame ('кадр') EDITOR - an authoring tool with the menu Видео / Редактирование / Сжать / Сборка / Печать / Картотека and commands 'Записать кадр', 'Загрузить файл', 'Окно': courseware/reference frames assembled from a card-file, in the АОС tradition; plausibly the authoring half of DEF's handbook. The sole surviving build is 70% zeroed blocks - the confirmed-unreadable one among the eight truly broken
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 3; identified from: DEC RT-11; the the collector's disks build; sha256 69c9775f6882*
 
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: surviving menu strings 2026-09-05; sha256 e171c561fda7*
+<details><summary><b>software/development/basic/</b> — 3 files</summary>
 
-### `software/apps/FCAD.SAV`
+### `software/development/basic/BASIC.SAV`
 
-FunctionCAD v1.1 for the MS-0515 (1994, A. V. Domnich): plots functions and draws them on an EM7052 pen plotter; F-key menu
+BASIC / RAFOS V02-030 interpreter; asks which optional functions to load (ALL, NONE, OR INDIVIDUAL)
 
-*written in high-level (runtime library linked); graphics; ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; sha256 f1efd762b7a0*
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: program screen; sha256 dbdca9ec1f44*
 
-### `software/apps/FCON.SAV`
+### `software/development/basic/BASICO.DOC`
 
-File-system converter (Омега, Львов, experimental, July 1993) bridging THREE worlds: RT-11 (any device, catalogue/delete/rename), DOS FAT floppies (root dir, volume label, capacity/free in KB, write-back), and ZX Spectrum TR-DOS (catalogue with start/length/sectors, both directions). Auto-detects 40/80-track SS/DS. Porting-pipeline features: marks files copied from TR-DOS as 'программа в кодах Spectrum для дизассемблера', converts Spectrum screen images, transcodes text between code pages. Needs SL.SYS fetched - absent on Rodionov's system, hence its one error cell in the cross. The very conveyor the Omega Spectrum ports came through
+Manual of БЕЙСИК-ОМЕГА («РАЗРАБОТАН ЛЬВОВСКИМ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), 363 blocks. Pages 8-14 are lost: under blocks 29-45 the diskette holds monitor swap code, not text, and the three reads of disk5 (the only disk with the file) disagree there
 
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran 7/8; disks: 1; identified from: full string vocabulary + menu screenshot; SL dependency proved by load bisection; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 e8179a455487*
+*ru+en / koi8-r; disks: 1; identified from: gap analysis 2026-09-06; sha256 0b2216607079*
 
-### `software/apps/TR7004.SAV`
+### `software/development/basic/BASICO.SAV`
 
-Keyboard trainer/test for the MS7004 keyboard (name after the keyboard model); prints what it receives
+Omega BASIC for the Elektronika MS 0515, edition 1-01a; the native BASIC of the machine, ready prompt in Russian
 
-*written in high-level (runtime library linked); graphics; en / ascii; cross-run: ran; disks: 1; identified from: identified 2026-09-05; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 786724f31b3f*
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 16; identified from: program screen; sha256 9ac32ba9c014*
 
-### `software/apps/UKCALC.LST`
+</details>
 
-Operator's manual of the UKCALC spreadsheet (listing form). Three reads of disk5 survived; this is the one clean one, the other two carry corrupt blocks
+<details><summary><b>software/development/fodos/</b> — 2 files</summary>
 
-*disks: 1; identified from: three disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 d22d7d5ef6dc*
+### `software/development/fodos/SYSLIB.OBJ`
 
-### `software/apps/UKCALC.SAV`
+The RT-11 system library SYSLIB (28 KB) LINK draws the system calls from
 
-UKCALC, a large-format spreadsheet; has its own operator manual (UKCALC.LST)
+*disks: 5; identified from: strings 2026-09-06; sha256 5f12d6ff00e0*
 
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: RTK MIKRO manuals (disk5); shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 344089474944*
+### `software/development/fodos/SYSMAC.SML`
 
-### `software/apps/UMN.SAV`
+MACRO-11 system macro library
 
-Multiplication-table trainer in machine code («проверяем таблицу умножения»): move the cursor to the right digit and press ВК; «много ошибок» when you fail, «ещё раз д/н» at the end. Shipped as UMN.SAV; nothing to do with UMN.BAS beyond the topic
+*en / ascii; disks: 4; identified from: DEC RT-11; sha256 a9d716957163*
 
-*written in BASIC (source on the disks); graphics; ru / koi8-r; cross-run: ran; disks: 1; identified from: strings 2026-09-06; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 0f2c6505944b*
+</details>
+
+<details><summary><b>software/development/fodos/mihin/</b> — 2 files</summary>
+
+### `software/development/fodos/mihin/LINK.SAV`
+
+LINK V08.04, a later RT-11 linker, with its banner patched to read «LINK B03.01» on Mihin's disks; the copy on ОМЕГА 064 keeps the V08.04 banner (21 bytes apart)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 84967964c932*
+
+### `software/development/fodos/mihin/MACRO.SAV`
+
+MACRO V05.04 as Mihin's OS-16SJ disks carry it - 12 of its 61 blocks differ from the plain one: Mihin's own patching
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: DEC RT-11; the Mihin's OS-16SJ kits build; sha256 19eaf74ec37c*
+
+</details>
+
+<details><summary><b>software/development/fodos/omega/</b> — 1 files</summary>
+
+### `software/development/fodos/omega/MACRO.SAV`
+
+MACRO V05.01b - an older release of the assembler, from the ОМЕГА disk 064 alone
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 1; identified from: DEC RT-11; the the ОМЕГА kits build; sha256 762ca9886138*
+
+</details>
+
+<details><summary><b>software/development/fortran/</b> — 2 files</summary>
+
+### `software/development/fortran/FORLIB.OBJ`
+
+The FORTRAN IV run-time library (105 KB) that the OMSI Pascal programs are LINKed against for RAN and the FORTRAN-declared routines
+
+*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 b0e071fa478a*
+
+### `software/development/fortran/FORTRA.SAV`
+
+FORTRAN compiler; prompts with * for a command line the way the RT-11 compilers do
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran; disks: 8; identified from: program screen; sha256 02fa7a6e143a*
+
+</details>
+
+<details><summary><b>software/development/pascal/</b> — 13 files</summary>
+
+### `software/development/pascal/GETDAT.PAS`
+
+getdat(var d:data) - the system date (year 1972.., month, day) unpacked from the RT-11 .DATE word with inline MACRO-11 ({$C ... }), a unit for programs that stamp their output
+
+*disks: 2; identified from: read from the source 2026-09-06; sha256 b63341ce9c24*
+
+### `software/development/pascal/GRAPH.P1U`
+
+Declarations file of the PASGRF graphics library for OMSI Pascal-1: the EXTERNAL procedure headers (InitGraph, SetColor, SetFon, SetBorder, SetPixel...) to include in a program that links with PASGRF.OBJ
+
+*disks: 4; identified from: read 2026-09-06; sha256 6fc757560c75*
+
+### `software/development/pascal/PAS1.OBJ`
+
+The OMSI Pascal run-time support module («Trap to 4», «Not a valid device», «End of file on device»…) every compiled program is LINKed with
+
+*en / ascii; disks: 6; identified from: strings 2026-09-06; sha256 9cdeed1f03b1*
+
+### `software/development/pascal/PAS1.SAV`
+
+First pass of the Pascal compiler; prompts with * for a command line
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 13; identified from: program screen; sha256 0e79f7b1a319*
+
+### `software/development/pascal/PAS1HD.OBJ`
+
+A one-block object module whose only text is «Graphics library -- copyleft by Naumov A.I.» - the header of the graphics library
+
+*disks: 1; identified from: strings 2026-09-06; sha256 8539d3195820*
+
+### `software/development/pascal/PASCAL.LST`
+
+The Pascal language listing/reference that came with the compiler. Two reads of disk5 survived; this is the clean one (the other has junk in blocks 130, 150, 168-170)
+
+*ru+en / koi8-r; disks: 1; identified from: two disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 4164731eb6c0*
+
+### `software/development/pascal/PASGR.DOC`
+
+Manual of the Pascal graphics library PASGRF.OBJ: InitGraph, SetColor, SetFon, SetBorder, SetBright/ResBright, SetFlach, drawing and text routines, KbMode/inkey keyboard polling, with examples. Three reads of disk5 survived; this is the one clean one (the other two carry corrupt blocks 6-13 and 26)
+
+*ru / koi8-r; disks: 1; identified from: three disk5 reads compared 2026-09-06; canonical version picked in decisions.tsv; sha256 115fea56ecb3*
+
+### `software/development/pascal/PASGRF.OBJ`
+
+The graphics library for OMSI Pascal on the МС-0515: InitGraph, SetPixel, LINE, sprites - what the graphics programs LINK with
+
+*disks: 2; identified from: strings 2026-09-06; sha256 c9cadedc0f90*
+
+### `software/development/pascal/PASLIB.OBJ`
+
+The Pascal library with the terminal routines (ClrScr, GotoXY, Inkey, KbMode, cursor on/off) the programs declare EXTERNAL
+
+*disks: 5; identified from: strings 2026-09-06; sha256 5d70cb23ee66*
+
+### `software/development/pascal/PASUSE.LST`
+
+«ПАСКАЛЬ - руководство программиста», 45 sheets, 1982: the Pascal programmer's manual of the machine
+
+*ru+en / koi8-r; disks: 1; identified from: title page 2026-09-06; sha256 4ec5d643b0f5*
+
+### `software/development/pascal/SETPIX.PAS`
+
+SetPixel for the 640x200 hi-res screen written straight against the hardware: the pixel byte at VRAM 40000B + 80*y + x div 8, ORed with the bit mask, with the memory-dispatcher register 177400B / its shadow at 157700B switched to reach the video bank and restored; a one-call test main follows
+
+*disks: 2; identified from: read from the source 2026-09-06; sha256 f1dbfeead45c*
+
+### `software/development/pascal/SPR.SAV`
+
+«Программа создания файла спрайтов для языка PASCAL-RAFOS»: asks for the file name, the screen resolution (0 medium, 1 high) and then, sprite by sprite up to 256, the image colour, the background, the brightness and the blink, and writes the sprite file a Pascal program reads.  Not the BASIC «Редактор SPRITE» of SPRED.BAS and not what SPRED.DOC describes: the OMSI Pascal run-time messages are inside it («TRAP TO 4», «BAD SUPPORT PACKAGE»), so it was compiled with PAS1, and it answers an empty file name with «Я что-то не пойму, за каким хреном ты меня запускал?»
+
+*written in high-level (runtime library linked); text; ru+en / koi8-r; cross-run: ran; disks: 4; identified from: its own banner and the OMSI Pascal run-time strings in it 2026-09-22; sha256 578e60fc70a1*
+
+### `software/development/pascal/STRING.PAS`
+
+String library for OMSI Pascal (which has no string type): STRING = array[1..79] of char with STRINIT, STRLENG, STRREAD (raw keyboard input through the external KBMODE/INKEY of PASGRF, with backspace editing), STRWRITE, STRDELETE, STRINSERT and VAL (string to real with an error position); ends with a small self-test main
+
+*disks: 2; identified from: read from the source 2026-09-06; sha256 7810b7a6abab*
+
+</details>
+
+<details><summary><b>software/development/utils/</b> — 2 files</summary>
+
+### `software/development/utils/DESS.SAV`
+
+DEZI V05.01, 'Originally written by D. Climov' (phone in the banner): an interactive octal dump viewer-cum-disassembler - full-screen word dump with ASCII gutter, BLCK/ADDR/TYPE header, a Stack line and a live 'Macro-11:' disassembly of the word at the cursor; modes words/bytes/radix/ascii/Inst, pattern search. The machine's резидентный инструмент дизассемблирования; on all five of the keeper's disks
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DEZI-F-FilenotfoundDK:NOSUCH.XXX*; disks: 5; identified from: banner + live run on DIR.SAV 2026-09-05 (screenshot with Macro-11: HALT); sha256 bd0665c3c864*
+
+### `software/development/utils/REDUMP.SAV`
+
+DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local rebadge of DESS.SAV, the same program (string tables byte-identical); unrelated to the small REDUMP.PAS in PROGS.DSK
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: banner comparison: 'REDUMP B5.0e ...ginally written by D. Climov'; sha256 f29f7dc3113d*
+
+</details>
+
+</details>
+
+<details><summary><b>software/diag/</b> — 26 files</summary>
+
+### `software/diag/183107.SAV`
+
+The factory exerciser (Uprazhnitel MS0515 V1.0) from the manual: prints its banner, tells the operator to set the work mode in cell 001076 and drops into ODT BY DESIGN - the mode is deposited with D and the run resumed with P.  The C* timing meters are its companions
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: failed — dropped into ODT at 001414; disks: 4; identified from: program screen + factory manual; sha256 1840f4660b70*
+
+### `software/diag/184106.SAV`
+
+Companion of the 183107 exerciser in .EXE form; enters ODT at 000020 on start - likely the same deposit-and-proceed interface
+
+*written in assembler (no runtime library); ru / koi8-r; cross-run: failed — dropped into ODT at 000020; disks: 1; identified from: program screen; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 320bcafba75e*
+
+### `software/diag/CADD.SAV`
+
+One of the C* instruction-timing suite: measures ADD in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7c95a5ee11a9*
+
+### `software/diag/CBIC.SAV`
+
+One of the C* instruction-timing suite: measures BIC in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 3b24de048137*
+
+### `software/diag/CBICB.SAV`
+
+One of the C* instruction-timing suite: measures BICB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 d1e6a85d3abf*
+
+### `software/diag/CBIS.SAV`
+
+One of the C* instruction-timing suite: measures BIS in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7fb87978bbf8*
+
+### `software/diag/CBISB.SAV`
+
+One of the C* instruction-timing suite: measures BISB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 40b541de5d13*
+
+### `software/diag/CBIT.SAV`
+
+One of the C* instruction-timing suite: measures BIT in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb39cba0174f*
+
+### `software/diag/CBITB.SAV`
+
+One of the C* instruction-timing suite: measures BITB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 28f683f4b628*
+
+### `software/diag/CBR.SAV`
+
+One of the C* instruction-timing suite: measures branches in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 cf9621b33508*
+
+### `software/diag/CCMP.SAV`
+
+One of the C* instruction-timing suite: measures CMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 77aa3d972f8a*
+
+### `software/diag/CCMPB.SAV`
+
+One of the C* instruction-timing suite: measures CMPB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 b18b1b3ff9eb*
+
+### `software/diag/CJMP.SAV`
+
+One of the C* instruction-timing suite: measures JMP in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 2b5d91324f54*
+
+### `software/diag/CMOV.SAV`
+
+Instruction timing meter: measures MOV in CPU cycles for every addressing-mode pair and prints the matrix, using the 50 Hz vector-100 interrupt as the timebase (word 1002 holds the calibration).  One of the C* suite; needs the instruction emulator resident (SET EM ON or R GETEML).  Alex_K ran it on real hardware: 7.5 MHz
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7e5894e423c7*
+
+### `software/diag/CMOVB.SAV`
+
+One of the C* instruction-timing suite: measures MOVB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 7ac375c0a819*
+
+### `software/diag/COP1.SAV`
+
+One of the C* instruction-timing suite: measures single-operand ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 248320dd3094*
+
+### `software/diag/COP2P0.SAV`
+
+One of the C* instruction-timing suite: measures two-operand ops (part 0) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 fb844ce2e101*
+
+### `software/diag/COP2P1.SAV`
+
+One of the C* instruction-timing suite: measures two-operand ops (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 abc7103ff536*
+
+### `software/diag/COP2P2.SAV`
+
+One of the C* instruction-timing suite: measures two-operand ops (part 2) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 41f4b2b03f33*
+
+### `software/diag/COP2PC.SAV`
+
+One of the C* instruction-timing suite: measures PC-addressing ops in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 1de8fffa9acc*
+
+### `software/diag/CPRF.SAV`
+
+One of the C* instruction-timing suite: measures performance summary in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 0a5c750bc8ec*
+
+### `software/diag/CRDWR.SAV`
+
+One of the C* instruction-timing suite: measures memory read/write in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 6c47b746d8ef*
+
+### `software/diag/CRDWR1.SAV`
+
+One of the C* instruction-timing suite: measures memory read/write (part 1) in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 5a347c3b618f*
+
+### `software/diag/CSOB.SAV`
+
+One of the C* instruction-timing suite: measures SOB in CPU cycles per addressing mode against the 50 Hz timer; needs the instruction emulator resident (SET EM ON or R GETEML)
+
+*written in assembler (no runtime library); text; cross-run: ran — needs the instruction emulator (SET EM ON); disks: 1; identified from: program screen + forum; sha256 525973b6600a*
+
+### `software/diag/GETEML.SAV`
+
+Loadable instruction-set emulator: hooks the reserved-instruction vector (10), relocates to 154000 and emulates the EIS/FIS instructions the KR1807VM1 lacks (FADD/FSUB/FMUL/FDIV confirmed by disassembly; CMOV.SAV's MUL/DIV work under it too).  Resident: prints nothing.  The driver form is EM.SYS (SET EM ON)
+
+*written in assembler (no runtime library); text; cross-run: exited 7/8; disks: 5; identified from: disassembly + experiment; sha256 1491920f3588*
+
+### `software/diag/SCN15I.SAV`
+
+Prints its title "Scan-code of keys (interrupt), Alphaprog" and waits for keys - a keyboard scan-code viewer
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: program screen; sha256 712a6fcb4506*
+
+</details>
+
+<details><summary><b>software/editors/</b> — 5 files</summary>
+
+### `software/editors/K13U.SAV`
+
+Screen text editor of the ОСА/ОМЕГА kits (the K13/KED family; alias K52.SAV), the build eight disks carry byte-identical; two of its messages are still English («WORKING...», «Model:») - KED.SAV is the same binary with them translated. Its keyboard layout is described in R15.DOC
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 8; identified from: byte diff of the family 2026-09-06; sha256 c80b5bca6911*
+
+### `software/editors/KED.SAV`
+
+Keypad screen editor: the K13U.SAV binary with its last two English strings translated («Работаю...», «Образ:»), from the vvv disks (h0, disk3, disk4). A PAPER-family copy differs by one word in a key table; K13U and the eight-disk build agree with this one, so this is the sound build
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 3; identified from: byte diff of the family 2026-09-06; sha256 788620421a59*
+
+### `software/editors/R15.DOC`
+
+«Описание работы с экранным редактором текста K13U(K52)» - the manual of the K13 family editor (R15/K13U/KED): the keypad map of the МС0515 (ПФ1-ПФ4, страница/абзац/добавить/стирзнак...), the editor's functions and commands
+
+*ru+en / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 d1558cc2f063*
+
+### `software/editors/R15.HLP`
+
+«Ввод псевдографических символов в редакторе R15» - how to enter pseudo-graphics in the editor with the КМП (compose) key
+
+*ru / koi8-r; disks: 2; identified from: read 2026-09-06; sha256 e81b3cc40142*
+
+### `software/editors/R15.SAV`
+
+«Редактор текста R15» V01.2 - Rodionov's edition of the K13U/KED screen editor (same 27648-byte binary, 952 bytes apart): every prompt Russian («Ждите...», «Повтор:», «Поиск:», «Команда:»), the help frame redrawn in pseudo-graphics, keypad functions ДАЛЕЕ/СТИРСТРОК/СПРАВКА...; prompts with * for the file name like the others
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: byte diff vs K13U 2026-09-06; sha256 7ffee26166ac*
+
+</details>
+
+<details><summary><b>software/format/</b> — 5 files</summary>
+
+### `software/format/FDZ.SAV`
+
+Diskette formatter for the UVK-16; (C) Mihin-soft & SPF Sensor, Voronezh, 1990.  Destructive: it asks Y/N and then formats
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 4; identified from: program screen; sha256 8fc049e88d08*
+
+<details><summary><b>software/format/omega/</b> — 2 files</summary>
+
+### `software/format/omega/FORMH.SAV`
+
+Formats the upper surface of a diskette; asks for confirmation first.  Destructive; the lower surface is FORML
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 f9e5bb4be0f7*
+
+### `software/format/omega/FORML.SAV`
+
+Formats the lower surface of a diskette; asks for confirmation first.  Destructive; the upper surface is FORMH
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 4; identified from: program screen; the the ОМЕГА kits build; sha256 2c7d73a2c8f3*
+
+</details>
+
+<details><summary><b>software/format/vvv/</b> — 2 files</summary>
+
+### `software/format/vvv/FORMH.SAV`
+
+The upper-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована», a plain [Y/N] prompt).  Destructive - it formats the diskette in the drive
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 26ee03f842f5*
+
+### `software/format/vvv/FORML.SAV`
+
+The lower-surface formatter in a later edition than the ОМЕГА disks' one: the same program reassembled with its messages touched up («Поверхность отформатирована» for «заформатирована»).  Destructive - it formats the diskette in the drive
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 1; identified from: identified 2026-09-05; the the collector's disks build; sha256 63b5b54ea831*
+
+</details>
 
 </details>
 
 <details><summary><b>software/games/</b> — 37 files</summary>
-
-<details><summary><b>software/games/osa/</b> — 2 files</summary>
-
-### `software/games/osa/HANOJ.SAV`
-
-The Towers of Hanoi as the ОСА disk 058 carries it - the text in KOI-7 upper case (Cyrillic on a РУС terminal)
-
-*written in high-level (runtime library linked); ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; the the ОСА kits build; sha256 8a26615bd36d*
-
-### `software/games/osa/KOSMOS.SAV`
-
-A text-mode space game.  KOSMOS as 058 and 066 carry it - the same program with its text in the other letter case (case-bit flips)
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: program screen; the the ОСА kits build; sha256 4bef3e9dbf43*
-
-</details>
-
-<details><summary><b>software/games/osa-rs/</b> — 2 files</summary>
-
-### `software/games/osa-rs/HANOJ.SAV`
-
-The Towers of Hanoi as bg0515 carries it - the same program with its text in the other letter case (1467 single-bit flips: the case bit)
-
-*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 1; identified from: program screen; the ОСА with the RS profShell build; sha256 8539451a954f*
-
-### `software/games/osa-rs/KOSMOS.SAV`
-
-A text-mode space game.  KOSMOS of the System, System2, System3, bg0515 and osa disks - the text in one letter case
-
-*written in assembler (no runtime library); text; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 5; identified from: program screen; the ОСА with the RS profShell build; sha256 bf9f023cfc02*
-
-</details>
-
-<details><summary><b>software/games/pacman/</b> — 6 files</summary>
-
-### `software/games/pacman/LABRN.DAT`
-
-Best-results file of the LABRN Pac-Man: place, name, date, points, class, total (one entry survives: TOM, 12-FEB-93, class 5); the game refuses to start without it
-
-*disks: 2; identified from: seen in the game 2026-09-05; sha256 ef6a74aec485*
-
-### `software/games/pacman/LABRN.SAV`
-
-Pac-Man in a big ASCII labyrinth (LABRN = лабиринт): you are «>O<», eating the dots of the maze, «@» are the ghosts, a start/finish line marks the lap; runs are «забеги», sets of runs «матчи» (П continue the run, Н new run, М new match), difficulty is the «класс» 1-127 asked at start; keeps a best-results table (place, name, date, points, class, total) in LABRN.DAT and saves yours on «ЗАПОМНИТЬ [Д/Н]». Refuses to start without a system date («НЕТ ДАТЫ») and without its results file
-
-*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 2; identified from: played in the GUI by the owner 2026-09-05; sha256 fdfbe94655a1*
-
-### `software/games/pacman/PAC6.SAV`
-
-PACMAN V5.2 with six mazes («Pac-hall» table, «начнём?», «ещё раз?», «Don't move program volume») - shipped as PAC6.SAV: the program opens DK:PAC6.SAV, its own file, where the six 2 KB text mazes sit from byte 0x1400 («I read maze»), so SP16 was a later renaming. Answer Y at «начнём?»; keys 4/6 left-right, 8/5 up-down. Plays in the GUI; the headless CLI runs the machine unthrottled unless started with --realtime, so the probe saw the game over before it started
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: code + played in the GUI 2026-09-05; sha256 5357fe9ac835*
-
-### `software/games/pacman/PACM.SAV`
-
-Pac-Man («PAC-HALL» score table of twenty lines, BEGIN? / ONCE MORE?) - shipped as PACM.SAV: the program opens DK:PACM.SAV, its own file, so SP15 was a later renaming. Answer Y at BEGIN?; keys 4/6 left-right, 8/5 up-down. Plays in the GUI; the headless CLI runs the machine unthrottled unless started with --realtime, so the probe saw the game over before it started
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: code + played in the GUI 2026-09-05; sha256 4e8fbea068c6*
-
-### `software/games/pacman/SP13.SAV`
-
-Game with a hall-of-fame table of past players and scores; asks whether to start. Keys 4/6/8/5; plays in the GUI (the CLI needs --realtime, unthrottled it ends at once)
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 5; identified from: code + played in the GUI 2026-09-05; sha256 9355ca276038*
-
-### `software/games/pacman/SP49.SAV`
-
-Game "Labyrinths of power" with a hall-of-fame table of past players and scores. Keys 4/6/8/5; plays in the GUI (the CLI needs --realtime, unthrottled it ends at once)
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: code + played in the GUI 2026-09-05; sha256 bc63d8dfc115*
-
-</details>
-
-<details><summary><b>software/games/sabot2/</b> — 4 files</summary>
-
-<details><summary><b>software/games/sabot2/omega/</b> — 2 files</summary>
-
-### `software/games/sabot2/omega/SABOT2.DAT`
-
-The game body of the omega-games disk 059 (1991): a different build of the same 85 blocks - the one that reads the joystick on the MS7007 PPI port B (177542)
-
-*en / ascii; disks: 2; sha256 f8f18a6b29fa*
-
-### `software/games/sabot2/omega/SABOT2.SAV`
-
-Game (Saboteur 2, omega-games 1991); on a disk of its own it prints "file not found" and its title screen comes out mangled - it needs its companion data files
-
-*written in assembler (no runtime library); graphics; cross-run: ran; disks: 6; identified from: program screen; sha256 e3c2ec43b7c1*
-
-</details>
-
-<details><summary><b>software/games/sabot2/osa/</b> — 2 files</summary>
-
-### `software/games/sabot2/osa/SABOT2.DAT`
-
-The game body as the ОСА disks (058, System, System3, osa) carried it - 85 blocks the loader SABOT2.SAV reads into high memory; keyboard control
-
-*en / ascii; disks: 4; sha256 b99dc2b4ba0f*
-
-### `software/games/sabot2/osa/SABOT2.SAV`
-
-Game (Saboteur 2, omega-games 1991); on a disk of its own it prints "file not found" and its title screen comes out mangled - it needs its companion data files
-
-*written in assembler (no runtime library); graphics; cross-run: ran; disks: 6; identified from: program screen; sha256 e3c2ec43b7c1*
-
-</details>
-
-</details>
-
-<details><summary><b>software/games/tetris/</b> — 3 files</summary>
-
-### `software/games/tetris/PENT.SAV`
-
-Falling-blocks game (Tetris with pentomino-style pieces): level, lines and score; keys 7/9 move, 8 rotates, space drops, level selectable; labels in Cyrillic (KOI-8). RUBIS.SAV and TTR2.SAV are the same 5-block program with cosmetic differences
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: byte diff 2026-09-05; sha256 a9a8a1dc4d7e*
-
-### `software/games/tetris/RUBIS.SAV`
-
-PENT.SAV with its labels in KOI-7 transliteration («urowenx», «stroki», «o~ki», «e}e raz») for a terminal in РУС mode, and pieces drawn with '.' instead of '*' - otherwise byte-identical
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: byte diff 2026-09-05; sha256 f1b8959ffebb*
-
-### `software/games/tetris/TTR2.SAV`
-
-RUBIS.SAV with two bytes changed: empty cells drawn as spaces instead of '.' (which makes the well look narrower) and one header word - the same Tetris a third time
-
-*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: byte diff 2026-09-05; sha256 4f6ecf81ef35*
-
-</details>
 
 ### `software/games/BIRDS.SAV`
 
@@ -2776,59 +2572,221 @@ Educational snake game 'ПИТОН' for junior schoolchildren (vowels eaten vert
 
 *written in Pascal (source on the disks); text; ru+en / koi8-r; cross-run: ran; disks: 2; identified from: user's insight 2026-09-05, proved: sum(first 1000 words of UDAW.EXE) = -27004; renamed copy runs clean with no taunt; UDAW.PAS + EXE strings; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; the same file as in programs/domnich/piton/, where its source is; sha256 1c5bad7a40b5*
 
+<details><summary><b>software/games/osa-rs/</b> — 2 files</summary>
+
+### `software/games/osa-rs/HANOJ.SAV`
+
+The Towers of Hanoi as bg0515 carries it - the same program with its text in the other letter case (1467 single-bit flips: the case bit)
+
+*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 1; identified from: program screen; the ОСА with the RS profShell build; sha256 8539451a954f*
+
+### `software/games/osa-rs/KOSMOS.SAV`
+
+A text-mode space game.  KOSMOS of the System, System2, System3, bg0515 and osa disks - the text in one letter case
+
+*written in assembler (no runtime library); text; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 5; identified from: program screen; the ОСА with the RS profShell build; sha256 bf9f023cfc02*
+
+</details>
+
+<details><summary><b>software/games/osa/</b> — 2 files</summary>
+
+### `software/games/osa/HANOJ.SAV`
+
+The Towers of Hanoi as the ОСА disk 058 carries it - the text in KOI-7 upper case (Cyrillic on a РУС terminal)
+
+*written in high-level (runtime library linked); ru+en / koi8-r; cross-run: ran; disks: 1; identified from: program screen; the the ОСА kits build; sha256 8a26615bd36d*
+
+### `software/games/osa/KOSMOS.SAV`
+
+A text-mode space game.  KOSMOS as 058 and 066 carry it - the same program with its text in the other letter case (case-bit flips)
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 2; identified from: program screen; the the ОСА kits build; sha256 4bef3e9dbf43*
+
+</details>
+
+<details><summary><b>software/games/pacman/</b> — 6 files</summary>
+
+### `software/games/pacman/LABRN.DAT`
+
+Best-results file of the LABRN Pac-Man: place, name, date, points, class, total (one entry survives: TOM, 12-FEB-93, class 5); the game refuses to start without it
+
+*disks: 2; identified from: seen in the game 2026-09-05; sha256 ef6a74aec485*
+
+### `software/games/pacman/LABRN.SAV`
+
+Pac-Man in a big ASCII labyrinth (LABRN = лабиринт): you are «>O<», eating the dots of the maze, «@» are the ghosts, a start/finish line marks the lap; runs are «забеги», sets of runs «матчи» (П continue the run, Н new run, М new match), difficulty is the «класс» 1-127 asked at start; keeps a best-results table (place, name, date, points, class, total) in LABRN.DAT and saves yours on «ЗАПОМНИТЬ [Д/Н]». Refuses to start without a system date («НЕТ ДАТЫ») and without its results file
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 2; identified from: played in the GUI by the owner 2026-09-05; sha256 fdfbe94655a1*
+
+### `software/games/pacman/PAC6.SAV`
+
+PACMAN V5.2 with six mazes («Pac-hall» table, «начнём?», «ещё раз?», «Don't move program volume») - shipped as PAC6.SAV: the program opens DK:PAC6.SAV, its own file, where the six 2 KB text mazes sit from byte 0x1400 («I read maze»), so SP16 was a later renaming. Answer Y at «начнём?»; keys 4/6 left-right, 8/5 up-down. Plays in the GUI; the headless CLI runs the machine unthrottled unless started with --realtime, so the probe saw the game over before it started
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: code + played in the GUI 2026-09-05; sha256 5357fe9ac835*
+
+### `software/games/pacman/PACM.SAV`
+
+Pac-Man («PAC-HALL» score table of twenty lines, BEGIN? / ONCE MORE?) - shipped as PACM.SAV: the program opens DK:PACM.SAV, its own file, so SP15 was a later renaming. Answer Y at BEGIN?; keys 4/6 left-right, 8/5 up-down. Plays in the GUI; the headless CLI runs the machine unthrottled unless started with --realtime, so the probe saw the game over before it started
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: code + played in the GUI 2026-09-05; sha256 4e8fbea068c6*
+
+### `software/games/pacman/SP13.SAV`
+
+Game with a hall-of-fame table of past players and scores; asks whether to start. Keys 4/6/8/5; plays in the GUI (the CLI needs --realtime, unthrottled it ends at once)
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 5; identified from: code + played in the GUI 2026-09-05; sha256 9355ca276038*
+
+### `software/games/pacman/SP49.SAV`
+
+Game "Labyrinths of power" with a hall-of-fame table of past players and scores. Keys 4/6/8/5; plays in the GUI (the CLI needs --realtime, unthrottled it ends at once)
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: code + played in the GUI 2026-09-05; sha256 bc63d8dfc115*
+
+</details>
+
+<details><summary><b>software/games/sabot2/omega/</b> — 2 files</summary>
+
+### `software/games/sabot2/omega/SABOT2.DAT`
+
+The game body of the omega-games disk 059 (1991): a different build of the same 85 blocks - the one that reads the joystick on the MS7007 PPI port B (177542)
+
+*en / ascii; disks: 2; sha256 f8f18a6b29fa*
+
+### `software/games/sabot2/omega/SABOT2.SAV`
+
+Game (Saboteur 2, omega-games 1991); on a disk of its own it prints "file not found" and its title screen comes out mangled - it needs its companion data files
+
+*written in assembler (no runtime library); graphics; cross-run: ran; disks: 6; identified from: program screen; sha256 e3c2ec43b7c1*
+
+</details>
+
+<details><summary><b>software/games/sabot2/osa/</b> — 2 files</summary>
+
+### `software/games/sabot2/osa/SABOT2.DAT`
+
+The game body as the ОСА disks (058, System, System3, osa) carried it - 85 blocks the loader SABOT2.SAV reads into high memory; keyboard control
+
+*en / ascii; disks: 4; sha256 b99dc2b4ba0f*
+
+### `software/games/sabot2/osa/SABOT2.SAV`
+
+Game (Saboteur 2, omega-games 1991); on a disk of its own it prints "file not found" and its title screen comes out mangled - it needs its companion data files
+
+*written in assembler (no runtime library); graphics; cross-run: ran; disks: 6; identified from: program screen; sha256 e3c2ec43b7c1*
+
+</details>
+
+<details><summary><b>software/games/tetris/</b> — 3 files</summary>
+
+### `software/games/tetris/PENT.SAV`
+
+Falling-blocks game (Tetris with pentomino-style pieces): level, lines and score; keys 7/9 move, 8 rotates, space drops, level selectable; labels in Cyrillic (KOI-8). RUBIS.SAV and TTR2.SAV are the same 5-block program with cosmetic differences
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: byte diff 2026-09-05; sha256 a9a8a1dc4d7e*
+
+### `software/games/tetris/RUBIS.SAV`
+
+PENT.SAV with its labels in KOI-7 transliteration («urowenx», «stroki», «o~ki», «e}e raz») for a terminal in РУС mode, and pieces drawn with '.' instead of '*' - otherwise byte-identical
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 1; identified from: byte diff 2026-09-05; sha256 f1b8959ffebb*
+
+### `software/games/tetris/TTR2.SAV`
+
+RUBIS.SAV with two bytes changed: empty cells drawn as spaces instead of '.' (which makes the well look narrower) and one header word - the same Tetris a third time
+
+*written in assembler (no runtime library); text; cross-run: ran; disks: 2; identified from: byte diff 2026-09-05; sha256 4f6ecf81ef35*
+
+</details>
+
+</details>
+
+<details><summary><b>software/print/</b> — 6 files</summary>
+
+### `software/print/6337.SAV`
+
+Print utility for the МС 6337 dot-matrix printer (hence the numeric name): 'file?' asks for a text file to load, then a menu - load / print / select type (fonts long, dubble, fat, small, step 2.117) / one-side / high quality. On every rebuilt volume it dies before loading: its file-open path uses old-format EMTs (.FETCH at 011144, .LOOKUP at 011264) and fails differently per directory format ('NOT A VALID DEVICE' on a 1-segment volume, '?MON-F-Invalid directory' on 4-segment) - it apparently expects its native System3/disk4 environment. The cross verdict 'ran' only means the prompt came up
+
+*written in high-level (runtime library linked); en / ascii; cross-run: ran; disks: 1; identified from: menu strings + disassembly of the failing requests + feed experiments 2026-09-05; shipped as .SAV: the .EXE name is the collector's later renaming on disk4; sha256 95292998bc4e*
+
+### `software/print/OUT17.DOC`
+
+«Утилита OUT17 предназначена для вывода текстовых файлов на струйный принтер МС6317, подключенный к параллельному порту МС0515» - its short manual, ending with Домнич's contact line
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 205f41f630d9*
+
+### `software/print/OUT17.SAV`
+
+Prints text files on an MS6317 ink-jet printer attached to the parallel port of the MS 0515
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 2c85151dce6b*
+
+### `software/print/OUT2.SAV`
+
+One of the OUT family with OUT17 and OUTC
+
+*written in assembler (no runtime library); cross-run: ran; disks: 4; identified from: program screen; sha256 ab17fa0a5f17*
+
+### `software/print/OUTC.DOC`
+
+«Утилита OUTC предназначена для вывода текстовых файлов на принтер СМ6337, подключенный к параллельному порту МС0515» - its short manual
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-05; sha256 fdc0846e8e62*
+
+### `software/print/OUTC.SAV`
+
+Prints text files on an SM6337 printer attached to the parallel port of the MS 0515
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran — prompt; answers ?CSI-F-Файлненайден*; disks: 1; identified from: RTK MIKRO manuals (disk5); sha256 21305756bd96*
+
+</details>
+
+<details><summary><b>software/shells/</b> — 7 files</summary>
+
+### `software/shells/SCE.HLP`
+
+The help text of the SCE shell, «сделан Гостевым Дмитрием (Школа профессионального самоопределения, г. Воронеж), Copyright 12.24.1993»: the key list B-bad blocks, C-copy, D-delete, E-edit, G-run, H-help, K-create/undelete, L-dismount, M-logical disks, U-boot, W-bootstrap…
+
+*ru / koi8-r; disks: 4; identified from: read 2026-09-06; sha256 dcc37aa51ad9*
+
+### `software/shells/SCE.SAV`
+
+Two-panel file manager in the Norton Commander style, Russian labels: directory panel with an info panel, command line Copy/Type/Prot/uNprot/Ren/Del/Quit/Vol/Go/Sque/Z-ini
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: ran; disks: 7; identified from: program screen; sha256 e0dada00133a*
+
+### `software/shells/RS.SYS`
+
+EmeSoft's 'RT11 profShell' v06.05 (1990, build 13-Sep-94): a Norton-Commander-style disk shell packed into a 26-block pseudo-device handler. File panel with marks, and the whole toolbox on hotkeys - COPY/DELETE/RENAME/SQUEEZE/PROTECT/TYPE/DUMP (words/bytes/radix)/CREATE/INIT/MOUNT/BOOT/COPY-BOOT - plus LD containers, bad-block scan, search, saved state, and the greeting 'Жми на клавишу, не бойся ...'. Start with R RS.SYS or SET RS ON; uses EIS, so needs GETEML/EM on this machine. The System2/bg0515/superBAK7 and Buhgal monitors print its banner at boot - profShell is built into those builds
+
+*ru / koi8-r; disks: 1; identified from: strings + live run 2026-09-05 (panel and help screen captured; traps to vector 10 without the instruction emulator); sha256 484be60cb8a9*
+
+### `software/shells/INSTR.DOC`
+
+«Инструкция по работе с компьютером МС 0515» - Rodionov's one-page operating instruction for his ROSA disk: insert the ROSA diskette, power on, turn the drive latch when the music plays, enter the date at «Дата [дд-мм-гг]?», print files from the commander
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 8f1519cec69e*
+
+### `software/shells/REKROS.DOC`
+
+A framed advertisement sheet for Rodionov's system: «Сервисная программа … сделано на МС0515, используя RT15SJ.SYS, R15.SAV, ROSA.SAV» - copying, renaming, protection of files…
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 106e148fbc55*
+
+### `software/shells/REKSYS.DOC`
+
+«Сравнительные характеристики существующего и предлагаемого программного обеспечения» - Rodionov's comparison table of his programs against the standard ones, drawn in pseudo-graphics
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 7d976906483d*
+
+### `software/shells/ROSA3.SAV`
+
+ROSA Commander v1.3 (c) 1993 Rodionov Sergey Alekseevich, Voronezh - his two-panel file manager, launched by his boot: asks the date numerically, then panels DZ0: (left) and DZ2: (right) with a file-info box, 'protected from deletion' flags, PM help key. Needs LOAD VM: and is DZ-bound: it hardcodes DZ0:/DZ2:, so on a DV-booted Omega it dies ('?MON-F-No device', or ODT after LOAD DZ); runs fine on the DZ-pair exemplar. Refuses a copy that fails its author check
+
+*written in assembler (no runtime library); text; ru / koi8-r; cross-run: error 7/8 — ?MON-F-Нетустройства002146ROSACommanderv1.31993РодионовСерге; disks: 2; identified from: live on rodionov.dsk (panel screenshot) and omega.dsk 2026-09-05; sha256 b89e41c1dd2b*
+
 </details>
 
 <details><summary><b>software/unsorted/</b> — 11 files</summary>
-
-<details><summary><b>software/unsorted/ked/</b> — 3 files</summary>
-
-<details><summary><b>software/unsorted/ked/baspasfor/</b> — 1 file</summary>
-
-### `software/unsorted/ked/baspasfor/KED.SAV`
-
-KED.SAV as one read of the baspasfor diskette gave it - fails on every monitor; 25 of its 54 blocks differ from the running build.  The restored image of the same diskette holds the running one
-
-*written in assembler (no runtime library); text; cross-run: failed — dropped into ODT at 027110; disks: 1; identified from: byte diff of the family 2026-09-06; sha256 0cf91d1a2e17*
-
-</details>
-
-<details><summary><b>software/unsorted/ked/disk1/</b> — 1 file</summary>
-
-### `software/unsorted/ked/disk1/KED.SAV`
-
-KED.SAV as the vvv104 disk1 read gave it - errors on 7 of 8 monitors; the same physical diskette read as PAPER gave the running build
-
-*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: error 7/8 — ?MON-F-trap through vector 10 at PC 014502; disks: 1; identified from: byte diff of the family 2026-09-06; sha256 a6cbcdb60ad0*
-
-</details>
-
-<details><summary><b>software/unsorted/ked/disk2/</b> — 1 file</summary>
-
-### `software/unsorted/ked/disk2/KED.SAV`
-
-KED.SAV as the vvv104 disk2 read gave it - fails on every monitor; 34 of 54 blocks differ from the running build; the same diskette read as baspasfor also failed, differently
-
-*written in assembler (no runtime library); text; cross-run: failed — dropped into ODT at 014360; disks: 1; identified from: byte diff of the family 2026-09-06; sha256 5a76e4ae96aa*
-
-</details>
-
-</details>
-
-<details><summary><b>software/unsorted/primer/</b> — 2 files</summary>
-
-### `software/unsorted/primer/PRIMER.DOC`
-
-«Заполнение платёжного поручения» - a step-by-step instruction for a bank clerk: insert the diskette labelled ROSA, switch on, enter the date, pick R15.SAV in the commander, edit DOKUM.DOC=PLPARU.DOC, fill in the payment order… - the workplace of Rodionov's system
-
-*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 1cc5a9a91595*
-
-### `software/unsorted/primer/PRIMER.SAV`
-
-Fails on start, repeating "?Err 63 Illegal instruction trap ... (PC=005342)" - a runtime error, not a screen
-
-*written in high-level (runtime library linked); text; en / ascii; cross-run: failed — runtime error: ?Err63Illegalinstructiontrapinroutine""l; disks: 1; identified from: program screen; sha256 5f0c5f8b076b*
-
-</details>
 
 ### `software/unsorted/2.SAV`
 
@@ -2866,7 +2824,52 @@ Tetris - «ИГРА ПАЖИТНОВА А.Л.» on its title screen (KOI-7), bui
 
 *written in assembler (no runtime library); text; en / ascii; cross-run: error 7/8 — ?MON-F-trap through vector 10 at PC 022216; disks: 1; identified from: identified 2026-09-05; sha256 e6cfd4d257d0*
 
-</details>
+<details><summary><b>software/unsorted/ked/baspasfor/</b> — 1 files</summary>
+
+### `software/unsorted/ked/baspasfor/KED.SAV`
+
+KED.SAV as one read of the baspasfor diskette gave it - fails on every monitor; 25 of its 54 blocks differ from the running build.  The restored image of the same diskette holds the running one
+
+*written in assembler (no runtime library); text; cross-run: failed — dropped into ODT at 027110; disks: 1; identified from: byte diff of the family 2026-09-06; sha256 0cf91d1a2e17*
 
 </details>
 
+<details><summary><b>software/unsorted/ked/disk1/</b> — 1 files</summary>
+
+### `software/unsorted/ked/disk1/KED.SAV`
+
+KED.SAV as the vvv104 disk1 read gave it - errors on 7 of 8 monitors; the same physical diskette read as PAPER gave the running build
+
+*written in assembler (no runtime library); text; ru+en / koi8-r; cross-run: error 7/8 — ?MON-F-trap through vector 10 at PC 014502; disks: 1; identified from: byte diff of the family 2026-09-06; sha256 a6cbcdb60ad0*
+
+</details>
+
+<details><summary><b>software/unsorted/ked/disk2/</b> — 1 files</summary>
+
+### `software/unsorted/ked/disk2/KED.SAV`
+
+KED.SAV as the vvv104 disk2 read gave it - fails on every monitor; 34 of 54 blocks differ from the running build; the same diskette read as baspasfor also failed, differently
+
+*written in assembler (no runtime library); text; cross-run: failed — dropped into ODT at 014360; disks: 1; identified from: byte diff of the family 2026-09-06; sha256 5a76e4ae96aa*
+
+</details>
+
+<details><summary><b>software/unsorted/primer/</b> — 2 files</summary>
+
+### `software/unsorted/primer/PRIMER.DOC`
+
+«Заполнение платёжного поручения» - a step-by-step instruction for a bank clerk: insert the diskette labelled ROSA, switch on, enter the date, pick R15.SAV in the commander, edit DOKUM.DOC=PLPARU.DOC, fill in the payment order… - the workplace of Rodionov's system
+
+*ru / koi8-r; disks: 1; identified from: read 2026-09-06; sha256 1cc5a9a91595*
+
+### `software/unsorted/primer/PRIMER.SAV`
+
+Fails on start, repeating "?Err 63 Illegal instruction trap ... (PC=005342)" - a runtime error, not a screen
+
+*written in high-level (runtime library linked); text; en / ascii; cross-run: failed — runtime error: ?Err63Illegalinstructiontrapinroutine""l; disks: 1; identified from: program screen; sha256 5f0c5f8b076b*
+
+</details>
+
+</details>
+
+</details>

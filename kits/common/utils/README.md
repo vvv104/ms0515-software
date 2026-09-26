@@ -1,14 +1,9 @@
 # Common utilities
 
-One build each, and they run on any system.  The RT-11 ones (`EDIT`, `FORMAT`, `SLP`, `PAT`, `SIPP`, `STRIP`, `SPLIT`) were built from DEC's V5.4 sources for this collection — no diskette preserved a second build; the rest came off the Soviet diskettes.
+One build each, and they run on any system.  These came off the Soviet diskettes.
 
 | file | what | how to run |
 |---|---|---|
-| `EDIT.SAV` | DEC's text editor - no kit of the machine carried it. A command ends with two ALTMODEs, which on the МС 7004 keyboard is F11 |
-| `K52.SAV` | DEC's screen editor KED, built for the VT52 keypad from DEC's sources by DEC's own IND build file (`@K52`, `rt11_devel/projects/rt11/kit/build_ind.py` of the emulator's repository).  GOLD is ПФ1 (NumLock in the emulator's window), GOLD 7 is COMMAND, and `EXIT` there writes the file; a file that does not exist it offers to create.  The `?2` it prints at the start is its VT100-to-VT52 escape sequence, which the console does not know | `R K52`, then `*FILE.TXT`; or `EDIT FILE.TXT` after `SET EDIT K52` |
-| `FORMAT.SAV` | DEC's FORMAT with a module for the machine's drive in the place of DEC's stub for the Professional 350: formats `DZ`, `DV` and `MZ` diskettes, and verifies them (`FORMAT/VERIFY`). Needs an emulator whose controller has WRITE TRACK: later than v1.14.1 |
-| `SLP.SAV` `PAT.SAV` `SIPP.SAV` | Patching sources, objects and programs - how DEC shipped its corrections | `R SLP`, `R PAT`, `R SIPP` |
-| `STRIP.SAV` `SPLIT.SAV` | Takes the symbols off a program; cuts a file in parts | `R STRIP`, `R SPLIT` |
 | `ASC.SAV` | Interactive character-code lookup: press any key and it prints the ASCII code (A -> 65, 7 -> 55; the console upcases letters first). A pocket reference vvv kept on every one of his disks - indispensable in a KOI-7/KOI-8/CP866 world | `RUN ASC` |
 | `BADS.SAV` | Bad-block scanner (RT-11 BAD-style): at its '*' prompt give a device ('DZ0:'), it reads every block with a running counter and reports 'N bad blocks detected' / 'Block N is bad.'; switches C,S,E,A,O. Three blocks of assembler - the sibling craft of KBAD13 | bare prompt, no answer to a bogus file name |
 | `BLACK.SAV` | Blanks the screen to black and returns to the monitor | `RUN BLACK` |

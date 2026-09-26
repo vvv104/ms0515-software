@@ -2,7 +2,7 @@
 
 Two BASIC programs that draw 8x8 sprites on a magnified grid and write them out as a table for the `SPRITE` statement of БЕЙСИК-ОМЕГА, and the manual of the first.  They are sources, not products: `R BASICO`, `LOAD NAME`, `RUN`.
 
-`SPRED.DOC` is the manual of `SPRED.BAS` and of no other program — «Программа "Редактор SPRITE" позволяет графически задавать необходимое количество знакомест в операторе мультипликации "SPRITE" (см. описание языка Бейсик) и записывать их в файл с расширением ".SPT"».  The collection used to file it with `SPR.SAV`, which is a different program altogether: that one writes sprite files for Pascal, was compiled with PAS1, and is now in [`../../kits/common/development/`](../../kits/common/development/README.md) with the rest of the tools.  It has no manual here.
+`SPRED.DOC` is the manual of `SPRED.BAS` and of no other program — «Программа "Редактор SPRITE" позволяет графически задавать необходимое количество знакомест в операторе мультипликации "SPRITE" (см. описание языка Бейсик) и записывать их в файл с расширением ".SPT"».  The collection used to file it with `SPR.SAV`, which is a different program altogether: that one writes sprite files for Pascal, was compiled with PAS1, and is now in [`../../software/development/pascal/`](../../software/development/pascal/README.md) with the rest of the tools.  It has no manual here.
 
 | file | what | how to run |
 |---|---|---|

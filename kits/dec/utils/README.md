@@ -11,7 +11,6 @@ Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.  The ones any system run
 | `HELP.SAV` `HELP.MLB` | `HELP` with its library - the library no diskette preserved |
 | `RESORC.SAV` | `SHOW`: devices, memory, configuration |
 | `DATIME.SAV` | Asks for the date and time at startup |
-| `SRCCOM.SAV` `BINCOM.SAV` | `DIFFERENCES` of texts and of binaries |
 | `UCL.SAV` `LET.SAV` | Commands of one's own: the `dec` monitors hand what they do not know to `UCL` |
 | `BATCH.SAV` | Batch jobs; its handler is `BA.SYS` |
 | `QUEMAN.SAV` `QUEUE.REL` `SPOOL.REL` | The print queue and the spooler. **Untried** |

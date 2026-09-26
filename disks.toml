@@ -14,7 +14,7 @@ format = 2
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.09.23-2"
+version = "2026.09.26-1"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -330,14 +330,6 @@ provides = ["resorc"]
 date     = "1990-12-27"
 files    = ["kits/osa/utils/RESORC.SAV"]
 
-[bundle.rs]
-title    = "RS.SYS - EmeSoft's RT11 profShell (LOAD RS, SET RS ON)"
-kit      = "osa"
-group    = "Shells"
-date     = "1994-09-13"
-systems  = ["osa"]
-requires = ["em"]               # it uses EIS instructions
-files    = ["kits/osa/shells/RS.SYS"]
 [bundle.dz-omega]
 title    = "DZ.SYS - the floppy handler (OMEGA)"
 kit      = "omega"
@@ -453,21 +445,6 @@ provides = ["dump"]
 date     = "1987-12-16"
 files    = ["kits/omega/utils/DUMP.SAV"]
 
-[bundle.form-omega]
-title    = "FORML, FORMH - diskette formatters (OMEGA build)"
-kit      = "omega"
-provides = ["formatter"]
-date     = "1992-01-14"
-files    = ["kits/omega/format/FORML.SAV", "kits/omega/format/FORMH.SAV"]
-
-[bundle.macro-omega]
-title    = "MACRO V05.01b (OMEGA disk 064)"
-kit      = "omega"
-date     = "1995-04-01"   # this copy carried none; the disks' other copies say so
-provides = ["macro11"]
-requires = ["sysmac"]
-files    = ["kits/omega/development/MACRO.SAV"]
-
 [bundle.help-dec]
 title    = "HELP - DEC's original, as diskette 062 carried it (no HELP.MLB)"
 kit      = "omega"
@@ -551,30 +528,6 @@ provides = ["term"]
 date     = "1991-01-31"
 files    = ["kits/mihin/utils/TERM.SAV"]
 
-[bundle.macro-mihin]
-title    = "MACRO V05.04 (Mihin's OS-16SJ disks)"
-kit      = "mihin"
-provides = ["macro11"]
-requires = ["sysmac"]
-date     = "1991-01-29"
-files    = ["kits/mihin/development/MACRO.SAV"]
-
-[bundle.link-mihin]
-title    = "LINK V08.04 (Mihin's OS-16SJ disks)"
-kit      = "mihin"
-provides = ["link"]
-date     = "1986-09-05"
-files    = ["kits/mihin/development/LINK.SAV"]
-
-[bundle.fdz]
-title    = "FDZ - diskette formatter (Mihin-soft & SPF Sensor)"
-kit      = "mihin"
-group    = "Utilities / Formatters"
-provides = ["formatter"]
-date     = "1991-07-04"
-files    = ["kits/mihin/format/FDZ.SAV"]
-
-# -- printing
 [bundle.dz-rodionov]
 title    = "DZ.SYS - the floppy handler (Rodionov)"
 kit      = "rodionov"
@@ -647,27 +600,6 @@ provides = ["help"]
 date     = "1990-12-27"
 files    = ["kits/rodionov/utils/HELP.SAV"]
 
-[bundle.rosa3]
-title    = "ROSA Commander v1.3 - Rodionov's two-panel file manager"
-kit      = "rodionov"
-group    = "Shells"
-systems  = ["rodionov"]
-needs    = ["dz"]               # it hardcodes DZ0: and DZ2:
-requires = ["vm"]
-startup  = ["LOAD VM:"]         # else it stops with ?MON-F- no device as it starts
-date     = "1993-10-19"
-files    = ["kits/rodionov/shells/ROSA3.SAV"]
-
-[bundle.rosa-docs]
-title    = "Rodionov's instruction, advertisement and comparison sheets"
-kit      = "rodionov"
-group    = "Shells"
-systems  = ["rodionov"]
-volume   = "any"
-date     = "1993-03-18"
-files    = [{ path = "kits/rodionov/shells/INSTR.DOC", date = "1993-08-09" },
-            "kits/rodionov/shells/REKROS.DOC",
-            "kits/rodionov/shells/REKSYS.DOC"]
 [bundle.dz-rt11]
 title    = "DZ.SYS - the floppy handler (from sources)"
 kit      = "dec"
@@ -813,12 +745,6 @@ provides = ["datime"]
 date     = "1999-12-31"
 files    = ["kits/dec/utils/DATIME.SAV"]
 
-[bundle.compare-rt11]
-title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
-kit      = "dec"
-date     = "1999-12-31"
-files    = ["kits/dec/utils/SRCCOM.SAV", "kits/dec/utils/BINCOM.SAV"]
-
 [bundle.ind-rt11]
 title    = "IND - the indirect command file processor: variables, conditions, @<EOF>"
 kit      = "dec"
@@ -873,34 +799,6 @@ files    = ["kits/dec/utils/SPOOL.REL", "kits/dec/utils/QUEUE.REL", "kits/dec/ut
 # DEC's; the Pascal kit's is not, and a PIP linked against that one dies of an
 # overlay error.
 
-[bundle.link-rt11]
-title    = "LINK V5.4 (DEC's, byte for byte from its sources)"
-kit      = "dec"
-provides = ["link"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/LINK.SAV"]
-
-[bundle.sysmac-rt11]
-title    = "SYSMAC.SML - DEC's system macro library"
-kit      = "dec"
-provides = ["sysmac"]
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/SYSMAC.SML"]
-
-[bundle.syslib-rt11]
-title    = "SYSLIB.OBJ - DEC's system object library"
-kit      = "dec"
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/SYSLIB.OBJ"]
-
-[bundle.libcom-rt11]
-title    = "LIBCOM - compares two object libraries module by module"
-kit      = "dec"
-systems  = ["dec", "dec-ru"]
-date     = "1999-12-31"
-files    = ["kits/dec/development/LIBCOM.SAV"]
 [bundle.dir-vvv]
 title    = "DIR (OMEGA2, MIHIN)"
 kit      = "vvv"
@@ -931,28 +829,6 @@ kit      = "vvv"
 provides = ["datime"]
 date     = "1995-04-01"
 files    = ["kits/vvv/utils/DATIME.SAV"]
-
-[bundle.form-vvv]
-title    = "FORML, FORMH - diskette formatters (vvv104 build)"
-kit      = "vvv"
-provides = ["formatter"]
-date     = "1995-04-01"
-files    = ["kits/vvv/format/FORML.SAV", "kits/vvv/format/FORMH.SAV"]
-
-[bundle.macro-vvv]
-title    = "MACRO V05.04 (FODOS kit of the vvv104 disks)"
-kit      = "vvv"
-provides = ["macro11"]
-requires = ["sysmac"]
-date     = "1995-04-01"
-files    = ["kits/vvv/development/MACRO.SAV"]
-
-[bundle.link-vvv]
-title    = "LINK V05.14 (FODOS kit of the vvv104 disks)"
-kit      = "vvv"
-provides = ["link"]
-date     = "1995-04-01"
-files    = ["kits/vvv/development/LINK.SAV"]
 
 [bundle.bincom]
 kit      = "vvv"
@@ -1017,116 +893,6 @@ files = ["kits/common/utils/NEG.SAV"]
 
 # -- diskette formatters
 
-[bundle.out17]
-title = "OUT17 - text files to the MS6317 ink-jet printer"
-kit      = "common"
-group = "Utilities / Printing"
-date  = "1995-01-01"
-files = ["kits/common/print/OUT17.SAV", "kits/common/print/OUT17.DOC"]
-
-[bundle.outc]
-title = "OUTC - text files to the SM6337 printer"
-kit      = "common"
-group = "Utilities / Printing"
-date  = "1995-01-01"
-files = ["kits/common/print/OUTC.SAV", "kits/common/print/OUTC.DOC"]
-
-[bundle.out2]
-title = "OUT2 - of the OUT printing family"
-kit      = "common"
-group = "Utilities / Printing"
-date  = "1991-12-17"
-files = ["kits/common/print/OUT2.SAV"]
-
-[bundle.p6337]
-title = "6337 - print utility for the MS 6337 printer"
-kit      = "common"
-group = "Utilities / Printing"
-date  = "1995-01-01"
-files = ["kits/common/print/6337.SAV"]
-
-# -- diagnostics
-
-[bundle.geteml]
-title = "GETEML - the loadable EIS/FIS instruction emulator"
-kit      = "common"
-group = "Utilities / Diagnostics"
-date  = "1991-10-18"
-files = ["kits/common/diag/GETEML.SAV"]
-
-[bundle.exerciser]
-title = "183107 - the factory exerciser"
-kit      = "common"
-group = "Utilities / Diagnostics"
-date  = "1991-01-15"
-files = ["kits/common/diag/183107.SAV"]
-
-[bundle.timing]
-title    = "The C* instruction-timing suite"
-kit      = "common"
-group    = "Utilities / Diagnostics"
-date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
-requires = ["geteml"]
-volume   = "any"
-files    = ["kits/common/diag/C*.SAV"]
-
-[bundle.scan-codes]
-title = "SCN15I - keyboard scan-code viewer"
-kit      = "common"
-group = "Utilities / Diagnostics"
-date  = "1995-04-25"   # the disk says 2027: an age bit, 1995 + 32
-files = ["kits/common/diag/SCN15I.SAV"]
-[bundle.sce]
-title = "SCE - two-panel file manager, with its help"
-kit      = "common"
-group = "Shells"
-date  = "1993-09-29"
-files = ["kits/common/shells/SCE.SAV",
-         { path = "kits/common/shells/SCE.HLP", date = "1989-01-04" }]
-
-[bundle.format-rt11]
-title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/FORMAT.SAV"]
-
-[bundle.edit-rt11]
-title    = "EDIT - DEC's text editor"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/EDIT.SAV"]
-
-[bundle.k52-rt11]
-title    = "K52 - DEC's screen editor for the VT52 keypad (KED as built for this terminal)"
-kit      = "common"
-startup  = ["SET EDIT K52"]    # the monitor's EDIT command runs it: EDIT FILE.TXT
-date     = "1999-12-31"
-files    = ["kits/common/utils/K52.SAV"]
-
-[bundle.patch-rt11]
-title    = "SLP, PAT, SIPP - patching sources, objects and programs"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/SLP.SAV", "kits/common/utils/PAT.SAV", "kits/common/utils/SIPP.SAV"]
-
-[bundle.strip-rt11]
-title    = "STRIP and SPLIT"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/utils/STRIP.SAV", "kits/common/utils/SPLIT.SAV"]
-
-[bundle.libr-rt11]
-title    = "LIBR - the librarian, which no kit of the machine had"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/development/LIBR.SAV"]
-
-[bundle.odt-rt11]
-title    = "ODT.OBJ - the octal debugger, linked into a program"
-kit      = "common"
-date     = "1999-12-31"
-files    = ["kits/common/development/ODT.OBJ"]
-
 [bundle.calend]
 kit      = "common"
 title = "CALEND - calendar for 1583-5000"
@@ -1137,128 +903,6 @@ files = ["kits/common/utils/CALEND.SAV"]
 # The compilers and their libraries, the editors, the debugger and the two
 # BASICs: one build of each, and none of them minds which monitor it runs
 # under.
-
-[bundle.sysmac]
-kit      = "common"
-title = "SYSMAC.SML - the system macro library"
-provides = ["sysmac"]
-date  = "1995-04-01"
-files = ["kits/common/development/SYSMAC.SML"]
-
-[bundle.syslib]
-kit      = "common"
-title = "SYSLIB.OBJ - the system library"
-date  = "1995-04-01"
-files = ["kits/common/development/SYSLIB.OBJ"]
-
-[bundle.pascal]
-kit      = "common"
-title    = "Pascal - PAS1 with its run-time library"
-requires = ["macro11", "link", "syslib"]     # PAS1 emits MACRO-11, LINK binds PASLIB
-suggests = ["forlib"]                        # a program calling RAN links FORLIB too
-prefer   = { mihin = ["macro-mihin", "link-mihin"], default = ["macro-vvv", "link-vvv"] }
-date     = "1995-04-01"
-files    = ["kits/common/development/PAS1.SAV",
-            "kits/common/development/PAS1.OBJ",
-            "kits/common/development/PASLIB.OBJ"]
-
-[bundle.pascal-graphics]
-kit      = "common"
-title    = "Pascal graphics - PASGRF and GRAPH.P1U"
-requires = ["pascal"]
-date     = "1995-04-01"
-files    = ["kits/common/development/PASGRF.OBJ", "kits/common/development/GRAPH.P1U"]
-
-[bundle.pascal-units]
-kit      = "common"
-title    = "Pascal units - STRING, SETPIX, GETDAT sources"
-requires = ["pascal"]
-volume   = "any"
-date     = "1995-04-01"
-files    = ["kits/common/development/STRING.PAS",
-            "kits/common/development/SETPIX.PAS",
-            "kits/common/development/GETDAT.PAS"]
-
-[bundle.pascal-docs]
-kit      = "common"
-title    = "Pascal manuals - PASCAL.LST, PASUSE.LST, PASGR.DOC"
-date     = "1995-05-16"
-requires = ["pascal"]
-volume   = "any"
-files    = ["kits/common/development/PASCAL.LST",
-            "kits/common/development/PASUSE.LST",
-            { path = "kits/common/development/PASGR.DOC", date = "1995-05-15" }]
-
-[bundle.forlib]
-kit      = "common"
-title = "FORLIB.OBJ - the FORTRAN IV run-time library"
-date  = "1995-04-01"
-files = ["kits/common/development/FORLIB.OBJ"]
-
-[bundle.fortran]
-kit      = "common"
-title    = "FORTRAN IV compiler"
-requires = ["link", "forlib", "syslib"]
-prefer   = { mihin = ["link-mihin"], default = ["link-vvv"] }
-date     = "1995-04-01"
-files    = ["kits/common/development/FORTRA.SAV"]
-
-[bundle.basico]
-kit      = "common"
-title    = "BASIC - Omega BASIC 1-01a, the machine's native BASIC"
-provides = ["basic"]
-date     = "1992-02-17"
-files    = ["kits/common/development/BASICO.SAV"]
-
-[bundle.basic-rafos]
-kit      = "common"
-title    = "BASIC / RAFOS V02-030"
-date     = "1991-08-14"
-provides = ["basic"]
-files    = ["kits/common/development/BASIC.SAV"]
-
-[bundle.basico-docs]
-kit      = "common"
-title    = "BASICO.DOC - the Omega BASIC manual"
-date     = "1995-01-01"
-requires = ["basico"]
-volume   = "any"
-files    = ["kits/common/development/BASICO.DOC"]
-
-[bundle.ked]
-kit      = "common"
-title    = "KED - keypad screen editor (vvv104 disks)"
-provides = ["k13-editor"]
-date     = "1995-04-01"
-files    = ["kits/common/development/KED.SAV"]
-
-[bundle.k52]
-kit      = "common"
-title    = "K52 - screen editor of the OSA and OMEGA kits"
-provides = ["k13-editor"]
-date     = "1991-01-31"
-files    = [{ path = "kits/common/development/K13U.SAV", as = "K52.SAV" }]
-
-[bundle.r15]
-kit      = "common"
-title    = "R15 - Rodionov's edition of the editor, with its help"
-provides = ["k13-editor"]
-date     = "1990-11-29"
-files    = ["kits/common/development/R15.SAV",
-            { path = "kits/common/development/R15.HLP", date = "1993-03-24" }]
-
-[bundle.r15-docs]
-kit      = "common"
-title    = "R15.DOC - the manual of the K13 family editor"
-volume   = "any"
-date     = "1993-08-09"
-files    = ["kits/common/development/R15.DOC"]
-
-[bundle.dess]
-kit      = "common"
-title = "DESS - DEZI dump viewer and disassembler"
-date  = "1995-04-01"
-files = ["kits/common/development/DESS.SAV"]
 
 [bundle.hello-pas]
 kit      = "common"
@@ -1274,11 +918,6 @@ requires = ["macro11", "link"]
 date     = "1992-04-01"     # written for the collection in 2026: the Pascal disk's working date
 files    = ["programs/examples/HELLOA.MAC"]
 
-[bundle.spr]
-kit      = "common"
-title = "SPR - makes sprite files for Pascal programs"
-date  = "1995-04-01"
-files = ["kits/common/development/SPR.SAV"]
 # ==== Games ================================================================
 
 [bundle.sabot2-osa]
@@ -1560,6 +1199,529 @@ group  = "Applications"
 date   = "1995-01-01"
 volume = "any"
 files  = ["software/apps/rbd-mikro/*"]
+# ==== Development ==========================================================
+
+[bundle.libr-rt11]
+title    = "LIBR - the librarian, which no kit of the machine had"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/LIBR.SAV"]
+
+[bundle.odt-rt11]
+title    = "ODT.OBJ - the octal debugger, linked into a program"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/ODT.OBJ"]
+
+[bundle.pascal]
+group    = "Development"
+title    = "Pascal - PAS1 with its run-time library"
+requires = ["macro11", "link", "syslib"]     # PAS1 emits MACRO-11, LINK binds PASLIB
+suggests = ["forlib"]                        # a program calling RAN links FORLIB too
+prefer   = { mihin = ["macro-mihin", "link-mihin"], default = ["macro-vvv", "link-rt11"] }
+date     = "1995-04-01"
+files    = ["software/development/pascal/PAS1.SAV",
+            "software/development/pascal/PAS1.OBJ",
+            "software/development/pascal/PASLIB.OBJ"]
+
+[bundle.pascal-graphics]
+group    = "Development"
+title    = "Pascal graphics - PASGRF and GRAPH.P1U"
+requires = ["pascal"]
+date     = "1995-04-01"
+files    = ["software/development/pascal/PASGRF.OBJ", "software/development/pascal/GRAPH.P1U"]
+
+[bundle.pascal-units]
+group    = "Development"
+title    = "Pascal units - STRING, SETPIX, GETDAT sources"
+requires = ["pascal"]
+volume   = "any"
+date     = "1995-04-01"
+files    = ["software/development/pascal/STRING.PAS",
+            "software/development/pascal/SETPIX.PAS",
+            "software/development/pascal/GETDAT.PAS"]
+
+[bundle.pascal-docs]
+group    = "Development"
+title    = "Pascal manuals - PASCAL.LST, PASUSE.LST, PASGR.DOC"
+date     = "1995-05-16"
+requires = ["pascal"]
+volume   = "any"
+files    = ["software/development/pascal/PASCAL.LST",
+            "software/development/pascal/PASUSE.LST",
+            { path = "software/development/pascal/PASGR.DOC", date = "1995-05-15" }]
+
+[bundle.forlib]
+group    = "Development"
+title = "FORLIB.OBJ - the FORTRAN IV run-time library"
+date  = "1995-04-01"
+files = ["software/development/fortran/FORLIB.OBJ"]
+
+[bundle.fortran]
+group    = "Development"
+title    = "FORTRAN IV compiler"
+requires = ["link", "forlib", "syslib"]
+prefer   = { mihin = ["link-mihin"], default = ["link-rt11"] }
+date     = "1995-04-01"
+files    = ["software/development/fortran/FORTRA.SAV"]
+
+[bundle.basico]
+group    = "Development"
+title    = "BASIC - Omega BASIC 1-01a, the machine's native BASIC"
+provides = ["basic"]
+date     = "1992-02-17"
+files    = ["software/development/basic/BASICO.SAV"]
+
+[bundle.basic-rafos]
+group    = "Development"
+title    = "BASIC / RAFOS V02-030"
+date     = "1991-08-14"
+provides = ["basic"]
+files    = ["software/development/basic/BASIC.SAV"]
+
+[bundle.basico-docs]
+group    = "Development"
+title    = "BASICO.DOC - the Omega BASIC manual"
+date     = "1995-01-01"
+requires = ["basico"]
+volume   = "any"
+files    = ["software/development/basic/BASICO.DOC"]
+
+[bundle.dess]
+group    = "Development"
+title = "DESS - DEZI dump viewer and disassembler"
+date  = "1995-04-01"
+files = ["software/development/utils/DESS.SAV"]
+
+[bundle.spr]
+group    = "Development"
+title = "SPR - makes sprite files for Pascal programs"
+date  = "1995-04-01"
+files = ["software/development/pascal/SPR.SAV"]
+
+[bundle.macro-vvv]
+title    = "MACRO V05.04 (FODOS kit of the vvv104 disks)"
+group    = "Development"
+provides = ["macro11"]
+requires = ["sysmac"]
+date     = "1995-04-01"
+files    = ["software/development/MACRO.SAV"]
+
+[bundle.link-rt11]
+title    = "LINK V5.4 (DEC's, byte for byte from its sources)"
+group    = "Development"
+provides = ["link"]
+date     = "1999-12-31"
+files    = ["software/development/LINK.SAV"]
+
+[bundle.sysmac]
+group    = "Development"
+title = "SYSMAC.SML - the system macro library"
+provides = ["sysmac"]
+date  = "1995-04-01"
+files = ["software/development/fodos/SYSMAC.SML"]
+
+[bundle.syslib]
+group    = "Development"
+title = "SYSLIB.OBJ - the system library"
+date  = "1995-04-01"
+files = ["software/development/fodos/SYSLIB.OBJ"]
+
+[bundle.sysmac-rt11]
+title    = "SYSMAC.SML - DEC's system macro library"
+group    = "Development"
+provides = ["sysmac"]
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["software/development/SYSMAC.SML"]
+
+[bundle.syslib-rt11]
+title    = "SYSLIB.OBJ - DEC's system object library"
+group    = "Development"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["software/development/SYSLIB.OBJ"]
+
+[bundle.libcom-rt11]
+title    = "LIBCOM - compares two object libraries module by module"
+group    = "Development"
+systems  = ["dec", "dec-ru"]
+date     = "1999-12-31"
+files    = ["software/development/utils/LIBCOM.SAV"]
+
+[bundle.macro-mihin]
+title    = "MACRO V05.04 (Mihin's OS-16SJ disks)"
+group    = "Development"
+provides = ["macro11"]
+requires = ["sysmac"]
+date     = "1991-01-29"
+files    = ["software/development/fodos/mihin/MACRO.SAV"]
+
+[bundle.link-mihin]
+title    = "LINK V08.04 (Mihin's OS-16SJ disks)"
+group    = "Development"
+provides = ["link"]
+date     = "1986-09-05"
+files    = ["software/development/fodos/mihin/LINK.SAV"]
+
+[bundle.macro-omega]
+title    = "MACRO V05.01b (OMEGA disk 064)"
+group    = "Development"
+date     = "1995-04-01"   # this copy carried none; the disks' other copies say so
+provides = ["macro11"]
+requires = ["sysmac"]
+files    = ["software/development/fodos/omega/MACRO.SAV"]
+
+[bundle.patch-rt11]
+title    = "SLP, PAT, SIPP - patching sources, objects and programs"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/utils/SLP.SAV", "software/development/utils/PAT.SAV", "software/development/utils/SIPP.SAV"]
+
+[bundle.strip-rt11]
+title    = "STRIP and SPLIT"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/utils/STRIP.SAV", "software/development/utils/SPLIT.SAV"]
+
+[bundle.compare-rt11]
+title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
+group    = "Development"
+date     = "1999-12-31"
+files    = ["software/development/utils/SRCCOM.SAV", "software/development/utils/BINCOM.SAV"]
+
+# ---- DECUS C -------------------------------------------------------------
+# The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
+# (rt11_devel/projects/decusc of the emulator), in two builds of the same
+# names: the folder itself for the machine as it is, eis/ for the machine with
+# EM.SYS, the instruction emulator.  A diskette takes one of the two; the
+# headers serve either, and the tools come in three parts so that one fits
+# beside the compiler.
+
+[bundle.decusc]
+group    = "Development"
+title    = "DECUS C - the compiler, its assembler and library, for the T11 (no EIS)"
+provides = ["decus-c"]
+requires = ["link"]
+prefer   = { mihin = ["link-mihin"], default = ["link-rt11"] }
+date     = "1983-10-13"
+files    = ["software/development/decusc/CC.SAV",
+            "software/development/decusc/AS.SAV",
+            "software/development/decusc/CLIB.OBJ",
+            "software/development/decusc/SUPORT.OBJ",
+            "software/development/decusc/DTOA.OBJ",
+            "software/development/decusc/ATOF.OBJ"]
+
+[bundle.decusc-eis]
+group    = "Development"
+title    = "DECUS C for EM.SYS - the compiler, its assembler and library with EIS inline"
+provides = ["decus-c"]
+requires = ["link", "em"]
+prefer   = { mihin = ["link-mihin"], default = ["link-rt11"] }
+date     = "1983-10-13"
+files    = ["software/development/decusc/eis/CC.SAV",
+            "software/development/decusc/eis/AS.SAV",
+            "software/development/decusc/eis/CLIB.OBJ",
+            "software/development/decusc/eis/SUPORT.OBJ",
+            "software/development/decusc/eis/DTOA.OBJ",
+            "software/development/decusc/eis/ATOF.OBJ"]
+
+[bundle.decusc-headers]
+group    = "Development"
+title    = "DECUS C - the headers (STDIO.H, CTYPE.H, TIME.H, ...)"
+requires = ["decus-c"]
+date     = "1983-10-13"
+files    = ["software/development/decusc/include/BUILD.H",
+            "software/development/decusc/include/CSET.H",
+            "software/development/decusc/include/CSIS.H",
+            "software/development/decusc/include/CTYPE.H",
+            "software/development/decusc/include/F11.H",
+            "software/development/decusc/include/FPS.H",
+            "software/development/decusc/include/INITIA.H",
+            "software/development/decusc/include/LBRDEF.H",
+            "software/development/decusc/include/MPDEFS.H",
+            "software/development/decusc/include/MPEXTR.H",
+            "software/development/decusc/include/RTIME.H",
+            "software/development/decusc/include/STDIO.H",
+            "software/development/decusc/include/T.H",
+            "software/development/decusc/include/TIME.H",
+            "software/development/decusc/include/TIMEB.H",
+            "software/development/decusc/include/VSTRIN.H",
+            "software/development/decusc/include/YTAB.H"]
+
+[bundle.decusc-tools]
+group    = "Development"
+title    = "DECUS C - the text tools: GREP, DIFF, COMM, UNIQ, WC, SORTC, PR, OD, MC, NC, DETAB, ENTAB, SCAT, SCOPY, LINEPR, ECHO"
+date     = "1983-10-13"
+files    = ["software/development/decusc/COMM.SAV",
+            "software/development/decusc/DETAB.SAV",
+            "software/development/decusc/DIFF.SAV",
+            "software/development/decusc/ECHO.SAV",
+            "software/development/decusc/ENTAB.SAV",
+            "software/development/decusc/GREP.SAV",
+            "software/development/decusc/LINEPR.SAV",
+            "software/development/decusc/MC.SAV",
+            "software/development/decusc/NC.SAV",
+            "software/development/decusc/OD.SAV",
+            "software/development/decusc/PR.SAV",
+            "software/development/decusc/SCAT.SAV",
+            "software/development/decusc/SCOPY.SAV",
+            "software/development/decusc/SORTC.SAV",
+            "software/development/decusc/UNIQ.SAV",
+            "software/development/decusc/WC.SAV"]
+
+[bundle.decusc-devtools]
+group    = "Development"
+title    = "DECUS C - the tools of C development: MP (the macro preprocessor), NM, XRF, BUILD, GETCMD, ARCH, KWIK, GETKWK, GETRNO, RNOIDX, FIXDOC, T"
+date     = "1983-10-13"
+files    = ["software/development/decusc/ARCH.SAV",
+            "software/development/decusc/BUILD.SAV",
+            "software/development/decusc/FIXDOC.SAV",
+            "software/development/decusc/GETCMD.SAV",
+            "software/development/decusc/GETKWK.SAV",
+            "software/development/decusc/GETRNO.SAV",
+            "software/development/decusc/KWIK.SAV",
+            "software/development/decusc/MP.SAV",
+            "software/development/decusc/NM.SAV",
+            "software/development/decusc/RNOIDX.SAV",
+            "software/development/decusc/T.SAV",
+            "software/development/decusc/XRF.SAV"]
+
+[bundle.decusc-misc]
+group    = "Development"
+title    = "DECUS C - the rest of the tape's kit: BANNER, CALEND, CRYPT, DUAL, E, GRAB, HACK, KALEID, PHBOOK, PTR, SH"
+date     = "1983-10-13"
+files    = ["software/development/decusc/BANNER.SAV",
+            "software/development/decusc/CALEND.SAV",
+            "software/development/decusc/CRYPT.SAV",
+            "software/development/decusc/DUAL.SAV",
+            "software/development/decusc/E.SAV",
+            "software/development/decusc/GRAB.SAV",
+            "software/development/decusc/HACK.SAV",
+            "software/development/decusc/KALEID.SAV",
+            "software/development/decusc/PHBOOK.SAV",
+            "software/development/decusc/PTR.SAV",
+            "software/development/decusc/SH.SAV"]
+
+[bundle.decusc-tools-eis]
+group    = "Development"
+title    = "DECUS C for EM.SYS - the text tools: GREP, DIFF, COMM, UNIQ, WC, SORTC, PR, OD, MC, NC, DETAB, ENTAB, SCAT, SCOPY, LINEPR, ECHO"
+requires = ["em"]
+date     = "1983-10-13"
+files    = ["software/development/decusc/eis/COMM.SAV",
+            "software/development/decusc/eis/DETAB.SAV",
+            "software/development/decusc/eis/DIFF.SAV",
+            "software/development/decusc/eis/ECHO.SAV",
+            "software/development/decusc/eis/ENTAB.SAV",
+            "software/development/decusc/eis/GREP.SAV",
+            "software/development/decusc/eis/LINEPR.SAV",
+            "software/development/decusc/eis/MC.SAV",
+            "software/development/decusc/eis/NC.SAV",
+            "software/development/decusc/eis/OD.SAV",
+            "software/development/decusc/eis/PR.SAV",
+            "software/development/decusc/eis/SCAT.SAV",
+            "software/development/decusc/eis/SCOPY.SAV",
+            "software/development/decusc/eis/SORTC.SAV",
+            "software/development/decusc/eis/UNIQ.SAV",
+            "software/development/decusc/eis/WC.SAV"]
+
+[bundle.decusc-devtools-eis]
+group    = "Development"
+title    = "DECUS C for EM.SYS - the tools of C development: MP (the macro preprocessor), NM, XRF, BUILD, GETCMD, ARCH, KWIK, GETKWK, GETRNO, RNOIDX, FIXDOC, T"
+requires = ["em"]
+date     = "1983-10-13"
+files    = ["software/development/decusc/eis/ARCH.SAV",
+            "software/development/decusc/eis/BUILD.SAV",
+            "software/development/decusc/eis/FIXDOC.SAV",
+            "software/development/decusc/eis/GETCMD.SAV",
+            "software/development/decusc/eis/GETKWK.SAV",
+            "software/development/decusc/eis/GETRNO.SAV",
+            "software/development/decusc/eis/KWIK.SAV",
+            "software/development/decusc/eis/MP.SAV",
+            "software/development/decusc/eis/NM.SAV",
+            "software/development/decusc/eis/RNOIDX.SAV",
+            "software/development/decusc/eis/T.SAV",
+            "software/development/decusc/eis/XRF.SAV"]
+
+[bundle.decusc-misc-eis]
+group    = "Development"
+title    = "DECUS C for EM.SYS - the rest of the tape's kit: BANNER, CALEND, CRYPT, DUAL, E, GRAB, HACK, KALEID, PHBOOK, PTR, SH"
+requires = ["em"]
+date     = "1983-10-13"
+files    = ["software/development/decusc/eis/BANNER.SAV",
+            "software/development/decusc/eis/CALEND.SAV",
+            "software/development/decusc/eis/CRYPT.SAV",
+            "software/development/decusc/eis/DUAL.SAV",
+            "software/development/decusc/eis/E.SAV",
+            "software/development/decusc/eis/GRAB.SAV",
+            "software/development/decusc/eis/HACK.SAV",
+            "software/development/decusc/eis/KALEID.SAV",
+            "software/development/decusc/eis/PHBOOK.SAV",
+            "software/development/decusc/eis/PTR.SAV",
+            "software/development/decusc/eis/SH.SAV"]
+# ==== Formatters ===========================================================
+
+[bundle.format-rt11]
+title    = "FORMAT - formats DZ, DV and MZ diskettes (DEC's, with a module for the machine's drive)"
+group    = "Formatters"
+date     = "1999-12-31"
+files    = ["software/format/FORMAT.SAV"]
+
+[bundle.fdz]
+title    = "FDZ - diskette formatter (Mihin-soft & SPF Sensor)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1991-07-04"
+files    = ["software/format/FDZ.SAV"]
+
+# -- printing
+
+[bundle.form-omega]
+title    = "FORML, FORMH - diskette formatters (OMEGA build)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1992-01-14"
+files    = ["software/format/omega/FORML.SAV", "software/format/omega/FORMH.SAV"]
+
+[bundle.form-vvv]
+title    = "FORML, FORMH - diskette formatters (vvv104 build)"
+group    = "Formatters"
+provides = ["formatter"]
+date     = "1995-04-01"
+files    = ["software/format/vvv/FORML.SAV", "software/format/vvv/FORMH.SAV"]
+# ==== Editors ==============================================================
+
+[bundle.ked]
+group    = "Editors"
+title    = "KED - keypad screen editor (vvv104 disks)"
+provides = ["k13-editor"]
+date     = "1995-04-01"
+files    = ["software/editors/KED.SAV"]
+
+[bundle.k52]
+group    = "Editors"
+title    = "K52 - screen editor of the OSA and OMEGA kits"
+provides = ["k13-editor"]
+date     = "1991-01-31"
+files    = [{ path = "software/editors/K13U.SAV", as = "K52.SAV" }]
+
+[bundle.r15]
+group    = "Editors"
+title    = "R15 - Rodionov's edition of the editor, with its help"
+provides = ["k13-editor"]
+date     = "1990-11-29"
+files    = ["software/editors/R15.SAV",
+            { path = "software/editors/R15.HLP", date = "1993-03-24" }]
+
+[bundle.r15-docs]
+group    = "Editors"
+title    = "R15.DOC - the manual of the K13 family editor"
+volume   = "any"
+date     = "1993-08-09"
+files    = ["software/editors/R15.DOC"]
+
+[bundle.edit-rt11]
+title    = "EDIT - DEC's text editor"
+group    = "Editors"
+date     = "1999-12-31"
+files    = ["software/editors/EDIT.SAV"]
+
+[bundle.k52-rt11]
+title    = "K52 - DEC's screen editor for the VT52 keypad (KED as built for this terminal)"
+group    = "Editors"
+startup  = ["SET EDIT K52"]    # the monitor's EDIT command runs it: EDIT FILE.TXT
+date     = "1999-12-31"
+files    = ["software/editors/K52.SAV"]
+# ==== Diagnostics =================================================
+
+[bundle.geteml]
+title = "GETEML - the loadable EIS/FIS instruction emulator"
+group = "Diagnostics"
+date  = "1991-10-18"
+files = ["software/diag/GETEML.SAV"]
+
+[bundle.exerciser]
+title = "183107 - the factory exerciser"
+group = "Diagnostics"
+date  = "1991-01-15"
+files = ["software/diag/183107.SAV"]
+
+[bundle.timing]
+title    = "The C* instruction-timing suite"
+group    = "Diagnostics"
+date     = "1993-03-01"   # the disk says 2025: an age bit, 1993 + 32 (CRDWR, CRDWR1 were 1995-02-18)
+requires = ["geteml"]
+volume   = "any"
+files    = ["software/diag/C*.SAV"]
+
+[bundle.scan-codes]
+title = "SCN15I - keyboard scan-code viewer"
+group = "Diagnostics"
+date  = "1995-04-25"   # the disk says 2027: an age bit, 1995 + 32
+files = ["software/diag/SCN15I.SAV"]
+# ==== Printing ====================================================
+
+[bundle.out17]
+title = "OUT17 - text files to the MS6317 ink-jet printer"
+group = "Printing"
+date  = "1995-01-01"
+files = ["software/print/OUT17.SAV", "software/print/OUT17.DOC"]
+
+[bundle.outc]
+title = "OUTC - text files to the SM6337 printer"
+group = "Printing"
+date  = "1995-01-01"
+files = ["software/print/OUTC.SAV", "software/print/OUTC.DOC"]
+
+[bundle.out2]
+title = "OUT2 - of the OUT printing family"
+group = "Printing"
+date  = "1991-12-17"
+files = ["software/print/OUT2.SAV"]
+
+[bundle.p6337]
+title = "6337 - print utility for the MS 6337 printer"
+group = "Printing"
+date  = "1995-01-01"
+files = ["software/print/6337.SAV"]
+
+# -- diagnostics
+# ==== Shells ===============================================================
+
+[bundle.sce]
+title = "SCE - two-panel file manager, with its help"
+group = "Shells"
+date  = "1993-09-29"
+files = ["software/shells/SCE.SAV",
+         { path = "software/shells/SCE.HLP", date = "1989-01-04" }]
+
+[bundle.rs]
+title    = "RS.SYS - EmeSoft's RT11 profShell (LOAD RS, SET RS ON)"
+group    = "Shells"
+date     = "1994-09-13"
+systems  = ["osa"]
+requires = ["em"]               # it uses EIS instructions
+files    = ["software/shells/RS.SYS"]
+
+[bundle.rosa3]
+title    = "ROSA Commander v1.3 - Rodionov's two-panel file manager"
+group    = "Shells"
+systems  = ["rodionov"]
+needs    = ["dz"]               # it hardcodes DZ0: and DZ2:
+requires = ["vm"]
+startup  = ["LOAD VM:"]         # else it stops with ?MON-F- no device as it starts
+date     = "1993-10-19"
+files    = ["software/shells/ROSA3.SAV"]
+
+[bundle.rosa-docs]
+title    = "Rodionov's instruction, advertisement and comparison sheets"
+group    = "Shells"
+systems  = ["rodionov"]
+volume   = "any"
+date     = "1993-03-18"
+files    = [{ path = "software/shells/INSTR.DOC", date = "1993-08-09" },
+            "software/shells/REKROS.DOC",
+            "software/shells/REKSYS.DOC"]
 # ---- presets -------------------------------------------------------------
 # What the release builds and the web offers with one click: the bundles a
 # person would tick; what they require comes by the same rules.

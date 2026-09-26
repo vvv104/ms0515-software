@@ -95,11 +95,3 @@ provides = ["resorc"]
 date     = "1990-12-27"
 files    = ["kits/osa/utils/RESORC.SAV"]
 
-[bundle.rs]
-title    = "RS.SYS - EmeSoft's RT11 profShell (LOAD RS, SET RS ON)"
-kit      = "osa"
-group    = "Shells"
-date     = "1994-09-13"
-systems  = ["osa"]
-requires = ["em"]               # it uses EIS instructions
-files    = ["kits/osa/shells/RS.SYS"]

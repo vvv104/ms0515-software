@@ -44,28 +44,6 @@ provides = ["datime"]
 date     = "1995-04-01"
 files    = ["kits/vvv/utils/DATIME.SAV"]
 
-[bundle.form-vvv]
-title    = "FORML, FORMH - diskette formatters (vvv104 build)"
-kit      = "vvv"
-provides = ["formatter"]
-date     = "1995-04-01"
-files    = ["kits/vvv/format/FORML.SAV", "kits/vvv/format/FORMH.SAV"]
-
-[bundle.macro-vvv]
-title    = "MACRO V05.04 (FODOS kit of the vvv104 disks)"
-kit      = "vvv"
-provides = ["macro11"]
-requires = ["sysmac"]
-date     = "1995-04-01"
-files    = ["kits/vvv/development/MACRO.SAV"]
-
-[bundle.link-vvv]
-title    = "LINK V05.14 (FODOS kit of the vvv104 disks)"
-kit      = "vvv"
-provides = ["link"]
-date     = "1995-04-01"
-files    = ["kits/vvv/development/LINK.SAV"]
-
 [bundle.bincom]
 kit      = "vvv"
 title = "BINCOM V05.08 - binary compare"
