@@ -1291,7 +1291,7 @@ files    = ["software/development/basic/BASICO.DOC"]
 group    = "Development"
 title = "DESS - DEZI dump viewer and disassembler"
 date  = "1995-04-01"
-files = ["software/development/dezi/DESS.SAV"]
+files = ["software/development/utils/DESS.SAV"]
 
 [bundle.spr]
 group    = "Development"
@@ -1376,19 +1376,19 @@ files    = ["software/development/fodos/omega/MACRO.SAV"]
 title    = "SLP, PAT, SIPP - patching sources, objects and programs"
 group    = "Development"
 date     = "1999-12-31"
-files    = ["software/development/SLP.SAV", "software/development/PAT.SAV", "software/development/SIPP.SAV"]
+files    = ["software/development/utils/SLP.SAV", "software/development/utils/PAT.SAV", "software/development/utils/SIPP.SAV"]
 
 [bundle.strip-rt11]
 title    = "STRIP and SPLIT"
 group    = "Development"
 date     = "1999-12-31"
-files    = ["software/development/STRIP.SAV", "software/development/SPLIT.SAV"]
+files    = ["software/development/utils/STRIP.SAV", "software/development/utils/SPLIT.SAV"]
 
 [bundle.compare-rt11]
 title    = "SRCCOM and BINCOM - DIFFERENCES of texts and of binaries"
 group    = "Development"
 date     = "1999-12-31"
-files    = ["software/development/SRCCOM.SAV", "software/development/BINCOM.SAV"]
+files    = ["software/development/utils/SRCCOM.SAV", "software/development/utils/BINCOM.SAV"]
 
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system

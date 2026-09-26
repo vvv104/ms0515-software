@@ -2056,22 +2056,6 @@ Omega BASIC for the Elektronika MS 0515, edition 1-01a; the native BASIC of the 
 
 </details>
 
-<details><summary><b>software/development/dezi/</b> — 2 files</summary>
-
-### `software/development/dezi/DESS.SAV`
-
-DEZI V05.01, 'Originally written by D. Climov' (phone in the banner): an interactive octal dump viewer-cum-disassembler - full-screen word dump with ASCII gutter, BLCK/ADDR/TYPE header, a Stack line and a live 'Macro-11:' disassembly of the word at the cursor; modes words/bytes/radix/ascii/Inst, pattern search. The machine's резидентный инструмент дизассемблирования; on all five of the keeper's disks
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DEZI-F-FilenotfoundDK:NOSUCH.XXX*; disks: 5; identified from: banner + live run on DIR.SAV 2026-09-05 (screenshot with Macro-11: HALT); sha256 bd0665c3c864*
-
-### `software/development/dezi/REDUMP.SAV`
-
-DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local rebadge of DESS.SAV, the same program (string tables byte-identical); unrelated to the small REDUMP.PAS in PROGS.DSK
-
-*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: banner comparison: 'REDUMP B5.0e ...ginally written by D. Climov'; sha256 f29f7dc3113d*
-
-</details>
-
 <details><summary><b>software/development/fodos/</b> — 2 files</summary>
 
 ### `software/development/fodos/SYSLIB.OBJ`
@@ -2209,6 +2193,22 @@ SetPixel for the 640x200 hi-res screen written straight against the hardware: th
 String library for OMSI Pascal (which has no string type): STRING = array[1..79] of char with STRINIT, STRLENG, STRREAD (raw keyboard input through the external KBMODE/INKEY of PASGRF, with backspace editing), STRWRITE, STRDELETE, STRINSERT and VAL (string to real with an error position); ends with a small self-test main
 
 *disks: 2; identified from: read from the source 2026-09-06; sha256 7810b7a6abab*
+
+</details>
+
+<details><summary><b>software/development/utils/</b> — 2 files</summary>
+
+### `software/development/utils/DESS.SAV`
+
+DEZI V05.01, 'Originally written by D. Climov' (phone in the banner): an interactive octal dump viewer-cum-disassembler - full-screen word dump with ASCII gutter, BLCK/ADDR/TYPE header, a Stack line and a live 'Macro-11:' disassembly of the word at the cursor; modes words/bytes/radix/ascii/Inst, pattern search. The machine's резидентный инструмент дизассемблирования; on all five of the keeper's disks
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — prompt; answers ?DEZI-F-FilenotfoundDK:NOSUCH.XXX*; disks: 5; identified from: banner + live run on DIR.SAV 2026-09-05 (screenshot with Macro-11: HALT); sha256 bd0665c3c864*
+
+### `software/development/utils/REDUMP.SAV`
+
+DEZI V05.01 by D. Climov with the banner hex-patched to 'REDUMP B5.0e' - a local rebadge of DESS.SAV, the same program (string tables byte-identical); unrelated to the small REDUMP.PAS in PROGS.DSK
+
+*written in assembler (no runtime library); text; en / ascii; cross-run: ran — bare prompt, no answer to a bogus file name; disks: 1; identified from: banner comparison: 'REDUMP B5.0e ...ginally written by D. Climov'; sha256 f29f7dc3113d*
 
 </details>
 
