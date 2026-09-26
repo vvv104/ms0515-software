@@ -16,12 +16,12 @@ Two builds, the same names in each, so a diskette takes one folder whole:
 
 | folder | for | how |
 |---|---|---|
-| [`no-eis/`](no-eis/) | the machine as it is | `RT11.MAC`: `C$$EIS = 0`, multiply, divide and shift by the library; `CC` calls the library unless told `/E` |
-| [`with-eis/`](with-eis/) | the machine with `EM.SYS` (`SET EM SYSGEN`, `SET EM ON`), the EIS instructions emulated | `RT11.EIS`: the instructions inline in the library, and `CC` makes them inline unless told `/N` |
+| [`noeis/`](noeis/) | the machine as it is | `RT11.MAC`: `C$$EIS = 0`, multiply, divide and shift by the library; `CC` calls the library unless told `/E` |
+| [`eis/`](eis/) | the machine with `EM.SYS` (`SET EM SYSGEN`, `SET EM ON`), the EIS instructions emulated | `RT11.EIS`: the instructions inline in the library, and `CC` makes them inline unless told `/N` |
 | [`include/`](include/) | both | the headers, as the tape's kit had them |
 
 `CC.SAV` of the two differs in one byte, the default of its `-E` toggle;
-`AS.SAV` is the same file.  The `with-eis` programs are slower here: an
+`AS.SAV` is the same file.  The `eis` programs are slower here: an
 emulated instruction is a trap and a hundred instructions of `EM`, where
 the library's routine is a loop of twenty.
 
