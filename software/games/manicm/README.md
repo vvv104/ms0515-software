@@ -17,7 +17,7 @@ PDP-11 rewrites the second file and leaves the first alone.
 
 | file | what | how to run |
 |---|---|---|
-| `MANICM.SAV` | the program, 20 blocks | `R MANICM`, with `MANICM.DAT` on the same volume |
+| `MANICM.SAV` | the program, 22 blocks | `R MANICM`, with `MANICM.DAT` on the same volume |
 | `MANICM.DAT` | the original's data - the caverns, the sprites, the tunes, the title screen, the character set - as plain 512-byte blocks the game reads a cavern at a time | data file of `MANICM.SAV`, keep beside it |
 
 ENTER (or the joystick's fire) at the title starts the game; O/P or Q/W
