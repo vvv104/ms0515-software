@@ -9,7 +9,7 @@ decoded back to Cyrillic.
 
 **Домнич А.В. (Александр)** — Воронеж / Каменка, 1994.  The most
 prolific named engineer in the collection, at home in four languages:
-the educational snake game «ПИТОН» (`UDAW.EXE`, Pascal, made to order
+the educational snake game «ПИТОН» (`UDAW.SAV`, Pascal, made to order
 for И.В.Ф. «МИКРОТЕХ» — vowels eaten vertically, consonants
 horizontally — protected by a self-integrity check that sums the first
 1000 words of its own file and greets a tampered copy with «Привет
@@ -47,7 +47,7 @@ physical track 0 of the back side, and his programs say so plainly:
 
 **В. Понимаш** — Львов, НИПП «Омега», 1992.  A developer of the
 МС-0515 machine itself (as the collection's keeper attests) — and the
-author of `ART.EXE`, the graphics editor whose screen the cross-run
+author of `ART.SAV`, the graphics editor whose screen the cross-run
 measured at 96% ink: one of the machine's makers drawing on his own
 canvas.
 > «Версия 1.0.  Автор В.Понимаш.  ЛЬВОВ НИПП "Омега" 1992.»
@@ -71,7 +71,7 @@ a schoolchild with a corporation.
 > «COPYRIGHT 1994 BY GOSTEV DMITRY»
 
 **Грудзинский А.С.** — Львовский университет, the sprite program
-`SPR.BAS`.
+`SPRED.BAS`.
 > «Львовского университета.  Автор Грудзинский А.С.»
 
 **D. Climov** — the toolsmith of DEZI V05.01 (`DESS.SAV`, carried on
@@ -125,7 +125,7 @@ this one: «НС4 - УПБК ? Разработка + ОС и т.д. - Пони�
 «видеоввод, жесткий диск AT».  From the same house: the ОМЕГА SJ(S) V05.04 monitors, the БЕЙСИК-ОМЕГА
 interpreter (`BASICO.SAV`; its manual: «РАЗРАБОТАН ЛЬВОВСКИМ
 НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), the RT11/DOS/TR-DOS
-file-system converter `FCON.EXE` («Экспериментальная версия Июль 1993
+file-system converter `FCON.SAV` («Экспериментальная версия Июль 1993
 г.»), the SPRITE editor (`SPRED.DOC`, Львов 1991), ART.  «LWOW SOFT»'s
 `EXPRES.SAV` («ITA EXPRESS», © 1990, joystick or keyboard) is the same
 city at play.
@@ -166,7 +166,7 @@ baked in — its banner opens their every boot.
 **И.В.Ф. «МИКРОТЕХ», Воронеж** — commissioned «ПИТОН» (1994).
 
 **ФМГ, Воронеж, 1994** — the «МУЗЫКАЛЬНЫЙ РЕДАКТОР» whose animated
-advertisement (`ZASTM.EXE`) is all that survives of it.
+advertisement (`ZASTM.SAV`) is all that survives of it.
 
 **SB Soft Ware Ltd., 1992** — «AutoTeacher V3.10, Created by SB»
 (`AT.SAV`) with its student-testing data files (`STUD.PUP`).

@@ -160,8 +160,9 @@ those sectors sat inside what the OS regarded as free space — and his own
 DUP/PIP do write there once the volume fills up (proved in the emulator:
 a full DZ2: overwrote block 792 and the boot died).
 
-His kit: `DZ.SYS`, `TT.SYS`, `DIR.SAV` — his own — with DUP and PIP of
-the Омега kit.  No disk of his carries an SL (his startup's `!SET SL ON`
+His kit: `DZ.SYS`, `TT.SYS` — his own — with DUP and PIP of the Омега
+kit, and `DIR.SAV`, which is not his own build - it is the OSA family's,
+one byte off (see `kits/rodionov/utils/README.md`).  No disk of his carries an SL (his startup's `!SET SL ON`
 was commented out); the Омега `062` build loads and activates under
 RT15SJ, the Mihin-family SLs the monitor refuses («Недопустимое
 устройство SL:»).  The original startup ran `R BLUE` / `LOAD VM:` /
