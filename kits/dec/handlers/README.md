@@ -16,8 +16,9 @@ Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.
 | `NL.SYS` `LD.SYS` | DEC's V5.4 null device and logical disks, as they are | DEC's sources |
 | `LP.SYS` `LS.SYS` `SP.SYS` | DEC's printer handlers and spooler, as they are. **Untried**: DEC's `LP` expects an LP11 at `177514`, which the machine has not | DEC's sources |
 | `BA.SYS` | The resident part of `BATCH` | DEC's sources |
+| `SL.SYS` | The single-line editor: DEC's V5.4 `SL`, its own logic and keys (PF1 is GOLD, PF2 help), built for the VT52 the ROM's console is, with a patch of eight lines where DEC left that build unfinished. `SET SL ON` | `handlers/sl/SL.diff` |
 
-DEC's `SL.SYS` is not here: it edits the line rightly but its screen control does not fit the machine's console. ОСА's and ОМЕГА's `SL.SYS` (`../../osa/handlers/`, `../../omega/handlers/`) load under these monitors.
+ОСА's and ОМЕГА's `SL.SYS` (`../../osa/handlers/`, `../../omega/handlers/`) load under these monitors too.
 
 `EM.SYS`, the EIS/FIS instruction emulator of the ОСА kit (`../../osa/handlers/`), works under these monitors as it is: `SET EM SYSGEN`, then `SET EM ON`.
 
