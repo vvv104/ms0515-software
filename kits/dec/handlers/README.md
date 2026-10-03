@@ -18,6 +18,8 @@ Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.
 | `BA.SYS` | The resident part of `BATCH` | DEC's sources |
 | `SL.SYS` | The single-line editor: DEC's V5.4 `SL`, its own logic and keys (PF1 is GOLD, PF2 help), built for the VT52 the ROM's console is, with a patch of eight lines where DEC left that build unfinished. `SET SL ON` | `handlers/sl/SL.diff` |
 
+`tab/SL.SYS` is the same `SL` with two things of ours (the emulator's `rt11_devel/projects/sl`): **Tab completes the word** in the monitor's command line - commands, their switches, SET's and SHOW's words, file names, all read from the running monitor - and **the history is a ring** of as many lines as fit in the 160 bytes where DEC kept two (Up older, Down newer; GOLD Up is Up). The rest is DEC's. 21 blocks; in memory 4090 bytes against DEC's 3624 - the completion is an overlay read from the file when Tab is pressed. Bundle `sl-tab`; the `dec` preset keeps DEC's own.
+
 ОСА's and ОМЕГА's `SL.SYS` (`../../osa/handlers/`, `../../omega/handlers/`) load under these monitors too.
 
 `EM.SYS`, the EIS/FIS instruction emulator of the ОСА kit (`../../osa/handlers/`), works under these monitors as it is: `SET EM SYSGEN`, then `SET EM ON`.
