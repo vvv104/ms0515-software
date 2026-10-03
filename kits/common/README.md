@@ -8,6 +8,6 @@ The wizard shows these under **System**, after the chosen system's own files, wh
 |---|---|
 | [`utils/`](utils/README.md) | the little programs of the machine: the screen colours, the date setter, the bad-block scanner, the text formatter |
 
-A file here has no rival build in the collection.  Where two kits' disks carried different builds of a program — `DIR`, `DUP`, `PIP`, `MACRO`, `LINK`, `HELP`, `RESORC`, `DUMP`, `DATIME`, `SL` — each stays in the folder of its kit, and the wizard offers them as alternatives.
+A file here has no rival build in the collection.  Where two kits' disks carried different builds of a program — `DIR`, `DUP`, `PIP`, `HELP`, `RESORC`, `DUMP`, `DATIME`, `SL` — each stays in the folder of its kit, and the wizard offers them as alternatives.
 
 The screen editor is the one exception, and a deliberate one: `K13U`, `KED` and `R15` are three cuts of the same program, and they are kept side by side in `software/editors/` rather than scattered over the ОСА, vvv and Rodionov kits.

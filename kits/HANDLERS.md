@@ -26,7 +26,7 @@ Verdicts: *loaded* = `LOAD` accepted it on that monitor, *rejected* = «Недо
 | omega | `LD.SYS` | `6b81c8b` | disk3 | Logical-disk handler: mounts a container file as a volume | loaded | loaded | loaded | rejected |
 | omega | `LP.SYS` | `6d8e23c` | disk3 | Line-printer handler | loaded | loaded | loaded | rejected |
 | omega | `MZ.SYS` | `1a2133a` | disk3 | Whole double-sided diskette as one 1600-block volume, cylinder 0 first | loaded | loaded | loaded | rejected |
-| omega | `SL.SYS` | `cb7b42a` | 062 | the 6656-byte SL V08.00 of the ОМЕГА and collector's disks, activates silently | loaded | loaded | loaded | rejected |
+| omega | `SL.SYS` | `35fa4e4` | 062 | the 6656-byte SL V08.00 of the ОМЕГА and collector's disks, activates silently | loaded | loaded | loaded | rejected |
 | omega | `TT.SYS` | `521c093` | disk3 | Terminal handler | loaded | loaded | loaded | rejected |
 | omega | `VM.SYS` | `2e114ef` | disk3 | RAM-disk handler (memory used as a drive) | loaded | loaded | loaded | rejected |
 | osa | `DZ.SYS` | `9b79707` | 058 | Floppy-disk handler | loaded | loaded | loaded | no boot |

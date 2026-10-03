@@ -15,4 +15,4 @@ SB Soft Ware's school testing system V3.10 (1992): `AT.SAV` plays a `.QUS` quest
 | `CR.SAV` | The question-bank constructor of AutoTeacher (SB Soft Ware Ltd.), the build its own diskettes carry (disk1, disk2, amk disk3): writes the .QUS files AT.SAV plays | `RUN CR` |
 | `STUD.PUP` | AutoTeacher results file: 'файл данных о проверке знаний учащихся' - the pupils' test records for AT.SAV | data file of `AT.SAV`, keep beside it |
 
-`amk_1/` holds the constructor as the Лицей №1 diskette carries it - a rebuilt copy, all 41 blocks apart from the one above, with a KOI-7 «ВЫ УВЕРЕНЫ? (Д/Н)» prompt.  That lyceum's machine ran Mihin's OS-16SJ, which is why AutoTeacher was on its disks at all; the pupils' own work is in [`../lyceum1/`](../lyceum1/README.md).
+`amk_1/` holds the constructor as the Лицей №1 diskette carries it - a rebuilt copy, one block shorter (40 against 41) and substantially different throughout, with a KOI-7 «ВЫ УВЕРЕНЫ? (Д/Н)» prompt.  That lyceum's machine ran Mihin's OS-16SJ, which is why AutoTeacher was on its disks at all; the pupils' own work is in [`../../../programs/lyceum1/`](../../../programs/lyceum1/README.md).

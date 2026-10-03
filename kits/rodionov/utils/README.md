@@ -6,5 +6,6 @@ The builds below are the ones these disks carried; each card says on which of th
 
 | file | what | how to run |
 |---|---|---|
+| `DIR.SAV` | DIR V05.03 with Russian messages, the OSA family's build - one byte off the ОСА disks' copy, 164 bytes from the ОМЕГА cut (see `kits/omega/utils/README.md`); not a build of his own, unlike DZ.SYS/TT.SYS  (on 065, 066) | `RUN DIR` |
 | `DUMP.SAV` | DUMP V05.07 as Rodionov's 065/066 carry it - one block (292 bytes) differs from the ОМЕГА build: his own touch  (on 065, 066) | `RUN DUMP` |
 | `HELP.SAV` | RT-11 HELP in two builds: the Russian-localized one (50176 B, «?HELP-F-Не найден файл HELP.MLB»), carried by the ОСА System2, Rodionov's 065 and vvv disk4, and DEC's untranslated V05.04 (69632 B, «What topic do you want help with?») from the Омега disk 062 - each in the folder of its kit. Both need HELP.MLB, the help library, which no disk preserved; HELP.TXT is its text  (on 065, System2, vvv104 disk4) | `RUN HELP` |
