@@ -700,8 +700,9 @@ protect  = true
 date     = "1999-12-31"
 files    = ["kits/dec/handlers/SL.SYS"]
 
-# DEC's SL with two things added in the emulator repository
-# (rt11_devel/projects/sl): Tab completes the word, and the history is a ring.
+# DEC's SL with things added in the emulator repository (rt11_devel/projects/sl):
+# Tab completes the word, the history is a ring, Home, End and Delete work,
+# PF2 lists the keys.
 [bundle.sl-tab]
 title    = "SL.SYS - the single-line editor with Tab completion and a longer history (DEC's, extended)"
 kit      = "dec"
