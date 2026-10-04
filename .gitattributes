@@ -2,3 +2,4 @@
 *.md text eol=lf
 *.PAS -text
 *.MAC -text
+software/apps/autoteacher/AT.TXT -text

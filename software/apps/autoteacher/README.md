@@ -12,6 +12,7 @@ SB Soft Ware's school testing system V3.10 (1992): `AT.SAV` plays a `.QUS` quest
 | `10L04.DOC` | The question bank of an AutoTeacher test in readable form: fourteen questions on resistivity and conductors («удельным сопротивлением проводника называется…»), with answers | text: `TYPE 10L04.DOC`, or read on the host (koi8-r/cp866) |
 | `10L04.QUS` | AutoTeacher question file: 14 questions on resistivity and conductors with their answers cut into words; the readable form is 10L04.DOC | data file of `AT.SAV`, keep beside it |
 | `AT.SAV` | AutoTeacher V3.10 (SB Soft Ware Ltd., 1992) - the school testing system's player: runs .QUS question files (word-grid answers), keeps pupil records in STUD.PUP; questions are authored with CR.SAV | `RUN AT`, then a `.QUS` file name (`1018.QUS`) |
+| `AT.TXT` | This collection's own note, not the program's: what AutoTeacher is and how to run it, typed by the Mihin diskette as it starts.  Russian in KOI-7 between SO and SI, as that monitor's seven-bit console wants it | text: `TYPE AT.TXT` on Mihin's OS-16SJ |
 | `CR.SAV` | The question-bank constructor of AutoTeacher (SB Soft Ware Ltd.), the build its own diskettes carry (disk1, disk2, amk disk3): writes the .QUS files AT.SAV plays | `RUN CR` |
 | `STUD.PUP` | AutoTeacher results file: 'файл данных о проверке знаний учащихся' - the pupils' test records for AT.SAV | data file of `AT.SAV`, keep beside it |
 

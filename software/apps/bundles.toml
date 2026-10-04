@@ -55,3 +55,18 @@ group  = "Applications"
 date   = "1995-01-01"
 volume = "any"
 files  = ["software/apps/rbd-mikro/*"]
+
+# The testing system of the school machines that ran Mihin's OS-16SJ.  It
+# reads its question files from DK:, so it goes on the boot volume.  AT.TXT is
+# this collection's own note on how to run it, in KOI-7 with SO/SI so that it
+# reads in Russian on that monitor's seven-bit console.
+[bundle.autoteacher]
+title   = "AutoTeacher V3.10 - the school testing system, with four physics tests"
+group   = "Applications"
+date    = "1992-01-01"
+startup = ["TYPE AT.TXT"]
+files   = ["software/apps/autoteacher/AT.SAV", "software/apps/autoteacher/CR.SAV",
+           "software/apps/autoteacher/1003.QUS", "software/apps/autoteacher/1018.QUS",
+           "software/apps/autoteacher/10L01.QUS", "software/apps/autoteacher/10L04.QUS",
+           "software/apps/autoteacher/STUD.PUP",
+           { path = "software/apps/autoteacher/AT.TXT", date = "1999-12-31" }]
