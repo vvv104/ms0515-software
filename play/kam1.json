@@ -1,0 +1,18 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "KAM1 (Sokoban)",
+  "ru": "KAM1 (сокобан)"
+ },
+ "about": {
+  "en": "The classic warehouse puzzle: push every load through the labyrinth to the marked place.",
+  "ru": "Классическая складская головоломка: протолкать все грузы по лабиринту на отмеченное место."
+ },
+ "screen": "kam1.png",
+ "program": "KAM1.SAV",
+ "files": ["../software/games/KAM1.SAV", "../software/games/KAMENS.DAT"],
+ "text": {
+  "en": "The digits steer the man: 4 left, 6 right, 8 up, 5 down. He pushes the loads and cannot pull one back. The line at the top, LABR N, is the number of the labyrinth.\n\nHow the game starts a labyrinth over we have not found out: reload the page to begin again.",
+  "ru": "Человечком управляют цифры: 4 - влево, 6 - вправо, 8 - вверх, 5 - вниз. Он толкает грузы и не может тянуть их назад. Строка LABR N вверху - номер лабиринта.\n\nКак в игре начать лабиринт заново, мы не выяснили: чтобы начать сначала, перезагрузите страницу."
+ }
+}

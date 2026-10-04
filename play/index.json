@@ -1,0 +1,4 @@
+{
+ "emulator": "../ms0515/",
+ "games": ["sabot2", "fist", "manicm", "birds", "expres", "mine", "kam1", "udaw"]
+}

@@ -1,0 +1,19 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "Saboteur 2",
+  "ru": "Saboteur 2"
+ },
+ "about": {
+  "en": "The ZX Spectrum's ninja game as it was ported to the MS 0515: LWOW, 1990. The build that reads the joystick, with the fatal room repaired.",
+  "ru": "Игра про ниндзя с ZX Spectrum в переносе на МС 0515: LWOW, 1990. Сборка с джойстиком, с починенной комнатой, убивавшей машину."
+ },
+ "screen": "sabot2.png",
+ "program": "SABOT2.SAV",
+ "files": ["../software/games/sabot2/fixed/omega/SABOT2.SAV", "../software/games/sabot2/fixed/omega/SABOT2.DAT"],
+ "joystick": true,
+ "text": {
+  "en": "After the picture the table of high scores and the menu take turns on the screen. In the menu press J to choose the joystick (KEMPSTON), then S to start. The mission briefing follows; any key goes on, and the game begins as the hang-glider flies in.\n\nOn this page the joystick is your keyboard: the arrows are its directions and Space is fire. M in the menu changes the mission, R redefines the keys for the keyboard choice (K).\n\nThe game takes the whole machine and never leaves: reload the page to start over.",
+  "ru": "После картинки на экране по очереди появляются таблица рекордов и меню. В меню нажмите J - выбрать джойстик (KEMPSTON), затем S - начать. Дальше идёт задание на миссию; любая клавиша продолжает, и игра начинается с прилёта на дельтаплане.\n\nДжойстик на этой странице - ваша клавиатура: стрелки - направления, пробел - огонь. M в меню меняет миссию, R переназначает клавиши для варианта с клавиатурой (K).\n\nИгра забирает всю машину и сама не кончается: чтобы начать сначала, перезагрузите страницу."
+ }
+}

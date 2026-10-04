@@ -3,3 +3,4 @@
 *.PAS -text
 *.MAC -text
 software/apps/autoteacher/AT.TXT -text
+*.png binary

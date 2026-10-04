@@ -1,0 +1,18 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "Stop the \"ITA Express\"",
+  "ru": "Stop the \"ITA Express\""
+ },
+ "about": {
+  "en": "An arcade on the roofs of a moving train, pursuers behind. LWOW SOFT, 1990.",
+  "ru": "Аркада на крышах идущего поезда, с погоней по пятам. LWOW SOFT, 1990."
+ },
+ "screen": "expres.png",
+ "program": "EXPRES.SAV",
+ "files": ["../software/games/EXPRES.SAV"],
+ "text": {
+  "en": "The game opens with a demonstration of a few tries. Enter on the numeric keypad (the machine's ВВОД key) starts it. You have three tries to reach the middle of the train, escaping your pursuers: jump in time, or let loose at them the snake you caught earlier. If that is done, the second part is the same inside the carriage.\n\nThe numeric keypad moves: 4 left, 6 right, 8 up, 2 down, 7, 9, 1 and 3 the diagonals. The same moves with the snake let loose: 5 - left, minus - right, right Shift+F2 (the machine's ПФ2) - up, NumLock (ПФ1) - up and left, the keypad's comma - up and right, its dot - down and right, 0 - down and left.\n\nF10 (the machine's ВЫХОД key) leaves the game. As its own rules say, the keyboard is not a joystick and answers in its own time - which makes the game harder and more interesting.",
+  "ru": "Игра начинается с демонстрации нескольких попыток. Enter на цифровой клавиатуре (клавиша ВВОД машины) начинает игру. Даётся три попытки пройти до середины поезда, спасаясь от преследователей: вовремя прыгнуть или выпустить в них пойманную раньше змею. Если это удалось, вторая часть такая же, внутри вагона.\n\nДвижение - цифровая клавиатура: 4 - влево, 6 - вправо, 8 - вверх, 2 - вниз, 7, 9, 1 и 3 - по диагоналям. Те же движения с выпуском змеи: 5 - влево, минус - вправо, правый Shift+F2 (ПФ2 машины) - вверх, NumLock (ПФ1) - влево-вверх, запятая цифровой клавиатуры - вправо-вверх, точка - вправо-вниз, 0 - влево-вниз.\n\nF10 (клавиша ВЫХОД машины) выходит из игры. Как сказано в её собственных правилах, клавиатура - не джойстик и отвечает по своему закону, отчего игра становится труднее и интереснее."
+ }
+}

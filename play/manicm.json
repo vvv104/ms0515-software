@@ -1,0 +1,18 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "Manic Miner",
+  "ru": "Manic Miner"
+ },
+ "about": {
+  "en": "Matthew Smith's twenty caverns of 1983 - ported from the ZX Spectrum to the MS 0515 in 2026.",
+  "ru": "Двадцать пещер Мэттью Смита 1983 года, перенесённые с ZX Spectrum на МС 0515 в 2026 году."
+ },
+ "screen": "manicm.png",
+ "program": "MANICM.SAV",
+ "files": ["../software/games/manicm/MANICM.SAV", "../software/games/manicm/MANICM.DAT"],
+ "text": {
+  "en": "Enter starts the game. O and P, Q and W or the left and right arrows walk; Space, Shift or the up arrow jumps. Collect every flashing key of a cavern, then reach the gate before the air runs out.\n\nH to L switch the music on and off, A to G pause. Shift with Space goes back to the title, and at the title leaves the game - the arrow on the screen then starts it again.",
+  "ru": "Enter начинает игру. O и P, Q и W или стрелки влево и вправо - ходьба; пробел, Shift или стрелка вверх - прыжок. Соберите в пещере все мигающие ключи и дойдите до ворот, пока не кончился воздух.\n\nКлавиши от H до L включают и выключают музыку, от A до G - пауза. Shift с пробелом возвращает на заставку, а на заставке выходит из игры - тогда стрелка на экране запустит её снова."
+ }
+}

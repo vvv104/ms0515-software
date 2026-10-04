@@ -1,0 +1,18 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "The Way of the Exploding Fist",
+  "ru": "The Way of the Exploding Fist"
+ },
+ "about": {
+  "en": "The karate game of the ZX Spectrum, 1985 - ported to the MS 0515 in 2026, routine for routine.",
+  "ru": "Каратэ с ZX Spectrum 1985 года, перенесённое на МС 0515 в 2026 году подпрограмма за подпрограммой."
+ },
+ "screen": "fist.png",
+ "program": "FIST.SAV",
+ "files": ["../software/games/fist/FIST.SAV", "../software/games/fist/FIST.DAT"],
+ "text": {
+  "en": "The title holds for about three seconds, then a demo fight runs. Space starts a one-player game, 2 a two-player one, 0 opens the settings.\n\nPlayer 1 moves with the arrows or the numeric keypad: up jumps, down crouches, left and right walk. Space (or keypad 5) is fire, and a direction held with fire strikes: up - high punch, towards the opponent - front kick, down - low punch, away - roundhouse kick. The keypad's corners give the somersaults, the sweeps and the flying kick.\n\nPlayer 2 has Q W E / A S D / Z X C, with S as fire.\n\nThe game takes the whole machine and never leaves: reload the page to start over.",
+  "ru": "Заставка держится около трёх секунд, потом идёт показательный бой. Пробел начинает игру для одного, 2 - для двоих, 0 открывает настройки.\n\nПервый игрок ходит стрелками или цифровой клавиатурой: вверх - прыжок, вниз - присесть, влево и вправо - шаг. Пробел (или 5 на цифровой клавиатуре) - удар; направление вместе с ударом даёт приём: вверх - удар рукой в голову, к противнику - прямой удар ногой, вниз - удар рукой снизу, от противника - удар ногой с разворота. Углы цифровой клавиатуры - сальто, подсечки и удар в прыжке.\n\nУ второго игрока Q W E / A S D / Z X C, удар - S.\n\nИгра забирает всю машину и сама не кончается: чтобы начать сначала, перезагрузите страницу."
+ }
+}
