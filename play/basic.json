@@ -11,7 +11,7 @@
  "screen": "basic.png",
  "program": "BASICO.SAV",
  "files": [
-  "../software/development/basic/BASICO.SAV",
+  "../software/development/basic/rom-b/BASICO.SAV",
   "../programs/games-basic/A.BAS",
   "../programs/games-basic/ATAKA.BAS",
   "../programs/games-basic/BIZNES.BAS",
