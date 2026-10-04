@@ -14,7 +14,7 @@ format = 2
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.10.04-3"
+version = "2026.10.04-4"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -1853,8 +1853,10 @@ title   = "Rodionov: ROSA Commander"
 system  = "rodionov"
 media   = "dz"
 bundles = ["rosa3", "r15", "help-rodionov", "dump-rodionov", "vs-rodionov", "nl", "sce", "tfp",
-           "resorc-osa", "blue", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "dir-rodionov", "dup-omega", "pip-omega"]
-startup = ["R ROSA3"]
+           "resorc-osa", "blue", "white", "neg", "exerciser", "geteml", "basico", "rosa-docs", "r15-docs", "datset", "dir-rodionov", "dup-omega", "pip-omega"]
+# The date comes from DATSET: this monitor wants the month in Russian letters
+# (DATE 1-АПР-92), and it strips the eighth bit from a command file's lines.
+startup = ["DATSET 01-04-92", "R ROSA3"]
 hint    = "ROSA Commander: the arrows move between the panels' files, Enter runs one, PM is the help key"
 
 [preset.mihin]
