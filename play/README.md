@@ -20,6 +20,15 @@ and from the program itself where it has none - `BIRDS.SAV` compares the
 key's code with `4`, `5`, `6`, `7`, `9`; `KAM1.SAV` was tried key by key.
 A thing not found out is said to be so in the card.
 
+`basic.json` is БЕЙСИК-ОМЕГА with every BASIC program of the collection:
+its `files` bring the `.BAS`, `.BAC`, `.SPT` and `.SCR` of `programs/` into
+the interpreter's folder, where `LOAD NAME` finds them, and its `menu`
+lists them - a click starts BASIC afresh and types `LOAD NAME`, `RUN` (the
+interpreter has no command that lists files, so the menu is the
+directory).  `open` is the button for a `.BAS` of the visitor's own.  The
+menu's lines are short forms of what the folders' READMEs say; a program
+seen to stop with an error under this interpreter says so.
+
 A new tile: the card, the picture, and the key added to `index.json`.
 The games run on ROM-B under DEC's RT-11 V5.4 of this collection - the
 machine `ms0515-run` carries - so a game goes on a tile once it has been

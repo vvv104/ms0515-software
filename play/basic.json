@@ -1,0 +1,596 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "BASIC-OMEGA (БЕЙСИК-ОМЕГА)",
+  "ru": "БЕЙСИК-ОМЕГА"
+ },
+ "about": {
+  "en": "The machine's own BASIC, with the 62 BASIC programs of the collection a click away - and your own file.",
+  "ru": "Родной Бейсик машины и 62 программ коллекции на нём - по щелчку; можно загрузить и свой файл."
+ },
+ "screen": "basic.png",
+ "program": "BASICO.SAV",
+ "files": [
+  "../software/development/basic/BASICO.SAV",
+  "../programs/games-basic/A.BAS",
+  "../programs/games-basic/ATAKA.BAS",
+  "../programs/games-basic/BIZNES.BAS",
+  "../programs/games-basic/EYES.BAS",
+  "../programs/games-basic/FOOTB2.BAS",
+  "../programs/games-basic/FOOTBO.BAS",
+  "../programs/games-basic/HANGMA.BAS",
+  "../programs/games-basic/KORABL.BAS",
+  "../programs/games-basic/NONAME.BAS",
+  "../programs/games-basic/OLIMP.BAS",
+  "../programs/games-basic/OTGADA.BAS",
+  "../programs/games-basic/T6.BAS",
+  "../programs/games-basic/TENNIS.BAS",
+  "../programs/games-basic/TENNIS.SPT",
+  "../programs/vvv/LUNA.BAS",
+  "../programs/vvv/LUNA.SPT",
+  "../programs/vvv/MORBOJ.BAS",
+  "../programs/vvv/MORBOJ.SCR",
+  "../programs/vvv/MORBOJ.SPT",
+  "../programs/vvv/MUZRED.SCR",
+  "../programs/vvv/REN.BAS",
+  "../programs/basic/COD.BAS",
+  "../programs/basic/DIAG.BAS",
+  "../programs/basic/DOMIK.BAS",
+  "../programs/basic/GRAF.BAS",
+  "../programs/basic/GRAFIK.BAS",
+  "../programs/basic/GRAPH.BAS",
+  "../programs/basic/GRFUN.BAS",
+  "../programs/basic/GWFP.BAS",
+  "../programs/basic/KLD.BAS",
+  "../programs/basic/KODIR.BAS",
+  "../programs/basic/KOLO.BAS",
+  "../programs/basic/KOMETS.BAS",
+  "../programs/basic/KWG.BAS",
+  "../programs/basic/LAM.BAS",
+  "../programs/basic/LAMBAD.BAS",
+  "../programs/basic/LINES.BAS",
+  "../programs/basic/LTR.BAS",
+  "../programs/basic/MASDIA.BAS",
+  "../programs/basic/MATEMA.BAS",
+  "../programs/basic/MATR4.BAS",
+  "../programs/basic/MAYATN.BAS",
+  "../programs/basic/NUMBER.BAS",
+  "../programs/basic/OBJEM.BAS",
+  "../programs/basic/PIF.BAS",
+  "../programs/basic/PRAW.BAC",
+  "../programs/basic/PRAW.SCR",
+  "../programs/basic/PRFIL.BAS",
+  "../programs/basic/PRIM.BAS",
+  "../programs/basic/PROST.BAS",
+  "../programs/basic/PROST2.BAS",
+  "../programs/basic/RENDOC.BAS",
+  "../programs/basic/SIN.BAS",
+  "../programs/basic/SMES.BAS",
+  "../programs/basic/STARS.BAS",
+  "../programs/basic/STREET.BAS",
+  "../programs/basic/SUNSY1.BAS",
+  "../programs/basic/SUNSYS.BAS",
+  "../programs/basic/UMN.BAS",
+  "../programs/basic/VID2.BAS",
+  "../programs/basic/VIDEO.BAS",
+  "../programs/basic/VIDEO2.BAS",
+  "../programs/basic/WATCH.BAS",
+  "../programs/basic/ZAPK.BAS",
+  "../programs/sprites/GENSPR.BAS",
+  "../programs/sprites/SPRED.BAS",
+  "../programs/covox/SOUND4.BAS",
+  "../programs/pascal/EPIC.BAS"
+ ],
+ "text": {
+  "en": "The BASIC of the Lviv enterprise OMEGA, edition 1-01a, at its prompt «Готов» (ready). Type a program in, or take one from the list below: a click starts BASIC afresh, LOADs the program and RUNs it.\n\nBy hand: LOAD NAME brings a program in, LIST shows it, RUN runs it, NEW clears it, SAVE NAME keeps it for this visit. There is no command that lists the files - the list below is the directory. A click on the list starts BASIC afresh, whatever was running; a program typed in and not SAVEd goes with it.\n\n«Your own file» takes a .BAS text from your computer into BASIC's folder and LOADs it; its name becomes an RT-11 one, six letters and digits.",
+  "ru": "Бейсик львовского предприятия «Омега», издание 1-01а, с приглашением «Готов». Программу можно набрать самому или взять из списка ниже: щелчок запускает Бейсик заново, загружает программу (LOAD) и выполняет её (RUN).\n\nВручную: LOAD ИМЯ загружает программу, LIST показывает текст, RUN запускает, NEW стирает, SAVE ИМЯ сохраняет на время этого визита. Команды, показывающей список файлов, в этом Бейсике нет - каталогом служит список ниже. Щелчок по списку запускает Бейсик заново, что бы в нём ни работало; набранная и не сохранённая (SAVE) программа при этом пропадает.\n\n«Свой файл» берёт текст .BAS с вашего компьютера в папку Бейсика и загружает его; имя становится именем RT-11 - шесть букв и цифр."
+ },
+ "menu": [
+  {
+   "name": "BIZNES",
+   "about": {
+    "en": "\"Business\", a Monopoly-like board game for 1-4 players, Voronezh, 1992; E at the dice ends it",
+    "ru": "«Бизнес» - экономическая игра вроде «Монополии» на 1-4 игроков, Воронеж, 1992; E на броске кубика - конец игры"
+   },
+   "type": "LOAD BIZNES\rRUN\r"
+  },
+  {
+   "name": "MORBOJ",
+   "about": {
+    "en": "Sea battle against the computer, by V. V. Voronkov: place your ships with the arrows and Enter",
+    "ru": "«Морской бой» с компьютером, автор В. В. Воронков: корабли ставятся стрелками и Enter"
+   },
+   "type": "LOAD MORBOJ\rRUN\r"
+  },
+  {
+   "name": "LUNA",
+   "about": {
+    "en": "A space shooter for the joystick, by V. V. Voronkov: it reads the joystick port, which this page gives no keys",
+    "ru": "Космический тир под джойстик, автор В. В. Воронков: читает порт джойстика, которому на этой странице клавиши не назначены"
+   },
+   "type": "LOAD LUNA\rRUN\r"
+  },
+  {
+   "name": "TENNIS",
+   "about": {
+    "en": "Pong with sprites; your racket is moved through the joystick port, which this page gives no keys",
+    "ru": "Теннис на спрайтах; ракетка управляется через порт джойстика, которому на этой странице клавиши не назначены"
+   },
+   "type": "LOAD TENNIS\rRUN\r"
+  },
+  {
+   "name": "HANGMA",
+   "about": {
+    "en": "Hangman for two: one types the word blind, the other guesses",
+    "ru": "«Виселица» на двоих: один вслепую вводит слово, другой отгадывает"
+   },
+   "type": "LOAD HANGMA\rRUN\r"
+  },
+  {
+   "name": "OTGADA",
+   "about": {
+    "en": "\"Guess\": the first player types five characters blind, the second guesses the word",
+    "ru": "«Отгадай»: первый вслепую вводит пять символов, второй отгадывает слово"
+   },
+   "type": "LOAD OTGADA\rRUN\r"
+  },
+  {
+   "name": "NUMBER",
+   "about": {
+    "en": "Guess a number from 1 to 1000 in the fewest tries",
+    "ru": "Угадай число от 1 до 1000 за минимум попыток"
+   },
+   "type": "LOAD NUMBER\rRUN\r"
+  },
+  {
+   "name": "FOOTB2",
+   "about": {
+    "en": "Text football, Dynamo against Spartak: you name the zone to move the ball to",
+    "ru": "Текстовый футбол «Динамо» - «Спартак»: называешь зону, куда вести мяч"
+   },
+   "type": "LOAD FOOTB2\rRUN\r"
+  },
+  {
+   "name": "FOOTBO",
+   "about": {
+    "en": "The same football, partly re-typed with Russian messages",
+    "ru": "Тот же футбол, частично перенабранный с русскими сообщениями"
+   },
+   "type": "LOAD FOOTBO\rRUN\r"
+  },
+  {
+   "name": "GWFP",
+   "about": {
+    "en": "A cockroach race: place your bets",
+    "ru": "«Тараканьи бега»: делайте ставки"
+   },
+   "type": "LOAD GWFP\rRUN\r"
+  },
+  {
+   "name": "T6",
+   "about": {
+    "en": "An unfinished driving game: the menu and the road, no play",
+    "ru": "Недописанная игра про езду: меню и дорога, игры нет"
+   },
+   "type": "LOAD T6\rRUN\r"
+  },
+  {
+   "name": "ATAKA",
+   "about": {
+    "en": "A fragment of the arcade game ATAKA; too little survived to run",
+    "ru": "Обрывок аркады «ATAKA»; уцелело слишком мало, не запускается"
+   },
+   "type": "LOAD ATAKA\rRUN\r"
+  },
+  {
+   "name": "PRAW",
+   "about": {
+    "en": "A test on road signs, a COMPILEd program with its title picture",
+    "ru": "Тест по дорожным знакам - скомпилированная программа с заставкой"
+   },
+   "type": "RUN PRAW.BAC\r"
+  },
+  {
+   "name": "SUNSYS",
+   "about": {
+    "en": "The solar system: nine planets circling on their orbits",
+    "ru": "«Солнечная система»: девять планет на орбитах"
+   },
+   "type": "LOAD SUNSYS\rRUN\r"
+  },
+  {
+   "name": "SUNSY1",
+   "about": {
+    "en": "The solar system with the planets painted, run from the keyboard",
+    "ru": "«Солнечная система» с закрашенными планетами, с управлением с клавиатуры"
+   },
+   "type": "LOAD SUNSY1\rRUN\r"
+  },
+  {
+   "name": "WATCH",
+   "about": {
+    "en": "An analog clock face, redrawn every second",
+    "ru": "Циферблат со стрелками, перерисовывается каждую секунду"
+   },
+   "type": "LOAD WATCH\rRUN\r"
+  },
+  {
+   "name": "MAYATN",
+   "about": {
+    "en": "A pendulum swinging, with a sound at every step",
+    "ru": "Маятник, со звуком на каждом шаге"
+   },
+   "type": "LOAD MAYATN\rRUN\r"
+  },
+  {
+   "name": "KOMETS",
+   "about": {
+    "en": "\"Comets\": streaks flying across the 640x200 screen",
+    "ru": "«Кометы»: штрихи летят через экран 640x200"
+   },
+   "type": "LOAD KOMETS\rRUN\r"
+  },
+  {
+   "name": "STARS",
+   "about": {
+    "en": "A starfield drifting both ways",
+    "ru": "Звёздное поле, плывущее в обе стороны"
+   },
+   "type": "LOAD STARS\rRUN\r"
+  },
+  {
+   "name": "STREET",
+   "about": {
+    "en": "A street in perspective, drawn with lines",
+    "ru": "Улица в перспективе, нарисованная линиями"
+   },
+   "type": "LOAD STREET\rRUN\r"
+  },
+  {
+   "name": "DOMIK",
+   "about": {
+    "en": "Asks six numbers and draws a house",
+    "ru": "Спрашивает шесть чисел и рисует домик"
+   },
+   "type": "LOAD DOMIK\rRUN\r"
+  },
+  {
+   "name": "KORABL",
+   "about": {
+    "en": "A little ship: hull, mast and flag",
+    "ru": "«Кораблик»: корпус, мачта и флаг"
+   },
+   "type": "LOAD KORABL\rRUN\r"
+  },
+  {
+   "name": "A",
+   "about": {
+    "en": "A cartoon head with big round ears - a still picture",
+    "ru": "Мультяшная голова с большими круглыми ушами - неподвижная картинка"
+   },
+   "type": "LOAD A\rRUN\r"
+  },
+  {
+   "name": "KLD",
+   "about": {
+    "en": "\"The well\": a nest of rectangles",
+    "ru": "«Колодец»: вложенные прямоугольники"
+   },
+   "type": "LOAD KLD\rRUN\r"
+  },
+  {
+   "name": "KOLO",
+   "about": {
+    "en": "The same well in another copy",
+    "ru": "Тот же «Колодец» в другой копии"
+   },
+   "type": "LOAD KOLO\rRUN\r"
+  },
+  {
+   "name": "LINES",
+   "about": {
+    "en": "Asks a number and draws that many fans of lines",
+    "ru": "Спрашивает число и рисует столько вееров из линий"
+   },
+   "type": "LOAD LINES\rRUN\r"
+  },
+  {
+   "name": "SMES",
+   "about": {
+    "en": "\"A mix\": asks a factor and draws random circles and lines",
+    "ru": "«Смесь»: спрашивает коэффициент и рисует случайные круги и линии"
+   },
+   "type": "LOAD SMES\rRUN\r"
+  },
+  {
+   "name": "EYES",
+   "about": {
+    "en": "\"The blinker\": flips the screen colours with a two-tone siren",
+    "ru": "«Мигалка»: меняет цвета экрана под двухтональную сирену"
+   },
+   "type": "LOAD EYES\rRUN\r"
+  },
+  {
+   "name": "LAMBAD",
+   "about": {
+    "en": "The Lambada played through SOUND",
+    "ru": "«Ламбада», сыгранная оператором SOUND"
+   },
+   "type": "LOAD LAMBAD\rRUN\r"
+  },
+  {
+   "name": "LAM",
+   "about": {
+    "en": "A demo: a figure drawn with line chains, then sound",
+    "ru": "Пример: фигура из цепочек линий, затем звук"
+   },
+   "type": "LOAD LAM\rRUN\r"
+  },
+  {
+   "name": "SOUND4",
+   "about": {
+    "en": "A melody recorder: keys 1-7 play notes, 0 plays the tune back and saves it",
+    "ru": "Запись мелодии: клавиши 1-7 играют ноты, 0 проигрывает и сохраняет"
+   },
+   "type": "LOAD SOUND4\rRUN\r"
+  },
+  {
+   "name": "NONAME",
+   "about": {
+    "en": "An untitled graphics-and-POKE experiment; stops with an error here",
+    "ru": "Безымянный опыт с графикой и POKE; здесь останавливается с ошибкой"
+   },
+   "type": "LOAD NONAME\rRUN\r"
+  },
+  {
+   "name": "DIAG",
+   "about": {
+    "en": "A pie chart with English labels - a textbook example",
+    "ru": "Круговая диаграмма с английскими подписями - учебный пример"
+   },
+   "type": "LOAD DIAG\rRUN\r"
+  },
+  {
+   "name": "GRAPH",
+   "about": {
+    "en": "A 3-D bar chart of yearly figures",
+    "ru": "Трёхмерная столбчатая диаграмма по годам"
+   },
+   "type": "LOAD GRAPH\rRUN\r"
+  },
+  {
+   "name": "OBJEM",
+   "about": {
+    "en": "3-D bars by the coordinates you give",
+    "ru": "Объёмная фигура по указанным координатам"
+   },
+   "type": "LOAD OBJEM\rRUN\r"
+  },
+  {
+   "name": "GRFUN",
+   "about": {
+    "en": "Plots Y=X^2 or X=Y^2 by choice",
+    "ru": "Рисует графики Y=X^2 или X=Y^2 на выбор"
+   },
+   "type": "LOAD GRFUN\rRUN\r"
+  },
+  {
+   "name": "GRAFIK",
+   "about": {
+    "en": "Plots entered points four ways; stops with a syntax error here",
+    "ru": "Строит графики по точкам четырьмя способами; здесь останавливается с ошибкой синтаксиса"
+   },
+   "type": "LOAD GRAFIK\rRUN\r"
+  },
+  {
+   "name": "KWG",
+   "about": {
+    "en": "A parabola drawn with text characters",
+    "ru": "Парабола, нарисованная символами"
+   },
+   "type": "LOAD KWG\rRUN\r"
+  },
+  {
+   "name": "SIN",
+   "about": {
+    "en": "A sine curve in a framed box",
+    "ru": "Синусоида в рамке"
+   },
+   "type": "LOAD SIN\rRUN\r"
+  },
+  {
+   "name": "EPIC",
+   "about": {
+    "en": "An epicycloid by the ratio of radii and the step you enter",
+    "ru": "Эпициклоида по введённым отношению радиусов и шагу"
+   },
+   "type": "LOAD EPIC\rRUN\r"
+  },
+  {
+   "name": "VIDEO",
+   "about": {
+    "en": "A curve from a parametric sweep, ten lines",
+    "ru": "Кривая по параметру, десять строк"
+   },
+   "type": "LOAD VIDEO\rRUN\r"
+  },
+  {
+   "name": "VIDEO2",
+   "about": {
+    "en": "The same curve with a finer step",
+    "ru": "Та же кривая с более мелким шагом"
+   },
+   "type": "LOAD VIDEO2\rRUN\r"
+  },
+  {
+   "name": "VID2",
+   "about": {
+    "en": "The same sweep with the video registers poked - an experiment",
+    "ru": "Та же кривая с записью в видеорегистры - эксперимент"
+   },
+   "type": "LOAD VID2\rRUN\r"
+  },
+  {
+   "name": "GRAF",
+   "about": {
+    "en": "The smallest sketchpad: keys 2, 4, 6, 8 move a dot that leaves a trace",
+    "ru": "Простейшая рисовалка: клавиши 2, 4, 6, 8 двигают точку, оставляющую след"
+   },
+   "type": "LOAD GRAF\rRUN\r"
+  },
+  {
+   "name": "PIF",
+   "about": {
+    "en": "The multiplication table as a ruled grid",
+    "ru": "Таблица Пифагора в рамке"
+   },
+   "type": "LOAD PIF\rRUN\r"
+  },
+  {
+   "name": "UMN",
+   "about": {
+    "en": "The multiplication table three ways",
+    "ru": "Таблица умножения тремя способами"
+   },
+   "type": "LOAD UMN\rRUN\r"
+  },
+  {
+   "name": "PROST",
+   "about": {
+    "en": "Primes up to a bound you enter",
+    "ru": "Простые числа до введённой границы"
+   },
+   "type": "LOAD PROST\rRUN\r"
+  },
+  {
+   "name": "PROST2",
+   "about": {
+    "en": "Primes up to 100, seven lines",
+    "ru": "Простые числа до 100, семь строк"
+   },
+   "type": "LOAD PROST2\rRUN\r"
+  },
+  {
+   "name": "MATEMA",
+   "about": {
+    "en": "Four little sums - a first exercise in loops",
+    "ru": "Четыре небольшие суммы - первое упражнение на циклы"
+   },
+   "type": "LOAD MATEMA\rRUN\r"
+  },
+  {
+   "name": "MATR4",
+   "about": {
+    "en": "A 6x6 table of random numbers, printed, sorted and printed again",
+    "ru": "Таблица 6x6 случайных чисел: печать, сортировка, снова печать"
+   },
+   "type": "LOAD MATR4\rRUN\r"
+  },
+  {
+   "name": "MASDIA",
+   "about": {
+    "en": "A matrix and the sum of its diagonal; stops with a syntax error here",
+    "ru": "Матрица и сумма её диагонали; здесь останавливается с ошибкой синтаксиса"
+   },
+   "type": "LOAD MASDIA\rRUN\r"
+  },
+  {
+   "name": "OLIMP",
+   "about": {
+    "en": "Olympiad exercises: reverse a phrase, and two more after the STOP",
+    "ru": "Олимпиадные задачи: перевернуть фразу и ещё две после STOP"
+   },
+   "type": "LOAD OLIMP\rRUN\r"
+  },
+  {
+   "name": "PRIM",
+   "about": {
+    "en": "Counts the words in a sentence you enter",
+    "ru": "Считает слова во введённом предложении"
+   },
+   "type": "LOAD PRIM\rRUN\r"
+  },
+  {
+   "name": "COD",
+   "about": {
+    "en": "Waits for a key and prints its code",
+    "ru": "Ждёт клавишу и печатает её код"
+   },
+   "type": "LOAD COD\rRUN\r"
+  },
+  {
+   "name": "ZAPK",
+   "about": {
+    "en": "\"Notebook\": a phone book kept in files",
+    "ru": "«Записная книжка»: телефонный справочник в файлах"
+   },
+   "type": "LOAD ZAPK\rRUN\r"
+  },
+  {
+   "name": "PRFIL",
+   "about": {
+    "en": "Asks a file name and prints the file",
+    "ru": "Спрашивает имя файла и печатает его"
+   },
+   "type": "LOAD PRFIL\rRUN\r"
+  },
+  {
+   "name": "KODIR",
+   "about": {
+    "en": "Writes a file out as character codes and reads such a file back",
+    "ru": "Записывает файл кодами символов и читает такой файл обратно"
+   },
+   "type": "LOAD KODIR\rRUN\r"
+  },
+  {
+   "name": "LTR",
+   "about": {
+    "en": "Printer control sequences - for a printer, which this page has none",
+    "ru": "Управляющие последовательности для принтера, которого на этой странице нет"
+   },
+   "type": "LOAD LTR\rRUN\r"
+  },
+  {
+   "name": "SPRED",
+   "about": {
+    "en": "A sprite editor, by A. S. Grudzinsky of Lviv University",
+    "ru": "Редактор спрайтов, автор А. С. Грудзинский, Львовский университет"
+   },
+   "type": "LOAD SPRED\rRUN\r"
+  },
+  {
+   "name": "GENSPR",
+   "about": {
+    "en": "A sprite generator, by Dmitry Gostev, Voronezh, 1994",
+    "ru": "Генератор спрайтов, автор Дмитрий Гостев, Воронеж, 1994"
+   },
+   "type": "LOAD GENSPR\rRUN\r"
+  },
+  {
+   "name": "REN",
+   "about": {
+    "en": "Recodes UKCALC.LST from KOI-7 to KOI-8 - a file that is not here",
+    "ru": "Перекодирует UKCALC.LST из КОИ-7 в КОИ-8 - файла здесь нет"
+   },
+   "type": "LOAD REN\rRUN\r"
+  },
+  {
+   "name": "RENDOC",
+   "about": {
+    "en": "Recodes EXPRES.DOC on DZ2: - a diskette that is not here",
+    "ru": "Перекодирует EXPRES.DOC на DZ2: - дискеты здесь нет"
+   },
+   "type": "LOAD RENDOC\rRUN\r"
+  }
+ ],
+ "open": {
+  "label": {
+   "en": "Your own file…",
+   "ru": "Свой файл…"
+  },
+  "accept": ".bas,.BAS,.txt",
+  "text": true,
+  "type": "LOAD {NAME}\r"
+ },
+ "ready": 2500
+}
