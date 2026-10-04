@@ -20,14 +20,14 @@ and from the program itself where it has none - `BIRDS.SAV` compares the
 key's code with `4`, `5`, `6`, `7`, `9`; `KAM1.SAV` was tried key by key.
 A thing not found out is said to be so in the card.
 
-`basic.json` is БЕЙСИК-ОМЕГА with every BASIC program of the collection:
-its `files` bring the `.BAS`, `.BAC`, `.SPT` and `.SCR` of `programs/` into
-the interpreter's folder, where `LOAD NAME` finds them, and its `menu`
-lists them - a click starts BASIC afresh and types `LOAD NAME`, `RUN` (the
-interpreter has no command that lists files, so the menu is the
-directory).  `open` is the button for a `.BAS` of the visitor's own.  The
-menu's lines are short forms of what the folders' READMEs say; a program
-seen to stop with an error under this interpreter says so.
+`basic.json` is БЕЙСИК-ОМЕГА (the ROM-B copy,
+`software/development/basic/rom-b/`) with every BASIC program of the
+collection: its `files` bring the `.BAS`, `.BAC`, `.SPT` and `.SCR` of
+`programs/` into the interpreter's folder, and its `sources` name the
+programs on the page - a click on a name opens the text in an editor
+there, to be read or changed, and one button starts BASIC afresh and types
+`LOAD NAME` (the interpreter has no command that lists files, so the names
+are the directory).  A `.BAS` of the visitor's own joins the names.
 
 A new tile: the card, the picture, and the key added to `index.json`.
 The games run on ROM-B under DEC's RT-11 V5.4 of this collection - the
