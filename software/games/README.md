@@ -32,6 +32,8 @@ repair of the room that killed the machine; [`tetris/`](tetris/README.md) -
 the falling-blocks games.  And [`fist/`](fist/README.md), which is the one
 thing here that never came off a diskette: our own 2026 MACRO-11 port of
 Melbourne House's *The Way Of The Exploding Fist*, marked as ours the way
-the collection's rules ask.
+the collection's rules ask.  [`mine/`](mine/README.md) is the collector's
+own game, the original: his Pascal minesweeper of 1995, version 1.01, of
+which no binary survived - built in 2026 from the sources he wrote then.
 
 Programs that survived in several builds - `HANOJ.SAV`, `KOSMOS.SAV` - have a folder each for the disks they came from: `osa/` - the ОСА disks; `osa-rs/` - the ОСА disks that booted into the RS profShell (the same monitor, its other factory configuration).  The files in the table are common to every kit.
