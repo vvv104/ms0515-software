@@ -1,0 +1,18 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "Firebird",
+  "ru": "Firebird"
+ },
+ "about": {
+  "en": "A ship at the bottom of the screen against wave after wave of birds. LWOW SOFT, 1990.",
+  "ru": "Корабль внизу экрана против стай птиц, волна за волной. LWOW SOFT, 1990."
+ },
+ "screen": "birds.png",
+ "program": "BIRDS.SAV",
+ "files": ["../software/games/BIRDS.SAV"],
+ "text": {
+  "en": "Any key starts the game. The digits steer the ship: 4 moves it left, 6 right, 5 fires; 7 and 9 move left and right and fire at once. The top row's digits and the numeric keypad's both do.\n\nThe keyboard of this machine sends no key releases, so a key held down works by its auto-repeat: tap rather than hold.",
+  "ru": "Игра начинается по любой клавише. Кораблём управляют цифры: 4 - влево, 6 - вправо, 5 - огонь; 7 и 9 - влево и вправо с выстрелом сразу. Годятся и цифры верхнего ряда, и цифровая клавиатура.\n\nКлавиатура этой машины не сообщает об отпускании клавиш, удержание работает через автоповтор: лучше нажимать, чем держать."
+ }
+}

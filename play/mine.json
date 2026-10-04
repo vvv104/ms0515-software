@@ -1,0 +1,18 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "Minesweeper",
+  "ru": "Сапёр"
+ },
+ "about": {
+  "en": "V. V. Voronkov's Pascal minesweeper for the MS 0515, version 1.01 of 1995, built in 2026 from the sources he wrote then.",
+  "ru": "Сапёр В. В. Воронкова на Паскале для МС 0515, версия 1.01 1995 года, собранная в 2026 году из тогдашних исходников."
+ },
+ "screen": "mine.png",
+ "program": "MINE.SAV",
+ "files": ["../software/games/mine/MINE.SAV", "../software/games/mine/MINE.HLP"],
+ "text": {
+  "en": "The arrows move over the field, Space opens a cell, Enter marks a mine.\n\nF1 is the help, F2 a new field. F3, F4 and F5 choose Beginner (8x8, 10 mines), Intermediate (16x16, 40) and Expert (30x16, 99); F6 asks for a field of your own; F9 opens the menu; F10 leaves.\n\nA game won or lost ends the program: the arrow on the screen starts it again.",
+  "ru": "Стрелки двигают по полю, пробел открывает клетку, Enter ставит отметку мины.\n\nF1 - справка, F2 - новое поле. F3, F4 и F5 выбирают поле: 8x8 с 10 минами, 16x16 с 40 и 30x16 с 99; F6 спрашивает размеры своего поля; F9 открывает меню; F10 - выход.\n\nВыигранная или проигранная игра завершает программу: стрелка на экране запускает её заново."
+ }
+}

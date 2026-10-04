@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MS 0515 software</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; }
+  body { background: #111; color: #ddd; font: 16px/1.45 system-ui, sans-serif; }
+  header, main, footer { max-width: 72em; margin: 0 auto; padding: 0 1em; }
+  header { padding-top: 1.6em; }
+  h1 { font-size: 1.5em; margin: 0 0 .2em; color: #fff; }
+  header p { margin: 0 0 1.2em; color: #aaa; max-width: 48em; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(17em, 1fr)); gap: 1em; }
+  .tile { display: flex; flex-direction: column; background: #1b1b1b; border: 1px solid #333; border-radius: 6px;
+          overflow: hidden; color: inherit; text-decoration: none; transition: border-color .12s, transform .12s; }
+  .tile:hover, .tile:focus-visible { border-color: #8ab; transform: translateY(-2px); outline: none; }
+  .tile img { display: block; width: 100%; aspect-ratio: 8 / 5; background: #000; }
+  .tile h2 { font-size: 1.05em; margin: .6em .8em .15em; color: #fff; }
+  .tile p { margin: 0 .8em .8em; color: #aaa; font-size: .92em; }
+  footer { padding: 1.6em 1em 2em; color: #888; font-size: .9em; }
+  a { color: #8ab; }
+  #error { color: #f88; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">MS 0515 software</h1>
+  <p id="lead"></p>
+</header>
+<main>
+  <div class="tiles" id="tiles"></div>
+  <p id="error" hidden></p>
+  <noscript><p>The tiles are made by a script: this page needs JavaScript, and so does the machine it starts.</p></noscript>
+</main>
+<footer id="foot"></footer>
+<script type="module">
+// The games of the collection as tiles: play/index.json lists the run
+// cards (play/<game>.json), a card carries the game's name, a line about
+// it, its picture and what the emulator's page needs to run it.  A click
+// opens that page at the card (?run=): the machine with the game started.
+const QUERY = new URLSearchParams(location.search);
+const LANGS = [QUERY.get("lang"), ...(navigator.languages ?? []), navigator.language, "en"]
+  .filter(Boolean).map((l) => l.toLowerCase().split("-")[0]);
+const inLanguage = (texts) => typeof texts === "string" ? texts
+  : LANGS.map((l) => texts?.[l]).find(Boolean) ?? Object.values(texts ?? {})[0] ?? "";
+const PAGE = {
+  title: { en: "MS 0515 software", ru: "Программы МС 0515" },
+  lead: {
+    en: "Games of the Elektronika MS 0515, a Soviet PDP-11 compatible computer. A click starts one in the emulator, right in this tab; what to press is written under its screen.",
+    ru: "Игры «Электроники МС 0515», советского PDP-11-совместимого компьютера. Щелчок запускает игру в эмуляторе прямо в этой вкладке; что нажимать, написано под экраном.",
+  },
+  foot: {
+    en: 'The files are those of the <a href="https://github.com/vvv104/ms0515-software">ms0515-software</a> collection; the machine is the <a href="EMULATOR">MS 0515 emulator</a>, where the whole diskettes boot too.',
+    ru: 'Файлы взяты из коллекции <a href="https://github.com/vvv104/ms0515-software">ms0515-software</a>; машина — <a href="EMULATOR">эмулятор МС 0515</a>, там же загружаются и целые дискеты.',
+  },
+};
+
+const el = (tag, text) => { const e = document.createElement(tag); if (text) e.textContent = text; return e; };
+const json = async (url) => { const r = await fetch(url); if (!r.ok) throw new Error(`${url}: ${r.status}`); return r.json(); };
+
+async function main() {
+  document.documentElement.lang = LANGS.find((l) => l === "ru" || l === "en") ?? "en";
+  document.title = inLanguage(PAGE.title);
+  document.getElementById("title").textContent = inLanguage(PAGE.title);
+  document.getElementById("lead").textContent = inLanguage(PAGE.lead);
+  const index = await json(new URL("play/index.json", location.href));
+  const emulator = new URL(index.emulator, location.href);
+  document.getElementById("foot").innerHTML = inLanguage(PAGE.foot).replace("EMULATOR", emulator.href);
+  const tiles = document.getElementById("tiles");
+  for (const key of index.games) {
+    const cardUrl = new URL(`play/${key}.json`, location.href);
+    const card = await json(cardUrl);
+    const run = new URL(emulator);
+    run.searchParams.set("run", cardUrl.href);
+    if (QUERY.get("lang")) run.searchParams.set("lang", QUERY.get("lang"));
+    const tile = el("a");
+    tile.className = "tile";
+    tile.href = run.href;
+    const img = el("img");
+    img.src = new URL(card.screen, cardUrl).href;
+    img.alt = "";
+    img.loading = "lazy";
+    tile.append(img, el("h2", inLanguage(card.title)), el("p", inLanguage(card.about)));
+    tiles.append(tile);
+  }
+}
+
+main().catch((e) => {
+  const error = document.getElementById("error");
+  error.textContent = String(e?.message ?? e);
+  error.hidden = false;
+});
+</script>
+</body>
+</html>

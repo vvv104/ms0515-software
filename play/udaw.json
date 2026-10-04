@@ -1,0 +1,18 @@
+{
+ "schema": 1,
+ "title": {
+  "en": "Python (ПИТОН)",
+  "ru": "Питон"
+ },
+ "about": {
+  "en": "A snake for junior schoolchildren: it eats vowels going up and down, consonants going sideways. Alexander Domnich, Voronezh, 1994.",
+  "ru": "Змейка для младших классов: гласные ест по вертикали, согласные - по горизонтали. Александр Домнич, Воронеж, 1994."
+ },
+ "screen": "udaw.png",
+ "program": "UDAW.SAV",
+ "files": ["../software/games/UDAW.SAV"],
+ "text": {
+  "en": "The game shows its rules and asks for the level of difficulty: press a digit from 1 to 6.\n\nThe arrows steer the python. It may eat a vowel (а, е, и, о, у...) only while moving up or down, and a consonant only while moving left or right. It must not bite itself or run its head into the wall.",
+  "ru": "Игра показывает правила и спрашивает уровень сложности: нажмите цифру от 1 до 6.\n\nПитоном управляют стрелки. Гласные ему разрешается есть только при движении по вертикали, согласные - только по горизонтали. Нельзя кусать себя и ударяться головой о стенку."
+ }
+}

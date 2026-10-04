@@ -6,6 +6,10 @@ identified and made to run again.  Every program here was run in the
 [MS-0515 emulator](https://github.com/vvv104/ms0515) and the notes tell
 what it is, who wrote it and how to start it.
 
+**Play in the browser: <https://vvv104.github.io/ms0515-software/>** - the
+games as tiles; a click starts one in the emulator, with what to press
+written under its screen.
+
 The diskettes come from the collection gathered on the zx-pk.ru forum
 («Ещё один эмулятор МС-0515»); the reads were consolidated, damaged
 blocks recovered from donor copies, and every file identified by its
@@ -61,6 +65,7 @@ much for the media) is refused with the reason.
 | [`software/unsorted/`](software/unsorted/README.md) | the problem shelf: what the cross-run could not run and the reads that failed, each with what is known, until examined |
 | [`programs/`](programs/README.md) | the non-industrial half - everything home-made, with its sources, a folder each: the collector's own programs (`vvv/` - everything on his disks that no one else signed, the minesweeper inside), Домнич's calendar, Newton solver and the ПИТОН source, the BASIC games, VLAD & ALEX's Covox-style sampler, the МС 0515 in the МС0111 terminal complex, the KOI-7 recoder in C, the music-editor advert, the screen dumps, the BASIC programs of the other disks, the Pascal programs of no known author, and the schoolroom: AutoTeacher, Лицей №1 |
 | [`kits.toml`](kits.toml), `<folder>/bundles.toml` | what a disk can be made of, kept with the files it describes: the kits and their order, then the systems and bundles of each folder.  [`disks.toml`](disks.toml) is assembled from them by [`tools/build_disks_toml.py`](tools/build_disks_toml.py) - that is the file the disk tool, the web wizard and the release read |
+| [`play/`](play/README.md), `index.html` | the games page of the collection's Pages: tiles that start a game in the emulator at a click, each with its run card - the program, its files and what to press, in Russian and English |
 | [`CATALOG.md`](CATALOG.md) | one card per file: what it is, how it was identified, on which monitors it ran, where it sits here; `catalog.csv` is the same, machine-readable |
 | [`HALLOFFAME.md`](HALLOFFAME.md) | the people and software houses the diskettes preserved, every entry quoted from the bytes themselves |
 
