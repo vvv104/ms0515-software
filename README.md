@@ -6,6 +6,10 @@ identified and made to run again.  Every program here was run in the
 [MS-0515 emulator](https://github.com/vvv104/ms0515) and the notes tell
 what it is, who wrote it and how to start it.
 
+**Play in the browser: <https://vvv104.github.io/ms0515-software/>** - the
+games as tiles; a click starts one in the emulator, with what to press
+written under its screen.
+
 The diskettes come from the collection gathered on the zx-pk.ru forum
 («Ещё один эмулятор МС-0515»); the reads were consolidated, damaged
 blocks recovered from donor copies, and every file identified by its
