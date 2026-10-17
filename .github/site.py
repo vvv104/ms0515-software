@@ -4,8 +4,11 @@
                             tracked file of the collection under SITE/ at its
                             own path, and SITE/index.json - what the browser
                             build's wizard reads first
-    site.py --notes TAG     release notes listing the presets, built with the
-                            emulator release TAG
+    site.py --images OUT    the images that are not composed (disks.toml's
+                            [image.*]) copied into OUT beside the composed
+                            ones, for the site and the release
+    site.py --notes TAG     release notes listing the presets and the images,
+                            built with the emulator release TAG
 """
 import json
 import shutil
@@ -44,11 +47,23 @@ def site(out_dir: Path, site_dir: Path):
         if rom:                        # the ROM the system runs on alone
             entry['rom'] = rom
         presets.append(entry)
+    for key, im in m.get('image', {}).items():   # after the composed ones: the first stays the default
+        shutil.copyfile(out_dir / f'{key}.dsk', disks / f'{key}.dsk')
+        entry = {'key': key, 'title': im['title'], 'system': key, 'media': im['media'],
+                 'image': f'disks/{key}.dsk', 'hint': im.get('hint', '')}
+        if im.get('rom'):
+            entry['rom'] = im['rom']
+        presets.append(entry)
     sizes = {p: (ROOT / p).stat().st_size for p in paths}
     index = {'format': 1, 'manifest': 'disks.toml', 'presets': presets, 'paths': paths, 'sizes': sizes}
     (site_dir / 'index.json').write_text(json.dumps(index, ensure_ascii=False, indent=1), encoding='utf-8')
     (site_dir / '.nojekyll').write_text('', encoding='utf-8')
     print(f'{len(paths)} files, {len(presets)} disks')
+
+
+def images(out_dir: Path):
+    for key, im in manifest().get('image', {}).items():
+        shutil.copyfile(ROOT / im['path'], out_dir / f'{key}.dsk')
 
 
 def notes(emulator_tag: str):
@@ -59,6 +74,8 @@ def notes(emulator_tag: str):
         system = m['system'][p['system']]['title']
         titles = ', '.join(m['bundle'][b]['title'] for b in p.get('bundles', []))
         lines.append(f'- `{key}.dsk` - {p["title"]} ({system}, {p["media"]}): {titles}')
+    for key, im in m.get('image', {}).items():
+        lines.append(f'- `{key}.dsk` - {im["title"]}: the image `{im["path"]}` as it is, not composed')
     lines += ['', 'Any other disk is one command away: '
               '`ms0515-disk compose --repo <this repository> --system KEY --media ss|dz|dv --add ...`.']
     print('\n'.join(lines))
@@ -67,6 +84,8 @@ def notes(emulator_tag: str):
 if __name__ == '__main__':
     if len(sys.argv) == 3 and sys.argv[1] == '--notes':
         notes(sys.argv[2])
+    elif len(sys.argv) == 3 and sys.argv[1] == '--images':
+        images(Path(sys.argv[2]))
     elif len(sys.argv) == 3:
         site(Path(sys.argv[1]), Path(sys.argv[2]))
     else:
