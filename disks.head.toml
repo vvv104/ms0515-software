@@ -14,7 +14,7 @@ format = 2
 # The version of this description - of what the collection holds and how it
 # makes disks.  A choice saved by a wizard names it; a disks release is tagged
 # disks-<version>, and its CI refuses a tag that says otherwise.
-version = "2026.10.04-4"
+version = "2026.10.17-1"
 
 # ---- media ---------------------------------------------------------------
 # The composer knows these three; they are listed only as the words used
@@ -211,3 +211,19 @@ bundles = ["dz-rt11", "hd-rt11", "vm-rt11", "ld-rt11", "nl-rt11", "lp-rt11", "sl
 # The startup file is the bundles': k52-rt11 says SET EDIT K52, ind-rt11 SET KMON IND,
 # sl-tab SET SL ON.
 hint    = ". is the monitor prompt: Tab completes a command, a /switch or a file name, the arrows edit the line and recall the earlier ones (right Shift+F2 lists the keys); DIR lists the files, HELP names a command, EDIT edits one on the screen (GOLD is NumLock), FORMAT DZ1: formats a diskette in the second drive"
+
+# ---- images --------------------------------------------------------------
+# Disks that are not composed: a whole image kept as it is, of a system that
+# is not RT-11.  The disk tool and the wizard leave this section alone; the
+# release and the site put each image beside the composed disks, and the web
+# offers it after them.
+#   path   the image, in this repository
+#   media  ss (one side, 400 KB) or ds (both, 800 KB) - the drive's sides only
+#   rom    the ROM it boots on alone
+
+[image.ubix]
+title = "UBIX: a UNIX for the MS 0515"
+path  = "ubix/ubix.dsk"
+media = "ds"
+rom   = "b"
+hint  = "# is the shell's prompt: ls /bin lists the programs, cat /etc/motd says hello, Tab completes a name"

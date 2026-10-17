@@ -59,6 +59,9 @@ jobs:
       - name: Compose every preset
         run: emulator/ms0515-disk compose --repo . --all out
 
+      - name: The images that are not composed
+        run: python3 .github/site.py --images out
+
       - name: The site
         run: python3 .github/site.py out site
 
