@@ -140,7 +140,7 @@ of the handler's code: in `DV.SYS` that is the `270` of `.DRFIN`'s
 machine drops into ODT the first time the volume is read.  So
 `mihin/DV.SYS` is the Omega handler with a zero word inserted before
 `$INPTR`, its size and the offsets past the insertion grown by two, and the
-bit set - made by the emulator repository's `tools/timit_handler.py`,
+bit set - made by this repository's `tools/timit_handler.py`,
 which refuses a handler that addresses the pointer words itself (`.DRAST`,
 `.FORK`; the MS-0515 floppy handlers poll and use neither).  `mihin/HD.SYS`
 is the same handler with only the bit set, from before this was understood:
