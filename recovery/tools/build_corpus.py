@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 build_corpus.py — unique-file corpus over every readable disk in
-disk_recovery/work/, using the verified ms0515-disk tool for extraction.
+recovery/work/, using the verified ms0515-disk tool for extraction.
 
 Ingests all three capture kinds: raw images directly, and TeleDisk / SAMdisk
 Extended-CPC captures by converting them to raw first (via convert_teledisk /
@@ -24,12 +24,12 @@ from collections import defaultdict, Counter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from read_spanning import read_spanning
+from emulator import disk_tool
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-WORK = ROOT / "disk_recovery" / "work"
-_tool = ROOT / "package/ms0515-disk.exe"
-TOOL = _tool if _tool.exists() else _tool.with_suffix("")
+WORK = ROOT / "recovery" / "work"
+TOOL = disk_tool()
 OUT  = WORK / "corpus"
 PY   = sys.executable
 
@@ -292,7 +292,7 @@ def head_pairs(sources):
 
 def main():
     if not TOOL.exists():
-        sys.exit(f"ms0515-disk not built at {TOOL} — build src/ first")
+        sys.exit(f"ms0515-disk not built at {TOOL} — build the emulator (MS0515_DIR) first")
     sources = sorted(p for p in WORK.rglob("*")
                      if p.is_file() and p.suffix.lower() in (".dsk", ".raw", ".td0")
                      and "corpus" not in p.parts)

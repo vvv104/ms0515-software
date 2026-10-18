@@ -9,7 +9,7 @@ re-deriving the technique each time.
 It exists because the original recovery work lived only in throwaway
 scripts and ad-hoc sessions; the *outputs* survived but the *recipe*
 was nearly lost.  Everything load-bearing now lives here in English,
-in the repo.
+in the software collection's repository.
 
 ## What is where
 
@@ -26,7 +26,7 @@ in the repo.
 
 This directory does **not** re-document the RT-11 / MS-0515 on-disk
 format — that already lives in
-[`../docs/hardware/filesystem.md`](../docs/hardware/filesystem.md):
+[the emulator's `docs/hardware/filesystem.md`](https://github.com/vvv104/ms0515/blob/main/docs/hardware/filesystem.md):
 the FDC physical geometry (size → single/double-sided), the one
 universal `LBN → byte` driver mapping (2:1 interleave + per-track
 skew), the home block, directory segments, RAD50, and the status-word

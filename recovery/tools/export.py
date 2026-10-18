@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import verdict as V
 from consensus import canonical_name
 
-OUT = Path(__file__).resolve().parents[2] / "disk_recovery" / "work" / "corpus"
+OUT = Path(__file__).resolve().parents[2] / "recovery" / "work" / "corpus"
 STORE, RECOV, PROP, EXPORT = OUT/"files", OUT/"recovered", OUT/"donor_proposed", OUT/"export"
 BAD = re.compile(r'[<>:"/\\|?*]')
 

@@ -28,14 +28,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import verdict as V
 from consensus import canonical_name
 from build_corpus import alias_name
+from emulator import disk_tool
 
 ROOT  = Path(__file__).resolve().parents[2]
-OUT   = ROOT / "disk_recovery" / "work" / "corpus"
+OUT   = ROOT / "recovery" / "work" / "corpus"
 STORE = OUT / "files"
 RECOV = OUT / "recovered"
 PROP  = OUT / "donor_proposed"
-_DISK_TOOL = ROOT / "package/ms0515-disk.exe"
-DISK_TOOL  = _DISK_TOOL if _DISK_TOOL.exists() else _DISK_TOOL.with_suffix("")
+DISK_TOOL  = disk_tool()
 DIR_RE = re.compile(r"^\s+(\S+)\s+blk=\s*(\d+)\s+len=\s*(\d+)")
 
 # ── RAD50 packing for bit-rot directory recovery ────────────────────────────

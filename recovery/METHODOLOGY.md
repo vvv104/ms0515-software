@@ -37,7 +37,7 @@ where `tier ∈ {own, foreign}` per the trust model.
 
 The physical geometry is **not** a per-OS choice — it follows from the
 image size, exactly as the emulator FDC reads it (see
-[`../docs/hardware/filesystem.md`](../docs/hardware/filesystem.md)):
+[the emulator's `docs/hardware/filesystem.md`](https://github.com/vvv104/ms0515/blob/main/docs/hardware/filesystem.md)):
 
 - **409,600 B** → single-sided diskette.
 - **819,200 B** → double-sided diskette = **two independent 800-block

@@ -9,19 +9,15 @@ trust model, `README.md`; for what each script does in detail,
 
 All scripts are pure Python (stdlib only) and derive their paths from the
 script location. Run them from anywhere; outputs land under
-`disk_recovery/work/` (gitignored). Re-runs are idempotent.
+`recovery/work/` (gitignored). Re-runs are idempotent.
 
 ## 0. One-time setup
 
-Build the C++ format tools used by the Python layer:
-
-```
-conan build src --build=missing
-```
-
-That produces `src/build/Release/tools/disk/ms0515-disk.exe` — the
-Python `build_corpus.py` shells out to it to extract files from RT-11
-volumes. No further build is needed for the GUI itself (stdlib tkinter).
+Build the emulator (<https://github.com/vvv104/ms0515>); its `package/`
+gets `ms0515-disk`, the C++ format tool the Python layer runs -
+`build_corpus.py` shells out to it to extract files from RT-11 volumes.
+The scripts look for the emulator's repository in `$MS0515_DIR`, else in
+`ms0515` beside this one (`tools/emulator.py`). No further build is needed for the GUI itself (stdlib tkinter).
 
 ## 1. Put material into work/data/
 
@@ -39,7 +35,7 @@ b. **Dedupe importer** (recommended for archives — recursively unpacks
    `.rar`/`.7z`/`.zip` and skips by md5):
 
    ```
-   python disk_recovery/tools/import_images.py <external-folder>
+   python recovery/tools/import_images.py <external-folder>
    ```
 
    Loose files land under `work/data/src/<relative>/`; archive contents
@@ -105,7 +101,7 @@ of the converter's own `.badmap` from ST1/ST2 / TD0 flags.
 ## 2. Identify what you imported
 
 ```
-python disk_recovery/tools/identify.py
+python recovery/tools/identify.py
 ```
 
 Classifies every image in `work/` by **content** (signature/size/geometry),
@@ -133,8 +129,8 @@ images + a sidecar `.badmap` of CRC-flagged blocks. Skip if step 2 says
 every image is already `'raw'`.
 
 ```
-python disk_recovery/tools/convert_samdisk.py work/path/to/*.dsk
-python disk_recovery/tools/convert_teledisk.py work/path/to/*.TD0
+python recovery/tools/convert_samdisk.py work/path/to/*.dsk
+python recovery/tools/convert_teledisk.py work/path/to/*.TD0
 ```
 
 Each writes a per-side `<base>_s0.img` / `<base>_s1.img` + a per-side
@@ -145,7 +141,7 @@ If you have two raw per-side files and want a single double-sided
 image:
 
 ```
-src/build/Release/tools/disk/ms0515-disk.exe merge sideA sideB out_ds.img
+ms0515-disk merge sideA sideB out_ds.img
 ```
 
 (Not exercised in the verification run — we had a single SS raw — but
@@ -159,7 +155,7 @@ because the OS that wrote it treated the whole floppy as one drive,
 which the MS-0515 FDC doesn't. The Python reader handles it:
 
 ```
-python disk_recovery/tools/read_spanning.py work/path/to/<image>
+python recovery/tools/read_spanning.py work/path/to/<image>
 ```
 
 `build_corpus` calls this internally for spanning volumes it detects;
@@ -169,7 +165,7 @@ verification run.)
 ## 5. Build the corpus
 
 ```
-python disk_recovery/tools/build_corpus.py
+python recovery/tools/build_corpus.py
 ```
 
 This is the heavy step. For every image in `work/`:
@@ -181,7 +177,7 @@ This is the heavy step. For every image in `work/`:
 - Unifies read-status from any source — Extended-CPC ST1/ST2,
   TeleDisk flags, and majority-voted `.dat` re-reads — into one
   flagged physical-block set, then maps it to each file's LBN
-  positions via the FDC geometry (per `src/core/src/floppy.c`).
+  positions via the FDC geometry (per the emulator's `src/core/src/floppy.c`).
 - Writes `work/corpus/corpus.json` (unique-content file records with
   provenance) and `work/corpus/captures.json` (per-capture
   **directory fingerprint** — files + start blocks + sizes; used
@@ -207,7 +203,7 @@ Re-run after every new import / conversion. Idempotent.
 ## 6. Reconcile into builds (consensus)
 
 ```
-python disk_recovery/tools/consensus.py
+python recovery/tools/consensus.py
 ```
 
 Regroups the corpus by **logical identity** (filename + block length,
@@ -237,7 +233,7 @@ wrote ...work/corpus/consensus.json
 ## 7. Donor recovery (optional, for the lost blocks)
 
 ```
-python disk_recovery/tools/donor.py
+python recovery/tools/donor.py
 ```
 
 For each run of bad blocks in a file marked `corrupt`, uses the
@@ -270,8 +266,8 @@ wrote ...work/corpus/donor.json
 ## 8. Build the confidence matrix + per-disk export
 
 ```
-python disk_recovery/tools/report.py
-python disk_recovery/tools/export.py
+python recovery/tools/report.py
+python recovery/tools/export.py
 ```
 
 - `report.py` reads `consensus.json` (+ optional `donor.json`) and
@@ -331,7 +327,7 @@ carry the same files) is what lifts files out of UNVERIFIED.
 ## 9. Review and pick canonical versions
 
 ```
-python disk_recovery/tools/review.py
+python recovery/tools/review.py
 ```
 
 Desktop GUI for the human-decision part of the workflow. Six tabs by
@@ -357,13 +353,13 @@ each lives on, with a preview pane and the diff/merge tools:
 - **Toggle canonical** — marks the selected version(s) as
   canonical for this file. Multiple canonicals are allowed (e.g.
   `RT11SJ.SYS` where several monitor builds are all legit).
-  Writes `disk_recovery/decisions.tsv` so the pick survives across
+  Writes `recovery/decisions.tsv` so the pick survives across
   runs.
 
 Headless model check (no window):
 
 ```
-python disk_recovery/tools/review.py --selftest
+python recovery/tools/review.py --selftest
 ```
 
 Prints the band counts. Used by the verification run to confirm the
@@ -383,14 +379,14 @@ LOST           0
 A text-only alternative to the GUI:
 
 ```
-python disk_recovery/tools/decide.py
+python recovery/tools/decide.py
 ```
 
 Regenerates `decisions.tsv` with every ambiguous file + its
 versions; you fill the `CHOOSE` column with a sha8 (or a disk
 name) and re-run `report.py` / `export.py`.
 
-Your picks live in `disk_recovery/decisions.tsv` (outside `work/`,
+Your picks live in `recovery/decisions.tsv` (outside `work/`,
 local to whoever runs the GUI — gitignored).  Deleting it resets all
 canonical picks.  The GUI rewrites it on every toggle.
 
@@ -415,16 +411,16 @@ is already built). Steps 3 and 4 only fire if there's actually
 something to convert / span:
 
 ```
-python disk_recovery/tools/identify.py                       # 2
-python disk_recovery/tools/convert_samdisk.py  ...           # 3a (optional)
-python disk_recovery/tools/convert_teledisk.py ...           # 3b (optional)
-python disk_recovery/tools/read_spanning.py    ...           # 4  (optional)
-python disk_recovery/tools/build_corpus.py                   # 5
-python disk_recovery/tools/consensus.py                      # 6
-python disk_recovery/tools/donor.py                          # 7
-python disk_recovery/tools/report.py                         # 8
-python disk_recovery/tools/export.py                         # 8
-python disk_recovery/tools/review.py                         # 9 (GUI)
+python recovery/tools/identify.py                       # 2
+python recovery/tools/convert_samdisk.py  ...           # 3a (optional)
+python recovery/tools/convert_teledisk.py ...           # 3b (optional)
+python recovery/tools/read_spanning.py    ...           # 4  (optional)
+python recovery/tools/build_corpus.py                   # 5
+python recovery/tools/consensus.py                      # 6
+python recovery/tools/donor.py                          # 7
+python recovery/tools/report.py                         # 8
+python recovery/tools/export.py                         # 8
+python recovery/tools/review.py                         # 9 (GUI)
 ```
 
 Files produced under `work/corpus/` (all verified by running the
@@ -446,5 +442,5 @@ export/INDEX.txt    step 8  — disk-level summary
 ```
 
 Everything in `work/` is gitignored; so is
-`disk_recovery/decisions.tsv` (per-operator canonical picks, local
+`recovery/decisions.tsv` (per-operator canonical picks, local
 state).

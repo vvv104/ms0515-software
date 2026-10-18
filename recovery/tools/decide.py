@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-decide.py — manage disk_recovery/decisions.tsv: the human's choice of the
+decide.py — manage recovery/decisions.tsv: the human's choice of the
 canonical version for each AMBIGUOUS file (several distinct builds share a name).
 
 Workflow:
@@ -21,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import verdict as V
 
-OUT = Path(__file__).resolve().parents[2] / "disk_recovery" / "work" / "corpus"
+OUT = Path(__file__).resolve().parents[2] / "recovery" / "work" / "corpus"
 
 def main():
     files = json.load(open(OUT / "consensus.json", encoding="utf-8"))["files"]

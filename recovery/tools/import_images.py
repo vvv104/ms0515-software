@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 import_images.py — pull disk images from an external source into
-disk_recovery/work/data/, deduplicated by content.
+recovery/work/data/, deduplicated by content.
 
 Recursively extracts archives (.rar/.7z/.zip, including nested ones), then
 copies every file whose content (md5) is not already present anywhere under
@@ -18,7 +18,7 @@ import sys, shutil, hashlib, subprocess, tempfile, argparse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-WORK = ROOT / "disk_recovery" / "work"
+WORK = ROOT / "recovery" / "work"
 DST  = WORK / "data"
 ARCHIVE_EXT = {".rar", ".7z", ".zip"}
 

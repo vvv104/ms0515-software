@@ -40,7 +40,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import verdict as V
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "disk_recovery" / "work" / "corpus"
+OUT = ROOT / "recovery" / "work" / "corpus"
 STORE = OUT / "files"
 RECOV = OUT / "recovered"
 BLOCK = 512

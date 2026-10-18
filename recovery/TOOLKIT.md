@@ -1,23 +1,23 @@
 # Toolkit
 
 How the methodology is executed in code.  The **format layer** is built in
-C++ inside `src/`, in the project's style (C++20, CMake + Conan, doctest,
-`/W4 /WX`).  `disk_recovery/` holds knowledge, the verified-image vault, and
+C++ in the emulator's repository (<https://github.com/vvv104/ms0515>), `src/`, in its style (C++20, CMake + Conan, doctest,
+`/W4 /WX`).  `recovery/` holds knowledge, the verified-image vault, and
 the recovery pipeline's own Python scripts under `tools/` (no build inputs -
 `work/` is gitignored).
 
 ## Format tools (built and verified)
 
-Library **`ms0515_disk`** — [`../src/disk/`](../src/disk/):
+Library **`ms0515_disk`** — [`src/disk/`](https://github.com/vvv104/ms0515/tree/main/src/disk):
 
 | Module | Job |
 |--------|-----|
-| `Layout` | `LBN → byte` geometry, mirroring the emulator FDC: size picks SS/DS, and one universal driver mapping (2:1 interleave + per-track skew). The source of truth is [`../src/core/src/floppy.c`](../src/core/src/floppy.c); see [`../docs/hardware/filesystem.md`](../docs/hardware/filesystem.md). |
+| `Layout` | `LBN → byte` geometry, mirroring the emulator FDC: size picks SS/DS, and one universal driver mapping (2:1 interleave + per-track skew). The source of truth is [`src/core/src/floppy.c`](https://github.com/vvv104/ms0515/blob/main/src/core/src/floppy.c); see [`docs/hardware/filesystem.md`](https://github.com/vvv104/ms0515/blob/main/docs/hardware/filesystem.md). |
 | `Directory` | RT-11 home block + segment chain + RAD50 parse. |
 | `Image` | Load a capture (size selects SS/DS + side), read files; `splitDoubleSided` / `mergeSides` reshape between an 800 KB DS image and two 400 KB SS images. |
 | `Build` | `blankImage` (raw media), `initVolume` (format a side, byte-identical to OS INIT), `putFile` (add a file, like PIP — first-fit scan of empty entries, tail entries preserved; `PutOptions` carries `date` + `readOnly`), `removeFile` (delete a file; the freed slot becomes a reusable empty entry), `squeeze` (defragment, RT-11 SQUEEZE analogue), `setProtected` / `setEntryDate` (in-place edits of a permanent entry's flags and date), `encodeDate` (pack year/month/day into the RT-11 date word). |
 
-Binary **`ms0515-disk`** — [`../src/tools/disk/`](../src/tools/disk/):
+Binary **`ms0515-disk`** — [`src/tools/disk/`](https://github.com/vvv104/ms0515/tree/main/src/tools/disk):
 
 | Command | Job |
 |---------|-----|
@@ -44,7 +44,7 @@ mapping is not a per-OS choice (see filesystem.md).
 
 The format tools are cross-checked against the real OS running in the
 emulator (the authoritative oracle), in
-[`../src/lib/tests/test_dir_vs_os.cpp`](../src/lib/tests/test_dir_vs_os.cpp):
+[`src/lib/tests/test_dir_vs_os.cpp`](https://github.com/vvv104/ms0515/blob/main/src/lib/tests/test_dir_vs_os.cpp):
 
 - **DIR vs OS** — the tool's directory parse matches the OS's own `DIR`
   for OSA / Omega / Mihin (SS) and rodionov (DS).

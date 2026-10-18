@@ -20,7 +20,7 @@ import sys, json, hashlib, argparse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-CORPUS = ROOT / "disk_recovery/work/corpus/corpus.json"
+CORPUS = ROOT / "recovery/work/corpus/corpus.json"
 BLOCK = 512
 IL = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
 RAD = " ABCDEFGHIJKLMNOPQRSTUVWXYZ$.?0123456789"

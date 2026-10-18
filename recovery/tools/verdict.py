@@ -25,7 +25,7 @@ import hashlib
 from pathlib import Path
 from collections import defaultdict, Counter
 
-_STORE = Path(__file__).resolve().parents[2] / "disk_recovery" / "work" / "corpus" / "files"
+_STORE = Path(__file__).resolve().parents[2] / "recovery" / "work" / "corpus" / "files"
 
 def byte_majority(datas, weights=None):
     """Per-byte majority for bit-rot recovery.  Returns (bytes, status_str).
@@ -322,7 +322,7 @@ ACTION = {
     "LOST":       "external donor disk / free-space anchor search",
 }
 
-DECISIONS = Path(__file__).resolve().parents[2] / "disk_recovery" / "decisions.tsv"
+DECISIONS = Path(__file__).resolve().parents[2] / "recovery" / "decisions.tsv"
 
 DECISION_HEADER = (
     "# Pick the canonical version for each AMBIGUOUS file, per target floppy.\n"

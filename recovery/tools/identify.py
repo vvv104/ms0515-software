@@ -27,13 +27,13 @@ from collections import Counter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from read_spanning import read_spanning
+from emulator import disk_tool
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-WORK = ROOT / "disk_recovery" / "work"
+WORK = ROOT / "recovery" / "work"
 OUT = WORK / "corpus"
-_tool = ROOT / "package/ms0515-disk.exe"
-TOOL = _tool if _tool.exists() else _tool.with_suffix("")
+TOOL = disk_tool()
 PY = sys.executable
 SS, DS = 409600, 819200
 
@@ -129,7 +129,7 @@ def classify(path, tmp):
 
 def main():
     if not TOOL.exists():
-        sys.exit(f"ms0515-disk not built at {TOOL} — build src/ first")
+        sys.exit(f"ms0515-disk not built at {TOOL} — build the emulator (MS0515_DIR) first")
     sources = sorted(p for p in WORK.rglob("*")
                      if p.is_file() and p.suffix.lower() in (".dsk", ".raw", ".td0")
                      and "corpus" not in p.parts)

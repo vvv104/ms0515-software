@@ -27,7 +27,7 @@ from pathlib import Path
 from collections import defaultdict
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "disk_recovery" / "work" / "corpus"
+OUT = ROOT / "recovery" / "work" / "corpus"
 STORE = OUT / "files"
 
 MONITORS = {"MON8SJ.SYS": "OSA", "RT11SJ.SYS": "Omega/Mihin",

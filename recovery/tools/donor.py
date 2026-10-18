@@ -31,7 +31,7 @@ from build_corpus import lbn_phys, SS, DS
 from read_spanning import read_spanning
 
 ROOT = Path(__file__).resolve().parents[2]
-WORK = ROOT / "disk_recovery" / "work"
+WORK = ROOT / "recovery" / "work"
 OUT = WORK / "corpus"
 STORE = OUT / "files"
 RECOV = OUT / "recovered"
