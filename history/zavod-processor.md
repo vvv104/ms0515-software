@@ -30,7 +30,7 @@ name.  The forum's own engineers say it plainly - «УБПК это и есть 
 collection calls `mihin`.
 
 Both boards have been scanned, bare and from both sides, and the scans are
-kept in `ms0515_data/scans/boards/` (from radon.su - see `REFERENCES.md`).
+kept in `ms0515_data/scans/boards/` (from radon.su - see the emulator's [`REFERENCES.md`](https://github.com/vvv104/ms0515/blob/main/docs/kb/REFERENCES.md)).
 They carry their own silkscreen - «НС4 ред 3А», «НС5 ред 01» - and the НС5
 one is hand-dated 05.04.90, which agrees with the «~1990» above.
 
@@ -52,7 +52,7 @@ new:
   processor put in it and the video memory organised differently;
 * a **video input** and an **AT hard disk** were developed for it and never
   went into the series.  (What the emulator has is a paravirtual disk of its
-  own making, not that one - see `docs/folder-device.md` and `hd.h`.)
+  own making, not that one - see its [`docs/hardware/hd.md`](https://github.com/vvv104/ms0515/blob/main/docs/hardware/hd.md).)
 
 The plant made no chips itself: they came from Minsk, Baku, Zelenograd and
 from ВЗПП across town.
@@ -78,4 +78,4 @@ photographs collected by CodeMaster (he worked in the plant's ОКБ from 1986
 to 1993, in department 62, systems programming, and he is the one who sends
 this emulator's bug reports from the forum).  Its frames point at
 `retro.hostronavt.ru`, which does not answer; the Wayback Machine kept the
-listings and a few of the files ([`REFERENCES.md`](REFERENCES.md)).  Worth asking him for a mirror.
+listings and a few of the files ([`REFERENCES.md`](https://github.com/vvv104/ms0515/blob/main/docs/kb/REFERENCES.md)).  Worth asking him for a mirror.
