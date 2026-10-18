@@ -31,5 +31,5 @@ There is no login, and the machine has no clock: the date is 1970 until
 `date` sets it.
 
 The other emulators - MAME, EmuStudio, MS0515BTL - take neither 800 KB
-images nor the RAM disk; for them the emulator repository builds
-`ubix01.dsk`, 400 KB, without the RAM disk.
+images nor the RAM disk; for them ms0515-devel, where UBIX is built,
+makes `ubix01.dsk`, 400 KB, without the RAM disk.

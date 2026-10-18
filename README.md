@@ -13,10 +13,10 @@ written under its screen.
 The diskettes come from the collection gathered on the zx-pk.ru forum
 («Ещё один эмулятор МС-0515»); the reads were consolidated, damaged
 blocks recovered from donor copies, and every file identified by its
-content.  The methodology, the raw reads and the tooling live in the
-emulator repository under `disk_recovery/`; this repository holds only
-the result — the files themselves, the systems' monitors and the
-knowledge about them.
+content.  The methodology and the tooling are [`recovery/`](recovery/README.md)
+here (the raw reads stay out of the repository); the rest holds the
+result — the files themselves, the systems' monitors and the knowledge
+about them.
 
 ## Running
 
