@@ -1,1 +1,7 @@
 .work/
+
+# Disk recovery: the working data (raw captures, merges - may hold personal
+# data) and the per-operator canonical picks
+recovery/work/
+recovery/decisions.tsv
+__pycache__/
