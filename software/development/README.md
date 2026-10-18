@@ -5,8 +5,8 @@ collection has of each - the compilers with their libraries and manuals,
 the BASICs, the programmer's utilities - and, in this folder itself, what
 every language's build goes through: the assembler, the linker, the system
 macro library and the system object library the emulator's own projects
-are built with (`rt11_devel/` there composes its build system from these -
-DEC's, built from its V5.4 sources by `rt11_devel/projects/rt11`), the librarian and the debugger.  The kits' own system
+are built with (ms0515-devel composes its build system from these -
+DEC's, built from its V5.4 sources by its `projects/rt11`), the librarian and the debugger.  The kits' own system
 libraries, another pair, are in `fodos/`.
 
 | where | what |

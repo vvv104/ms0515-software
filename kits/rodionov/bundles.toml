@@ -13,8 +13,8 @@ startup  = ["SET TT QUIET"]
 reserved = [{ side = 1, lbn = 792, path = "kits/rodionov/SIDE1-792.BLK" },   # the copy protection
             { side = 1, lbn = 799, path = "kits/rodionov/SIDE1-799.BLK" }]
 
-# DEC's RT-11 V05.04 built for the MS 0515 from DEC's sources (the emulator
-# repository's rt11_devel/projects/rt11, profiles dec and dec-ru), with the
+# DEC's RT-11 V05.04 built for the MS 0515 from DEC's sources (the ms0515-devel
+# repository's projects/rt11, profiles dec and dec-ru), with the
 # handlers and utilities built there too (the *-rt11 bundles).  Omega's
 # console and clock, so Omega's handlers load under it as well.
 

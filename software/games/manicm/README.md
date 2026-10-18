@@ -10,8 +10,8 @@ the theme's two voices into the one speaker bit and sounded their sum and
 difference (the first attempt at two voices on the beeper, in 1983), so
 the port plays the theme both ways, turn and turn about each time the
 title comes up: as the Spectrum did it first, then as written, the two
-pitches themselves.  The sources live in the emulator repository under
-`rt11_devel/projects/manicm/`, written to be read - the game in one file,
+pitches themselves.  The sources live in the ms0515-devel repository under
+`projects/manicm/`, written to be read - the game in one file,
 the machine in another - so that whoever ports it on to a DVK or another
 PDP-11 rewrites the second file and leaves the first alone.
 

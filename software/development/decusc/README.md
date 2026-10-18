@@ -8,7 +8,7 @@ rebuilt from the sources of the RT-11 SIG tape of Fall 1983 (`11SP59`, the
 extract Thomas J. Shinal made for RT-11, on the "RT-11 Freeware" CD of
 1999 as bitsavers has it) on the `dec` system with the machine's MACRO-11,
 LINK and LIBR, by the command files that came with it:
-`rt11_devel/projects/decusc/` of the emulator.  The tape's RT-11 kit was
+`projects/decusc/` of ms0515-devel.  The tape's RT-11 kit was
 built for a PDP-11 with EIS and FPU; on this machine its library traps on
 the first `i*i`.
 

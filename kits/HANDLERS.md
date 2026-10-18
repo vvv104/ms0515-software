@@ -86,8 +86,8 @@ were the ОМЕГА build over again, so those systems take `sl-omega`.
 paravirtual block device of the PDP-11 emulators, and this is the RT-11
 handler that drives it, built for the MS-0515 emulator
 (https://github.com/vvv104/ms0515).  Like FIST, it is here without its
-sources - they live in the emulator repository under
-`rt11_devel/projects/hd/`, with the recipe that builds this file inside
+sources - they live in the ms0515-devel repository under
+`projects/rt11/handlers/hd/`, with the recipe that builds this file inside
 the emulator.
 
 **Whose it is.**  The driver is v2.0 of the HD driver kit Patron

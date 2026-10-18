@@ -31,7 +31,7 @@ date  = "1999-12-31"
 files = ["software/games/manicm/MANICM.SAV", "software/games/manicm/MANICM.DAT"]
 
 # The collector's own game, built in 2026 from his sources of 1995 (the
-# emulator's rt11_devel/projects/minesweeper); dated as the sources are.
+# ms0515-devel repository's projects/minesweeper); dated as the sources are.
 [bundle.mine]
 title = "MINE - Voronkov's Minesweeper 1.01 (1995), the original, built from its sources; F-keys want ROM-B"
 group = "Games / Graphics"

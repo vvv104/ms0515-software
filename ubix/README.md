@@ -4,8 +4,8 @@
 system for the Электроника МС 0515, written in 2026 from nothing in C and
 PDP-11 assembler - not RT-11, and none of the collection's monitors.  The
 name is the machine's factory name, УБПК, crossed with UNIX.  The
-sources, the build and the tests live in the emulator repository under
-`rt11_devel/projects/unix/`; its `SPEC.md` says how the system is made and
+sources, the build and the tests live in the ms0515-devel repository under
+`projects/unix/`; its `SPEC.md` says how the system is made and
 why, its `README.md` what there is.
 
 `ubix.dsk` is the release image, UBIX V0.1: 800 KB, both sides of the

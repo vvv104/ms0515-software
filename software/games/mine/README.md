@@ -6,8 +6,8 @@ Voronezh» - V. V. Voronkov's Pascal minesweeper for the MS 0515, the
 version with the menu, three levels and the enciphered help.  No binary of
 it survived; this one was built in 2026 from the sources he wrote in 1995
 (`programs/vvv/minesweeper/v1.01/`), with OMSI Pascal on the machine
-itself, in the emulator's repository under
-`rt11_devel/projects/minesweeper/` - where every change the sources needed
+itself, in the ms0515-devel repository under
+`projects/minesweeper/` - where every change the sources needed
 to build and run is listed.  The author's file was `K.SAV`; he named this
 one `MINE`.
 
