@@ -67,6 +67,9 @@ kits.toml, disks.head.toml,
 <folder>/bundles.toml       — what a disk can be made of; tools/build_disks_toml.py makes disks.toml
 play/, index.html           — the games page: tiles and their run cards
 manuals/                    — the diskettes' manuals as Markdown, each beside its original
+refs/                       — the machine's factory documentation transcribed (Russian, as the
+                              originals): the formulyar, the maintenance programs, the ОСА manual
+history/                    — the plant and who made the machine
 recovery/                   — the recovery method and its pipeline over the emulator's ms0515-disk
 CATALOG.md, catalog.csv     — one card per file; HALLOFFAME.md — the people and houses named
 tools/                      — build_disks_toml.py and the scripts for the collection's files
