@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import verdict as V
 from consensus import canonical_name
 from build_corpus import alias_name
-from emulator import disk_tool
+from emulator import disk_tool, emulator
 
 ROOT  = Path(__file__).resolve().parents[2]
 OUT   = ROOT / "recovery" / "work" / "corpus"
@@ -499,7 +499,7 @@ def hex_diff_window(parent, name, sha_a, data_a, sha_b, data_b,
 
     def do_disasm_compare():
         import sys as _sys
-        _sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
+        _sys.path.insert(0, str(emulator() / "tools"))   # pdp11_disasm is the emulator's
         try:
             from pdp11_disasm import Disassembler
         except Exception as e:
@@ -1126,7 +1126,7 @@ def run_gui(model):
         if len(v) < 2:
             status.config(text="select >=2 versions to compare PDP-11 disassembly"); return
         import sys as _sys
-        _sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
+        _sys.path.insert(0, str(emulator() / "tools"))   # pdp11_disasm is the emulator's
         try:
             from pdp11_disasm import Disassembler
         except Exception as e:
