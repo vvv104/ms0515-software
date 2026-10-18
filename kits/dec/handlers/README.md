@@ -1,8 +1,8 @@
 # Handlers: RT-11 from sources
 
-The handlers of the `dec` and `dec-ru` systems - DEC's RT-11 V5.4 built for the MS 0515. None of these files was recovered from a diskette: every one is built from a source, in the emulator's repository (`rt11_devel/projects/rt11`), with DEC's own LINK and libraries. They carry the sysgen word of the `dec` monitors (no error logging, no timer support), which is ОМЕГА's too.
+The handlers of the `dec` and `dec-ru` systems - DEC's RT-11 V5.4 built for the MS 0515. None of these files was recovered from a diskette: every one is built from a source, in the ms0515-devel repository (`projects/rt11`), with DEC's own LINK and libraries. They carry the sysgen word of the `dec` monitors (no error logging, no timer support), which is ОМЕГА's too.
 
-Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.
+Put here by `projects/rt11/kit/ship_kit.py` of ms0515-devel.
 
 | file | what | source |
 |---|---|---|
@@ -18,7 +18,7 @@ Put here by `rt11_devel/projects/rt11/kit/ship_kit.py`.
 | `BA.SYS` | The resident part of `BATCH` | DEC's sources |
 | `SL.SYS` | The single-line editor: DEC's V5.4 `SL`, its own logic and keys (PF1 is GOLD, PF2 help), built for the VT52 the ROM's console is, with a patch of eight lines where DEC left that build unfinished. `SET SL ON` | `handlers/sl/SL.diff` |
 
-`tab/SL.SYS` is the same `SL` with things of ours (the emulator's `rt11_devel/projects/sl`): **Tab completes the word** in the monitor's command line - commands, their switches, SET's and SHOW's words, file names, all read from the running monitor; **the history is a ring** of as many lines as fit in the 160 bytes where DEC kept two (Up older, Down newer; GOLD Up is Up); **Home, End and Delete** (НТ, ВЫБР, УДАЛ) go to the ends of the line and delete under the cursor; **PF2 lists the keys**. The rest is DEC's. 21 blocks; in memory 3572 bytes, seven blocks against the eight of DEC's own - the completion and the help are an overlay read from the file when Tab or PF2 is pressed, and DEC's picture of a VT52's keypad is not built in. Bundle `sl-tab`, which the `dec` preset takes; DEC's own is the bundle `sl-rt11`.
+`tab/SL.SYS` is the same `SL` with things of ours (ms0515-devel's `projects/sl`): **Tab completes the word** in the monitor's command line - commands, their switches, SET's and SHOW's words, file names, all read from the running monitor; **the history is a ring** of as many lines as fit in the 160 bytes where DEC kept two (Up older, Down newer; GOLD Up is Up); **Home, End and Delete** (НТ, ВЫБР, УДАЛ) go to the ends of the line and delete under the cursor; **PF2 lists the keys**. The rest is DEC's. 21 blocks; in memory 3572 bytes, seven blocks against the eight of DEC's own - the completion and the help are an overlay read from the file when Tab or PF2 is pressed, and DEC's picture of a VT52's keypad is not built in. Bundle `sl-tab`, which the `dec` preset takes; DEC's own is the bundle `sl-rt11`.
 
 ОСА's and ОМЕГА's `SL.SYS` (`../../osa/handlers/`, `../../omega/handlers/`) load under these monitors too.
 

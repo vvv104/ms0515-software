@@ -24,8 +24,8 @@ startup  = ["SET TT QUIET"]
 
 # ---- dec -------------------------------------------------------------------
 
-# -- RT-11 from sources: the handlers written or built in the emulator
-# repository (rt11_devel/projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
+# -- RT-11 from sources: the handlers written or built in the ms0515-devel
+# repository (projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
 # VM, EX and HD are the machine's own, with sources; NL, LD, LP, LS, SP and BA
 # are DEC's V5.4 as they are.  SL is DEC's too, built for the VT52 the
 # machine's console is; the kits' SL load under the dec monitors as well.
@@ -130,7 +130,7 @@ protect  = true
 date     = "1999-12-31"
 files    = ["kits/dec/handlers/SL.SYS"]
 
-# DEC's SL with things added in the emulator repository (rt11_devel/projects/sl):
+# DEC's SL with things added in the ms0515-devel repository (projects/sl):
 # Tab completes the word, the history is a ring, Home, End and Delete work,
 # PF2 lists the keys.
 [bundle.sl-tab]
@@ -168,7 +168,7 @@ date     = "1999-12-31"
 files    = ["kits/dec/utils/PIP.SAV"]
 
 # -- RT-11 from sources: DEC's V5.4 utilities, built from DEC's sources with
-# DEC's own LINK and libraries (rt11_devel/projects/rt11 of the emulator).
+# DEC's own LINK and libraries (projects/rt11 of ms0515-devel).
 
 [bundle.help-rt11]
 title    = "HELP with its library HELP.MLB"

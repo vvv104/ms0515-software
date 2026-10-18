@@ -150,8 +150,8 @@ startup  = ["SET TT QUIET"]
 reserved = [{ side = 1, lbn = 792, path = "kits/rodionov/SIDE1-792.BLK" },   # the copy protection
             { side = 1, lbn = 799, path = "kits/rodionov/SIDE1-799.BLK" }]
 
-# DEC's RT-11 V05.04 built for the MS 0515 from DEC's sources (the emulator
-# repository's rt11_devel/projects/rt11, profiles dec and dec-ru), with the
+# DEC's RT-11 V05.04 built for the MS 0515 from DEC's sources (the ms0515-devel
+# repository's projects/rt11, profiles dec and dec-ru), with the
 # handlers and utilities built there too (the *-rt11 bundles).  Omega's
 # console and clock, so Omega's handlers load under it as well.
 
@@ -183,8 +183,8 @@ startup  = ["SET TT QUIET"]
 
 # ---- dec -------------------------------------------------------------------
 
-# -- RT-11 from sources: the handlers written or built in the emulator
-# repository (rt11_devel/projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
+# -- RT-11 from sources: the handlers written or built in the ms0515-devel
+# repository (projects/rt11) for the dec systems.  DZ, DV, MZ, TT,
 # VM, EX and HD are the machine's own, with sources; NL, LD, LP, LS, SP and BA
 # are DEC's V5.4 as they are.  SL is DEC's too, built for the VT52 the
 # machine's console is; the kits' SL load under the dec monitors as well.
@@ -700,7 +700,7 @@ protect  = true
 date     = "1999-12-31"
 files    = ["kits/dec/handlers/SL.SYS"]
 
-# DEC's SL with things added in the emulator repository (rt11_devel/projects/sl):
+# DEC's SL with things added in the ms0515-devel repository (projects/sl):
 # Tab completes the word, the history is a ring, Home, End and Delete work,
 # PF2 lists the keys.
 [bundle.sl-tab]
@@ -738,7 +738,7 @@ date     = "1999-12-31"
 files    = ["kits/dec/utils/PIP.SAV"]
 
 # -- RT-11 from sources: DEC's V5.4 utilities, built from DEC's sources with
-# DEC's own LINK and libraries (rt11_devel/projects/rt11 of the emulator).
+# DEC's own LINK and libraries (projects/rt11 of ms0515-devel).
 
 [bundle.help-rt11]
 title    = "HELP with its library HELP.MLB"
@@ -974,7 +974,7 @@ date  = "1999-12-31"
 files = ["software/games/manicm/MANICM.SAV", "software/games/manicm/MANICM.DAT"]
 
 # The collector's own game, built in 2026 from his sources of 1995 (the
-# emulator's rt11_devel/projects/minesweeper); dated as the sources are.
+# ms0515-devel repository's projects/minesweeper); dated as the sources are.
 [bundle.mine]
 title = "MINE - Voronkov's Minesweeper 1.01 (1995), the original, built from its sources; F-keys want ROM-B"
 group = "Games / Graphics"
@@ -1438,7 +1438,7 @@ files    = ["software/development/utils/SRCCOM.SAV", "software/development/utils
 
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
-# (rt11_devel/projects/decusc of the emulator), in two builds of the same
+# (projects/decusc of ms0515-devel), in two builds of the same
 # names: the folder itself for the machine as it is, eis/ for the machine with
 # EM.SYS, the instruction emulator.  A diskette takes one of the two; the
 # headers serve either, and the tools come in three parts so that one fits

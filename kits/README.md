@@ -83,7 +83,7 @@ Where the sha differs from the original's, this is what differs:
 collection — the disks are known on the forum by these names.  How the
 two Омега builds and ОСА came to be — DEC's RT-11 V5.4 sources, the SYSGEN
 answers and what each kit added — is taken apart, byte for byte, in the
-emulator repository's `rt11_devel/projects/rt11/`, where the `dec` kit is
+ms0515-devel repository's `projects/rt11/`, where the `dec` kit is
 built as well.
 
 ## osa

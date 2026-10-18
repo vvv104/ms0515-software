@@ -8,7 +8,7 @@ follows pobtastic's SkoolKit disassembly of the original routine for
 routine: the same mechanics, the same artwork, re-expressed for this
 machine.  The sources and the whole build (which reads the original tape
 image and emits the MACRO-11 from it — the art is never vendored) live in
-the emulator repository under `rt11_devel/projects/fist/`.
+the ms0515-devel repository under `projects/fist/`.
 
 ## Running
 

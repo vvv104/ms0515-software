@@ -191,7 +191,7 @@ files    = ["software/development/utils/SRCCOM.SAV", "software/development/utils
 
 # ---- DECUS C -------------------------------------------------------------
 # The C compiler, rebuilt from the RT-11 SIG tape's sources on the dec system
-# (rt11_devel/projects/decusc of the emulator), in two builds of the same
+# (projects/decusc of ms0515-devel), in two builds of the same
 # names: the folder itself for the machine as it is, eis/ for the machine with
 # EM.SYS, the instruction emulator.  A diskette takes one of the two; the
 # headers serve either, and the tools come in three parts so that one fits
