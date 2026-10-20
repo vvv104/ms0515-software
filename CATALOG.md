@@ -440,7 +440,7 @@ DEC's own RESORC V05.69 in English («Booted from», «KMON nesting depth», «E
 
 </details>
 
-<details open><summary><b>programs/</b> — 211 files</summary>
+<details open><summary><b>programs/</b> — 212 files</summary>
 
 <details><summary><b>programs/basic/</b> — 43 files</summary>
 
@@ -1441,6 +1441,16 @@ Sprite generator «COPYRIGHT 1994 BY GOSTEV DMITRY, Россия, Воронеж
 «Программное обеспечение ПЭВМ Электроника 0515 - Редактор SPRITE - Руководство пользователя», 7 sheets, Львов 1991
 
 *ru / koi8-r; disks: 1; identified from: title page 2026-09-06; sha256 445e440a6eeb*
+
+</details>
+
+<details><summary><b>programs/tetris/</b> — 1 files</summary>
+
+### `programs/tetris/TETRIS.PAS`
+
+The RT-11 Tetris's Pascal source, reconstructed for the collection in 2026 from TETRIS.SAV of the old games disks: compiled with Pascal SM-4 it gives that program's own code byte for byte (only the run-time library's addresses differ). Names and comments are ours; texts KOI-7 as in the binary
+
+*ru / koi7; disks: 0 (ours, not from a diskette); identified from: reconstructed from TETRIS.SAV 2026-10-19; sha256 a2f628f70c43*
 
 </details>
 

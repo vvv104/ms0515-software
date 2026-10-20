@@ -90,8 +90,9 @@ much for the media) is refused with the reason.
   startup command made DEC's `@STARTS` and the quiet `STARTS.COM` every
   composed disk carries, one bit of the vvv104 ОМЕГА monitor set right
   (flipped in the copy all its disks came from), the ОСА `SL.SYS`, whose hotkey table
-  was blanked here, and any helper file re-created for a program whose
-  original was lost.
+  was blanked here, any helper file re-created for a program whose
+  original was lost, the samples of `programs/examples/` and the RT-11
+  Tetris's source in `programs/tetris/`, reconstructed from its binary.
 - One folder did not come from the machine's diskettes:
   `software/development/pascal-sm4/`, the RAFOS Pascal taken from the
   DVK/UKNC archive because it runs here and built the RT-11 Tetris; its
