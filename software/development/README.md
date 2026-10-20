@@ -12,6 +12,7 @@ libraries, another pair, are in `fodos/`.
 | where | what |
 |---|---|
 | [`pascal/`](pascal/README.md) | OMSI Pascal-1: `PAS1` with its libraries, the graphics library, the units, the manuals, the sprite maker |
+| [`pascal-sm4/`](pascal-sm4/README.md) | Pascal SM-4, the RAFOS compiler with its run-time library and manuals - not from the machine's diskettes but from the DVK/UKNC archive; the compiler the RT-11 Tetris was built with |
 | [`fortran/`](fortran/README.md) | FORTRAN IV with its library |
 | [`basic/`](basic/README.md) | БЕЙСИК-ОМЕГА and BASIC/RAFOS |
 | [`utils/`](utils/README.md) | the patchers `SLP`, `PAT`, `SIPP`, `STRIP`, `SPLIT`, the comparers `SRCCOM`, `BINCOM` and `LIBCOM`, and DEZI, the octal dump viewer, with its rebadged twin |

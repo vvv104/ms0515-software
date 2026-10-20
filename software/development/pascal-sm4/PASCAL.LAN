@@ -1,0 +1,2502 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               programmnoe obespe~enie dwk
+         operacionnaq sistema s razdeleniem funkcij
+
+                       r  a  f  o  s
+
+
+                          paskalx
+
+
+
+                       opisanie qzyka
+
+
+
+                         listow 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            1987
+		
+
+
+                         annotaciq
+
+       w dannom dokumente priwedeno opisanie qzyka wysokogo
+  urownq - paskalx. opisanie soprowovdaetsq  primerami.  za
+  osnowu opisaniq wzqt dokument  N.WIRTH  "THE  PROGRAMMING
+  LANGUAGE PASCAL (REVISED REPORT)" (1972),  kotoryj  movno
+  rassmatriwatx w ka~estwe standarta na qzyk paskalx.
+
+       w  prilovenii   sodervitsq   opisanie   osobennostej
+  realizacii qzyka paskalx dlq operacionnoj sistemy rafos.
+
+
+                         sodervanie
+
+      annotaciq ........................................
+
+  1.  ob}ie swedeniq....................................
+
+  2.  sposob opisaniq qzyka.............................
+
+  3.  |lementy i osnownye konstrukcii qzyka.............
+
+  4.  |lementy i wwod/wywod dannyh......................
+
+  4.1.   opredeleniq konstant...........................
+  4.2.   opredeleniq tipow dannyh.......................
+  4.2.1.   prostye tipy.................................
+  4.2.1.1. skalqrnye tipy...............................
+  4.2.1.2. standartnye skalqrnye tipy...................
+  4.2.1.3. otrezki tipow................................
+  4.2.2.   strukturnye tipy.............................
+  4.2.2.1. tipy massiwow................................
+  4.2.2.2. tipy zapisej.................................
+  4.2.2.3. tipy mnovestw................................
+  4.2.2.4. tipy fajlow..................................
+  4.2.3.   tipy ukazatelej..............................
+  4.3.   opisanie i izobravenie peremennyh..............
+  4.3.1.   polnye peremennye............................
+  4.3.2.   komponentnye peremennye......................
+  4.3.2.1. peremennye s indeksami.......................
+  4.3.2.2. ukazateli polej..............................
+  4.3.2.3. bufery fajlow................................
+  4.3.3.   ukazuemye peremennye.........................
+
+  5.  wyraveniq.........................................
+
+  5.1.   operaciq otricaniq.............................
+  5.2.   operacii tipa umnoveniq........................
+  5.3.   operacii tipa sloveniq.........................
+  5.4.   znaki otno{enij................................
+  5.5.   ukazateli funkcii..............................
+
+  6.  operatory i sredstwa otladki......................
+
+  6.1.   prostye operatory..............................
+  6.1.1.   operatory priswaiwaniq.......................
+  6.1.2.   operatory procedur...........................
+  6.1.3.   operatory perehoda...........................
+  6.1.4.   pustoj operator..............................
+  6.2.   strukturnye operatory..........................
+  6.2.1.   sostawnye operatory..........................
+  6.2.2.   uslownye operatory...........................
+  6.2.2.1. operator "Esli"..............................
+  6.2.2.2. operator "wybor".............................
+  6.2.3.   cikly........................................
+  6.2.3.1. operator "poka"..............................
+  6.2.3.2. operator "powtor"............................
+  6.2.3.3. operator "dlq"...............................
+  6.2.4.   operatory nad zapisqmi.......................
+
+  7.  Opisanie procedur.................................
+
+  7.1.   standartnye procedury..........................
+  7.1.1.   procedury raboty s fajlami...................
+  7.1.2.   procedura dinami~eskogo razme}eniq...........
+  7.1.3.   procedury preobrazowaniq tipow...............
+
+  8.  opisaniq funkcij..................................
+
+  8.1.   standartnye funkcii............................
+  8.1.1.   arifmeti~eskie funkcii.......................
+  8.1.2.   predikaty....................................
+  8.1.3.   funkcii preobrazowaniq.......................
+  8.1.4.   pro~ie standartnye funkcii...................
+
+  9.  programmy.........................................
+
+  10. osobennosti programmirowaniq dlq bezoperacionnyh
+
+      sistem.
+
+  prilovenie.    osobennosti qzyka paskalx/rafos.......
+
+  1.  sintaksi~eskie ras{ireniq.........................
+
+  1.1.   zagolowok programmy............................
+  1.2.   porqdok opisanij...............................
+  1.3.   kommentarii....................................
+  1.4.   oborot ELSE w operatore CASE...................
+  1.5.   operator EXIT..................................
+  1.6.   wne{nie   i   fortranowskie    podprogrammy
+         (procedury)....................................
+
+  2.  ma{inno-zawisimyj urowenx qzyka...................
+
+  2.1.   wosxmeri~nye konstanty.........................
+  2.2.   bezznakowye celye ~isla........................
+  2.3.   logi~eskie operacii s celymi ~islami...........
+  2.4.   obra}enie k absol`tnym adresam pamqti..........
+  2.5.   adresnyj operator "@"..........................
+  2.6.   ispolxzowanie makroassemblera..................
+
+  3.  operatory wwoda/wywoda............................
+
+  3.1.   dopolnitelxnye  argumenty  dlq  "RESET"   i
+         "REWRITE"......................................
+  3.2.   procedura "BREAK"..............................
+  3.3.   procedura "CLOSE"..............................
+  3.4.   ~tenie simwolxnyh massiwow.....................
+  3.5.   wosxmeri~nyj wywod s pomo}x` "WRITE"...........
+  3.6.   fajly prqmogo dostupa..........................
+  3.7.   wwod/wywod s terminala.........................
+
+  4.  dopolnitelxnye procedury..........................
+
+  4.1.   funkciq "TIME".................................
+  4.2.   funkcii ehr10 i LOG............................
+
+  5.  nestandartnye |lementy qzyka......................
+
+  5.1.   upakowannye peremennye.........................
+  5.2.   fajly po umol~ani` dlq "READ" i "WRITE"........
+  5.3.   procedura "CLOSE" dlq wyhodnyh fajlow..........
+  5.4.   parametry procedur i funkcij...................
+  5.5.   fajl fajlow....................................
+  5.6.   konec fajla....................................
+
+  6.  osobennosti realizacii............................
+
+  6.1.   identifikatory.................................
+  6.2.   standartnyj tip "INTEGER"......................
+  6.3.   standartnyj tip "REAL".........................
+  6.4.   mnovestwo znakow (koi-7).......................
+  6.5.   maksimalxnyj razmer mnovestwa..................
+  6.6.   wlovennostx procedur...........................
+  6.7.   wlovennostx operatora "WITH"...................
+
+  7.  zarezerwirowannye identifikatory..................
+
+  8.  zarezerwirowannye slowa...........................
+
+                     1. ob}ie swedeniq
+
+       razrabotka qzyka paskalx presledowala  dwe  osnownye
+  celi.  perwaq  -  datx  qzyk,  prigodnyj   dlq   obu~eniq
+  programmirowani`    kak    sistemati~eskoj    discipline,
+  osnowannoj  na  rqde  fundamentalxnyh  ponqtij,  qsno   i
+  estestwenno otravennyh w |tom qzyke. wtoraq - osu}estwitx
+  realizaci` |togo qzyka, kotoraq byla by nadevna i w to ve
+  wremq |ffektiwna na su}estwu`}ih wy~islitelxnyh MA{inah.
+
+       dlq prepodawaniq programmirowaniq  trebowalsq  nowyj
+  qzyk, tak kak konstrukcii i swojstwa  ispolxzuemyh  ranee
+  qzykow ~asto ne  podda`tsq  ubeditelxnomu  i  logi~eskomu
+  ob'qsneni`.   oni   sli{kom   ~asto   ne    sootwetstwu`t
+  priu~ennomu k sistemati~eskomu  rassuvdeni`  my{leni`.  k
+  |tomu  sleduet  prisoedinitx  ubevdenie,  ~to  qzyk,   na
+  kotorom obu~a`t wyravatx swoi mysli,  okazywaet  glubokoe
+  wozdejstwie  na  nawyki   my{leniq   i   izobretatelxskie
+  sposobnosti,  i  ~to  carq}ij   w   su}estwu`}ih   qzykah
+  besporqdok   neposredstwenno   skazywaetsq    na    stile
+  programmirowaniq, formiru`}emsq u obu~a`}ihsq.
+
+       za osnowu dlq paskalq byl wzqt  algol-60,  otkuda  w
+  perwu` o~eredx zaimstwowany principy  strukturirowaniq  i
+  forma wyraveniq.
+
+       glawnye  dopolneniq  po   srawneni`   s   algolom-60
+  otnosqtsq k sposobam strukturirowaniq  dannyh,  poskolxku
+  nedostato~nostx  poslednih  w  algole-60  byla   priznana
+  glawnoj  pri~inoj  otnositelxnoj   uzosti   oblasti   ego
+  primeneniq. wwedenie zapisej i fajlow  sdelalo  wozmovnym
+  re{atx s  pomo}x`  paskalq  kommer~eskie  zada~i  ili  po
+  krajnej mere pozwolilo uspe{no  demonstrirowatx  podobnye
+  zada~i w kursah programmirawaniq.
+
+       algoritmy i programmy wy~islitelxnoj ma{iny  sostoqt
+  iz dwuh ~astej: opisaniq dejstwij,  kotorye  dolvny  bytx
+  osu}estwleny, i opisaniq obrabatywaemyh |timi  dejstwiqmi
+  dannyh. dejstwiq zada`tsq tak nazywaemymi operatorami,  a
+  dannye - opisaniqmi i opredeleniqmi.
+
+       dannye predstawleny  zna~eniqmi  peremennyh.  kavdaq
+  peremennaq, whodq}aq w nekotoryj  operator,  dolvna  bytx
+  wwedena   nekotorym   opisaniem    peremennoj,    kotoroe
+  pripisywaet |toj peremennoj identifikator i  tip  dannyh.
+  imenno tip dannyh opredelqet mnovestwo zna~enij,  kotoroe
+  movet prinimatx dannaq peremennaq. w  paskale  tip  movet
+  bytx zadan libo prqmo w opisanii peremennoj, libo  ukazan
+  identifikatorom   tipa,   w   poslednem    slu~ae    |tot
+  identifikator dolven bytx wweden qwnym opredeleniem tipa.
+
+       bazisnymi  qwlq`tsq  skalqrnye   tipy   dannyh.   ih
+  opredelenie zadaet uporqdo~ennoe mnovestwo zna~enij, t.e.
+  wwodit identifikatory, obozna~a`}ie kavdoe zna~enie |togo
+  mnovestwa.    pomimo    skalqrnyh     tipow,     wwodimyh
+  opredeleniqmi,  w  paskale  imeetsq  ~etyre   standartnyh
+  skalqrnyh tipa: logi~eskij  "BOOLEAN",  celyj  "INTEGER",
+  liternyj "CHAR"  i  we}estwennyj  "REAL".  zna~eniq  |tih
+  tipow,     krome     logi~eskogo,     obozna~a`tsq     ne
+  identifikatorami, a  ~islami  i  zakl`~ennymi  w  kawy~ki
+  literalami,    kotorye    sintaksi~eski    otli~ny     ot
+  identifikatorow. mnovestwo zna~enij liternogo tipa -  |to
+  mnovestwo liter, ime`}ihsq na pe~atnom ustrojstwe  dannoj
+  ustanowki (koi-7).
+
+       tip  movno   opredelitx   kak   otrezok   nekotorogo
+  skalqrnogo tipa -  ukazaniem  naimenx{ego  i  naibolx{ego
+  zna~enij otrezka.
+        strukturnye tipy dannyh opredelq`tsq  zadaniem  tipa
+  ih komponent i  ukazaniem  sposoba  organizacii.  sposoby
+  organizacii otli~a`tsq mehanizmom izwle~eniq komponent iz
+  peremennoj  slovnogo  tipa.  w  paskale  imeetsq   ~etyre
+  sposoba organizacii dannyh: massiw, zapisx,  mnovestwo  i
+  fajl.
+        pri  organizacii  dannyh  w  massiw  wse  komponenty
+  otnosqtsq k odnomu i tomu ve tipu.  otdelxnaq  komponenta
+  wydelqetsq selektorom massiwa, ili wy~islqemym  indeksom,
+  tip kotorogo ukazywaetsq w opredelenii tipa massiwa.  tip
+  indeksa dolven bytx  skalqrnym.  kak  prawilo,  |to  tip,
+  opredelqemyj programmistom, ili otrezok celogo  tipa.  po
+  zna~eni`, prinadleva}emu tipu indeksa,  selektor  massiwa
+  wydaet zna~enie, ime`}ee  tip  komponent  massiwa.  takim
+  obrazom, kavdaq peremennaq-massiw  movet  rassmatriwatxsq
+  kak otobravenie tipa  indeksa  na  tip  komponent.  wremq
+  wyborki  ne  zawisit  ot  selektora  (indeksa),   po|tomu
+  massiwy  nazywa`tsq  strukturami  dannyh  s  proizwolxnym
+  dostupom.
+        pri   organizacii   dannyh   w   zapisx   komponenty
+  (nazywaemye polqmi) mogut bytx raznogo  tipa.  ~toby  tip
+  wybiraemoj komponenty  movno  bylo  ustanowitx  prqmo  po
+  tekstu programmy (bez ee ispolneniq),  selektory  zapisej
+  ne   sodervat   wy~islqemyh    zna~enij,    a    qwlq`tsq
+  identifikatorami,  odnozna~no  opredelq`}imi  izwlekaemu`
+  komponentu. |ti identifikatory opisywa`tsq w  opredelenii
+  tipa  zapisi,  po|tomu   wremq   dostupa   k   wybiraemoj
+  komponente ne zawisit  ot  selektora,  i,  sledowatelxno,
+  zapisi  takve   qwlq`tsq   strukturami   s   proizwolxnym
+  dostupom.
+       movet  bytx  ukazano,  ~to  tip  zapisi  sostoit  iz
+  neskolxkih   wariantow.   |to   zna~it,   ~to   razli~nye
+  peremennye odnogo i togo ve tipa mogut  imetx  zna~eniqmi
+  opredelennym obrazom otli~a`}iesq zapisi. razli~iq  mogut
+  kasatxsq ~isla i  tipow  komponent.  wariant,  qwlq`}ijsq
+  teku}im zna~eniem peremennoj-zapisi, otme~aetsq  w  ob}em
+  dlq wseh wariantow pole, nazywaemym polem  priznaka.  kak
+  prawilo,  ob}aq  wsem  wariantam  ~astx  budet  sodervatx
+  neskolxko komponent, wkl`~aq i pole priznaka.
+
+       organizaciq dannyh wo mnovestwe opredelqet mnovestwo
+  zna~enij, qwlq`}ihsq mnovestwom-stepenx`  bazowogo  tipa.
+  bazowyj  tip  dolven  bytx   skalqrnym   i   opredelqtxsq
+  programmistom ili predstawlqtx soboj otrezok celogo tipa.
+
+       fajl - |to posledowatelxnostx odnotipnyh  komponent.
+  ona opredelqet  estestwennoe  uporqdo~enie  komponent.  w
+  kavdyj  moment  neposredstwenno  dostupna   tolxko   odna
+  komponenta. dostup k drugim komponentam movno polu~itx  w
+  rezulxtate posledowatelxnogo prodwiveniq po  fajlu.  fajl
+  zapolnqetsq   posledowatelxnym    prisoedineniem    nowyh
+  komponent k koncu fajla. opredelenie tipa fajla ne zadaet
+  ~isla ego komponent.
+
+       peremennye, zadannye qwnymi  opisaniqmi,  nazywa`tsq
+  stati~eskimi. opisanie swqzywaet s  peremennoj  nekotoryj
+  identifikator, ispolxzuemyj dlq ukazaniq |toj peremennoj.
+  s drugoj storony, peremennye mogut sozdawatxsq  nekotorym
+  operatorom. pri takom  dinami~eskom  sozdanii  peremennoj
+  wydaetsq  tak  nazywaemyj  ukazatelx  (zamenq`}ij   qwnyj
+  identifikator). on ispolxzuetsq wposledstwii dlq ukazaniq
+  na taku` peremennu`. |tot ukazatelx movet  bytx  priswoen
+  peremennym tipa  ukazatelx.  kavdaq  peremennaq-ukazatelx
+  movet prinimatx tolxko zna~eniq,  qwlq`}iesq  ukazatelqmi
+  na zna~eniq odnogo i togo ve tipa "t"; goworqt,  ~to  ona
+  zakreplena  za  |tim  tipom  "t".  ona  movet,   wpro~em,
+  polu~itx takve zna~enie "NIL", kotoroe ne ukazywaet ni na
+  kaku` peremennu`.  poskolxku  peremennye-ukazateli  mogut
+  bytx  komponentami  sozdawaemyh  dinami~eskih  peremennyh
+  strukturnyh tipow, to s  pomo}x`  |tih  ukazatelej  movno
+  predstawlqtx l`bye kone~nye grafy.
+
+       osnownym operatorom qwlqetsq operator  priswaiwaniq,
+  kotoryj  pripisywaet  priswoitx  tolxko  ~to  wy~islennoe
+  zna~enie    nekotoroj    peremennoj    (ili    komponente
+  peremennoj). zna~enie movet bytx  polu~eno  w  rezulxtate
+  wy~isleniq wyraveniq. wyraveniq  sostoqt  iz  peremennyh,
+  konstant, mnovestw, operacij i funkcij, kotorye wypolnq`t
+  dejstwiq nad  izobravennymi  weli~inami  i  wyda`t  nowye
+  zna~eniq.   peremennye,   konstanty   i   funkcii    libo
+  opisywa`tsq  w  programme,  libo  qwlq`tsq   standartnymi
+  ob'ektami. paskalx sodervit fiksirowannyj nabor operacij,
+  kavdaq iz kotoryh movet rassmatriwatxsq  kak  otobravenie
+  iz tipow operandow w tip rezulxtata. wse operacii delqtsq
+  na ~etyre gruppy:
+
+       1. arifmeti~eskie operacii  -  slovenie,  wy~itanie,
+  izmenenie znaka, umnovenie, delenie i nahovdenie ostatka.
+
+       2. logi~eskie  operacii  -  otricanie,   diz'`nkciq,
+  kon'`nkciq.
+
+       3. operacii   nad   mnovestwami    -    ob'edinenie,
+  perese~enie, raznostx.
+
+       4. operacii-otno{eniq  -   rawenstwo,   nerawenstwo,
+  porqdok, prinadlevnostx i wkl`~enie (dlq mnovestw).
+
+       rezulxtaty    operacij     otno{enij     prinadlevat
+  logi~eskomu tipu. otno{eniq porqdka  primenimy  tolxko  k
+  skalqrnym tipam.
+        operaTOr     procedury      wyzywaet      ispolnenie
+  sootwetstwu`}ej   procedury   (sm.    nive).    operetory
+  priswaiwaniq  i  procedury  qwlq`tsq  "kirpi~ikami",  ili
+  komponentami, iz kotoryh stroqtsq strukturnye  operatory,
+  predpisywa`}ie posledowatelxnoe, wyboro~noe ili powtornoe
+  ispolnenie swoih komponent.  posledowatelxnoe  ispolnenie
+  operatorow zadaetsq sostawnym  operatorom,  uslownoe  ili
+  wyboro~noe ispolnenie - operatorom  "esli"  i  operatorom
+  "wybor",  a  powtornoe  ispolnenie  -  ciklami.  operator
+  "esli"  sluvit  dlq   pod~ineniq   ispolneniq   operatora
+  zna~eni` wyraveniq logi~eskogo tipa, a  operator  "wybor"
+  delaet wozmovnym wybor mevdu  neskolxkimi  operatorami  w
+  sootwetstwii so zna~eniem nekotorogo  selektora.  cikl  s
+  parametrami (operator "dlq") upotreblqetsq,  kogda  ~islo
+  iteracij  izwestno  zaranee,  a   w   ostalxnyh   slu~aqh
+  ispolxzu`tsq  cikly  s  uslowiem  prodolveniq   (operator
+  "poka")  ili  cikly  s   uslowiem   okon~aniq   (operator
+  "powtor").
+        operatoru movet bytx  dano  imq  (identifikator),  s
+  pomo}x` kotorogo  movno  obra}atxsq  k  |tomu  operatoru.
+  takoj operator nazywaetsq proceduroj, a  ego  opisanie  -
+  opisaniem procedury. opisanie movet  sodervatx  mnovestwo
+  opisanij  peremennyh,  opredelenie  tipow  i   dalxnej{ee
+  opisanie  procedur.  tak  opisannye  peremennye,  tipy  i
+  procedury  mogut  upominatxsq  tolxko  w  predelah  samoj
+  procedury i  po|tomu  nazywa`tsq  lokalxnymi  dlq  dannoj
+  procedury.  ih  indetifikatory  ime`t  smysl   tolxko   w
+  predelah  programmogo  teksta,   sostawlq`}ego   opisanie
+  procedury  i  nazywaemogo   oblastx`   opredeleniq   |tih
+  identifikatorow.  poskolxku  odna  procedura  movet  bytx
+  opisana kak lokalxnaq  po  otno{eni`  k  drugoj,  oblasti
+  opredeleniq mogut bytx wloveny  odna  w  drugu`.  ob'ekty
+  opisannye w glawnoj programme, t.e. ne lokalxnye  ni  dlq
+  kakoj procedury, nazywa`tsq globalxnymi.
+        procedura  imeet  fiksirowannoe  ~islo   parametrow,
+  kavdyj  iz  kotoryh  izobravaetsq  w  predelah  procedury
+  nekotorym    identifikatorom,    nazywaemym    formalxnym
+  parametrom. pri obra}enii k procedure kavdomu formalxnomu
+  parametru dolvna bytx sopostawlena nekotoraq  fakti~eskaq
+  weli~ina. |ta weli~ina nazywaetsq fakti~eskim parametrom.
+  su}estwuet tri  roda  parametrow:  zna~eniq,  peremennye,
+  procedury (funkcij). w perwom slu~ae fakti~eskij parametr
+  qwlqetsq wyraveniem, zna~enie kotorogo  wy~islqetsq  odin
+  raz.   sootwetstwu`}ij   formalxnyj   parametr   qwlqetsq
+  lokalxnoj  peremennoj,  kotoroj  priswaiwaetsq  rezulxtat
+  |togo wy~isleniq pered wypolneniem procedury (funkcii). w
+  slu~ae parametra-peremennoj fakti~eskij parametr qwlqetsq
+  peremennoj i formalxnyj parametr sluvit obozna~eniem |toj
+  peremennoj. zna~eniq indeksow, esli oni estx, wy~islq`tsq
+  pered   wypolneniem   procedury   (funkcii).   w   slu~ae
+  parametra-procedury  ili  parametra-funkcii   fakti~eskim
+  parametrom qwlqetsq identifikator procedury ili funkcii.
+       opisanie  funkcii  anologi~ny  opisaniqm   procedur.
+  otli~ie zakl`~aetsq w tom, ~to funkcii wyda`t  rezulxtat,
+  tip kotorogo ograni~en skalqrnymi tipami  i  dolven  bytx
+  specificirowan w opisanii funkcii, po|tomu funkcii  mogut
+  bytx ispolxzowany kak sostawlq`}ie ~asti  wyravenij.  dlq
+  ustraneniq pobo~nyh  |ffektow  w  predelah  tela  funkcii
+  sleduet  izbegatx   priswaiwanij   zna~enij   nelokalxnym
+  peremennym.
+
+                  2. sposob opisaniq qzyka
+
+       w sootwetstwii s tradicionnymi formami  b|kusa-naura
+  sintaksi~eskie    konstrukcii    obozna~a`tsq     slowami
+  zakl`~ennymi w  uglowye  skobki  "<"  i  ">".  |ti  slowa
+  opisywa`t takve prirodu, ili smysl dannyh  konstrukcij  i
+  ispolxzu`tsq w posledu`}em opisanii semantiki.  wozmovnoe
+  powtorenie nekotoroj konstrukcii  ukazywaetsq  zwezdo~koj
+  (*  -  nulx  ili  bolee  powtorenij),  a   takve   znakom
+  logi~eskoe "i" (& - odno ili neskolxko powtorenij).  esli
+  powtorqemaq  konstrukciq  sostoit  bolee  ~em  iz  odnogo
+  |lementa, ona zakl`~aetsq w metaskobki "(*" i  "*)",  ~to
+  ozna~aet powtorenie nulx ili neskolxko raz.
+
+       osnownaq    leksika     sostoit     iz     simwolow,
+  podrazdelq`}ihsq na bukwy, cifry i specialxnye simwoly:
+
+  <bukwa>::=a!B!C!D!E!F!G!H!I!J!K!L!M!N!O!P!Q!R!S!T!U!V!
+            W!X!Z!
+            a!b!w!g!d!e!v!z!i!j!k!l!m!n!o!p!r!s!t!u!f!h!
+            c!~!{!}!'!y!x!|!`!q
+  <cifra>::=0!1!2!3!4!5!6!7!8!9
+  <specialxnyj simwol>::=+!-!*!/!\/!/\!NOT!=!<>!>!<!<=!>=!
+            (!)![!]!:=!.!,!;!:!'!^!DIV!MOD!NIL!IN!IF!THEN!
+            ELSE!CASE!OF!REPEAT!UNTIL!WHILE!DO!FOR!TO!
+            DOWNTO!BEGIN!END!WITH!GOTO!CONST!VAR!TYPE!
+            ARRAY!RECORD!SET!FILE!FUNCTION!PROCEDURE!
+            LABEL!PACKED
+
+       konstrukciq
+
+  (*l`baq posledowatelxnostx simwolow, ne soderva}aq "*)"*)
+
+  movet bytx wstawlena mevdu l`bymi dwumq identifikatorami,
+  ~islami  ili  specialxnymi  simwolami.  |ta   konstrukciq
+  nazywaetsq kommentariem i movet bytx  udalena  iz  teksta
+  programmy bez izmeneniq ego zna~eniq. simwoly "(*" i "*)"
+  w inom smysle w qzyke ne upotreblq`tsq, i ih whovdeniq  w
+  sintaksi~eskie opisaniq obozna~a`tsq  metasimwolami,  kak
+  "!" ili "::=".
+
+          3. |lementy i osnownye konstrukcii qzyka
+
+          identifikatory  sluvat  dlq  obozna~eniq   konstant,
+  tipow, peremennyh, procedur i funkcij. w predelah oblasti
+  opredelennosti identifikatora, t.e.  w  procedure  ili  w
+  funkcii, w kotoroj on opisan, smysl identifikatora dolven
+  bytx odnozna~nym.
+
+ <identifikator>::=<bukwa><bukwa ili cifra>*
+ <bukwa ili cifra>::=<bukwa>!<cifra>
+
+       dlq  ~isel,  qwlq`}ihsq   konstantami   celogo   ili
+  we}estwennogo  tipa,  ispolxzuetsq   oby~naq   desqti~naq
+  sistema  zapisi  bukwa   "e",   pred{estwu`}aq   porqdku,
+  ~itaetsq kak "umnovitx na 10 w stepeni".
+
+   <celoe bez znaka>::= <cifra>&
+   <we}estwennoe bez znaka>::= <celoe bez znaka>.<cifra>&!
+                              <celoe bez znaka>.<cifra>&
+                   e<porqdok>!<celoe bez znaka>e<porqdok>
+  <~islo bez znaka>::= <celoe bez znaka>!
+                             <we}estwennoe bez znaka>
+  <porqdok>::= <cifra>&!<znak><cifra>&
+  <znak>::= +!-
+
+      primery:
+
+  1    100    0.1    5e-3    87.35e+8
+
+       posledowatelxnosti  liter,  zakl`~ennye  w  kawy~ki,
+  nazywa`tsq tekstami. teksty,  sostoq}ie  iz  edinstwennoj
+  litery,  qwlq`tsq  konstantami  liternogo  tipa   teksty,
+  sostoq}ie  iz  N  (N>1)  liter   w   kawy~kah,   qwlq`tsq
+  konstantami tipa.
+
+  PACKED ARRAY[1..N] OF CHAR
+
+       p_r_i_m_e_~_a_n_i_e.  esli  tekst  dolven  sodervatx
+  kawy~ku, to ona powtorqetsq dwavdy.
+
+  <tekst>::= '<litera>&'
+
+      primery:
+  'A'              ';'               ''''
+
+  'PASCAL'        'THIS IS A STRING'
+
+                 4. |lementy i wwod/wywod dannyh
+
+        4.1. opredeleniq konstant
+
+       opredelenie  konstanty  wwodit   identifikator   kak
+  sinonim nekotoroj konstanty:
+
+  <identifikator konstanty>::= <identifikator>
+  <konstanta bez znaka>::= <~islo bez znaka> !
+                 <tekst> ! <identifikator konstanty> ! NIL
+  <konstanta>::= <~islo bez znaka>!<znak><~islo bez znaka>!
+                 <identifikator konstanty> !
+                 <znak><identifikator konstanty> ! <tekst>
+  <opredelenie konstanty>::= <identifikator> = <konstanta>
+
+       w kavdoj realizacii opredeleny sledu`}ie standartnye
+  identifikatory:
+
+  EOL
+         - rawen uprawlq`}emu simwolu, obozna~a`}emu  konec
+           stroki;
+
+  ALFALENG
+         - rawen maksimalxnomu ~islu liter, pakuemyh w odno
+           "slowo".
+
+        4.2. opredeleniq tipow dannyh
+
+       tip dannyh zadaet mnovestwo zna~enij, kotorye  mogut
+  prinimatx peremennye |togo tipa, i swqzywaet s |tim tipom
+  identifikator.
+
+  <tip>::= <prostoj tip> ! <strukturnyj tip> !
+           <tip ukazatelq>
+  <opredelenie tipa>::= <identifikator> = <tip>
+
+            4.2.1. prostye tipy
+
+        <prostoj tip>::= <skalqrnyj tip> ! <otrezok tipa> !
+                         <identifikator tipa>
+        <identifikator tipa>::= <identifikator>
+
+          4.2.1.1. skalqrnye tipy
+
+        skalqrnyj  tip  opredelqet  uporqdo~ennoe  mnovestwo
+  zna~enij   posredstwom   pere~isleniq    identifikatorow,
+  obozna~a`}ih |ti zna~eniq:
+   <skalqrnyj tip>::=(<identifikator>(*,<identifikator>*))
+        primery:
+   (krasn, oranv, velt, zel, goluboj)
+  (trefy, bubny, ~erwi, piki)
+  (pn,wt,sr,~t,pt,sb,ws)
+        ko wsem skalqrnym tipam primenimy sledu`}ie funkcii:
+   SUCC - sledu`}ee zna~enie (w porqdke pere~isleniq);
+  PRED - pred{estwu`}ee zna~enie (w porqdke pere~isleniq).
+       4.2.1.2. standartnye skalqrnye tipy
+          sledu`}ie tipy qwlq`tsq standartnymi w paskale:
+
+        celyj tip (INTEGER) - zna~eniq obrazu`t podmnovestwo
+  celyh   ~isel   w   granicah,   opredelqemyh   konkretnoj
+  realizaciej. |ti zna~eniq obozna~a`tsq celymi;
+
+        we}estwennyj  tip   (REAL)   -   zna~eniq   qwlq`tsq
+  podmnovestwom mnovestwa we}estwennyh ~isel, zawisq}em  ot
+  konkretnoj     realizacii.     zna~eniq      izobrava`tsq
+  we}estwennymi ~islami;
+
+        logi~eskij tip  (BOOLEAN)  -  zna~eniq  predstawlq`t
+  soboj      istinnostnye      zna~eniq,       obozna~aemye
+  identifikatorami TRUE i FALSE;
+
+        liternyj tip (CHAR) - zna~eniq sutx mnovestwo liter,
+  zawisq}ee ot konkretnoj realizacii, i izobrava`tsq samimi
+  literami, zakl`~ennymi w kawy~ki.
+
+    4.2.1.3. otrezki tipow
+
+       tip  movet  bytx  opredelen  kak   otrezok   drugogo
+  skalqrnogo  tipa  posredstwom  ukazaniq   naibolx{ego   i
+  naimenx{ego zna~enij  otrezka.  perwaq  konstanta  zadaet
+  nivn`` granicu, kotoraq ne dolvna bytx bolx{e werhnej.
+
+  <otrezok tipa>::=<konstanta>..<konstanta>
+
+      primery:
+
+   1..100
+   -10..+10
+   pn..pt
+
+      4.2.2. strukturnye tipy
+
+       strukturnyj tip dannyh  harakterizuetsq  tipom  (ili
+  tipami) swoih komponent i sposobom ih organizacii.  krome
+  togo,  strukturnyj  tip  movet   sodervatx   ukazanie   o
+  predpo~titelxnom predstawlenii dannyh.  simwol  "PACKED",
+  pred{estwu`}ij opredeleni`, nikak ne wliqet  na  zna~enie
+  programmy, no ukazywaet translqtoru, ~to  pamqtx  sleduet
+  |konomitx  dave  cenoj  nekotoroj  poteri   |ffektiwnosti
+  dostupa, a takve i w tom  slu~ae,  esli  |to  priwodit  k
+  uweli~eni` ob'ema rabo~ej  programmy  za  s~et  dejstwij,
+  opisywa`}ih dostup k komponentam strukturnogo tipa.
+
+  <strukturnyj tip>::=<neupakowannyj
+                      strukturnyj tip> !
+                  PACKED<nEupakowannyj strukturnyj tip>
+  <neupakowannyj strukturnyj tip>::=<tip massiwa> !
+          <tip zapisi> ! <tip mnovestwa> ! <tip fajla>
+
+    4.2.2.1. tipy massiwow
+
+       tip  massiwa   -   |to   struktura,   sostoq}aq   iz
+  fiksirowannogo ~isla komponent odnogo  i  togo  ve  tipa,
+  nazywaemogo tipom komponent. |lementy massiwow wybira`tsq
+  po indeksam - zna~eniqm, prinadleva}im k tak  nazywaemomu
+  tipu indeksow. opredelenie tipa massiwa  zadaet  kak  tip
+  komponent, tak i tip indeksow:
+
+  <tip massiwa>::=
+  ARRAY[<tip indeksa>(*,<tip indeksa>*)] OF <tip komponent>
+  <tip indeksa>::=<prostoj tip>
+  <tip komponent>::=<tip>
+
+       esli zadano N tipow indeksow, to  massiw  nazywaetsq
+  N-mernym; ego komponenty wybira`tsq s pomo}x` N indeksow.
+
+     primery:
+
+  ARRAY[1..100] OF REAL
+  ARRAY[1..10,1..20] OF 0..99
+  ARRAY[BOOLEAN] OF cwet
+
+    4.2.2.2. tipy zapisej
+
+       tip   zapisi   -   |to   struktura,   sostoq}aq   iz
+  fiksirowannogo ~isla komponent, wozmovno,  raznyh  tipow.
+  opredelenie tipa zapisi  zadaet  dlq  kavdoj  komponenty,
+  nazywaemoj  polem,  ee  tip  i  obozna~a`}ij   |to   pole
+  identifikator.     oblastx`      opredelennosti      |tih
+  identifikatorow polq qwlqetsq  samo  opredelenie  zapisi,
+  odnako oni dostupny takve w wyborkah polq, ssyla`}ihsq na
+  peremennu`-zapisx dannogo tipa.
+
+       tip zapisi movet imetx neskolxko wariantow; w  takom
+  slu~ae  nekotoroe  pole  otme~aetsq  kak  pole  priznaka:
+  zna~enie  |togo  polq  pokazywaet,  kakoj  iz   wariantow
+  peremennoj-zapisi rassmatriwaetsq w dannyj moment. kavdyj
+  wariant  identificiruetsq   metkoj   wybora,   qwlq`}ejsq
+  konstantoj tipa polq priznaka:
+
+  <tip zapisi>::=RECORD<spisok polej>END
+  <spisok polej>::=<ob}aq ~astx>!
+                   <ob}aq ~astx>;<wariantnaq ~astx>!
+                   <wariantnaq ~astx>
+  <ob}aq ~astx>::=<sekciq zapisi>(*;<sekciq zapisi>*)
+  <sekciq zapisi>::=<identifikator polq>
+                   (*,<identifikator polq>*):<tip>
+  <wariantnaq ~astx>::=CASE<pole priznaka>:
+            <identifikator tipa> OF <wariant>(*;<wariant>*)
+  <wariant>::=<spisok metok wybora>:(<spisok polej>)!
+              <spisok metok wybora>
+  <spisok metok wybora>::=<metka wybora>(*,<metka wybora>*)
+  <metka wybora>::=<konstanta bez znaka>
+  <pole priznaka>::=<identifikator>
+
+       primery:
+
+    RECORD denx:1..31;
+           mes:1..12;
+           god:INTEGER
+    END
+
+  RECORD  imq,familiq:ALFA;
+          wozrast:0..99;
+          venat:BOOLEAN
+  END
+
+  RECORD  X,Y:REAL;
+          plo}adx:REAL;
+     CASE f: forma OF
+     treugolxnik:   (storona:REAL;
+                     naklon,ugol1,ugol2:ugol);
+     prqmougolxnik:(storona1,storona2:REAL;
+                    sklon,ugol3:ugol);
+     krug:(diametr:REAL)
+  END
+
+    4.2.2.3. tipy mnovestw
+
+       tip   mnovestwa   opredelqet   mnovestwo   zna~Enij,
+  qwlq`}ihsq    mnovestwom-stepenx`    (mnovestwom     wseh
+  podmnovestw)  sootwetstwu`}ego  bazowogo  tipa.  bazowymi
+  tipaMi ne mogut bytx strukturnye tipy. nad  kavdym  tipom
+  mnovestw opredeleny operacii:
+
+  \/  ob'edinenie
+  /\  perese~enie
+  -   raznostx mnovestw (binarnoe dopolnenie)
+  IN  otno{enie prinadlevnosti (~lenstwa)
+
+  <tip mnovestwa>::=SET OF <tip bazy>
+  <tip bazy>::=<prostoj Tip>
+
+    4.2.2.4. tipy fajlow
+
+       opredelenie tipa fajla zadaet  strukturu,  sostoq}u`
+  iz   posledowatelxnosti   odnotipnyh   komponent.   ~islo
+  komponent, nazywaemoe  dlinoj  fajla,  opredeleniem  tipa
+  fajla  ne  fiksiruetsq.  fajl,   ime`}ij   0   komponent,
+  nazywaetsq pustym; fajly, tip komponent kotoryh liternyj,
+  nazywa`tsq tekstowymi fajlami.
+
+  <tip fajla>::=FILE OF <tip>
+
+     sledu`}ij tip qwlqetsq standartnym:
+
+  TYPE TEXT = PACKED FILE OF CHAR
+
+      4.2.3. tipy ukazatelej
+
+        dostup k  opisannym  w  programme  peremennym  movno
+  polu~itx ~erez  ih  identifikatory.  oni  su}estwu`t  wse
+  wremq,    poka     wypolnqetsq     procedura     (oblastx
+  opredelennosti), w kotoroj  |ti  peremennye  lokalxny,  w
+  swqzi  s  ~em  poslednie  nazywa`tsq   stati~eskimi   ili
+  stati~eski razme}aemymi.  s  drugoj  storony,  peremennye
+  mogut sozdawatxsq i dinami~eski, t.e. bez wsqkoj swqzi so
+  strukturoj   programmy.   |ti   dinami~eskie   peremennye
+  sozda`tsq standartnoj proceduroj "NEW"; poskolxku oni  ne
+  whodqt w qwnye opisaniq peremennyh,  oni  ne  mogut  bytx
+  obozna~eny   imenem.   dostup    k    takim    peremennym
+  osu}estwlqetsq  ~erez  ukazatelxnye  zna~eniq   (ssylki),
+  wydawaemye posle sozdaniq dinami~eskoj peremennoj. kavdyj
+  tip ukazatelej sostoit, takim obrazom, iz neograni~ennogo
+  mnovestwa ukazywa`}ih na  odnotipnye  |lementy  zna~enij.
+  nad ukazatelqmi ne opredelenno  nikakih  operacij,  krome
+  prowerki na rawenstwo. zna~enie  "NIL"  prinadlevit  wsem
+  tipam  ukazatelej,  no  ono  ne  ukazywaet  ni  na  kakoj
+  |lement.
+   <tip ukazatelq>::=^<identifikator tipa>
+
+     primery opredelenij tipow:
+
+  cwet = (krasn, oranv, velt, zel, goluboj, sinij, fiol)
+  pol = (muv,ven)
+  TEXT = FILE OF CHAR
+  forma = (treugolxnik,prqmougolxnik,krug)
+  karta = ARRAY[1..80] OF CNAR
+  ALFA = PACKED ARRAY[1..ALFALENG] OF CHAR
+  kompl = RECORD RE, IM: REAL END
+  lico = RECORD familiq,imq:ALFA;
+         wozrast:INTEGER;
+         venat:BOOLEAN;
+         otec,rebenok,brat:^lico;
+  CASE rod: pol OF
+       muv: (woennoobqzan,lys:BOOLEAN);
+       ven: (berem:BOOLEAN;
+            merka:ARRAY[1..3] OF INTEGER)
+  END
+
+        4.3. opisanie i izobravenie peremennyh
+
+       opisaniq    peremennyh     sostoqt     iz     spiska
+  identifikatorow,  obozna~a`}ih   nowye   peremennye,   za
+  kotorymi sleduet ih tip:
+
+  <opisanie peremennoj>::=
+           <identifikator>(*,<idEntifikator>*):<tip>
+
+       kavdoe opisanie peremennoj-fajla "f" s  komponentami
+  tipa  "t"  podrazumewaet  dopolnitelxnoe   opisanie   tak
+  nazywaemoj bufernoj peremennoj  tipa  "t".  |ta  bufernaq
+  peremennaq izobravaetsq f^ i sluvit dlq  prisoedineniq  k
+  fajlu  komponent  pri  ego  zapolnenii  i  dlq  polu~eniq
+  dostupa k fajlu pri ~tenii.
+
+       dwe standartnye peremennye dlq fajlow INPUT i OUTPUT
+  zaranee ob'qwleny kak tekstowye fajly. programmu na qzyke
+  paskalx sleduet rassmatriwatx kak proceduru, ime`}u`  |ti
+  dwe   peremennye    swoimi    formalxnymi    parametrami.
+  predpolagaetsq,   ~to    sootwEtstwu`}imi    fakti~eskimi
+  paramETrami  budut  libo   standartnye   dlq   konkretnoj
+  wy~islitelxnoj ustanowki, libo specifirowannye w  KOMAndE
+  zapuska kompilqtora paskalx.
+
+    primery:
+
+  X, Y, Z: REAL
+  U, V: kompl
+  I, J: INTEGER
+  K: 0..9
+  P, Q: BOOLEAN
+  operaciq: (pl`s, minus, umnov)
+  A: ARRAY [0..63] OF REAL
+  B: ARRAY [cwet, BOOLEAN] OF kompl
+  c: cwet
+  F: FILE OF CHAR
+  ottenok1, ottenok2: SET OF cwet
+  P1, P2: ^lico
+
+       izobraveniq  peremennyh   obozna~a`t   libo   polnu`
+  peremennu`, libo nekotoru`  komponentu  peremEnnoj,  libo
+  peremEnnu`, na  kotoru`  ssylaetsq  nekotoryj  ukazatelx.
+  predpolagaetsq, ~to  peremennye  w  posledu`}ih  primerah
+  opisany, kak ukazano wy{e.
+
+  <peremennaq>::= <polnaq peremennaq> ! <komponentnaq
+                  peremennaq> ! <ukazuemaq peremennaq>
+
+      4.3.1. polnye peremennye
+
+       polnaq      peremennaq      izobravaetsq       swoim
+  identifikatorom:
+
+  <polnaq peremennaq>::= <identifikator peremennoj>
+  <identifikator peremennoj>::= <identifikator>
+
+      4.3.2. komponentnye peremennye
+
+       komponentnaq peremennaq izobravaetsq sootwetstwu`}ej
+  peremennoj, za kotoroj sleduet zada`}ij nuvnu` komponentu
+  selektor. forma selektora zawisit ot sposoba  organizacii
+  tipa peremennoj:
+
+  <komponentnaq peremennaq>::= <peremennaq s indeksami> !
+                           <ukazatElx polq> ! <bufer fajla>
+
+    4.3.2.1. peremennye s indeksami
+
+       komponenta N-mernoj peremennoj-massiwa  obozna~aetsq
+  s pomo}x` |toj peremennoj, za kotoroj sleduet spisok iz N
+  indeksnyh wyravenij:
+
+  <peremennaq s indeksom>::=
+         <peremennaq-massiw>[<wyravenie> (*,<wyravenie>*)]
+  <peremennaq-massiw>::= <peremennaq>
+
+       tipy  indeksnyh  wyravenij  dolvny   sootwetstwowatx
+  tipam indeksow w opisanii sootwetstwu`}ego tipa massiwa.
+
+     primery:
+
+  A [12]
+  A [I+J]
+  B [krasn,TRUE]
+  B [SUCC(c),P/\Q]
+
+       p_r_i_m_e_~_a_n_i_e.       upakowannye       massiwy
+  indeksirowany bytx ne mogut.
+
+    4.3.2.2. ukazateli polej
+
+       komponenta  peremennoj-zapisi   obozna~aetsq   ~erez
+  sootwetstwu`}u`  peremennu`-zapisx,  za  kotoroj  sleduet
+  identifikator polq nuvnoj komponenty:
+
+  <ukazatelx polq>::= <peremennaq-zapisx>.<identifikator
+                                             polq>
+  <peremennaq-zapisx>::= <peremennaq>
+  <identifikator polq>::= <identifikator>
+
+    primery:
+
+  U, RE
+  B [krasn, TRUE].IM
+  P2^.merka
+
+    4.3.2.3. bufery fajlow
+
+       w l`boj moment neposredstwenno dostupna tolxko  odna
+  komponenta,   opredelqemaq   teku}ej    poziciej    fajla
+  (naprimer, golowkoj  s~itywaniq-zapisi).  |ta  komponenta
+  nazywaetsq teku}ej komponentoj fajla; ona  predstawlqetsq  peremennoj, nazywaemoj buferom fajla:
+
+  <bufer fajla>::= <peremennaq-fajl>
+  <peremennaq-fajl>::= <peremennaq>
+
+      4.3.3. ukazuemye peremennye
+
+  <ukazuemaq peremennaq>::= <peremennaq-ukazatelx>^
+  <peremennaq-ukazatelx>::= <peremennaq>
+
+       esli     "P"     qwlqetsq     peremennoj-ukazatelem,
+  zakreplennoj  za  tipom  "t",  to  "P"   obozna~aet   |tu
+  peremennu` i  ee  ukazatelxnoe  zna~enie,  togda  kak  P^
+  obozna~aet peremennu` tipa "t", na kotoru` ssylaetsq "P":
+
+    primery:
+
+  P1^.otec
+  P1^.brat^.rebenok
+
+
+                        5. wyraveniq
+
+       wyraveniq  -  |to  konstrukcii,   zada`}ie   prawila
+  wy~islenij  dlq   opredeleniq   zna~enij   peremennyh   i
+  polu~eniq  nowyh  zna~enij  primeneniem   dejstwij.   oni
+  sostoqt iz operandow, t.e. peremennyh i konstant,  znakow
+  operacij i funkcij.
+
+       prawila   kompozicij   zada`t   prioritety    znakow
+  operacij,  razbiwaq  ih  na  ~etyre   klassa.   naiwys{ij
+  prioritet imeet znak  operacii  NOT,  zatem  sledu`t  tak
+  nazywaemye znaki operacij tipa umnoveniq, zatem  -  znaki
+  operacij tipa  sloveniq  i  nakonec  -  znaki  otno{enij.
+  posledowatelxnostx operacij odnogo prioriteta ispolnqetsq
+  slewa  naprawo.  |ti  otno{eniq  prioritetow  otraveny  w
+  sledu`}em sintaksise:
+
+  <mnovitelx> ::= <peremennaq> ! <konstanta bez znaka> !
+                  <obra}enie k funkcii> ! <mnovestwo>
+                 (<wyravenie>) ! NOT<mnovitelx>
+  <mnovestwo> ::= [<wyravenie> (*, <wyravenie> *) ] ! [ ]
+  <term> ::= <mnovitelx> !
+           <term><znak operacii tipa umnoveniq><mnovitelx>
+  <prostoe wyravenie> ::= <term> ! <prostoe wyravenie>
+                     <znak operacii tipa sloveniq><term> !
+                     <znak operacii tipa sloveniq><term>
+  <wyravenie> ::= <prostoe wyravenie> !
+                <prostoe wyravenie><znak otno{eniq><prostoe
+                 wyravenie>
+
+       wyraveniq, qwlq`}iesq |lementami  mnovestwa,  dolvny
+  bytx odnogo  i  togo  ve  tipa,  qwlq`}egosq  tipom  bazy
+  dannogo mnovestwa. "[]" obozna~aet pustoe mnovestwo.
+
+       primery:
+  mnoviteli:             h
+                         15
+                         (h+Y+Z)
+                         SIN(X+Y)
+                         [krasn, c, zel]
+                         ^r
+  termy:                 X*Y
+                         I/(1-I)
+                         P/\Q
+                         (X<=Y)/\(Y<Z)
+  prostye wyraveniq:     X+Y
+                         -X
+                         ottenok1\/ottenok2
+                         I*J+1
+  wyraveniq:             X=15
+                         c IN ottenok1
+
+        5.1. operaciq otricaniq
+
+        znak   operacii   "NOT",   primenimyj   k   operandu
+  logi~eskogo tipa, obozna~aet otricanie.
+
+        5.2. operacii tipa umnoveniq
+
+  <znak operacii tipa umnoveniq>::= *!/!DIV!MOD!/\
+
+  ---------------------------------------------------------
+    znak  ! operaciq   !    tip         !     tip
+  operacii!            !  operandow     ! rezulxtata
+  ---------------------------------------------------------
+     *    ! umnovenie  ! REAL, INTEGER  ! INTEGER, Esli oba
+          !            !                ! operanda ime`t
+          !            !                ! |tot tip, REAL w
+          !            !                ! ostalxnyh slu~aqh
+     *    !perese~enie ! l`boj tip mno- !
+          ! mnovestw   ! vestw t        !   t
+          !            !                !
+     /    ! delenie    ! REAL, INTEGER  ! REAL
+          !            !                !
+    DIV   ! delenie    !\               !
+          ! nacelo     ! !              !
+          !(s use~eniem! !              !
+          !            ! !              !
+    MOD   ! nahovdenie ! ! INTEGER      !  INTEGER
+          ! Ostatka    ! !              !
+          ! ot deleniq ! !              !
+          ! nacelo     !/               !
+          !            !                !
+    /\    ! kon'`nkciq ! BOOLEAN        ! BOOLEAN
+
+        5.3. operacii tipa sloveniq
+
+  <znak operacii tipa sloveniq> ::= ! + ! - ! \/
+
+  ---------------------------------------------------------
+      znak   !    operaciq !       tip     !      tip
+    operacii !             !   operandow   !  rezulxtata
+  ---------------------------------------------------------
+     +       ! ob'edinenie ! l`boj tip     !
+             ! mnovestw    ! mnovestwa t   !  t
+     +       ! slovenie    ! REAL, INTEGER ! INTEGER, esli
+     -       ! wy~itanie   ! REAL, INTEGER ! oba Operanda
+             !             !               ! ime`t |tot tip
+             !             !               ! REAL w ostalx-
+             !             !               ! nyh slu~aqh
+     -       ! raznostx    ! l`boj tip     !
+             ! mnovestw    ! mnovestwa t   !  t
+     \/      ! diz'`nkciq  ! BOOLEAN       ! BOOLEAN
+
+        znaki operacij "-" i "+", esli  oni  ispolxzu`tsq  s
+  odnim  i  tem  ve  operandom,  obozna~a`t  sootwetstwenno
+  izmenenie znaka i tovdestwennu` operaci`.
+
+        5.4. znaki otno{enij
+
+  <znak otno{eniq> ::= ! = ! <> ! < ! <= ! >= ! > ! IN
+  ---------------------------------------------------------
+  znak otno{eniq  !         tip operandow     ! rezulxtat
+  ---------------------------------------------------------
+    =     <>      ! l`boj tip, krome tipa     ! BOOLEAN
+                  !   fajla                   !
+    <  >  <=  >=  ! l`boj skalqrnyj tip ili   ! BOOLEAN
+                  !   otrezok tipa            !
+        IN        ! l`boj skalqrnyj tip ili   ! BOOLEAN
+                  !   otrezok tipa i swqzan-  !
+                  !   nyj s nim sootwetstwu`- !
+                  !   }ij tip mnovestw        !
+
+       zametim,   ~to   wse   skalqrnye   tipy   opredelq`t
+  uporqdo~ennye   mnovestwa    zna~enij.    w    ~astnosti,
+  FALSE<TRUE.   znaki   otno{enij   "<="   i   ">="   movno
+  ispolxzowatx dlq srawneniq zna~enij tipa  mnovestwa,  pri
+  |tom oni obozna~a`t sootwetstwenno otno{eniq wkl`~eniq.
+
+       znaki otno{enij "<=", "<",  ">",  ">="  movno  takve
+  primenqtx k upakowannym massiwam liternogo tipa;  w  |tom
+  slu~ae  oni  obozna~a`t  alfawitnoe  otno{enie   porqdka,
+  sootwetstwu`}ee nali~nomu mnovestwu liter.
+
+  5.5. ukazateli funkcii
+
+       ukazatelx   funkcii   predpisywaet    obra}enie    k
+  sootwetstwu`}ej   procedure-funkcii.   ono   sostoit   iz
+  obozna~a`}ego  |tu  funkci`   identifikatora   i   spiska
+  fakti~eskih parametrow. parametry,  kotorymi  mogut  bytx
+  peremennye, wyraveniq, procedury i funkcii, podstawlq`tsq
+  wmesto sootwetstwu`}ih formalxnyh parametrow:
+
+  <ukazatelx funkcii> ::= <identifikator funkcii> !
+                    <identifikator funkcii>(<fakti~eskij
+                     parametr>(*, <fakti~eskij parametr> *)
+  <identifikator funkcii> ::= <identifikator>
+
+       primery:
+
+  SUM(A,100)
+  GCD(147,K)
+  SIN(X+Y)
+  EOF(F)
+  ORD(F^)
+
+              6. operatory.
+
+       operatory obozna~a`t algoritmi~eskie  dejstwiq.  pro
+  nih goworqt, ~to  oni  mogut  bytx  wypolneny.  operatory
+  mogut bytx snabveny  metkoj,  k  kotoroj  mogut  otsylatx
+  operatory perehoda:
+
+  <operator> ::= <nepome~ennyj operator> !
+                 < metka>:<nepome~ennyj operator>
+  <nepome~ennyj operator> ::= <prostoj operator> !
+                             <strukturnyj operator>
+  <metka> ::= <celoe bez znaka>
+
+         6.1. prostye operatory
+
+        prostye operatory -  |to  operatory,  nikakaq  ~astx
+   kotoryh ne sodervit w sebe drugih operatorow.
+
+   <prostoj operator> ::= <operator priswaiwaniq> !
+                          <operator procedury> !
+                          <operator perehoda> !
+                          <pustoj operator>
+
+       6.1.1. operatory priswaiwaniq
+
+        operator priswaiwaniq  sluvit  dlq  zameny  teku}ego
+   zna~eniq peremennoj nowym zna~eniem, zadawaemym nekotorym
+   wyraveniem.
+
+   <operator priswaiwaniq> ::= <peremennaq>  :=<wyravenie> !
+                      <identifikator funkcii> :=<wyravenie>
+
+        peremennaq  (sootwetstwenno  funkciq)  i   wyravenie
+   dolvno   bytx   odnogo   tipa;   dopuska`tsq    sledu`}ie
+   iskl`~eniq:
+
+        1. peremennaq imeet we}estwennyj tip, a wyravenie  -
+   celyj ili ego otrezok;
+
+        2. tip    wyraveniq    qwlqetsq    otrezkom     tipa
+   sootwetstwu`}ej peremennoj ili naoborot.
+
+       primery:
+
+   X:=T+Z
+   P:=(1<=I)/\(I<100)
+   I:=SQR(K)-(I*J)
+   ottenok:=[goluboj,SUCC(c)]
+
+       6.1.2. operatory procedur
+
+        operator procedury sluvit dlq wypolneniq  procedury,
+   obozna~ennoj    identifikatorom    procedury.    operator
+   procedury movet sodervatx spisok fakti~eskih  parametrow,
+   podstawlqemyh  na  mesto  sootwetstwu`}ih  im  formalxnyh
+   parametrow,   opredelennyh    w    opisanii    procedury.
+   sootwetstwie ustanawliwaetsq  po  poziciqm  parametrow  w
+   spiskah formalxnyh i fakti~eskih  parametrow.  su}estwuet
+   ~etyre     wida      parametrow:      tak      nazywaemye
+   parametry-zna~eniq,         peremennye,         procedury
+   (sootwetstwu`}ij   fakti~eskij   parametr   dolven   bytx
+
+   identifikatorom    procedury)     i     parametry-funkcii
+   (fakti~eskie parametry - identifikator funkcii).
+
+       w slu~ae  parametrow-zna~enij  fakti~eskij  parametr
+  dolven bytx wyraveniem  (w  ~astnosti  peremennoj).  esli
+  formalxnyj   parametr   qwlqetsq   lokalxnoj   peremennoj
+  wyzywaemoj  procedury,  to  teku}ee  zna~enie   wyraveniq
+  priswaiwaetsq |toj peremennoj w  ka~estwe  ee  na~alxnogo
+  zna~eniq.  w  slu~ae  parametrow-peremennyh   fakti~eskim
+  parametrom  dolvna   bytx   peremennaq.   sootwetstwu`}ij
+  formalxnyj   parametr   predstawlqet   |tu    fakti~esku`
+  peremennu` wo wse wremq wypolneniq dannoj procedury. esli
+  |ta peremennaq qwlqetsq komponentoj  nekotorogo  massiwa,
+  to  ee   indeks   wy~islqetsq   pri   wyzowe   procedury.
+  parametr-peremennu` sleduet ispolxzowatx wo wseh slu~aqh,
+  kogda  parametr  sluvit  dlq   predstawleniq   rezulxtata
+  procedury.
+
+  <operator procedury>::= <identifikator procedury> !
+           <identifikator procedury>(<fakti~eskij parametr>
+           (*, <fakti~eskij parametr>*) )
+  <identifikator procedury>::=<identifikator>
+  <fAkti~eskij parametr>::=<wyravenie> ! <peremennaq> !
+        <identifikator procedury> ! <identifikator funkcii>
+
+      primery:
+
+  dalx{e
+  TRANSPOSE(A,N,M)
+  BTSECT(FST,-1.0,+1.0,X)
+
+      6.1.3. operatory perehoda
+
+       operator perehoda sluvit dlq  ukazaniq,  ~to  dalx{e
+  dolvna wypolnqtxsq  ta  ~astx  programmy,  pered  kotoroj
+  pome}ena sootwetstwu`}aq metka:
+
+  <operator perehoda>::=GOTO <metka>
+
+  na   ispolxzowanie    metok    nakladywa`tsq    sledu`}ie
+  ograni~eniq:
+
+       1)  oblastx`  dejstwiq   metki   qwlqetsq   opisanie
+  procedury,  w  predelah  kotoroj  ona  opredelena.  takim
+  obrazom, izwne nelxzq wojti wnutrx procedury;
+
+       2) esli operator perehoda peredaet uprawlenie  wowne
+  procedury,  to  ego  metka  dolvna  bytx  specificirowana
+  opisaniem metki w  zagolowke  procedury,  w  kotoroj  |ta
+  metka opredelena.
+
+       6.1.4. pustoj operator
+
+        pustoj operator nikak ne obozna~aetsq i ne  wyzywaet
+   nikakih dejstwij.
+
+                <pustoj operator>::=
+
+         6.2. strukturnye operatory
+
+        strukturnye   operatory   qwlq`tsq    konstrukciqmi,
+   sostawlennymi iz drugih operatorow, kotorye  dolvny  bytx
+   wypolneny ili posledowatelxno (sostawnoj  operator),  ili
+   powtorno (cikly).
+
+   <strukturnyj operator>::=<sostawnoj operator> !
+                      <uslownyj operator> ! <operator cikla>
+                      <operator nad zapisx`>
+
+       6.2.1. sostawnye operatory
+
+         sostawnoj    operator    predpisywaet     wypolnenie
+   sostawlq`}ih  ego  operatorow  w  porqdke  ih  napisaniq.
+   simwoly BEGIN i END dejstwu`t kak operatornye skobki.
+
+   <sostawnoj operator>::=BEGIN<operator>(*;<operator>*)eND
+
+      primer:
+
+       BEGIN Z:=X; X:=Y; Y:=Z END
+
+       6.2.2. uslownye operatory
+
+        uslownyj operator nazna~aet  k  wypolneni`  odin  iz
+   sostawlq`}ih ego operatorow:
+
+   <uslownyj operator>::=<operator "esli">!
+                              <operator "wybor">
+
+    6.2.2.1. operator "Esli"
+
+       operator "esli" ukazywaet,  ~to  nekotoryj  operator
+  dolven  wypolnqtxsq,  esli   tolxko   nekotoroe   uslowie
+  (logi~eskoe wyravenie) istino (TRUE). esli ve  ono  imeet
+  zna~enie FALSE, TO libo ne wypolnqetsq nikakoj  operator,
+  libo wypolnqetsq operator, sledu`}ij za simBolom ELSE:
+
+  <operator "Esli">::=IF<wyravenie>THEN<operator> !
+                  IF<wyravenie>THEN<operator>ELSE<operator>
+
+       wyravenie mevdu simwolami IF  i  THEN  dolvno  imetx
+  logi~eskij tip.
+
+       p_r_i_m_e_~_a_n_i_e. sintaksi~eskaq  nednozna~nostx,
+  woznika`}aq w konstrukcii:
+
+  IF <wyravenie1> tHEN IF <wyravenie2> THEN <operator1>
+                                       ELSE <operator2>
+
+  razre{aetsq tolkowaniem |toj konstrukcii kak  |kwiwalenta
+  dlq:
+
+  IF <wyravenie1>
+  THEN BEGIN IF <wyravenie2>
+             tHEN<operator1>
+             ELSE<operator2>
+       END
+
+     primery:
+
+    IF X=1.5 THEN Z:=X+Y ELSE Z:=1.5
+    IF P1<>NIL THEN P1:=P1^.otec
+
+    6.2.2.2. operator "wybor"
+
+       operator "wybor" sostoit iz wyraveniq (selektora)  i
+  spiska operatorow, kavdyj iz kotoryh  pome~en  konstantoj
+  selektornogo tipa. operator "wybor" ukazywaet, ~to dolven
+  bytx wypolnen odin operator: tot,  metka  kotorogo  rawna
+  teku}emu zna~eni` selektorA.
+
+  <operator wybora>::=CASE<wyravenie> oF
+                <alxternatiwa> (*;<alxternatiwa>*) eND
+  <Alxternatiwa>::=<spisok metok wybora>:<operator>
+  <spisok metok wybora>::=<metka wybora>(*,<metka wybora>*)
+
+      primery:
+
+  CASE operaciq OF                   CASE I OF
+       pl`s:h:=X+Y;                         1:X:=SIN(X);
+       minus:X:=X-Y;                        2:X:=COS(X);
+       umnov:X:=X*Y;                        3:X:=EXP(X);
+ END                                        4:X:=LN(X);
+                                          END
+
+      6.2.3. cikly
+
+       operatory cikla predpisywa`t mnogokratnoe wypolnenie
+  nekotoryh  operatorow.  esli  ~islo  powtorenij  izwestno
+  zaranee, t.e. do na~ala wypolneniq cikla,  to  podhodq}ej
+  konstrukciej qwlqetsq operator "dlq"; w ostalxnyh slu~aqh
+  sleduet  ispolxzowatx  operator   "poka"   ili   operator
+  "powtor".
+
+  <operator cikla>::=<operator "poka"> !
+                     <operator "powtor"> ! <operator "dlq">
+
+    6.2.3.1. operator "poka"
+
+    <operator "poka">::=WHILE<wyravenie>DO<operator>
+
+  wyravenie,   uprawlq`}ee   powtoreniqmi,   dolvno   imetx
+  logi~eskij tip. operator  powtorno  ispolxzuetsq  do  teh
+  por, poka zna~eniem wyraveniq  ne  stanet  "FALSE".  esli
+  zna~enie wyraveniq s samogo na~ala "FALSE",  to  operator
+  ne wypolnqetsq.
+
+       Operator "poka":
+
+       WHILE E DO S
+
+  |kwiwalenten konstrukcii:
+
+      IF E THEN
+         BEGIN S;
+            WHILE E DO S
+         END
+
+      primery:
+
+   WHILE A(I) <> X DO I:=I+1
+
+   WHILE I>0 DO
+   BEGIN IF ODD(I) THEN Z:=Z*X;
+        I:=IDIV2;
+        X:=SQR(X)
+   END
+
+   WHILE NOT EOF(F) DO
+   BEGIN P(F^); GET(F)
+   END
+
+    6.2.3.2. operator "powtor"
+
+  <operator "powtor">::=
+    REPEAT<operator>(*,<operator>*)UNTIL<wyravenie>
+
+       wyravenie, uprawlq`}ee  powtoreniqmi,  dolvno  imetx
+  logi~eskij  tip.  posledowatelxnostx   operatorow   mevdu
+  REPEAT i UNTIL wypolnqetsq powtorno (i  ne  menee  odnogo
+  raza  do  teh  por,   poka   zna~eniem   sootwetstwu`}ego
+  wyraveniq ne stanet TRUE.
+
+       operator "powtor":
+
+       REPEAT S UNTIL E
+
+  |kwiwalenten operatoru:
+
+    BEGIN S;
+    IF NOT E THEN
+        REPEAT S UNTIL E
+    END
+
+      primery:
+
+  REPEAT K:=I MOD J;
+         I:=J;
+         J:=K;
+  UNTIL J=0
+
+  REPEAT P(F);GET(F)
+  UNTIL EOF(F)
+
+    6.2.3.3. operator "dlq"
+
+       operator  "dlq"  predpisywaet  powtornoe  wypolnenie
+  sootwetstwu`}ego   operatora   po    mere    priswaiwaniq
+  peremennoj,  nazywaemoj   parametrom   cikla,   nekotoroj
+  posledowatelxnosti zna~enij.
+
+  <operator "dlq">::=FOR<parametr cikla>:=<spisok cikla> DO
+                       <operator>
+  <spisok cikla>::=<perwoe zna~enie>
+                    to <poslednee zna~enie> !
+         <perwoe zna~enie> DOWNTO <poslednee zna~enie>
+  <parametr cikla>::=<identifikator>
+  <perwoe zna~enie>::=<wyravenie>
+  <poslednee zna~enie>::=<wyravenie>
+
+  parametry cikla, perwoe  zna~enie  i  poslednee  zna~enie
+  dolvny bytx odnogo i togo ve  skalqrnogo  tipa  (ili  ego
+  otrezka)  i  ne  dolvny  menqtxsq  powtorqemym  w   cikle
+  operatorom.
+
+       cikl s parametrom wida:
+
+         FOR V:= E1 TO E2 DO S
+
+  |kwiwalenten posledowatelxnosti operatorow:
+
+         V:=E1; S; V:=SUCC(V); S;...; V:=E2; S;
+
+  a cikl s parametrom wida:
+
+         FOR V:=E1 DOWNTO E2 DO S
+
+  |kwiwalenten posledowatelxnosti operatorow:
+
+        V:=E1; S; V:=PRED(V); S;...; V:=E2; S;
+
+       p_r_i_m_e_~_a_n_i_e.  poslednee  zna~enie  parametra
+  ostaetsq neopredelennym posle zawer{eniq cikla.
+
+      primery:
+
+  FOR I:=2 TO 100 DO IF A[I]>MAX THEN MAX:=A(I)
+
+  FOR I:=1 TO N DO
+  FOR J:=1 TO N DO
+  BEGIN X:=0;
+    FOR K:=1 TO N DO X:=X+A(I,J)*B(K,J)
+    C[I,J]:=X
+  END
+
+  FOR c:=krasn to goluboj DO Q(c)
+
+      6.2.4. operatory nad zapisqmi
+
+  <operator nad zapisqmi> ::= WITH<spisok peremennyh-
+                                 zapisej>
+                                 DO <operator>
+  <spisok peremennyh-zapisej> ::= <peremennaq zapisx>
+                                (*,<peremennaq zapisx>*)
+
+       w predelah wnutrennego  operatora  w  operatore  nad
+  zapisx` komponenty (polq) peremennoj-zapisi,  zadannoj  w
+  ego zagolowke,  mogut  obozna~atxsq  odnim  tolxko  swoim
+  identifikatorom  polq,  t.e.   bez   pred{estwu`}ego   im
+  napisaniq polnoj pEPEmennoj zapisi. fakti~eski  operatory
+  nad    zapisqmi    ras{irq`t    oblastx    opredelennosti
+  identifikatorow polq zadannoj peremennoj-zapisi, tak  ~to
+  identifikatory polq mogut wystupatx,  kak  identifikatory
+  peremennyh.
+
+       primer:
+
+  WITH DATA DO
+  IF MEC = 12 THEN
+  BEGIN MEC := 1; god := god +1
+  END
+  ELSE MEC := MEC + 1
+
+       |tot operator |kwiwalenten takomu:
+
+  IF DATA.MEC = 12 THEN
+  BEGIN Data.meC := 1; Data.god:=Data.god +1
+  END
+  ELSE Data.mes:= Data.mes + 1
+
+       w operatorah  nad  zapisqmi  ne  dolvno  sodervatxsq
+  priswaiwanij  nikakoj  sostawlq`}ej   spiska   peremennyh
+  zapisej.
+
+                    7. Opisanie procedur
+
+       nazna~enie  opisanij  procedur  -  opredelitx  ~asti
+  programmy i swqzatx s nimi identifikatory,  s  tem  ~toby
+  |ti ~asti mogli bytx aktiwirowany  operatorami  procedur.
+  opisanie procedury sostoit iz sledu`}ih ~astej, l`baq  iz
+  kotoryh, za iskl`~eniem perwoj i  poslednej,  movet  bytx
+  pustoj:
+
+  <opisanie procedury>::=<zagolowok procedury>
+                       <razdel opisanij metok>
+                       <razdel opredelenij konstant>
+                       <razdel opredelenij tipow>
+                       <razdel opisanij peremennyh>
+                       <razdel opisanij procedur i funkcij>
+                       <razdel operatorow>
+
+       zagolowok procedury zadaet identifikator,  imenu`}ij
+  proceduru, i identifikatory formalxnyh  parametrow  (esli
+  oni estx). parametrami mogut  bytx  parametry-peremennye,
+  -zna~eniq, -procedury ili parametry-funkcii.
+
+  <zagolowok procedury>::=PROSEDURE<identifikator>;!
+    PROCEDURE<identifikator>(<sekciq formalxnyh parametrow>
+              (*;<sekciq formalxnyh parametrow*));
+  <sekciq formalxnyh parametrow>::=<gruppa parametrow>!
+           VAR <gruppa parametrow>!
+           FUNCTION <gruppa parametrow> !
+           PROCEDURE <identifikator> (*;<identifikator>*)
+  <gruppa parametrow>::=
+             <identifikator>(*,<identifikator>*)
+             :<identifikator tipa>
+
+       gruppy parametrow bez pred{estwu`}ego  specifikatora
+  s~ita`tsq parametrami-zna~eniqmi.
+
+       razdel  opisanij  metok  specificiruet  wse   metki,
+  lokalizowannye w dannoj procedure:
+
+  <razdel opisanij metok>::=<pusto>!
+                    LABEL <metka> (*,<metka>*);
+
+       razdel opredelenij konstant sodervit wse opredeleniq
+  lokalxnyh w dannoj procedure konstant:
+
+  <razdel opredelenij konstant>::=<pusto>!
+                             CONST<opredelenie konstanty>
+                             (*;<opredelenie konstanty>*);
+
+       razdel opredelenij tipow  sodervit  wse  opredeleniq
+  tipow, lokalxnye w dannom opisanii procedury:
+
+  <razdel opredelenij tipow>::=<pusto>!
+            TYPE<opredelenie tipa>(*;<opredelenie tipa>*);
+
+       razdel opisanij  peremennyh  sodervit  wse  opisaniq
+  peremennyh, lokalxnye w dannom opisanii procedury:
+
+  <razdel opisanij peremennyh>::= <pusto>!
+       VAR<opisanie peremennoj> (*;<opisanie peremennoj>*);
+
+       razdel opisanij  procedur  i  funkcij  sodervit  wse
+  lokalxnye w dannom opisanii procedury opisaniq procedur i
+  funkcij:
+
+  <razdel opisanij procedur i funkcij>::=
+                      (*<opisanie procedury ili funkcii>;*)
+  <opisanie procedury ili funkcii>::=<opisanie procedury>!
+                                     <opisanie funkcii>
+
+       razdel operatorow zadaet  algoritmi~eskie  dejstwiq,
+  kotorye dolvny bytx wypolneny posle obra}eniq k procedure
+  s pomo}x` operatora procedury:
+
+  <razdel operatorow>::=<sostawnoj operator>
+
+        wse identifikatory, wwedennye w  razdele  formalxnyh
+  parametrow, razdele opredelenij konstant, tipow,  razdele
+  opisanij peremennyh i procedur ili  funkcij,  lokalxny  w
+  dannom opisanii procedury,  kotoroe  nazywaetsq  oblastx`
+  opredelennosti |tih identifikatorow. oni ne dostupny  wne
+  swoej   oblasti   opredelennosti.   zna~eniq    lokalxnyh
+  peremennyh  w  moment  whoda  w   telo   ne   opredeleny.
+  ispolxzowanie w  tele  procedury  ee  sobstwennogo  imeni
+  podrazumewaet rekursiwnoe wypolnenie |toj procedury.
+
+       primery opisanij procedur:
+  PROCEDURE ~itcel (VAR h: INTEGER);
+    VAR I, J : INTEGER;
+  BEGIN I :=0;
+   WHILE (INPUT^>='0')/\(INPUT^<='9') DO
+   BEGIN J:= ORD (INPUT^)-ORD ('0');
+         I:= 10*I + J;
+         GET (INPUT))
+   END;
+         h:= I
+  END
+
+  PROCEDURE BISECT(FUNCTION F:REAL; A,B:REAL; VAR Z:REAL);
+    VAR M :REAL;
+   BEGIN (* predpolagaetsq ~to F(A)<0 i F(B)>0 *)
+   WHILE ABS(A-B) > 1E-10*ABS(A) DO
+   BEGIN M := (A+B)/2.0;
+          IF F(M)<0 THEN A := M ELSE B :=  M
+   END;
+   Z:=M
+   END
+
+  PROCEDURE nod (M,N: INTEGER; VAR h,Y,Z: INTEGER);
+  VAR A1, A2, B1, B2, C, D, Q, R : INTEGER; (* M>=0, N>0 *)
+  BEGIN (*naibolx{ij ob}ij delitelx h dlq M i N ,
+  ras{irennyj  algoritm ewklida *)
+     A1:=0; A2:=1; B1:= 1; B2:= 0;
+     C:=M; D:=N;
+  WHILE D <> 0 DO
+     BEGIN (*A1*M+B1*N=D, A2*M+B2*N=C,
+           nod(C,D) = nod(M,N) *)
+           Q:=C DIV D; R:=C MOD D; A2:= A2-Q*A1;
+           B2:= B2-Q*B1; C:=D; D:=R; R:=A1; A1:=A2;
+           A2:=R; R:=B1; B1:=B2; B2:=R
+     END;
+     h:= C; Y:= A2; Z:= B2
+     (* h=nod(M,N); Y*M+Z*N=nod(M,N) *)
+  END
+
+        7.1. standartnye procedury
+
+       predpolagaetsq,  ~to  standartye  procedury  zaranee
+  opisany  w  l`boj   realizacii   qzyka   paskalx.   l`baq
+  realizaciq  movet  dopolnitelxno  wwoditx  takie  zaranee
+  opisannye procedury. poskolxku oni, kak i wse standartnye
+  weli~iny, s~ita`tsq opisannymi w oblasti  opredelennosti,
+  ohwatywa`}ej ws` programmu,  napisannu`  na  paskale,  to
+  poqwlenie w |toj programme opisanij, pereopredelq`}ih |ti
+  identifikatory, ne priwodit k konfliktam.
+
+       standartnye procedury pere~isleny i ob'qsneny nive.
+
+      7.1.1. procedury raboty s fajlami
+
+  PUT(F)
+         - prisoedinqet zna~enie bufernoj peremennoj  F^  k
+           fajlu "F". opredeleno  tolxko  w  slu~ae,  kogda
+           pered ispolneniem zna~enie predikata EOF(F) estx
+           TRUE; EOF(F) sohranqet zna~enie  TRUE,  zna~enie
+           ve F^ stanowitsq neopredelennym;
+
+  GET(F)
+         - sme}aet   teku}u`   pozici`    fajla    (golowku
+           ~teniq-zapisi)   na   sledu`}u`   komponentu   i
+           pripisywaet zna~enie  |toj  komponenty  bufernoj
+           peremennoj  F^.  esli  sledu`}ej  komponenty  ne
+           su}estwuet, to zna~eniem eoF(F) stanowitsq TRUE,
+           a zna~enie F^ ne  opredeleno.  rezulxtat  GET(F)
+           Opredelen tolxko togda, kogda pered  ispolneniem
+           sootwetstwu`}ego wyzowa EOF(F)=FaLSE;
+
+  RESET(F)
+         - wozwra}aet teku}u` pozici` fajla w na~alo  fajla
+           i pripisywaet bufernoj  peremennoj  F^  znA~enie
+           perwogo   |lementa   "F".    zna~eniem    EOF(F)
+           stanowitsq FALSE, esli "F" ne pust; w  proTiwnom
+           slu~ae F^  ne  opredeleno,  a  zna~Eniem  EOF(F)
+           ostaetsq TRUE;
+
+  REWRITE(F)
+         - uni~tovaet teku}ee zna~enie "F", tak  ~to  movet
+           na~atxsq   zapolnenie   nowogo   fajla;   EOF(F)
+           prinimaet zna~enie TRUE;
+
+  READ(CH)
+         - ozna~aet: BEGIN CH:= INPUT^;GET(INPUT) END;
+
+  WRITE(CH)
+         - ozna~aet: BEGIN OUTPUT^:= CH; PUT(OUTPUT) END,
+
+  gde
+             CH - peremennaq (wyravenie) liternogo tipa.
+        
+
+      7.1.2. procedura dinami~eskogo razme}eniq
+
+    NEW(P)
+         - razme}aet  nowu`  peremennu`  V  i   pripisywaET
+           ssylku na V peremennoj-ukazatel` P;
+
+   esli tip  V  -  |to  tip  zapisi  s  wariantami,  to
+   Operator wida:
+
+  NEW(P,T1,...,TN)
+         - movet bytx ispolxzowan dlq rAzme}eniq peremennoj
+           so zna~eniqmi polej  priznaka  T1,...,TN.  dalee
+           takoe  razme}enie  wle~et   inicializaci`   polq
+           priznaka. zna~eniq poslednih dolvny posle  |togo
+           ostawatxsq neizmennymi.
+
+      7.1.3. procedury preobrazowaniq tipow
+
+   pustx a - peremennaq-massiw tipa
+
+             ARRAY[M..N] OF T
+
+  i pustx Z - peremennaq tipa
+
+             PACKED ARRAY[U..V] OF T,
+
+  gde
+     N-m>=V-U.
+
+    togda
+
+  PACK(A,I,Z) ozna~aet:
+  FOR J:=U TO V DO Z[J]:=A[J - U + I]
+  UNPACK(Z,A,I) ozna~aet:
+  FOR J:= U TO V DO A[J - U + I]:=Z[J],
+
+  gde
+
+  J
+         - wspomogatelxnaq peremennaq, ne  wstre~a`}aqsq  w
+           drugih ~astqh programmy.
+
+                    8. opisaniq funkcij
+
+       opisaniq  funkcij  sluvat  dlq  opredeleniq   ~astej
+  programmy,   wy~islq`}ih   skalqrnoe   ili   ukazatelxnoe
+  zna~enie. obra}enie k funkcii  osu}estwlqetsq  s  pomo}x`
+  ukazatelej funkcii qwlq`}ihsq ~astqmi wyravenij. opisanie
+  funkcii sostoit  iz  sledu`}ih  semi  ~astej,  kavdaq  iz
+  kotoryh, za iskl`~eniem perwoj i  poslednej,  movet  bytx
+  pusta.
+
+  <opisanie funkcii>::= <zagolowok funkcii>
+                      <razdel metok>
+                      <razdel opredelenij konstant>
+                      <razdel opredelenij tipow>
+                      <razdel opisanij peremennyh>
+                      <razdel opisanij procedur i funkcij>
+                      <razdel operatorow>
+
+       zagolowok funkcii zadaet identifikator, obozna~a`}ij
+  dannu` funkci`, formalxnye parametry funkcii i ee tip:
+
+  <zagolowok funkcii>::=FUNCTION<identifikator:
+                         <tip rezulxtata>;!
+                         FUNCTION<identifikator>
+                         (<sekciq formalxnyh parametrow>
+                         (*;sekciq formalxnyh parametrow>*)
+                        :<tip rezulxtata>
+  <tip rezulxtata>::=<identifikator tipa>
+
+       tip funkcii dolven bytx skalqrnym, otrezkom tipa ili
+  tipom  ukazatelq.  w  predelah  opisaniq  funkcii  dolven
+  sodervatxsq   hotq   by   odin   operator   priswaiwaniq,
+  priswaiwa`}ij zna~enie identifikatoru funkcii.  whovdenie
+  identifikatora funkcii w ukazaTelx funkcii w predelah  ee
+  opisaniq  podrazumewaet   rekursiwnoe   ispolnenie   |toj
+  funkcii.
+
+   primery:
+
+  FUNCTION SQRT (X : REAL) : REAL;
+    VAR XO,X1 : REAL;
+  BEGIN X1:=X; (*X > 1, METOd nx`tona*)
+    REPEAT X0:=X1; X1:=(X0 + X/X0) * 0.5
+    UNTIL ABS(X1 - X0) < EPS*X1;
+    SQRT:=X0
+  END
+
+  FUNCTION nod(M,N : INTEGER) : INTEGER;
+  BEGIN IF N=0 THEN nod:= M ELSE nod:= nod (N,M MOD N)
+  END
+
+  FUNCTION MAX(A : VECTOR; N : INTEGER) : REAL;
+         VAR X : REAL; I : INTEGER;
+  BEGIN X :=A[1];
+   FOR I :=2 TO N DO
+   BEGIN (* X=MAX(A[1]...A[I-1]) *)
+    IF X<A[I] THEN X := A[I]
+   END;
+   (* X = MAX(A[1]...A[N]) *)
+   MAX:=X
+  END
+
+  FUNCTION stepenx (X:REAL; Y:INTEGER) :REAL; (* Y>=0 *)
+         VAR W,Z ; REAL;I : INTEGER;
+  BEGIN W =: X; Z := 1; I := Y;
+         WHILE I <> 0 DO
+         BEGIN (* Z * W**I = X**Y *)
+         IF ODD(I) THEN Z := Z*W;
+         I := I DIV 2; W := SQR(W)
+  END (* Z = X**Y *);
+  stepenx := Z
+  END
+
+        8.1. standartnye funkcii
+
+       predpolAgaetsq,  ~to  standartnye  funkcii   zaranee
+  opisany  w  l`boj   realizacii   qzyka   paskalx.   l`baq
+  realizaciq  movet  wwoditx  dopolnitelxno  takie  zaranee
+  opisannye funkcii.
+
+       nive   sleduet   spisok   standartnyh   funkcij    s
+  poqsneniqmi.
+
+      8.1.1. arifmeti~eskie funkcii
+
+  ABS(X)
+         - wy~islqet absol`tnu` weli~inu h.  tip  h  dolven
+           bytx  we}estwennym  ili  celym,  tip  rezulxtata
+           sowpadaet s tipom h;
+
+  SQR(X)
+         - wy~islqet h wo 2-j stepeni. tip  h  dolven  bytx
+           we}estwennym ili celym, tip rezulxtata sowpadaet
+           s tipom h;
+
+  SIN(X)    \
+  COS(X)    !
+  EXP(X)    !      Tip h dolven bytx we}estwennym
+  LN(X)     !      ili celym; rezulxtat imeet
+  SQRT(X)   !      we}estwennyj tip.
+  ARCTAN(X) /
+
+            8.1.2. predikaty
+
+        ODD(X)
+               - tip h dolven bytx celym, rezulxtat rawen "X  MOD
+                 2 = 1";
+
+        EOF(F)
+               - ukazywaet, nahoditsq li  fajl  "F"  w  sostoqnii
+                 "konec fajla".
+
+            8.1.3. funkcii preobrazowaniq
+
+        TRUNC(X)
+               - h  dolven  bytx  we}estwennogo  tipa,  rezulxtat
+                 imeet tip celyj  (INTEGER)  i  takow,  ~to  esli
+                 h>=0, to h-1<TRUNC(X)<=X;
+
+        ORD(X)
+               - X dolven bytx liternogo tipa, rezulxtat  (celogo
+                 tipa) - |to porqdkowyj nomer litery h w zadannoj
+                 posledowatelxnosti liter;
+
+        CHR(X)
+               - X dolven bytx celogo tipa, rezulxtat  (liternogo
+                 tipa) - |to  litera,  porqdkowyj  nomer  kotoroj
+                 rawen h.
+
+            8.1.4. pro~ie standartnye funkcii
+
+        SUCC(X)
+               - h movet bytx l`bogo skalqrnogo tipa ili otrezkom
+                 tipa; rezulxtat - |to zna~enie, sledu`}ee  za  h
+                 (esli takowoe imeetsq);
+
+        PRED(X)
+               - h movet bytx l`bogo skalqrnogo tipa ili otrezkom
+                 tipa, rezulxtat - |to zna~enie, pred{estwu`}ee h
+                 (Esli ono su}estwuet).
+
+                        9. programmy
+
+       programma  na  qzyke  paskalx  imeet  wid   opisaniq
+  procedury bez zagolowka.
+
+  <programma> :: = <razdel opisanij metok>
+                   <razdel opredelenij konstant>
+                   <razdel opredelenij tipow>
+                   <razdel opisanij peremennyh>
+                   <razdel opisanij peremennyh i
+                           funkcij>
+                   <razdel operatorow> .
+
+        10.osobennosti programmirowaniq dlq bezoperacionnyh
+           sistem.
+
+     dlq realizacii mnogih funkcij paskalx  ispolxzuet  |lementy
+operacionnoj sistemy. w perwu` o~eredx |to otnositsq k  fajlowoj
+sisteme,  dinami~eskomu  opredeleni`  peremennyh,  ispolxzowani`
+podprogramm arifmetiki i wwoda/wywoda.  odnako  dlq  bolx{instwa
+zada~ ~islowogo modelirowaniq i uprawleniq |ti funkcii  libo  ne
+nuvny, libo mogut  ispolxzowatxsq  s  nekotorymi  ograni~eniqmi.
+naprimer, dlq wstraiwaemyh sistem, ne  ime`}ih  wne{nih  zapomi-
+na`}ih ustrojstw ispolxzowanie fajlowoj sistemy w polnom  ob'eme
+bessmyslenno,odnako nawernqka neobhodim terminalxnyj  wwod/wywod
+dlq  obespe~eniq   indikacii   ili   swqzi   s   programmiru`}im
+ustrojstwom. krome togo, ob'em bolx{instwa programm iz standart-
+noj biblioteki paskalq sli{kom welik  dlq  ispolxzowaniq  ih  wo
+wstraiwaemyh sistemah, po|tomu woznikaet zada~a  sozdaniq  malyh
+rezidentnyh   bezoperacionnyh   ispolnq`}ih   sistem    paskalq,
+oformlennyh w wide biblioteki podprogramm.oformlenie ispolnq`}ej
+sistemy w wide biblioteki podprogramm neobhodimo dlq minimizacii
+ispolnq`}ej sistemy putem ispolxzowaniq neobhodimogo minimuma  i
+udowletworeniq dopolnitelxnyh (alxternatiwnyh) zaprosow  polxzo-
+watelq. w predlagaemoj wersii ispolnq`}ej sistemy iz specialxnyh
+sredstw, swqzannyh s ispolxzowaniem sredstw operacionnyh  sistem
+ostawleny: terminalxnyj formatnyj wwod-wywod,  dinami~eskoe  re-
+zerwirowanie pamqti, programmnaq  |mulqciq  ras{irennogo  nabora
+arifmeti~eskih komand (EIS i FIS), biblioteka standartnyh  arif-
+meti~eskih funkcij.
+
+
+                                           prilovenie
+
+               osobennosti qzyka paskalx/rafos
+
+                1. sintaksi~eskie ras{ireniq
+
+        1.1. zagolowok programmy
+
+       zagolowok  programmy   qwlqetsq   neobqzatelxnym   w
+  paskalx/rafos i movet bytx opu}en. esli zagolowok wse  ve
+  ukazan, to  on  budet  raspe~atywatxsq  w  na~ale  kavdoj
+  stranicy listinga programmy. l`boj parametr  w  zagolowke
+  programmy ignoriruetsq.
+
+        1.2. porqdok opisanij
+
+       porqdok opisanij w paskalx/rafos (CONST, TYPE,  VAR)
+  dopuskaet ras{ireniq. sekciq  opisanij  movet  poqwlqtxsq
+  neskolxko raz w tekste programmy, no  ispolxzowatx  imena
+  (identifikatory)  movno  tolxko  posle  togo,   kak   oni
+  opisany.  su}estwuet  neskolxko   sposobow   ispolxzowatx
+  dannu` wozmovnostx, naprimer, imetx  fajly  s  otdelxnymi
+  modulqmi. pered translqciej |ti fajly mogut  ob'edinqtxsq
+  wmeste   s   osnownoj   programmoj.   drugimi    slowami,
+  obespe~iwa`tsq prostej{ie sredstwa raboty  s  bibliotekoj
+  modulej paskalq w ishodnom wide.
+       primer:
+
+  fajl:
+         (* opredelenie grafi~eskogo modulq *)
+         VAR ... (* globalxnye peremennye funkcij *)
+         PROCEDURE (* opisanie grafi~eskih funkcij *)
+         PROCEDURE ...
+         (* konec grafi~eskogo modulq *)
+  fajl:
+         (* fajl osnownoj programmy *)
+         VAR ... (* globalxnye peremennye *)
+         BEGIN (* tekst programmy *) END.
+
+        1.3. kommentarii
+
+       w paskalx/rafos dopuskaetsq tri  tipa  "skobok"  dlq
+  wydeleniq kommentariew: [...],  (*...*)  i  /*...*/.  wse
+  tipy qwlq`tsq wzaimozamenqemymi: dlq  na~ala  kommentariq
+  movno ispolxzowatx odin tip, a dlq  zawer{eniq  -  drugoj
+  tip skobok.
+
+        1.4. oborot ELSE w operatore CASE
+
+       paskalx/rafos        dopuskaet         ispolxzowanie
+  neobqzatelxnogo  oborota  ELSE  dlq  ukazaniq  operatora,
+  kotoryj dolven bytx wypolnen w slu~ae, esli  ni  odna  iz
+  metok  w  operatore  CASE  ne  sowpadaet   so   zna~eniem
+  "selektornoj" peremennoj. esli ELSE ispolxzuetsq,  to  on
+  dolven  sledowatx  za  poslednim   operatorom   w   CASE.
+  ispolxzowanie  ";"  nedopustimo  mevdu  ELSE  i   END   w
+  operatore CASE, naprimer:
+
+         REPEAT
+                 READLN(CH);
+                 CASE CH OF
+                         'A':APPEND;
+                         'D':DELETE;
+                         'I':INSERT;
+                         'N':NEWFILE;
+                         'Q':;
+                         ELSE
+                          WRITELN('"',CH,'" IS NOT LEGAL')
+                 END;
+         UNTIL CH = 'Q';
+
+        1.5. operator EXIT
+
+       operator EXIT ispolxzuetsq dlq wyhoda iz tela odnogo
+  iz  iteracionnyh   operatorow   (WHILE,   REPEAT,   FOR).
+  naprimer, poisk po tablice:
+
+         FOUND := FALSE;
+         FOR I := 1 TO TABLESIZE DO
+                 IF TABLE[I] = KEY
+                    THEN BEGIN FOUND:=TRUE; EXIT END;
+
+        1.6. wne{nie   i   fortranowskie    podprogrammy
+             (procedury)
+
+       paskalx/rafos  dopuskaet   ispolxzowanie   "wne{nih"
+  procedur i funkcij,  kotorye  transliru`tsq  otdelxno  ot
+  osnownoj programmy. |to pozwolqet ispolxzowatx biblioteki
+  modulej.  ob'qwlenie  wne{nej  procedury   osu}estwlqetsq
+  kl`~ewym slowom "EXTERNAL". ispolxzowanie kl`~ewogo slowa
+  "FORTRAN" priwedet k wyzowu podprogrammy w sootwetstwii s
+  sogla{eniqmi ispolnq`}ej sistemy s  qzyka  fortran/rafos.
+  sleduet otmetitx, ~to pereda~a parametrow w  podprogrammu
+  na qzyke  fortran  osu}estwlqetsq  po  ssylke,  a  ne  po
+  zna~eni`, t.e. wse parametry dolvny bytx  ob'qwleny,  kak
+  VAR (peremennye).
+
+       primery:
+
+         PROCEDURE ERASE; EXTERNAL
+         FUNCTION DIFFERENCE(VAR X,Y:REAL):REAL; FORTRAN;
+
+
+             2. ma{inno-zawisimyj urowenx qzyka
+
+        2.1. wosxmeri~nye konstanty
+
+       w   qzyke   dopuskaetsq   ispolxzowanie    konstant,
+  zapisannyh w wosxmeri~nom wide. esli za celoj  konstantoj
+  sleduet "B", to ona budet interpretirowatxsq po osnowani`
+  8. poqwlenie w podobnoj konstante cifr 8 i 9  priwedet  k
+  soob}eni`  ob   o{ibke.   ispolxzowanie   probela   mevdu
+  poslednej cifroj ~isla i "B" nedopustimo, naprimer:
+
+    CONST TABCODE = 11B; (* kod znaka tabulqcii w koi-7 *)
+
+        2.2. bezznakowye celye ~isla
+
+       standartnyj    tip    INTEGER     imeet     diapazon
+  (-32768..32767). narqdu s |tim movet bytx  opredelen  tip
+  bezznakowyh celyh ~isel w diapazone (0..65535). dlq  |tih
+  celyh   kompilqtor   budet    ispolxzowatx    bezznakowye
+  instrukcii  perehodow  pri  srawneniqh   i   ignorirowatx
+  perepolneniq w operaciqh umnoveniq ili deleniq, naprimer:
+
+         TYPE UNSIGNEDIGIT = 0..65535
+
+        2.3. logi~eskie operacii s celymi ~islami
+
+       bulewskie operacii AND, OR i NOT  ime`t  ras{irennu`
+  oblastx dejstwiq i mogut  primenqtxsq  dlq  celyh  ~isel.
+  operaciq budet wypolnqtxsq nad  16  razrqdami  operandow.
+  |to ras{irenie pozwolqet proizwoditx prowerku i ustanowku
+  otdelxnyh razrqdow  w  celyh  peremennyh  (naprimer,  dlq
+  registrow wne{nih ustrojstw). primer:
+
+         BYTE := ORD(CH) AND 377B;
+                           - 25 -
+
+        2.4. obra}enie k absol`tnym adresam pamqti
+
+       w otdelxnyh slu~aqh bywaet udobno imetx  wozmovnostx
+  obra}atxsq  k  absol`tnym  q~ejkam  pamqti,  naprimer,  k
+  registram wne{nih  ustrojstw  ili  tablicam  operacionnoj
+  sistemy.  dlq   |toj   celi   w   paskalx/rafos   sleduet
+  ispolxzowatx   kl`~ewoe   slowo   ORIGIN   w   ob'qwlenii
+  peremennoj. naprimer, sledu`}aq programma s~itywaet  znak
+  s klawiatury sistemnogo terminala na fizi~eskom urowne:
+
+         CONST   READY   =200B;
+         VAR     KBCSR ORIGIN 177560B,
+                 KBDAT ORIGIN 177562:    INTEGER;
+                 CH:CHAR;
+         BEGIN
+                 WHILE (KBCSR AND READY) = 0 DO ;(*vdatx*)
+                 C := CHR(KBDAt);
+         END.
+
+        2.5. adresnyj operator "@"
+
+       w  sostaw   qzyka   paskalx/rafos   whodit   unarnyj
+  operator,  obozna~aemyj  "@".  esli  ego  ispolxzowatx  s
+  peremennoj tipa "A", to rezulxtatom budet  zna~enie  tipa
+  "^A"  (ukazatelx  na  "A").   adresnaq   operaciq   movet
+  ispolxzowatxsq  dlq  raboty  so  spiskowymi   strukturami
+  dannyh ili dlq pereda~i adresow w  programmy,  napisannye
+  na qzyke makroassembler. naprimer:
+
+         TYPE    BLOCK=ARRAY[0..511] OF CHAR;
+         VAR     BUFFER:BLOCK;
+         BEGIN
+                 (* zapomnitx adres bufera *)
+                 XRB.XRLOC:=@BUFFER
+         END;
+
+        2.6. ispolxzowanie makroassemblera
+
+       paskalx/rafos  daet  wozmovnostx  wkl`~atx  w  l`boe
+  mesto   programmy   otdelxnye    fragmenty    na    qzyke
+  makroassembler.   ~asti    programmy,    napisannye    na
+  makroassemblere,   mogut   ispolxzowatx   peremennye   iz
+  programmy na qzyke  paskalx,  hotq  dlq  |togo  trebuetsq
+  nekotoroe ponimanie processa organizacii wypolneniq.  dlq
+  wkl`~eniq   fragmenta    na    assemblere    ispolxzuetsq
+  specialxnyj wid kommentariew, naprimer:
+
+
+         PROCEDURE EMTTRAP (N:INTEGER);
+         BEGIN
+           (*$C                  ;na~alo fragmenta na makro
+                 MOV N(SP),-(SP) ;parametr "N" -> w stek
+                 EMT 53          ;wyzwatx dispet~er EMT
+           *)
+         END     (* EMTTRAP*)
+
+       pri ispolxzowanii makroassemblera  sleduet  pomnitx,
+  ~to osnowaniem s~isleniq ~islowyh konstant  po  umol~ani`
+  qwlqetsq 10, a ne 8.
+
+                 3. operatory wwoda/wywoda
+
+        3.1. dopolnitelxnye  argumenty  dlq  "RESET"   i
+             "REWRITE"
+
+       w  paskalx/rafos  ras{ireny  standartnye   procedury
+  "RESET" i "REWRITE" tremq dopolnitelxnymi neobqzatelxnymi
+  parametrami  dlq   ukazaniq   swqzi   mevdu   wnutrennimi
+  fajlowymi peremennymi i fajlami na wne{nih ustrojstwah
+
+  PROSEDURE RESET(F:FILE;NAME,DEFEXT:STRING;
+                  VAR LEN:INTEGER)
+
+       procedura  RESET  swqzywaet  fajlowu`  peremennu`  s
+  su}estwu`}im  wne{nim  fajlom,  a   takve   ustanawliwaet
+  ukazatelx fajla na perwyj |lement  (zapisx).  "F"  wsegda
+  dolvna prisutstwowatx i  bytx  fajlowoj  peremennoj.  imq
+  fajla "NAME" i ras{irenie imeni fajla  dolvny  imetx  tip
+  "ARRAY OF CHAR".
+
+       imq fajla dolvno sootwetstwowatx prinqtomu  w  rafos
+  standartnomu obozna~eni` i movet  wkl`~atx  imq  i  nomer
+  ustrojstwa, a takve tip fajla.  tip  fajla  po  umol~ani`
+  budet ispolxzowatxsq tolxko w tom slu~ae, esli wo  wtorom
+  parametre  otsutstwuet  tip  fajla.  esli  |tot  parametr
+  nuven, to budet ispolxzowan tip "DAT".
+
+       peremennaq  "LEN"  polu~it  zna~enie,  rawnoe  ~islu
+  blokow po 512 bajt w  fajle,  libo  -  1,  esli  fajl  ne
+  najden.  sleduet  u~estx,  ~to  esli  |tot  parametr   ne
+  ispolxzowan, to otsutstwie  fajla  priwedet  k  fatalxnoj
+  o{ibke programmy.
+
+  PROCEDURE REWRITE(F:FILE; NAME,DEFEXT:STRING;
+                    VAR LEN:INTEGER)
+
+       procedura "REWRITE" sozdaet nowyj  fajl  na  wne{nem
+  ustrojstwe. parametry  "NAME"  i  "DEFEXT"  ime`t  to  ve
+  zna~enie (smysl), ~to i dlq procedury  "RESET".  parametr
+  "LEN" ukazywaet razmer sozdawaemogo fajla w blokah po 512
+  bajt.
+
+       primer:
+
+         VAR NAME: ARRAY[1..20] OF CHAR;
+             INF,OUTF: TEXT;
+             (* opredeleno w sisteme kak "FILE OF CHAR *)
+             LEN: INTEGER;
+         BEGIN
+             (* swqzatx OUTF s ustrojstwom pe~ati *)
+             REWRITE(OUTF,'LP:');
+             REPEAT
+                 WRITE('FILENAME: ');
+                 (* zaprositx imq fajla s terminala *)
+                 READLN(NAME);
+                 (*swqzatx INF s su}estwu`}im fajlom *)
+                 RESET(INF,NAME,'PAS',LEN)
+             (* powtorqtx poka fajl ne budet otkryt *)
+             UNTIL LEN<>-1;
+         END.
+
+        3.2. procedura "BREAK"
+
+       dlq  celej  |ffektiwnosti  paskalx/rafos  buferizuet
+  dannye, peredawaemye w fajl. procedura  "BREAK"  wyzywaet
+  nemedlennyj wywod wozmovno e}e nepolnogo bufera (bloka) w
+  fajl. |to nado  ispolxzowatx  pri  rabote  s  terminalom,
+  naprimer, dlq wywoda podskazki ili soob}eniq.
+
+       sleduet otmetitx, ~to  paskalx/rafos  ne  buferizuet
+  rabotu s drajwerami, o kotoryh izwestno, ~to oni qwlq`tsq
+  "interaktiwnymi", naprimer, wyhodnoj  fajl  po  umol~ani`
+  (OUTPUT).
+
+       primer:
+
+         VAR F:TEXT;
+         BEGIN
+           REWRITE(F,'TT:');
+           WRITELN(F,'wwedite komandnu` stroku');
+           BREAK(F);    (* wywesti dannye na tt: *)
+         END.
+
+        3.3. procedura "CLOSE"
+
+       wyzow procedury "CLOSE" wsegda dolven osu}estwlqtxsq
+  posle zawer{eniq raboty programmy s fajlom. |ta procedura
+  peresylaet na wne{nee ustrojstwo ne do konca  zapolnennyj
+  bufer, ustranqet swqzx s  wne{nim  fajlom  i  oswobovdaet
+  bufernu` pamqtx dlq  ispolxzowaniq  ee  w  drugih  celqh.
+  procedury "RESET"  ili  "REWRITE"  dolvny  pred{estwowatx
+  wsqkoj rabote s fajlowoj peremennoj.
+
+       p_r_i_m_e_~_a_n_i_e. prcedurA "CLOSE" wsegda  dolvna
+  ispolxzowatxsq  w  konce  raboty  s   fajlom,   sozdannym
+  programmoj (wyhodnym fajlom). zakrywanie fajlow dlq wwoda
+  ne  qwlqetsq  obqzatelxnym,   no   pozwolqet   oswoboditx
+  bufernu` pamqtx.
+
+       primer:
+
+         CLOSE(F)
+
+        3.4. ~tenie simwolxnyh massiwow
+
+       wozmovnosti  standartnoj  procedury  ras{iriny   dlq
+  obespe~eniq raboty  s  simwolxnymi  massiwami  peremennoj
+  dliny.  znaki  budut  s~itywatxsq,  na~inaq  s   teku}ego
+  poloveniq ukazatelq w fajle, poka ne  wstretitsq  probel,
+  zapqtaq ili konec stroki. pri |tom stroka budet wyrawnena
+  slewa i dopolnena probelami (esli stroka menx{e massiwa),
+  ili use~ena sprawa (esli stroka bolx{e massiwa).
+
+        3.5. wosxmeri~nyj wywod s pomo}x` "WRITE"
+
+       procedura  "WRITE"  budet  wywoditx  celye  ~isla  w
+  wosxmeri~nom wide,  esli  wyravenie  dlq  formata  wywoda
+  budet otricatelxnym, naprimer:
+
+         (* wywesti "I" w wosxm.wide - 5 znakow *)
+         WRITE(I:-5);
+
+       3.6. fajly prqmogo dostupa
+
+       paskalx/rafos   sodervit    neskolxko    opredelenij
+  procedur, kotorye posle translqcii  wmeste  s  programmoj
+  obespe~iwa`t   prqmoj   dostup   k   |lementam   fajlowoj
+  peremennoj.
+
+   PROCEDURE SEEK(VAR F:RANFIL; VAR DATA:USERTYPE;
+                  N:INTEGER)
+
+       procedura "SEEK" wozwra}aet N-yj |lement fajla "F" w
+  peremennoj "DATA". ustanawliwaetsq EOF(F), esli ukazannyj
+  |lement ne su}estwuet.
+
+   PROCEDURE DEPOSIT(VAR F:RANFIL; VAR DATA:USERTYPE;
+                     N:INTEGER)
+
+       procedura  "DEPOSIT"  zanosit  zna~enie   peremennoj
+  "DATA" w fajl "F" w ka~estwe N-ogo |lementa (zapisi). pri
+  neobhodimosti fajl ras{irqetsq.
+
+   PROCEDURE CLOSERANDOMFILE(VAR F:RANFIL)
+
+       dannaq   procedura   dolvna    ispolxzowatxsq    dlq
+  zakrywaniq fajla prqmogo dostupa (wmesto "CLOSE").
+
+        3.7. wwod/wywod s terminala
+
+       standartnyj paskalx trebuet,  ~toby  perwyj  |lement
+  fajla  byl  polu~en  w  programme  neposredstwenno  posle
+  raboty procedury "RESET" (bufernaq peremennaq F^ polu~aet
+  |to zna~enie nemedlenno). |to priwodit k slovnostqm, esli
+  w ka~estwe fajla ispolxzuetsq  terminal.  naprimer,  esli
+  whodnoj  fajl  po  umol~ani`  qwlqetsq   terminalom,   to
+  standart trebuet wwoda perwogo  znaka  ili  stroki  pered
+  zapuskom programmy na wypolnenie.
+
+       w paskalx/rafos ispolxzuetsq sledu`}ee re{enie  |toj
+  problemy.  kogda  wypolnqetsq   procedura   "RESET"   dlq
+  iteraktiwnogo terminala, to bufernaq peremennaq  polu~aet
+  zna~enie probela i "EOLN".  pri  |tom  realxnoj  operacii
+  wwoda ne proishodit. kavdyj sledu`}ij zapros "READ" posle
+  |togo dovidaetsq trebuemyh dannyh.
+
+       |to  pozwolqet  re{itx  bolx{instwo  iz  problem   s
+  terminalom   udowletworitelxnym   obrazom,   no   sleduet
+  ponimatx, ~to |to porovdaet nekotorye  drugie  trudnosti,
+  naprimer:
+
+
+         VAR LINE: ARRAY[1..72] OF CHAR
+             COUNT: INTEGER;
+         BEGIN
+             COUNT:=0;
+             WHILE NOT EOLN DO BEGIN
+                 COUNT:=COUNT+1;
+                 READ(LINE[COUNT])
+                 END;
+             READLN
+         END.
+
+       w priwedennom primere pokazywaetsq standartnaq shema
+  dlq ~teniq stroki znakow s terminala. kogda  |tot  sposob
+  primenqetsq  k  interaktiwnomu   fajlu,   to   newozmovno
+  otli~itx pustu` stroku i stroku, soderva}u` odin  probel.
+  |to swqzano s tem, ~to "EOLN" ne movet  bytx  ustanowlen,
+  poka ne  wstretitsq  znak  konca  stroki  dlq  zawer{eniq
+  zaprosa "READ".
+
+                4. dopolnitelxnye procedury
+
+        4.1. procedura "DISPOSE"
+
+       dannaq  procedura  byla  udalena   iz   standartnogo
+  paskalq,  no  whodit  w  sostaw  paskalx/rafos.   oblastx
+  pamqti,  oswobovdaemaq  "DISROSE",  movet  ispolxzowatxsq
+  proceduroj "NEW". kontrolx  za  zna~eniqmi  pri  |tom  ne
+  osu}estwlqetsq.
+
+       sleduet  otmetitx,  ~to  dlq   razli~nyh   wariantow
+  zapisej  w  wyzowah  "NEW"  i  "DISPOSE"   wydelqetsq   i
+  oswobovdaetsq maksimalxnaq  oblastx  pamqti,  neobhodimaq
+  dlq zapisi (w slu~ae peremennoj dliny).
+
+        4.2. funkciq "TIME"
+
+       funkciq  "TIME"  wozwra}aet  zna~enie   tipa   REAL,
+  sootwetstwu`}ee  wremeni  dnq  w  ~asah  posle  poluno~i.
+  to~nostx |toj funkcii ne menee odnoj sekundy, naprimer:
+
+     PROCEDURE WRITETIME;
+     VAR R:REAL;
+             HOURS,MINUTES:INTEGER;
+             AMPM: ARRAY [1..2] OF CHAR;
+     BEGIN
+       R:=TIME;
+       HOURS:=TRUNC(TIME);
+       MINUTES:=TRUNC((R-HOURS)*60.0);
+       IF HOURS > 12
+             THEN AMPM:='PM'
+             ELSE IF (HOURS = 12) AND (MINUTES = 0)
+               THEN AMPM:='M '
+               ELSE AMPM:='AM';
+       WRITE('AT THE TONE THE TIME WILL BE: ');
+       WRITE((HOURS+11) MOD 12 + 1 :2);
+       WRITE(':', MINUTES DIV 10:1,
+                  MINUTES MOD 10:1, AMPM:3);
+       WRITE(CHR(7));
+     END.
+
+        4.3. funkcii ehr10 i LOG
+
+       dannye funkcii analogi~ny standartnym funkciqm ehr i
+  LN, no po osnowani` 10.
+
+              5. nestandartnye |lementy qzyka
+
+        5.1. upakowannye peremennye
+
+       standartnyj  paskalx  sodervit  procedury  "PACK"  i
+  "UNPACK" dlq |ffektiwnoj raboty s upakowannymi dannymi. w
+  paskalx/rafos atribut "PACKED",  dopustimyj  w  standarte
+  ignoriruetsq, a ispolxzowanie procedur "rACK" i  "UNPACK"
+  nedopustimo.
+
+        5.2. fajly po umol~ani` dlq "READ" i "WRITE"
+
+       standartnyj  paskalx   sodervit   opredeleniq   dwuh
+  fajlowyh peremennyh "INPUT" i "OUTPUT", kotorye  qwlq`tsq
+  fajlami  po  umol~ani`  dlq  "READ"  i  "WRITE".  po|tomu
+  "READ(I)" |kwiwalentno "READ(INPUT,I)".  w  paskalx/rafos
+  peremennye   "INPUT"   i   "OUTPUT"   predwaritelxno   ne
+  opredeleny. w ka~estwe fajla  po  umol~ani`  ispolxzuetsq
+  terminal dlq procedur "READ" i "WRITE".
+
+        5.3. procedura "CLOSE" dlq wyhodnyh fajlow
+
+       w paskalx/rafos dlq  zawer{eniq  raboty  s  wyhodnym
+  fajlom wsegda neobhodimo ispolxzowatx proceduru  "CLOSE".
+  w  protiwnom  slu~ae  movno  poterqtx  poslednij   bufer,
+  kotoryj ne budet zapisan w fajl.
+
+        5.4. parametry procedur i funkcij
+
+       standartnye  procedury  i  funkcii  (oformlennye   w
+  qzyke) ne mogut peredawatxsq w ka~estwe  parametrow.  |to
+  ograni~enie  movno  obojti   putem   opredeleniq   wtoroj
+  procedury, kotoraq prosto wyzywaet standartnu`, naprimer:
+
+         FUNCTION SINE(X:REAL): REAL;
+         BEGIN SINE:=SIN(X) END;
+
+        5.5. fajl fajlow
+
+       paskalx/rafos  ne   pozwolqet   ispolxzowatx   fajly
+  fajlow. odnako movno primenqtx massiwy  fajlow,  a  takve
+  zapisi, soderva}ie w ka~estwe komponentow fajly.
+
+        5.6. konec fajla
+
+       w  rafos  fajl  predstawlqetsq   posledowatelxnostx`
+  blokow po  512  bajt  kavdyj.  pri  |tom  w  konce  fajla
+  otsutstwuet priznak konca fajla. po|tomu funkciq "EOF" ne
+  wsegda obespe~iwaet  prawilxnu`  indikaci`  konca  fajla.
+  re{itx |tu problemu movno, ispolxzuq  s~et~ik  zapisej  w
+  fajle ili putem ispolxzowaniq simwolxnoj zapisi,  kotoraq
+  budet wystupatx w ka~estwe priznaka konca.
+
+       dannaq problema ne  otnositsq  k  tekstowym  fajlam,
+  kotorye  w  ka~estwe  priznaka  konca   ispolxzu`t   znak
+  <CTRL/Z>.
+
+                 6. osobennosti realizacii
+
+        6.1. identifikatory
+
+       paskalx/rafos dopuskaet l`bu` dlinu identifikatorow,
+  pri~em wse  znaki  qwlq`tsq  zna~imymi.  znaki  kirillicy
+  mogut takve ispolxzowatxsq, no  budut  interpretirowatxsq
+  kak i sootwetstwu`}ie latinskie. sleduet zametitx, ~to  w
+  standarte paskalq rekomenduetsq, ~toby  perwye  8  znakow
+  identifikatorow byli unikalxnymi.
+
+       w swqzi s ograni~eniqmi na format ob'ektnogo  modulq
+  identifikatory wne{nih fortranowskih procedur dolvny bytx
+  unikalxnymi po  perwym  6  znakam  (t.e.  razli~atxsq  po
+  perwym 6 znakam).
+
+        6.2. standartnyj tip "INTEGER"
+
+       standartnyj    tip    "INTEGER"    imeet    diapazon
+  (-32768..32767). bezznakowye celye mogut bytx ob'qwleny s
+  pomo}x`  diapazona  (0..65535).  sleduet   pomnitx,   ~to
+  arifmeti~eskie  perepolneniq  opredelq`tsq   tolxko   pri
+  umnovenii i delenii znakowyh celyh.
+
+       dlq    celyh    ~isel    opredelen     identifikator
+  MAXINT=32767.
+
+        6.3. standartnyj tip "REAL"
+
+       paskalx/rafos ispolxzuet standartnyj format ~isel  s
+  plawa`}ej zapqtoj odinarnoj (oby~noj) to~nosti dlq sm |wm
+  (dwk2, dwk3). we}estwennye ~isla  (REAL)  ime`t  diapazon
+  1e-38..1e+38 i  to~nostx  porqdka  7  desqti~nyh  znakow.
+  arifmeti~eskie   perepolneniq   opredelq`tsq   dlq   wseh
+  operacij,  a  poterq  zna~imosti  ne  diagnostiruetsq   i
+  priwodit k nulewomu rezulxtatu.
+
+       standartnye transcendentnye funkcii  ime`t  to~nostx
+  do 6 desqti~nyh cifr.
+
+        6.4. mnovestwo znakow (koi-7)
+
+       paskalx/rafos ispolxzuet polnyj nabor znakow  koi-7.
+  kavdyj znak hranitsq w odnom bajte  (8  razrqdow).  takim
+  obrazom   rezulxtat   ORD(CHAR)   budet    w    diapazone
+  (-128..127).
+
+        6.5. maksimalxnyj razmer mnovestwa
+
+       standartnyj   paskalx    rekomenduet    ograni~iwatx
+  maksimalxnoe ~islo |lementow  mnovestwa,  ~toby  dobitxsq
+  wysokoj |ffektiwnosti. w  paskalx/rafos  ~islo  |lementow
+  mnovestwa ne movet prewy{atx 64.
+
+       w  paskalx/rafos  opredeleno  standartnoe  mnovestwo
+  "SET    OF    CHAR",    ~to    |kwiwalentno    "SET    OF
+  SRACE..UNDERLINE",    gde    SPACE    =    CHR(40B)     i
+  UNDERLINE=CHR(137B).
+
+       takim  obrazom,  "SET  OF  SHAR"  ne  wkl`~aet  bukw
+  kirillicy i uprawlq`}ih znakow, ime`}ih kody menee 40w.
+
+        6.6. wlovennostx procedur
+
+       sintaksi~eski wlovennostx  procedur  ne  movet  bytx
+  bolee 10. pri wypolnenii na wlovennostx ne  nakladywaetsq
+  ograni~enij, no bolx{aq wlovennostx  pri  rekursii  movet
+  priwesti k is~erpywani` rabo~ej pamqti.
+
+        6.7. wlovennostx operatora "WITH"
+
+       operator "WITH" movet imetx urowenx  wlovennosti  ne
+  wy{e 4. esli slovnye wyraveniq ispolxzu`tsq wnutri  |togo
+  operatora, to urowenx wlovennosti movet bytx ne  bolee  2
+  ili 3.
+
+            7. zarezerwirowannye identifikatory
+
+  CONSTANTS (konstanty)
+         ALFALENG        dlina 'ALFA' = 10
+         FALSE,TRUE
+         MAXINT          maksimalxnoe celoe (32767)
+
+  TYPES (tipy)
+         ALFA            ARRAY[1..10] OF CHAR
+         BOOLEAN
+         CHAR
+         INTEGER
+         REAL
+         TEXT            FILE OF CHAR
+
+  FUNCTIONS (funkcii)
+         ABS
+         ARCTAN
+         CHR
+         COS
+         EOF
+         EOLN
+         EXP
+         EXP10           |ksponenta po osnowani` 10
+         LN
+         LOG             logarifm po osnowani` 10
+         ODD
+         ORD
+         PRED
+         ROUND
+         SIN
+         SQR
+         SQRT
+         SUCC
+         TRUNC
+         TIME            wremq dnq
+
+ PROCEDURES (procedury)
+         BREAK           wywesti nedozapolnennyj bufer
+         CLOSE           zakrytx fajl
+         DISPOSE         oswoboditx dinami~esku` pamqtx
+         GET
+         NEW
+         PAGE
+         PUT
+         RESET
+         REWRITE
+         READ
+         READLN
+         WRITE
+         WRITELN
+
+                 8. zarezerwirowannye slowa
+
+         ARRAY                   AND
+         BEGIN                   CONST
+         CASE                    DOWNTO
+         DIV                     DO
+         EXTERNAL                EXIT
+         ELSE                    END
+         FORTRAN                 FORWARD
+         FILE                    FUNCTION
+         FOR                     GOTO
+         IN                      IF
+         LABEL                   MOD
+         NIL                     NOT
+         ORIGIN                  OF
+         OR                      PACKED
+         PROGRAM                 PROCEDURE
+         RECORD                  REPEAT
+         SET                     TYPE
+         THEN                    TO
+         UNTIL                   VAR
+         WITH                    WHILE
+
+                           

@@ -50,6 +50,32 @@ files    = ["software/development/pascal/PASCAL.LST",
             "software/development/pascal/PASUSE.LST",
             { path = "software/development/pascal/PASGR.DOC", date = "1995-05-15" }]
 
+[bundle.pascal-sm4]
+group    = "Development"
+title    = "Pascal SM-4 - the RAFOS compiler with its run-time library"
+requires = ["macro11", "link"]               # it emits MACRO-11, LINK binds PASCAL.OBJ
+prefer   = { mihin = ["macro-mihin", "link-mihin"], default = ["macro-vvv", "link-rt11"] }
+date     = "1992-08-08"
+files    = ["software/development/pascal-sm4/PASCAL.SAV",
+            "software/development/pascal-sm4/PASCAL.OBJ"]
+
+[bundle.pascal-sm4-docs]
+group    = "Development"
+title    = "Pascal SM-4 manuals - PASCAL.RUK, PASCAL.LAN"
+date     = "1988-11-29"
+requires = ["pascal-sm4"]
+volume   = "any"
+files    = ["software/development/pascal-sm4/PASCAL.RUK",
+            "software/development/pascal-sm4/PASCAL.LAN"]
+
+[bundle.tetris-pas]
+group    = "Development"
+title    = "TETRIS.PAS - the RT-11 Tetris's source, reconstructed: PASCAL, MACRO, LINK, RUN"
+requires = ["pascal-sm4"]
+volume   = "any"
+date     = "1992-08-08"     # written for the collection in 2026: the compiler's date
+files    = ["programs/tetris/TETRIS.PAS"]
+
 [bundle.forlib]
 group    = "Development"
 title = "FORLIB.OBJ - the FORTRAN IV run-time library"
