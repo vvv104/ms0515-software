@@ -1770,7 +1770,7 @@ a sprite-file viewer: asks for a file of 8-word sprites and draws them with SETS
 
 </details>
 
-<details open><summary><b>software/</b> — 162 files</summary>
+<details open><summary><b>software/</b> — 166 files</summary>
 
 <details><summary><b>software/apps/</b> — 38 files</summary>
 
@@ -2020,7 +2020,7 @@ Joins databases of the same shape; part of RBD-MIKRO
 
 </details>
 
-<details><summary><b>software/development/</b> — 27 files</summary>
+<details><summary><b>software/development/</b> — 31 files</summary>
 
 ### `software/development/LINK.SAV`
 
@@ -2193,6 +2193,34 @@ SetPixel for the 640x200 hi-res screen written straight against the hardware: th
 String library for OMSI Pascal (which has no string type): STRING = array[1..79] of char with STRINIT, STRLENG, STRREAD (raw keyboard input through the external KBMODE/INKEY of PASGRF, with backspace editing), STRWRITE, STRDELETE, STRINSERT and VAL (string to real with an error position); ends with a small self-test main
 
 *disks: 2; identified from: read from the source 2026-09-06; sha256 7810b7a6abab*
+
+</details>
+
+<details><summary><b>software/development/pascal-sm4/</b> — 4 files</summary>
+
+### `software/development/pascal-sm4/PASCAL.SAV`
+
+Pascal SM-4, the RAFOS compiler: reads PROG.PAS and writes PROG.MAC (MACRO-11) and a listing; RUN PASCAL PROG=PROG, then MACRO and LINK PROG=PROG,PASCAL. Not from an MS 0515 diskette: PASSAV.NEW of the UKNC image pascal.dsk (and sys52.dsk), 1992, a newer build beside an older PASCAL.SAV; shipped under the name it works by, the one the manual gives and the same compiler has on the DVK image DSKMXC.DSK. The compiler the RT-11 Tetris was built with
+
+*text; en / ascii; cross-run: ran — compiled, assembled, linked and ran a program (TETRIS.PAS) under dec, omega, osa, mihin, rodionov 2026-10-20; disks: 0 (not from an MS 0515 diskette); identified from: DVK/UKNC archive (archive.pdp-11.org.ru ukdwk_archive), ukncbtlwebcomplekt/pascal/pascal.dsk; sha256 aea900645b08*
+
+### `software/development/pascal-sm4/PASCAL.OBJ`
+
+Run-time library of Pascal SM-4, V1.2G: every compiled program is linked with it; no EIS or FIS needed (software MUL/DIV, the floating-point instructions emulated). PASOBJ.NEW on its disks
+
+*en / ascii; disks: 0 (not from an MS 0515 diskette); identified from: DVK/UKNC archive (archive.pdp-11.org.ru ukdwk_archive), ukncbtlwebcomplekt/pascal/pascal.dsk; sha256 1757fd18aa70*
+
+### `software/development/pascal-sm4/PASCAL.RUK`
+
+«Программное обеспечение ДВК. Операционная система с разделением функций РАФОС. Паскаль. Руководство программиста», 1987: the command line, the keys, MACRO inserts (*$C*), external procedures, the run-time's messages
+
+*ru / koi7; disks: 0 (not from an MS 0515 diskette); identified from: DVK/UKNC archive (archive.pdp-11.org.ru ukdwk_archive), dwkwebcomplekt/Algol_C_F77_Pascal_Lisp/PASCAL.DSK; sha256 96f8ab939558*
+
+### `software/development/pascal-sm4/PASCAL.LAN`
+
+«... РАФОС. Паскаль. Описание языка», 1987: the language after Wirth's Revised Report, and the RAFOS implementation's features
+
+*ru / koi7; disks: 0 (not from an MS 0515 diskette); identified from: DVK/UKNC archive (archive.pdp-11.org.ru ukdwk_archive), dwkwebcomplekt/Algol_C_F77_Pascal_Lisp/PASCAL.DSK; sha256 10d801643f35*
 
 </details>
 

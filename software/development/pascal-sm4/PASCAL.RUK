@@ -1,0 +1,1732 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                programmnoe obespe~enie dwk
+          operacionnaq sistema s razdeleniem funkcij
+
+                        r  a  f  o  s
+
+
+                           paskalx
+
+
+
+                   rukowodstwo programmista
+
+
+
+
+                          listow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             1987
+ 
+                          annotaciq
+
+        w  dannom  dokumente  sodervitsq  ob}aq  informaciq,
+   neobhodimaq programmistu dlq raboty s  qzykom  paskalx  w
+   operacionnoj sisteme rafos i wo wstraiwaemyh bezoperacion-
+   nyh sistemah.
+
+                          sodervanie
+
+       annotaciq ........................................ 
+
+   1.  nazna~enie i uslowiq primeneniq................... 
+
+   2.  harakteristiki programmy.......................... 
+
+   3.  obra}enie. whodnye i wyhodnye dannye.............. 
+
+   3.1.   kl`~ "D"....................................... 
+   3.2.   kl`~ "E"....................................... 
+   3.3.   kl`~ "F"....................................... 
+   3.4.   kl`~ "L"....................................... 
+   3.5.   kl`~ "N"....................................... 
+   3.6.   kl`~ "S"....................................... 
+   3.7.   ispolxzowanie kl`~ej w tekste programmy........ 
+   3.8.   kl`~ "A"....................................... 
+   3.9.   kl`~ "T"....................................... 
+   3.10.  kl`~ "C"....................................... 
+   3.11.  listing programmy.............................. 
+   3.12.  diagnostika o{ibok translqcii.................. 
+
+   4.  translqciq programmy makroassemblerom............. 
+
+   5.  komponowka programmy na qzyke paskalx.............
+
+   6.  zapusk i wypolnenie programmy.....................
+
+   7.  soob}eniq.........................................
+
+   8.  translqciq wne{nih procedur.......................
+
+   10. programma PASIMP..................................
+
+   10.1.  wyzow i zagruzka...............................
+   10.2.  soob}eniq programmy PASIMP.....................
+
+   11. nabor programm dlq programmirowaniq wwoda/wywoda w 
+       awtonomnyh sistemah..............................
+
+   prilovenie 1   spisok komand otlad~ika............... 
+
+
+
+              1. nazna~enie i uslowiq primeneniq
+
+        sozdanie   i   wypolnenie   programmy    na    qzyke
+   paskalx/rafos movet bytx wypolneno  s  pomo}x`  sledu`}ih
+   {agow:
+
+          - sozdanie ishodnogo fajla s tekstom programmy  na
+            qzyke paskalx;
+
+          - translqciq programmy na qzyk makroassembler;
+
+          - translqciq polu~ennogo teksta na makroassemblere
+            w ob'ektnyj kod;
+
+          - komponowka odnogo modulq (ili neskolxkih) wmeste
+            s modulqmi ispolnq`}ej sistemy  paskalx/rafos  w
+            programmu formata zagruzki;
+
+          - zapusk i wypolnenie polu~ennoj programmy.
+
+        protokol primera dejstwij, pere~islennyh wy{e, movet
+   imetx sledu`}ij wid:
+
+          .EDP DEMO
+            ...           ! sozdanie ili  redaktirowanie fajla
+            ...           ! s  tekstom  programmy
+          .R PASCAL
+          *DEMO=DEMO
+          .R MACRO
+          *DEMO=DEMO
+          *^C
+          .R LINK
+          *DEMO=DEMO,PASCAL
+          *^C
+          .RUN DEMO
+            ...           ! wypolnenie polu~ennoj programmy
+			  ! w srede rafos
+
+        w sledu`}ih razdelah dokumenta priwedennye procedury
+   budut opisany bolee podrobno.
+
+        dlq raboty s qzykom paskalx w  operacionnoj  sisteme
+   rafos rekomenduetsq, ~toby w sostawe kompleksa nahodilosx
+   operatiwnoe zapomina`}ee ustrojstwo (pamqtx) emkostx`  ne
+   menee 16k  slow.  w  processe  raboty  na  diskah  dolvny
+   nahoditxsq sledu`}ie fajly:
+
+   SY:PASCAL.SAV
+          - kompilqtor;
+
+   DK:PASCAL.OBJ
+          - ispolnq`}aq sistema paskalq;
+
+   SY:PASIMP.SAV
+          - optimizator;
+
+   SY:EMUL.OBJ
+          - FIS/EIS |mulqtor dlq awtonomnoj raboty
+
+   SY:ROOT.OBJ
+          - qdro dlq awtonomnoj raboty
+
+        dopolnitelxno k pere~islennym  fajlam  na  sistemnom
+   diske dolvny nahoditxsq programmy MACRO.SAV i LINK.SAV.
+
+                 2. harakteristiki programmy
+
+        ishodnyj  fajl  s   tekstom   programmy   na   qzyke
+   paskalx/rafos qwlqetsq oby~nym tekstowym fajlom w  smysle
+   sistemy  rafos.  dlq sozdanie  ishodnogo  fajla  rekomen-
+   duetsq ispolxzowatx specredaktor EDP.
+         operator  qzyka   paskalx   movet   razme}atxsq   na
+   neskolxkih   strokah.    neskolxko    operatorow    mogut
+   razme}atxsq na odnoj stroke. probely  i  znaki  tabulqcii
+   <TAB>  mogut  ispolxzowatxsq  w  l`bom  meste   i   l`bom
+   koli~estwe dlq ulu~{eniq wospriqtiq  algoritma  programmy
+   (ee naglqdnosti), a takve i dlq  celi  wydeleniq  blo~noj
+   struktury programmy.  kompilqtor  s  qzyka  paskalx/rafos
+   ignoriruet   znaki   probelow   i   tabulqcii,    kotorye
+   ispolxzu`tsq dlq formatirowaniq programmy.
+         dlq  wydeleniq  (razdeleniq)  otdelxnyh  stranic   w
+   listinge  programmy  mogut  ispolxzowatxsq   znaki   <FF>
+   (analogi~no programmam na makroassemblere).
+
+           3. obra}enie. whodnye i wyhodnye dannye
+
+        kompilqtor paskalx/rafos ispolxzuet tekst  programmy
+   w ka~estwe whodnogo fajla.  wo  wremq  raboty  kompilqtor
+   sozdaet fajl s tekstom programmy na qzyke makroassembler.
+   dopolnitelxno k |tomu wyhodnomu fajlu  movet  sozdawatxsq
+   (no ne obqzatelxno) fajl s listingom, naprimer:
+
+          .R PASCAL
+          *PROG,PROG=PROG
+
+   priwodit k translqcii programmy na qzyke paskalx iz fajla
+   PROG.PAS  i  sozdani`  fajla  PROG.MAC   s   tekstom   na
+   makroassemblere i fajla PROG.LST s listingom.
+
+        w komandnoj stroke kompilqtora movno qwno  ukazywatx
+   imena  ustrojstw  i   kl`~i,   uprawlq`}ie   translqciej,
+   naprimer:
+
+          .R PASCAL
+          *PROG,LP:/N=PROG
+
+   wyzowet translqci` programmy PROG.PAS s polu~eniem  fajla
+   PROG.MAC i listinga na ustrojstwe pe~ati  (LP:).  listing
+   budet  sodervatx  tolxko  stroki  programmy,   soderva}ie
+   o{ibki i diagnosti~eskie  soob}eniq  (ukazywaetsq  kl`~om
+   "N").
+
+        esli listing woob}e polu~atx ne  nuvno,  to  sleduet
+   ispolxzowatx, naprimer, sledu`}u` komandu:
+
+          .R PASCAL
+          *PROG=PROG
+
+        s pomo}x` kl`~ej, ispolxzuemyh  w  komandnoj  stroke
+   i/ili  tekste  programmy,   movno   uprawlqtx   processom
+   translqcii.
+
+        p_r_i_m_e_~_a_n_i_e.    nekotorye    kl`~i     mogut
+   ispolxzowatxsq tolxko w tekste programmy.
+         3.1. kl`~ "D"
+
+        ispolxzowanie dannogo kl`~a priwodit k  wkl`~eni`  w
+   transliruemu` programmu  informacii  dlq  otlad~ika.  |ta
+   informaciq sodervit imena peremennyh i procedur, a  takve
+   nomera  operatorow.  w  dopolnenie  k  |tomu  w  processe
+   komponowki w sostaw programmy budet awtomati~eski wkl`~en
+   otlad~ik iz biblioteki ispolnq`}ej sistemy paskalx/rafos.
+
+        ispolxzowanie dannogo kl`~a s  kl`~em  "S"  pozwolit
+   otlad~iku ustanowitx sootwetstwie  nomerow  operatorow  i
+   ishodnogo teksta programmy iz listinga.  po|tomu  w  |tom
+   slu~ae nuvno wsegda sozdawatx fajl s listingom  programmy
+
+         3.2. kl`~ "E"
+
+        kl`~  ispolxzuetsq  dlq  togo,   ~toby   opredelenie
+   procedury posle translqcii  stalo  wne{nim.  procedury  i
+   funkcii, kotorye w tele programmy opisany kak globalxnye,
+   dolvny translirowatxsq otdelxno ot osnownoj programmy i s
+   ispolxzowaniem kl`~a "E",  t.e.  kak  wne{nie.  perwye  6
+   simwolow   (znakow)   imeni   procedury    ili    funkcii
+   ispolxzu`tsq  dlq  opredeleniq  w  ka~estwe   globalxnogo
+   simwola   to~ki   whoda   (metku)   dlq   sootwetstwu`}ej
+   podprogrammy.
+
+         3.3. kl`~ "F"
+
+        ispolxzowanie   |togo   kl`~a   pozwolqet   uskoritx
+   wypolnenie  dejstwij  nad  operandami  tipa  REAL,   t.e.
+   arifmeti~eskie operacii nad ~islami w formate s plawa`}ej
+   zapqtoj.  |ta  optimizaciq   movet   ispolxzowatxsq   dlq
+   processorow tipa sm-3, no ne sm-4  i  sm-1420  (w  sostaw
+   kotoryh whodit processor s plawa`}ej  zapqtoj  ili  nabor
+   instrukcij   s    plawa`}ej    zapqtoj,    sootwetstwenno
+   obozna~aemye, kak FPU i  FIS).  optimizaciq  po  skorosti
+   wypolneniq osu}estwlqetsq za s~et generacii  kompilqtorom
+   sootwetstwu`}ih wyzowow podprogramm. w tom  slu~ae,  esli
+   kl`~  "F"  ne  ispolxzuetsq,  to  kompilqtor   generiruet
+   ma{innye instrukcii dlq raboty s plawa`}ej zapqtoj, a pri
+   wypolnenii programmy ispolnq`}aq sistema osu}estwlqet  ih
+   |mulqci`. wremq, zatra~iwaemoe na |mulqci`,  bolx{e,  ~em
+   wypolnenie instrukcij obra}eniq k podprogrammam.
+
+        odnako ispolxzowanie kl`~a "F" priwodit k uweli~eni`
+   razmera programmy w operatiwnoj pamqti.
+
+      3.4. kl`~ "L"
+
+        dannyj kl`~  razre{aet  polnu`  raspe~atku  listinga
+   teksta   programmy   na   qzyke   paskalx.    on    movet
+   ispolxzowatxsq w komandnoj stroke i ishodnom  fajle  (sm.
+   podrazdel  3.5  nastoq}ego  dokumenta)  dlq  wkl`~eniq  w
+   listing teksta programmy.
+
+         3.5. kl`~ "N"
+
+        dannyj kl`~ zapre}aet  raspe~atku  ishodnogo  teksta
+   programmy (operatorow)  w  fajl  listinga  za  iskl`~enie
+   strok (i, sootwetstwenno, operatorow), soderva}ih o{ibki.
+
+         3.6. kl`~ "S"
+
+        |tot  kl`~  priwodit  k  wkl`~eni`  w   generiruemyj
+   kompilqtorom   tekst   na   makroassemblere    operatorow
+   ishodnogo qzyka w  ka~estwe  kommentariew.  ispolxzowanie
+   dannogo  kl`~a  obleg~aet  analiz  teksta  programmy   na
+   makroassemblere.
+
+        kl`~ "S" neskolxko modificiruet dejstwie kl`~a  "D",
+   kak bylo opisano wy{e.
+
+         3.7. ispolxzowanie kl`~ej w tekste programmy
+
+        wse    kl`~i,    rassmotrennye    wy{e,    dopuska`t
+   ispolxzowanie ih w tekste programmy.  |to  osu}estwlqetsq
+   ispolxzowaniem  kommentariew  specialxnogo  wida.  perwym
+   znakom kommentariq dolven bytx "$". sledu`}ij znak dolven
+   sowpadatx s simwoli~eskim obozna~eniem  kl`~a,  naprimer,
+   "(*$S*)" priwodit k wkl`~eni` w tekst na  makroassemblere
+   ishodnyh operatorow w ka~estwe kommentariew.
+
+        za mnemonikoj kl`~a movet  ispolxzowatxsq  znak  "+"
+   ili "-". |ti znaki prednazna~eny dlq "wkl`~eniq" dejstwiq
+   kl`~a (+) ili "wykl`~eniq" (-), t.e. otmeny ego dejstwiq.
+
+        kl`~i "A", "T" i  "C"  mogut  ispolxzowatxsq  tolxko
+   wnutri  teksta  programmy,  i  ne  mogut  primenqtxsq   w
+   komandnoj stroke.
+
+            3.8. kl`~ "A"
+
+           dannyj   kl`~   otmenqet   generaci`   prowerok   na
+      dopustimostx zna~enij indeksow pri rabote s  massiwami  -
+      (*$A-*).   oby~no   kompilqtor   generiruet   instrukcii,
+      prowerq`}ie  wyhod  zna~enij   indeksow   za   dopustimye
+      granicy. esli generaciq prowerok zapre}ena, to  programma
+      budet zanimatx  neskolxko  menx{e  operatiwnoj  pamqti  i
+      budet wypolnqtxsq neskolxko bystree.
+
+            3.9. kl`~ "T"
+
+           kl`~   (*$T-*)   zapre}aet   generaci`   instrukcij,
+      prowerq`}ih perepolnenie  steka.  sqkij  raz  pri  wyzowe
+      procedury  stek  prowerqetsq   na   nali~ie   mesta   dlq
+      razme}eniq lokalxnyh peremennyh. otkaz  ot  ispolxzowaniq
+      prowerok steka nezna~itelxno umenx{aet razmer operatiwnoj
+      pamqti, zanimaemoj programmoj, i ubystrqet ee wypolnenie.
+
+           3.10. kl`~ "C"
+
+           specialxnyj wid kommentariew  pozwolqet  wkl`~atx  w
+      tekst programmy  na  qzyke  paskalx  fragmenty  na  qzyke
+      makroassembler.   |to    osu}estwlqetsq    kl`~om    "C",
+      ispolxzuemym    w    na~ale    kommentariq.    kompilqtor
+      paskalx/rafos analiziruet whodnye stroki  makroassemblera
+      dlq opredeleniq ssylok  na  sootwetstwu`}ie  parametry  i
+      peremennye.  naprimer,  dlq  togo,   ~toby   ispolxzowatx
+      zna~enie globalxnoj peremennoj "ABC", nuvno obra}atxsq  k
+      nej s  pomo}x`  "ABC(R5)",  a  dlq  dostupa  k  lokalxnoj
+      peremennoj ili parametru procedury "XYZ"  -  ispolxzowatx
+      zapisx "XYZ(SP)":
+
+        (*$C
+             TST     ABC(R5)        ;peremennaq ABC # 0 ?
+             BNE     10$            ;da
+             MOV     XYZ(SP),R0     ;polu~itx zna~enie XYZ w R0
+             ADD     #123.,R0       ;pribawitx 123 k R0
+             MOV     R0,@#100       ;zapisatx R0 po absol`tnomu
+                                    ; adresu
+      10$:   INC     XYZ(SP)        ;uweli~itx na 1 peremennu`
+                                    ; XYZ
+        *)
+
+        3.11. listing programmy
+
+        listing,  sozdawaemispolxzowanie ih w tekste programmy.  |to  osu}estwlqetsq
+   ispolxzowaniem  kommentariew  specialxnogo  wida.  perwym
+   znakom kommentariq dolven bytx "$". sledu`}ij znak dolven
+   sowpadatx s simwoli~eskim obozna~eniem  kl`~a,  naprimer,
+   "(*$S*)" priwodit k wkl`~eni` w tekst na  makroassemblere
+   ishodnyh operatorow w ka~estwe kommentariew.
+
+        za mnemonikoj kl`~a movet  ispolxzowatxsq  znak  "+"
+   ili "-". |ti znaki prednazna~eny dlq "wkl`~eniq" dejstwiq
+   kl`~a (+) ili "wykl`~eniq" (-), t.e. otmeny ego dejstwiq.
+
+        kl`~i "A", "T" i  "C"  mogut  ispolxzowatxsq  tolxko
+   wnutri  teksta  programmy,  i  ne  mogut  primenqtxsq   w
+   komandnoj stroke.
+
+            3.8. kl`~ "A"
+
+           dannyj   kl`~   otmenqet   generaci`   prowerok   na
+      dopustimostx zna~enij indeksow pri rabote s  massiwami  -
+      (*$A-*).   oby~no   kompilqtor   generiruet   instrukcii,
+      prowerq`}ie  wyhod  zna~enij   indeksow   za   dopustimye
+      granicy. esli generaciq prowerok zapre}ena, to  programma
+      budet zanimatx  neskolxko  menx{e  operatiwnoj  pamqti  i
+      budet wypolnqtxsq neskolxko bystree.
+
+            3.9. kl`~ "T"
+
+           kl`~   (*$T-*)   zapre}aet   generaci`   instrukcij,
+      prowerq`}ih perepolnenie  steka.  sqkij  raz  pri  wyzowe
+      procedury  stek  prowerqetsq   na   nali~ie   mesta   dlq
+      razme}eniq lokalxnyh peremennyh. otkaz  ot  ispolxzowaniq
+      prowerok steka nezna~itelxno umenx{aet razmer operatiwnoj
+      pamqti, zanimaemo dostupnoj  iz  osnownoj  programmy,  t.e.  iz
+   urownq 1.
+
+        w tretxej  kolonke  otme~aetsq  urowenx  wlovennosti
+   blokow operatorow, ograni~ennyh "BEGIN" i "END".  drugimi
+   slowami operatory tipa  "BEGIN"  i  "REPEAT"  priwodqt  k
+   uweli~eni`  na  1  nomera  urownq  wlovennosti,  poka  ne
+   wstretitsq  sootwetstwu`}ij  "END"  ili  "UNTIL".   takim
+   obrazom nomera urownej wlovennosti  mogut  ispolxzowatxsq
+   dlq analiza programmistom  ob}ej  struktury  programmy  s
+   to~ki zreniq wlovennosti blokow.
+
+        3.12. diagnostika o{ibok translqcii
+
+        pri  obnaruvenii  o{ibki   w   processe   translqcii
+   kompilqtor otme~aet o{ibo~nu` stroku neskolxkimi  znakami
+   "*"  w  lewoj  ~asti   listinga,   za   kotorym   sleduet
+   poqsnitelxnyj tekst. znakom "^"  otme~aetsq  to  mesto  w
+   stroke, kotoroe priwelo k obnaruveni` o{ibki.
+
+        grubye  o{ibki,  naprimer,   w   blo~noj   strukture
+   programmy,  mogut  wyzwatx  celyj  rqd  (cepo~ku)  drugih
+   o{ibok. w |tom slu~ae isprawlenie perwoj o{ibki  priwedet
+   k "is~eznoweni`"  wseh  ostalxnyh  o{ibok.  ispolxzowanie
+   kl`~a "N" pri sozdanii listinga priwedet  k  polu~eni`  w
+   listinge tolxko strok  programmy,  w  kotoryh  obnaruveny
+   o{ibki, naprimer:
+
+          .R PASCAL
+          *PROG,LP:/N=PROG
+
+        ob}ee ~islo o{ibok, obnaruvennyh wo wremq translqcii
+   raspe~atywaetsq w konce listinga. odnowremenno  wywoditsq
+   ob'em    operatiwnoj     pamqti,     kotoraq     ostalasx
+   neispolxzowannoj   do   konca   translqcii.   analogi~naq
+   informaciq wywoditsq na |krane sistemnogo terminala.
+
+        wozmovny sledu`}ie soob}eniq ob o{ibkah:
+
+   OVERFLOW.
+          - perepolnenie;
+
+   MISSING END
+          - propu}eno "END";
+
+   TOO MANY SYMBOLS
+          - sli{kom mnogo peremennyh i procedur;
+
+   TOO MANY LEVELS
+          - sli{kom mnogo  urownej  wlovennosti  procedur  i
+            funkcij;
+
+   TOO MANY WARNINGS
+          - sli{kom mnogo preduprevdenij;
+
+   INPUT LINE TOO LONG
+          - dlinnaq whodnaq stroka;
+
+   INVALID CHARACTER
+          - nedopustimyj znak wstretilsq na stroke;
+
+   8 OR 9 IN OCTAL CONSTANT
+          - w wosxmeri~noj konstante  obnaruvilisx  cifry  8
+            ili 9;
+
+   LABELS MUST BE INTEGERS
+          - w ka~estwe metok dopustimo  ispolxzowatx  tolxko
+            celye ~isla;
+
+   CONSTANT OVERFLOW
+          - w   programme   sli{kom   mnogo   konstant;    w
+            kompilqtore ne  hwataet  pamqti  dlq  razme}eniq
+            wseh konstant;
+
+   MISSING LABEL DEFINITION
+          - otsutstwuet opredelenie metki;
+
+   UNDEFINED FORWARD PROCEDURE OR FUNCTION
+          - nedopustimo ispolxzowatx proceduru  ili  funkci`
+            prevde, ~em oni budut opredeleny;
+
+   BAD PROGRAM NAME
+          - nedopustimoe imq programmy;
+
+   IMPROPER SYMBOL
+          - nedopustimyj simwol;
+
+   MISSING BEGIN
+          - propu}eno "BEGIN";
+
+   MISSING '.' AT PROGRAM END
+          - w konce programmy otsutstwuet ".";
+
+   ALL VAR DEFINITIONS PRECEED PROCEDURE DEFINTIONS
+          - opredeleniq wseh peremennyh dolvny nahoditxsq  w
+            programme pered opredeleniem procedur;
+
+   BAD ORIGIN FOR VARIABLE
+          - nedopustimoe na~alxnoe zna~enie dlq peremennoj;
+
+   BAD VARIABLE LIST
+          - nedopustimyj spisok peremennyh;
+
+   BAD TYPE
+          - nedopustimoe opredelenie tipa;
+
+   BAD LABEL
+          - neprawilxnaq metka;
+
+   BAD FUNCTION NAME
+          - nedopustimoe imq dlq funkcii;
+
+   BAD PROCEDURE NAME
+          - nedopustimoe imq dlq procedury;
+
+   BAD FUNCTION RESULT TYPE
+          - nedopustimyj tip rezulxtata funkcii;
+
+   FORTRAN PARAM. MUST BE CALL BY REFERENCE
+          - fortranowskij     parametr     dolven     wsegda
+            peredawatxsq po ssylke;
+
+   DON'T REPEAT PARAMETER LIST
+          - ne   sleduet   ukazywatx    spisok    formalxnyh
+            parametrow bolee odnogo raza;
+
+   ',' USED INSTEAD OF ';'
+          - "," byla ispolxzowana wmesto ";";
+
+   MISSING ')' AT END OF PARAM LIST
+          - propu}ena  ")"   w   konce   spiska   formalxnyh
+            parametrow;
+
+   BAD PARAMETER
+          - nedopustimyj formalxnyj parametr;
+
+   BAD SCALAR TYPE
+          - nedopustimyj skalqrnyj tip;
+
+   BAD SUBRANGE
+          - nedopustimoe ukazanie interwala;
+
+   BAD TYPE SPECIFICATION
+          - nedopustimoe opredelenie (ukazanie) tipa;
+
+   ARRAY INDEX TYPE ERROR
+          - o{ibka w zadanii tipa indeksa dlq massiwa;
+
+   BAD RECORD
+          - nedopustimaq zapisx;
+
+   BAD FIELD LIST
+          - nedopustimoe opredelenie spiska polej;
+
+   FIELD LIST MUST BE IN PARENTHESES
+          - spisok polej dolven ukazywatxsq w skobkah;
+
+   BAD VARIANT
+          - nedopustimyj wariant;
+
+   DUPLICATE FIELD NAME
+          - powtorno ispolxzuetsq imq dlq polq zapisi;
+
+   BAD CONSTANT
+          - nedopustimaq konstanta;
+
+   LABEL NOT DECLARED
+          - ispolxzuetsq neopredelennaq metka;
+
+   LABEL REDEFINITION
+          - pereopredelenie metki nedopustimo;
+
+   LABEL DEFINED AT WRONG LEVEL
+          - opredelenie metki na neprawilxnom urowne;
+
+   UNDEFINED SYMBOL
+          - neopredelennyj simwol;
+
+   MISSING SEMI-COLON
+          - propu}ena ";";
+
+   INVALID DECLARATION. PROBABLY MISSING END
+          - nedoputimyj operator;  wozmovno,  ~to  propu}eno
+            "END";
+
+   ',' USED INSTEAD OF ';'
+          - "," byla ispolxzowana wmesto ";";
+
+   MISSING ')' AT END OF PARAM LIST
+          - propu}ena  ")"   w   konce   spiska   formalxnyh
+            parametrow;
+
+   BAD PARAMETER
+          - nedopustimyj formalxnyj parametr;
+
+   BAD SCALAR TYPE
+          - nedopustimyj skalqrnyj tip;
+
+   BAD SUBRANGE
+          - nedopustimoe ukazanie interwala;
+
+   BAD TYPE SPECIFICATION
+          - nedopustimoe opredelenie (ukazanie) tipa;
+
+   ARRAY INDEX TYPE ERROR
+          - o{ibka w zadanii tipa indeksa dlq massiwa;
+
+   BAD RECORD
+          - nedopustimaq zapisx;
+
+   BAD FIELD LIST
+          - nedopustimoe opredelenie spiska polej;
+
+   FIELD LIST MUST BE IN PARENTHESES
+          - spisok polej dolven ukazywatxsq w skobkah;
+
+   BAD VARIANT
+          - nedopustimyj wariant;
+
+   DUPLICATE FIELD NAME
+          - powtorno ispolxzuetsq imq dlq polq zapisi;
+
+   BAD CONSTANT
+          - nedopustimaq konstanta;
+
+   LABEL NOT DECLARED
+          - ispolxzuetsq neopredelennaq metka;
+
+   LABEL REDEFINITION
+          - pereopredelenie metki nedopustimo;
+
+   LABEL DEFINED AT WRONG LEVEL
+          - opredelenie metki na neprawilxnom urowne;
+
+   UNDEFINED SYMBOL
+          - neopredelennyj simwol;
+
+   MISSING SEMI-COLON
+          - propu}ena ";";
+
+   INVALID DECLARATION. PROBABLY MISSING END
+          - nedoputimyj operator;  wozmovno,  ~to  propu}eno
+            "END";
+
+   INVALID SYMBOL
+          - nedopustimyj simwol;
+
+   NOT IMPLEMENTED
+          - dannaq wozmovnostx ne realizowana w kompilqtore;
+
+   MISSING LABEL
+          - propu}ena metka;
+
+   BAD 'EXIT'
+          - propu}eno "EXIT";
+
+   DUPLICATE CASE LABEL
+          - powtorno ispolxzuetsq metka w operatore "CASE";
+
+   ELSE NOT LAST IN CASE STMT
+          - "ELSE" ne nahoditsq w konce operatora "CASE";
+
+   MISSING END IN CASE STMT
+          - propu}eno "END" w operatore "CASE";
+
+   BAD CASE LABEL
+          - nedopustimaq metka wybora w operatore "CASE";
+
+   MISSING UNTIL
+          - propu}eno "UNTIL";
+
+   BAD FOR STATEMENT
+          - neprawilxnyj format operatora cikla "FOR";
+
+   BAD WITH STATEMENT
+          - nedopustimyj operator "WITH";
+
+   WITH IN REG 0
+          - dlq operatora "WITH" ispolxzuetsq registr 0;
+
+   TOO MANY ARGUMENTS
+          - sli{kom mnogo argumentow;
+
+   BAD ARGUMENT
+          - nedopustimyj argument;
+
+   TOO FEW ARGUMENTS
+          - ukazano malo argumentow;
+
+   NEW OR DISPOSE ARG NOT POINTER TYPE
+          - w   procedurah   "NEW"   i    "DISPOSE"    movet
+            ispolxzowatxsq tolxko peremennaq-ukazatelx;
+
+   BAD READ STATEMENT
+          - nedopustimyj operator "READ";
+
+   BAD WRITE STATEMENT
+          - nedopustimyj operator "WRITE";
+
+   FORMAT MUST BE INTEGER TYPE
+          - dlq   ukazaniq    parametrow    formata    mogut
+            ispolxzowatxsq tolxko  celo~islennye  peremennye
+            ili konstanty;
+
+   FILE VARIABLE MISSING
+          - propu}ena peremennaq fajla;
+
+   BAD FILE NAME
+          - nedopustimoe imq fajla;
+
+   ILLEGAL ASSIGNMENT
+          - nedopustimoe priswaiwanie;
+
+   BAD EXPRESSION
+          - o{ibka w wyravenii;
+
+   MISSING ')'
+          - propu}ena ")";
+
+   MISSING OPERATOR
+          - propu}en operator;
+
+   MISSING OPERAND
+          - propu}en operand;
+
+   STRANGE '[' -- BAD SET OR MISSING ARRAY DEF
+          - strannoe poqwlenie "[", ~to movet bytx swqzano s
+            nedopustimym   mnovestwom   ili   neopredelennym
+            massiwom;
+
+   UNDEFINED OPERAND -- ASSUMING INTEGER
+          - neopredelennyj operand;  kompilqtor  priswaiwaet
+            emu tip "INTEGER";
+
+   FUNCTION ARGUMENT MISSING
+          - propu}en argument funkcii;
+
+   FUNCTION ARG MUST BE REAL OR INTEGER
+          - argument funkcii dolven  imetx  tip  "REAL"  ili
+            "INTEGER";
+
+   ARGUMENT MUST BE INTEGER TYPE
+          - argument dolven imetx tip "INTEGER";
+
+   ARG MUST BE REAL
+          - sleduet ispolxzowatx argument tipa "REAL";
+
+   ARG MUST BE INTEGER
+          - sleduet ispolxzowatx argument tipa "INTEGER";
+
+   ARG MUST BE NON-REAL SCALAR
+          - argument  dolven   imetx   skalqrnyj   tip,   ne
+            qwlq`}ijsq "REAL";
+
+   BAD 'ABS' ARG
+          - nedopustimyj argument funkcii "ABS";
+
+   'ODD' APPLIED TO NON-INTEGER EXPRESSION
+          - procedura "ODD" dolvna ispolxzowatxsq  tolxko  s
+            celo~islennym argumentom (peremennoj, wyraveniem
+            i t.d.);
+
+   BAD SET ELEMENT
+          - nedopustimyj |lement mnovestwa;
+
+   MISSING FIELD VARIABLE
+          - propu}eno ukazanie polq zapisi;
+
+   UNDEFINED POINTER BASE TYPE
+          - neopredelennyj   tip,   na   kotoryj   ssylaetsq
+            peremennaq ukazatelx;
+
+   BAD INDEX TYPE
+          - nedopustimyj tip indeksa;
+
+   ILLEGAL OPERATOR
+          - nedopustimyj operator;
+
+   ILLEGAL TYPE OF OPERAND
+          - nedopustimyj tip operanda;
+
+   INCOMPATIBLE ARRAYS
+          - nesowmestimye massiwy;
+
+   BAD 'IN' OPERANDS
+          - nedopustimye operandy dlq operatora "IN";
+
+   OUT OF FLOATING AC'S
+          - dlq    wypolneniq    programmy    ne     hwataet
+            akkumulqtorow   processora   plawa`}ej   zapqtoj
+            (wstretilosx slovnoe wyravenie);
+
+   OUT OF REGISTERS
+          - ne hwataet registrow  dlq  wypolneniq  programmy
+            (wstretilasx slovnaq konstrukciq);
+
+   BOOLEAN EXPRESSION NEEDED
+          - w dannom meste programmy neobhodimo ispolxzowatx
+            logi~eskoe wyravenie;
+
+   INCOMPATIBLE TYPE
+          - nesowmestimyj tip;
+
+   MUST BE SIMPLE VARIABLE
+          - sleduet ispolxzowatx prostu` peremennu`;
+
+   UNRESOLVED FORWARD TYPE REFERENCE
+          - neopredelen   tip   iz-za   ssylok   wpered   na
+            neopredelennye tipy dannyh;
+
+   ARRAY INDEX OUT OF RANGE
+          - indeks massiwa wyhodit za zadannye granicy;
+
+   FATAL ERROR
+          - fatalxnaq    o{ibka    kompilqtora;     wozmoven
+            apparaturnyj sboj i o{ibka w samom kompilqtore;
+
+   TOO MANY ERRORS IN THIS LINE
+          - sli{kom mnogo o{ibok w dannoj stroke;
+
+   EXPECTED '.' MISSING. ASSUMED WHERE INDICATED
+          - dolvna     prisutstwowatx     ".";      pokazano
+            podrazumewaemoe polovenie ".";
+
+   ALL CHARACTERS IGNORED UNTIL  ...
+          - wse znaki do "..." ignoriru`tsq;
+
+   INDEX OUT OF RANGE
+          - indeks wyhodit za dopustimye granicy.
+
+           4. translqciq programmy makroassemblerom
+
+        kompilqtor transliruet programmy s qzyka paskalx  na
+   qzyk maroassembler (kak bylo  opisano  wy{e).  polu~ennaq
+   programma nuvdaetsq  w  translqcii  makroassemblerom  dlq
+   polu~eniq ob'ektnogo modulq:
+
+        naprimer:
+
+          .R MACRO
+          *PROG=PROG
+
+        makroassembler   movet   wydawatx   takve    listing
+   transliruemoj programmy, no  oby~no  on  ne  predstawlqet
+   osobogo  interesa.  esli  wse  ve  listing  programmy  na
+   makroassemblere  neobhodim,  to  rekomenduetsq  wypolnqtx
+   translqci` kompilqtorom s qzyka paskalx,  ispolxzuq  kl`~
+   "S", ~to priwodit k wkl`~eni` w tekst na  makroassemblere
+   ishodnyh strok na paskale w ka~estwe kommentariew.
+
+        p_r_i_m_e_~_a_n_i_e. sleduet pomnitx, ~to kompilqtor
+   paskalq i makroassembler sozda`t fajly listinga,  ime`}ie
+   odinakowyj tip ".LST". po|tomu posledowatelxnostx komand:
+
+          .R PASCAL
+          *PROG/S,PROG=PROG
+          .R MACRO
+          *PROG,PROG=PROG
+
+   priwedet  k  tomu,  ~to  fajl  s  listingom,   polu~ennyj
+   kompilqtorom paskalq, budet  zame}en  odnoimennym  fajlom
+   listinga, sozdannym makroassemblerom.
+
+           5. komponowka programmy na qzyke paskalx
+
+        posle  polu~eniq  ob'ektnogo  fajla  ego  neobhodimo
+   skomponowatx  s  ispolnq`}ej  sistemoj  paskalx/rafos  iz
+   ob'ektnoj biblioteki (PASCAL.OBJ) dlq polu~eniq programmy
+   w formate zagruzki, naprimer:
+
+          .R LINK
+          *PROG=PROG,PASCAL
+
+        komponowka  dlq  awtonomnoj  raboty   dopolnitelxno
+   wkl`~aet fajly qdra dlq awtonomnoj raboty (ROOT), FIS/EIS
+   |mulqtora (EMUL) i obrabot~ika o{ibok ispolneniq (ERROR).
+   naprimer:
+
+          .R LINK
+          *PROG=ROOT,EMUL,PROG,ERROR,PASCAL
+
+        biblioteka   PASCAL.OBJ   s   ispolnq`}ej   sistemoj
+   paskalx/rafos   sodervit   nabor   modulej,   k   kotorym
+   obra}aetsq programma,  polu~ennaq  kompilqtorom  paskalq.
+   sistemnyj komponow}ik rafos wkl`~it  w  sostaw  programmy
+   nuvnye moduli iz biblioteki i sozdast programmu w formate
+   zagruzki.
+
+        FIS/EIS |mulqtor EMUL.OBJ sodervit programmu obrabot-
+   ki  prerywanij  po  wektoru  10  dlq programmnoj |mulqcii
+   komand, ne otrabatywaemyh processorom. polxzowatelx movet
+   sokratitx ob'em fajlow proizwodimyh LINK-om,  esli udalit
+   iz ishodnoj programmy |mulqtora (EMUL.MAC) fragmenty obra-
+   botki teh komand nabora  M2,  kotorye  on  ne  sobiraetsq
+   ispolxzowatx  (posle  korrekcii fajl  EMUL.MAC neobhodimo
+   ottranslirowatx).
+
+        modulx obrabot~ika o{ibok (ERROR) otwe~aet za diag-
+   nostiku  o{ibok  paskalx-programmy  na  |tape wypolneniq.
+   |ta funkciq obespe~iwaetsq  i  bibliotekoj  (PASCAL.OBJ),
+   odnako ee neobhodimo podawitx,  poskolxku  "bibliote~nyj"
+   obrabot~ik o{ibok, w swo` o~eredx, podkl`~aet standartnyj
+   "bibliote~nyj"   ve   wwod/wywod na standartnyj terminal.
+   pri neobhodimosti organizowywatx sobstwennyj  wwod/wywod
+   neobhodimo  wkl`~itx   w   sborku   sobstwennyj   modulx
+   wwoda/wywoda (IO.OBJ):
+    
+
+          .R LINK
+          *PROG=ROOT,EMUL,PROG,IO,ERROR,PASCAL
+
+   postawlqemye   fajly   ERROR.PAS,  ERROR.DUM,  ERROR.OBJ,
+   IO.PAS sodervat sootwetstwenno:
+        - ishodnyj tekst standartnoj paskalx-programmy obra-
+   bot~ika  to  rekomenduetsq  wypolnqtx
+   translqci` kompilqtorom s qzyka paskalx,  ispolxzuq  kl`~
+   "S", ~to priwodit k wkl`~eni` w tekst na  makroassemblere
+   ishodnyh strok na paskale w ka~estwe kommentariew.
+
+        p_r_i_m_e_~_a_n_i_e. sleduet pomnitx, ~to kompilqtor
+   paskalq i makroassembler sozda`t fajly listinga,  ime`}ie
+   odinakowyj tip ".LST". po|tomu posledowatelxnostx komand:
+
+          .R PASCAL
+          *PROG/S,PROG=PROG
+          .R MACRO
+          *PROG,PROG=PROG
+
+   priwedet  k  tomu,  ~to  fajl  s  listingom,   polu~ennyj
+   kompilqtorom paskalq, budet  zame}en  odnoimennym  fajlom
+   listinga, sozdannym makroassemblerom.
+
+           5. komponowka programmy na qzyke paskalx
+
+        posle  polu~eniq  ob'ektnogo  fajla  ego  neobhodimo
+   skomponowatx  s  ispolnq`}ej  sistemoj  paskalx/rafos  iz
+   ob'ektnoj biblioteki (PASCAL.OBJ) dlq polu~eniq programmy
+   w formate zagruzki, naprimer:
+
+          .R LINK
+          *PROG=PROG,PASCAL
+
+        komponowka  dlq  awt~.2   pri
+   opisanii sistemnogo komponow}ika "LINK".
+
+        p_r_i_m_e_~_a_n_i_e.   esli   ispolnq`}aq    sistema
+   paskalq wkl`~ena w  sostaw  sistemnoj  biblioteki  SYSLIB
+   to pri  komponowke programm sleduet opuskatx specifikaci`
+   fajla PASCAL.OBJ. wse primery w dannom dokumente pokazany
+   dlq slu~aq, kogda ispolnq`}aq sistema razme}aetsq w fajle
+   PASCAL.OBJ.
+
+               6. zapusk i wypolnenie programmy
+
+        zapusk  programmy,  napisannoj  na  qzyke   paskalx,
+   osu}estwlqetsq oby~nymi sredstwami  sistemy  rafos,  t.e.
+   ispolxzowaniem komand monitora  "R"  ili  "RUN".
+
+        naprimer:
+
+          .R PROG
+
+        pri zagruzke programmy wozmovny o{ibki  (sistemnye).
+   o[ibki  wypolnenii programmy  na  qzyke  paskalx,  budut
+   opisany  nive.
+
+                         7. soob}eniq
+
+        w dannom razdele predstawleny  teksty  soob}enij  ob
+   o{ibkah, woznika`}ih pri wypolnenii  programmy  na  qzyke
+   paskalx. teksty  soob}enij  snabveny  poqsneniqmi  pri~in
+   o{ibok i, sledowatelxno, sposobami ih ustraneniq:
+
+   NO ROOM ON DEVICE OR FILE NOT FOUND
+          - dannoe  soob}enie   swqzano   s   o{ibkami   pri
+            wypolnenii      procedury      RESET,       esli
+            specificirowannyj fajl ne byl  najden,  ili  pri
+            rabote  procedury  REWRITE  wozniklo  otstutswie
+            wozmovnosti dlq sozdaniq nowogo fajla, t.e.  net
+            mesta w kataloge nositelq i t.p.;
+
+   NOT A VALID DEVICE
+          - w  procedure  RESET  ili  REWRITE  bylo  ukazano
+            ustrojstwo,  drajwer  kotorogo   otsutstwuet   w
+            sistemnyh tablicah rezidentnogo monitora rafos;
+
+   END OF FILE ON DEVICE
+          - dannaq o{ibka swqzana  s  wypolneniem  procedury
+            READ ili GET, esli w tot moment zna~enie funkcii
+            EOF bylo TRUE;
+
+   I/O CHANNEL NOT OPEN
+          - o{ibka   swqzana    s    wypolneniem    operacii
+            wwoda/wywoda   s   kanalom,   kotoryj   ne   byl
+            predwaritelxno  otkryt  procedurami  RESET   ili
+            REWRITE;
+
+   NOT ENOUGH AVAILABLE MEMORY
+          - soob}enie    swidetelxstwuet    o    tom,    ~to
+            dinami~eskaq  oblastx  pamqti   is~erpana   (kak
+            prawilo  pri  wypolnenii  produry  NEW);  drugaq
+            pri~ina dannogo soob}eniq  -  nedostatok  pamqti
+            dlq rekursiwnogo wyzowa procedury;
+
+   INTEGER ERROR
+          - o{ibka  swqzana  s  wypolneniem   arifmeti~eskih
+            operacij s peremennymi tipa INTEGER; kak prawilo
+            - |to perepolnenie pri umnovenii ili  wypolnenii
+            procedur TRUNC ili ROUND;
+
+   FLOATING POINT ERROR
+          - soob}enie ob |toj o{ibke swqzano s  neprawilxnym
+            wypolneniem    arifmeti~eskoj    operacii    nad
+            peremennymi tipa REAL w processe wy~islenij;
+
+   LOG OF NEGATIVE
+   EXP OVERFLOW
+   SQRT OF NEGATIVE
+          - dannye    o{ibki    woznika`t    pri    pereda~e
+            neprawilxnyh parametrow w funkcii qzyka paskalx:
+            LOG, EXP ili SQRT;
+
+   DEVIDE BY ZERO
+          - o{ibka swqzana s popytkoj wypolnitx  delenie  na
+            0;
+
+   BAD SET EXPRESSION
+          - o{ibka pri wy~islenii  wyraveniq,  swqzannogo  s
+            mnovestwom: analiziruemyj |lement ne prinadlevit
+            dannomu mnovestwu;
+
+   ARRAY BOUND ERROR
+          - pri  wy~islenii  wyraveniq  ili  t.p.   zna~enie
+            indeksa prinqlo nedopustimoe zna~enie;
+
+   TRAP TO 4
+          - proizo{lo  prerywanie  po  wektoru  4,   kotoroe
+            swqzano s  obra}eniem  k  nesu}estwu`}ej  q~ejki
+            pamqti ili ispolxzowaniem  nedopustimogo  revima
+            adresacii w instrukcii  processora;  oby~no  |ta
+            o{ibka poqwlqetsq  iz-za  o{ibok  w  fragmentah,
+            napisannyh na makroassemblere;
+
+   BAD SUPPORT PACKAGE
+   RESERVED INSTRUCTION TRAP
+   MISSING SPECIAL FEATURE
+          - o{ibka  swqzana  s  ispolxzowaniem   ispolnq`}ej
+            sistemy   paskalq,   ne   sootwetstwu`}ej   tipu
+            centralxnogo  processora,  a  takve  primeneniem
+            instrukcij (w  fragmentah  na  makroassemblere),
+            otsutstwu`}ih w nabore  instrukcij  centralxnogo
+            processora;
+
+   SUPPORT CONDITIONALS ERROR
+          - o{ibka pri wypolnenii logi~eskoj operacii;
+
+   NEW OF LENGTH 0
+          - o{ibka swqzana s wypolneniem procedury "NEW" pri
+            sozdanii peremennoj nulewoj dliny;
+
+   FATAL I/O ERROR
+          - proizo{la neustranimaq o{ibka wwoda/wywoda;
+
+   TOO MANY FILES OPEN
+          - sdelana popytka otkrytx sli{kom mnogo fajlow dlq
+            wwoda/wywoda.
+
+                8. translqciq wne{nih procedur
+
+        wne{nimi nazywa`tsq procedury ili  funkcii,  kotorye
+   kompiliru`tsq  i  assembliru`tsq  otdelxno  ot   osnownoj
+   programmy na qzyke paskalx. komponow}ik ispolxzuetsq  dlq
+   ob'edineniq  wne{nih  procedur  i  osnownoj  programmy  i
+   polu~eniq programmy w formate zagruzki. sredstwa  wne{nih
+   procedur pozwolq`t obleg~itx process razrabotki i otladki
+   programmnogo obespe~eniq, poskolxku wnesenie izmenenij  w
+   osnownu` programmu  ne  trebuet  powtornoj  kompilqcii  i
+   assemblirowaniq   wne{nih   procedur.   otladka   bolx{ih
+   programm su}estwenno upro}aetsq putem sozdaniq  polnostx`
+   testirowannyh wne{nih procedur. w |tom slu~ae pri otladke
+   osnownoj programmy ee kompiliru`t s  kl`~em  "D".  odnako
+   lokalxnye   peremennye   wne{nih   procedur    stanowqtsq
+   nedostupnymi otlad~iku. razmer  otlado~noj  informacii  w
+   programme su}estwenno umenx{aetsq. w  otdelxnyh  slu~aqh,
+   kogda  programma  o~enx  welika  po  razmeru   zanimaemoj
+   operatiwnoj pamqti, edinstwennaq  wozmovnostx  prowedeniq
+   otladki - ispolxzowanie wne{nih procedur, pro{ed{ih  |tap
+   testirowaniq.
+
+        drugimi  slowami,  kogda  nad  bolx{im   programmnym  
+   produktom  rabotaet  neskolxko   programmistow,   polezno
+   ispolxzowatx   sowmestno   razrabotannu`   i   otlavennu`
+   biblioteku wne{nih procedur.
+
+        wne{nie procedury  i  funkcii  sozda`tsq  analogi~no
+   oby~nym proceduram w qzyke paskalx.  ispolxzowanie  kl`~a
+   "E" pri translqcii, priwodit k ob'qwleni` wseh procedur i
+   funkcij na perwom urowne wlovennosti globalxnymi.  perwye
+   6 znakow w imeni  procedury  ili  funkcii  ob'qwlq`tsq  w
+   ka~estwe globalxnoj to~ki whoda  (metki),  kotoraq  budet
+   ispolxzowana  komponow}ikom   pri   ob'edinenii   wne{nih
+   modulej   i   osnownoj   programmy.   specialxnaq   forma
+   kommentariew  (*$E+*)  movet  takve  ispolxzowatxsq   dlq
+   opredeleniq  procedury  w  ka~estwe  wne{nej.  programma,
+   kotoraq ispolxzuet  wne{n``  proceduru,  dolvna  wkl`~atx
+   zagolowok |toj procedury,  za  kotorym  sleduet  kl`~ewoe
+   slowo "EXTERNAL". nado sobl`datx ostorovnostx pri zadanii
+   tipow  i   porqdka   sledowaniq   parametrow   procedury,
+   poskolxku  kompilqtor  li{en  wozmovnosti  proweritx  |tu
+   informaci`.
+
+        kompilqtor   ne   otwodit   mesto   dlq   razme}eniq
+   peremennyh na perwom urowne  (globalxnyh).  wmesto  |togo
+   kompilqtor priswaiwaet im sootwetstwu`}ie adresa  s  tem,
+   ~toby  oni  sowpadali  pri   wypolnenii   s   globalxnymi
+   peremennymi osnownoj programmy.  wsq  otwetstwennostx  na
+   sowpadenie  opisanij  globalxnyh  peremennyh  wo  wne{nih
+   procedurah   i   osnownoj   programmy   wozlagaetsq    na
+   programmista.  polxzowatxsq  |toj  wozmovnostx`   sleduet
+   o~enx ostorovno, poskolxku ona movet  sluvitx  isto~nikom
+   razli~nyh nepredskazuemyh o{ibok (i rezulxtatow).
+
+        naprimer:
+
+  globalxnye peremennye (fajl GLOBAL.PAS):
+
+       VAR                (* globalxnye peremennye *)
+           I: INTEGER;
+           R: REAL;
+           C: CHAR;
+
+  osnownaq programma (fajl MAIN.PAS):
+
+       (* wne{nqq procedura *)
+
+       PROCEDURE EXPROC(X:INTEGER); EXTERNAL;
+
+       BEGIN              (* na~alo MAIN *)
+           I:=1; R:=3.1415926; C:='X';
+           EXPROC(5);     (* wyzow wne{nej procedury *)
+       END.               (* konec MAIN *)
+
+  wne{nqq procedura (fajl EXTERN.PAS):
+
+       (*$E+*)
+
+       PROCEDURE EXPROC(Y:INTEGER); (* wne{nqq procedura *)
+
+       BEGIN      (* na~alo wne{nej procedury *)
+          WRITELN('I= ',I:2);
+          WRITELN('R= ',R);
+          WRITELN('C= ',C);
+          WRITELN('PROCEDURE ARGUMENT= ',Y:3);
+       END;       (* konec procedury *)
+
+        nive  predstawlena  posledowatelxnostx  komand   dlq
+   wypolneniq programmy:
+
+          .R PASCAL
+          *MAIN=GLOBAL,MAIN
+          .R PASCAL
+          *EXTERN=GLOBAL,EXTERN
+          .R MACRO
+          *MAIN=MAIN
+          *EXTERN=EXTERN
+          *^C
+          .R LINK
+          *PROG=MAIN,EXTERN,PASCAL
+          *^C
+          .R PROG
+
+    9. osobennosti wypolneniq programmy na qzyke paskalx
+
+        dlq togo, ~toby |ffektiwno ispolxzowatx  wstawki  na
+   makroassemblere  w  programme  na  qzyke   paskalx/rafos,
+   neobhodimo ponimatx nekotorye osobennosti ego realizacii.
+   naibolee  wavnye  detali   budut   opisany   nive,   hotq
+   rekomenduetsq (i |to qwlqetsq wesxma  poleznym)  zanqtxsq
+   izu~eniem  teksta  na  assemblere,   kotoryj   generiruet
+   kompilqtor paskalx/rafos.
+
+        pri  wypolnenii  programma  na  qzyke  paskalx/rafos
+   ispolxzuet dwe oblasti dannyh: globalxnaq oblastx i stek.
+   w   globalxnoj   oblasti   sodervatsq   wse   peremennye,
+   opredelennye  na  urowne  0,  t.e.  w  na~ale  programmy.
+   oblastx  steka  ispolxzuetsq   dlq   hraneniq   lokalxnyh
+   peremennyh dlq procedur  i  adresow  pereda~i  (wozwrata)
+   uprawleniq. pqtyj registr R5 wsegda sodervit adres na~ala
+   globalxnoj oblasti, a registr {estoj  (SP)  ukazywaet  na
+   na~alo programmnogo steka. sodervimoe |tih  registrow  ne
+   dolvno menqtxsq wo fragmente na  assemblere  (ili  dolvno
+   sohranqtxsq, a zatem wosstanawliwatxsq).
+
+        pri wyzowe procedury ispolnq`}aq sistema sohranqet w
+   steke  adres  wozwrata  i  otwodit  w  steke  mesto   dlq
+   parametrow i lokalxnyh peremennyh. kavdyj o~erednoj w  globalxnyh  peremennyh  wo  wne{nih
+   procedurah   i   osnownoj   programmy   wozlagaetsq    na
+   programmista.  polxzowatxsq  |toj  wozmovnostx`   sleduet
+   o~enx ostorovno, poskolxku ona movet  sluvitx  isto~nikom
+   razli~nyh nepredskazuemyh o{ibok (i rezulxtatow).
+
+        naprimer:
+
+  globalxnye peremennye (fajl GLOBAL.PAS):
+
+       VAR                (* globalxnye peremennye *)
+           I: INTEGER;
+           R: REAL;
+           C: CHAR;
+
+  osnownaq programma (fajl MAIN.PAS):
+
+       (* wne{nqq procedura *)
+
+       PROCEDURE EXPROC(X:INTEGER); EXTERNAL;
+
+       BEGIN              (* na~alo MAIN *)
+           I:=1; R:=3.1415926; C:='X';
+           EXPROC(5);     (* wyzow wne{nej procedury *)
+       END.               (* konec MAIN *)
+
+  wne{nqq procedura (fajl EXTERN.PAS):
+
+       (*$E+*)
+
+       PROCEDURE EXPROC(Y:INTEGER); (* wne{nqq procedura *)
+
+       BEGIN      (* na~alo wne{nej procedury *)
+          WRITELN('I= ',I:2);
+          WRITELN('R= ',R);
+        eku}ego ukazatelq  steka  -  SP.  dostup  k
+   globalxnym peremennym osu}estwlqetsq indeksaciej registra
+   R5.   dostup    k    promevuto~noj    peremennoj    movet
+   osu}estwlqtxsq putem "dwiveniq" po steku s ispolxzowaniem
+   stati~eskih ukazatelej do teh por, poka ne budet  najdena
+   trebuemaq   oblastx   steka.   posle   |togo   indeksaciq
+   osu}estwlqetsq otnositelxno  najdennoj  bazy.  dlq  togo,
+   ~toby sdelatx  dostup  k  peremennym  bolee  prostym  dlq
+   programmista na  makroassemblere,  kompilqtor  opredelqet
+   imq   peremennoj   w   ka~estwe   sme}eniq   otnositelxno
+   sootwetstwu`}ego ukazatelq (R5 ili SP).
+
+        analogi~no,  to~ki  whoda  w  procedury  i   funkcii
+   kompilqtor  zamenqet  na   odnoimennye   metki.   sleduet
+   pomnitx,  ~to  kompilqtor   ne   prowerqet   prawilxnostx
+   obra}enij k peremennym wo fragmentah na makroassemblere.
+
+        primer:
+
+          FUNCTION SWAPBYTES (I:INTEGER):INTEGER;
+          BEGIN
+                  (*$C
+                          SWAB    I(SP)
+                  *)
+                  SWAPBYTES := I;
+          END;
+
+        esli   neobhodimo   ws`   proceduru   napisatx    na
+   makroassemblere,  to  |to   movno   osu}estwitx,   prosto
+   zakl`~iw  wesx  fragment  w  zagolowok  procedury,   t.e.
+   ukazatx   na~alo   i   konec   procedury   po    prawilam
+   paskalx/rafos. w tele procedury fragmenty  na  paskale  i
+   makroassemblere mogut ~eredowatxsq, naprimer:
+
+          PROCEDURE EXAMPLE;
+          BEGIN
+             (*$C
+                     ;fragment na makroassemblere
+             *)
+        WRITE (' tekst soob}eniq');(* fragment na paskale *)
+             (*$C
+                     ;e}e fragment na makroassemblere
+             *)
+          END;
+
+        p_r_i_m_e_~_a_n_i_e. sleduet  pomnitx,  ~to  funkcii
+   sohranq`t    sodervimoe    registrow    R0-R4    (wkl`~aq
+   registry-akkumulqtory processora s plawa`}ej zapqtoj),  a
+   procedury - ne sohranq`t.
+                     10. programma PASIMP
+
+        programma  PASIMP  napisana  na  qzyke   paskalx   i
+   prednazna~ena  dlq   wypolnenie   nekotoroj   optimizacii
+   programm, sozdawaemyh kompilqtorom paskalx w operacionnoj
+   sisteme rafos.
+
+        kak   ukazywalosx   wy{e,   kompilqtor   transliruet
+   programmu  s  qzyka  paskalx  na   qzyk   makroassembler.
+   programma  PASIMP   obrabatywaet   tekst   programmy   na
+   makroassemblere, wypolnqet otdelxnye widy  optimizacii  i
+   sozdaet  bolee  |ffektiwnu`  programmu  tove   na   qzyke
+   makroassembler.
+
+        optimizacii podwerga`tsq instrukcii perehodow  (JMP,
+   BR i t.p.). PASIMP wypolnqet zamenu instrukcii JMP na BR,
+   esli |to wozmovno. pri |tom |konomitsq  1  slowo  pamqti.
+   naprimer:
+
+                  JMP     L20
+   zamenqetsq na:
+                  BR      L20
+
+        w nekotoryh slu~aqh wypolnq`tsq bolee  slovnye  widy
+   optimizacii:
+
+                  BGT     L30
+                  JMP     L50
+          L30:    ...
+   zamenqetsq na:
+                  BLE     L50
+
+   w |tom slu~ae |konomitsq 2 slowa pamqti.
+
+        10.1. wyzow i zagruzka
+
+        wyzow  programmy  PASIMP  osu}estwlqetsq   komandami
+   monitora R ili RUN. posle zagruzki programma  zapra{iwaet
+   imq fajla, w kotorom nahoditsq tekst  programmy,  kotoru`
+   nuvno  optimizirowatx.  posle  |togo  PASIMP  zapra{iwaet
+   specifikaci` wyhodnogo fajla dlq optimizirowannoj  wersii
+   programmy.
+
+        posle  wwoda  specifikacij  fajlow  PASIMP  na~inaet
+   rabotatx.  w  konce  PASIMP  raspe~atywaet  statistiku  o
+   processe  optimizacii,  t.e.  ~islo  slow,   na   kotoroe
+   sokratilsq  razmer  programmy,  i  procentnoe  umenx{enie
+   razmera programmy.
+
+        primer:
+
+                     .R PASIMP
+                     INPUT FILE?  DK:PROG.MAC
+                     OUTPUT FILE? DK:PROG1.MAC
+                     IMPROVEMENT    50 WORDS   8.7%
+                     .
+
+           p_r_i_m_e_~_a_n_i_e. po  umol~ani`  tip  whodnogo  i
+      wyhodnogo fajlow "MAC".
+
+           programma   PASIMP    movet    ispolxzowatxsq    dlq
+      optimizacii kak polnyh programm na qzyke paskalx,  tak  i
+      otdelxnyh ~astej, kotorye oformleny po  prawilam  wne{nih
+      procedur.
+
+           tekst  programmy  na   makroassemblere   ne   dolven
+      sodervatx  makrokomand.  registry   dolvny   obozna~atxsq
+      tolxko kak %0, %1, ..., %6, %7. w tekste programmy  movno
+      ispolxzowatx kommentarii.
+
+           procedura   optimizacii   wypolnqetsq   srawnitelxno
+      medlenno. po|tomu optimizirowatx programmu sleduet tolxko
+      posle togo, kak ona polnostx` otlavena.
+
+           10.2. soob}eniq programmy PASIMP
+
+           nive priwodqtsq teksty soob}enij, wydawaemyh PASIMP,
+      s poqsneniqmi.
+
+      NO <> IN LINE
+      NNNN  LINE
+             - w stroke s nomerom "NNNN" otsutstwu`t skobki "<"
+               i ">".
+
+      ERROR AT BRJMP NODE  NNNN
+             - w stroke s  nomerom  "NNNN"  obnaruvena  o{ibka,
+               wozmovno swqzannaq s ispolxzowaniem kl`~a "C"  i
+               wstawlennym w  tekst  na  paskale  fragmenta  na
+               makroassemblere.
+
+      ERROR AT JMP NODE  NNNN
+             - w stroke s  nomerom  "NNNN"  obnaruvena  o{ibka,
+               wozmovno swqzannaq s ispolxzowaniem kl`~a "C"  i
+               wstawlennym w  tekst  na  paskale  fragmenta  na
+               makroassemblere.
+
+   11.osobennosti raboty w awtonomnyh sistemah.
+
+     11.1. nabor programm dlq raboty bez operacionnoj sistemy
+
+    dlq sozdaniq programm, rabota`}ih bez operacionnoj sistemy 
+neobhodimo u~itywatx sledu`}ie ograni~eniq:
+    - nedopustimo  ispolxzowanie operatora  DISPOSE i operacij
+      nad mnovestwami;
+    - procedury READ/WRITE movno ispolxzowatx tolxko dlq wwoda/
+      wywoda w standartnye fajly INPUT i OUTPUT (t.e. na termi-
+      nal) bez qwnogo ukazaniq ih imen.  pri  |tom  polxzowatelx
+      dolven  sam napisatx sistemno-zawisimyj modulx  wwoda/
+      wywoda.
+
+    nive predlagaetsq nabor programm dlq organizacii formatnogo
+wwoda/wywoda na standartnyj terminal.
+
+
+PROGRAM IO;
+[$E+,T-,A-]
+CONST
+  STRLEN=132;
+TYPE
+  STRING=ARRAY[1..STRLEN] OF CHAR;
+(*-------------------------------------------------------------------------*)
+[$C $B0::
+	MOV	(6), -(6)	; mesto w steke pod simwol
+	MOV	(6), -(6)	; i pod status
+	MOV	-2(5), 2(6)	; izwle~em ukazatelx slowa sostoqniq kanala
+	ADD	#2, 2(6)	; ukazatelx na slowo sostoqniq fajla
+]
+FUNCTION READCH(VAR STATUS: INTEGER): CHAR;
+CONST
+  EOF= 100000B;
+  EOLN= 40000B;
+VAR
+  CH: CHAR;
+BEGIN
+  IF (STATUS AND EOLN) <> 0 THEN
+  BEGIN
+    STATUS:= 0;    CH:=' ';
+  END ELSE
+  BEGIN
+    [$C
+      MOV	%0, -(6)
+      EMT	^O<340>
+      MOV	%0, CH+2(6)
+      MOV	(6)+, %0		; ~tenie simwola RT11
+    ]
+    IF CH = CHR(15B) THEN
+             CH:=READCH(STATUS)
+    ELSE BEGIN
+      IF CH =CHR(12B) THEN
+      BEGIN
+	STATUS:= STATUS OR EOLN; CH:=' ';
+      END;
+    END;
+  END;
+  READCH:=CH;
+END;
+(*-------------------------------------------------------------------------*)
+[$C $B12 :: ]
+[ ~tenie stroki]
+PROCEDURE READS( VAR LINE: STRING; 		[ stroka dlq ~teniq ]
+                     LEN: INTEGER);		[ MAX koli~estwo simolow ]
+VAR
+  I: INTEGER;	[ s~et~ik simwolow w stroke ]
+BEGIN
+  I:= 1;
+  WHILE (NOT EOLN) AND (I <= LEN) DO
+  BEGIN
+    READ(LINE[I]);
+    I:=I+1
+  END;
+END;
+(*-------------------------------------------------------------------------*)
+[$C  $B16:: ]
+PROCEDURE READLN;
+VAR
+  CH: CHAR;
+BEGIN
+  WHILE NOT EOLN DO READ(CH);
+  READ(CH);		[ SBROSITX EOF ?]
+END;
+(*-------------------------------------------------------------------------*)
+[ ~tenie celogo ]
+[$C
+$B4::	 MOV	(6), -(6)	; mesto dlq rezulxtata
+]
+FUNCTION READI: INTEGER;
+VAR
+  SUM: INTEGER;
+  CH: CHAR;
+BEGIN
+  SUM:=0;
+  REPEAT READ(CH) UNTIL CH <> ' ';
+  WHILE (CH >= '0') AND (CH <= '9') DO
+  BEGIN
+    SUM:=SUM*10-ORD('0')+ORD(CH);
+    READ(CH);
+  END;
+  READI:= SUM;
+END;
+(*-------------------------------------------------------------------------*)
+FUNCTION TEN(I:INTEGER):REAL; [procedura wozwra}aet 10**I]
+VAR
+  P: ARRAY[1..5] OF REAL;
+  NXT: INTEGER;
+  MULT: REAL;
+BEGIN
+  P[1] := 1.0E1;
+  P[2] := 1.0E2;
+  P[3] := 1.0E4;
+  P[4] := 1.0E8;
+  P[5] := 1.0E16;
+  MULT:=1.0;
+  NXT:=1;
+  WHILE I > 0 DO BEGIN
+    IF ODD(I) THEN MULT:=MULT * P[NXT];
+    NXT:=NXT+1;
+    I:=I DIV 2;
+  END;
+  TEN:=MULT;
+END;
+(*-------------------------------------------------------------------------*)
+[$C
+$B8::	MOV	(6), -(6)	; mesto dlq rezulxtata
+	MOV	(6), -(6) ]
+[ ~tenie plawa`}ego ]
+FUNCTION READF: REAL;
+VAR
+  RESULT: REAL;
+  DW: INTEGER;
+  CH: CHAR;
+BEGIN
+  RESULT:= 0.0;
+  DW:=0;
+  REPEAT READ(CH) UNTIL CH <> ' ';
+  WHILE (CH >= '0') AND (CH <= '9') DO
+  BEGIN
+    RESULT:=RESULT*10.0+(ORD(CH)-ORD('0'));
+    READ(CH);
+  END;
+  IF CH = '.' THEN
+  BEGIN
+    READ(CH);  
+    WHILE (CH >= '0') AND (CH <= '9') DO
+    BEGIN
+      RESULT:=RESULT*10.0+(ORD(CH)-ORD('0'));
+      DW:=DW+1;
+      READ(CH);
+    END;
+    RESULT:=RESULT/TEN(DW);
+  END;
+  READF:=RESULT;
+END;
+(*-------------------------------------------------------------------------*)
+(* wywod odnogo simwola w sisteme rt11 *)
+(* dlq rezidentnoj ispolnq`}ej sistemy dolven bytx zamenen *)
+
+PROCEDURE OUTC(CH: CHAR);
+BEGIN
+  (*$C
+	MOVB	CH(6), %0	;polovili parametr procedury na %0
+	EMT	^O<341>		;i wyweli ego
+	BCS	.-2		; TTYOUT
+   *)
+END;
+(*-------------------------------------------------------------------------*)
+(* PEREHOD NA NOWU@ STROKU*)
+(*$C $B36:: *)
+PROCEDURE WRILN;
+BEGIN
+  OUTC(CHR(15B));	(* wk*)
+  OUTC(CHR(12B));	(*  ps *)
+END;
+[-------------------------------------------------------------------------]
+[ wywod simwola w pole ]
+(*$C $B20:: *)
+PROCEDURE WRITEC(CH: CHAR;	    [ simwol dlq pe~ati	]
+		 FLDLEN: INTEGER);  [ dlina polq pe~ati ]
+VAR
+  CHRCNT: INTEGER;		    [ s~et~ik simwolow	]
+BEGIN
+  IF ORD(CH) <> 0 THEN FLDLEN:=FLDLEN-1;[]
+  FOR CHRCNT:=1 TO FLDLEN DO OUTC(' ');
+  IF ORD(CH) <> 0 THEN OUTC(CH);
+END;
+(*-------------------------------------------------------------------------*)
+(* pe~atx stroki w pole *)
+(*$C $B32:: *)
+PROCEDURE WRITES(VAR STR: STRING;  (* stroka dlq pe~ati 		   *)
+		     STRLEN,	   (* dejstwitelxnoe kol-wo simwolow w str *)
+		     FLDLEN:	   (* dlina pole pe~ati 		   *)
+				 INTEGER);
+VAR 
+  CHRCNT: INTEGER;		   (* s~et~ik simwolow pri wywode 	   *)
+  MAXLEN: INTEGER;		   (* dopustimaq dlina stroki		   *)
+BEGIN
+  FOR CHRCNT:=1 TO FLDLEN-STRLEN DO OUTC(' ');
+  MAXLEN:=STRLEN;
+  IF MAXLEN > FLDLEN THEN MAXLEN :=FLDLEN;
+  FOR CHRCNT:=1 TO MAXLEN DO OUTC(STR[CHRCNT]);
+END;
+(*-------------------------------------------------------------------------*)
+[ pe~atx celogo ~isla w zadannom formate ]
+[$C $B24:: ]
+PROCEDURE WRITEI(DIGIT,			[ ~islo dlq pe~ati ]
+		 FLD:  INTEGER);	[ MAX ~islo cifr      ]
+VAR
+  DIVID: ARRAY[1..5] OF INTEGER;	[ massiw delitelej ]
+  I,COUNT: INTEGER;	
+  FIRST: BOOLEAN;			[ flag perwoj cifry]
+  SIGN: BOOLEAN;			[ flag znaka	   ]
+BEGIN
+  DIVID[5]:=10000;
+  DIVID[4]:= 1000;
+  DIVID[3]:=  100;
+  DIVID[2]:=   10;			[ inicializiruem  ]
+  DIVID[1]:=    1;			[ massiw delitelej]
+  FIRST:=TRUE;				[ i flag perwoj cifry ]
+  IF DIGIT < 0 THEN
+  BEGIN
+    DIGIT:=-DIGIT;
+    FLD:=FLD-1;				[ mesto pod znak     ]
+    SIGN:=TRUE;
+  END ELSE
+    SIGN:=FALSE;			[ prowerim znak	     ]
+  IF DIGIT <> 0 THEN
+    FOR I:=5 DOWNTO 1 DO		[ cikl wywoda ~isla  ]
+    BEGIN
+      COUNT:=0;
+      WHILE DIGIT >= DIVID[I] DO
+      BEGIN
+	DIGIT:=DIGIT-DIVID[I];
+	COUNT:=COUNT+1
+      END;
+      IF  FIRST AND (COUNT > 0) THEN
+      BEGIN
+	FIRST:=FALSE;
+	WRITE('':FLD-I);		[ wywod wedu}ih probelow ]
+	IF SIGN THEN WRITE('-');
+      END;
+      IF (NOT FIRST) THEN WRITE(CHR(COUNT+ORD('0')));
+    END [ FOR ]
+  ELSE WRITE('0':FLD);
+END; [WRITEI]
+(*-------------------------------------------------------------------------*)
+[ pe~atx plawa`}ego ~isla w zadannom formate ]
+[$C $B28:: ]
+PROCEDURE WRITEF(DIGIT: REAL;			[ ~islo dlq pe~ati ]
+		 FLD,				[ pole		   ]
+		 FLD1: INTEGER);		[ kol-wo znakow posle zap. ]
+TYPE
+  HAOS=RECORD 
+       CASE INTEGER OF
+         1:( INT: ARRAY [1..2] OF INTEGER);
+         2: (FLOAT: REAL)
+       END; [ CASE ]
+VAR
+  DIGCOPY:    HAOS;
+  EXP,I,TEMP: INTEGER;
+  SIGN: BOOLEAN;
+BEGIN
+  IF FLD1 > 0 THEN FLD:=FLD-1;		[ poziciq pod desqti~nu` to~ku ]
+  IF DIGIT < 0.0 THEN
+  BEGIN
+    SIGN:=TRUE;
+    DIGIT:=-DIGIT;
+    FLD:=FLD-1;
+  END ELSE
+    SIGN:=FALSE;
+[-----------------------------------]
+  WITH DIGCOPY DO
+  BEGIN					[ wydelim |ksponentu	]
+    FLOAT:=DIGIT;
+    EXP:=TRUNC((( INT[1] AND (NOT 100177B)) DIV 128 - 200B) * 0.30103);
+
+    IF EXP > 0	THEN			[ denormalizaciq	]
+    BEGIN
+      FLOAT:= FLOAT/TEN(EXP);
+      IF TRUNC(FLOAT)= 0 THEN
+      BEGIN
+	FLOAT:=FLOAT*10.;
+	EXP:=EXP-1
+      END;
+    END ELSE EXP := 0;
+    IF FLD1 < 0 THEN FLD1:= 0;
+    FLOAT:=FLOAT+0.5/TEN(EXP+FLD1);	[ okruglenie		]
+[ 1 <= FLOAT <= 10 ]
+    EXP:=EXP+1;	 			[ kol - wo znakow do zapqtoj	]
+    WRITE('':FLD-EXP-FLD1);		[ wedu}ie probely	  	]
+    IF SIGN THEN WRITE('-');
+    FOR I:=1 TO EXP DO 		[ wywodim znaki do zapqtoj	]
+    BEGIN
+      TEMP:=TRUNC(FLOAT);
+      WRITE(CHR(TEMP+ORD('0'))); 
+      FLOAT:=(FLOAT-TEMP)*10;
+    END;
+    IF FLD1 > 0 THEN WRITE('.');
+    FOR I:=1 TO FLD1 DO
+    BEGIN
+      TEMP:=TRUNC(FLOAT);
+      WRITE(CHR(TEMP+ORD('0'))); 
+      FLOAT:=(FLOAT-TEMP)*10;
+    END;
+   END; [ WITH ]
+END;
+
+
+                                            prilovenie 1
+
+		komandy paskalx - otlad~ika  V1.2H
+
+
+        B                   udalitx teku}u` to~ku ostanowa
+        B(BLOCK,STATEMENT)  ustanowitx to~ku ostanowa, (imq, nomer stroki)
+
+        C                   prodolvitx wypolnenie posle ostanowa
+        C(N)                propustitx to~ku ostanowa N raz
+
+        D                   otobrazitx to~ki ostanowa, slevenie, metki
+
+        G                   wypolnqtx programmu s na~ala
+	G(N)                wypolnqtx programmu s metki N=0..8
+
+        H                   otobrazitx spisok wyzowow i poslednie op.
+
+        K                   udalitx wse to~ki ostanowa
+        K(BLOCK, STATEMENT) udalitx opredelennu` to~ku ostanowa
+
+        L(N)                pometitx teku}ij operator (N=0..8)
+
+        P                   wypolnitx operator teku}ego urownq
+        P(N)                wypolnitx N operatorow teku}ego urownq
+ 
+        S                   wypolnitx odin operator ({ag)
+        S(N)                wypolnitx N operatorow
+
+        T(TRUE/FALSE)       razre{itx/zapretitx trassirowku
+
+	V                   otmenitx slevenie
+        V(VARIABLE)         ustanowitx slevenie za peremennoj
+
+        W(NAME1,NAME2...)   raspe~atatx peremennu`, konstantu, ukazatelx.
+                            movet ispolxzowatxsq paskalewskaq notaciq 
+                            zadaniq formata, ~islo, ukazannoe wmesto imeni-
+                            absol`tnyj adres, B posle konstanty - OCT.
+
+        VARIABLE := VALUE   priswoitx peremennoj zna~enie
+
+
+
+
+                                                                 
