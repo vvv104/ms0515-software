@@ -2054,9 +2054,9 @@ BASIC / RAFOS V02-030 interpreter; asks which optional functions to load (ALL, N
 
 ### `software/development/basic/BASICO.DOC`
 
-Manual of БЕЙСИК-ОМЕГА («РАЗРАБОТАН ЛЬВОВСКИМ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), 363 blocks. Pages 8-14 are lost: under blocks 29-45 the diskette holds monitor swap code, not text, and the three reads of disk5 (the only disk with the file) disagree there
+Manual of БЕЙСИК-ОМЕГА («РАЗРАБОТАН ЛЬВОВСКИМ НАУЧНО-ИССЛЕДОВАТЕЛЬСКИМ ПРЕДПРИЯТИЕМ "ОМЕГА"»), 363 blocks. On disk5, the only one of our diskettes with the file, blocks 29-45 (pages 8-14: the end of the contents and sections 1 to 3.2.2) hold no text but code of an earlier file, the menu strings of the ART graphics editor, read without a CRC error. Those 17 blocks, and a space for a stray NUL in block 6, come from the copy anasana restored by hand from another diskette and posted on the zx-pk.ru forum. Its text fills them byte for byte: the lines and the 73-line pages run on into the surviving blocks 28 and 46, and every entry of the restored contents names the heading and the page that the surviving body has
 
-*ru+en / koi8-r; disks: 1; identified from: gap analysis 2026-09-06; sha256 0b2216607079*
+*ru+en / koi8-r; disks: 1; identified from: gap analysis 2026-09-06; blocks 29-45 from anasana's copy (zx-pk.ru), checked against disk5 2026-11-19; sha256 26cbcd095dce*
 
 ### `software/development/basic/BASICO.SAV`
 
