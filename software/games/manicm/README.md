@@ -23,6 +23,9 @@ PDP-11 rewrites the second file and leaves the first alone.
 ENTER (or the joystick's fire) at the title starts the game; O/P or Q/W
 or the arrows walk, SPACE (or SHIFT, or the up arrow, or fire) jumps,
 H-L toggle the music, A-G pause, SHIFT with SPACE goes back to the title,
-and SHIFT with SPACE at the title leaves for RT-11.  The game runs on
+and SHIFT with SPACE at the title leaves for RT-11.  A jump key held
+jumps once, where the Spectrum jumps again on landing: the MS 7004
+repeats a held key by a code that does not say which key it is, so a
+repeat never starts a jump - and SPACE tapped while walking jumps once.  The game runs on
 every system of the collection, Rodionov's included: it ends at 70000,
 under his monitor.
